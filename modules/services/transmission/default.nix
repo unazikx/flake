@@ -1,0 +1,86 @@
+{
+  flake =
+    {
+      ...
+    }:
+    {
+      nixosModules.${baseNameOf ./.} =
+        {
+          pkgs,
+          lib,
+          config,
+          ...
+        }:
+        let
+          savePath = "/media/torrents";
+        in
+        {
+          persist.directories = [
+            "/var/lib/transmission"
+            savePath
+          ];
+
+          packages = [ pkgs.torque ];
+
+          services.transmission = {
+            enable = true;
+            openFirewall = true;
+            openPeerPorts = true;
+            openRPCPort = true;
+
+            package = pkgs.transmission_4;
+            webHome = pkgs.flood-for-transmission;
+            downloadDirPermissions = "775";
+            performanceNetParameters = true;
+
+            settings = {
+              download-dir = savePath;
+              incomplete-dir = savePath + "/temp";
+              umask = "002";
+
+              download-queue-size = 3;
+
+              start-added-torrents = false;
+
+              default-trackers = lib.readFile (
+                pkgs.fetchurl {
+                  url = "https://raw.githubusercontent.com/XIU2/TrackersListCollection/refs/heads/master/all.txt";
+                  sha256 = "sha256-3XHcMnBzPaXxjCNGSLpdgqXQA57/xHEwP1dy7k7g8qc=";
+                }
+              );
+              # idk why
+
+              rpc-authentication-required = false;
+
+              rpc-host-whitelist-enabled = true;
+              rpc-host-whitelist = "127.0.0.1,localhost";
+
+              rpc-whitelist-enabled = true;
+              rpc-whitelist = "127.0.0.1";
+
+              peer-port-random-on-start = true;
+              peer-limit-per-torrent = 5;
+              upload-slots-per-torrent = 2;
+            };
+
+            # INFO:
+            # {
+            #   "rpc-username": "yourUser",
+            #   "rpc-password": "password"
+            # }
+            credentialsFile = config.sopsnix."services/transmission";
+          };
+
+          tmp.transmission = {
+            "${savePath}".d = {
+              inherit (config.services.transmission)
+                user
+                group
+                ;
+
+              mode = "0775";
+            };
+          };
+        };
+    };
+}

@@ -1,0 +1,94 @@
+{
+  inputs,
+  pkgs,
+  lib,
+  ...
+}:
+
+{
+  mkSecrets = {
+    sopsnix =
+      list: sopsFile:
+      lib.genAttrs list (n: {
+        owner = lib.userName;
+        inherit sopsFile;
+      });
+
+    sopstem = filename: content: {
+      ${filename} = {
+        owner = lib.userName;
+        group = "users";
+        inherit content;
+      };
+    };
+
+    agenix = throw "Agenix is not configured";
+  };
+
+  mkSymlink =
+    path:
+    let
+      pathStr = toString path;
+      name = lib.hm.strings.storeFileName (baseNameOf pathStr);
+    in
+    pkgs.runCommandLocal name { } "ln -s ${lib.escapeShellArg pathStr} $out";
+
+  mkFirefoxModule = import (
+    lib.concatStringsSep "/" [
+      inputs.home-manager
+      "modules"
+      "programs"
+      "firefox"
+      "mkFirefoxModule.nix"
+    ]
+  );
+
+  mkMime =
+    assocs:
+    lib.pipe assocs [
+      (lib.mapAttrsToList (
+        prog:
+        map (type: {
+          "${type}" = prog;
+        })
+      ))
+      lib.flatten
+      lib.zipAttrs
+    ];
+
+  syncthing = {
+    mkFilter = config: list: lib.attrNames (removeAttrs config list);
+
+    mkDevice = name: id: {
+      inherit name;
+      value = {
+        inherit id;
+        autoAcceptFolders = true;
+        compression = "always";
+      };
+    };
+
+    mkFolder =
+      {
+        id,
+        name,
+        path,
+        devices,
+      }:
+      {
+        inherit name;
+        value = {
+          inherit id path devices;
+          rescanIntervalS = 4;
+          versioning = {
+            type = "simple";
+            params = {
+              cleanupIntervalS = toString (60 * 2);
+              cleanoutDays = toString (7 * 4);
+              keep = toString (7 * 1);
+            };
+          };
+        };
+      };
+  };
+}
