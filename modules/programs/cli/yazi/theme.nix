@@ -102,14 +102,12 @@ lib.mkForce {
     ];
   };
 
-  icon =
-    let
-      enable = import ./icons/enable.nix {
-        inherit
-          lib
-          fg
-          ;
-      };
-    in
-    enable.on;
+  icon = (
+    import ./icons/enable.nix {
+      inherit
+        lib
+        fg
+        ;
+    }
+  );
 }
