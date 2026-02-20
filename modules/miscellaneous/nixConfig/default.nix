@@ -19,7 +19,7 @@
 
           environment.systemPackages = with pkgs; [
             hydra-check
-            hasher
+            own.hasher
           ];
 
           nix = {

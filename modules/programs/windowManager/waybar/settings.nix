@@ -182,7 +182,7 @@
           format-connected = "{device_alias}";
           format-connected-battery = "{device_alias} ({device_battery_percentage}%)";
 
-          on-click = lib.getExe pkgs.wofi-bt;
+          on-click = lib.getExe pkgs.own.wofi-bluetooth;
           on-click-right = "bluetoothctl disconnect";
         };
 
@@ -193,7 +193,7 @@
           format-connected = "󰂰 ({num_connections})";
           format-connected-battery = "󰂳 ({num_connections})";
 
-          on-click = lib.getExe pkgs.wofi-bt;
+          on-click = lib.getExe pkgs.own.wofi-bluetooth;
           on-click-right = "bluetoothctl disconnect";
         };
 

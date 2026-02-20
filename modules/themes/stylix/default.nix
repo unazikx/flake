@@ -164,7 +164,7 @@
                 ;
             }
             // {
-              inherit (pkgs.fonts) gost segoe;
+              inherit (pkgs.own.fonts) gost segoe;
               inherit (pkgs.wineWow64Packages) fonts;
             }
           );

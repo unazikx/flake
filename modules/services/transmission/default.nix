@@ -20,7 +20,7 @@
             savePath
           ];
 
-          packages = [ pkgs.torque ];
+          packages = [ pkgs.own.torque ];
 
           services.transmission = {
             enable = true;

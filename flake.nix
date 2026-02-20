@@ -17,6 +17,14 @@
     nix-flatpak.url = "github:gmodena/nix-flatpak";
 
     # flakes with dependencies
+    my-own-packages = {
+      url = "github:unazikx/nix-packages";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-parts.follows = "flake-parts";
+      inputs.pkgs-by-name.follows = "pkgs-by-name";
+      inputs.treefmt-nix.follows = "treefmt-nix";
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -29,6 +37,11 @@
 
     devshell = {
       url = "github:numtide/devshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    treefmt-nix = {
+      url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -137,11 +150,6 @@
 
     glide-browser = {
       url = "github:glide-browser/glide.nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    addons-to-nix = {
-      url = "github:azikxz/mozilla-addons-to-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

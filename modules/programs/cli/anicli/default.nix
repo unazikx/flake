@@ -21,7 +21,7 @@
             #
             # WARN: to use anilib auth follow this
             # https://github.com/vypivshiy/anicli-api/issues/42#issuecomment-2889017544
-            hmPackages = [ pkgs.anicli-ru ];
+            hmPackages = [ pkgs.own.anicli-ru ];
           }
 
           {

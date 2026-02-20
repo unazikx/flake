@@ -25,7 +25,7 @@ in
       yatline
       ;
 
-    inherit (pkgs.yazi-plugins-local)
+    inherit (pkgs.own.yazi-plugins)
       clipboard-to-file
       glow
       office

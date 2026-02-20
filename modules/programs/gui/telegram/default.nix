@@ -60,17 +60,10 @@
                 lib.hm.dag.entryAfter [ "" ]
                   "run ${
                     lib.getExe (
-                      pkgs.walogram.override {
-                        inherit (config.hm.xdg) cacheHome;
-                        inherit (config.stylix) image;
-                        inherit (config.lib.stylix.colors.withHashtag)
-                          base00
-                          base01
-                          ;
-
-                        themeColors = import ./palette.nix {
-                          inherit config;
-                        };
+                      pkgs.own.walogram.override {
+                        outputDir = config.hm.xdg.cacheHome;
+                        backgroundImage = config.stylix.image;
+                        colors = config.lib.stylix.colors.withHashtag;
                       }
                     )
                   }";

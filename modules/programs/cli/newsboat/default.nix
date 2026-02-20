@@ -10,7 +10,7 @@
           ...
         }:
         {
-          hmPackages = [ pkgs.yt-id ];
+          hmPackages = [ pkgs.own.yt-id ];
 
           hm.programs.newsboat = {
             enable = true;

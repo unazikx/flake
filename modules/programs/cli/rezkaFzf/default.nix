@@ -6,10 +6,11 @@
     {
       nixosModules.${baseNameOf ./.} =
         {
+          pkgs,
           ...
         }:
         {
-          # hmPackages = [ pkgs.rezka-fzf ];
+          hmPackages = [ pkgs.own.rezka-fzf ];
         };
     };
 }

@@ -36,7 +36,6 @@ inputs.flake-parts.lib.mkFlake
       inputs.devshell.flakeModule
       inputs.disko.flakeModule
       inputs.home-manager.flakeModules.default
-      inputs.pkgs-by-name.flakeModule
     ];
 
     flake =
@@ -45,8 +44,6 @@ inputs.flake-parts.lib.mkFlake
         ...
       }:
       {
-        # INFO: args what would be in
-        # flake = { extendedLib, ...}: { ... };
         _module.args = {
           inherit extendedLib inputs;
           partsConfig = config;
@@ -62,26 +59,10 @@ inputs.flake-parts.lib.mkFlake
 
     perSystem =
       {
-        pkgs,
-        system,
         ...
       }:
       {
-        # INFO: args what would be in
-        # perSystem = { pkgs, extendedLib, ...}: { ... };
-        _module.args = {
-          inherit extendedLib inputs;
-
-          pkgs = buildPkgs {
-            inherit
-              system
-              ;
-          };
-        };
-
-        formatter = pkgs.nixfmt;
-        pkgsDirectory = ../packages;
-        pkgsNameSeparator = ".";
+        _module.args = { inherit extendedLib inputs; };
       };
 
     debug = true;

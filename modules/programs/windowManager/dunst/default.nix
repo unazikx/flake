@@ -17,11 +17,7 @@
           hm.services.dunst = {
             enable = true;
 
-            iconTheme = {
-              size = "64x64";
-              name = if (cfg.polarity == "dark") then cfg.icons.dark else cfg.icons.light;
-              inherit (config.stylix.icons) package;
-            };
+            iconTheme.size = "64x64";
 
             settings = {
               global = {

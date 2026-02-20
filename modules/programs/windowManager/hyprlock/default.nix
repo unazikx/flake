@@ -75,7 +75,7 @@
                   }
 
                   {
-                    text = "cmd[update:1000] ${lib.getExe pkgs.hyprbat}";
+                    text = "cmd[update:1000] ${lib.getExe pkgs.own.hyprlock-battery}";
                     color = "rgb(${config.lib.stylix.colors.base05})";
                     font_family = config.stylix.fonts.sansSerif.name;
                     font_size = config.stylix.fonts.sizes.applications;

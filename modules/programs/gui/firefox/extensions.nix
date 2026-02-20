@@ -11,27 +11,27 @@ lib.attrValues (
     # inherit (pkgs.nur.repos.rycee.firefox-addons) ... ;
     #
     # inherit (pkgs.firefox-addons) ... ;
-    inherit (pkgs.nur.repos.rycee.firefox-addons)
-      darkreader
-      libredirect
-      protondb-for-steam
-      redirect-to-wiki-gg
-      sponsorblock
-      steam-database
-      stylus
-      translate-web-pages
-      ublock-origin
-      ;
 
     # from ../../../../packages/firefox-addons/package.nix
-    inherit (pkgs.firefox-addons)
+    inherit (pkgs.own.firefox-addons)
+      darkreader
+      libredirect
+      mal-sync
+      protondb-for-steam
+      redirectnixwiki
+      sponsorblock
+      steam-database
+      styl-us
       torrserver-adder
+      traduzir-paginas-web
+      ublock-origin
+      youtube-addon
       ;
   }
   // (lib.optionalAttrs config.hm.programs.keepassxc.enable {
-    inherit (pkgs.firefox-addons) keepassxc-browser;
+    inherit (pkgs.own.firefox-addons) keepassxc-browser;
   })
   // (lib.optionalAttrs config.hm.programs.rbw.enable {
-    inherit (pkgs.firefox-addons) bitwarden-password-manager;
+    inherit (pkgs.own.firefox-addons) bitwarden-password-manager;
   })
 )
