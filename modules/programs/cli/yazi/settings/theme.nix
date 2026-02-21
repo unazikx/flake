@@ -18,16 +18,19 @@ lib.mkForce {
     };
 
     preview = {
+      fg = base05;
+      bg = base02;
       underline = false;
     };
 
     parent = {
-      bg = base00;
+      fg = base05;
+      bg = base02;
     };
 
     padding = {
-      open = "█";
-      close = "█";
+      open = "";
+      close = "";
     };
   };
 
@@ -92,6 +95,10 @@ lib.mkForce {
         inherit fg;
       }
       {
+        mime = "image/*";
+        inherit fg;
+      }
+      {
         name = "*";
         inherit fg;
       }
@@ -99,15 +106,17 @@ lib.mkForce {
         name = "*/";
         inherit fg;
       }
+      {
+        url = "*";
+        is = "orphan";
+        inherit fg;
+      }
     ];
   };
 
   icon = (
-    import ./icons/enable.nix {
-      inherit
-        lib
-        fg
-        ;
+    import ./icons.nix {
+      inherit config;
     }
   );
 }

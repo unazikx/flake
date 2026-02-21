@@ -1,14 +1,18 @@
 {
-  lib,
-  fg,
+  config,
 }:
+
+with config.lib.stylix.colors.withHashtag;
+let
+  fg = base06;
+in
 
 {
   exts = [
     {
       name = "3gp";
       text = "";
-      inherit fg;
+      fg = base0E;
     }
     {
       name = "3mf";
@@ -18,7 +22,7 @@
     {
       name = "7z";
       text = "";
-      inherit fg;
+      fg = base08;
     }
     {
       name = "a";
@@ -28,7 +32,7 @@
     {
       name = "aac";
       text = "";
-      inherit fg;
+      fg = base0A;
     }
     {
       name = "ada";
@@ -53,12 +57,12 @@
     {
       name = "aif";
       text = "";
-      inherit fg;
+      fg = base0A;
     }
     {
       name = "aiff";
       text = "";
-      inherit fg;
+      fg = base0A;
     }
     {
       name = "android";
@@ -68,7 +72,7 @@
     {
       name = "ape";
       text = "";
-      inherit fg;
+      fg = base0A;
     }
     {
       name = "apk";
@@ -113,7 +117,7 @@
     {
       name = "avif";
       text = "";
-      inherit fg;
+      fg = base0B;
     }
     {
       name = "awk";
@@ -133,7 +137,7 @@
     {
       name = "bash";
       text = "";
-      inherit fg;
+      fg = base0B;
     }
     {
       name = "bat";
@@ -183,7 +187,7 @@
     {
       name = "bmp";
       text = "";
-      inherit fg;
+      fg = base0B;
     }
     {
       name = "bqn";
@@ -198,17 +202,17 @@
     {
       name = "bz";
       text = "";
-      inherit fg;
+      fg = base08;
     }
     {
       name = "bz2";
       text = "";
-      inherit fg;
+      fg = base08;
     }
     {
       name = "bz3";
       text = "";
-      inherit fg;
+      fg = base08;
     }
     {
       name = "bzl";
@@ -233,7 +237,7 @@
     {
       name = "cast";
       text = "";
-      inherit fg;
+      fg = base0E;
     }
     {
       name = "cbl";
@@ -368,7 +372,7 @@
     {
       name = "csh";
       text = "";
-      inherit fg;
+      fg = base0B;
     }
     {
       name = "cshtml";
@@ -493,6 +497,7 @@
     {
       name = "download";
       text = "";
+      dim = true;
       inherit fg;
     }
     {
@@ -608,7 +613,7 @@
     {
       name = "exe";
       text = "";
-      inherit fg;
+      fg = base0B;
     }
     {
       name = "exs";
@@ -693,12 +698,12 @@
     {
       name = "fish";
       text = "";
-      inherit fg;
+      fg = base0B;
     }
     {
       name = "flac";
       text = "";
-      inherit fg;
+      fg = base0A;
     }
     {
       name = "flc";
@@ -783,7 +788,7 @@
     {
       name = "gif";
       text = "";
-      inherit fg;
+      fg = base0B;
     }
     {
       name = "git";
@@ -853,7 +858,7 @@
     {
       name = "gz";
       text = "";
-      inherit fg;
+      fg = base08;
     }
     {
       name = "h";
@@ -948,7 +953,7 @@
     {
       name = "ico";
       text = "";
-      inherit fg;
+      fg = base0B;
     }
     {
       name = "ics";
@@ -1043,12 +1048,12 @@
     {
       name = "jpeg";
       text = "";
-      inherit fg;
+      fg = base0B;
     }
     {
       name = "jpg";
       text = "";
-      inherit fg;
+      fg = base0B;
     }
     {
       name = "js";
@@ -1083,7 +1088,7 @@
     {
       name = "jxl";
       text = "";
-      inherit fg;
+      fg = base0B;
     }
     {
       name = "kbx";
@@ -1173,7 +1178,7 @@
     {
       name = "ksh";
       text = "";
-      inherit fg;
+      fg = base0B;
     }
     {
       name = "kt";
@@ -1273,12 +1278,12 @@
     {
       name = "m4a";
       text = "";
-      inherit fg;
+      fg = base0A;
     }
     {
       name = "m4v";
       text = "";
-      inherit fg;
+      fg = base0E;
     }
     {
       name = "magnet";
@@ -1303,7 +1308,7 @@
     {
       name = "md";
       text = "";
-      inherit fg;
+      fg = base09;
     }
     {
       name = "md5";
@@ -1313,7 +1318,7 @@
     {
       name = "mdx";
       text = "";
-      inherit fg;
+      fg = base09;
     }
     {
       name = "mint";
@@ -1333,7 +1338,7 @@
     {
       name = "mkv";
       text = "";
-      inherit fg;
+      fg = base0E;
     }
     {
       name = "ml";
@@ -1368,17 +1373,17 @@
     {
       name = "mov";
       text = "";
-      inherit fg;
+      fg = base0E;
     }
     {
       name = "mp3";
       text = "";
-      inherit fg;
+      fg = base0A;
     }
     {
       name = "mp4";
       text = "";
-      inherit fg;
+      fg = base0E;
     }
     {
       name = "mpp";
@@ -1413,7 +1418,7 @@
     {
       name = "nix";
       text = "";
-      inherit fg;
+      fg = base0D;
     }
     {
       name = "norg";
@@ -1473,27 +1478,27 @@
     {
       name = "oga";
       text = "";
-      inherit fg;
+      fg = base0A;
     }
     {
       name = "ogg";
       text = "";
-      inherit fg;
+      fg = base0A;
     }
     {
       name = "ogv";
       text = "";
-      inherit fg;
+      fg = base0E;
     }
     {
       name = "ogx";
       text = "";
-      inherit fg;
+      fg = base0E;
     }
     {
       name = "opus";
       text = "";
-      inherit fg;
+      fg = base0A;
     }
     {
       name = "org";
@@ -1528,7 +1533,7 @@
     {
       name = "pcm";
       text = "";
-      inherit fg;
+      fg = base0A;
     }
     {
       name = "pdf";
@@ -1563,7 +1568,7 @@
     {
       name = "png";
       text = "";
-      inherit fg;
+      fg = base0B;
     }
     {
       name = "po";
@@ -1633,47 +1638,47 @@
     {
       name = "pxd";
       text = "";
-      inherit fg;
+      fg = base0A;
     }
     {
       name = "pxi";
       text = "";
-      inherit fg;
+      fg = base0A;
     }
     {
       name = "py";
       text = "";
-      inherit fg;
+      fg = base0A;
     }
     {
       name = "pyc";
       text = "";
-      inherit fg;
+      fg = base0A;
     }
     {
       name = "pyd";
       text = "";
-      inherit fg;
+      fg = base0A;
     }
     {
       name = "pyi";
       text = "";
-      inherit fg;
+      fg = base0A;
     }
     {
       name = "pyo";
       text = "";
-      inherit fg;
+      fg = base0A;
     }
     {
       name = "pyw";
       text = "";
-      inherit fg;
+      fg = base0A;
     }
     {
       name = "pyx";
       text = "";
-      inherit fg;
+      fg = base0A;
     }
     {
       name = "qm";
@@ -1718,7 +1723,7 @@
     {
       name = "rar";
       text = "";
-      inherit fg;
+      fg = base08;
     }
     {
       name = "rasi";
@@ -1813,7 +1818,7 @@
     {
       name = "sh";
       text = "";
-      inherit fg;
+      fg = base0B;
     }
     {
       name = "sha1";
@@ -1923,7 +1928,7 @@
     {
       name = "spx";
       text = "";
-      inherit fg;
+      fg = base0A;
     }
     {
       name = "sql";
@@ -2123,7 +2128,7 @@
     {
       name = "tgz";
       text = "";
-      inherit fg;
+      fg = base08;
     }
     {
       name = "tmpl";
@@ -2188,7 +2193,7 @@
     {
       name = "txz";
       text = "";
-      inherit fg;
+      fg = base08;
     }
     {
       name = "typ";
@@ -2268,12 +2273,12 @@
     {
       name = "wav";
       text = "";
-      inherit fg;
+      fg = base0A;
     }
     {
       name = "webm";
       text = "";
-      inherit fg;
+      fg = base0E;
     }
     {
       name = "webmanifest";
@@ -2283,7 +2288,7 @@
     {
       name = "webp";
       text = "";
-      inherit fg;
+      fg = base0B;
     }
     {
       name = "webpack";
@@ -2293,12 +2298,12 @@
     {
       name = "wma";
       text = "";
-      inherit fg;
+      fg = base0A;
     }
     {
       name = "wmv";
       text = "";
-      inherit fg;
+      fg = base0E;
     }
     {
       name = "woff";
@@ -2323,12 +2328,12 @@
     {
       name = "wv";
       text = "";
-      inherit fg;
+      fg = base0A;
     }
     {
       name = "wvc";
       text = "";
-      inherit fg;
+      fg = base0A;
     }
     {
       name = "x";
@@ -2393,7 +2398,7 @@
     {
       name = "xz";
       text = "";
-      inherit fg;
+      fg = base08;
     }
     {
       name = "yaml";
@@ -2413,17 +2418,17 @@
     {
       name = "zip";
       text = "";
-      inherit fg;
+      fg = base08;
     }
     {
       name = "zsh";
       text = "";
-      inherit fg;
+      fg = base0B;
     }
     {
       name = "zst";
       text = "";
-      inherit fg;
+      fg = base08;
     }
     {
       name = "🔥";
@@ -2776,7 +2781,7 @@
     {
       name = "code_of_conduct.md";
       text = "";
-      inherit fg;
+      fg = base09;
     }
     {
       name = "commit_editmsg";
@@ -3091,12 +3096,12 @@
     {
       name = "license";
       text = "";
-      inherit fg;
+      fg = base09;
     }
     {
       name = "license.md";
       text = "";
-      inherit fg;
+      fg = base09;
     }
     {
       name = "lxde-rc.xml";
@@ -3276,7 +3281,7 @@
     {
       name = "py.typed";
       text = "";
-      inherit fg;
+      fg = base0A;
     }
     {
       name = "QtProject.conf";
@@ -3296,7 +3301,7 @@
     {
       name = "readme.md";
       text = "󰂺";
-      inherit fg;
+      fg = base09;
     }
     {
       name = "rmd";
@@ -3316,7 +3321,7 @@
     {
       name = "security.md";
       text = "󰒃";
-      inherit fg;
+      fg = base09;
     }
     {
       name = "settings.gradle";
@@ -3567,72 +3572,72 @@
     {
       name = ".config";
       text = "";
-      inherit fg;
+      fg = base0F;
     }
     {
       name = ".git";
       text = "";
-      inherit fg;
+      fg = base0F;
     }
     {
       name = ".github";
       text = "";
-      inherit fg;
+      fg = base0F;
     }
     {
       name = ".npm";
       text = "";
-      inherit fg;
+      fg = base0F;
     }
     {
       name = "Desktop";
       text = "";
-      inherit fg;
+      fg = base0F;
     }
     {
       name = "Development";
       text = "";
-      inherit fg;
+      fg = base0F;
     }
     {
       name = "Documents";
       text = "";
-      inherit fg;
+      fg = base0F;
     }
     {
       name = "Downloads";
       text = "";
-      inherit fg;
+      fg = base0F;
     }
     {
       name = "Library";
       text = "";
-      inherit fg;
+      fg = base0F;
     }
     {
       name = "Movies";
       text = "";
-      inherit fg;
+      fg = base0F;
     }
     {
       name = "Music";
       text = "";
-      inherit fg;
+      fg = base0F;
     }
     {
       name = "Pictures";
       text = "";
-      inherit fg;
+      fg = base0F;
     }
     {
       name = "Public";
       text = "";
-      inherit fg;
+      fg = base0F;
     }
     {
       name = "Videos";
       text = "";
-      inherit fg;
+      fg = base0F;
     }
   ];
 }

@@ -400,7 +400,8 @@
           "w"
         ];
         run = [
-          "plugin wl-clipboard"
+          ''shell -- for path in %s; do echo "file://$path"; done | ${lib.getExe' pkgs.wl-clipboard "wl-copy"} -t text/uri-list''
+          "yank"
           "yank"
         ];
         desc = "Yank file systemly";
@@ -457,24 +458,25 @@
         run = "plugin chmod";
         desc = "Chmod on selected files";
       }
-    ]
-    ++ (map (
-      mount:
-      let
-        parts = lib.split "/" mount;
-        dirName = lib.elemAt parts ((lib.length parts) - 1);
-        firstChar = (lib.substring 0 1 dirName);
-      in
+
+      # convert
       {
         on = [
-          "B"
-          "B"
-          firstChar
+          "C"
+          "o"
         ];
-        run = "cd " + toString mount;
-        desc = "Go to " + toString mount;
+        run = "plugin convert -- --extension='jpg'";
+        desc = "Convert to JPG";
       }
-    ) (lib.filter (p: lib.hasPrefix "/media" p) (lib.attrNames config.fileSystems)));
+      {
+        on = [
+          "C"
+          "O"
+        ];
+        run = "plugin convert -- --extension='png'";
+        desc = "Convert to PNG";
+      }
+    ];
   };
 
   completion = {

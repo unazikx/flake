@@ -1,26 +1,34 @@
 {
+  pkgs,
   lib,
   config,
   ...
 }:
+
 let
-  mk =
+  mkPluginMime =
     run: list:
     (map (mime: {
-      inherit
-        run
-        mime
-        ;
+      inherit mime run;
     }) list);
 
-  office = (
-    mk "office" [
-      "application/ms-*"
-      "application/msword"
-      "application/oasis.*"
-      "application/openxmlformats-officedocument.*"
-    ]
-  );
+  mkPluginUrl =
+    run: list:
+    (map (url: {
+      inherit url run;
+    }) list);
+
+  mkRuleMime =
+    mimes: use:
+    map (mime: {
+      inherit mime use;
+    }) mimes;
+
+  mkRuleUrl =
+    urls: use:
+    map (url: {
+      inherit url use;
+    }) urls;
 in
 
 {
@@ -64,26 +72,24 @@ in
 
     plugin = {
       prepend_previewers =
-        (mk "ouch" [
-          "application/*zip"
-          "application/*tar"
-          "application/*bzip2"
-          "application/*7z-compressed"
-          "application/*rar"
-          "application/*xz"
-          "application/vnd.rar"
-          "application/7z-compressed"
-          "application/rar"
+        (mkPluginMime "office" [
+          "application/ms-*"
+          "application/msword"
+          "application/oasis.*"
+          "application/openxmlformats-officedocument.*"
         ])
-        ++ office
-        ++ [
-          {
-            url = "*.md";
-            run = "glow";
-          }
-        ];
-
-      preloaders = office ++ [ ];
+        ++ (mkPluginMime "ouch --archive-icon=''" [
+          "application/{*zip,tar,bzip2,7z*,rar,xz,zstd,java-archive}"
+        ])
+        ++ (mkPluginUrl ''faster-piper -- CLICOLOR_FORCE=1 glow -w=$w -s=dracula -- "$1"'' [
+          "*.md"
+        ])
+        ++ (mkPluginUrl "comicthumb" [
+          "*.cb[7rz]"
+        ])
+        ++ (mkPluginMime "djvu-view" [
+          "image/djvu"
+        ]);
 
       prepend_fetchers = [
         {
@@ -99,24 +105,207 @@ in
       ];
     };
 
-    opener = import ./opener.nix {
-      inherit
-        lib
-        config
-        ;
-    };
+    opener = {
+      edit = [
+        {
+          run = "${config.hm.home.sessionVariables.EDITOR} %s";
+          desc = "Open in editor";
+          block = true;
+        }
+      ];
 
-    open = import ./open.nix {
-      inherit
-        lib
-        ;
-    };
+      play = [
+        {
+          run = "mpv --fs %s";
+          desc = "Open video in MPV";
+        }
+      ];
 
-    tasks = {
-      image_bound = [
-        0
-        0
+      image = [
+        {
+          run = "swayimg %s";
+          desc = "Open image in swayimg";
+        }
+      ];
+
+      pdf = [
+        {
+          run = "zathura %s";
+          desc = "Open pdf in Zathura";
+        }
+      ];
+
+      msoffice = [
+        {
+          run = "libreoffice %s";
+          desc = "Open document in Libreoffice";
+          orphan = true;
+        }
+      ];
+
+      msoffice-pdf = [
+        {
+          run = "zaread %s";
+          desc = "Open document in Zathura";
+          orphan = true;
+        }
+      ];
+
+      extract-archive = [
+        {
+          run = "ouch d -y %s";
+          desc = "Extract files via ouch";
+        }
+      ];
+
+      keepassdb-open = [
+        {
+          run = "keepassxc %s";
+          desc = "Open keepass password db";
+        }
+      ];
+
+      prism-import = [
+        {
+          run = "prismlauncher %s";
+          desc = "Import modpack to Prismlauncher";
+        }
+      ];
+
+      umu-run = [
+        {
+          run = "umu-run %s";
+          desc = "Open windows exe via umu-run";
+          block = true;
+        }
+      ];
+
+      native-run = lib.mkIf config.programs.steam.enable [
+        {
+          run = "steam-run %s";
+          desc = "Open native bin via steam-run";
+          orphan = true;
+          block = true;
+        }
+      ];
+
+      xdg-open = [
+        {
+          run = "xdg-open %s";
+          desc = "Open via xdg-open";
+        }
       ];
     };
+
+    open = {
+      prepend_rules =
+        (mkRuleUrl
+          [
+            "*.kdbx"
+          ]
+          [ "keepassdb" ]
+        )
+        ++ (mkRuleUrl
+          [
+            "*.exe"
+            "*.msi"
+          ]
+          [ "umu-run" ]
+        );
+
+      rules =
+        (mkRuleMime
+          [
+            "image/*"
+          ]
+          [ "image" "xdg-open" ]
+        )
+        ++ (mkRuleMime
+          [
+            "{audio,video}/*"
+          ]
+          [ "play" "xdg-open" ]
+        )
+        ++ (mkRuleUrl
+          [
+            "*.csv"
+            "*.tsv"
+            "*.tab"
+            "*.psv"
+            "*.odt"
+            "*.doc"
+            "*.docx"
+            "*.rtf"
+            "*.xls"
+            "*.xlsx"
+            "*.xlsm"
+            "*.xlsb"
+            "*.ods"
+            "*.odp"
+            "*.ppt"
+            "*.pptx"
+            "*.odf"
+            "*.odb"
+          ]
+          [ "msoffice-pdf" "msoffice" ]
+        )
+        ++ (mkRuleMime
+          [
+            "application/pdf"
+            "application/zip"
+            "application/cbt"
+            "application/cbr"
+            "application/cbz"
+            "application/x-cbt"
+            "application/x-cbr"
+            "application/x-cbz"
+            "application/epub+zip"
+            "application/vnd.comicbook-rar"
+            "application/vnd.comicbook+zip"
+          ]
+          [ "pdf" ]
+        )
+        ++ (mkRuleMime
+          [
+            "application/{*zip,tar,bzip2,7z*,rar,xz,zstd,java-archive}"
+          ]
+          [ "extract-archive" ]
+        )
+        ++ (mkRuleMime
+          [
+            "inode/empty"
+            "application/*"
+            "text/*"
+          ]
+          [ "edit" "native-run" ]
+        )
+        ++ (mkRuleMime
+          [
+            "*/"
+          ]
+          [ "xdg-open" ]
+        );
+    };
+
+    tasks.image_bound = [
+      0
+      0
+    ];
+  };
+
+  keymap = import ../binds.nix {
+    inherit pkgs lib config;
+  };
+
+  initLua = import ./lua.nix {
+    inherit config;
+  };
+
+  theme = import ./theme.nix {
+    inherit lib config;
+  };
+
+  plugins = import ../plugins.nix {
+    inherit pkgs;
   };
 }

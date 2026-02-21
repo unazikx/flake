@@ -18,47 +18,27 @@
 
               extraPackages = lib.attrValues {
                 inherit (pkgs)
+                  djvulibre
                   ffmpegthumbnailer
                   glow
+                  imagemagick
                   jq
+                  p7zip-rar
+                  transmission_4
                   wl-clipboard
+                  ouch
                   ;
 
-                ouch = pkgs.ouch.override { enableUnfree = true; };
-              };
-
-              keymap = import ./binds.nix {
-                inherit
-                  pkgs
-                  lib
-                  config
-                  ;
-              };
-
-              initLua = import ./lua.nix {
-                inherit
-                  config
-                  ;
-              };
-
-              theme = import ./theme.nix {
-                inherit
-                  lib
-                  config
-                  ;
+                # ouch = pkgs.ouch.override { enableUnfree = true; };
               };
             }
-            // import ./plugins.nix {
+            // (import ./settings/main.nix {
               inherit
                 pkgs
-                ;
-            }
-            // import ./settings/main.nix {
-              inherit
                 lib
                 config
                 ;
-            };
+            });
 
             xdg.mimeApps = {
               defaultApplications = {

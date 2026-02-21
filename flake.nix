@@ -22,6 +22,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-parts.follows = "flake-parts";
       inputs.pkgs-by-name.follows = "pkgs-by-name";
+      inputs.nur.follows = "nur";
       inputs.treefmt-nix.follows = "treefmt-nix";
     };
 

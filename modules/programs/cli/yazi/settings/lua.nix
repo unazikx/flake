@@ -19,9 +19,9 @@ with config.lib.stylix.colors.withHashtag;
   th.git.updated   = ui.Style():fg("yellow"):bold()
 
   require("yatline"):setup({
-    section_separator = { open = "", close = "" },
+    section_separator = { open = "", close = "" },
+    inverse_separator = { open = "", close = "" },
     part_separator    = { open = "", close = "" },
-    inverse_separator = { open = "|", close = "|" },
 
     style_a = {
       fg = "${base00}",
@@ -83,7 +83,8 @@ with config.lib.stylix.colors.withHashtag;
         section_c = { { type = "coloreds", custom = false, name = "count" }, }
       },
       right = {
-        section_a = { { type = "string",   custom = false, name = "hovered_file_extension", }, },
+        section_a = { { type = "string",   custom = false, name = "hovered_mime", },
+                      { type = "string",   custom = false, name = "hovered_file_extension", }, },
         section_b = { { type = "string",   custom = false, name = "hovered_size" }, },
         section_c = { { type = "coloreds", custom = false, name = "permissions" }, }
       }

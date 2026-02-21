@@ -11,7 +11,6 @@ with inputs;
   nix-minecraft.overlays.default
   niri-flake.overlays.niri
   nur.overlays.default
-  nur.overlays.default
 
   (
     f: p:
@@ -47,6 +46,10 @@ with inputs;
             temurin-jre-bin-8
             ;
         };
+      };
+
+      ouch = p.ouch.override {
+        enableUnfree = true;
       };
     }
   )
