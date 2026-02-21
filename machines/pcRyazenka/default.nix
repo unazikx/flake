@@ -36,7 +36,7 @@
               gdu
               greetd
               helix
-              minimalDocs
+              minimal
               mpv
               mumble
               qbittorrent

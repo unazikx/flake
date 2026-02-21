@@ -6,6 +6,7 @@
     {
       nixosModules.${baseNameOf ./.} =
         {
+          pkgs,
           lib,
           ...
         }:
@@ -14,9 +15,20 @@
           turnOff = list: lib.genAttrs list (_: lib.mkDefault disable);
         in
         {
+          system = {
+            disableInstallerTools = true;
+            tools.nixos-rebuild.enable = true;
+          };
+
           programs = turnOff [
             "nano"
             "command-not-found"
+          ];
+
+          environment.systemPackages = with pkgs; [
+            uutils-coreutils-noprefix
+            uutils-findutils
+            uutils-diffutils
           ];
 
           documentation = turnOff [
@@ -38,6 +50,10 @@
               "manpages"
             ];
           };
+
+          systemd.generators.systemd-ssh-generator = "/dev/null";
+          systemd.sockets.sshd-unix-local.enable = lib.mkForce false;
+          systemd.sockets.sshd-vsock.enable = lib.mkForce false;
         };
     };
 }
