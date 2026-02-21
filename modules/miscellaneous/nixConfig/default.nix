@@ -39,6 +39,7 @@
               download-buffer-size = (512 * 1000000);
 
               experimental-features = [
+                "pipe-operators"
                 "nix-command"
                 "flakes"
               ];
@@ -48,7 +49,7 @@
                 "@wheel"
               ];
 
-              substituters = lib.mkAfter [
+              substituters = lib.mkForce [
                 "https://mirror.yandex.ru/nixos"
                 "https://niri.cachix.org"
                 "https://nix-gaming.cachix.org"
