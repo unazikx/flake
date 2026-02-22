@@ -59,7 +59,7 @@
                   UseUPnP = true;
                   Username = lib.userName;
                   Password_PBKDF2 = "@ByteArray(zYghDjh/mF8Cfw98MObGbw==:KUACE4R/NKLtGopaVWs07bGFC//DTfdWP8yf2lAxxZ44LMY+KQ5zOaGMYEBmhPNOPXou422ujdthPrFYNgnFNA==)";
-                  Address = if config.services.caddy.enable then "0.0.0.0" else "127.0.0.1"; # access for localhost without login
+                  Address = "0.0.0.0"; # access for localhost without login
                 };
 
                 RSS.Session = {
@@ -105,14 +105,14 @@
             caddy.virtualHosts =
               lib.genAttrs
                 [
-                  "${lib.hostName}"
+                  "${lib.hostName}.local"
                 ]
                 (_: {
                   extraConfig = ''
                     tls internal
                     redir /qbittorrent /qbittorrent/ 308
                     handle_path /qbittorrent/* {
-                      reverse_proxy http://${cfg.serverConfig.Preferences.WebUI.Address}:${toString cfg.webuiPort}
+                      reverse_proxy http://0.0.0.0:${toString cfg.webuiPort}
                     }
                   '';
                 });

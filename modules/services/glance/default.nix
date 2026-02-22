@@ -44,12 +44,12 @@
             caddy.virtualHosts =
               lib.genAttrs
                 [
-                  "${lib.hostName}"
+                  "${lib.hostName}.local"
                 ]
                 (_: {
                   extraConfig = ''
                     tls internal
-                    reverse_proxy http://127.0.0.1:${toString cfg.settings.server.port}
+                    reverse_proxy http://0.0.0.0:${toString cfg.settings.server.port}
                   '';
                 });
           };

@@ -55,10 +55,10 @@
                 rpc-authentication-required = false;
 
                 rpc-host-whitelist-enabled = true;
-                rpc-host-whitelist = "127.0.0.1,localhost";
+                rpc-host-whitelist = "0.0.0.0,localhost";
 
                 rpc-whitelist-enabled = true;
-                rpc-whitelist = "127.0.0.1";
+                rpc-whitelist = "0.0.0.0";
 
                 peer-port-random-on-start = true;
                 peer-limit-per-torrent = 5;
@@ -76,14 +76,14 @@
             services.caddy.virtualHosts =
               lib.genAttrs
                 [
-                  "${lib.hostName}"
+                  "${lib.hostName}.local"
                 ]
                 (_: {
                   extraConfig = ''
                     tls internal
                     redir /transmission /transmission/ 308
                     handle_path /transmission/* {
-                      reverse_proxy http://127.0.0.1:${toString cfg.settings.rpc-port}
+                      reverse_proxy http://0.0.0.0:${toString cfg.settings.rpc-port}
                     }
                   '';
                 });

@@ -28,6 +28,7 @@
               niriDE
               officeEnv
 
+              caddy
               discord
               easyeffects
               fastfetch

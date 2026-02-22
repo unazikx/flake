@@ -17,8 +17,7 @@
             virtualHosts =
               lib.genAttrs
                 [
-                  "${lib.hostName}"
-                  "localhost:443"
+                  "${lib.hostName}.local"
                 ]
                 (_: {
                   extraConfig =

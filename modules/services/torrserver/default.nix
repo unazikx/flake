@@ -38,7 +38,7 @@
                 ExecStart = ''
                   ${lib.getExe pkgs.own.torrserver} \
                   -d /var/lib/torrserver \
-                  -i ${if config.services.caddy.enable then "0.0.0.0" else "127.0.0.1"}
+                  -i 0.0.0.0"
                   -p ${toString port}
                 '';
               };
@@ -48,14 +48,14 @@
           services.caddy.virtualHosts =
             lib.genAttrs
               [
-                "${lib.hostName}"
+                "${lib.hostName}.local"
               ]
               (_: {
                 extraConfig = ''
                   tls internal
                   redir /torrserver /torrserver/ 308
                   handle_path /torrserver/* {
-                    reverse_proxy http://127.0.0.1:${toString port}
+                    reverse_proxy http://0.0.0.0:${toString port}
                   }
                 '';
               });

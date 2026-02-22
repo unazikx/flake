@@ -25,68 +25,49 @@
 
           persist.directories = [ "/var/lib/flood" ];
 
-          systemd.services.flood =
-            (lib.genAttrs [
-              "after"
-              "wantedBy"
-            ] (n: [ "qbittorrent.service" ]))
-            // {
-              path = lib.attrValues { inherit (pkgs) mediainfo; };
+          services = {
+            flood = {
+              enable = true;
+              openFirewall = true;
 
-              serviceConfig = {
-                Type = "simple";
+              package =
+                # WARN:
+                # dont forget to delete when will update
+                pkgs.flood.overrideAttrs (old: {
+                  version = "4.12.5";
+                  src = pkgs.fetchFromGitHub {
+                    owner = "jesec";
+                    repo = "flood";
+                    tag = "v${old.version}";
+                    hash = "sha256-4lmP8RRHALN8XPKZEW2jfFzwPyux5H33rF3dYxJ9u/U=";
+                  };
+                });
 
-                User = "flood";
-                Group = "users";
+              host = "0.0.0.0";
+              port = 8113;
 
-                StateDirectory = [ "flood" ];
-                StateDirectoryMode = lib.mkDefault 775;
+              extraArgs = [
+                "--auth none"
+                "--qburl http://${cfg.serverConfig.Preferences.WebUI.Address}:${toString cfg.webuiPort}"
+                "--qbuser ${lib.userName}"
+                "--qbpass simplepassword"
+              ];
+            };
 
-                ExecStart = lib.concatStringsSep " " [
-                  (lib.getExe (
-                    # WARN:
-                    # dont forget to delete when will update
-                    pkgs.flood.overrideAttrs rec {
-                      version = "4.12.5";
-                      src = pkgs.fetchFromGitHub {
-                        owner = "jesec";
-                        repo = "flood";
-                        tag = "v${version}";
-                        hash = "sha256-4lmP8RRHALN8XPKZEW2jfFzwPyux5H33rF3dYxJ9u/U=";
-                      };
+            caddy.virtualHosts =
+              lib.genAttrs
+                [
+                  "${lib.hostName}.local"
+                ]
+                (_: {
+                  extraConfig = ''
+                    tls internal
+                    redir /flood /flood/ 308
+                    handle_path /flood/* {
+                      reverse_proxy http://0.0.0.0:${toString port}
                     }
-                  ))
-                  "--auth none"
-                  "--rundir /var/lib/flood"
-                  "--host 0.0.0.0"
-                  "--port ${toString port}"
-                  "--qburl http://${cfg.serverConfig.Preferences.WebUI.Address}:${toString cfg.webuiPort}"
-                  "--qbuser ${lib.userName}"
-                  "--qbpass simplepassword"
-                ];
-              };
-            };
-
-          services.caddy.virtualHosts =
-            lib.genAttrs
-              [
-                "${lib.hostName}"
-              ]
-              (_: {
-                extraConfig = ''
-                  tls internal
-                  redir /flood /flood/ 308
-                  handle_path /flood/* {
-                    reverse_proxy http://127.0.0.1:${toString port}
-                  }
-                '';
-              });
-
-          users = {
-            users.flood = {
-              isSystemUser = true;
-              group = "users";
-            };
+                  '';
+                });
           };
         };
     };

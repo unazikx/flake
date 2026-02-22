@@ -151,25 +151,17 @@ with lib;
                     in
                     {
                       transfer = {
-                        inherit
-                          url
-                          ;
+                        inherit url;
                       };
 
                       seeding = {
                         parameters.filter = "seeding";
-
-                        inherit
-                          url
-                          ;
+                        inherit url;
                       };
 
                       leeching = {
                         parameters.filter = "downloading";
-
-                        inherit
-                          url
-                          ;
+                        inherit url;
                       };
                     };
 
@@ -564,6 +556,38 @@ with lib;
                     links = [
                       (mk "mail.google.com" {
                         title = "Gmail";
+                        icon = "icons.ly/gmail/${base08}";
+                      })
+
+                      (mk "youtube.com" {
+                        title = "Youtube";
+                        icon = "icons.ly/youtube/${base09}";
+                      })
+
+                      (mk "github.com" {
+                        title = "Github";
+                        icon = "icons.ly/github/${base0F}";
+                      })
+
+                      (mk "chat.deepseek.com" {
+                        title = "Deepseek";
+                        icon = "icons.ly/chatbot/${base0D}";
+                      })
+
+                      (mk "claude.ai" {
+                        title = "Claude AI";
+                        icon = "icons.ly/claude/${base09}";
+                      })
+                    ];
+                  }
+
+                  {
+                    title = "Localhost";
+                    same-tab = true;
+                    color = mkHsl "base08";
+                    links = [
+                      (mk "localhost:8113" {
+                        title = "Flood (qbittorrent)";
                         icon = "icons.ly/gmail/${base08}";
                       })
 
