@@ -154,6 +154,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    firefox-addons = {
+      url = "github:petrkozorezov/firefox-addons-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";

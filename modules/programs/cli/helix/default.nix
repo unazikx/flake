@@ -45,9 +45,32 @@
 
           hmMime = lib.mkMime {
             "Helix.desktop" = [
+              "application/json"
+              "application/xml"
+              "application/x-shellscript"
+              "application/x-subrip"
+              "inode/directory"
               "inode/empty"
-              "text/*"
-              "application/*"
+              "text/css"
+              "text/csv"
+              "text/english"
+              "text/html"
+              "text/markdown"
+              "text/plain"
+              "text/vnd.trolltech.linguist"
+              "text/x-c"
+              "text/x-c++"
+              "text/x-c++hdr"
+              "text/x-c++src"
+              "text/x-chdr"
+              "text/x-csrc"
+              "text/x-java"
+              "text/x-makefile"
+              "text/xml"
+              "text/x-moc"
+              "text/x-pascal"
+              "text/x-tcl"
+              "text/x-tex"
             ];
           };
         };

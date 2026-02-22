@@ -37,6 +37,7 @@
               greetd
               helix
               minimal
+              mpd
               mpv
               mumble
               qbittorrent
@@ -46,6 +47,7 @@
               rustedTools
               sopsnix
               swayimg
+              syncthing
               systemMonitor
               tailscale
               telegram

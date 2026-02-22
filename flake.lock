@@ -267,6 +267,27 @@
         "type": "github"
       }
     },
+    "firefox-addons": {
+      "inputs": {
+        "flake-utils": "flake-utils",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1771672757,
+        "narHash": "sha256-ynp40YIO1MlN2gdInBeHfTxeWh/TFyWuGFw22s1DwdQ=",
+        "owner": "petrkozorezov",
+        "repo": "firefox-addons-nix",
+        "rev": "ebce342acab7079c6beb060ef96c52e71928daa0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "petrkozorezov",
+        "repo": "firefox-addons-nix",
+        "type": "github"
+      }
+    },
     "firefox-gnome-theme": {
       "flake": false,
       "locked": {
@@ -413,14 +434,31 @@
         "type": "github"
       },
       "original": {
+        "id": "flake-utils",
+        "type": "indirect"
+      }
+    },
+    "flake-utils_2": {
+      "inputs": {
+        "systems": "systems_3"
+      },
+      "locked": {
+        "lastModified": 1731533236,
+        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
+        "type": "github"
+      },
+      "original": {
         "owner": "numtide",
         "repo": "flake-utils",
         "type": "github"
       }
     },
-    "flake-utils_2": {
+    "flake-utils_3": {
       "inputs": {
-        "systems": "systems_7"
+        "systems": "systems_8"
       },
       "locked": {
         "lastModified": 1710146030,
@@ -697,11 +735,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1771665470,
-        "narHash": "sha256-wTtVY9BUDZl9e2xuXzcgtmK7KImyOIf/z4Kle/FcF6I=",
+        "lastModified": 1771688303,
+        "narHash": "sha256-+/EjDd1VsfRBNpJxrNFwUmlJ6n4Nlvdf1dNS8tbBgT0=",
         "owner": "unazikx",
         "repo": "nix-packages",
-        "rev": "17d2f2d106c6da7cb9ee01a9b49c2b3ce995e7bd",
+        "rev": "410ef80c3f01fc069b94930b57348305819fb152",
         "type": "github"
       },
       "original": {
@@ -846,7 +884,7 @@
         "nixpkgs": [
           "nixpkgs"
         ],
-        "systems": "systems_3"
+        "systems": "systems_4"
       },
       "locked": {
         "lastModified": 1771641457,
@@ -1025,7 +1063,7 @@
         "nixpkgs": [
           "nixpkgs"
         ],
-        "systems": "systems_4"
+        "systems": "systems_5"
       },
       "locked": {
         "lastModified": 1771650101,
@@ -1113,9 +1151,10 @@
         "dns-malw-link": "dns-malw-link",
         "easyeffects-presets": "easyeffects-presets",
         "files": "files",
+        "firefox-addons": "firefox-addons",
         "fjordlauncher": "fjordlauncher",
         "flake-parts": "flake-parts",
-        "flake-utils": "flake-utils",
+        "flake-utils": "flake-utils_2",
         "glide-browser": "glide-browser",
         "home-manager": "home-manager",
         "impermanence": "impermanence",
@@ -1202,7 +1241,7 @@
         "nixpkgs": [
           "nixpkgs"
         ],
-        "systems": "systems_5"
+        "systems": "systems_6"
       },
       "locked": {
         "lastModified": 1771268051,
@@ -1235,7 +1274,7 @@
         "nur": [
           "nur"
         ],
-        "systems": "systems_6",
+        "systems": "systems_7",
         "tinted-foot": "tinted-foot",
         "tinted-kitty": "tinted-kitty",
         "tinted-schemes": "tinted-schemes",
@@ -1347,6 +1386,21 @@
       }
     },
     "systems_7": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
+    "systems_8": {
       "locked": {
         "lastModified": 1681028828,
         "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
@@ -1546,7 +1600,7 @@
     "winapps": {
       "inputs": {
         "flake-compat": "flake-compat_5",
-        "flake-utils": "flake-utils_2",
+        "flake-utils": "flake-utils_3",
         "nix-filter": "nix-filter",
         "nixpkgs": [
           "nixpkgs"
