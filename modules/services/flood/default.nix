@@ -13,6 +13,7 @@
           ...
         }:
         let
+          port = 8113;
           cfg = config.services.qbittorrent;
         in
         {
@@ -58,13 +59,28 @@
                   "--auth none"
                   "--rundir /var/lib/flood"
                   "--host 0.0.0.0"
-                  "--port 8113"
+                  "--port ${toString port}"
                   "--qburl http://${cfg.serverConfig.Preferences.WebUI.Address}:${toString cfg.webuiPort}"
                   "--qbuser ${lib.userName}"
                   "--qbpass simplepassword"
                 ];
               };
             };
+
+          services.caddy.virtualHosts =
+            lib.genAttrs
+              [
+                "${lib.hostName}"
+              ]
+              (_: {
+                extraConfig = ''
+                  tls internal
+                  redir /flood /flood/ 308
+                  handle_path /flood/* {
+                    reverse_proxy http://127.0.0.1:${toString port}
+                  }
+                '';
+              });
 
           users = {
             users.flood = {

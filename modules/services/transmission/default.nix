@@ -12,6 +12,7 @@
           ...
         }:
         let
+          cfg = config.services.transmission;
           savePath = "/media/torrents";
         in
         {
@@ -22,58 +23,75 @@
 
           packages = [ pkgs.own.torque ];
 
-          services.transmission = {
-            enable = true;
-            openFirewall = true;
-            openPeerPorts = true;
-            openRPCPort = true;
+          services = {
+            transmission = {
+              enable = true;
+              openFirewall = true;
+              openPeerPorts = true;
+              openRPCPort = true;
 
-            package = pkgs.transmission_4;
-            webHome = pkgs.flood-for-transmission;
-            downloadDirPermissions = "775";
-            performanceNetParameters = true;
+              package = pkgs.transmission_4;
+              webHome = pkgs.flood-for-transmission;
+              downloadDirPermissions = "775";
+              performanceNetParameters = true;
 
-            settings = {
-              download-dir = savePath;
-              incomplete-dir = savePath + "/temp";
-              umask = "002";
+              settings = {
+                download-dir = savePath;
+                incomplete-dir = savePath + "/temp";
+                umask = "002";
 
-              download-queue-size = 3;
+                download-queue-size = 3;
 
-              start-added-torrents = false;
+                start-added-torrents = false;
 
-              default-trackers = lib.readFile (
-                pkgs.fetchurl {
-                  url = "https://raw.githubusercontent.com/XIU2/TrackersListCollection/refs/heads/master/all.txt";
-                  sha256 = "sha256-3XHcMnBzPaXxjCNGSLpdgqXQA57/xHEwP1dy7k7g8qc=";
-                }
-              );
-              # idk why
+                default-trackers = lib.readFile (
+                  pkgs.fetchurl {
+                    url = "https://raw.githubusercontent.com/XIU2/TrackersListCollection/refs/heads/master/all.txt";
+                    sha256 = "sha256-3XHcMnBzPaXxjCNGSLpdgqXQA57/xHEwP1dy7k7g8qc=";
+                  }
+                );
+                # idk why
 
-              rpc-authentication-required = false;
+                rpc-authentication-required = false;
 
-              rpc-host-whitelist-enabled = true;
-              rpc-host-whitelist = "127.0.0.1,localhost";
+                rpc-host-whitelist-enabled = true;
+                rpc-host-whitelist = "127.0.0.1,localhost";
 
-              rpc-whitelist-enabled = true;
-              rpc-whitelist = "127.0.0.1";
+                rpc-whitelist-enabled = true;
+                rpc-whitelist = "127.0.0.1";
 
-              peer-port-random-on-start = true;
-              peer-limit-per-torrent = 5;
-              upload-slots-per-torrent = 2;
+                peer-port-random-on-start = true;
+                peer-limit-per-torrent = 5;
+                upload-slots-per-torrent = 2;
+              };
+
+              # INFO:
+              # {
+              #   "rpc-username": "yourUser",
+              #   "rpc-password": "password"
+              # }
+              credentialsFile = config.sopsnix."services/transmission";
             };
 
-            # INFO:
-            # {
-            #   "rpc-username": "yourUser",
-            #   "rpc-password": "password"
-            # }
-            credentialsFile = config.sopsnix."services/transmission";
+            services.caddy.virtualHosts =
+              lib.genAttrs
+                [
+                  "${lib.hostName}"
+                ]
+                (_: {
+                  extraConfig = ''
+                    tls internal
+                    redir /transmission /transmission/ 308
+                    handle_path /transmission/* {
+                      reverse_proxy http://127.0.0.1:${toString cfg.settings.rpc-port}
+                    }
+                  '';
+                });
           };
 
           tmp.transmission = {
             "${savePath}".d = {
-              inherit (config.services.transmission)
+              inherit (cfg)
                 user
                 group
                 ;

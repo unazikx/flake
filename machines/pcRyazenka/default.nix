@@ -34,6 +34,7 @@
               firefox
               flood
               gdu
+              glance
               greetd
               helix
               minimal

@@ -8,9 +8,11 @@
         {
           pkgs,
           lib,
+          config,
           ...
         }:
         let
+          port = 8223;
           dir = "/var/lib/torrserver";
         in
         {
@@ -36,11 +38,27 @@
                 ExecStart = ''
                   ${lib.getExe pkgs.own.torrserver} \
                   -d /var/lib/torrserver \
-                  -p 8223
+                  -i ${if config.services.caddy.enable then "0.0.0.0" else "127.0.0.1"}
+                  -p ${toString port}
                 '';
               };
             };
           };
+
+          services.caddy.virtualHosts =
+            lib.genAttrs
+              [
+                "${lib.hostName}"
+              ]
+              (_: {
+                extraConfig = ''
+                  tls internal
+                  redir /torrserver /torrserver/ 308
+                  handle_path /torrserver/* {
+                    reverse_proxy http://127.0.0.1:${toString port}
+                  }
+                '';
+              });
 
           tmp.qbittorrent = {
             "${dir}/temp".d = {
