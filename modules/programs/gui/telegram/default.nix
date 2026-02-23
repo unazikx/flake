@@ -61,8 +61,7 @@
                   "run ${
                     lib.getExe (
                       pkgs.own.walogram.override {
-                        outputDir = config.hm.xdg.cacheHome;
-                        backgroundImage = config.stylix.image;
+                        cacheDir = config.hm.xdg.cacheHome;
                         colors = config.lib.stylix.colors.withHashtag;
                       }
                     )
