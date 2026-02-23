@@ -13,6 +13,7 @@
         {
           services.caddy = {
             enable = true;
+            openFirewall = true;
 
             virtualHosts =
               lib.genAttrs
