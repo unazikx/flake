@@ -44,11 +44,14 @@
             caddy.virtualHosts =
               lib.genAttrs
                 [
+                  "glance.${lib.hostName}.local"
                   "${lib.hostName}.local"
+                  "${lib.hostName}.zebu-salmon.ts.net"
                 ]
                 (_: {
                   extraConfig = ''
                     tls internal
+                    encode zstd gzip
                     reverse_proxy http://0.0.0.0:${toString cfg.settings.server.port}
                   '';
                 });

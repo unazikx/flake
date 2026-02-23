@@ -17,11 +17,13 @@
           cfg = config.services.qbittorrent;
         in
         {
-          imports = lib.attrValues {
-            inherit (partsConfig.nixosModules)
-              qbittorrent
-              ;
-          };
+          imports =
+            (lib.attrValues {
+              inherit (partsConfig.nixosModules)
+                qbittorrent
+                ;
+            })
+            ++ [ ./module.nix ];
 
           persist.directories = [ "/var/lib/flood" ];
 
@@ -57,15 +59,13 @@
             caddy.virtualHosts =
               lib.genAttrs
                 [
-                  "${lib.hostName}.local"
+                  "flood.${lib.hostName}.local"
                 ]
                 (_: {
                   extraConfig = ''
                     tls internal
-                    redir /flood /flood/ 308
-                    handle_path /flood/* {
-                      reverse_proxy http://0.0.0.0:${toString port}
-                    }
+                    encode zstd gzip
+                    reverse_proxy http://0.0.0.0:${toString port}
                   '';
                 });
           };

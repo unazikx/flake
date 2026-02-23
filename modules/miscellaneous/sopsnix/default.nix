@@ -47,6 +47,7 @@
                   "services/minecraft-main"
                   "services/glance"
                   "services/lastfm"
+                  "services/vaultwarden"
 
                   "accounts/googleClient/id"
                   "accounts/googleClient/secret"

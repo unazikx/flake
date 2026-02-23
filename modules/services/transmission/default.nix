@@ -76,11 +76,12 @@
             services.caddy.virtualHosts =
               lib.genAttrs
                 [
-                  "${lib.hostName}.local"
+                  "transmission.${lib.hostName}.local"
                 ]
                 (_: {
                   extraConfig = ''
                     tls internal
+                    encode zstd gzip
                     redir /transmission /transmission/ 308
                     handle_path /transmission/* {
                       reverse_proxy http://0.0.0.0:${toString cfg.settings.rpc-port}
