@@ -22,7 +22,7 @@
                 rocketAddress = "0.0.0.0";
                 rocketPort = 8311;
 
-                signupsAllowed = false;
+                signupsAllowed = true;
                 invitationsAllowed = false;
                 webVaultEnabled = true;
 
@@ -51,6 +51,11 @@
           systemd.services.vaultwarden.serviceConfig = {
             StateDirectory = lib.mkForce (baseNameOf cfg.config.dataFolder);
           };
+
+          networking.firewall = lib.genAttrs [
+            "allowedTCPPorts"
+            "allowedTCPPorts"
+          ] (_: [ cfg.config.rocketPort ]);
         };
     };
 }
