@@ -53,11 +53,24 @@ in
     systemd.services.flood = {
       path = [ pkgs.mediainfo ];
 
+      after = [ "network.target" ];
+      wantedBy = [ "multi-user.target" ];
+
       serviceConfig = {
         Type = "simple";
 
-        User = "flood";
-        Group = "flood";
+        DynamicUser = true;
+        LockPersonality = true;
+        NoNewPrivileges = true;
+        PrivateDevices = true;
+        PrivateTmp = true;
+        ProtectClock = true;
+        ProtectControlGroups = true;
+        ProtectHome = true;
+        ProtectHostname = true;
+        ProtectKernelLogs = true;
+        ProtectKernelModules = true;
+        ProtectKernelTunables = true;
 
         StateDirectory = [ (baseNameOf cfg.runDir) ];
         StateDirectoryMode = lib.mkDefault 775;
