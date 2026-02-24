@@ -7,7 +7,6 @@
     {
       nixosModules.${baseNameOf ./.} =
         {
-          pkgs,
           lib,
           config,
           ...
@@ -31,19 +30,6 @@
             flood = {
               enable = true;
               openFirewall = true;
-
-              package =
-                # WARN:
-                # dont forget to delete when will update
-                pkgs.flood.overrideAttrs (old: {
-                  version = "4.12.5";
-                  src = pkgs.fetchFromGitHub {
-                    owner = "jesec";
-                    repo = "flood";
-                    tag = "v${old.version}";
-                    hash = "sha256-4lmP8RRHALN8XPKZEW2jfFzwPyux5H33rF3dYxJ9u/U=";
-                  };
-                });
 
               host = "0.0.0.0";
               port = 8113;
