@@ -56,7 +56,6 @@
               translateShell
               trashCmd
               tuir
-              vaultwarden
               yazi
               zapret
               ;

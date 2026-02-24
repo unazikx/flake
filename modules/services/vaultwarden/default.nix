@@ -42,7 +42,6 @@
                   extraConfig = ''
                     tls internal
                     encode zstd gzip
-                    import admin_redir
                     reverse_proxy http://${cfg.config.rocketAddress}:${toString cfg.config.rocketPort}
                   '';
                 });
@@ -52,10 +51,7 @@
             StateDirectory = lib.mkForce (baseNameOf cfg.config.dataFolder);
           };
 
-          networking.firewall = lib.genAttrs [
-            "allowedTCPPorts"
-            "allowedTCPPorts"
-          ] (_: [ cfg.config.rocketPort ]);
+          networking.firewall."allowedTCPPorts" = [ cfg.config.rocketPort ];
         };
     };
 }
