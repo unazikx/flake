@@ -48,6 +48,7 @@
               rezkaFzf
               rustedTools
               sopsnix
+              spotify
               swayimg
               syncthing
               systemMonitor

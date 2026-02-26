@@ -33,15 +33,16 @@
               enabledSnippets
               ;
 
-            wayland = true;
-
             # WARN:
             # # doesnt build
-            # windowManagerPatch = true;
+            windowManagerPatch = true;
+            wayland = true;
 
             colorScheme = "custom";
             customColorScheme = with config.lib.stylix.colors; {
               main = base00;
+              main-elevated = base02;
+
               sidebar = base01;
               player = base00;
               card = base00;
@@ -72,6 +73,8 @@
               tab-active = base04;
               banner = base03;
               misc = base02;
+              equalizer = base0B;
+              highlight-elevated = base03;
             };
           };
         };
