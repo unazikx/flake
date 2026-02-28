@@ -51,6 +51,18 @@ with inputs;
       ouch = p.ouch.override {
         enableUnfree = true;
       };
+
+      spotify-player = p.spotify-player.override {
+        withAudioBackend = "pulseaudio";
+        withStreaming = true;
+        withDaemon = true;
+        withMediaControl = true;
+
+        withImage = false;
+        withNotify = false;
+        withSixel = false;
+        withFuzzy = false;
+      };
     }
   )
 ]

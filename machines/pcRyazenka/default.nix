@@ -49,6 +49,7 @@
               rustedTools
               sopsnix
               spotify
+              spotify-player
               swayimg
               syncthing
               systemMonitor

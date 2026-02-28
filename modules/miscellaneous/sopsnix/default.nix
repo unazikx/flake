@@ -40,6 +40,7 @@
                   "tokens/github"
                   "tokens/github-nurl"
                   "tokens/viu"
+                  "tokens/spotify-player"
 
                   "services/windows"
                   "services/transmission"

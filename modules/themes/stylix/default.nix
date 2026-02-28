@@ -32,12 +32,12 @@
               kde.enable = false;
               mako.enable = false;
               mpv.enable = false;
+              nixcord.enable = true;
               qt.enable = false;
               spicetify.enable = false;
+              spotify-player.enable = false;
               tofi.enable = false;
               waybar.enable = false;
-
-              nixcord.enable = true;
             }
             // (lib.genAttrs
               [
