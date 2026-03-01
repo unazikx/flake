@@ -79,6 +79,8 @@
                 force = true;
               };
 
+              userChrome = lib.readFile pkgs.own.firefox-themes.little-fox;
+
               userContent =
                 with config.lib.stylix.colors.withHashtag;
                 # css

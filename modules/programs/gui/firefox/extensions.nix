@@ -25,6 +25,7 @@ lib.attrValues (
       torrserver-adder
       traduzir-paginas-web
       ublock-origin
+      voice-over-translation
       youtube-addon
       ;
   }
