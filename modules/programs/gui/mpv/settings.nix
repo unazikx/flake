@@ -39,7 +39,7 @@ in
 
   config = {
     fs = "yes";
-    osc = "yes";
+    osc = "no";
 
     glsl-shaders = toString (
       if (lib.configurationName == "pcRyazenka") then (anime4k.desktopAutoStart) else null
