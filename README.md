@@ -10,4 +10,4 @@
 |   **./modules** | contains _nixosModules_ and configs         |
 |  **./packages** | contains _self made packages_               |
 
-### [Old repository](https://github.com/unazikx/flake)
+### [Old repository](https://github.com/unazikx/flakeOld)
