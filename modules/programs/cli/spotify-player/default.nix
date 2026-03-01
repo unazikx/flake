@@ -16,9 +16,9 @@
             {
               enable = true;
             }
-            // import ./settings.nix {
+            // (import ./settings.nix {
               inherit pkgs lib config;
-            }
+            })
           );
         };
     };

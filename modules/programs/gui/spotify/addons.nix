@@ -19,7 +19,7 @@ in
       ''
         * { font-family: "${config.stylix.fonts.sansSerif.name}" !important }
 
-        .nBGzYhSIK1A7qANmTnpk { background-color: ${base01}; }
+        /* .nBGzYhSIK1A7qANmTnpk { background-color: ${base01}; } */
       '';
   };
 
@@ -28,7 +28,6 @@ in
       adblock
       beautifulLyrics
       betterGenres
-      fullAppDisplayMod
       keyboardShortcut
       seekSong
       ;
@@ -41,9 +40,6 @@ in
       fixDjIcon
       fixLikedButton
       fixLikedIcon
-      fixListenTogetherButton
-      fixListeningOn
-      fixMainViewWidth
       fixNowPlayingIcon
       fixPlaylistAndFolderPosition
       fixPlaylistHover
@@ -58,12 +54,9 @@ in
       hidePlayingGif
       hideProfileUsername
       hideSidebarScrollbar
-      leftAlignedHeartIcons
       moreVisibleUnplayableTracks
-      pointer
       prettyLyrics
       queueTopSidePanel
-      removeConnectBar
       removeGradient
       removeTheArtistsAndCreditsSectionsFromTheSidebar
       removeTopSpacing
