@@ -38,7 +38,6 @@
                   "tokens/cachix"
                   "tokens/discord"
                   "tokens/github"
-                  "tokens/github-nurl"
                   "tokens/viu"
                   "tokens/spotify-player"
 

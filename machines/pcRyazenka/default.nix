@@ -38,6 +38,7 @@
               glance
               greetd
               helix
+              hytale
               minimal
               mpd
               mpv

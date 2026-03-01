@@ -587,6 +587,26 @@
         "type": "github"
       }
     },
+    "hytale": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1772325766,
+        "narHash": "sha256-H0dUttgJJcJInjiQgxN1zoUZ6bnesDkF2vFr/ip+Ts8=",
+        "owner": "unazikx",
+        "repo": "hytale-launcher-nix",
+        "rev": "f98491dbbd89b3460c68da5805a0f1256c5f004e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "unazikx",
+        "repo": "hytale-launcher-nix",
+        "type": "github"
+      }
+    },
     "impermanence": {
       "inputs": {
         "home-manager": [
@@ -878,6 +898,29 @@
         "type": "github"
       }
     },
+    "nix-gaming": {
+      "inputs": {
+        "flake-parts": [
+          "flake-parts"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1772332921,
+        "narHash": "sha256-sEOiUidJkaap/AhzhjTOyN20/njslqzxnY4bSZHyg1k=",
+        "owner": "fufexan",
+        "repo": "nix-gaming",
+        "rev": "1d1daec51e36181869b2279826a1c2a91c293e33",
+        "type": "github"
+      },
+      "original": {
+        "owner": "fufexan",
+        "repo": "nix-gaming",
+        "type": "github"
+      }
+    },
     "nix-minecraft": {
       "inputs": {
         "flake-compat": "flake-compat_2",
@@ -1157,6 +1200,7 @@
         "flake-utils": "flake-utils_2",
         "glide-browser": "glide-browser",
         "home-manager": "home-manager",
+        "hytale": "hytale",
         "impermanence": "impermanence",
         "import-tree": "import-tree",
         "mangowc": "mangowc",
@@ -1167,6 +1211,7 @@
         "niri-flake": "niri-flake",
         "nix-cursors": "nix-cursors",
         "nix-flatpak": "nix-flatpak",
+        "nix-gaming": "nix-gaming",
         "nix-minecraft": "nix-minecraft",
         "nix-topology": "nix-topology",
         "nixcord": "nixcord",

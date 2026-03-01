@@ -72,8 +72,17 @@
             # > githubToken.age | githubToken.yaml
             # access-tokens = github.com=23ac...b289
             extraOptions = ''
-              !include ${config.sopsnix."tokens/github"}
+              !include ${config.sopstem."nixAccessTokens"}
             '';
+          };
+
+          sops.templates = {
+            "nixAccessTokens" = {
+              owner = lib.userName;
+              content = ''
+                access-tokens = github.com=${config.sopsplace."tokens/github"}
+              '';
+            };
           };
         };
     };

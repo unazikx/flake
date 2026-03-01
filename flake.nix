@@ -96,11 +96,11 @@
       inputs.flake-parts.follows = "flake-parts";
     };
 
-    # nix-gaming = {
-    #   url = "github:fufexan/nix-gaming";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    #   inputs.flake-parts.follows = "flake-parts";
-    # };
+    nix-gaming = {
+      url = "github:fufexan/nix-gaming";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-parts.follows = "flake-parts";
+    };
 
     musnix = {
       url = "github:musnix/musnix";
@@ -170,10 +170,10 @@
       inputs.flake-parts.follows = "flake-parts";
     };
 
-    # hytale = {
-    #   url = "github:JPyke3/hytale-launcher-nix";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    hytale = {
+      url = "github:unazikx/hytale-launcher-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     fjordlauncher = {
       url = "github:unmojang/FjordLauncher";

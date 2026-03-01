@@ -65,7 +65,7 @@
                   ];
               };
 
-              # platformOptimizations.enable = true;
+              platformOptimizations.enable = true;
             };
 
             gamescope = {

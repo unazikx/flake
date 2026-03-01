@@ -25,11 +25,14 @@
             "command-not-found"
           ];
 
-          environment.systemPackages = with pkgs; [
-            uutils-coreutils-noprefix
-            uutils-findutils
-            uutils-diffutils
-          ];
+          environment = {
+            defaultPackages = lib.mkForce [ ];
+            systemPackages = with pkgs; [
+              uutils-coreutils-noprefix
+              uutils-findutils
+              uutils-diffutils
+            ];
+          };
 
           documentation = turnOff [
             "dev"

@@ -25,7 +25,7 @@
               # bash
               ''
                 export CACHIX_AUTH_TOKEN="$(cat ${config.sopsnix."tokens/cachix"})"
-                export GITHUB_TOKEN="$(cat ${config.sopsnix."tokens/github-nurl"})"
+                export GITHUB_TOKEN="$(cat ${config.sopsnix."tokens/github"})"
               '';
 
             shellAliases = {

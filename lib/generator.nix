@@ -14,9 +14,9 @@ let
     agenix.nixosModules.default
     disko.nixosModules.default
     nix-flatpak.nixosModules.nix-flatpak
-    # nix-gaming.nixosModules.pipewireLowLatency
-    # nix-gaming.nixosModules.platformOptimizations
-    # nix-gaming.nixosModules.wine
+    nix-gaming.nixosModules.pipewireLowLatency
+    nix-gaming.nixosModules.platformOptimizations
+    nix-gaming.nixosModules.wine
     home-manager.nixosModules.home-manager
     impermanence.nixosModules.impermanence
     mangowc.nixosModules.mango

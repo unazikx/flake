@@ -22,7 +22,7 @@ with inputs;
       agenix = agenix.packages.${system}.default;
       cursors = nix-cursors.packages.${system};
       gaming = nix-gaming.packages.${system};
-      # hytale = hytale.packages.${system}.default;
+      hytale = hytale.packages.${system}.default;
       own = my-own-packages.legacyPackages.${system};
       spicetify = spicetify-nix.legacyPackages.${system};
       viu = viu.packages.${system}.default;
