@@ -50,12 +50,13 @@
                 # videos = "/Videos";
 
                 # publicShare = null;
-                # templates = null;
+                templates = null;
 
                 extraConfig = {
                   SCREENSHOTS = config.hm.xdg.userDirs.pictures + "/screenshots";
                   FLAKE = toString lib.flakeDir;
                   TORRENTS = config.services.qbittorrent.serverConfig.BitTorrent.Session.DefaultSavePath;
+                  PASSWORDS = config.hm.xdg.userDirs.publicShare + "/passwords";
                 };
               };
 

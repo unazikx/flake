@@ -38,14 +38,14 @@
                   (lib.syncthing.mkFolder {
                     name = "notes";
                     id = "kudfyfcmxhtpt8ta";
-                    path = "${config.hm.xdg.userDirs.documents}/notes";
+                    path = "${config.hm.xdg.userDirs.publicShare}/notes";
                     devices = lib.syncthing.mkFilter devices [ ];
                   })
 
                   (lib.syncthing.mkFolder {
                     name = "tempbin";
                     id = "yew4af7dtnmnuwdr";
-                    path = "${config.hm.xdg.userDirs.desktop}/tempbin";
+                    path = "${config.hm.xdg.userDirs.publicShare}/tempbin";
                     devices = lib.syncthing.mkFilter devices [ ];
                   })
                 ];

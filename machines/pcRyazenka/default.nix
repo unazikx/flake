@@ -46,6 +46,7 @@
               qbittorrent
               qutebrowser
               rbw
+              keepassxc
               rezkaFzf
               rustedTools
               sopsnix

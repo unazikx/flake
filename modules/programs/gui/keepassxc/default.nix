@@ -16,6 +16,10 @@
           ...
         }:
         let
+          inherit (config.hm.xdg.userDirs.extraConfig)
+            PASSWORDS
+            ;
+
           cfg = config.hm.programs.keepassxc;
 
           ini = pkgs.formats.ini { };
@@ -25,24 +29,21 @@
             programs.keepassxc = {
               enable = true;
 
-              settings = import ./settings.nix;
+              settings = import ./settings.nix {
+                inherit config;
+              };
             };
 
             xdg.cacheFile = {
               "keepassxc/keepassxc.ini".source = ini.generate "keepassxc-config.ini" {
-                General =
-                  let
-                    pathToDir = "${config.hm.xdg.userDirs.documents}/passwords";
-                  in
-                  ({
-                    LastDir = pathToDir;
-                  }
-                  # // (lib.genAttrs [
-                  #   "LastActiveDatabase"
-                  #   "LastDatabases"
-                  #   "LastOpenedDatabases"
-                  # ] "${pathToDir}/db.kdbx")
-                  );
+                General = {
+                  LastDir = PASSWORDS;
+                }
+                // (lib.genAttrs [
+                  "LastActiveDatabase"
+                  "LastDatabases"
+                  "LastOpenedDatabases"
+                ] (_: "${PASSWORDS}/db.kdbx"));
 
                 GUI = {
                   GroupSplitterState = "0, 965";
@@ -54,6 +55,8 @@
               };
             };
 
+            # INFO:
+            # autolaunch in tray
             systemd.user.services.keepassxc-tray = {
               Unit = {
                 Description = cfg.package.meta.description;
@@ -79,7 +82,7 @@
               (lib.syncthing.mkFolder {
                 name = "keepassdb";
                 id = "463hjpdhbmxnfbh4";
-                path = "${config.hm.xdg.userDirs.documents}/passwords";
+                path = PASSWORDS;
                 devices = lib.syncthing.mkFilter config.hm.services.syncthing.settings.devices [ ];
               })
             ];

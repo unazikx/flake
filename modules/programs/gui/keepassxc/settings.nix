@@ -1,4 +1,9 @@
 {
+  config,
+  ...
+}:
+
+{
   Browser = {
     Browser_AllowLocalhostWithPasskeys = true;
     BrowserType = "Firefox";
@@ -25,7 +30,13 @@
     MinimizeToTray = true;
     MonospaceNotes = true;
     ShowTrayIcon = true;
-    TrayIconAppearance = "monochrome-dark";
+    TrayIconAppearance =
+      if (config.stylix.polarity == "dark") then
+        "monochrome-dark"
+      else if (config.stylix.polarity == "light") then
+        "monochrome-light"
+      else
+        "colorful";
   };
 
   PasswordGenerator = {
