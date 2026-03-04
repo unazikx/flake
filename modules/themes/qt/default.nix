@@ -1,3 +1,7 @@
+# INFO:
+# stylix have an weird qt
+# so i made own
+
 {
   flake =
     {

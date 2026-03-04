@@ -1,3 +1,10 @@
+# INFO:
+# best shell
+# needs upgrade/update
+#
+# WARN:
+# integrates straship
+
 {
   flake =
     {

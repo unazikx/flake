@@ -1,3 +1,9 @@
+# INFO:
+# one of the best browsers ever
+#
+# WARN:
+# update extensions everytime when u remember it
+
 {
   flake =
     {

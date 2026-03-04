@@ -1,3 +1,6 @@
+# INFO:
+# just read books from various sources
+
 {
   flake =
     {

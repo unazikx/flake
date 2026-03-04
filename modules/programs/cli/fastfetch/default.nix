@@ -1,3 +1,10 @@
+# INFO:
+# for another presets use
+# > fastfetch -c preset.json
+#
+# for getting all presets use:
+# > fastfetch --list-presets
+
 {
   flake =
     {

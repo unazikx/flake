@@ -1,3 +1,6 @@
+# INFO:
+# modded games cool manager
+
 {
   flake =
     {

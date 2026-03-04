@@ -1,3 +1,7 @@
+# INFO:
+# best terminal
+# without tabs and multiplexer
+
 {
   flake =
     {

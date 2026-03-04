@@ -1,3 +1,6 @@
+# INFO:
+# list ur contacts and edit/sync
+
 {
   flake =
     {

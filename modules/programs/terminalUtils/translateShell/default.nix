@@ -1,3 +1,8 @@
+# INFO:
+#
+# > tr "FUCK NIXOS"
+#     Нахуй Никсос
+
 {
   flake =
     {

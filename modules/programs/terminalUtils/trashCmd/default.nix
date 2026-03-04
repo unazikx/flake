@@ -1,3 +1,10 @@
+# INFO:
+# for clear trash use
+# > trash-empty
+#
+# WARN:
+# system rm replaced by trash-put
+
 {
   flake =
     {

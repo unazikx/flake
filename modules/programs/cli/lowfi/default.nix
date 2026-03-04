@@ -1,3 +1,11 @@
+# INFO:
+# web radio for lofi girl and links
+#
+# create .txt files in ./
+# for getting aliases:
+#   ./synthboy.txt -> lowfi-synthbow
+#   ./rockMetal.txt -> lowfi-rockMetal
+
 {
   flake =
     {

@@ -1,3 +1,20 @@
+# WARN: not finished
+# [X] basic config
+# [X] secrets list (pizdec)
+# [X] templates (nahuya? cul thing, fr)
+
+# INFO:
+# for encrypt existed file use:
+# > sops -e -i secrets/users/myuser/github.yaml
+#
+# to edit encrypted file use:
+# > sops secrets/<name>.env
+#
+# to rekey use:
+# > sops updatekeys secrets/<name>.env
+#
+# for additional info see ../../../.sops.yaml
+
 {
   flake =
     {
@@ -13,16 +30,22 @@
           ...
         }:
         {
-          imports = [
-            ./module.nix
-          ];
+          # INFO:
+          # config.sopsnix.<name> ->
+          #       ^ config.sops.secrets.<name>.path
+          # config.sopstem.<name> ->
+          #       ^ config.sops.templates.<name>.path
+          # config.sopsplace.<name> ->
+          #       ^ config.sops.placeholder.<name>
+          imports = [ ./module.nix ];
 
-          environment.systemPackages = with pkgs; [
-            sops
-            age
-
-            ssh-to-age
-          ];
+          environment.systemPackages = lib.attrValues {
+            inherit (pkgs)
+              sops
+              age
+              ssh-to-age
+              ;
+          };
 
           sops = {
             secrets =
@@ -47,6 +70,7 @@
                   "services/minecraft-main"
                   "services/glance"
                   "services/lastfm"
+                  "services/librefm"
                   "services/vaultwarden"
 
                   "accounts/googleClient/id"

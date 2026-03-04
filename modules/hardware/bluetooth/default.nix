@@ -1,12 +1,13 @@
+# INFO:
+# module for bluetooth
+# optimizations
+
 {
   flake =
     {
       ...
     }:
     {
-      # INFO:
-      # module for bluetooth
-      # optimizations
       nixosModules.${baseNameOf ./.} =
         {
           pkgs,

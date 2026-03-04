@@ -1,3 +1,7 @@
+# INFO:
+# best out-from-box text editor
+# i made alias 'e' it is '$EDITOR'
+
 {
   flake =
     {

@@ -1,3 +1,10 @@
+# INFO:
+# osd for various actions
+#
+# audio
+# > foo | bar > /run/user/1000/wob.sock
+# (or $WOBSOCK)
+
 {
   flake =
     {

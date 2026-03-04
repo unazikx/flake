@@ -1,3 +1,7 @@
+# INFO:
+# idk auto sets cpu frequenct
+# and max tick
+
 {
   flake =
     {

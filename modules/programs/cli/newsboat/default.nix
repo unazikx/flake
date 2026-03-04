@@ -1,3 +1,7 @@
+# INFO:
+# rss feed reader
+# for youtube feeds use pkg yt-id
+
 {
   flake =
     {

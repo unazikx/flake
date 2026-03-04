@@ -1,3 +1,7 @@
+# INFO:
+# just simple bar for you
+# nothing garbage
+
 {
   flake =
     {

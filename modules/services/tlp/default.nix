@@ -1,3 +1,6 @@
+# INFO:
+# idk...fr...just to be
+
 {
   flake =
     {

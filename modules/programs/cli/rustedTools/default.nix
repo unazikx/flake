@@ -1,3 +1,6 @@
+# INFO:
+# rusted replacement for much software
+
 {
   flake =
     {
@@ -11,16 +14,28 @@
           ...
         }:
         {
-          environment.shellAliases = {
-            cp = lib.getExe' pkgs.fuc "cpz";
+          environment = {
+            systemPackages = lib.attrValues {
+              inherit (pkgs)
+                uutils-coreutils-noprefix
+                uutils-findutils
+                uutils-diffutils
+                ;
+            };
+
+            shellAliases = {
+              cp = lib.getExe' pkgs.fuc "cpz";
+            };
           };
 
-          packages = with pkgs; [
-            hunt
-            ripgrep-all
-            sd
-            jq
-          ];
+          packages = lib.attrValues {
+            inherit (pkgs)
+              hunt
+              ripgrep-all
+              sd
+              jq
+              ;
+          };
 
           hm = {
             home.shellAliases = {

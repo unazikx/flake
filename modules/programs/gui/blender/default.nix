@@ -1,3 +1,6 @@
+# INFO:
+# 3d modeling, montage and rendering
+
 {
   flake =
     {

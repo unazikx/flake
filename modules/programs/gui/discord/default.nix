@@ -1,3 +1,7 @@
+# WARN:
+# it will be very very long (6~ gb for 20.0)
+# kdenlive is shit
+
 {
   flake =
     {

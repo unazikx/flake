@@ -1,3 +1,7 @@
+# INFO:
+# disk usage from directory
+# > gdu /path/to/path
+
 {
   flake =
     {

@@ -1,3 +1,6 @@
+# INFO:
+# best gui file manaager
+
 {
   flake =
     {

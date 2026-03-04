@@ -1,12 +1,13 @@
+# INFO:
+# module for amdcpu
+# optimizations
+
 {
   flake =
     {
       ...
     }:
     {
-      # INFO:
-      # module for amdcpu
-      # optimizations
       nixosModules.${baseNameOf ./.} =
         {
           lib,

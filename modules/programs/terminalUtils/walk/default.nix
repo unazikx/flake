@@ -1,3 +1,14 @@
+# INFO:
+# ls and cd replacement
+# kekw
+#
+# INFO:
+# fuzzy: write word to find file
+# escape: exit frokm walk with cd to selected dir
+# backspace: for cd ..
+# space: for preview dirs/files
+# enter: open file/enter to dir
+
 {
   flake =
     {

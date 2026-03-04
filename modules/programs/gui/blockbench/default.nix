@@ -1,3 +1,7 @@
+# INFO:
+# best texture/skin maker
+# and minecraft animations
+
 {
   flake =
     {

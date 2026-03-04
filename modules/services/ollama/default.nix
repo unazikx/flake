@@ -1,3 +1,6 @@
+# INFO:
+# run AI models locally
+
 {
   flake =
     {

@@ -1,3 +1,8 @@
+# INFO:
+# local media player
+# use frontend for listen music
+# https://wiki.archlinux.org/title/Music_Player_Daemon#Clients
+
 {
   flake =
     {
@@ -64,6 +69,11 @@
                 "last.fm" = {
                   passwordFile = config.sopsnix."services/lastfm";
                   username = "azikx6"; # cause azikx was taken already... eh...
+                };
+
+                "libre.fm" = {
+                  passwordFile = config.sopsnix."services/lastfm";
+                  username = "_azikx";
                 };
               };
             };

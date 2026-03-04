@@ -1,3 +1,6 @@
+# INFO:
+# status your system with fps
+
 {
   flake =
     {

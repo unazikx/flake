@@ -1,3 +1,7 @@
+# INFO:
+# selector for DE and WM
+# change user and shutdown/reboot
+
 {
   flake =
     {

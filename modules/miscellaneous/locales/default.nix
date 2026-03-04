@@ -1,3 +1,7 @@
+# INFO:
+# basis
+# with additioanl ntp servers for Russia
+
 {
   flake =
     {

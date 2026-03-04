@@ -1,3 +1,6 @@
+# INFO:
+# watch torrents when it downloads
+
 {
   flake =
     {
@@ -8,7 +11,6 @@
         {
           pkgs,
           lib,
-          config,
           ...
         }:
         let

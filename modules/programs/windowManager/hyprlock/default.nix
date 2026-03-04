@@ -1,3 +1,6 @@
+# INFO:
+# beauty lockscreen
+
 {
   flake =
     {

@@ -1,3 +1,7 @@
+# INFO:
+# framework for colorize ALL system
+# cool colors, i lova rainbow
+
 {
   flake =
     {

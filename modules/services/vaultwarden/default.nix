@@ -1,3 +1,9 @@
+# INFO:
+# completly anonymous password manager
+# use: Keyguard (android)
+#      rbw (linux)
+#      bitwarden addons (firefox)
+
 {
   flake =
     {

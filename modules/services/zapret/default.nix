@@ -1,13 +1,12 @@
+# INFO:
+# works zapret presets for youtube and discord
+
 {
   flake =
     {
       ...
     }:
     {
-      # INFO:
-      # or you can use
-      # https://github.com/kotudemo/zapret-presets
-      # ../zapretPresets
       nixosModules.${baseNameOf ./.} =
         {
           ...

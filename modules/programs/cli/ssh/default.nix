@@ -1,3 +1,8 @@
+# INFO:
+# for generating ssh key use
+# > ssh-keygen
+# then watch check ~/.ssh/id_ed25519.pub
+
 {
   flake =
     {

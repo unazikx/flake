@@ -1,3 +1,6 @@
+# WARN:
+# use wleave pls
+
 {
   flake =
     {

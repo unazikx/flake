@@ -1,3 +1,7 @@
+# INFO:
+# bitwarden cli client
+# rbw-fzf is frontend for rbw
+
 {
   flake =
     {

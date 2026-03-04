@@ -1,3 +1,7 @@
+# INFO:
+# blue filter
+# for eyes saver
+
 {
   flake =
     {

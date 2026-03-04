@@ -1,3 +1,9 @@
+# INFO:
+# best video player
+#
+# WARN:
+# by default anime4k is enabled
+
 {
   flake =
     {

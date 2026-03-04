@@ -1,3 +1,8 @@
+# INFO:
+# i replaced z for cd
+# > cd /etc/nixos/machines/pcRyazenka
+# > cd pcRyaz<ENTER>
+
 {
   flake =
     {

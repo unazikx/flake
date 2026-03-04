@@ -1,3 +1,10 @@
+# WARN: !!!!!!
+# VERY VERY UNSTABLE BROWSER
+#
+# INFO:
+# if u cant login Google use this
+# :set -u https://accounts.google.com/* content.headers.user_agent "Mozilla/5.0 ({os_info}; rv:135.0) Gecko/20100101 Firefox/135"
+# it should be by default
 {
   flake =
     {
@@ -25,15 +32,7 @@
             programs.qutebrowser = {
               enable = true;
               package = pkgs.qutebrowser;
-            }
-            // import ./settings.nix {
-              inherit
-                pkgs
-                lib
-                config
-                ;
-            }
-            // {
+
               searchEngines = {
                 DEFAULT = "https://www.google.com/search?q={}";
                 _4get = "https://4get.nadeko.net/web?s={}";
@@ -45,13 +44,14 @@
                   lib
                   ;
               };
-
-              greasemonkey = import ./plugins.nix {
-                inherit
-                  pkgs
-                  ;
-              };
-            };
+            }
+            // (import ./settings.nix {
+              inherit
+                pkgs
+                lib
+                config
+                ;
+            });
 
             xdg.mimeApps.associations.removed = lib.genAttrs [
               "image/avif"

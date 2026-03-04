@@ -1,3 +1,7 @@
+# INFO:
+# added registry bases on inputs
+# and overlays
+
 {
   flake =
     {

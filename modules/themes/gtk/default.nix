@@ -1,3 +1,6 @@
+# INFO:
+# gtk styling and settings
+
 {
   flake =
     {
@@ -12,9 +15,9 @@
         let
           polarity =
             dark: light:
-            if config.stylix.polarity == "dark" then
+            if (config.stylix.polarity == "dark") then
               dark
-            else if config.stylix.polarity == "light" then
+            else if (config.stylix.polarity == "light") then
               light
             else
               dark;

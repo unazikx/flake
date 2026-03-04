@@ -57,7 +57,7 @@
     };
 
     copy_command = {
-      command = lib.getExe pkgs.wl-clipboard;
+      command = lib.getExe' pkgs.wl-clipboard "wl-copy";
       args = [ ];
     };
 

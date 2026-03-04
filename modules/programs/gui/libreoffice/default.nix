@@ -1,3 +1,7 @@
+# INFO:
+# good office for home
+# analog ms office
+
 {
   flake =
     {

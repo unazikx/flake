@@ -1,3 +1,7 @@
+# INFO:
+# factory maker
+# and tower defense, very cool
+
 {
   flake =
     {

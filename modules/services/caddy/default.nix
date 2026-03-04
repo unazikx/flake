@@ -1,3 +1,10 @@
+# INFO:
+# reverse proxy and server base
+# with tls/ssl certificate
+#
+# https://service.hostName.local
+# > http://localhost:port
+
 {
   flake =
     {

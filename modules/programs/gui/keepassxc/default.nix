@@ -1,3 +1,7 @@
+# INFO:
+# application for password databse
+# only local, but if u have syncthing, sync it
+
 {
   flake =
     {

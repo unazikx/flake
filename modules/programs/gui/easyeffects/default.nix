@@ -1,3 +1,12 @@
+# INFO:
+# used for sound perfecting
+# especcialy on my ThinkpadT14
+# just cool
+#
+# WARN:
+# used old...gtk version
+# cause qt isnt cool
+
 {
   flake =
     {

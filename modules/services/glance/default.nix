@@ -1,3 +1,9 @@
+# INFO:
+# best dashboard
+# fr, i use it everyday
+#
+# ...нет напиздел, еще делаю
+
 {
   flake =
     {

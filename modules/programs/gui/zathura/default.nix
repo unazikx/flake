@@ -1,3 +1,8 @@
+# INFO:
+# pdf viewer
+# with zaread:
+#   converts office into pdf
+
 {
   flake =
     {

@@ -1,3 +1,7 @@
+# INFO:
+# minimal native wayland terminal
+# very strange font and colors
+
 {
   flake =
     {

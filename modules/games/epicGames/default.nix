@@ -1,3 +1,10 @@
+# INFO:
+# egs cli instller
+#
+# > legendary auth
+# > legendary list
+# > legendary install
+
 {
   flake =
     {

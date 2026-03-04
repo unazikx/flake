@@ -1,3 +1,7 @@
+# INFO:
+# base util for synchronize
+# from webdav etc
+
 {
   flake =
     {

@@ -1,3 +1,6 @@
+# INFO:
+# actions when lid and physical keys
+
 {
   flake =
     {

@@ -1,3 +1,6 @@
+# INFO:
+# optimization battery my thinkpadT14
+
 {
   flake =
     {

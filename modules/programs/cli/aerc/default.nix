@@ -1,3 +1,6 @@
+# INFO:
+# tui email client
+
 {
   flake =
     {

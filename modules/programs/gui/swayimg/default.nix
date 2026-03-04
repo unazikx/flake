@@ -1,3 +1,8 @@
+# INFO:
+# best image viewer
+# with gallery vies
+# glitches on niri?
+
 {
   flake =
     {

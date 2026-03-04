@@ -1,3 +1,8 @@
+# INFO:
+# tool for control:
+#   sourcehut git
+#   sourcehut pages
+
 {
   flake =
     {

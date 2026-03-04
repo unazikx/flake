@@ -1,3 +1,6 @@
+# INFO:
+# use 'yy' wrapper fot cd in yazi directory
+
 {
   flake =
     {

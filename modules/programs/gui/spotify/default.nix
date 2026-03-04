@@ -1,3 +1,10 @@
+# INFO:
+# idk how to login, i am via ~~dns.malw.link~~
+# okay... sometimes via vpn lol
+# okay... ... ... Russia man... blocks ye
+# okay... i just bought subscription
+# yeeee...meh
+
 {
   flake =
     {
@@ -33,8 +40,7 @@
               enabledSnippets
               ;
 
-            # WARN:
-            # # doesnt build
+            alwaysEnableDevTools = true;
             windowManagerPatch = true;
             wayland = true;
 

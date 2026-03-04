@@ -1,3 +1,8 @@
+# INFO:
+# self packages in containers
+# or not...idk isolated
+# declarative, ye
+
 {
   flake =
     {

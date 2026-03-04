@@ -1,3 +1,7 @@
+# INFO:
+# monitor system status
+# CPU, RAM, netwwork, GPU...
+
 {
   flake =
     {

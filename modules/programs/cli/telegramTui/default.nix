@@ -1,3 +1,7 @@
+# INFO:
+# tui tg client
+# what to say?
+
 {
   flake =
     {

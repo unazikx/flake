@@ -1,11 +1,12 @@
+# INFO:
+# module for audio manage
+
 {
   flake =
     {
       ...
     }:
     {
-      # INFO:
-      # module for audio manage
       nixosModules.${baseNameOf ./.} =
         {
           pkgs,

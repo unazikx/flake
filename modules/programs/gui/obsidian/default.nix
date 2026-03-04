@@ -1,3 +1,9 @@
+# INFO:
+# best notes database
+#
+# WARN:
+# press enable plugins at start
+
 {
   flake =
     {

@@ -1,3 +1,7 @@
+# INFO:
+# good calendar?
+# no...not goon
+
 {
   flake =
     {

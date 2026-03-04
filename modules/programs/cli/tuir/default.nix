@@ -1,3 +1,7 @@
+# INFO:
+# terminal client for reddit
+# requieres token to auth
+
 {
   flake =
     {

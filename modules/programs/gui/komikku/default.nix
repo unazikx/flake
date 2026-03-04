@@ -1,3 +1,7 @@
+# INFO:
+# read manga/manhwa
+# but i have suwayomi
+
 {
   flake =
     {

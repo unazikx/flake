@@ -1,3 +1,7 @@
+# INFO:
+# connect via nmtui
+# also it contains dns resolving
+
 {
   flake =
     {
@@ -37,7 +41,7 @@
               "83.220.169.155"
             ];
 
-            extraHosts = lib.readFile (inputs.dns-malw-link.outPath + "/hosts");
+            # extraHosts = lib.readFile (inputs.dns-malw-link.outPath + "/hosts");
 
             # INFO:
             # rutracker trackers

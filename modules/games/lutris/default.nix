@@ -1,3 +1,6 @@
+# INFO:
+# multi launcher for linux
+
 {
   flake =
     {

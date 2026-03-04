@@ -1,3 +1,9 @@
+# INFO:
+# anime scrappers/watchers
+#
+# WARN:
+# replaced to rezka-fzf
+
 {
   flake =
     {

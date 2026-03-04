@@ -1,3 +1,7 @@
+# INFO:
+# new gen nekoray
+# with autolaunch in background
+
 {
   flake =
     {

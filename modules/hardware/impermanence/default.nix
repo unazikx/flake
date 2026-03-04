@@ -1,3 +1,7 @@
+# INFO:
+# this tool wipes all / on boot
+# but it doesnt delete dirs/files in persist
+
 {
   flake =
     {

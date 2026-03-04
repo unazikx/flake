@@ -1,3 +1,7 @@
+# WARN:
+# for unified prefix use
+# STEAM_COMPAT_DATA_PATH=your_path_withouts_strings_around %command%
+
 {
   flake =
     {

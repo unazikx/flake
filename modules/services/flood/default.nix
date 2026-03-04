@@ -1,3 +1,7 @@
+# INFO:
+# besr frontend for qbittorrent
+# very good, fr
+
 {
   flake =
     {

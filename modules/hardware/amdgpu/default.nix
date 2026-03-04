@@ -1,12 +1,13 @@
+# INFO:
+# module for amdrpu
+# drivers
+
 {
   flake =
     {
       ...
     }:
     {
-      # INFO:
-      # module for amdrpu
-      # drivers
       nixosModules.${baseNameOf ./.} =
         {
           pkgs,

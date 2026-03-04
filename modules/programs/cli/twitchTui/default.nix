@@ -1,3 +1,9 @@
+# INFO:
+# twitch chat in tui, not viewer
+#
+# WARN:
+# server doesnt works idk (russia)
+
 {
   flake =
     {

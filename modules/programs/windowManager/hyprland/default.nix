@@ -1,3 +1,7 @@
+# INFO:
+# useful wm
+# with various qol things
+
 {
   flake =
     {

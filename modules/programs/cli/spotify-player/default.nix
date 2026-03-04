@@ -1,3 +1,7 @@
+# INFO:
+# spotify tui client
+# not stable
+
 {
   flake =
     {

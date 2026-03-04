@@ -1,3 +1,7 @@
+# INFO:
+# modern clipboard with tofi frontend
+# clipboard entries are in ~/.cache/clapboard
+
 {
   flake =
     {

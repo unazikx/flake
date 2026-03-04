@@ -1,3 +1,6 @@
+# INFO:
+# too much groups and hashed passwd
+
 {
   flake =
     {

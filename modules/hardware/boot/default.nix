@@ -1,3 +1,6 @@
+# INFO:
+# just boot with plymouth
+
 {
   flake =
     {

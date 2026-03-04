@@ -1,3 +1,8 @@
+# INFO:
+# antivirus
+# idk works it is or not
+# BUT it consumes very much RAM
+
 {
   flake =
     {

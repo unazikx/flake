@@ -1,3 +1,8 @@
+# INFO:
+# just play
+# in ../../../services/minecraft/default.nix
+# i have server, but tsss
+
 {
   flake =
     {

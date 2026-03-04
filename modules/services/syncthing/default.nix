@@ -1,3 +1,7 @@
+# INFO:
+# sync directories via devices
+# supports: LAN and internet
+
 {
   flake =
     {

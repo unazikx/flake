@@ -1,3 +1,8 @@
+# INFO:
+# set theme in settings
+# ...
+# with wf-recorded
+
 {
   flake =
     {

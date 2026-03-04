@@ -1,3 +1,7 @@
+# INFO:
+# module for emailing
+# and supporting clients
+
 {
   flake =
     {

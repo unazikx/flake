@@ -1,3 +1,6 @@
+# INFO:
+# the best window manager ever
+
 {
   flake =
     {

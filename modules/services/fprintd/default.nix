@@ -1,3 +1,7 @@
+# INFO:
+# driver for fingerprinting
+# pam and maybe something else
+
 {
   flake =
     {

@@ -1,3 +1,19 @@
+# TODO: here is nothing,
+# i havent idea what to do
+
+# INFO: generates
+# { specialisation.gaming = ...; };
+# by sub directories
+#
+#  .
+# ├─  default.nix (current file)
+# │
+# ├─  gaming
+# │  └─  default.nix
+# │
+# └─  steamDeck
+#    └─  default.nix
+
 {
   flake =
     {

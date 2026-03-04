@@ -1,3 +1,7 @@
+# INFO:
+# server for manga/manhwa reading
+# with builtin webui
+
 {
   flake =
     {

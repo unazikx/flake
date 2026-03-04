@@ -1,3 +1,8 @@
+# INFO:
+# export shell variables for tokens
+# alias for repl and rebuild
+# nurl -> prefetch repos and other
+
 {
   flake =
     {

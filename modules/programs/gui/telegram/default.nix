@@ -1,3 +1,13 @@
+# INFO:
+# best messaging
+#
+# WARN:
+# modded telegram -> ayugram
+# BUR without spy and save deleted
+# i respect deleted messages
+# i use it ONLY for bw (black-white)
+#   icon in tray
+
 {
   flake =
     {

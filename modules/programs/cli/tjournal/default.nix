@@ -1,3 +1,7 @@
+# INFO:
+# tui journal tool
+# i dont use it
+
 {
   flake =
     {

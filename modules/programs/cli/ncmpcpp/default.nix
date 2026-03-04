@@ -1,3 +1,9 @@
+# INFO:
+# good tui client for mpd
+#
+# WARN:
+# lazy to configure bindings... later
+
 {
   flake =
     {

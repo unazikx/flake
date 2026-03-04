@@ -1,3 +1,7 @@
+# INFO:
+# tui for discrord
+# very simple
+
 {
   flake =
     {

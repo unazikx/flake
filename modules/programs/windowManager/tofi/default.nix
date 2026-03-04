@@ -1,3 +1,6 @@
+# INFO:
+# just GOAT launcher
+
 {
   flake =
     {

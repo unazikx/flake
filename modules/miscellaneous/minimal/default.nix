@@ -1,3 +1,7 @@
+# INFO:
+# fuck it
+# all my homies havent penix
+
 {
   flake =
     {
@@ -6,7 +10,6 @@
     {
       nixosModules.${baseNameOf ./.} =
         {
-          pkgs,
           lib,
           ...
         }:
@@ -25,14 +28,7 @@
             "command-not-found"
           ];
 
-          environment = {
-            defaultPackages = lib.mkForce [ ];
-            systemPackages = with pkgs; [
-              uutils-coreutils-noprefix
-              uutils-findutils
-              uutils-diffutils
-            ];
-          };
+          environment.defaultPackages = lib.mkForce [ ];
 
           documentation = turnOff [
             "dev"
