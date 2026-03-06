@@ -63,6 +63,17 @@ with inputs;
         withSixel = false;
         withFuzzy = false;
       };
+
+      better-than-adventure =
+        (p.vanillaServers.vanilla.overrideAttrs rec {
+          version = "7.3_04";
+          src = f.fetchurl {
+            url = "https://github.com/Better-than-Adventure/bta-download-repo/releases/download/v${version}/bta.v${version}.server.jar";
+            hash = "sha256-e8hQm3NejclSo8INGtn7TxEyE3/lBq1Cz7dRsDfcx2c=";
+          };
+
+        }).override
+          { jre_headless = f.temurin-jre-bin-21; };
     }
   )
 ]
