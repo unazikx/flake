@@ -304,27 +304,6 @@
         "type": "github"
       }
     },
-    "fjordlauncher": {
-      "inputs": {
-        "libnbtplusplus": "libnbtplusplus",
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1771970824,
-        "narHash": "sha256-SeFfi7BW/3u8J1MO4EJjN5QwyI1O6WpuvHpvRr1dMGw=",
-        "owner": "unmojang",
-        "repo": "FjordLauncher",
-        "rev": "25a1191c4e81fd46c3ea6c13c565201fc8b2dacb",
-        "type": "github"
-      },
-      "original": {
-        "owner": "unmojang",
-        "repo": "FjordLauncher",
-        "type": "github"
-      }
-    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -1257,7 +1236,6 @@
         "easyeffects-presets": "easyeffects-presets",
         "files": "files",
         "firefox-addons": "firefox-addons",
-        "fjordlauncher": "fjordlauncher",
         "flake-parts": "flake-parts",
         "flake-utils": "flake-utils_2",
         "glide-browser": "glide-browser",
@@ -1289,6 +1267,7 @@
         "nvf": "nvf",
         "pkgs-by-name": "pkgs-by-name",
         "plasma-manager": "plasma-manager",
+        "shattered-prism": "shattered-prism",
         "sopsnix": "sopsnix",
         "spicetify-nix": "spicetify-nix",
         "stylix": "stylix",
@@ -1320,6 +1299,27 @@
       "original": {
         "owner": "wlrfx",
         "repo": "scenefx",
+        "type": "github"
+      }
+    },
+    "shattered-prism": {
+      "inputs": {
+        "libnbtplusplus": "libnbtplusplus",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1768797551,
+        "narHash": "sha256-eEXyAde4xObiTKoRi9HZ86cXjeQJjS3IKEQENrA5TwY=",
+        "owner": "Noctilune",
+        "repo": "ShatteredPrism",
+        "rev": "291a59c8a56589965b8b6e363a94e96b654fa1ad",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Noctilune",
+        "repo": "ShatteredPrism",
         "type": "github"
       }
     },
@@ -1848,4 +1848,3 @@
   "root": "root",
   "version": 7
 }
-

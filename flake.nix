@@ -175,8 +175,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    fjordlauncher = {
-      url = "github:unmojang/FjordLauncher";
+    shattered-prism = {
+      url = "github:Noctilune/ShatteredPrism";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

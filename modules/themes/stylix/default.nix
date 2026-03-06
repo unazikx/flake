@@ -163,6 +163,7 @@
                 gelasio
                 inter
                 liberation_ttf
+                monocraft
                 noto-fonts
                 noto-fonts-cjk-sans
                 ;

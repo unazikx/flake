@@ -6,7 +6,7 @@
 with inputs;
 
 [
-  fjordlauncher.overlays.default
+  shattered-prism.overlays.default
   glide-browser.overlays.default
   nix-minecraft.overlays.default
   niri-flake.overlays.niri

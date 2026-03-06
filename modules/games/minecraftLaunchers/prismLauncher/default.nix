@@ -16,28 +16,13 @@
           config,
           ...
         }:
-        {
-          persist.user.directories = [ ".local/share/PrismLauncher" ];
-
-          hmPackages = [ pkgs.prismlauncher ];
-
-          networking.firewall = lib.genAttrs [
-            "allowedTCPPorts"
-            "allowedUDPPorts"
-          ] (n: [ 25565 ]);
-
-          hm.xdg.dataFile = {
-            "PrismLauncher/prismlauncher.cfg".source = (
-              import ./settings.nix {
-                inherit
-                  pkgs
-                  lib
-                  config
-                  ;
-              }
-            );
-          };
-
+        (import ../prismGenerator.nix {
+          inherit pkgs lib config;
+          persistDir = ".local/share/PrismLauncher";
+          configDir = "PrismLauncher/prismlauncher.cfg";
+          package = pkgs.prismlauncher;
+        })
+        // {
           hmMime = lib.mkMime {
             "org.prismlauncher.PrismLauncher.desktop" = [
               "x-scheme-handler/prismlauncher"
