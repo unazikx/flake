@@ -15,6 +15,8 @@
     AutoReloadOnChange = true;
     AutoSaveAfterEveryChange = true;
     AutoSaveOnExit = true;
+    BackupBeforeSave = true;
+    BackupFilePathPattern = "{DB_FILENAME}_old.kdbx";
     ConfigVersion = 2;
   };
 
@@ -22,9 +24,11 @@
     ApplicationTheme = "classic";
     ColorPasswords = true;
     CompactMode = true;
-    HideGroupsPanel = true;
+    HideGroupPanel = true;
+    HideGroupsPanel = false;
+    HideMenubar = false;
     HidePasswords = true;
-    HidePreviewPanel = true;
+    HidePreviewPanel = false;
     HideToolbar = true;
     MinimizeOnClose = true;
     MinimizeToTray = true;
@@ -56,15 +60,15 @@
   };
 
   Security = {
-    ClearClipboardTimeout = 24;
-    ClearSearch = false;
+    ClearClipboardTimeout = 12; # sec
+    ClearSearch = true;
     IconDownloadFallback = true;
     LockDatabaseIdle = true;
+    LockDatabaseIdleSeconds = 60 * 30; # half hour
     LockDatabaseScreenLock = false;
     Security_HideNotes = true;
   };
 
-  FdoSecrets = {
-    Enabled = true;
-  };
+  SSHAgent.Enabled = true;
+  FdoSecrets.Enabled = true;
 }
