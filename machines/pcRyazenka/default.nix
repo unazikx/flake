@@ -39,6 +39,7 @@
               greetd
               helix
               hytale
+              keepassxc
               minimal
               mpd
               mpv
@@ -46,7 +47,6 @@
               qbittorrent
               qutebrowser
               rbw
-              keepassxc
               rezkaFzf
               rustedTools
               sopsnix

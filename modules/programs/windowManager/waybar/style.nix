@@ -34,7 +34,7 @@ in
     margin: 4px;
     padding: 2px;
     color: ${base05};
-    min-height: 25px;
+    min-height: 32px;
     transition: all 0.4s ease-in-out;
   }
 

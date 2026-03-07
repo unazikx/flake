@@ -8,11 +8,6 @@
 {
   mainBar =
     let
-      mkTooltip = {
-        tooltip = false;
-        rotate = 90;
-      };
-
       ico = import ./icons.nix;
       space = (if (lib.configurationName == "pcRyazenka") then " " else (toString null));
     in
@@ -24,7 +19,10 @@
         spacing = 16;
         height = 1;
 
-        "custom/spacing" = mkTooltip // {
+        "custom/spacing" = {
+          tooltip = false;
+          rotate = 90;
+
           format = "";
         };
       }
@@ -54,7 +52,7 @@
           {
             modules-left = [
               "custom/spacing"
-              "custom/launcher"
+              "group/musicGrp"
               "group/soundGrp"
               "group/blueGrp"
             ];
@@ -65,24 +63,65 @@
               "group/trayGrp"
               "niri/language"
               "group/dateGrp"
-              "custom/power"
               "custom/spacing"
             ];
           }
       )
       {
-        "custom/launcher" = mkTooltip // {
+        "custom/launcher" = {
+          tooltip = false;
+          rotate = 90;
+
           format = "<span color='${config.lib.stylix.colors.withHashtag.base0C}' font='17'></span> {}";
 
           on-click = "tofi-drun | xargs niri msg action spawn --";
         };
 
-        "custom/power" = mkTooltip // {
+        "mpris" = {
+          tooltip = false;
+          rotate = 90;
+
+          format = "{status_icon} / {player_icon} ";
+
+          max-length = 16;
+          scroll-step = 5;
+          ellipsis = "…";
+          dynamic-separator = " / ";
+
+          dynamic-order = [
+            "title"
+            "artist"
+          ];
+
+          player-icons = {
+            default = "▶";
+            spotify = "";
+            mpv = "";
+            vlc = "󰕼";
+            firefox = "";
+            chromium = "";
+            mopidy = "";
+          };
+
+          status-icons = {
+            playing = "";
+            paused = "";
+            stopped = "";
+          };
+        };
+
+        "custom/power" = {
+          tooltip = false;
+          rotate = 90;
+
           format = space + "⏻";
           on-click = "wleave";
         };
 
-        "pulseaudio#volume" = mkTooltip // {
+        "pulseaudio#volume" = {
+          tooltip = false;
+          rotate = 90;
+
           format = "{volume}% ";
           format-muted = "muted ";
 
@@ -90,7 +129,10 @@
           format-bluetooth-muted = "muted ";
         };
 
-        "pulseaudio" = mkTooltip // {
+        "pulseaudio" = {
+          tooltip = false;
+          rotate = 90;
+
           format = "{format_source} / {icon}";
           format-icons = {
             default = [
@@ -114,7 +156,10 @@
           on-click-right = "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
         };
 
-        "backlight" = mkTooltip // {
+        "backlight" = {
+          tooltip = false;
+          rotate = 90;
+
           device = "intel_backlight";
 
           format = "{percent}% {icon}";
@@ -125,7 +170,10 @@
           on-click-right = "light -S 100";
         };
 
-        "network" = mkTooltip // {
+        "network" = {
+          tooltip = false;
+          rotate = 90;
+
           format-icons = [
             "󰤯"
             "󰤟"
@@ -143,7 +191,10 @@
           interval = 5;
         };
 
-        disk = mkTooltip // {
+        disk = {
+          tooltip = false;
+          rotate = 90;
+
           format = " {used}/{total}";
           path = config.users.users.${lib.userName}.home;
           unit = "GB";
@@ -151,7 +202,10 @@
           interval = 30;
         };
 
-        "niri/workspaces" = mkTooltip // {
+        "niri/workspaces" = {
+          tooltip = false;
+          rotate = 90;
+
           format = "{icon}";
           format-icons = ico.wm // {
             "active" = "";
@@ -164,40 +218,58 @@
           persistent-workspaces."*" = lib.range 1 10;
         };
 
-        "custom/trayLogo" = mkTooltip // {
+        "custom/trayLogo" = {
+          tooltip = false;
           rotate = 90;
+
           format = "󱂫 ";
         };
 
-        "tray" = mkTooltip // {
+        "tray" = {
+          tooltip = false;
+          rotate = 90;
+
           icon-size = 18;
           show-passive-items = true;
           spacing = 8;
         };
 
-        "bluetooth#name" = mkTooltip // {
+        "bluetooth#name" = {
+          tooltip = false;
+          rotate = 90;
+
           format = "{status}";
           format-disabled = "";
 
           format-connected = "{device_alias}";
           format-connected-battery = "{device_alias} ({device_battery_percentage}%)";
 
+          max-length = 12;
+
           on-click = lib.getExe pkgs.own.wofi-bluetooth;
           on-click-right = "bluetoothctl disconnect";
         };
 
-        "bluetooth" = mkTooltip // {
+        "bluetooth" = {
+          tooltip = false;
+          rotate = 90;
+
           format = "󰂲";
           format-disabled = "󰂲";
 
           format-connected = "󰂰 ({num_connections})";
           format-connected-battery = "󰂳 ({num_connections})";
 
+          max-length = 12;
+
           on-click = lib.getExe pkgs.own.wofi-bluetooth;
           on-click-right = "bluetoothctl disconnect";
         };
 
-        "niri/language" = mkTooltip // {
+        "niri/language" = {
+          tooltip = false;
+          rotate = 90;
+
           format = if (lib.configurationName == "pcRyazenka") then "󰌌 {}" else "{} 󰌌";
           format-en = "en";
           format-ru = "ru";
@@ -205,19 +277,20 @@
           on-click = "niri msg action switch-layout next";
         };
 
-        "clock#date" = mkTooltip // {
-          format = " {:%d.%m.%Y} ";
+        "clock#time" = {
+          tooltip = false;
+          rotate = 90;
 
-          interval = ((60 * 60) * 2);
+          format = " 󰥔 {:%H:%M}";
+          format-alt = "  {:%d.%m.%Y}";
+
+          interval = 30;
         };
 
-        "clock#time" = mkTooltip // {
-          format = "󰥔 {:%H:%M}";
+        "battery" = {
+          tooltip = false;
+          rotate = 90;
 
-          interval = 1;
-        };
-
-        "battery" = mkTooltip // {
           format = " {icon} {capacity}%";
           format-alt = " {icon} {time}";
           format-charging = "  {capacity}%";
@@ -259,6 +332,17 @@
                 "pulseaudio#volume"
               ];
 
+          "group/musicGrp" =
+            mkGroup
+              {
+                transition-duration = 300;
+                children-class = "musicGrp";
+                transition-left-to-right = true;
+              }
+              [
+                "mpris"
+              ];
+
           "group/blueGrp" =
             mkGroup
               {
@@ -294,6 +378,75 @@
                 "custom/trayLogo"
                 "tray"
               ];
+        }
+      )
+      (
+        let
+          xmlGenerate = name: (pkgs.formats.xml { }).generate "waybar-menu-${name}";
+        in
+        {
+          "custom/powerMenu" = {
+            tooltip = false;
+            rotate = 90;
+
+            format = space + "⏻";
+            "menu" = "on-click";
+            "menu-actions" = {
+              "shutdown" = "systemctl shutdown";
+              "reboot" = "systemctl reboot";
+              "suspend" = "systemctl suspend";
+              "logout" = "loginctl terminate-user $USER";
+            };
+
+            menu-file = xmlGenerate "powerMenu" {
+              interface.object = {
+                "@class" = "GtkMenu";
+                "@id" = "menu";
+                child = [
+                  {
+                    object = {
+                      "@class" = "GtkMenuItem";
+                      "@id" = "shutdown";
+                      property = {
+                        "@name" = "label";
+                        "#text" = "Shutdown";
+                      };
+                    };
+                  }
+                  {
+                    object = {
+                      "@class" = "GtkMenuItem";
+                      "@id" = "reboot";
+                      property = {
+                        "@name" = "label";
+                        "#text" = "Reboot";
+                      };
+                    };
+                  }
+                  {
+                    object = {
+                      "@class" = "GtkMenuItem";
+                      "@id" = "suspend";
+                      property = {
+                        "@name" = "label";
+                        "#text" = "Suspend";
+                      };
+                    };
+                  }
+                  {
+                    object = {
+                      "@class" = "GtkMenuItem";
+                      "@id" = "logout";
+                      property = {
+                        "@name" = "label";
+                        "#text" = "Logout";
+                      };
+                    };
+                  }
+                ];
+              };
+            };
+          };
         }
       )
     ];

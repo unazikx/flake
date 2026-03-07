@@ -5,6 +5,7 @@
 {
   flake =
     {
+      partsConfig,
       ...
     }:
     {
@@ -16,6 +17,12 @@
           ...
         }:
         {
+          imports = lib.attrValues {
+            inherit (partsConfig.nixosModules)
+              playerctl
+              ;
+          };
+
           hm.programs.waybar = {
             enable = true;
             systemd.enable = true;

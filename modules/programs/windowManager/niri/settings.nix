@@ -96,14 +96,14 @@ with config.lib.stylix.colors.withHashtag;
       display.color = base01 + "CC";
     };
 
-    gaps = 8;
+    gaps = 4;
 
     struts = lib.genAttrs [
       "left"
       "right"
       "top"
       "bottom"
-    ] (_: 4);
+    ] (_: 2);
 
     shadow = {
       enable = true;
@@ -206,7 +206,7 @@ with config.lib.stylix.colors.withHashtag;
     }
   ];
 
-  workspaces = lib.genAttrs (map toString (lib.range 1 7)) (_: { });
+  workspaces = lib.genAttrs (map toString (lib.range 1 5)) (_: { });
 
   overview = {
     zoom = 0.95;
