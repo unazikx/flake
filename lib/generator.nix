@@ -94,7 +94,7 @@ rec {
       # extend nixpkgs lib
       # with my own functions
       lib = nxosLib.extend (
-        final: prev:
+        _final: _prev:
         {
           inherit (homeLib)
             hm

@@ -1,12 +1,10 @@
 {
   pkgs,
-  lib,
   config,
   ...
 }:
 
 let
-  inherit (config.hm.services) syncthing;
   helixBinds = true;
 in
 

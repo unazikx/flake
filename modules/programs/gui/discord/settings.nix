@@ -59,7 +59,7 @@ in
           "spectrographColor"
         ]
         (
-          n:
+          _n:
           mkRGB [
             base0B-rgb-r
             base0B-rgb-g
@@ -72,7 +72,7 @@ in
           "oscilloscopeSolidColor"
         ]
         (
-          n:
+          _n:
           mkRGB [
             base0C-rgb-r
             base0C-rgb-g

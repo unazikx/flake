@@ -14,7 +14,7 @@
       torrserver = "localhost:8223";
       syncthing = "localhost:8384";
     }
-    (lib.mapAttrs (name: value: "https://${value}") {
+    (lib.mapAttrs (_name: value: "https://${value}") {
       # nix
       nixpkgs = "search.nixos.org/packages?channel=unstable";
       homemanager = "home-manager-options.extranix.com/?query=&release=master";

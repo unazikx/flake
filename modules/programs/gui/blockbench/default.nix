@@ -17,7 +17,6 @@
         }:
         let
           # WARN: it doesnt works
-          plugins = false;
 
           json = pkgs.formats.json { };
         in

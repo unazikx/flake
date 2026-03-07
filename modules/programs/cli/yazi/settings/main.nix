@@ -68,7 +68,7 @@ in
       "delete_origin"
       "search_origin"
       "shell_origin"
-    ] (n: "center");
+    ] (_n: "center");
 
     plugin = {
       prepend_previewers =

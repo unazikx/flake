@@ -10,7 +10,6 @@
     {
       nixosModules.${baseNameOf ./.} =
         {
-          inputs,
           lib,
           ...
         }:

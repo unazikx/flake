@@ -53,7 +53,7 @@
                   "sudo"
                   "login"
                 ]
-                (n: {
+                (_n: {
                   fprintAuth = true;
                 });
           };

@@ -9,7 +9,6 @@
     {
       nixosModules.${baseNameOf ./.} =
         {
-          pkgs,
           lib,
           config,
           ...

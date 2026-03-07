@@ -15,7 +15,7 @@
   networking.firewall = lib.genAttrs [
     "allowedTCPPorts"
     "allowedUDPPorts"
-  ] (n: [ 25565 ]);
+  ] (_n: [ 25565 ]);
 
   hmPackages = [ package ];
 

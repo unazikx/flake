@@ -27,7 +27,7 @@
         }:
         let
           specializationsList = (
-            lib.attrNames (lib.filterAttrs (path: type: type == "directory") (lib.readDir ./.))
+            lib.attrNames (lib.filterAttrs (_path: type: type == "directory") (lib.readDir ./.))
           );
         in
         {

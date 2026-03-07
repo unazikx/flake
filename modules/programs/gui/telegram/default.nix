@@ -31,7 +31,7 @@
           hm = {
             xdg = {
               mimeApps = {
-                defaultApplications = (t: l: (lib.genAttrs l (n: t))) "com.ayugram.desktop.desktop" [
+                defaultApplications = (t: l: (lib.genAttrs l (_n: t))) "com.ayugram.desktop.desktop" [
                   "application/x-xdg-protocol-tg"
                   "x-scheme-handler/tg"
                 ];

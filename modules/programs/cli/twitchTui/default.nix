@@ -39,7 +39,7 @@
                 # https://twitchtokengenerator.com/?scope=chat:read+chat:edit+channel:moderate+user:read:follows+user:read:emotes+user:read:chat+user:write:chat+moderator:manage:chat_messages+moderator:manage:banned_users+moderator:manage:chat_settings+moderator:manage:shoutouts+channel:manage:broadcast+channel:manage:moderators+channel:manage:vips+channel:manage:raids+channel:edit:commercial&auth=auth_stay
               };
 
-              storage = lib.genAttrs [ "channels" "mentions" ] (n: true);
+              storage = lib.genAttrs [ "channels" "mentions" ] (_n: true);
 
               frontend = {
                 show_datetimes = true;

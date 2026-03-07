@@ -9,7 +9,7 @@
   mkSecrets = {
     sopsnix =
       list: sopsFile:
-      lib.genAttrs list (n: {
+      lib.genAttrs list (_n: {
         owner = lib.userName;
         inherit sopsFile;
       });

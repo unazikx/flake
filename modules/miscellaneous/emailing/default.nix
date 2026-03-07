@@ -65,7 +65,7 @@
                       mkAll =
                         list:
                         lib.mapAttrs (
-                          n: ch:
+                          _n: ch:
                           {
                             extraConfig = {
                               Create = "Both";
@@ -125,7 +125,7 @@
                   "create"
                   "expunge"
                   "remove"
-                ] (n: "both"); # lazy...
+                ] (_n: "both"); # lazy...
 
                 # frontends
                 aerc = {

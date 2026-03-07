@@ -33,7 +33,7 @@
               enable = true;
               package = pkgs._2505.easyeffects;
 
-              extraPresets = lib.mapAttrs (n: v: v) inputs.easyeffects-presets.effects;
+              extraPresets = lib.mapAttrs (_n: v: v) inputs.easyeffects-presets.effects;
             };
           };
         };

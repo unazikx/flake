@@ -17,7 +17,6 @@
       render = true;
       character =
         let
-          arrow = "»";
           line = "▎";
         in
         line;

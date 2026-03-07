@@ -76,7 +76,7 @@
               "image/webp"
               "image/x-tga"
               "image/svg+xml"
-            ] (n: [ "org.qutebrowser.qutebrowser.desktop" ]);
+            ] (_n: [ "org.qutebrowser.qutebrowser.desktop" ]);
           };
 
           hmMime = lib.mkMime {

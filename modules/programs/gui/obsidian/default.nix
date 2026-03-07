@@ -33,7 +33,7 @@
               vaults =
                 let
                   dir = ./.;
-                  fromDir = (lib.filterAttrs (name: type: type == "directory") (lib.readDir dir));
+                  fromDir = (lib.filterAttrs (_name: type: type == "directory") (lib.readDir dir));
                 in
                 lib.mapAttrs (
                   name: _:
