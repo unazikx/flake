@@ -21,7 +21,9 @@
   {
     name = "stop-blinking-cursor";
     text = # css
-      ".cm-cursorLayer { animation: none !important; }";
+      ''
+        .cm-cursorLayer { animation: none !important; }
+      '';
   }
 
   {

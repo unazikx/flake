@@ -16,8 +16,6 @@
           ...
         }:
         let
-          # WARN: it doesnt works
-
           json = pkgs.formats.json { };
         in
         {
