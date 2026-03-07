@@ -49,7 +49,7 @@
                 "librewolf"
                 "floorp"
               ]
-              (n: {
+              (_: {
                 colorTheme.enable = true;
                 profileNames = [ lib.userName ];
               })
@@ -97,7 +97,7 @@
             cursor = {
               size = 24;
               name = "GoogleDot-Custom";
-              package = pkgs.cursors.google-cursor.override (
+              package = inputs.nix-cursors.packages.${pkgs.system}.google-cursor.override (
                 with config.lib.stylix.colors.withHashtag;
                 {
                   background_color = base0E;

@@ -10,7 +10,6 @@ let
 
   inherit (extendedLib)
     nxosLib
-    buildPkgs
     ;
 in
 
@@ -35,7 +34,9 @@ inputs.flake-parts.lib.mkFlake
       (inputs.import-tree [ ../shells ])
       inputs.devshell.flakeModule
       inputs.disko.flakeModule
+      inputs.flake-parts.flakeModules.bundlers
       inputs.home-manager.flakeModules.default
+      inputs.treefmt-nix.flakeModule
     ];
 
     flake =

@@ -13,6 +13,7 @@
     {
       nixosModules.${baseNameOf ./.} =
         {
+          inputs,
           pkgs,
           config,
           ...
@@ -31,6 +32,7 @@
             inherit
               (import ./addons.nix {
                 inherit
+                  inputs
                   pkgs
                   config
                   ;

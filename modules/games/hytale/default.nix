@@ -9,13 +9,14 @@
     {
       nixosModules.${baseNameOf ./.} =
         {
+          inputs,
           pkgs,
           ...
         }:
         {
           persist.user.directories = [ ".local/share/hytale-launcher" ];
 
-          hmPackages = [ pkgs.hytale ];
+          hmPackages = [ inputs.hytale.packages.${pkgs.system}.default ];
         };
     };
 }

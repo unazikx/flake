@@ -1,10 +1,11 @@
 {
+  inputs,
   pkgs,
   config,
 }:
 
 let
-  inherit (pkgs.spicetify)
+  inherit (inputs.spicetify-nix.legacyPackages.${pkgs.system})
     extensions
     snippets
     themes

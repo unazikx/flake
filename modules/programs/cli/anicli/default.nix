@@ -12,6 +12,7 @@
     {
       nixosModules.${baseNameOf ./.} =
         {
+          inputs,
           pkgs,
           lib,
           config,
@@ -33,7 +34,7 @@
           {
             # INFO: very cool (best imho) anime watcher
             # with anilist support
-            hmPackages = [ pkgs.viu ];
+            hmPackages = [ inputs.viu.packages.${pkgs.system}.default ];
 
             hm.xdg.configFile = {
               "viu/config.toml".source = toml.generate "viu-config.toml" (
