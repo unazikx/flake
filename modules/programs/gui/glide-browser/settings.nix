@@ -5,8 +5,6 @@
 }:
 
 let
-  cfg = config.services.glance;
-
   inherit (config.lib.stylix.colors)
     withHashtag
     ;
@@ -19,14 +17,6 @@ in
     "browser.ml.linkPreview.collapsed" = true;
     "browser.ml.linkPreview.enabled" = true;
     "browser.ml.linkPreview.shift" = true;
-    "browser.startup.homepage" =
-      if cfg.enable then
-        (lib.concatStringsSep ":" [
-          cfg.settings.server.host
-          (toString cfg.settings.server.port)
-        ])
-      else
-        "about:home";
     "browser.tabs.groups.enabled" = false;
     "browser.tabs.hoverPreview.enabled" = true;
     "browser.tabs.hoverPreview.showThumbnails" = false;
@@ -269,31 +259,4 @@ in
       Sessions = false;
     };
   };
-
-  bookmarks =
-    let
-      mk = name: tags: url: {
-        inherit
-          name
-          tags
-          url
-          ;
-      };
-    in
-    [
-      (mk "Bitwarden (local)" [
-        "passwords"
-        "security"
-      ] "moz-extension://306cfb1b-562c-4188-a063-644bee12636f/popup/index.html")
-
-      (mk "GitHub" [
-        "development"
-        "git"
-      ] "https://github.com")
-
-      (mk "NixOS Wiki" [
-        "documentation"
-        "nixos"
-      ] "https://nixos.wiki")
-    ];
 }

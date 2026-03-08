@@ -31,6 +31,7 @@ let
   ];
 
   homeModules = with inputs; [
+    glide-browser.homeModules.default
     mangowc.hmModules.mango
     niri-flake.homeModules.niri
     niri-flake.homeModules.stylix

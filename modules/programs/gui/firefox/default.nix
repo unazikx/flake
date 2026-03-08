@@ -1,8 +1,5 @@
 # INFO:
 # one of the best browsers ever
-#
-# WARN:
-# update extensions everytime when u remember it
 
 {
   flake =
@@ -120,7 +117,7 @@
                 '';
 
               extraConfig = lib.concatStringsSep "\n" (
-                map (f: lib.readFile f) [
+                map (file: lib.readFile file) [
                   "${inputs.betterfox}/Fastfox.js"
                   "${inputs.betterfox}/Peskyfox.js"
                   "${inputs.betterfox}/Securefox.js"
