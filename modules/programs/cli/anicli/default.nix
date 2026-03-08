@@ -38,7 +38,7 @@
 
             hm.xdg.configFile = {
               "viu/config.toml".source = toml.generate "viu-config.toml" (
-                import ./viuConfig.nix {
+                import ./viu-config.nix {
                   inherit
                     lib
                     config

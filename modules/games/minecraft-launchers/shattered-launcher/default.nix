@@ -16,7 +16,7 @@
           config,
           ...
         }:
-        (import ../prismGenerator.nix {
+        (import ../prism-generator.nix {
           inherit pkgs lib config;
           persistDir = ".local/share/ShatterredPrism";
           configDir = "ShatterredPrism/shatteredprism.cfg";

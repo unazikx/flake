@@ -23,7 +23,7 @@
 
           savePath = videos + "/videocasts";
 
-          obsTheme = import ./obsTheme.nix {
+          obsTheme = import ./obs-theme.nix {
             inherit config;
           };
         in

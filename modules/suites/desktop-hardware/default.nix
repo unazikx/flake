@@ -13,12 +13,18 @@
         {
           imports = lib.attrValues {
             inherit (partsConfig.nixosModules)
-              mumble
-              prismLauncher
-              r2modman
-              steam
-              # hytale
-              umuLauncher
+              amd-cpu
+              amd-gpu
+              bluetooth
+              boot
+              dbus
+              greetd
+              locales
+              network
+              security
+              sound
+              theming
+              users
               ;
           };
         };

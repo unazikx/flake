@@ -21,12 +21,12 @@
           (extendedLib.nxosLib.attrValues {
             inherit (config.nixosModules)
               # suites
-              basicShell
-              desktopHardware
+              basic-shell
+              desktop-hardware
               develop
-              mainGames
-              niriDE
-              officeEnv
+              main-games
+              niri-de
+              office-env
 
               caddy
               discord
@@ -38,7 +38,6 @@
               glance
               greetd
               helix
-              hytale
               keepassxc
               minimal
               mpd
@@ -47,18 +46,18 @@
               qbittorrent
               qutebrowser
               rbw
-              rezkaFzf
-              rustedTools
+              rezka-fzf
+              rusted-tools
               sopsnix
               spotify
               spotify-player
               swayimg
               syncthing
-              systemMonitor
+              system-monitor
               tailscale
               telegram
-              translateShell
-              trashCmd
+              translate-shell
+              trash-cmd
               tuir
               yazi
               zapret

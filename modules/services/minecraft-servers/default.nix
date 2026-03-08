@@ -74,7 +74,7 @@
             #  default.nix
             servers =
               let
-                serverDirs = ./serversList;
+                serverDirs = ./servers-list;
 
                 loadServer = name: import (serverDirs + "/${name}/main.nix") args;
 

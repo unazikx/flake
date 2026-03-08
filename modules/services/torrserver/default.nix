@@ -38,7 +38,7 @@
                 StateDirectoryMode = lib.mkDefault 775;
 
                 ExecStart = ''
-                  ${lib.getExe pkgs.own.torrserver} \
+                  ${lib.getExe pkgs.torrserver} \
                   -d /var/lib/torrserver \
                   -i 0.0.0.0"
                   -p ${toString port}

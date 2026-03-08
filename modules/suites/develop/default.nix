@@ -15,8 +15,8 @@
             inherit (partsConfig.nixosModules)
               git
               hut
-              nixConfig
-              nixTools
+              nix-config
+              nix-tools
               ssh
               ;
           };

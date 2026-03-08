@@ -115,7 +115,7 @@
               enable = true;
               enableTransience = true;
 
-              settings = import ./starshipConf.nix {
+              settings = import ./starship-conf.nix {
                 inherit lib;
               };
             };
