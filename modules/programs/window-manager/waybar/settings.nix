@@ -57,6 +57,7 @@
           {
             modules-left = [
               "custom/spacing"
+              "custom/powerMenu"
               "group/musicGrp"
               "group/soundGrp"
               "group/blueGrp"
@@ -98,6 +99,7 @@
             firefox = mkIcon color.base09 " ";
             chromium = mkIcon color.base0D " ";
             mopidy = mkIcon color.base08 " ";
+            "org.mpris.MediaPlayer2.cliamp" = mkIcon color.base0F "󰁧 ";
           };
 
           status-icons = {
