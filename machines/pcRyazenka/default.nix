@@ -56,6 +56,7 @@
               system-monitor
               tailscale
               telegram
+              throne
               translate-shell
               trash-cmd
               tuir
