@@ -1,6 +1,5 @@
-# WARN:
-# it will be very very long (6~ gb for 20.0)
-# kdenlive is shit
+# INFO:
+# discord modded client
 
 {
   flake =
