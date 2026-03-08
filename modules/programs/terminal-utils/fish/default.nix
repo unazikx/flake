@@ -44,11 +44,17 @@
                     lib.attrValues {
                       inherit (pkgs.fishPlugins)
                         colored-man-pages
-                        autopair-fish
+                        fishbang
                         fzf-fish
                         git-abbr
-                        puffer
                         grc
+                        pisces
+                        puffer
+                        ;
+
+                      inherit (pkgs.own.fish-plugins)
+                        fish-helix
+                        fish-logo
                         ;
                     }
                   );
@@ -69,14 +75,15 @@
                 in
                 # fish
                 ''
-                  fish_vi_key_bindings
+                  # fish_vi_key_bindings
+                  fish_helix_key_bindings
 
                   # default
-                  ${d} d delete-char
-                  ${d} x cancel
+                  # ${d} d delete-char
+                  # ${d} x cancel
 
                   # visual
-                  ${v} x down-line
+                  # ${v} x down-line
 
                   # colors
                   ${col}_cancel       ${bg}=red ${bol} black
