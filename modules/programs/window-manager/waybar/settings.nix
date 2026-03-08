@@ -8,7 +8,12 @@
 {
   mainBar =
     let
-      ico = import ./icons.nix;
+      mkIcon = col: icon: "<span color='${col}'>${icon}</span>";
+      color = config.lib.stylix.colors.withHashtag;
+
+      ico = import ./icons.nix {
+        inherit mkIcon color;
+      };
       space = (if (lib.configurationName == "pcRyazenka") then " " else (toString null));
     in
     lib.mkMerge [
@@ -68,20 +73,12 @@
           }
       )
       {
-        "custom/launcher" = {
-          tooltip = false;
-          rotate = 90;
-
-          format = "<span color='${config.lib.stylix.colors.withHashtag.base0C}' font='17'></span> {}";
-
-          on-click = "tofi-drun | xargs niri msg action spawn --";
-        };
-
         "mpris" = {
           tooltip = false;
           rotate = 90;
 
-          format = "{status_icon} / {player_icon} ";
+          format = " {status_icon} / {player_icon}";
+          format-stopped = "";
 
           max-length = 16;
           scroll-step = 5;
@@ -94,13 +91,13 @@
           ];
 
           player-icons = {
-            default = "▶";
-            spotify = "";
-            mpv = "";
-            vlc = "󰕼";
-            firefox = "";
-            chromium = "";
-            mopidy = "";
+            default = mkIcon color.base05 "▶ ";
+            spotify = mkIcon color.base0B " ";
+            mpv = mkIcon color.base0E " ";
+            vlc = mkIcon color.base0A "󰕼 ";
+            firefox = mkIcon color.base09 " ";
+            chromium = mkIcon color.base0D " ";
+            mopidy = mkIcon color.base08 " ";
           };
 
           status-icons = {
@@ -136,19 +133,19 @@
           format = "{format_source} / {icon}";
           format-icons = {
             default = [
-              " "
-              " "
-              " "
+              ""
+              ""
+              ""
             ];
             headphone = [ "" ];
             headset = [ "" ];
             bluetooth = "";
-            bluetooth-muted = "󰂲";
+            bluetooth-muted = mkIcon color.base04 "󰂲";
           };
-          format-muted = "{format_source} /  ";
+          format-muted = "{format_source} / ${mkIcon color.base04 " "}";
 
           format-source = "󰍬";
-          format-source-muted = "󰍭";
+          format-source-muted = mkIcon color.base04 "󰍭";
 
           scroll-step = 5;
           max-volume = 100;
@@ -256,8 +253,8 @@
           tooltip = false;
           rotate = 90;
 
-          format = "󰂲";
-          format-disabled = "󰂲";
+          format = mkIcon color.base04 "󰂲";
+          format-disabled = mkIcon color.base04 "󰂲";
 
           format-connected = "󰂰 ({num_connections})";
           format-connected-battery = "󰂳 ({num_connections})";
@@ -298,7 +295,7 @@
           format-charging = "  {capacity}%";
           format-charging-alt = "  {capacity}%";
           format-plugged = "  {capacity}%";
-          format-full = " 󱟢 {capacity}%";
+          format-full = " ${mkIcon color.base0B "󱟢"} {capacity}%";
           format-icons = ico.bat;
           format-time = "{H}:{M}";
 
@@ -391,9 +388,11 @@
             tooltip = false;
             rotate = 90;
 
-            format = space + "⏻";
-            "menu" = "on-click";
-            "menu-actions" = {
+            format = "<span color='${color.base0C}' font='17'></span> {}";
+            on-click = "tofi-drun | xargs niri msg action spawn --";
+
+            menu = "on-click-right";
+            menu-actions = {
               "shutdown" = "systemctl shutdown";
               "reboot" = "systemctl reboot";
               "suspend" = "systemctl suspend";

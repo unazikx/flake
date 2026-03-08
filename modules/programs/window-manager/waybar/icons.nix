@@ -1,4 +1,10 @@
 {
+  mkIcon,
+  color,
+  ...
+}:
+
+{
   wm = {
     "1" = "一";
     "2" = "二";
@@ -12,16 +18,16 @@
     "10" = "十";
   };
   bat = [
-    "󰁺"
-    "󰁻"
-    "󰁼"
-    "󰁽"
-    "󰁾"
-    "󰁿"
-    "󰂀"
-    "󰂁"
-    "󰂂"
-    "󰁹"
+    (mkIcon color.base08 "󰁺")
+    (mkIcon color.base08 "󰁻")
+    (mkIcon color.base09 "󰁼")
+    (mkIcon color.base09 "󰁽")
+    (mkIcon color.base08 "󰁾")
+    (mkIcon color.base08 "󰁿")
+    (mkIcon color.base0C "󰂀")
+    (mkIcon color.base0C "󰂁")
+    (mkIcon color.base0B "󰂂")
+    (mkIcon color.base0B "󰁹")
   ];
   light = [
     "󱩎 "
