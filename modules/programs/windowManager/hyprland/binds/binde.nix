@@ -92,14 +92,14 @@ in
 ++ (
   let
     light = arg: [
-      (fn "XF86MonBrightnessDown" ("$ex, sudo ${lib.getExe pkgs.light} -U 10" + arg))
-      (fn "XF86MonBrightnessUp  " ("$ex, sudo ${lib.getExe pkgs.light} -A 10" + arg))
-      (fnShift "XF86MonBrightnessDown" ("$ex, sudo ${lib.getExe pkgs.light} -S 70" + arg))
-      (fnShift "XF86MonBrightnessUp  " ("$ex, sudo ${lib.getExe pkgs.light} -S 100" + arg))
+      (fn "XF86MonBrightnessDown" ("$ex, sudo ${lib.getExe pkgs.brightnessctl} set 10%+" + arg))
+      (fn "XF86MonBrightnessUp  " ("$ex, sudo ${lib.getExe pkgs.brightnessctl} set 10%-" + arg))
+      (fnShift "XF86MonBrightnessDown" ("$ex, sudo ${lib.getExe pkgs.brightnessctl} set 70%" + arg))
+      (fnShift "XF86MonBrightnessUp  " ("$ex, sudo ${lib.getExe pkgs.brightnessctl} set 100%" + arg))
     ];
   in
   if config.hm.services.wob.enable then
-    (light " && sudo ${lib.getExe pkgs.light} -G | cut -d'.' -f1 > $WOBSOCK")
+    (light " | awk '/Current brightness:/ { print int($3 / 255 * 100)}' > $WOBSOCK")
   else
     (light (toString null))
 )

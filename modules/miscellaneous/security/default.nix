@@ -34,7 +34,7 @@
 
                   commands = [
                     {
-                      command = lib.getExe pkgs.light;
+                      command = lib.getExe pkgs.brightnessctl;
                       options = [ "NOPASSWD" ];
                     }
                     {

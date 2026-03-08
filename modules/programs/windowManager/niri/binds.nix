@@ -125,7 +125,8 @@ in
 
       mute = " && wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{if ($3) print 0; else print int($2*100)}' > ${WOBSOCK_PATH}";
       vol = " && wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print int($2*100)}' > ${WOBSOCK_PATH}";
-      light = " && sudo ${lib.getExe pkgs.light} -G | cut -d'.' -f1 > ${WOBSOCK_PATH}";
+      light = " | awk '/Current brightness:/ { print int($3 / 255 * 100)}' > ${WOBSOCK_PATH}";
+      lightPkg = lib.getExe pkgs.brightnessctl;
 
       make = volume: audio: brightness: [
         (bind "XF86AudioMute" (sh ("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle" + audio)))
@@ -139,13 +140,13 @@ in
         (bind "${m}+TouchpadScrollUp" (sh ("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+" + volume)))
         (bind "${m}+TouchpadScrollDown" (sh ("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%-" + volume)))
 
-        (bind "XF86MonBrightnessUp" (sh ("sudo ${lib.getExe pkgs.light} -A 10" + brightness)))
-        (bind "XF86MonBrightnessDown" (sh ("sudo ${lib.getExe pkgs.light} -U 10" + brightness)))
-        (bind "${s}+XF86MonBrightnessUp" (sh ("sudo ${lib.getExe pkgs.light} -S 70" + brightness)))
-        (bind "${s}+XF86MonBrightnessDown" (sh ("sudo ${lib.getExe pkgs.light} -S 100" + brightness)))
+        (bind "XF86MonBrightnessUp" (sh ("sudo ${lightPkg} set 10%+" + brightness)))
+        (bind "XF86MonBrightnessDown" (sh ("sudo ${lightPkg} set 10%-" + brightness)))
+        (bind "${s}+XF86MonBrightnessUp" (sh ("sudo ${lightPkg} set 70%" + brightness)))
+        (bind "${s}+XF86MonBrightnessDown" (sh ("sudo ${lightPkg} set 100%" + brightness)))
 
-        (bind "${m}+TouchpadScrollRight" (sh ("sudo ${lib.getExe pkgs.light} -A 10" + brightness)))
-        (bind "${m}+TouchpadScrollDown" (sh ("sudo ${lib.getExe pkgs.light} -U 10" + brightness)))
+        (bind "${m}+TouchpadScrollRight" (sh ("sudo ${lib.getExe pkgs.brightnessctl} -A 10" + brightness)))
+        (bind "${m}+TouchpadScrollDown" (sh ("sudo ${lib.getExe pkgs.brightnessctl} -U 10" + brightness)))
 
         (bind "XF86Favorites" (spawn "wleave"))
       ];

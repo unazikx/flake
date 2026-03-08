@@ -9,6 +9,7 @@
     {
       nixosModules.${baseNameOf ./.} =
         {
+          pkgs,
           lib,
           config,
           ...
@@ -31,8 +32,8 @@
               listener = [
                 {
                   timeout = 600;
-                  on-timeout = "light -S 10";
-                  on-resume = "light -S 100";
+                  on-timeout = "${lib.getExe pkgs.brightnessctl} set 10%";
+                  on-resume = "${lib.getExe pkgs.brightnessctl} set 100%";
                 }
 
                 {

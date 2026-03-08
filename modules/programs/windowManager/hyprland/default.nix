@@ -67,9 +67,6 @@
                     ", edge:l:u, exec, wpctl set-volume -l 2 @DEFAULT_AUDIO_SINK@ 5%+"
                     ", edge:l:d, exec, wpctl set-volume -l 2 @DEFAULT_AUDIO_SINK@ 5%-"
 
-                    ", edge:r:u,  exec, light -A 10"
-                    ", edge:r:d,  exec, light -U 10"
-
                     ", edge:r:l, workspace, e+1"
                     ", edge:l:r, workspace, e-1"
 

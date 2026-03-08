@@ -21,9 +21,9 @@
             wantedBy = [ "basic.target" ];
 
             script = lib.concatStringsSep " " [
-              (lib.getExe pkgs.light)
-              "-A"
-              (toString 100)
+              (lib.getExe pkgs.brightnessctl)
+              "set"
+              "100%"
             ];
           };
         };

@@ -10,6 +10,7 @@
     {
       nixosModules.${baseNameOf ./.} =
         {
+          pkgs,
           lib,
           ...
         }:
@@ -28,7 +29,16 @@
             "command-not-found"
           ];
 
-          environment.defaultPackages = lib.mkForce [ ];
+          environment = {
+            defaultPackages = lib.mkForce [ ];
+            systemPackages = lib.attrValues {
+              inherit (pkgs)
+                helix
+                killall
+                wget
+                ;
+            };
+          };
 
           documentation = turnOff [
             "dev"

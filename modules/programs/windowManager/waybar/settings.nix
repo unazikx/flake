@@ -165,9 +165,11 @@
           format = "{percent}% {icon}";
           format-icons = ico.light;
 
-          scroll-step = 1;
-          on-click = "light -S 70";
-          on-click-right = "light -S 100";
+          on-scroll-up = "${lib.getExe pkgs.brightnessctl} set 1%+";
+          on-scroll-down = "${lib.getExe pkgs.brightnessctl} set 1%-";
+
+          on-click = "${lib.getExe pkgs.brightnessctl} set 70%";
+          on-click-right = "${lib.getExe pkgs.brightnessctl} set 100%";
         };
 
         "network" = {
