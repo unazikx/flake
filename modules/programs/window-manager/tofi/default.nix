@@ -29,8 +29,10 @@
               border-width = 0;
               outline-width = 0;
 
-              padding-left = "35%";
+              padding-left = "30%";
+              padding-right = "30%";
               padding-top = "20%";
+              padding-bottom = "20%";
 
               result-spacing = 25;
               num-results = 9;
