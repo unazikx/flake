@@ -50,9 +50,8 @@
             caddy.virtualHosts =
               lib.genAttrs
                 [
-                  "glance.${lib.hostName}.local"
                   "${lib.hostName}.local"
-                  "${lib.hostName}.zebu-salmon.ts.net"
+                  "glance.${lib.hostName}.local"
                 ]
                 (_: {
                   extraConfig = ''

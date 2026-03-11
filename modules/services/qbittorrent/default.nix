@@ -109,16 +109,11 @@
               lib.genAttrs
                 [
                   "qbittorrent.${lib.hostName}.local"
-                  "qbittorrent.${lib.hostName}.zebu-salmon.ts.net"
                 ]
                 (_: {
                   extraConfig = ''
-                    tls internal
                     encode zstd gzip
-                    redir /qbittorrent /qbittorrent/ 308
-                    handle_path /qbittorrent/* {
-                      reverse_proxy http://0.0.0.0:${toString cfg.webuiPort}
-                    }
+                    reverse_proxy http://0.0.0.0:${toString cfg.webuiPort}
                   '';
                 });
           };

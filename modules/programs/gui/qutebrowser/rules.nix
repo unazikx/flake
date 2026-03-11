@@ -17,7 +17,8 @@
     (lib.mapAttrs (_name: value: "https://${value}") {
       # nix
       nixpkgs = "search.nixos.org/packages?channel=unstable";
-      homemanager = "home-manager-options.extranix.com/?query=&release=master";
+      homemanager = "marv963.github.io/hm-search/?release=master";
+      #             "home-manager-options.extranix.com/?query=&release=master"
       searchix = "searchix.ovh";
       myNixOS = "mynixos.com";
       nixosWiki = "wiki.nixos.org";
@@ -44,6 +45,8 @@
       nitter = "nitter.net"; # neck hurt
       vk = "vk.com";
       dvach = "2ch.su"; # zloba >:(
+      tidalSquid = "tidal.squid.wtf";
+      tidalMonochrome = "monochrome.tf";
 
       # anime etc
       anilist = "anilist.co";
@@ -91,6 +94,25 @@
       vaultwarden = "vault.vaultwarden.net"; # need own server
       intellectual = "intellectual.ducks.party";
     })
+    (lib.mkIf config.services.caddy.enable (
+      lib.mapAttrs (_name: value: "https://${value}") (
+        builtins.listToAttrs (
+          map (domain: {
+            name =
+              (
+                domain:
+                let
+                  withoutSuffix = builtins.head (builtins.split "\\.jetpure\\.local" domain);
+                  withUnderscores = builtins.replaceStrings [ "." ] [ "_" ] withoutSuffix;
+                in
+                "_${withUnderscores}Local"
+              )
+                domain;
+            value = domain;
+          }) (lib.attrNames config.services.caddy.virtualHosts)
+        )
+      )
+    ))
   ];
 
   whitelist."whitelist" = {
