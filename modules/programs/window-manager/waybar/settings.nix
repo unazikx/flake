@@ -395,7 +395,7 @@
 
             menu = "on-click-right";
             menu-actions = {
-              "shutdown" = "systemctl shutdown";
+              "shutdown" = "systemctl poweroff";
               "reboot" = "systemctl reboot";
               "suspend" = "systemctl suspend";
               "logout" = "loginctl terminate-user $USER";
