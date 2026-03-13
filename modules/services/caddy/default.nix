@@ -31,9 +31,7 @@
                   extraConfig =
                     if (config.services.glance.enable != true) then
                       ''
-                        tls internal
                         encode zstd gzip
-                        file_server
                       ''
                     else
                       (toString null);

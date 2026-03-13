@@ -83,12 +83,8 @@
                 ]
                 (_: {
                   extraConfig = ''
-                    tls internal
                     encode zstd gzip
-                    redir /transmission /transmission/ 308
-                    handle_path /transmission/* {
-                      reverse_proxy http://0.0.0.0:${toString cfg.settings.rpc-port}
-                    }
+                    reverse_proxy http://0.0.0.0:${toString cfg.settings.rpc-port}
                   '';
                 });
           };

@@ -15,6 +15,9 @@
           config,
           ...
         }:
+        let
+          cfg = config.hm.services.syncthing;
+        in
         {
           persist.user.directories = [ ".local/state/syncthing" ];
 
@@ -22,6 +25,8 @@
 
           hm.services.syncthing = {
             enable = true;
+
+            guiAddress = "127.0.0.1:8384";
 
             cert = config.sopsnix."syncthing/cert" or null;
             key = config.sopsnix."syncthing/key" or null;
@@ -58,6 +63,18 @@
               };
             };
           };
+
+          services.caddy.virtualHosts =
+            lib.genAttrs
+              [
+                "syncthing.${lib.hostName}.local"
+              ]
+              (_: {
+                extraConfig = ''
+                  encode zstd gzip
+                  reverse_proxy http://${toString cfg.guiAddress}
+                '';
+              });
 
           networking.firewall = rec {
             allowedTCPPorts = [ 22000 ];

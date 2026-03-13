@@ -55,7 +55,6 @@
                 ]
                 (_: {
                   extraConfig = ''
-                    tls internal
                     encode zstd gzip
                     reverse_proxy http://0.0.0.0:${toString cfg.settings.server.port}
                   '';

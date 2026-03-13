@@ -54,12 +54,8 @@
               ]
               (_: {
                 extraConfig = ''
-                  tls internal
                   encode zstd gzip
-                  redir /torrserver /torrserver/ 308
-                  handle_path /torrserver/* {
-                    reverse_proxy http://0.0.0.0:${toString port}
-                  }
+                  reverse_proxy http://0.0.0.0:${toString port}
                 '';
               });
 

@@ -46,7 +46,6 @@
                 ]
                 (_: {
                   extraConfig = ''
-                    tls internal
                     encode zstd gzip
                     reverse_proxy http://${cfg.config.rocketAddress}:${toString cfg.config.rocketPort}
                   '';
