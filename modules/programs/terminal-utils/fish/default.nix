@@ -126,8 +126,6 @@
                 inherit lib;
               };
             };
-
-            pay-respects.enable = true;
           };
         };
     };
