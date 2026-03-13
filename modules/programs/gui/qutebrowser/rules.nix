@@ -6,14 +6,6 @@
 
 {
   quickmarks = lib.mkMerge [
-    {
-      # localhost
-      keenWeb = "192.168.1.1";
-      flood = "localhost:8113";
-      transmission = "localhost:9091";
-      torrserver = "localhost:8223";
-      syncthing = "localhost:8384";
-    }
     (lib.mapAttrs (_name: value: "https://${value}") {
       # nix
       nixpkgs = "search.nixos.org/packages?channel=unstable";
