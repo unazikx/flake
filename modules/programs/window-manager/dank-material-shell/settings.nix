@@ -326,7 +326,7 @@
   notificationFocusedMonitor = false;
 
   osdAlwaysShowValue = true;
-  osdPosition = 2;
+  osdPosition = 4; # top-center
   osdVolumeEnabled = true;
   osdMediaVolumeEnabled = true;
   osdMediaPlaybackEnabled = true;
