@@ -6,24 +6,25 @@
 with inputs;
 
 [
-  shattered-prism.overlays.default
   glide-browser.overlays.default
-  nix-minecraft.overlays.default
   niri-flake.overlays.niri
+  nix-minecraft.overlays.default
   nur.overlays.default
+  shattered-prism.overlays.default
 
   (
     f: p:
     let
       inherit (p.stdenv.hostPlatform) system;
+      branch-config = { inherit system config; };
       config = nixConfig;
     in
     {
       own = my-own-packages.legacyPackages.${system};
 
-      _2505 = import nixpkgs-2505 { inherit system config; };
-      _2511 = import nixpkgs-2511 { inherit system config; };
-      _2411 = import nixpkgs-2411 { inherit system config; };
+      _2505 = import nixpkgs-2505 branch-config;
+      _2511 = import nixpkgs-2511 branch-config;
+      _2411 = import nixpkgs-2411 branch-config;
 
       system = p.stdenv.hostPlatform.system;
 

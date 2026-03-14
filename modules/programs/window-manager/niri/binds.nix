@@ -27,13 +27,18 @@ let
 
   sh = spawn-sh;
   msg = cmd: sh ("niri msg action " + cmd);
+
+  dms = config.hm.programs.dank-material-shell.enable;
+  ifDMS = first: second: if dms then first else second;
 in
 
 (lib.listToAttrs (
   # programs
   [
-    (bind "${m}+Tab" (sh "bash -c tofi-drun | xargs niri msg action spawn --"))
-    (bind "${m}+${s}+Tab" (sh (lib.getExe pkgs.clapboard)))
+    (bind "${m}+Tab" (
+      sh (ifDMS "dms ipc spotlight open" "bash -c tofi-drun | xargs niri msg action spawn --")
+    ))
+    (bind "${m}+${s}+Tab" (sh (ifDMS "dms ipc clipboard open" (lib.getExe pkgs.clapboard))))
 
     (bind "${m}+Return" (sh "kitty"))
     (bind "${m}+${s}+Return" (sh "kitty --class=kitty_small"))
@@ -57,10 +62,12 @@ in
       (bind "${m}+Space" toggle-overview)
       (bind "${m}+${a}+Space" center-window)
       (bind "${m}+${s}+Space" (
-        if config.hm.programs.wleave.enable then
-          (sh (lib.getExe config.hm.programs.wleave.package))
-        else
-          quit
+        ifDMS (sh "dms ipc powermenu open") (
+          if config.hm.programs.wleave.enable then
+            (sh (lib.getExe config.hm.programs.wleave.package))
+          else
+            quit
+        )
       ))
 
       (bind "${m}+F" fullscreen-window)
@@ -112,9 +119,9 @@ in
   ]
   # screenshots
   ++ [
-    (bind "Print" (msg "screenshot -p false"))
-    (bind "${s}+Print" (msg "screenshot-screen -p false"))
-    (bind "${a}+Print" (msg "screenshot-window -p false"))
+    (bind "Print" (ifDMS (sh "dms ipc niri screenshot") (msg "screenshot -p false")))
+    (bind "${s}+Print" (ifDMS (sh "dms ipc niri screenshotScreen") (msg "screenshot-screen -p false")))
+    (bind "${a}+Print" (ifDMS (sh "dms ipc niri screenshotWindow") (msg "screenshot-window -p false")))
   ]
   # volume and brightness
   ++ (
@@ -145,14 +152,34 @@ in
         (bind "${s}+XF86MonBrightnessUp" (sh ("sudo ${lightPkg} set 70%" + brightness)))
         (bind "${s}+XF86MonBrightnessDown" (sh ("sudo ${lightPkg} set 100%" + brightness)))
 
-        (bind "${m}+TouchpadScrollRight" (sh ("sudo ${lib.getExe pkgs.brightnessctl} -A 10" + brightness)))
-        (bind "${m}+TouchpadScrollDown" (sh ("sudo ${lib.getExe pkgs.brightnessctl} -U 10" + brightness)))
+        # (bind "${m}+TouchpadScrollRight" (sh ("sudo ${lightPkg} -A 10" + brightness)))
+        # (bind "${m}+TouchpadScrollDown" (sh ("sudo ${lightPkg} -U 10" + brightness)))
 
         (bind "XF86Favorites" (spawn "wleave"))
       ];
     in
     if (config.hm.services.wob.enable) then
       (make vol mute light)
+    else if dms then
+      [
+        (bind "XF86AudioMute" (sh "dms ipc audio mute"))
+        (bind "XF86AudioMicMute" (sh "dms ipc audio micmute"))
+
+        (bind "XF86AudioRaiseVolume" (sh "dms ipc audio increment 5"))
+        (bind "XF86AudioLowerVolume" (sh "dms ipc audio decrement 5"))
+        (bind "${s}+XF86AudioRaiseVolume" (sh "dms ipc audio increment 10"))
+        (bind "${s}+XF86AudioLowerVolume" (sh "dms ipc audio decrement 10"))
+
+        (bind "${m}+TouchpadScrollUp" (sh "dms ipc audio increment 5"))
+        (bind "${m}+TouchpadScrollDown" (sh "dms ipc audio decrement 5"))
+
+        (bind "XF86MonBrightnessUp" (sh "dms ipc brightness increment 10"))
+        (bind "XF86MonBrightnessDown" (sh "dms ipc brightness decrement 10"))
+        (bind "${s}+XF86MonBrightnessUp" (sh "dms ipc brightness set 100"))
+        (bind "${s}+XF86MonBrightnessDown" (sh "dms ipc brightness set 70"))
+
+        (bind "XF86Favorites" (spawn "dms ipc powermenu open"))
+      ]
     else
       (make (toString null) (toString null) (toString null))
   )

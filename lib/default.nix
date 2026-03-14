@@ -1,4 +1,7 @@
-inputs@{ self, ... }:
+inputs@{
+  self,
+  ...
+}:
 
 let
   extendedLib = import ./generator.nix {

@@ -204,6 +204,14 @@ with config.lib.stylix.colors.withHashtag;
         }
       ];
     }
+    {
+      place-within-backdrop = true;
+      matches = [
+        {
+          namespace = "dms:blurwallpaper";
+        }
+      ];
+    }
   ];
 
   workspaces = lib.genAttrs (map toString (lib.range 1 5)) (_: { });
@@ -228,7 +236,7 @@ with config.lib.stylix.colors.withHashtag;
   environment = {
     DISPLAY = ":0";
     SLURP_ARGS = "-b ${base00}CC -c ${base0F}FF -B ${base02}CC";
-    WOBSOCK = config.hm.home.sessionVariables.WOBSOCK;
+    # WOBSOCK = config.hm.home.sessionVariables.WOBSOCK;
   };
 
   debug.deactivate-unfocused-windows = true;

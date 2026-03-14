@@ -25,7 +25,7 @@
               desktop-hardware
               develop
               main-games
-              niri-de
+              material-de
               office-env
 
               caddy

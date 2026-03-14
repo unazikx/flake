@@ -12,16 +12,18 @@ let
 
   nxosModules = with inputs; [
     agenix.nixosModules.default
+    dank-material-shell.nixosModules.dank-material-shell
+    dank-material-shell-plugins.nixosModules.default
     disko.nixosModules.default
+    home-manager.nixosModules.home-manager
+    impermanence.nixosModules.impermanence
+    mangowc.nixosModules.mango
+    musnix.nixosModules.default
     nix-flatpak.nixosModules.nix-flatpak
     nix-gaming.nixosModules.pipewireLowLatency
     nix-gaming.nixosModules.platformOptimizations
     nix-gaming.nixosModules.wine
-    home-manager.nixosModules.home-manager
-    impermanence.nixosModules.impermanence
-    mangowc.nixosModules.mango
     nix-minecraft.nixosModules.minecraft-servers
-    musnix.nixosModules.default
     nixpkgs.nixosModules.notDetected
     nur.modules.nixos.default
     sopsnix.nixosModules.default
@@ -31,6 +33,8 @@ let
   ];
 
   homeModules = with inputs; [
+    dank-material-shell.homeModules.dank-material-shell
+    dank-material-shell-plugins.homeModules.default
     glide-browser.homeModules.default
     mangowc.hmModules.mango
     niri-flake.homeModules.niri
