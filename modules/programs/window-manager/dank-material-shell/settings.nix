@@ -397,7 +397,6 @@
           "notificationButton"
           "clock"
           "music"
-          "niriWindows"
         ];
 
         centerWidgets = mkWidgets [
@@ -407,7 +406,6 @@
         rightWidgets = lib.mkMerge [
           (mkWidgets [
             "systemTray"
-            "clipboard"
           ])
           [
             {
