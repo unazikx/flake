@@ -52,6 +52,7 @@
                   "su"
                   "sudo"
                   "login"
+                  "greetd"
                 ]
                 (_n: {
                   fprintAuth = true;

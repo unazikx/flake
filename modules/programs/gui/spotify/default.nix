@@ -84,6 +84,8 @@
               equalizer = base0B;
               highlight-elevated = base03;
             };
+
+            spotifyLaunchFlags = "--password-store=basic";
           };
         };
     };
