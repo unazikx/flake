@@ -18,6 +18,7 @@
               hyprlock
               kitty
               niri
+              niri-bg
               tofi
               waybar
               wleave

@@ -49,28 +49,6 @@
                 pkgs.xdg-desktop-portal-gtk
               ];
             };
-
-            systemd.user.services.stylix-bg-niri = {
-              Unit = {
-                Description = "Sets stylix image as background for niri";
-                After = [ "niri.service" ];
-              };
-
-              Service = {
-                ExecStart = lib.concatStringsSep " " [
-                  (lib.getExe pkgs.swaybg)
-                  "--image"
-                  config.stylix.image
-                ];
-
-                Type = "simple";
-                KillMode = "process";
-                Restart = "on-failure";
-                RestartSec = 5;
-              };
-
-              Install.WantedBy = [ "graphical-session.target" ];
-            };
           };
         };
     };
