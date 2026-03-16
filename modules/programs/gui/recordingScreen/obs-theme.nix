@@ -3,6 +3,9 @@
   ...
 }:
 
+let
+  polarity = if (config.stylix.polarity == "dark") then "true" else "false";
+in
 with config.lib.stylix.colors.withHashtag;
 
 {
@@ -10,8 +13,8 @@ with config.lib.stylix.colors.withHashtag;
     @OBSThemeMeta {
       name: 'Stylix';
       id: 'com.obsproject.Stylix';
-      author: 'GideonWolfe';
-      dark: 'true';
+      author: 'GideonWolfe & azikx';
+      dark: '${polarity}';
     }
 
     @OBSThemeVars {
@@ -1886,8 +1889,8 @@ with config.lib.stylix.colors.withHashtag;
       name: 'Stylix';
       id: 'com.obsproject.Stylix.Stylix';
       extends: 'com.obsproject.Stylix';
-      author: 'GideonWolfe';
-      dark: 'true';
+      author: 'GideonWolfe & azikx';
+      dark: '${polarity}';
     }
 
     @OBSThemeVars {
