@@ -25,7 +25,7 @@
               desktop-hardware
               develop
               main-games
-              material-de
+              niri-de
               office-env
 
               caddy
@@ -46,6 +46,7 @@
               qbittorrent
               qutebrowser
               rbw
+              recordingScreen
               rezka-fzf
               rusted-tools
               sopsnix

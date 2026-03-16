@@ -96,14 +96,17 @@ with config.lib.stylix.colors.withHashtag;
       display.color = base01 + "CC";
     };
 
-    gaps = 4;
+    gaps = 8;
 
-    struts = lib.genAttrs [
-      "left"
-      "right"
-      "top"
-      "bottom"
-    ] (_: 2);
+    # WARN:
+    # it makes side window little visible
+    #
+    # struts = lib.genAttrs [
+    #   "left"
+    #   "right"
+    #   "top"
+    #   "bottom"
+    # ] (_: 4);
 
     shadow = {
       enable = true;
@@ -147,26 +150,25 @@ with config.lib.stylix.colors.withHashtag;
   #   };
   # };
 
-  animations =
+  animations = lib.mkMerge [
     (lib.genAttrs
       [
         "horizontal-view-movement"
         "window-movement"
-        "window-resize"
+        "workspace-switch"
       ]
       (_: {
-        kind.spring = {
-          damping-ratio = 0.760000;
-          epsilon = 0.000100;
-          stiffness = 700;
+        kind.easing = {
+          duration-ms = 200;
+          curve = "ease-out-quad";
         };
       })
     )
-    // (lib.genAttrs
+    (lib.genAttrs
       [
         "window-close"
         "window-open"
-        "workspace-switch"
+        "window-resize"
       ]
       (_: {
         kind.easing = {
@@ -175,7 +177,7 @@ with config.lib.stylix.colors.withHashtag;
         };
       })
     )
-    // { };
+  ];
 
   window-rules = [
     {

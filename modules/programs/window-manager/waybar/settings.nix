@@ -36,7 +36,6 @@
           {
             modules-left = [
               "custom/spacing"
-              "custom/launcher"
               "group/soundGrp"
               "backlight"
               "group/blueGrp"
@@ -208,9 +207,20 @@
           rotate = 90;
 
           format = "{icon}";
-          format-icons = ico.wm // {
-            "active" = "";
-          };
+          format-icons =
+            let
+              minimal = true;
+            in
+            if minimal then
+              (lib.genAttrs [
+                "active"
+                "default"
+              ] (_: " "))
+            else
+              (lib.mkMerge [
+                ico.wm
+                { "active" = ""; }
+              ]);
 
           all-outputs = false;
           disable-scroll = false;
