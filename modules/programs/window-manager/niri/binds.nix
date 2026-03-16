@@ -178,7 +178,9 @@ in
         (bind "${s}+XF86MonBrightnessUp" (sh "dms ipc brightness set 100"))
         (bind "${s}+XF86MonBrightnessDown" (sh "dms ipc brightness set 70"))
 
-        (bind "XF86Favorites" (spawn "dms ipc powermenu open"))
+        (bind "XF86Favorites" (sh "dms ipc powermenu open"))
+        (bind "${m}+T" (sh "dms ipc night toggle"))
+        (bind "${m}+U" (sh "dms ipc notifications open"))
       ]
     else
       (make (toString null) (toString null) (toString null))

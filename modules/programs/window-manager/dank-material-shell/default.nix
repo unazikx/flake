@@ -33,6 +33,25 @@
                 })
               ];
 
+              session =
+                let
+                  minute = 60;
+                in
+                {
+                  acMonitorTimeout = minute * 20;
+                  acLockTimeout = minute * 15;
+
+                  nightModeAutoEnabled = true;
+                  nightModeTemperature = 4500;
+                  nightModeAutoMode = "location";
+
+                  # if nightModeAutoMode = "time";
+                  nightModeStartHour = 21;
+                  nightModeStartMinute = 0;
+                  nightModeEndHour = 6;
+                  nightModeEndMinute = 0;
+                };
+
               plugins = import ./plugins.nix { };
             }
             {

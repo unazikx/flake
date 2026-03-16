@@ -65,18 +65,18 @@
   showControlCenterButton = true;
   showCapsLockIndicator = true;
 
-  controlCenterShowNetworkIcon = true;
+  controlCenterShowNetworkIcon = false;
   controlCenterShowBluetoothIcon = true;
   controlCenterShowAudioIcon = true;
   controlCenterShowAudioPercent = false;
-  controlCenterShowVpnIcon = true;
+  controlCenterShowVpnIcon = false;
   controlCenterShowBrightnessIcon = false;
   controlCenterShowBrightnessPercent = false;
   controlCenterShowMicIcon = false;
   controlCenterShowMicPercent = true;
   controlCenterShowBatteryIcon = false;
   controlCenterShowPrinterIcon = false;
-  controlCenterShowScreenSharingIcon = true;
+  controlCenterShowScreenSharingIcon = false;
 
   showPrivacyButton = true;
   privacyShowMicIcon = false;
@@ -99,13 +99,19 @@
         "audioInput"
       ]
     )
-    [
-      {
-        id = "doNotDisturb";
+    (map
+      (id: {
+        inherit id;
         enabled = true;
-        width = 100;
-      }
-    ]
+        width = 25;
+      })
+      [
+        "nightMode"
+        "idleInhibitor"
+        "doNotDisturb"
+        "battery"
+      ]
+    )
   ];
 
   showWorkspaceIndex = false;
@@ -345,7 +351,6 @@
     "poweroff"
     "lock"
     "suspend"
-    "restart"
   ];
   powerMenuDefaultAction = "logout";
   powerMenuGridLayout = false;
@@ -405,6 +410,7 @@
 
         rightWidgets = lib.mkMerge [
           (mkWidgets [
+            "keyboard_layout_name"
             "systemTray"
           ])
           [
