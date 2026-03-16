@@ -13,11 +13,12 @@
         {
           imports = lib.attrValues {
             inherit (partsConfig.nixosModules)
+              epic-games
+              hytale
               mumble
               prism-launcher
               r2modman
               steam
-              hytale
               umu-launcher
               ;
           };

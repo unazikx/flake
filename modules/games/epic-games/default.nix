@@ -27,7 +27,6 @@
           hmPackages = [
             pkgs.legendary-gl
             pkgs.heroic
-            pkgs.rare
           ];
 
           hm.xdg.configFile = {
