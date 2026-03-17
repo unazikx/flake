@@ -1,4 +1,20 @@
 {
+  description = ''
+    .__   __.  __  ___   ___ 
+    |  \ |  | |  | \  \ /  / 
+    |   \|  | |  |  \  V  /  
+    |  . `  | |  |   >   <   
+    |  |\   | |  |  /  .  \  
+    |__| \__| |__| /__/ \__\ 
+                             
+      ______   ______   .__   __.  _______  __    _______ 
+     /      | /  __  \  |  \ |  | |   ____||  |  /  _____|
+    |  ,----'|  |  |  | |   \|  | |  |__   |  | |  |  __  
+    |  |     |  |  |  | |  . `  | |   __|  |  | |  | |_ | 
+    |  `----.|  `--'  | |  |\   | |  |     |  | |  |__| | 
+     \______| \______/  |__| \__| |__|     |__|  \______| 
+  '';
+
   inputs = {
     nixpkgs.follows = "nixpkgs-unstable";
 
@@ -24,6 +40,7 @@
       inputs.pkgs-by-name.follows = "pkgs-by-name";
       inputs.nur.follows = "nur";
       inputs.treefmt-nix.follows = "treefmt-nix";
+      inputs.emmanuelrosa-nix.follows = "emmanuelrosa-nix";
     };
 
     home-manager = {
@@ -50,6 +67,11 @@
       url = "github:xddxdd/nix-math";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-parts.follows = "flake-parts";
+    };
+
+    emmanuelrosa-nix = {
+      url = "github:emmanuelrosa/erosanix";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     impermanence = {

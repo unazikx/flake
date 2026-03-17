@@ -16,11 +16,13 @@
         {
           environment = {
             systemPackages = lib.attrValues {
-              inherit (pkgs)
-                uutils-coreutils-noprefix
-                uutils-findutils
-                uutils-diffutils
-                ;
+              inherit (pkgs) ;
+              # ❯ diff --version
+              # Unknown option: "--version"
+              # ❯ diff -r BeyondSunset_1.0.1 BeyondSunset_1.0.1X
+              # Unknown option: "-r"
+              # ❯ diff BeyondSunset_1.0.1 BeyondSunset_1.0.1X -r
+              # Unknown option: "-r"
             };
 
             shellAliases = {
