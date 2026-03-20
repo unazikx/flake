@@ -29,10 +29,9 @@
           programs = {
             steam = {
               enable = true;
+
               gamescopeSession.enable = true;
-
               protontricks.enable = true;
-
               remotePlay.openFirewall = true;
 
               extraCompatPackages = [ pkgs.proton-ge-bin ];
@@ -66,6 +65,83 @@
                     sdl3
                     wayland
                     gtk2
+                  ];
+              };
+
+              config = rec {
+                enable = true;
+                closeSteam = true;
+
+                # WARN:
+                # idk how to make it automatically
+                defaultCompatTool = "GE-Proton";
+
+                apps =
+                  let
+                    mkAttrset =
+                      options:
+                      lib.mapAttrs (
+                        _: attrs:
+                        lib.mkMerge [
+                          options
+                          attrs
+                        ]
+                      );
+                  in
+                  lib.mkMerge [
+                    (mkAttrset
+                      {
+                        launchOptions = {
+                          wrappers = [
+                            (lib.getExe pkgs.gamemode)
+                          ];
+                        };
+                      }
+                      {
+                        duck-game = {
+                          # https://www.protondb.com/app/312530#VBbR6m5Ilw
+                          compatTool = "proton_8";
+                          id = 312530;
+                        };
+
+                        city-car-driving = {
+                          # soon...
+                          compatTool = "proton_8";
+                          id = 493490;
+                        };
+                      }
+                    )
+
+                    # default proton tool
+                    (mkAttrset
+                      {
+                        compatTool = defaultCompatTool;
+                        launchOptions = {
+                          wrappers = [ (lib.getExe pkgs.gamemode) ];
+                        };
+                      }
+                      {
+                        terraria = {
+                          # soon...
+                          id = 105600;
+                        };
+
+                        project-zomboid = {
+                          # soon...
+                          id = 108600;
+                        };
+
+                        valheim = {
+                          # soon...
+                          id = 892970;
+                        };
+
+                        lucid-blocks = {
+                          # soon...
+                          id = 3495730;
+                        };
+                      }
+                    )
                   ];
               };
 

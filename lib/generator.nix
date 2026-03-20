@@ -27,6 +27,7 @@ let
     nixpkgs.nixosModules.notDetected
     nur.modules.nixos.default
     sopsnix.nixosModules.default
+    steam-config-nix.nixosModules.default
     stylix.nixosModules.default
     zapret-discord.nixosModules.default
     zapret-presets.nixosModules.presets

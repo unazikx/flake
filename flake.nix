@@ -224,6 +224,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    steam-config-nix = {
+      url = "github:different-name/steam-config-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-parts.follows = "flake-parts";
+    };
+
     nix-minecraft = {
       url = "github:Infinidoge/nix-minecraft";
       inputs.nixpkgs.follows = "nixpkgs";

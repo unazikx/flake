@@ -532,7 +532,7 @@
     },
     "flake-utils_3": {
       "inputs": {
-        "systems": "systems_8"
+        "systems": "systems_9"
       },
       "locked": {
         "lastModified": 1710146030,
@@ -1425,6 +1425,7 @@
         "shattered-prism": "shattered-prism",
         "sopsnix": "sopsnix",
         "spicetify-nix": "spicetify-nix",
+        "steam-config-nix": "steam-config-nix",
         "stylix": "stylix",
         "treefmt-nix": "treefmt-nix_2",
         "umu-protonfixes": "umu-protonfixes",
@@ -1519,6 +1520,30 @@
         "type": "github"
       }
     },
+    "steam-config-nix": {
+      "inputs": {
+        "flake-parts": [
+          "flake-parts"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "systems": "systems_7"
+      },
+      "locked": {
+        "lastModified": 1773421780,
+        "narHash": "sha256-bkZGvIWV8JavLMQ2KzddrMCf9YBeiIM4OgdiwKcFx8M=",
+        "owner": "different-name",
+        "repo": "steam-config-nix",
+        "rev": "7b8021b2739733c547e2fe02739e6b8452813aa7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "different-name",
+        "repo": "steam-config-nix",
+        "type": "github"
+      }
+    },
     "stylix": {
       "inputs": {
         "base16": "base16_2",
@@ -1536,7 +1561,7 @@
         "nur": [
           "nur"
         ],
-        "systems": "systems_7",
+        "systems": "systems_8",
         "tinted-foot": "tinted-foot",
         "tinted-kitty": "tinted-kitty",
         "tinted-schemes": "tinted-schemes",
@@ -1663,6 +1688,21 @@
       }
     },
     "systems_8": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
+    "systems_9": {
       "locked": {
         "lastModified": 1681028828,
         "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
