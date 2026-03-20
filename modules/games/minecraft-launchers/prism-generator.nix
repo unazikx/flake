@@ -21,7 +21,7 @@
 
   hm.xdg.dataFile = {
     ${configDir}.source = lib.mkIf (configDir != null) (
-      (pkgs.formats.ini { }).generate "prismlauncher-settings" {
+      (pkgs.formats.ini { }).generate "${package.name}-settings" {
         General = {
           ApplicationTheme = "system";
           AutoCloseConsole = false;
