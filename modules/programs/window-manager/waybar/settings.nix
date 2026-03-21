@@ -56,7 +56,6 @@
           {
             modules-left = [
               "custom/spacing"
-              "custom/powerMenu"
               "group/musicGrp"
               "group/soundGrp"
               "group/blueGrp"
@@ -77,7 +76,11 @@
           tooltip = false;
           rotate = 90;
 
-          format = " {status_icon} / {player_icon}";
+          format =
+            let
+              minimal = true;
+            in
+            if minimal then " {player_icon}" else " {status_icon} / {player_icon}";
           format-stopped = "";
 
           max-length = 16;
@@ -209,7 +212,7 @@
           format = "{icon}";
           format-icons =
             let
-              minimal = true;
+              minimal = false;
             in
             if minimal then
               (lib.genAttrs [
