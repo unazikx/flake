@@ -16,7 +16,13 @@
         {
           environment = {
             systemPackages = lib.attrValues {
-              inherit (pkgs) ;
+              inherit (pkgs)
+                ouch
+                ;
+
+              # WARN:
+              # watafaq is this???
+              #
               # ❯ diff --version
               # Unknown option: "--version"
               # ❯ diff -r BeyondSunset_1.0.1 BeyondSunset_1.0.1X
