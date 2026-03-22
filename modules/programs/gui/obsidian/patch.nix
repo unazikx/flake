@@ -8,41 +8,39 @@
 let
   cfg = config.programs.obsidian;
 in
-with lib;
 
 {
   options.programs.obsidian = {
-    extraSettings = mkOption {
+    extraSettings = lib.mkOption {
       description = "Additional settings to include in obsidian.json.";
-      type = types.attrsOf types.anything;
+      type = lib.types.attrsOf lib.types.anything;
       default = { };
     };
   };
 
-  config = mkIf cfg.enable (
+  config = lib.mkIf cfg.enable (
     let
-      vaults = builtins.filter (vault: vault.enable == true) (attrValues cfg.vaults);
+      vaults = lib.filter (vault: vault.enable == true) (lib.attrValues cfg.vaults);
     in
     {
-      home.activation.obsidian = mkForce "# godamn u karaodlis";
-      xdg.configFile."obsidian/obsidian.json".source = mkForce (
+      home.activation.obsidian = lib.mkForce "# godamn u karaodlis";
+
+      xdg.configFile."obsidian/obsidian.json".source = lib.mkForce (
         (pkgs.formats.json { }).generate "obsidian.json" (
-          {
-            vaults = listToAttrs (
-              map (vault: {
-                name = builtins.hashString "md5" vault.target;
-                value = {
-                  path = concatStringsSep "/" [
-                    config.home.homeDirectory
-                    vault.target
-                  ];
-                }
-                // (attrsets.optionalAttrs ((length vaults) == 1) { open = true; });
-              }) vaults
-            );
-            updateDisabled = true;
-          }
-          // cfg.extraSettings # INFO: THIS MAIN EDIT
+          lib.mkMerge [
+            {
+              vaults = lib.listToAttrs (
+                map (vault: {
+                  name = lib.hashString "md5" vault.target;
+                  value = {
+                    path = vault.target;
+                  }
+                  // (lib.attrsets.optionalAttrs ((lib.length vaults) == 1) { open = true; });
+                }) vaults
+              );
+            }
+            cfg.extraSettings
+          ]
         )
       );
     }

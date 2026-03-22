@@ -10,31 +10,32 @@ with inputs;
   niri-flake.overlays.niri
   nix-minecraft.overlays.default
   nur.overlays.default
+  obsidian-plugins.overlays.default
   shattered-prism.overlays.default
 
   (
-    f: p:
+    _old: pkgs:
     let
-      inherit (p.stdenv.hostPlatform) system;
+      inherit (pkgs.stdenv.hostPlatform) system;
       branch-config = { inherit system config; };
       config = nixConfig;
     in
     {
+      inherit system;
+
       own = my-own-packages.legacyPackages.${system};
 
       _2505 = import nixpkgs-2505 branch-config;
       _2511 = import nixpkgs-2511 branch-config;
       _2411 = import nixpkgs-2411 branch-config;
 
-      system = p.stdenv.hostPlatform.system;
-
-      prismlauncher = p.prismlauncher.override {
+      prismlauncher = pkgs.prismlauncher.override {
         gamemodeSupport = true;
         controllerSupport = true;
         textToSpeechSupport = false;
 
-        jdks = f.lib.attrValues {
-          inherit (f)
+        jdks = _old.lib.attrValues {
+          inherit (_old)
             # its all LTS
             # https://adoptium.net/temurin/releases
             temurin-jre-bin-25
@@ -45,11 +46,11 @@ with inputs;
         };
       };
 
-      ouch = p.ouch.override {
+      ouch = pkgs.ouch.override {
         enableUnfree = true;
       };
 
-      spotify-player = p.spotify-player.override {
+      spotify-player = pkgs.spotify-player.override {
         withAudioBackend = "pulseaudio";
         withStreaming = true;
         withDaemon = true;
@@ -62,15 +63,15 @@ with inputs;
       };
 
       better-than-adventure =
-        (p.vanillaServers.vanilla.overrideAttrs rec {
+        (pkgs.vanillaServers.vanilla.overrideAttrs rec {
           version = "7.3_04";
-          src = f.fetchurl {
+          src = _old.fetchurl {
             url = "https://github.com/Better-than-Adventure/bta-download-repo/releases/download/v${version}/bta.v${version}.server.jar";
             hash = "sha256-e8hQm3NejclSo8INGtn7TxEyE3/lBq1Cz7dRsDfcx2c=";
           };
 
         }).override
-          { jre_headless = f.temurin-jre-bin-21; };
+          { jre_headless = _old.temurin-jre-bin-21; };
     }
   )
 ]

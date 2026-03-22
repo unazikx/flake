@@ -1,0 +1,172 @@
+{
+  pkgs,
+  config,
+  ...
+}:
+
+[
+  {
+    pkg = pkgs.obsidian-plugins.obsidian-minimal-settings;
+    settings = {
+      lightStyle = "minimal-light";
+      darkStyle = "minimal-dark";
+      lightScheme = "minimal-default-light";
+      darkScheme = "minimal-default-dark";
+      editorFont = "";
+      lineHeight = 1.5;
+      lineWidth = 40;
+      lineWidthWide = 50;
+      maxWidth = 88;
+      textNormal = 16;
+      textSmall = 13;
+      imgGrid = true;
+      imgWidth = "img-default-width";
+      tableWidth = "table-default-width";
+      iframeWidth = "iframe-default-width";
+      mapWidth = "map-default-width";
+      chartWidth = "chart-default-width";
+      colorfulHeadings = true;
+      colorfulFrame = false;
+      colorfulActiveStates = false;
+      trimNames = true;
+      labeledNav = true;
+      fullWidthMedia = true;
+      bordersToggle = true;
+      minimalStatus = true;
+      underlineInternal = true;
+      underlineExternal = true;
+      folding = true;
+      lineNumbers = false;
+      readableLineLength = true;
+      devBlockWidth = false;
+    };
+  }
+
+  {
+    pkg = pkgs.obsidian-plugins.obsidian-style-settings;
+    settings = with config.lib.stylix.colors.withHashtag; {
+      "minimal-advanced@@styled-scrollbars" = true;
+      "minimal-style@@active-line-on" = true;
+      "minimal-style@@ax1@@dark" = base0B;
+      "minimal-style@@ax2@@dark" = base0C;
+      "minimal-style@@ax3@@dark" = base04;
+      "minimal-style@@base@@dark" = base00;
+      "minimal-style@@bg1@@dark" = base00;
+      "minimal-style@@bg2@@dark" = base01;
+      "minimal-style@@bg3@@dark" = base02;
+      "minimal-style@@blockquote-background-color@@dark" = base01;
+      "minimal-style@@blockquote-border-color@@dark" = base04;
+      "minimal-style@@blockquote-border-thickness" = 3;
+      "minimal-style@@blockquote-color@@dark" = base05;
+      "minimal-style@@blockquote-font-style" = "normal";
+      "minimal-style@@bold-weight" = 600;
+      "minimal-style@@callouts-style" = "callouts-default";
+      "minimal-style@@canvas-dot-pattern@@dark" = base03;
+      "minimal-style@@checkbox-color@@dark" = base0D;
+      "minimal-style@@checkbox-shape" = "checkbox-circle";
+      "minimal-style@@code-background@@dark" = base01;
+      "minimal-style@@code-comment@@dark" = base04;
+      "minimal-style@@code-function@@dark" = base0C;
+      "minimal-style@@code-important@@dark" = base08;
+      "minimal-style@@code-keyword@@dark" = base0E;
+      "minimal-style@@code-normal@@dark" = base05;
+      "minimal-style@@code-operator@@dark" = base09;
+      "minimal-style@@code-property@@dark" = base0B;
+      "minimal-style@@code-punctuation@@dark" = base0A;
+      "minimal-style@@code-string@@dark" = base0B;
+      "minimal-style@@code-tag@@dark" = base0F;
+      "minimal-style@@code-value@@dark" = base09;
+      "minimal-style@@col-alt" = true;
+      "minimal-style@@col-lines" = true;
+      "minimal-style@@color-blue@@dark" = base0D;
+      "minimal-style@@color-cyan@@dark" = base0C;
+      "minimal-style@@color-green@@dark" = base0B;
+      "minimal-style@@color-orange@@dark" = base09;
+      "minimal-style@@color-pink@@dark" = base0F;
+      "minimal-style@@color-purple@@dark" = base0E;
+      "minimal-style@@color-red@@dark" = base08;
+      "minimal-style@@color-yellow@@dark" = base0A;
+      "minimal-style@@embed-background@@dark" = base01;
+      "minimal-style@@embed-decoration-color@@dark" = base05;
+      "minimal-style@@embed-decoration-style" = "dotted";
+      "minimal-style@@file-header-justify" = "left";
+      "minimal-style@@file-header-visibility" = "minimal-tab-title-hover";
+      "minimal-style@@folding-offset" = 32;
+      "minimal-style@@graph-line@@dark" = base02;
+      "minimal-style@@graph-node-attachment@@dark" = base0B;
+      "minimal-style@@graph-node@@dark" = base06;
+      "minimal-style@@graph-node-focused@@dark" = base0E;
+      "minimal-style@@graph-node-tag@@dark" = base05;
+      "minimal-style@@graph-node-unresolved@@dark" = base08;
+      "minimal-style@@h1-color@@dark" = base08;
+      "minimal-style@@h1-l" = false;
+      "minimal-style@@h1-size" = "3em";
+      "minimal-style@@h1-style" = "normal";
+      "minimal-style@@h1-variant" = "normal";
+      "minimal-style@@h1-weight" = 900;
+      "minimal-style@@h2-color@@dark" = base09;
+      "minimal-style@@h2-size" = "2.6em";
+      "minimal-style@@h3-color@@dark" = base0A;
+      "minimal-style@@h3-size" = "2.2em";
+      "minimal-style@@h4-color@@dark" = base0B;
+      "minimal-style@@h4-size" = "2em";
+      "minimal-style@@h5-color@@dark" = base0D;
+      "minimal-style@@h5-size" = "1.8em";
+      "minimal-style@@h6-color@@dark" = base0E;
+      "minimal-style@@h6-size" = "1.4em";
+      "minimal-style@@header-height" = "45px";
+      "minimal-style@@hide-help" = true;
+      "minimal-style@@hide-settings" = true;
+      "minimal-style@@icon-color-active@@dark" = base05;
+      "minimal-style@@icon-color@@dark" = base03;
+      "minimal-style@@icon-color-focused@@dark" = base05;
+      "minimal-style@@icon-color-hover@@dark" = base04;
+      "minimal-style@@icon-muted" = 0.5;
+      "minimal-style@@image-grid-background@@dark" = base01;
+      "minimal-style@@image-grid-fit" = "contain";
+      "minimal-style@@image-muted" = 0.5;
+      "minimal-style@@image-radius" = 16;
+      "minimal-style@@indentation-guide-color@@dark" = "#FFFFFF00"; # прозрачность, не base16
+      "minimal-style@@maximize-tables-off" = "maximize-tables-auto";
+      "minimal-style@@metadata-add-property-off" = false;
+      "minimal-style@@metadata-dividers" = false;
+      "minimal-style@@metadata-heading-off" = false;
+      "minimal-style@@metadata-icons-off" = false;
+      "minimal-style@@minimal-code-scroll" = false;
+      "minimal-style@@minimal-strike-lists" = true;
+      "minimal-style@@minimal-tab-text-color-active@@dark" = base05;
+      "minimal-style@@minimal-tab-text-color@@dark" = base03;
+      "minimal-style@@minimal-unstyled-tags" = false;
+      "minimal-style@@pdf-page-style" = "pdf-shadows-on";
+      "minimal-style@@progress-complete@@dark" = base0A;
+      "minimal-style@@ribbon-style" = "ribbon-hidden";
+      "minimal-style@@row-alt" = true;
+      "minimal-style@@row-hover" = false;
+      "minimal-style@@row-lines" = true;
+      "minimal-style@@sidebar-tabs-names" = "tab-names-off";
+      "minimal-style@@sidebar-tabs-style" = "sidebar-tabs-default";
+      "minimal-style@@sp1@@dark" = base09;
+      "minimal-style@@table-lines" = true;
+      "minimal-style@@table-numbers" = false;
+      "minimal-style@@table-tabular" = true;
+      "minimal-style@@table-text-size" = "1.2em";
+      "minimal-style@@tabs-style" = "tabs-modern";
+      "minimal-style@@tab-stacked-header-width" = 44;
+      "minimal-style@@tab-stacked-pane-width" = 700;
+      "minimal-style@@tab-stacked-spine-orientation" = "tab-stack-top-flipped";
+      "minimal-style@@tag-border-width" = "2px";
+      "minimal-style@@tag-color@@dark" = base00;
+      "minimal-style@@tag-radius" = "4px";
+      "minimal-style@@tx1@@dark" = base05;
+      "minimal-style@@ui1@@dark" = base01;
+      "minimal-style@@ui2@@dark" = base02;
+      "minimal-style@@ui3@@dark" = base02;
+      "minimal-style@@window-title-off" = true;
+      "minimal-style@@workspace-background-translucent@@dark" = base07;
+    };
+  }
+
+  { pkg = pkgs.obsidian-plugins.format-with-prettier; }
+
+  { pkg = pkgs.obsidian-plugins.docxer; }
+]

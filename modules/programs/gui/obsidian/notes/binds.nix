@@ -1,3 +1,5 @@
+# MOD = ctrl
+
 {
   "app:delete-file" = [
     {
@@ -270,7 +272,7 @@
     }
   ];
 
-  "prettier:format-content" = [
+  "format-with-prettier:format-file" = [
     {
       "key" = "P";
       "modifiers" = [ "Mod" ];

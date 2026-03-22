@@ -1291,6 +1291,26 @@
         "type": "github"
       }
     },
+    "obsidian-plugins": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1774096436,
+        "narHash": "sha256-WkEKrw5I+xMflL8/1fmcpG37sa3nse3lCdpqnJp/7VU=",
+        "owner": "unazikx",
+        "repo": "obsidian-plugins-nix",
+        "rev": "145b630601a055c39a0ba035455a58757be00d48",
+        "type": "github"
+      },
+      "original": {
+        "owner": "unazikx",
+        "repo": "obsidian-plugins-nix",
+        "type": "github"
+      }
+    },
     "pkgs-by-name": {
       "locked": {
         "lastModified": 1769286518,
@@ -1420,6 +1440,7 @@
         "nixpkgs-unstable": "nixpkgs-unstable",
         "nur": "nur",
         "nvf": "nvf",
+        "obsidian-plugins": "obsidian-plugins",
         "pkgs-by-name": "pkgs-by-name",
         "plasma-manager": "plasma-manager",
         "shattered-prism": "shattered-prism",

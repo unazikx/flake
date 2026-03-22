@@ -203,6 +203,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    obsidian-plugins = {
+      url = "github:unazikx/obsidian-plugins-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";

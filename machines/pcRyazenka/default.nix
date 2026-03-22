@@ -28,6 +28,7 @@
               niri-de
               office-env
 
+              obsidian
               caddy
               discord
               easyeffects
