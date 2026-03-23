@@ -1,6 +1,7 @@
 # INFO:
 # osd for various actions
 #
+# INFO:
 # audio
 # > foo | bar > /run/user/1000/wob.sock
 # (or $WOBSOCK)

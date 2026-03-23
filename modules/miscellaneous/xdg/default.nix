@@ -21,6 +21,7 @@
             "Downloads"
             "Music"
             "Pictures"
+            "Public"
             "Videos"
           ];
 
@@ -104,11 +105,9 @@
                 "Downloads"
                 "Music"
                 "Pictures"
+                "Public"
                 "Videos"
-              ])
-              ++
-                # other fs place
-                (map (dir: (mkDirs (toString null) dir)) [ lib.flakeDir ]);
+              ]);
           };
         };
     };

@@ -2,7 +2,7 @@
 # [X] basic config
 # [X] secrets list (pizdec)
 # [X] templates (nahuya? cul thing, fr)
-
+#
 # INFO:
 # for encrypt existed file use:
 # > sops -e -i secrets/users/myuser/github.yaml
