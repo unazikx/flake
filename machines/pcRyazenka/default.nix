@@ -27,6 +27,7 @@
               main-games
               niri-de
               office-env
+              windows-virt
 
               obsidian
               caddy
