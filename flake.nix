@@ -219,7 +219,7 @@
       inputs.flake-parts.follows = "flake-parts";
     };
 
-    hytale = {
+    hytale-launcher = {
       url = "github:unazikx/hytale-launcher-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };

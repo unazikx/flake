@@ -16,7 +16,7 @@
         {
           persist.user.directories = [ ".local/share/hytale-launcher" ];
 
-          hmPackages = [ inputs.hytale.packages.${pkgs.system}.default ];
+          hmPackages = [ inputs.hytale-launcher.packages.${pkgs.system}.default ];
         };
     };
 }

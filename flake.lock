@@ -709,18 +709,18 @@
         "type": "github"
       }
     },
-    "hytale": {
+    "hytale-launcher": {
       "inputs": {
         "nixpkgs": [
           "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1773073154,
-        "narHash": "sha256-x0BcLaOmcwM6kZP0RIjXQJkeivz5qo/uCNePo8/NexA=",
+        "lastModified": 1774183427,
+        "narHash": "sha256-x2ziyQ4CR+0PDXmuMJb473Sy4+6mwhQX1F+HWgzIGTY=",
         "owner": "unazikx",
         "repo": "hytale-launcher-nix",
-        "rev": "7fecb1b70f75f9f9d7b89ebb6c9511db1ef58725",
+        "rev": "340c460470bf0e00971780186bcdc376a9c72fbb",
         "type": "github"
       },
       "original": {
@@ -1430,7 +1430,7 @@
         "flake-utils": "flake-utils_2",
         "glide-browser": "glide-browser",
         "home-manager": "home-manager",
-        "hytale": "hytale",
+        "hytale-launcher": "hytale-launcher",
         "impermanence": "impermanence",
         "import-tree": "import-tree",
         "mangowc": "mangowc",

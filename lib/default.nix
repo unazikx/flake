@@ -30,6 +30,8 @@ inputs.flake-parts.lib.mkFlake
       # will import only default.nix configurations
       # semi-dendritic
       (inputs.import-tree.filter (nxosLib.hasSuffix "default.nix") [
+        # https://import-tree.oeiuwq.com/getting-started/quick-start
+        # directories with name ./_something will be ignored
         ../modules
         ../machines
       ])
