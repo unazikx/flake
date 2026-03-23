@@ -19,7 +19,7 @@
         in
         {
           persist.user.directories = [
-            config.hm.accounts.email.maildirBasePath
+            ".email"
           ];
 
           hm = {

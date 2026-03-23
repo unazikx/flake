@@ -24,6 +24,8 @@
           ];
         in
         {
+          persist.user.directories = [ ".contacts" ];
+
           imports = lib.attrValues {
             inherit (partsConfig.nixosModules)
               vdirsyncer

@@ -28,6 +28,8 @@
           };
         in
         {
+          persist.user.directories = [ ".config/obs-studio" ];
+
           hmPackages = [ pkgs.wf-recorder ];
 
           hm = {

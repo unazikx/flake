@@ -23,6 +23,8 @@
           ];
         in
         {
+          persist.user.directories = [ ".calendar" ];
+
           imports = lib.attrValues {
             inherit (partsConfig.nixosModules)
               vdirsyncer

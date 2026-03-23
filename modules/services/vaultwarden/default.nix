@@ -17,9 +17,13 @@
           ...
         }:
         let
+          dir = "/var/lib/vaultwarden";
+
           cfg = config.services.vaultwarden;
         in
         {
+          persist.user.directories = [ dir ];
+
           services = {
             vaultwarden = {
               enable = true;
@@ -32,7 +36,7 @@
                 invitationsAllowed = false;
                 webVaultEnabled = true;
 
-                dataFolder = lib.mkForce "/var/lib/vaultwarden";
+                dataFolder = lib.mkForce dir;
               };
 
               environmentFile = config.sopsnix."services/vaultwarden";

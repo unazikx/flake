@@ -14,6 +14,11 @@
           ...
         }:
         {
+          persist.user.directories = [
+            ".cache/rbw"
+            ".local/share/rbw"
+          ];
+
           hmPackages = [ pkgs.own.rbw-fzf ];
 
           hm.programs.rbw = {
