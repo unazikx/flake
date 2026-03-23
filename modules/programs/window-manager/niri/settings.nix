@@ -154,12 +154,11 @@ with config.lib.stylix.colors.withHashtag;
     (lib.genAttrs
       [
         "horizontal-view-movement"
-        "window-movement"
-        "workspace-switch"
+        "window-resize"
       ]
       (_: {
         kind.easing = {
-          duration-ms = 200;
+          duration-ms = 150;
           curve = "ease-out-quad";
         };
       })
@@ -168,7 +167,8 @@ with config.lib.stylix.colors.withHashtag;
       [
         "window-close"
         "window-open"
-        "window-resize"
+        "window-movement"
+        "workspace-switch"
       ]
       (_: {
         kind.easing = {
