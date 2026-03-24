@@ -72,6 +72,7 @@
       steamDB = "steamdb.info";
       protonDB = "protondb.com";
       gogDB = "www.gogdb.org";
+      egsDB = "egdata.app";
 
       # study
       chatGpt = "chatgpt.com";
