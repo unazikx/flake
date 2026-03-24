@@ -1135,6 +1135,26 @@
         "type": "github"
       }
     },
+    "nix-wrapper-modules": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1774228760,
+        "narHash": "sha256-nDoBIe5Y9Rfc1sJT0odFgN502ZNtOrcWoqnDyM8jBAU=",
+        "owner": "BirdeeHub",
+        "repo": "nix-wrapper-modules",
+        "rev": "ded9a992dc4142b8269cebbcdadd56fe3886c899",
+        "type": "github"
+      },
+      "original": {
+        "owner": "BirdeeHub",
+        "repo": "nix-wrapper-modules",
+        "type": "github"
+      }
+    },
     "nixcord": {
       "inputs": {
         "flake-compat": "flake-compat_5",
@@ -1446,6 +1466,7 @@
         "nix-math": "nix-math",
         "nix-minecraft": "nix-minecraft",
         "nix-topology": "nix-topology",
+        "nix-wrapper-modules": "nix-wrapper-modules",
         "nixcord": "nixcord",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": [

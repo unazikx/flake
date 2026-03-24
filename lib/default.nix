@@ -36,11 +36,12 @@ inputs.flake-parts.lib.mkFlake
         ../machines
       ])
 
-      (inputs.import-tree [ ../shells ])
+      (inputs.import-tree [ ../persystem ])
       inputs.devshell.flakeModule
       inputs.disko.flakeModule
       inputs.flake-parts.flakeModules.bundlers
       inputs.home-manager.flakeModules.default
+      inputs.nix-wrapper-modules.flakeModules.default
       inputs.treefmt-nix.flakeModule
     ];
 
