@@ -7,7 +7,7 @@
 with config.lib.stylix.colors.withHashtag;
 
 lib.mkForce {
-  themo = {
+  stylix-theme = {
     "attributes" = base09;
 
     "comment" = {

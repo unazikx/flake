@@ -20,31 +20,58 @@
           hm = {
             home.shellAliases.e = "$EDITOR"; # cause defaultEditor
 
-            programs.helix = {
-              enable = true;
+            programs.helix = lib.mkMerge [
+              {
+                enable = true;
 
-              defaultEditor = true;
+                defaultEditor = true;
 
-              settings = (import ./settings.nix) // {
-                theme = "themo";
-              };
-            }
-            // {
-              themes = import ./theme.nix {
-                inherit
-                  lib
-                  config
-                  ;
-              };
+                settings = (import ./settings.nix) // {
+                  theme = "stylix-theme";
+                };
 
-              languages = import ./languages.nix {
-                inherit
-                  self
-                  pkgs
-                  lib
-                  ;
-              };
-            };
+                extraPackages = lib.attrValues {
+                  inherit (pkgs)
+                    black
+                    go
+                    gopls
+                    marksman
+                    nixd
+                    nixfmt
+                    vscode-langservers-extracted
+                    yaml-language-server
+                    ;
+
+                  inherit (pkgs.nodePackages)
+                    prettier
+                    typescript-language-server
+                    ;
+
+                  _ = pkgs.python312.withPackages (
+                    _packages:
+                    (with _packages; [
+                      python-lsp-server
+                    ])
+                  );
+                };
+              }
+              {
+                themes = import ./theme.nix {
+                  inherit
+                    lib
+                    config
+                    ;
+                };
+
+                languages = import ./languages.nix {
+                  inherit
+                    self
+                    pkgs
+                    lib
+                    ;
+                };
+              }
+            ];
           };
 
           hmMime = lib.mkMime {

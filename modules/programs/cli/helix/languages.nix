@@ -1,12 +1,9 @@
 {
-  pkgs,
   lib,
   ...
 }:
 
 let
-  vs = n: "vscode-${n}-language-server";
-
   auto-format = true;
   indent = {
     tab-width = 2;
@@ -17,41 +14,23 @@ in
 {
   language = [
     {
-      # nix
       inherit auto-format indent;
       name = "nix";
 
       language-servers = [ "nixd" ];
 
       formatter = {
-        command = lib.getExe pkgs.nixfmt;
+        command = "nixfmt";
       };
     }
     {
-      # html
-      inherit auto-format indent;
-      name = "html";
-
-      language-servers = [ "vscode-html" ];
-
-      formatter = {
-        command = lib.getExe pkgs.nodePackages_latest.prettier;
-        args = [
-          "--use-tabs"
-          "--parser"
-          "html"
-        ];
-      };
-    }
-    {
-      # json
       inherit auto-format indent;
       name = "json";
 
-      language-servers = [ "vscode-json" ];
+      language-servers = [ "vscode-json-language-server" ];
 
       formatter = {
-        command = lib.getExe pkgs.nodePackages_latest.prettier;
+        command = "prettier";
         args = [
           "--use-tabs"
           "--parser"
@@ -60,14 +39,13 @@ in
       };
     }
     {
-      # jsonc
       inherit auto-format indent;
       name = "jsonc";
 
-      language-servers = [ "vscode-json" ];
+      language-servers = [ "vscode-json-language-server" ];
 
       formatter = {
-        command = lib.getExe pkgs.nodePackages_latest.prettier;
+        command = "prettier";
         args = [
           "--use-tabs"
           "--parser"
@@ -76,14 +54,13 @@ in
       };
     }
     {
-      # css
       inherit auto-format indent;
       name = "css";
 
-      language-servers = [ "vscode-css" ];
+      language-servers = [ "vscode-css-language-server" ];
 
       formatter = {
-        command = lib.getExe pkgs.nodePackages_latest.prettier;
+        command = "prettier";
         args = [
           "--use-tabs"
           "--parser"
@@ -92,14 +69,13 @@ in
       };
     }
     {
-      # scss
       inherit auto-format indent;
       name = "scss";
 
-      language-servers = [ "vscode-css" ];
+      language-servers = [ "vscode-css-language-server" ];
 
       formatter = {
-        command = lib.getExe pkgs.nodePackages_latest.prettier;
+        command = "prettier";
         args = [
           "--use-tabs"
           "--parser"
@@ -108,14 +84,13 @@ in
       };
     }
     {
-      # markdown
       inherit auto-format indent;
       name = "markdown";
 
       language-servers = [ "marksman" ];
 
       formatter = {
-        command = lib.getExe pkgs.nodePackages_latest.prettier;
+        command = "prettier";
         args = [
           "--use-tabs"
           "--parser"
@@ -124,14 +99,13 @@ in
       };
     }
     {
-      # typescript
       inherit auto-format indent;
       name = "typescript";
 
-      language-servers = [ "typescript" ];
+      language-servers = [ "typescript-language-server" ];
 
       formatter = {
-        command = lib.getExe pkgs.nodePackages_latest.prettier;
+        command = "prettier";
         args = [
           "--use-tabs"
           "--parser"
@@ -140,14 +114,13 @@ in
       };
     }
     {
-      # typescript
       inherit auto-format indent;
       name = "tsx";
 
-      language-servers = [ "typescript" ];
+      language-servers = [ "typescript-language-server" ];
 
       formatter = {
-        command = lib.getExe pkgs.nodePackages_latest.prettier;
+        command = "prettier";
         args = [
           "--use-tabs"
           "--parser"
@@ -156,14 +129,13 @@ in
       };
     }
     {
-      # yaml
       inherit auto-format indent;
       name = "yaml";
 
-      language-servers = [ "yaml" ];
+      language-servers = [ "yaml-language-server" ];
 
       formatter = {
-        command = lib.getExe pkgs.nodePackages_latest.prettier;
+        command = "prettier";
         args = [
           "--use-tabs"
           "--parser"
@@ -172,98 +144,47 @@ in
       };
     }
     {
-      # python
       inherit auto-format indent;
       name = "python";
 
-      language-servers = [
-        "pylsp"
-        "pyright"
-      ];
-
-      file-types = [
-        "py"
-        "pyi"
-        "py3"
-        "pyw"
-        ".pythonstartup"
-        ".pythonrc"
-      ];
-
-      roots = [
-        "."
-        "pyproject.toml"
-        "pyrightconfig.json"
-      ];
-
-      comment-token = "#";
-      scope = "source.python";
-      injection-regex = "python";
+      language-servers = [ "python-lsp-server" ];
 
       formatter = {
-        command = lib.getExe pkgs.black;
-        args = [
-          "--use-tabs"
-          "--parser"
-          "python"
-        ];
+        command = "black";
+      };
+    }
+    {
+      inherit auto-format indent;
+      name = "go";
+
+      language-servers = [
+        "gopls"
+        "golangci-lint-langserver"
+        "codebook"
+      ];
+
+      formatter = {
+        command = "gofmt";
       };
     }
   ];
 
-  language-server = {
-    nixd =
-      let
-        flake = "(builtins.getFlake (toString ${lib.flakeDir}))";
-      in
-      {
-        command = lib.getExe pkgs.nixd;
+  language-server = lib.mkMerge [
+    {
+      nixd =
+        let
+          flake = "(builtins.getFlake (toString ${lib.flakeDir}))";
+        in
+        {
+          config.nixd = {
+            nixpkgs.expr = "import ${flake}.inputs.nixpkgs { }";
 
-        diagnostic.suppress = [ "sema-extra-with" ];
-
-        config.nixd = {
-          nixpkgs.expr = "import ${flake}.inputs.nixpkgs { }";
-
-          options = rec {
-            "nixos".expr = "${flake}.nixosConfigurations.${lib.configurationName}.options";
-            "home-manager".expr = "${nixos.expr}.home-manager.users.type.getSubOptions [ ]";
+            options = rec {
+              "nixos".expr = "${flake}.nixosConfigurations.${lib.configurationName}.options";
+              "home-manager".expr = "${nixos.expr}.home-manager.users.type.getSubOptions [ ]";
+            };
           };
-
-          diagnostic.suppress = [ "sema-extra-with" ];
         };
-      };
-  } # nix
-  // {
-    typescript.command = lib.getExe pkgs.typescript-language-server;
-  } # typescript
-  // {
-    yaml.command = lib.getExe pkgs.yaml-language-server;
-  } # typescript
-  // {
-    marksman.command = lib.getExe pkgs.marksman;
-  } # markdown
-  // {
-    vscode-html.command = lib.getExe' pkgs.vscode-langservers-extracted (vs "html");
-    vscode-json.command = lib.getExe' pkgs.vscode-langservers-extracted (vs "json");
-    vscode-css.command = lib.getExe' pkgs.vscode-langservers-extracted (vs "css");
-  } # vscode <lang> server
-  // {
-    pylsp.command = lib.getExe pkgs.python312Packages.python-lsp-server;
-
-    pyright = {
-      command = lib.getExe pkgs.pyright;
-
-      args = [ "--stdio" ];
-
-      config = {
-        reportMissingTypeStubs = false;
-
-        python.analysis = {
-          typeCheckingMode = "basic";
-          autoImportCompletions = true;
-        };
-      };
-    };
-  } # python
-  ;
+    }
+  ];
 }
