@@ -27,9 +27,7 @@
               main-games
               niri-de
               office-env
-              windows-virt
 
-              obsidian
               caddy
               discord
               easyeffects
@@ -45,6 +43,7 @@
               mpd
               mpv
               mumble
+              obsidian
               qbittorrent
               qutebrowser
               rbw
@@ -73,42 +72,37 @@
               {
                 sops.secrets = lib.mkSecrets.sopsnix [
                   "password"
-                  "syncthing/cert"
-                  "syncthing/key"
+                  "services/syncthing/cert"
+                  "services/syncthing/key"
                   "tokens/hut"
                 ] ./secrets.yaml;
 
                 hm.services.syncthing.settings.devices = lib.listToAttrs [
-                  (lib.syncthing.mkDevice "nothing2a" "U2SSOJT-I43YCNB-HAU4LBI-6UWBLRR-AUTELXZ-PZSCFYJ-J3LKH5H-ROFZBQS")
+                  (lib.syncthing.mkDevice "nothing2a" "E2PI7IQ-ZCKQW2J-MQF4OYZ-MFEPN4T-NNMF3LP-2TEHSM3-ZIN5VW2-6CRSRQM")
                   (lib.syncthing.mkDevice "blackmamba" "3PWM3G4-KOBIRI7-ZSS63JJ-EWQX5VX-BC5F772-76CZATP-XBP6QOX-HFCGPQN")
                   (lib.syncthing.mkDevice "windauser" "5NRFLQO-KFR4H7P-XGWMLNH-PSYDTNL-CF2D6JZ-PNEK76R-6DSYGSS-ZTFWQQF")
                 ];
-              }
-            )
 
-            (
-              let
-                mk =
-                  {
-                    name ? throw "set label pls",
-                    options ? [ ],
-                  }:
-                  {
-                    device = "/dev/disk/by-label/${name}";
-                    fsType = "ext4";
-                    inherit options;
-                  };
-              in
-              { lib, ... }:
-              {
                 fileSystems = lib.listToAttrs (
                   map
                     (name: {
                       name = "/media/${name}";
-                      value = mk {
-                        inherit name;
-                        options = [ "x-gvfs-show" ];
-                      };
+                      value =
+                        {
+                          inherit name;
+                          options = [ "x-gvfs-show" ];
+                        }
+                        |> (
+                          {
+                            name ? throw "set label pls",
+                            options ? [ ],
+                          }:
+                          {
+                            device = "/dev/disk/by-label/${name}";
+                            fsType = "ext4";
+                            inherit options;
+                          }
+                        );
                     })
                     [
                       "fatKartman"

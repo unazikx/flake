@@ -72,13 +72,12 @@
                   "services/lastfm"
                   "services/librefm"
                   "services/vaultwarden"
+                  "services/syncthing/password"
 
                   "accounts/googleClient/id"
                   "accounts/googleClient/secret"
                   "accounts/gmailPassword"
                   "accounts/tg"
-
-                  "vpn/amneziawg/warp_1"
                 ] "${self}/machines/secrets.yaml"
               );
 
