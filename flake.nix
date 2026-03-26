@@ -177,13 +177,8 @@
       url = "github:notashelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-parts.follows = "flake-parts";
-      inputs.ndg.follows = "ndg";
+      inputs.ndg.follows = "";
     };
-
-    ndg = {
-      url = "github:feel-co/ndg";
-      inputs.nixpkgs.follows = "nixpkgs";
-    }; # added for override nvf input
 
     viu = {
       url = "github:viu-media/viu";

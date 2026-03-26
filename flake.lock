@@ -893,26 +893,6 @@
         "type": "github"
       }
     },
-    "ndg": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1773478949,
-        "narHash": "sha256-8rMpSs2OWGaDlDFO5FS6Pf9WutHBXxM2omPr6hfKydI=",
-        "owner": "feel-co",
-        "repo": "ndg",
-        "rev": "c3bc1541668e6f6632a7005c7e4963c0a5dedc7b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "feel-co",
-        "repo": "ndg",
-        "type": "github"
-      }
-    },
     "niri-flake": {
       "inputs": {
         "niri-stable": "niri-stable",
@@ -1306,9 +1286,7 @@
           "flake-parts"
         ],
         "mnw": "mnw",
-        "ndg": [
-          "ndg"
-        ],
+        "ndg": [],
         "nixpkgs": [
           "nixpkgs"
         ],
@@ -1457,7 +1435,6 @@
         "minecraft-assets": "minecraft-assets",
         "musnix": "musnix",
         "my-own-packages": "my-own-packages",
-        "ndg": "ndg",
         "niri-flake": "niri-flake",
         "nix-cursors": "nix-cursors",
         "nix-flatpak": "nix-flatpak",
