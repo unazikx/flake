@@ -36,6 +36,10 @@
               };
             };
 
+            # fucking idiots why blyat?
+            # я вас всех в жопу ебал бляди нахуя
+            services.gnome-keyring.enable = lib.mkForce false;
+
             xdg.portal = {
               config.niri = {
                 default = [
