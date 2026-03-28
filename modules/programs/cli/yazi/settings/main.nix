@@ -71,25 +71,26 @@ in
     ] (_n: "center");
 
     plugin = {
-      prepend_previewers =
+      prepend_previewers = lib.mkMerge [
         (mkPluginMime "office" [
           "application/ms-*"
           "application/msword"
           "application/oasis.*"
           "application/openxmlformats-officedocument.*"
         ])
-        ++ (mkPluginMime "ouch --archive-icon=''" [
+        (mkPluginMime "ouch --archive-icon=''" [
           "application/{*zip,tar,bzip2,7z*,rar,xz,zstd,java-archive}"
         ])
-        ++ (mkPluginUrl ''faster-piper -- CLICOLOR_FORCE=1 glow -w=$w -s=dracula -- "$1"'' [
+        (mkPluginUrl ''faster-piper -- CLICOLOR_FORCE=1 glow -w=$w -s=dracula -- "$1"'' [
           "*.md"
         ])
-        ++ (mkPluginUrl "comicthumb" [
+        (mkPluginUrl "comicthumb" [
           "*.cb[7rz]"
         ])
-        ++ (mkPluginMime "djvu-view" [
+        (mkPluginMime "djvu-view" [
           "image/djvu"
-        ]);
+        ])
+      ];
 
       prepend_fetchers = [
         {
@@ -180,12 +181,27 @@ in
         }
       ];
 
+      uwu-run = [
+        {
+          run = "uwu-run %s";
+          desc = "Open windows exe via uwu-run";
+          block = true;
+        }
+      ];
+
       native-run = lib.mkIf config.programs.steam.enable [
         {
           run = "steam-run %s";
           desc = "Open native bin via steam-run";
           orphan = true;
           block = true;
+        }
+      ];
+
+      qbttorrent-add = lib.mkIf config.services.qbittorrent.enable [
+        {
+          run = "qbt torrent add file %s";
+          desc = "Add torrent file in qbittorrent";
         }
       ];
 
@@ -198,35 +214,21 @@ in
     };
 
     open = {
-      prepend_rules =
+      prepend_rules = lib.mkMerge [
         (mkRuleUrl
           [
             "*.kdbx"
           ]
           [ "keepassdb" ]
         )
-        ++ (mkRuleUrl
+        (mkRuleUrl
           [
             "*.exe"
             "*.msi"
           ]
-          [ "umu-run" ]
-        );
-
-      rules =
-        (mkRuleMime
-          [
-            "image/*"
-          ]
-          [ "image" "xdg-open" ]
+          [ "uwu-run" "umu-run" ]
         )
-        ++ (mkRuleMime
-          [
-            "{audio,video}/*"
-          ]
-          [ "play" "xdg-open" ]
-        )
-        ++ (mkRuleUrl
+        (mkRuleUrl
           [
             "*.csv"
             "*.tsv"
@@ -249,7 +251,34 @@ in
           ]
           [ "msoffice-pdf" "msoffice" ]
         )
-        ++ (mkRuleMime
+        (mkRuleMime
+          [
+            "application/zip"
+          ]
+          [ "extract-archive" ]
+        )
+        (mkRuleMime
+          [
+            "application/bittorrent"
+          ]
+          [ "edit" "qbttorrent-add" ]
+        )
+      ];
+
+      rules = lib.mkMerge [
+        (mkRuleMime
+          [
+            "image/*"
+          ]
+          [ "image" "xdg-open" ]
+        )
+        (mkRuleMime
+          [
+            "{audio,video}/*"
+          ]
+          [ "play" "xdg-open" ]
+        )
+        (mkRuleMime
           [
             "application/pdf"
             "application/zip"
@@ -265,13 +294,13 @@ in
           ]
           [ "pdf" ]
         )
-        ++ (mkRuleMime
+        (mkRuleMime
           [
             "application/{*zip,tar,bzip2,7z*,rar,xz,zstd,java-archive}"
           ]
           [ "extract-archive" ]
         )
-        ++ (mkRuleMime
+        (mkRuleMime
           [
             "inode/empty"
             "application/*"
@@ -279,12 +308,13 @@ in
           ]
           [ "edit" "native-run" ]
         )
-        ++ (mkRuleMime
+        (mkRuleMime
           [
             "*/"
           ]
           [ "xdg-open" ]
-        );
+        )
+      ];
     };
 
     tasks.image_bound = [
