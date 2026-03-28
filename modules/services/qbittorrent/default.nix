@@ -16,6 +16,10 @@
         }:
         let
           cfg = config.services.qbittorrent;
+
+          # toml = pkgs.formats.toml { };
+          json = pkgs.formats.json { };
+
           savePath = "/media/torrents";
         in
         {
@@ -24,7 +28,11 @@
             savePath
           ];
 
-          environment.systemPackages = [ pkgs.own.qbittorrent-tui ];
+          environment.systemPackages = lib.attrValues {
+            inherit (pkgs)
+              qbittorrent-cli
+              ;
+          };
 
           services = {
             qbittorrent = {
@@ -116,6 +124,20 @@
                     reverse_proxy http://0.0.0.0:${toString cfg.webuiPort}
                   '';
                 });
+          };
+
+          hm.home.file = {
+            # WARN:
+            # developer is fucking idiot
+            # https://github.com/ludviglundgren/qbittorrent-cli/blob/master/README.md#configuration
+            #
+            # "qbt/.qbt.toml".source = toml.generate "qbt-config.toml" {
+            #   qbittorrent.addr = "http://127.0.0.1:${toString cfg.webuiPort}";
+            # };
+
+            ".qbt/settings.json".source = json.generate "qbt-config.json" {
+              Url = "http://127.0.0.1:${toString cfg.webuiPort}";
+            };
           };
 
           systemd.services.qbittorrent = {
