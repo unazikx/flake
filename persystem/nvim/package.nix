@@ -1,3 +1,6 @@
+# INFO:
+# options list - https://nvf.notashelf.dev/options.html
+
 {
   inputs,
   ...
@@ -13,9 +16,9 @@
     }:
     {
       legacyPackages.${baseNameOf ./.} = {
-        nix-configured = inputs'.nvf.packages.nix;
+        nvchad = inputs'.nix-nvchad.packages.default;
 
-        custom-configured =
+        nvf-own =
           (inputs.nvf.lib.neovimConfiguration {
             inherit pkgs;
             modules = lib.toList (inputs.import-tree ./_config);
