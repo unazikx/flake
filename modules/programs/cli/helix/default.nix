@@ -30,30 +30,7 @@
                   theme = "stylix-theme";
                 };
 
-                extraPackages = lib.attrValues {
-                  inherit (pkgs)
-                    black
-                    go
-                    gopls
-                    marksman
-                    nixd
-                    nixfmt
-                    vscode-langservers-extracted
-                    yaml-language-server
-                    ;
-
-                  inherit (pkgs.nodePackages)
-                    prettier
-                    typescript-language-server
-                    ;
-
-                  _ = pkgs.python312.withPackages (
-                    _packages:
-                    (with _packages; [
-                      python-lsp-server
-                    ])
-                  );
-                };
+                extraPackages = pkgs.default-lsp;
               }
               {
                 themes = import ./theme.nix {

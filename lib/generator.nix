@@ -44,16 +44,6 @@ let
     nix-index-database.homeModules.default
     spicetify-nix.homeManagerModules.default
   ];
-
-  overlays = import ./overlays.nix {
-    inherit inputs nixConfig;
-  };
-
-  nixConfig = {
-    allowBroken = true;
-    allowInsecure = true;
-    allowUnfree = true;
-  };
 in
 
 # WARN:
@@ -90,10 +80,25 @@ rec {
 
       pkgs = import inputs.nixpkgs {
         system = hostPlatform;
-        config = nixConfig;
+        config = {
+          allowBroken = true;
+          allowInsecure = true;
+          allowUnfree = true;
+        };
+
+        overlays = with inputs; [
+          glide-browser.overlays.default
+          niri-flake.overlays.niri
+          nix-minecraft.overlays.default
+          nur.overlays.default
+          obsidian-plugins.overlays.default
+          shattered-prism.overlays.default
+
+          self.overlays.default
+        ];
+
         inherit
           hostPlatform
-          overlays
           ;
       };
 
