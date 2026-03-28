@@ -8,8 +8,6 @@ rec {
   enable = true;
   closeSteam = true;
 
-  # WARN:
-  # idk how to make it automatically
   defaultCompatTool = "GE-Proton";
 
   apps =
@@ -28,9 +26,7 @@ rec {
       (mkAttrset
         {
           launchOptions = {
-            wrappers = [
-              (lib.getExe pkgs.gamemode)
-            ];
+            wrappers = [ (lib.getExe pkgs.gamemode) ];
           };
         }
         {
@@ -72,16 +68,20 @@ rec {
             id = 3495730;
           };
 
-          sbox = {
+          sandbox = {
             id = 590830;
           };
 
-          cs-cz = {
+          counter-strike-cz = {
             id = 80;
           };
 
           repo = {
             id = 3214660;
+          };
+
+          worms-wmd = {
+            id = 327030;
           };
         }
       )
