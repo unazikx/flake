@@ -19,22 +19,77 @@
     nixpkgs.follows = "nixpkgs-unstable";
 
     # nixpkgs revisions and versions
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-2505.url = "github:NixOS/nixpkgs/nixos-25.05";
-    nixpkgs-2511.url = "github:NixOS/nixpkgs/nixos-25.11";
-    nixpkgs-2411.url = "github:NixOS/nixpkgs/nixos-24.11";
+    nixpkgs-unstable = {
+      type = "github";
+      owner = "nixos";
+      repo = "nixpkgs";
+      ref = "nixos-unstable";
+    };
+
+    nixpkgs-2505 = {
+      type = "github";
+      owner = "NixOS";
+      repo = "nixpkgs";
+      ref = "nixos-25.05";
+    };
+
+    nixpkgs-2511 = {
+      type = "github";
+      owner = "NixOS";
+      repo = "nixpkgs";
+      ref = "nixos-25.11";
+    };
+
+    nixpkgs-2411 = {
+      type = "github";
+      owner = "NixOS";
+      repo = "nixpkgs";
+      ref = "nixos-24.11";
+    };
 
     # flakes without dependencies
-    import-tree.url = "github:vic/import-tree";
-    pkgs-by-name.url = "github:drupol/pkgs-by-name-for-flake-parts";
-    files.url = "github:mightyiam/files";
-    flake-utils.url = "github:numtide/flake-utils";
-    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    nix-flatpak.url = "github:gmodena/nix-flatpak";
+    import-tree = {
+      type = "github";
+      owner = "vic";
+      repo = "import-tree";
+    };
+
+    pkgs-by-name = {
+      type = "github";
+      owner = "drupol";
+      repo = "pkgs-by-name-for-flake-parts";
+    };
+
+    files = {
+      type = "github";
+      owner = "mightyiam";
+      repo = "files";
+    };
+
+    flake-utils = {
+      type = "github";
+      owner = "numtide";
+      repo = "flake-utils";
+    };
+
+    nixos-hardware = {
+      type = "github";
+      owner = "NixOS";
+      repo = "nixos-hardware";
+      ref = "master";
+    };
+
+    nix-flatpak = {
+      type = "github";
+      owner = "gmodena";
+      repo = "nix-flatpak";
+    };
 
     # flakes with dependencies
     my-own-packages = {
-      url = "github:unazikx/nix-packages";
+      type = "github";
+      owner = "unazikx";
+      repo = "nix-packages";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-parts.follows = "flake-parts";
       inputs.pkgs-by-name.follows = "pkgs-by-name";
@@ -44,257 +99,352 @@
     };
 
     home-manager = {
-      url = "github:nix-community/home-manager";
+      type = "github";
+      owner = "nix-community";
+      repo = "home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     flake-parts = {
-      url = "github:hercules-ci/flake-parts";
+      type = "github";
+      owner = "hercules-ci";
+      repo = "flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";
     };
 
     devshell = {
-      url = "github:numtide/devshell";
+      type = "github";
+      owner = "numtide";
+      repo = "devshell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     treefmt-nix = {
-      url = "github:numtide/treefmt-nix";
+      type = "github";
+      owner = "numtide";
+      repo = "treefmt-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nix-math = {
-      url = "github:xddxdd/nix-math";
+      type = "github";
+      owner = "xddxdd";
+      repo = "nix-math";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-parts.follows = "flake-parts";
     };
 
     emmanuelrosa-nix = {
-      url = "github:emmanuelrosa/erosanix";
+      type = "github";
+      owner = "emmanuelrosa";
+      repo = "erosanix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nix-wrapper-modules = {
-      url = "github:BirdeeHub/nix-wrapper-modules";
+      type = "github";
+      owner = "BirdeeHub";
+      repo = "nix-wrapper-modules";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     impermanence = {
-      url = "github:nix-community/impermanence";
+      type = "github";
+      owner = "nix-community";
+      repo = "impermanence";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
 
     disko = {
-      url = "github:nix-community/disko";
+      type = "github";
+      owner = "nix-community";
+      repo = "disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nix-index-database = {
-      url = "github:nix-community/nix-index-database";
+      type = "github";
+      owner = "nix-community";
+      repo = "nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     agenix = {
-      url = "github:ryantm/agenix";
-      inputs.nixpkgs.follows = "nixpkgs";
-
+      type = "github";
+      owner = "ryantm";
+      repo = "agenix";
       # disable support
+      inputs.nixpkgs.follows = "nixpkgs";
       inputs.darwin.follows = "";
       inputs.home-manager.follows = "";
     };
 
     agenix-rekey = {
-      url = "github:oddlama/agenix-rekey";
+      type = "github";
+      owner = "oddlama";
+      repo = "agenix-rekey";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-parts.follows = "flake-parts";
     };
 
     sopsnix = {
-      url = "github:Mic92/sops-nix";
+      type = "github";
+      owner = "Mic92";
+      repo = "sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     stylix = {
-      url = "github:danth/stylix";
+      type = "github";
+      owner = "danth";
+      repo = "stylix";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-parts.follows = "flake-parts";
       inputs.nur.follows = "nur";
     };
 
     nur = {
-      url = "github:nix-community/NUR";
+      type = "github";
+      owner = "nix-community";
+      repo = "NUR";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-parts.follows = "flake-parts";
     };
 
     nix-topology = {
-      url = "github:oddlama/nix-topology";
+      type = "github";
+      owner = "oddlama";
+      repo = "nix-topology";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-parts.follows = "flake-parts";
     };
 
     nix-gaming = {
-      url = "github:fufexan/nix-gaming";
+      type = "github";
+      owner = "fufexan";
+      repo = "nix-gaming";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-parts.follows = "flake-parts";
     };
 
     musnix = {
-      url = "github:musnix/musnix";
+      type = "github";
+      owner = "musnix";
+      repo = "musnix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     niri-flake = {
-      url = "github:sodiboo/niri-flake";
+      type = "github";
+      owner = "sodiboo";
+      repo = "niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.nixpkgs-stable.follows = "nixpkgs-2511";
     };
 
     mangowc = {
-      url = "github:DreamMaoMao/mangowc";
+      type = "github";
+      owner = "DreamMaoMao";
+      repo = "mangowc";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-parts.follows = "flake-parts";
     };
 
     plasma-manager = {
-      url = "github:nix-community/plasma-manager";
+      type = "github";
+      owner = "nix-community";
+      repo = "plasma-manager";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
 
     dank-material-shell = {
-      url = "github:AvengeMedia/DankMaterialShell/stable";
+      type = "github";
+      owner = "AvengeMedia";
+      repo = "DankMaterialShell";
+      ref = "stable";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     dank-material-shell-plugins = {
-      url = "github:AvengeMedia/dms-plugin-registry";
+      type = "github";
+      owner = "AvengeMedia";
+      repo = "dms-plugin-registry";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nvf = {
-      url = "github:notashelf/nvf";
+      type = "github";
+      owner = "notashelf";
+      repo = "nvf";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-parts.follows = "flake-parts";
       inputs.ndg.follows = "";
     };
 
     viu = {
-      url = "github:viu-media/viu";
+      type = "github";
+      owner = "viu-media";
+      repo = "viu";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
     };
 
     zen-browser = {
-      url = "github:0xc000022070/zen-browser-flake";
+      type = "github";
+      owner = "0xc000022070";
+      repo = "zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
 
     glide-browser = {
-      url = "github:glide-browser/glide.nix";
+      type = "github";
+      owner = "glide-browser";
+      repo = "glide.nix";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
 
     firefox-addons = {
-      url = "github:petrkozorezov/firefox-addons-nix";
+      type = "github";
+      owner = "petrkozorezov";
+      repo = "firefox-addons-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     obsidian-plugins = {
-      url = "github:unazikx/obsidian-plugins-nix";
+      type = "github";
+      owner = "unazikx";
+      repo = "obsidian-plugins-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     spicetify-nix = {
-      url = "github:Gerg-L/spicetify-nix";
+      type = "github";
+      owner = "Gerg-L";
+      repo = "spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nixcord = {
-      url = "github:kaylorben/nixcord";
+      type = "github";
+      owner = "kaylorben";
+      repo = "nixcord";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-parts.follows = "flake-parts";
     };
 
     hytale-launcher = {
-      url = "github:unazikx/hytale-launcher-nix";
+      type = "github";
+      owner = "unazikx";
+      repo = "hytale-launcher-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     shattered-prism = {
-      url = "github:Noctilune/ShatteredPrism";
+      type = "github";
+      owner = "Noctilune";
+      repo = "ShatteredPrism";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     steam-config-nix = {
-      url = "github:different-name/steam-config-nix";
+      type = "github";
+      owner = "different-name";
+      repo = "steam-config-nix";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-parts.follows = "flake-parts";
     };
 
     nix-minecraft = {
-      url = "github:Infinidoge/nix-minecraft";
+      type = "github";
+      owner = "Infinidoge";
+      repo = "nix-minecraft";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nix-cursors = {
-      url = "github:LilleAila/nix-cursors";
+      type = "github";
+      owner = "LilleAila";
+      repo = "nix-cursors";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     winapps = {
-      url = "github:winapps-org/winapps";
+      type = "github";
+      owner = "winapps-org";
+      repo = "winapps";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     zapret-presets = {
-      url = "github:kotudemo/zapret-presets";
+      type = "github";
+      owner = "kotudemo";
+      repo = "zapret-presets";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     zapret-discord = {
-      url = "github:kartavkun/zapret-discord-youtube";
+      type = "github";
+      owner = "kartavkun";
+      repo = "zapret-discord-youtube";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
     };
 
     easyeffects-presets = {
-      url = "github:azikxz/easyeffects-presets";
+      type = "github";
+      owner = "azikxz";
+      repo = "easyeffects-presets";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # selfmade style
     base16 = {
-      url = "github:azikxz/design/base16";
+      type = "github";
+      owner = "azikxz";
+      repo = "design";
+      ref = "base16";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     wallpapers = {
-      url = "github:azikxz/design/wallpapers";
+      type = "github";
+      owner = "azikxz";
+      repo = "design";
+      ref = "wallpapers";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # non flake tools
     umu-protonfixes = {
-      url = "github:Open-Wine-Components/umu-protonfixes";
+      type = "github";
+      owner = "Open-Wine-Components";
+      repo = "umu-protonfixes";
       flake = false;
     };
 
     betterfox = {
-      url = "github:yokoffing/Betterfox";
+      type = "github";
+      owner = "yokoffing";
+      repo = "Betterfox";
       flake = false;
     };
 
     dns-malw-link = {
-      url = "github:azikxz/dns.malw.link/azikx_patches";
+      type = "github";
+      owner = "azikxz";
+      repo = "dns.malw.link";
+      ref = "azikx_patches";
       flake = false;
     };
 
     minecraft-assets = {
-      url = "github:azikxz/assets";
+      type = "github";
+      owner = "azikxz";
+      repo = "assets";
       flake = false;
     };
   };
