@@ -9,6 +9,7 @@
     {
       nixosModules.${baseNameOf ./.} =
         {
+          lib,
           config,
           ...
         }:
@@ -22,7 +23,7 @@
             else
               dark;
 
-          extra = {
+          extraConfig = {
             gtk-application-prefer-dark-theme = polarity 1 0;
             gtk-button-images = 0;
             gtk-decoration-layout = "";
@@ -33,10 +34,17 @@
         in
         {
           hm = {
-            gtk = {
-              gtk3.extraConfig = extra;
-              gtk4.extraConfig = extra;
-            };
+            gtk =
+              lib.genAttrs
+                [
+                  "gtk3"
+                  "gtk4"
+                ]
+                (_: {
+                  inherit
+                    extraConfig
+                    ;
+                });
 
             dconf.settings = {
               "org/gnome/desktop/interface" = {

@@ -27,13 +27,10 @@ with config.lib.stylix.colors.withHashtag;
   gallery = {
     size = "400";
     cache = "100";
-    fill = "yes";
     antialiasing = "none";
     window = base00 + "ff";
     background = base01 + "ff";
     select = base02 + "ff";
-    border = base0E + "ff";
-    shadow = base00 + "a0";
     preload = "yes";
   };
 

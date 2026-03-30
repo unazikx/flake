@@ -52,6 +52,8 @@
               tag.gpgSign = true;
             };
 
+            signing.format = null;
+
             includes = [ { path = config.sopstem."git-user"; } ];
           };
 
