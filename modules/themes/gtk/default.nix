@@ -48,7 +48,7 @@
 
             dconf.settings = {
               "org/gnome/desktop/interface" = {
-                color-scheme = polarity "prefer-dark" "prefer-light";
+                color-scheme = if (config.stylix.polarity == "dark") then "prefer-dark" else "prefer-light";
               };
             };
           };

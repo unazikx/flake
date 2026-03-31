@@ -68,7 +68,7 @@ in
 
     scrolling = {
       bar = "overlay";
-      smooth = true;
+      smooth = false;
     };
 
     statusbar = {
