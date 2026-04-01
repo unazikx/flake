@@ -35,14 +35,10 @@
               extraPkgs = pkgs: [ pkgs.umu-launcher-unwrapped ];
               extraEnv = {
                 PROTONPATH = pkgs.proton-ge-bin.steamcompattool;
-                WINEPREFIX =
-                  if (lib.winePrefix != null) then
-                    lib.winePrefix
-                  else
-                    (lib.concatStringsSep "/" [
-                      config.hm.home.homeDirectory
-                      "UnifiedPrefix"
-                    ]);
+                WINEPREFIX = lib.concatStringsSep "/" [
+                  config.hm.xdg.userDirs.publicShare
+                  "UnifiedPrefix"
+                ];
               };
 
               executableName = pkgs.umu-launcher-unwrapped.meta.mainProgram;

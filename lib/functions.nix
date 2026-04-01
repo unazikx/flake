@@ -56,6 +56,20 @@
       lib.zipAttrs
     ];
 
+  mkStylixImage =
+    image: colors:
+    pkgs.runCommand "stylix-image.png" { } (
+      lib.concatStringsSep " " [
+        (lib.getExe pkgs.lutgen)
+        "apply"
+        image
+        "-o"
+        "$out"
+        "--"
+        (builtins.concatStringsSep " " colors)
+      ]
+    );
+
   syncthing = {
     mkFilter = config: list: lib.attrNames (removeAttrs config list);
 

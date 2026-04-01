@@ -62,29 +62,6 @@
 
             polarity = "dark";
 
-            image = pkgs.runCommand "stylix-image.png" { } (
-              lib.concatStringsSep " " [
-                (lib.getExe pkgs.lutgen)
-                "apply"
-                inputs.wallpapers.${lib.stylix.image}
-                "-o"
-                "$out"
-                "--"
-                (builtins.concatStringsSep " " config.lib.stylix.colors.toList)
-              ]
-            );
-
-            base16Scheme =
-              # INFO:
-              # extraOpts is { base00 = "#000000"; ... }
-              # or "themeName" from base16 input
-              if (lib.isString lib.stylix.theme) then
-                inputs.base16."${lib.stylix.theme}"
-              else if (lib.isAttrs lib.stylix.theme) then
-                lib.stylix.theme
-              else
-                inputs.base16."oxocarbonDark";
-
             icons = {
               enable = true;
 

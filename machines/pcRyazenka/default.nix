@@ -11,12 +11,6 @@
         userName = "nixzoid";
         hostPlatform = "x86_64-linux";
 
-        winePrefix = toString /media/fatKartman/UnifiedPrefix;
-        stylix = {
-          theme = "paradise";
-          image = "townChristmas";
-        };
-
         extraModules =
           (extendedLib.nxosLib.attrValues {
             inherit (config.nixosModules)
@@ -68,8 +62,19 @@
           })
           ++ [
             (
-              { lib, ... }:
               {
+                inputs,
+                lib,
+                config,
+                ...
+              }:
+              {
+                stylix = {
+                  polarity = "dark";
+                  base16Scheme = inputs.base16."paradise";
+                  image = lib.mkStylixImage inputs.wallpapers."townChristmas" config.lib.stylix.colors.toList;
+                };
+
                 sops.secrets = lib.mkSecrets.sopsnix [
                   "password"
                   "services/syncthing/cert"

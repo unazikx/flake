@@ -61,13 +61,7 @@ rec {
 
       secretsFile ? { },
       persistDir ? null,
-      winePrefix ? null,
       flakeDir ? "/etc/nixos",
-
-      stylix ? {
-        theme = null;
-        image = null;
-      },
     }:
 
     let
@@ -119,10 +113,7 @@ rec {
 
             secretsFile
             persistDir
-            winePrefix
             flakeDir
-
-            stylix
             ;
         }
         // (import ./functions.nix {
