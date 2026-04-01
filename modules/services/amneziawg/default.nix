@@ -72,12 +72,12 @@
 
           boot.extraModulePackages = [
             (config.boot.kernelPackages.amneziawg.overrideAttrs (_old: {
-              version = "1.0.20260210";
+              version = "1.0.20260322";
               src = pkgs.fetchFromGitHub {
                 owner = "amnezia-vpn";
                 repo = "amneziawg-linux-kernel-module";
                 tag = "v${_old.version}";
-                hash = "sha256-OcMlwXOwjxLqHkAQHSwDigK6wuOFCSzoE5spVwybN1M=";
+                hash = "sha256-Y6TETOo5oAr3ZtqsJX909zm38rXq+1fAXiRFSt+g2Gw=";
               };
             }))
           ];

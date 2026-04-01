@@ -22,6 +22,7 @@
               niri-de
               office-env
 
+              amneziawg
               caddy
               discord
               easyeffects
