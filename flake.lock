@@ -495,6 +495,27 @@
         "type": "github"
       }
     },
+    "flake-parts_2": {
+      "inputs": {
+        "nixpkgs-lib": [
+          "nixcraft",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1765835352,
+        "narHash": "sha256-XswHlK/Qtjasvhd1nOa1e8MgZ8GS//jBoTqWtrS1Giw=",
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "rev": "a34fae9c08a15ad73f295041fec82323541400a9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "type": "github"
+      }
+    },
     "flake-utils": {
       "inputs": {
         "systems": "systems_2"
@@ -1160,6 +1181,27 @@
         "type": "github"
       }
     },
+    "nixcraft": {
+      "inputs": {
+        "flake-parts": "flake-parts_2",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1775093183,
+        "narHash": "sha256-DuIwJj6nWiNGNCPSzsa7HGN4FR2mXFpjPnps6n9KU28=",
+        "owner": "loystonpais",
+        "repo": "nixcraft",
+        "rev": "56e0796d52b05635c4abbccc66d89ed2154e9cac",
+        "type": "github"
+      },
+      "original": {
+        "owner": "loystonpais",
+        "repo": "nixcraft",
+        "type": "github"
+      }
+    },
     "nixos-hardware": {
       "locked": {
         "lastModified": 1774933469,
@@ -1445,6 +1487,7 @@
         "nix-topology": "nix-topology",
         "nix-wrapper-modules": "nix-wrapper-modules",
         "nixcord": "nixcord",
+        "nixcraft": "nixcraft",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": [
           "nixpkgs-unstable"

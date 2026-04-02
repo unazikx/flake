@@ -41,6 +41,7 @@ let
     niri-flake.homeModules.niri
     niri-flake.homeModules.stylix
     nixcord.homeModules.nixcord
+    nixcraft.homeModules.default
     nix-index-database.homeModules.default
     spicetify-nix.homeManagerModules.default
   ];

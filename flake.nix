@@ -350,6 +350,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nixcraft = {
+      type = "github";
+      owner = "loystonpais";
+      repo = "nixcraft";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     steam-config-nix = {
       type = "github";
       owner = "different-name";
