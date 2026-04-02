@@ -21,15 +21,8 @@
           persist.user.directories = [ ".config/obsidian" ];
 
           hm = {
-            imports = [ ./patch.nix ];
-
             programs.obsidian = {
               enable = true;
-
-              extraSettings = {
-                updateDisabled = true;
-                frame = "native";
-              };
 
               vaults =
                 let
