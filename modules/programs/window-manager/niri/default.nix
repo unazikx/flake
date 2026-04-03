@@ -34,6 +34,33 @@
                   config
                   ;
               };
+
+              extraConfig = lib.mkAfter (
+                with config.lib.stylix.colors.withHashtag;
+                ''
+                  recent-windows {
+                    debounce-ms 750
+                    open-delay-ms 150
+
+                    highlight {
+                      active-color "${base04}ff"
+                      urgent-color "${base08}ff"
+                      padding 30
+                      corner-radius 12
+                    }
+
+                    previews {
+                      max-height 480
+                      max-scale 0.5
+                    }
+
+                    binds {
+                      Alt+Tab         { next-window; }
+                      Alt+Shift+Tab   { previous-window; }
+                    }
+                  }
+                ''
+              );
             };
 
             # fucking idiots why blyat?

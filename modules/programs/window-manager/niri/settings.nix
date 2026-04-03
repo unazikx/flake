@@ -73,24 +73,26 @@ with config.lib.stylix.colors.withHashtag;
           };
         };
       in
-      {
-        enable = true;
-        width = 5;
-      }
-      // (
-        if false then
-          {
-            active = mk base0B base0A;
-            inactive.color = base00;
-            urgent = mk base08 base09;
-          }
-        else
-          {
-            active.color = base01;
-            inactive.color = base01;
-            urgent.color = base08;
-          }
-      );
+      lib.mkMerge [
+        {
+          enable = true;
+          width = 5;
+        }
+        (
+          if false then
+            {
+              active = mk base0B base0A;
+              inactive.color = base00;
+              urgent = mk base08 base09;
+            }
+          else
+            {
+              active.color = base01;
+              inactive.color = base01;
+              urgent.color = base08;
+            }
+        )
+      ];
 
     insert-hint = {
       display.color = base01 + "CC";
@@ -190,12 +192,12 @@ with config.lib.stylix.colors.withHashtag;
       ] (_: 12.0);
     }
   ]
-  ++ import ./rules.nix {
+  ++ (import ./rules.nix {
     inherit
       lib
       config
       ;
-  };
+  });
 
   layer-rules = [
     {

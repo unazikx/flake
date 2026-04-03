@@ -237,7 +237,7 @@
 
     niri-flake = {
       type = "github";
-      owner = "sodiboo";
+      owner = "cmm";
       repo = "niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.nixpkgs-stable.follows = "nixpkgs-2511";

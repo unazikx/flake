@@ -65,10 +65,10 @@ in
     # workspaces rules
     (openWs 2 "^*.qutebrowser.*$")
     (openWs 2 "librewolf")
-    (openWs 2 "spotify")
-    (openWs 3 "^*.ayugram.*$")
-    (openWs 3 "equibop")
-    (openWs 3 "mumble")
+    (openWs 3 "spotify")
+    (openWs 4 "^*.ayugram.*$")
+    (openWs 4 "equibop")
+    (openWs 4 "mumble")
     (openWs 5 "^steam$")
     (openWs 5 "^HytaleClient$")
   ]
