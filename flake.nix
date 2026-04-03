@@ -243,7 +243,7 @@
       inputs.nixpkgs-stable.follows = "nixpkgs-2511";
     };
 
-    drift-wm = {
+    driftwm = {
       type = "github";
       owner = "malbiruk";
       repo = "driftwm";

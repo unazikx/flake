@@ -37,11 +37,13 @@
           {
             inherit system;
 
-            own = my-own-packages.legacyPackages.${system};
-
             _2505 = import nixpkgs-2505 branch-config;
             _2511 = import nixpkgs-2511 branch-config;
             _2411 = import nixpkgs-2411 branch-config;
+
+            own = my-own-packages.legacyPackages.${system};
+
+            driftwm = inputs.driftwm.packages.${system}.default;
 
             default-lsp = lib.attrValues {
               inherit (pkgs)
@@ -87,6 +89,10 @@
 
             ouch = pkgs.ouch.override {
               enableUnfree = true;
+            };
+
+            suwayomi-server = pkgs.suwayomi-server.override {
+              jdk21_headless = _old.temurin-jre-bin-21;
             };
 
             spotify-player = pkgs.spotify-player.override {

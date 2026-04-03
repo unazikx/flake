@@ -274,7 +274,7 @@
         "type": "github"
       }
     },
-    "drift-wm": {
+    "driftwm": {
       "inputs": {
         "nixpkgs": [
           "nixpkgs"
@@ -1482,7 +1482,7 @@
         "devshell": "devshell_2",
         "disko": "disko",
         "dns-malw-link": "dns-malw-link",
-        "drift-wm": "drift-wm",
+        "driftwm": "driftwm",
         "easyeffects-presets": "easyeffects-presets",
         "emmanuelrosa-nix": "emmanuelrosa-nix",
         "files": "files",
