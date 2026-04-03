@@ -37,7 +37,7 @@
                 PROTONPATH = pkgs.proton-ge-bin.steamcompattool;
                 WINEPREFIX = lib.concatStringsSep "/" [
                   config.hm.xdg.userDirs.publicShare
-                  "UnifiedPrefix"
+                  "wine-prefix"
                 ];
               };
 

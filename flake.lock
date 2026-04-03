@@ -274,6 +274,26 @@
         "type": "github"
       }
     },
+    "drift-wm": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1775162467,
+        "narHash": "sha256-4+raecjfsHu+hF8IwZ2xo0FcPB8O1EdajpaWlcy3OEY=",
+        "owner": "malbiruk",
+        "repo": "driftwm",
+        "rev": "edad5c47c33130d94c8eed0c2511b40e1989114c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "malbiruk",
+        "repo": "driftwm",
+        "type": "github"
+      }
+    },
     "easyeffects-presets": {
       "inputs": {
         "nixpkgs": [
@@ -1462,6 +1482,7 @@
         "devshell": "devshell_2",
         "disko": "disko",
         "dns-malw-link": "dns-malw-link",
+        "drift-wm": "drift-wm",
         "easyeffects-presets": "easyeffects-presets",
         "emmanuelrosa-nix": "emmanuelrosa-nix",
         "files": "files",
