@@ -1,6 +1,5 @@
 # INFO:
-# infinite canvas wayland
-# like newm but other...idk
+# just visualizer
 
 {
   flake =
@@ -10,13 +9,10 @@
     {
       nixosModules.${baseNameOf ./.} =
         {
-          pkgs,
-          lib,
-          config,
           ...
         }:
         {
-          hmPackages = [ pkgs.driftwm ];
+          hm.programs.cava.enable = true;
         };
     };
 }

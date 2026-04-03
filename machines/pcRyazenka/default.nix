@@ -24,6 +24,7 @@
 
               amneziawg
               caddy
+              cava
               discord
               easyeffects
               fastfetch
@@ -33,7 +34,6 @@
               glance
               greetd
               helix
-              keepassxc
               minimal
               mpd
               mpv
@@ -48,6 +48,7 @@
               sopsnix
               spotify
               spotify-player
+              suwayomi
               swayimg
               syncthing
               system-monitor
