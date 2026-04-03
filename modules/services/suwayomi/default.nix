@@ -10,6 +10,7 @@
     {
       nixosModules.${baseNameOf ./.} =
         {
+          pkgs,
           lib,
           config,
           ...
@@ -20,6 +21,8 @@
           localDir = config.hm.xdg.userDirs.desktop + "/localManga";
         in
         {
+          hmPackages = [ pkgs.moku ];
+
           persist.user.directories = [ ".local/share/Tachidesk" ];
 
           services = {

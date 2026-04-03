@@ -48,7 +48,6 @@
               sopsnix
               spotify
               spotify-player
-              suwayomi
               swayimg
               syncthing
               system-monitor
