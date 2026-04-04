@@ -29,6 +29,7 @@ let
     sopsnix.nixosModules.default
     steam-config-nix.nixosModules.default
     stylix.nixosModules.default
+    telegram-ws-proxy.nixosModules.tg-ws-proxy
     zapret-discord.nixosModules.default
     zapret-presets.nixosModules.presets
   ];
@@ -44,6 +45,7 @@ let
     nixcraft.homeModules.default
     nix-index-database.homeModules.default
     spicetify-nix.homeManagerModules.default
+    telegram-ws-proxy.homeModules.tg-ws-proxy
   ];
 in
 

@@ -1526,6 +1526,7 @@
         "spicetify-nix": "spicetify-nix",
         "steam-config-nix": "steam-config-nix",
         "stylix": "stylix",
+        "telegram-ws-proxy": "telegram-ws-proxy",
         "treefmt-nix": "treefmt-nix_2",
         "umu-protonfixes": "umu-protonfixes",
         "viu": "viu",
@@ -1813,6 +1814,29 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "telegram-ws-proxy": {
+      "inputs": {
+        "flake-parts": [
+          "flake-parts"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1775173568,
+        "narHash": "sha256-ZEdLYDBz+C8ZqbaixknJNpSIvZeoZNIE8of3icaPuBI=",
+        "owner": "dmfrpro",
+        "repo": "tg-ws-proxy-flake",
+        "rev": "1a6f79edf4e02ab3d6ab262ea27203fdb8675db1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "dmfrpro",
+        "repo": "tg-ws-proxy-flake",
         "type": "github"
       }
     },

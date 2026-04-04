@@ -11,6 +11,7 @@
 {
   flake =
     {
+      partsConfig,
       ...
     }:
     {
@@ -22,6 +23,12 @@
           ...
         }:
         {
+          imports = lib.attrValues {
+            inherit (partsConfig.nixosModules)
+              telegram-ws-proxy
+              ;
+          };
+
           persist.user.directories = [
             ".local/share/AyuGramDesktop/tdata"
           ];

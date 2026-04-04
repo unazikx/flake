@@ -41,7 +41,11 @@
               "83.220.169.155"
             ];
 
-            extraHosts = lib.readFile "${inputs.dns-malw-link.outPath}/hosts";
+            extraHosts =
+              let
+                isLocal = true;
+              in
+              lib.readFile (if isLocal then ./hosts.txt else "${inputs.dns-malw-link.outPath}/hosts");
 
             # INFO:
             # rutracker trackers
