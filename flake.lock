@@ -260,16 +260,15 @@
     "dns-malw-link": {
       "flake": false,
       "locked": {
-        "lastModified": 1766817625,
-        "narHash": "sha256-qBettxwBk0SR6QOAWcHIIs2gn+7AGv1mR+sW0x2igY0=",
-        "owner": "azikxz",
+        "lastModified": 1769445613,
+        "narHash": "sha256-05BvBNCtIQJY3hrY82Azm2Sp+jiMPjTOS8IS1oa8eyQ=",
+        "owner": "ImMALWARE",
         "repo": "dns.malw.link",
-        "rev": "430c43640b04d11fca0e1bcdb0ab2075b874fccd",
+        "rev": "85974ada1a67d1ae2a9a7cf0e7b76b1ae382e5bc",
         "type": "github"
       },
       "original": {
-        "owner": "azikxz",
-        "ref": "azikx_patches",
+        "owner": "ImMALWARE",
         "repo": "dns.malw.link",
         "type": "github"
       }

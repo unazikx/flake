@@ -10,6 +10,7 @@
     {
       nixosModules.${baseNameOf ./.} =
         {
+          inputs,
           lib,
           ...
         }:
@@ -40,7 +41,7 @@
               "83.220.169.155"
             ];
 
-            # extraHosts = lib.readFile (inputs.dns-malw-link.outPath + "/hosts");
+            extraHosts = lib.readFile "${inputs.dns-malw-link.outPath}/hosts";
 
             # INFO:
             # rutracker trackers

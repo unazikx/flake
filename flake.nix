@@ -449,9 +449,8 @@
 
     dns-malw-link = {
       type = "github";
-      owner = "azikxz";
+      owner = "ImMALWARE";
       repo = "dns.malw.link";
-      ref = "azikx_patches";
       flake = false;
     };
 
