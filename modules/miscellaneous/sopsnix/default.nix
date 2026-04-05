@@ -63,6 +63,7 @@
                   "tokens/github"
                   "tokens/viu"
                   "tokens/spotify-player"
+                  "tokens/openrouter"
 
                   "services/windows"
                   "services/transmission"
