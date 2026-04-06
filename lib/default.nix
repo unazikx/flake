@@ -41,6 +41,7 @@ inputs.flake-parts.lib.mkFlake
       inputs.disko.flakeModule
       inputs.flake-parts.flakeModules.bundlers
       inputs.home-manager.flakeModules.default
+      inputs.make-shell.flakeModules.default
       inputs.nix-wrapper-modules.flakeModules.default
       inputs.treefmt-nix.flakeModule
     ];

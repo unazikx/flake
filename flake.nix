@@ -119,6 +119,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    make-shell = {
+      type = "github";
+      owner = "nicknovitski";
+      repo = "make-shell";
+    };
+
     treefmt-nix = {
       type = "github";
       owner = "numtide";
