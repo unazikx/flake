@@ -11,12 +11,8 @@ let
 in
 
 rec {
-  terminal = if config.hm.programs.kitty.enable then "kitty" else (lib.getExe pkgs.foot);
-  menu =
-    if config.hm.programs.tofi.enable then
-      "tofi-drun | xargs swaymsg exec --"
-    else
-      (lib.getExe pkgs.bemenu);
+  terminal = "kitty";
+  menu = "tofi-drun | xargs swaymsg exec --";
 
   input."*" = {
     xkb_layout = "us,ru";

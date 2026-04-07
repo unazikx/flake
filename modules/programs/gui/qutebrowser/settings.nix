@@ -6,21 +6,12 @@
 
 let
   inherit (pkgs) fetchurl;
-  terminal =
-    if config.hm.programs.kitty.enable then
-      [
-        "kitty"
-        "--class"
-        "termfloat"
-        "-e"
-      ]
-    else
-      [
-        (lib.getExe pkgs.foot)
-        "-a"
-        "footfloat"
-        "-e"
-      ];
+  terminal = [
+    "kitty"
+    "--class"
+    "termfloat"
+    "-e"
+  ];
 in
 
 {

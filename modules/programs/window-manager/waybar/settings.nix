@@ -56,6 +56,7 @@
           {
             modules-left = [
               "custom/spacing"
+              "custom/powerMenu"
               "group/musicGrp"
               "group/soundGrp"
               "group/blueGrp"

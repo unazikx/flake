@@ -25,8 +25,7 @@ let
     };
   };
 
-  sh = spawn-sh;
-  msg = cmd: sh ("niri msg action " + cmd);
+  msg = cmd: spawn-sh ("niri msg action " + cmd);
 
   dms = config.hm.programs.dank-material-shell.enable;
   ifDMS = first: second: if dms then first else second;
@@ -36,21 +35,32 @@ in
   # programs
   [
     (bind "${m}+Tab" (
-      sh (ifDMS "dms ipc spotlight open" "bash -c tofi-drun | xargs niri msg action spawn --")
+      spawn-sh (ifDMS "dms ipc spotlight open" "bash -c tofi-drun | xargs niri msg action spawn --")
     ))
-    (bind "${m}+${s}+Tab" (sh (ifDMS "dms ipc clipboard open" (lib.getExe pkgs.clapboard))))
+    (bind "${m}+${s}+Tab" (spawn-sh (ifDMS "dms ipc clipboard open" (lib.getExe pkgs.clapboard))))
 
-    (bind "${m}+Return" (sh "kitty"))
-    (bind "${m}+${s}+Return" (sh "kitty --class=kitty_small"))
+    (bind "${m}+Return" (spawn-sh "kitty"))
+    (bind "${m}+${s}+Return" (spawn-sh "kitty --class=kitty_small"))
+    (bind "${m}+${a}+Return" (
+      spawn-sh (
+        lib.getExe (
+          pkgs.writeShellScriptBin "niri-pid-kill" ''
+            data=$(niri msg pick-window)
+            pid=$(awk '/PID:/ {print $2}' <<< "$data")
+            [ -n "$pid" ] && kill "$pid"
+          ''
+        )
+      )
+    ))
 
-    (bind "${m}+V" (sh "AyuGram"))
-    (bind "${m}+${s}+V" (sh "equibop"))
+    (bind "${m}+V" (spawn-sh "AyuGram"))
+    (bind "${m}+${s}+V" (spawn-sh "equibop"))
 
-    (bind "${m}+B" (sh "qutebrowser"))
-    (bind "${m}+${s}+B" (sh "librewolf"))
+    (bind "${m}+B" (spawn-sh "qutebrowser"))
+    (bind "${m}+${s}+B" (spawn-sh "librewolf"))
 
-    (bind "${m}+M" (sh "spotify"))
-    (bind "${m}+${s}+M" (sh "obsidian"))
+    (bind "${m}+M" (spawn-sh "spotify"))
+    (bind "${m}+${s}+M" (spawn-sh "obsidian"))
   ]
   ++
     # main actions
@@ -60,13 +70,18 @@ in
       (bind "${m}+Q" close-window)
 
       (bind "${m}+Space" toggle-overview)
-      (bind "${m}+${a}+Space" center-window)
+      (bind "${m}+${a}+Space" toggle-window-floating)
       (bind "${m}+${s}+Space" (
-        ifDMS (sh "dms ipc powermenu open") (
-          if config.hm.programs.wleave.enable then
-            (sh (lib.getExe config.hm.programs.wleave.package))
-          else
-            quit
+        spawn-sh (
+          lib.getExe (
+            pkgs.writeShellScriptBin "niri-view-window-title" ''
+              cmd=$(niri msg pick-window)
+              title=$(awk -F'"' '/Title:/ {print $2}' <<< "$cmd")
+              app_id=$(awk -F'"' '/App ID:/ {print $2}' <<< "$cmd")
+              [ -n "$title" ] && ${lib.getExe pkgs.libnotify} \
+                -t 1000 -a niri-title "$title - $app_id"
+            ''
+          )
         )
       ))
 
@@ -119,9 +134,13 @@ in
   ]
   # screenshots
   ++ [
-    (bind "Print" (ifDMS (sh "dms ipc niri screenshot") (msg "screenshot -p false")))
-    (bind "${s}+Print" (ifDMS (sh "dms ipc niri screenshotScreen") (msg "screenshot-screen -p false")))
-    (bind "${a}+Print" (ifDMS (sh "dms ipc niri screenshotWindow") (msg "screenshot-window -p false")))
+    (bind "Print" (ifDMS (spawn-sh "dms ipc niri screenshot") (msg "screenshot -p false")))
+    (bind "${s}+Print" (
+      ifDMS (spawn-sh "dms ipc niri screenshotScreen") (msg "screenshot-screen -p false")
+    ))
+    (bind "${a}+Print" (
+      ifDMS (spawn-sh "dms ipc niri screenshotWindow") (msg "screenshot-window -p false")
+    ))
   ]
   # volume and brightness
   ++ (
@@ -136,24 +155,32 @@ in
       lightPkg = lib.getExe pkgs.brightnessctl;
 
       make = volume: audio: brightness: [
-        (bind "XF86AudioMute" (sh ("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle" + audio)))
-        (bind "XF86AudioMicMute" (sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"))
+        (bind "XF86AudioMute" (spawn-sh ("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle" + audio)))
+        (bind "XF86AudioMicMute" (spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"))
 
-        (bind "XF86AudioRaiseVolume" (sh ("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+" + volume)))
-        (bind "XF86AudioLowerVolume" (sh ("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%-" + volume)))
-        (bind "${s}+XF86AudioRaiseVolume" (sh ("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 10%+" + volume)))
-        (bind "${s}+XF86AudioLowerVolume" (sh ("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 10%-" + volume)))
+        (bind "XF86AudioRaiseVolume" (spawn-sh ("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+" + volume)))
+        (bind "XF86AudioLowerVolume" (spawn-sh ("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%-" + volume)))
+        (bind "${s}+XF86AudioRaiseVolume" (
+          spawn-sh ("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 10%+" + volume)
+        ))
+        (bind "${s}+XF86AudioLowerVolume" (
+          spawn-sh ("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 10%-" + volume)
+        ))
 
-        (bind "${m}+TouchpadScrollUp" (sh ("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+" + volume)))
-        (bind "${m}+TouchpadScrollDown" (sh ("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%-" + volume)))
+        (bind "${m}+TouchpadScrollUp" (
+          spawn-sh ("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+" + volume)
+        ))
+        (bind "${m}+TouchpadScrollDown" (
+          spawn-sh ("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%-" + volume)
+        ))
 
-        (bind "XF86MonBrightnessUp" (sh ("sudo ${lightPkg} set 10%+" + brightness)))
-        (bind "XF86MonBrightnessDown" (sh ("sudo ${lightPkg} set 10%-" + brightness)))
-        (bind "${s}+XF86MonBrightnessUp" (sh ("sudo ${lightPkg} set 70%" + brightness)))
-        (bind "${s}+XF86MonBrightnessDown" (sh ("sudo ${lightPkg} set 100%" + brightness)))
+        (bind "XF86MonBrightnessUp" (spawn-sh ("sudo ${lightPkg} set 10%+" + brightness)))
+        (bind "XF86MonBrightnessDown" (spawn-sh ("sudo ${lightPkg} set 10%-" + brightness)))
+        (bind "${s}+XF86MonBrightnessUp" (spawn-sh ("sudo ${lightPkg} set 70%" + brightness)))
+        (bind "${s}+XF86MonBrightnessDown" (spawn-sh ("sudo ${lightPkg} set 100%" + brightness)))
 
-        # (bind "${m}+TouchpadScrollRight" (sh ("sudo ${lightPkg} -A 10" + brightness)))
-        # (bind "${m}+TouchpadScrollDown" (sh ("sudo ${lightPkg} -U 10" + brightness)))
+        # (bind "${m}+TouchpadScrollRight" (spawn-sh ("sudo ${lightPkg} -A 10" + brightness)))
+        # (bind "${m}+TouchpadScrollDown" (spawn-sh ("sudo ${lightPkg} -U 10" + brightness)))
 
         (bind "XF86Favorites" (spawn "wleave"))
       ];
@@ -162,25 +189,25 @@ in
       (make vol mute light)
     else if dms then
       [
-        (bind "XF86AudioMute" (sh "dms ipc audio mute"))
-        (bind "XF86AudioMicMute" (sh "dms ipc audio micmute"))
+        (bind "XF86AudioMute" (spawn-sh "dms ipc audio mute"))
+        (bind "XF86AudioMicMute" (spawn-sh "dms ipc audio micmute"))
 
-        (bind "XF86AudioRaiseVolume" (sh "dms ipc audio increment 5"))
-        (bind "XF86AudioLowerVolume" (sh "dms ipc audio decrement 5"))
-        (bind "${s}+XF86AudioRaiseVolume" (sh "dms ipc audio increment 10"))
-        (bind "${s}+XF86AudioLowerVolume" (sh "dms ipc audio decrement 10"))
+        (bind "XF86AudioRaiseVolume" (spawn-sh "dms ipc audio increment 5"))
+        (bind "XF86AudioLowerVolume" (spawn-sh "dms ipc audio decrement 5"))
+        (bind "${s}+XF86AudioRaiseVolume" (spawn-sh "dms ipc audio increment 10"))
+        (bind "${s}+XF86AudioLowerVolume" (spawn-sh "dms ipc audio decrement 10"))
 
-        (bind "${m}+TouchpadScrollUp" (sh "dms ipc audio increment 5"))
-        (bind "${m}+TouchpadScrollDown" (sh "dms ipc audio decrement 5"))
+        (bind "${m}+TouchpadScrollUp" (spawn-sh "dms ipc audio increment 5"))
+        (bind "${m}+TouchpadScrollDown" (spawn-sh "dms ipc audio decrement 5"))
 
-        (bind "XF86MonBrightnessUp" (sh "dms ipc brightness increment 10"))
-        (bind "XF86MonBrightnessDown" (sh "dms ipc brightness decrement 10"))
-        (bind "${s}+XF86MonBrightnessUp" (sh "dms ipc brightness set 100"))
-        (bind "${s}+XF86MonBrightnessDown" (sh "dms ipc brightness set 70"))
+        (bind "XF86MonBrightnessUp" (spawn-sh "dms ipc brightness increment 10"))
+        (bind "XF86MonBrightnessDown" (spawn-sh "dms ipc brightness decrement 10"))
+        (bind "${s}+XF86MonBrightnessUp" (spawn-sh "dms ipc brightness set 100"))
+        (bind "${s}+XF86MonBrightnessDown" (spawn-sh "dms ipc brightness set 70"))
 
-        (bind "XF86Favorites" (sh "dms ipc powermenu open"))
-        (bind "${m}+T" (sh "dms ipc night toggle"))
-        (bind "${m}+U" (sh "dms ipc notifications open"))
+        (bind "XF86Favorites" (spawn-sh "dms ipc powermenu open"))
+        (bind "${m}+T" (spawn-sh "dms ipc night toggle"))
+        (bind "${m}+U" (spawn-sh "dms ipc notifications open"))
       ]
     else
       (make (toString null) (toString null) (toString null))

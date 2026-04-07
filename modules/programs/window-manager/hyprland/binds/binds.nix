@@ -67,7 +67,7 @@ in
   ]
 )
 ++ (import ./programs.nix {
-  inherit pkgs lib config;
+  inherit pkgs lib;
 })
 ++ (builtins.concatLists (
   builtins.genList (

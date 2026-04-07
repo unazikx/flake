@@ -14,23 +14,35 @@
           fi
         '';
 
-        packages = (
-          lib.attrValues {
-            inherit (pkgs)
-              black
-              ;
+        packages = [
+          (pkgs.python314.withPackages (
+            _pkgs:
+            (lib.attrValues {
+              inherit (_pkgs)
+                aiohttp
+                requests
+                ;
+            })
+          ))
+        ];
 
-            python = pkgs.python314.withPackages (
-              _pkgs:
-              (lib.attrValues {
-                inherit (_pkgs)
-                  aiohttp
-                  requests
-                  ;
-              })
-            );
-          }
-        );
+        # packages = (
+        #   lib.attrValues {
+        #     inherit (pkgs)
+        #       black
+        #       ;
+
+        #     python = pkgs.python314.withPackages (
+        #       _pkgs:
+        #       (lib.attrValues {
+        #         inherit (_pkgs)
+        #           aiohttp
+        #           requests
+        #           ;
+        #       })
+        #     );
+        #   }
+        # );
       };
     };
 }

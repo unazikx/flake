@@ -1,7 +1,6 @@
 {
   pkgs,
   lib,
-  config,
   ...
 }:
 
@@ -14,19 +13,10 @@ let
   shift = binds "$m" "$s";
 in
 
-(
-  if config.hm.programs.kitty.enable then
-    [
-      (mod "return" "kitty")
-      (shift "return" "kitty --class=termfloat")
-    ]
-  else
-    [
-      (mod "return" (lib.getExe pkgs.foot))
-      (shift "return" ((lib.getExe pkgs.foot) + " -a termfloat"))
-    ]
-)
-++ [
+[
+  (mod "return" "kitty")
+  (shift "return" "kitty --class=termfloat")
+
   (mod "tab" "tofi-drun | xargs hyprctl dispatch exec -- ")
   (shift "tab" (lib.getExe pkgs.clapboard))
 
