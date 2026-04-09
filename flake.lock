@@ -881,6 +881,29 @@
         "type": "github"
       }
     },
+    "max-messenger": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1775660712,
+        "narHash": "sha256-pXB22pNPrXzd0HNvXBikXVpJYX7xJno5/+/tPA+bGfg=",
+        "owner": "spiage",
+        "repo": "max-messenger",
+        "rev": "b6771741b461dcda8980d7abbeab9d96a68db9cf",
+        "type": "github"
+      },
+      "original": {
+        "owner": "spiage",
+        "repo": "max-messenger",
+        "type": "github"
+      }
+    },
     "minecraft-assets": {
       "flake": false,
       "locked": {
@@ -1529,6 +1552,7 @@
         "import-tree": "import-tree",
         "make-shell": "make-shell",
         "mangowc": "mangowc",
+        "max-messenger": "max-messenger",
         "minecraft-assets": "minecraft-assets",
         "musnix": "musnix",
         "my-own-packages": "my-own-packages",

@@ -44,6 +44,7 @@
             own = my-own-packages.legacyPackages.${system};
 
             driftwm = inputs.driftwm.packages.${system}.default;
+            max-messenger = inputs.max-messenger.packages.${system}.default;
 
             default-lsp = lib.attrValues {
               inherit (pkgs)

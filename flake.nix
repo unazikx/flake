@@ -349,6 +349,14 @@
       inputs.flake-parts.follows = "flake-parts";
     };
 
+    max-messenger = {
+      type = "github";
+      owner = "spiage";
+      repo = "max-messenger";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
+    };
+
     hytale-launcher = {
       type = "github";
       owner = "unazikx";
