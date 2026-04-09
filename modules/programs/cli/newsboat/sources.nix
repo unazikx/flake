@@ -55,6 +55,11 @@ in
   (mk "hytracker.net/rss.xml" [
     "games"
   ])
+
+  (mk "feed.rutracker.cc/atom/u/4/64/42166964.atom" [
+    "games"
+    "torrents"
+  ])
 ]
 ++ (map
   (
