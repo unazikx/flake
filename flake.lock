@@ -964,6 +964,10 @@
           "flake-parts"
         ],
         "nixpkgs": [
+          "my-own-packages",
+          "nixpkgs-unstable"
+        ],
+        "nixpkgs-unstable": [
           "nixpkgs"
         ],
         "nur": [
@@ -977,11 +981,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1774850661,
-        "narHash": "sha256-bgktbNlTjV4j1DCKn5/hGLsLKIeQa4flzGMl0lYsGEk=",
+        "lastModified": 1775894325,
+        "narHash": "sha256-O7vxaeEAISlqKSCyjHXxhv8WC2oFipFc+rpIiDOr524=",
         "owner": "unazikx",
         "repo": "nix-packages",
-        "rev": "ffa0e783ce0406030da90737d7cf70e96ea33f83",
+        "rev": "fa7dd9e28f70629e3b5ca790f1819813e48355eb",
         "type": "github"
       },
       "original": {
