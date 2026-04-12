@@ -87,7 +87,7 @@ rec {
     )
   ];
 
-  nonSteamApps = lib.mkIf false (
+  nonSteamApps = lib.mkIf (lib.configurationName == "pcRyazenka") (
     lib.mkMerge [
       (mkAttrset
         {
@@ -96,7 +96,7 @@ rec {
         {
           voices-of-the-void = {
             name = "Voices of the Void";
-            target = "${pkgs.own.games.votv}/share/votv/VotV.exe";
+            target = lib.getExe pkgs.own.games.votv;
           };
         }
       )

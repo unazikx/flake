@@ -27,23 +27,27 @@
           ];
 
           nix = {
-            package = pkgs.nix;
+            package = pkgs.lixPackageSets.stable.lix;
 
             registry =
+              let
+                isFlake = (_: entry: lib.isType "flake" entry);
+              in
               (lib.mapAttrs (
-                _: v: {
-                  flake = v;
+                _: flake: {
+                  inherit
+                    flake
+                    ;
                 }
               ))
-                (lib.filterAttrs (_: v: lib.isType "flake" v) inputs);
+                (lib.filterAttrs isFlake inputs);
 
             settings = {
               warn-dirty = false;
               auto-optimise-store = true;
-              download-buffer-size = (512 * 1000000);
 
               experimental-features = [
-                "pipe-operators"
+                "pipe-operator"
                 "nix-command"
                 "flakes"
               ];
@@ -81,6 +85,17 @@
               !include ${config.sopstem."nixAccessTokens"}
             '';
           };
+
+          nixpkgs.overlays = [
+            (f: p: {
+              inherit (p.lixPackageSets.stable)
+                nixpkgs-review
+                nix-eval-jobs
+                nix-fast-build
+                colmena
+                ;
+            })
+          ];
 
           sops.templates = {
             "nixAccessTokens" = {

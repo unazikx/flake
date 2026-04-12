@@ -94,8 +94,8 @@
                   };
 
                   image = lib.mkStylixImage (pkgs.fetchurl {
-                    url = "https://w.wallhaven.cc/full/rr/wallhaven-rrdgp1.jpg";
-                    sha256 = "sha256-1D4PSCXBa14h5DE6SPwuErhCjMX9fE1Bn7+McKtUhMY=";
+                    url = "https://w.wallhaven.cc/full/og/wallhaven-ogl5z9.png";
+                    sha256 = "sha256-VvnBCulYtyVqJOQ5psLJyIvK8YffWPP8Stz9KgznGcY=";
                   }) config.lib.stylix.colors.toList;
                 };
 
