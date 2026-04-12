@@ -17,6 +17,7 @@ let
     disko.nixosModules.default
     home-manager.nixosModules.home-manager
     impermanence.nixosModules.impermanence
+    lsfg-vk-flake.nixosModules.default
     mangowc.nixosModules.mango
     musnix.nixosModules.default
     nix-flatpak.nixosModules.nix-flatpak

@@ -234,6 +234,13 @@
       inputs.flake-parts.follows = "flake-parts";
     };
 
+    lsfg-vk-flake = {
+      type = "github";
+      owner = "pabloaul";
+      repo = "lsfg-vk-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     musnix = {
       type = "github";
       owner = "musnix";

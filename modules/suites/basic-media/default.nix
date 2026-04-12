@@ -13,14 +13,10 @@
         {
           imports = lib.attrValues {
             inherit (partsConfig.nixosModules)
-              epic-games
-              hytale
-              lsfg-vk
-              mumble
-              prism-launcher
-              r2modman
-              steam
-              umu-launcher
+              easyeffects
+              mpd
+              mpv
+              swayimg
               ;
           };
         };

@@ -15,6 +15,8 @@
           (extendedLib.nxosLib.attrValues {
             inherit (config.nixosModules)
               # suites
+              basic-media
+              basic-services
               basic-shell
               desktop-hardware
               develop
@@ -23,22 +25,15 @@
               office-env
 
               amneziawg
-              caddy
               cava
               discord
               driftwm
-              easyeffects
               fastfetch
               firefox
-              flood
               gdu
-              glance
-              greetd
+              flood
               helix
               minimal
-              mpd
-              mpv
-              mumble
               obsidian
               qbittorrent
               qutebrowser
@@ -48,8 +43,6 @@
               rusted-tools
               sopsnix
               spotify
-              spotify-player
-              swayimg
               syncthing
               system-monitor
               tailscale
