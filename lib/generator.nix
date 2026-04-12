@@ -27,12 +27,13 @@ let
     nix-minecraft.nixosModules.minecraft-servers
     nixpkgs.nixosModules.notDetected
     nur.modules.nixos.default
+    proxy-suite-flake.nixosModules.default
     sopsnix.nixosModules.default
     steam-config-nix.nixosModules.default
     stylix.nixosModules.default
     telegram-ws-proxy.nixosModules.tg-ws-proxy
-    zapret-discord.nixosModules.default
-    zapret-presets.nixosModules.presets
+    # zapret-discord.nixosModules.default
+    # zapret-presets.nixosModules.presets
   ];
 
   homeModules = with inputs; [
@@ -46,7 +47,7 @@ let
     nixcraft.homeModules.default
     nix-index-database.homeModules.default
     spicetify-nix.homeManagerModules.default
-    telegram-ws-proxy.homeModules.tg-ws-proxy
+    # telegram-ws-proxy.homeModules.tg-ws-proxy
   ];
 in
 

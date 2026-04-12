@@ -429,6 +429,14 @@
       inputs.flake-utils.follows = "flake-utils";
     };
 
+    proxy-suite-flake = {
+      type = "github";
+      owner = "FUFSoB";
+      repo = "proxy-suite-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.zapret.follows = "zapret-discord";
+    };
+
     telegram-ws-proxy = {
       type = "github";
       owner = "dmfrpro";

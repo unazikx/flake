@@ -74,6 +74,7 @@
                   "services/librefm"
                   "services/vaultwarden"
                   "services/syncthing/password"
+                  "services/telegram-ws-proxy"
 
                   "accounts/googleClient/id"
                   "accounts/googleClient/secret"

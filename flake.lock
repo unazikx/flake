@@ -1529,6 +1529,29 @@
         "type": "github"
       }
     },
+    "proxy-suite-flake": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "zapret": [
+          "zapret-discord"
+        ]
+      },
+      "locked": {
+        "lastModified": 1775994146,
+        "narHash": "sha256-JXBR/SiO4W2LOm7IGw36UJHSrOPGVpkyqXyxaWjCt08=",
+        "owner": "FUFSoB",
+        "repo": "proxy-suite-flake",
+        "rev": "aa5428fc9be8982e6925d0b95160bf0f3f887070",
+        "type": "github"
+      },
+      "original": {
+        "owner": "FUFSoB",
+        "repo": "proxy-suite-flake",
+        "type": "github"
+      }
+    },
     "quickshell": {
       "inputs": {
         "nixpkgs": [
@@ -1605,6 +1628,7 @@
         "obsidian-plugins": "obsidian-plugins",
         "pkgs-by-name": "pkgs-by-name",
         "plasma-manager": "plasma-manager",
+        "proxy-suite-flake": "proxy-suite-flake",
         "shattered-prism": "shattered-prism",
         "sopsnix": "sopsnix",
         "spicetify-nix": "spicetify-nix",
