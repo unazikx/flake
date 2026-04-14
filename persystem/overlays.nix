@@ -47,6 +47,10 @@
             max-messenger = inputs.max-messenger.packages.${system}.default;
             nilla-cli = inputs.nilla-cli.packages.${system}.nilla-cli;
 
+            zen-beta = inputs.zen-browser.packages.${system}.beta;
+            zen-twilight = inputs.zen-browser.packages.${system}.twilight;
+            zen-twilight-official = inputs.zen-browser.packages.${system}.twilight-official;
+
             default-lsp = lib.attrValues {
               inherit (pkgs)
                 black

@@ -48,6 +48,7 @@ let
     nix-index-database.homeModules.default
     spicetify-nix.homeManagerModules.default
     telegram-ws-proxy.homeModules.tg-ws-proxy
+    zen-browser.homeModules.twilight
   ];
 
   flakesOverlays = with inputs; [
