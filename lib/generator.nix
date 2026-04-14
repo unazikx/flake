@@ -32,8 +32,8 @@ let
     steam-config-nix.nixosModules.default
     stylix.nixosModules.default
     telegram-ws-proxy.nixosModules.tg-ws-proxy
-    # zapret-discord.nixosModules.default
-    # zapret-presets.nixosModules.presets
+    zapret-discord.nixosModules.default
+    zapret-presets.nixosModules.presets
   ];
 
   homeModules = with inputs; [
@@ -47,7 +47,16 @@ let
     nixcraft.homeModules.default
     nix-index-database.homeModules.default
     spicetify-nix.homeManagerModules.default
-    # telegram-ws-proxy.homeModules.tg-ws-proxy
+    telegram-ws-proxy.homeModules.tg-ws-proxy
+  ];
+
+  flakesOverlays = with inputs; [
+    glide-browser.overlays.default
+    niri-flake.overlays.niri
+    nix-minecraft.overlays.default
+    nur.overlays.default
+    obsidian-plugins.overlays.default
+    shattered-prism.overlays.default
   ];
 in
 
@@ -85,16 +94,10 @@ rec {
           allowUnfree = true;
         };
 
-        overlays = with inputs; [
-          glide-browser.overlays.default
-          niri-flake.overlays.niri
-          nix-minecraft.overlays.default
-          nur.overlays.default
-          obsidian-plugins.overlays.default
-          shattered-prism.overlays.default
-
+        overlays = [
           self.overlays.default
-        ];
+        ]
+        ++ flakesOverlays;
 
         inherit
           hostPlatform

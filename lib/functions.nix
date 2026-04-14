@@ -6,6 +6,10 @@
 }:
 
 {
+  inherit (inputs.nix-math.lib)
+    math
+    ;
+
   mkSecrets = {
     sopsnix =
       list: sopsFile:

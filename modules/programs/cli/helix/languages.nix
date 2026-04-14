@@ -147,7 +147,7 @@ in
       inherit auto-format indent;
       name = "python";
 
-      language-servers = [ "python-lsp-server" ];
+      language-servers = [ "pylsp" ];
 
       formatter = {
         command = "black";

@@ -1014,6 +1014,21 @@
         "type": "github"
       }
     },
+    "nilla-cli": {
+      "locked": {
+        "lastModified": 1772082371,
+        "narHash": "sha256-lNxeYMSLTbe/yp4ElIujaP1bB0BfhGLt+6xgV2XWUtE=",
+        "owner": "nilla-nix",
+        "repo": "cli",
+        "rev": "7bd8639687567e3629471d952b6b732691c0890b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nilla-nix",
+        "repo": "cli",
+        "type": "github"
+      }
+    },
     "niri-flake": {
       "inputs": {
         "niri-stable": "niri-stable",
@@ -1604,6 +1619,7 @@
         "minecraft-assets": "minecraft-assets",
         "musnix": "musnix",
         "my-own-packages": "my-own-packages",
+        "nilla-cli": "nilla-cli",
         "niri-flake": "niri-flake",
         "nix-cursors": "nix-cursors",
         "nix-flatpak": "nix-flatpak",

@@ -20,6 +20,7 @@
           packages = lib.attrValues {
             inherit (pkgs)
               cachix
+              nilla-cli
               nix-tree
               nurl
               ;

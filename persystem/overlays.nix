@@ -45,6 +45,7 @@
 
             driftwm = inputs.driftwm.packages.${system}.default;
             max-messenger = inputs.max-messenger.packages.${system}.default;
+            nilla-cli = inputs.nilla-cli.packages.${system}.nilla-cli;
 
             default-lsp = lib.attrValues {
               inherit (pkgs)
@@ -56,6 +57,7 @@
                 nixfmt
                 vscode-langservers-extracted
                 yaml-language-server
+                pyright
                 ;
 
               inherit (pkgs.nodePackages)
@@ -63,12 +65,9 @@
                 typescript-language-server
                 ;
 
-              _ = pkgs.python312.withPackages (
-                _packages:
-                (with _packages; [
-                  python-lsp-server
-                ])
-              );
+              inherit (pkgs.python314Packages)
+                python-lsp-server
+                ;
             };
 
             prismlauncher = pkgs.prismlauncher.override {

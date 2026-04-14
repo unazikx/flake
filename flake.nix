@@ -86,6 +86,12 @@
     };
 
     # flakes with dependencies
+    nilla-cli = {
+      type = "github";
+      owner = "nilla-nix";
+      repo = "cli";
+    };
+
     my-own-packages = {
       type = "github";
       owner = "unazikx";

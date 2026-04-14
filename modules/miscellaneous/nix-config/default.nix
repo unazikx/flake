@@ -59,6 +59,7 @@
 
               substituters = lib.mkForce [
                 "https://mirror.yandex.ru/nixos"
+                "https://freesmlauncher.cachix.org"
                 "https://lunaislazier.cachix.org"
                 "https://niri.cachix.org"
                 "https://nix-gaming.cachix.org"
@@ -68,6 +69,7 @@
               ];
 
               trusted-public-keys = [
+                "freesmlauncher.cachix.org-1:Jcp5Q9wiLL+EDv8Mh7c6L9xGk+lXr7/otpKxMOuBuDs="
                 "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
                 "niri.cachix.org-1:Wv0OmO7PsuocRKzfDoJ3mulSl7Z6oezYhGhR+3W2964="
                 "nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="
