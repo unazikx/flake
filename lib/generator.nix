@@ -27,7 +27,7 @@ let
     nix-minecraft.nixosModules.minecraft-servers
     nixpkgs.nixosModules.notDetected
     nur.modules.nixos.default
-    proxy-suite-flake.nixosModules.default
+    # proxy-suite-flake.nixosModules.default
     sopsnix.nixosModules.default
     steam-config-nix.nixosModules.default
     stylix.nixosModules.default
