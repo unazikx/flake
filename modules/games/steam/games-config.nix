@@ -1,6 +1,7 @@
 {
   pkgs,
   lib,
+  config,
   ...
 }:
 
@@ -97,6 +98,16 @@ rec {
           voices-of-the-void = {
             name = "Voices of the Void";
             target = lib.getExe pkgs.own.games.votv;
+            launchOptions =
+              let
+                r2modman-enabled = true;
+              in
+              lib.mkIf r2modman-enabled {
+                env.WINEDLLOVERRIDES = "winhttp,version=n,b";
+                wrappers = [
+                  "${config.hm.xdg.configHome}/r2modmanPlus-local/VotV/linux_wrapper.sh"
+                ];
+              };
           };
         }
       )
