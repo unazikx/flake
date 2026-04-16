@@ -52,36 +52,9 @@
               # INFO: default for every host secrets
               # for especially host create
               # > machines/machine/secerts.yaml
-              (
-                lib.mkSecrets.sopsnix [
-                  "git/user"
-                  "git/mail"
-
-                  "tokens/anilibme"
-                  "tokens/cachix"
-                  "tokens/discord"
-                  "tokens/github"
-                  "tokens/viu"
-                  "tokens/spotify-player"
-                  "tokens/openrouter"
-
-                  "services/windows"
-                  "services/transmission"
-                  "services/minecraft"
-                  "services/minecraft-main"
-                  "services/glance"
-                  "services/lastfm"
-                  "services/librefm"
-                  "services/vaultwarden"
-                  "services/syncthing/password"
-                  "services/telegram-ws-proxy"
-
-                  "accounts/googleClient/id"
-                  "accounts/googleClient/secret"
-                  "accounts/gmailPassword"
-                  "accounts/tg"
-                ] "${self}/machines/secrets.yaml"
-              );
+              import "${self}/machines/secrets.nix" {
+                inherit self lib;
+              };
 
             age = {
               # for create private key use:
