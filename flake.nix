@@ -66,6 +66,14 @@
       repo = "files";
     };
 
+    github-actions-nix = {
+      type = "github";
+      owner = "synapdeck";
+      repo = "github-actions-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-parts.follows = "flake-parts";
+    };
+
     flake-utils = {
       type = "github";
       owner = "numtide";

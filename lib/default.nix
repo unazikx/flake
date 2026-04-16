@@ -42,6 +42,7 @@ inputs.flake-parts.lib.mkFlake
       inputs.disko.flakeModule
       inputs.files.flakeModules.default
       inputs.flake-parts.flakeModules.bundlers
+      inputs.github-actions-nix.flakeModule
       inputs.home-manager.flakeModules.default
       inputs.make-shell.flakeModules.default
       inputs.nix-wrapper-modules.flakeModules.default

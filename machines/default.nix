@@ -12,11 +12,13 @@
     {
       # INFO:
       # build any nixosConfiguration
-      packages = lib.listToAttrs (
-        map (name: {
-          name = "${name}-toplevel";
-          value = self.nixosConfigurations.${name}.config.system.build.toplevel;
-        }) (lib.attrNames self.nixosConfigurations)
+      packages = lib.mkIf false (
+        lib.listToAttrs (
+          map (name: {
+            name = "${name}-toplevel";
+            value = self.nixosConfigurations.${name}.config.system.build.toplevel;
+          }) (lib.attrNames self.nixosConfigurations)
+        )
       );
     };
 }
