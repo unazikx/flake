@@ -3,6 +3,10 @@
 # will format every .nix and .md
 
 {
+  ...
+}:
+
+{
   perSystem =
     {
       ...

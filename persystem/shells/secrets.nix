@@ -6,6 +6,10 @@
 #    # WARN: will gives you same result
 
 {
+  ...
+}:
+
+{
   perSystem =
     {
       pkgs,
