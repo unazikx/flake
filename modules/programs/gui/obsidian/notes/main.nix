@@ -30,6 +30,47 @@
     themes = [ { pkg = pkgs.obsidian-plugins.minimal; } ];
 
     corePlugins = [
+      # keep-sorted start block=yes newline_separated=yes
+      "audio-recorder"
+
+      "backlink"
+
+      "bases"
+
+      "bookmarks"
+
+      "command-palette"
+
+      "editor-status"
+
+      "file-explorer"
+
+      "global-search"
+
+      "graph"
+
+      "markdown-importer"
+
+      "outgoing-link"
+
+      "outline"
+
+      "page-preview"
+
+      "properties"
+
+      "random-note"
+
+      "slash-command"
+
+      "slides"
+
+      "switcher"
+
+      "tag-pane"
+
+      "word-count"
+
       {
         name = "canvas";
         settings = {
@@ -50,27 +91,7 @@
           template = "_daily/_template";
         };
       }
-
-      "audio-recorder"
-      "backlink"
-      "bases"
-      "bookmarks"
-      "command-palette"
-      "editor-status"
-      "file-explorer"
-      "global-search"
-      "graph"
-      "markdown-importer"
-      "outgoing-link"
-      "outline"
-      "page-preview"
-      "properties"
-      "random-note"
-      "slash-command"
-      "slides"
-      "switcher"
-      "tag-pane"
-      "word-count"
+      # keep-sorted end
     ];
 
     communityPlugins = import ./community-plugins.nix {
@@ -80,35 +101,12 @@
     hotkeys = import ./binds.nix;
 
     cssSnippets = [
+      # keep-sorted start block=yes newline_separated=yes
       {
-        name = "system-font";
+        name = "docxer-hide";
         text = # css
           ''
-            body {
-              --font-default: "${config.stylix.fonts.sansSerif.name}";
-              --zoom-factor: 1.2;
-            }
-
-            body.minimal-theme {
-              --font-editor-override: "${config.stylix.fonts.monospace.name}";
-            }
-          '';
-      }
-
-      {
-        name = "stop-blinking-cursor";
-        text = # css
-          ''
-            .cm-cursorLayer { animation: none !important; }
-          '';
-      }
-
-      {
-        name = "helix-remove-statusbar";
-        text = # css
-          ''
-            .cm-hx-command-panel { display: none !important; }
-            .cm-hx-status-panel  { display: none !important; }
+            #docxer-header { display: none !important;  }
           '';
       }
 
@@ -146,12 +144,37 @@
       }
 
       {
-        name = "docxer-hide";
+        name = "helix-remove-statusbar";
         text = # css
           ''
-            #docxer-header { display: none !important;  }
+            .cm-hx-command-panel { display: none !important; }
+            .cm-hx-status-panel  { display: none !important; }
           '';
       }
+
+      {
+        name = "stop-blinking-cursor";
+        text = # css
+          ''
+            .cm-cursorLayer { animation: none !important; }
+          '';
+      }
+
+      {
+        name = "system-font";
+        text = # css
+          ''
+            body {
+              --font-default: "${config.stylix.fonts.sansSerif.name}";
+              --zoom-factor: 1.2;
+            }
+
+            body.minimal-theme {
+              --font-editor-override: "${config.stylix.fonts.monospace.name}";
+            }
+          '';
+      }
+      # keep-sorted end
     ];
   };
 }

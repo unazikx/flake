@@ -43,6 +43,7 @@
                   (
                     lib.attrValues {
                       inherit (pkgs.fishPlugins)
+                        # keep-sorted start
                         colored-man-pages
                         fishbang
                         fzf-fish
@@ -50,11 +51,14 @@
                         grc
                         pisces
                         puffer
+                        # keep-sorted end
                         ;
 
                       inherit (pkgs.own.fish-plugins)
+                        # keep-sorted start
                         fish-helix
                         fish-logo
+                        # keep-sorted end
                         ;
                     }
                   );

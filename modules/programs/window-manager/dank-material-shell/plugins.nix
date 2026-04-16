@@ -3,6 +3,12 @@
 }:
 
 {
+  # keep-sorted start block=yes
+  # dms-niri-screenshot = {
+  #   settings = {
+  #   customPath = "~/Pictures/screenshots/scr_%d-%m-%y_%H:%M:%S.png";
+  #   };
+  # };
   calculator = {
     enable = true;
     settings = {
@@ -12,7 +18,6 @@
       calcEngine = "default";
     };
   };
-
   dankBitwarden = {
     enable = false; # no, just...no
     settings = {
@@ -20,13 +25,6 @@
       noTrigger = false;
     };
   };
-
-  # dms-niri-screenshot = {
-  #   settings = {
-  #   customPath = "~/Pictures/screenshots/scr_%d-%m-%y_%H:%M:%S.png";
-  #   };
-  # };
-
   niriWindows = {
     enable = true;
     settings = {
@@ -35,11 +33,6 @@
       trigger = "win";
     };
   };
-
-  # WARN:
-  # is it safe to paste directly?
-  # hmmmm...
-  #
   # steamfriends = {
   #   enable = true;
   #   settings = {
@@ -47,4 +40,6 @@
   #     steamid = null;
   #   };
   # };
+
+  # keep-sorted end
 }

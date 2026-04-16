@@ -6,71 +6,50 @@
 with config.lib.stylix.colors.withHashtag;
 
 {
-  general = {
-    mode = "viewer";
-    position = "auto";
-    size = "fullscreen";
-    sigusr1 = "reload";
-    sigusr2 = "next_file";
-    app_id = "swayimg";
-  };
-
-  viewer = {
-    window = "#000000" + "ff";
-    transparency = "grid";
-    scale = "optimal";
-    antialiasing = "none";
-    history = "5";
-    preload = "5";
-  };
-
-  gallery = {
-    size = "400";
-    cache = "100";
-    antialiasing = "none";
-    window = base00 + "ff";
-    background = base01 + "ff";
-    select = base02 + "ff";
-    preload = "yes";
-  };
-
-  list = {
-    order = "alpha";
-    recursive = "no";
-    all = "yes";
-  };
-
-  font =
-    let
-      font = config.stylix.fonts;
-    in
-    {
-      name = font.sansSerif.name;
-      size = toString (font.sizes.applications + 2);
-      color = base06 + "ff";
-      shadow = base00 + "a0";
-    };
-
-  info = {
-    show = "yes";
-    info_timeout = "1";
-    status_timeout = "1";
-  };
-
-  "info.viewer" = {
-    top_left = "+name,+imagesize";
-    top_right = "index";
-    bottom_left = "status";
-    bottom_right = "scale";
-  };
-
+  # keep-sorted start block=yes case=no
   "info.gallery" = {
     top_left = "none";
     top_right = "index";
     bottom_left = "none";
     bottom_right = "none";
   };
-
+  "info.viewer" = {
+    top_left = "+name,+imagesize";
+    top_right = "index";
+    bottom_left = "status";
+    bottom_right = "scale";
+  };
+  "keys.gallery" = {
+    F1 = "help";
+    Space = "mode viewer";
+    Return = "mode viewer`";
+    Home = "first_file";
+    g = "first_file";
+    End = "last_file";
+    "Shift+g" = "last_file";
+    Left = "step_left";
+    Right = "step_right";
+    Up = "step_up";
+    Down = "step_down";
+    h = "step_left";
+    j = "step_down";
+    k = "step_up";
+    l = "step_right";
+    Prior = "page_up";
+    Next = "page_down";
+    f = "fullscreen";
+    a = "antialiasing";
+    r = "reload";
+    i = "info";
+    q = "exit";
+    Escape = "exit";
+    "Delete" = ''exec trash put "%"; skip_file'';
+    "Shift+Delete" = ''exec rm "%"; skip_file'';
+    ScrollUp = "page_up";
+    ScrollDown = "page_down";
+    y = "exec wl-copy < '%'; status 'Copied image'";
+    "Shift+y" = "exec wl-copy '%'; status 'Copied image path'";
+  };
   "keys.viewer" = {
     F1 = "help";
     "Space" = "mode gallery";
@@ -117,36 +96,50 @@ with config.lib.stylix.colors.withHashtag;
     y = "exec wl-copy < '%'; status 'Copied image'";
     "Shift+y" = "exec wl-copy '%'; status 'Copied image path'";
   };
-
-  "keys.gallery" = {
-    F1 = "help";
-    Space = "mode viewer";
-    Return = "mode viewer`";
-    Home = "first_file";
-    g = "first_file";
-    End = "last_file";
-    "Shift+g" = "last_file";
-    Left = "step_left";
-    Right = "step_right";
-    Up = "step_up";
-    Down = "step_down";
-    h = "step_left";
-    j = "step_down";
-    k = "step_up";
-    l = "step_right";
-    Prior = "page_up";
-    Next = "page_down";
-    f = "fullscreen";
-    a = "antialiasing";
-    r = "reload";
-    i = "info";
-    q = "exit";
-    Escape = "exit";
-    "Delete" = ''exec trash put "%"; skip_file'';
-    "Shift+Delete" = ''exec rm "%"; skip_file'';
-    ScrollUp = "page_up";
-    ScrollDown = "page_down";
-    y = "exec wl-copy < '%'; status 'Copied image'";
-    "Shift+y" = "exec wl-copy '%'; status 'Copied image path'";
+  font =
+    let
+      font = config.stylix.fonts;
+    in
+    {
+      name = font.sansSerif.name;
+      size = toString (font.sizes.applications + 2);
+      color = base06 + "ff";
+      shadow = base00 + "a0";
+    };
+  gallery = {
+    size = "400";
+    cache = "100";
+    antialiasing = "none";
+    window = base00 + "ff";
+    background = base01 + "ff";
+    select = base02 + "ff";
+    preload = "yes";
   };
+  general = {
+    mode = "viewer";
+    position = "auto";
+    size = "fullscreen";
+    sigusr1 = "reload";
+    sigusr2 = "next_file";
+    app_id = "swayimg";
+  };
+  info = {
+    show = "yes";
+    info_timeout = "1";
+    status_timeout = "1";
+  };
+  list = {
+    order = "alpha";
+    recursive = "no";
+    all = "yes";
+  };
+  viewer = {
+    window = "#000000" + "ff";
+    transparency = "grid";
+    scale = "optimal";
+    antialiasing = "none";
+    history = "5";
+    preload = "5";
+  };
+  # keep-sorted end
 }

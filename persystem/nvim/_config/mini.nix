@@ -8,6 +8,7 @@
     mini = lib.mkMerge [
       (lib.genAttrs
         [
+          # keep-sorted start
           "comment"
           "completion"
           "cursorword"
@@ -21,6 +22,7 @@
           "statusline"
           "surround"
           "tabline"
+          # keep-sorted end
         ]
         (_: {
           enable = true;

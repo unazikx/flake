@@ -14,7 +14,7 @@
         extraModules =
           (extendedLib.nxosLib.attrValues {
             inherit (config.nixosModules)
-              # suites
+              # keep-sorted start
               basic-media
               basic-services
               basic-shell
@@ -23,15 +23,17 @@
               main-games
               niri-de
               office-env
+              # keep-sorted end
 
+              # keep-sorted start
               amneziawg
               cava
               discord
               driftwm
               fastfetch
               firefox
-              gdu
               flood
+              gdu
               helix
               minimal
               obsidian
@@ -53,6 +55,7 @@
               tuir
               yazi
               zapret
+              # keep-sorted end
               ;
           })
           ++ [
@@ -93,10 +96,12 @@
                 };
 
                 sops.secrets = lib.mkSecrets.sopsnix [
+                  # keep-sorted start
                   "password"
                   "services/syncthing/cert"
                   "services/syncthing/key"
                   "tokens/hut"
+                  # keep-sorted end
                 ] ./secrets.yaml;
 
                 hm.services.syncthing.settings.devices = lib.listToAttrs [

@@ -14,8 +14,9 @@
           config,
           ...
         }:
-        {
-          persist.user.directories = [
+        let
+          directories = [
+            # keep-sorted start
             "Desktop"
             "Documents"
             "Downloads"
@@ -23,7 +24,11 @@
             "Pictures"
             "Public"
             "Videos"
+            # keep-sorted end
           ];
+        in
+        {
+          persist.user = { inherit directories; };
 
           hm = {
             xdg = {
@@ -101,14 +106,7 @@
               in
 
               # home place
-              (map (dir: (mkDirs config.hm.home.homeDirectory dir)) [
-                "Documents"
-                "Downloads"
-                "Music"
-                "Pictures"
-                "Public"
-                "Videos"
-              ]);
+              (map (dir: (mkDirs config.hm.home.homeDirectory dir)) directories);
           };
         };
     };

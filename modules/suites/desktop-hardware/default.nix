@@ -13,6 +13,7 @@
         {
           imports = lib.attrValues {
             inherit (partsConfig.nixosModules)
+              # keep-sorted start
               amd-cpu
               amd-gpu
               bluetooth
@@ -25,6 +26,7 @@
               sound
               theming
               users
+              # keep-sorted end
               ;
           };
         };

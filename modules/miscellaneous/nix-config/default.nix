@@ -58,17 +58,20 @@
               ];
 
               substituters = lib.mkForce [
-                "https://mirror.yandex.ru/nixos"
+                # keep-sorted start
                 "https://freesmlauncher.cachix.org"
                 "https://lunaislazier.cachix.org"
+                "https://mirror.yandex.ru/nixos"
                 "https://niri.cachix.org"
                 "https://nix-gaming.cachix.org"
                 "https://unmojang.cachix.org"
                 "https://winapps.cachix.org"
                 "https://xache.cachix.org"
+                # keep-sorted end
               ];
 
               trusted-public-keys = [
+                # keep-sorted start
                 "freesmlauncher.cachix.org-1:Jcp5Q9wiLL+EDv8Mh7c6L9xGk+lXr7/otpKxMOuBuDs="
                 "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
                 "niri.cachix.org-1:Wv0OmO7PsuocRKzfDoJ3mulSl7Z6oezYhGhR+3W2964="
@@ -76,6 +79,7 @@
                 "unmojang.cachix.org-1:OfHnbBNduZ6Smx9oNbLFbYyvOWSoxb2uPcnXPj4EDQY="
                 "winapps.cachix.org-1:HI82jWrXZsQRar/PChgIx1unmuEsiQMQq+zt05CD36g="
                 "xache.cachix.org-1:InoMKnvFvDh+J5gFNHN1mmUONxvYJqFImLJY8/bl9YA="
+                # keep-sorted end
               ];
             };
 
@@ -89,12 +93,14 @@
           };
 
           nixpkgs.overlays = [
-            (f: p: {
+            (_f: p: {
               inherit (p.lixPackageSets.stable)
-                nixpkgs-review
+                # keep-sorted start
+                colmena
                 nix-eval-jobs
                 nix-fast-build
-                colmena
+                nixpkgs-review
+                # keep-sorted end
                 ;
             })
           ];

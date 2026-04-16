@@ -1,6 +1,7 @@
 # MOD = ctrl
 
 {
+  # keep-sorted start block=yes newline_separated=yes
   "app:delete-file" = [
     {
       key = "D";
@@ -10,30 +11,35 @@
       ];
     }
   ];
+
   "app:go-back" = [
     {
       key = "ArrowLeft";
       modifiers = [ "Alt" ];
     }
   ];
+
   "app:go-forward" = [
     {
       key = "ArrowRight";
       modifiers = [ "Alt" ];
     }
   ];
+
   "app:open-sandbox-vault" = [
     {
       key = "'";
       modifiers = [ "Alt" ];
     }
   ];
+
   "app:open-settings" = [
     {
       key = ";";
       modifiers = [ "Alt" ];
     }
   ];
+
   "app:open-vault" = [
     {
       key = "'";
@@ -43,6 +49,7 @@
       ];
     }
   ];
+
   "canvas:export-as-image" = [
     {
       key = "M";
@@ -52,24 +59,21 @@
       ];
     }
   ];
+
   "canvas:new-file" = [
     {
       key = "M";
       modifiers = [ "Alt" ];
     }
   ];
+
   "command-palette:open" = [
     {
       key = " ";
       modifiers = [ "Alt" ];
     }
   ];
-  daily-notes = [
-    {
-      key = "D";
-      modifiers = [ "Alt" ];
-    }
-  ];
+
   "editor:attach-file" = [
     {
       key = "T";
@@ -79,25 +83,35 @@
       ];
     }
   ];
+
   "editor:delete-paragraph" = [ ];
+
   "editor:follow-link" = [ ];
+
   "editor:insert-link" = [ ];
+
   "editor:insert-table" = [
     {
       key = "T";
       modifiers = [ "Alt" ];
     }
   ];
+
   "editor:open-link-in-new-leaf" = [ ];
+
   "editor:open-link-in-new-split" = [ ];
+
   "editor:open-link-in-new-window" = [ ];
+
   "editor:open-search" = [
     {
       key = "F";
       modifiers = [ "Alt" ];
     }
   ];
+
   "editor:open-search-replace" = [ ];
+
   "editor:rename-heading" = [
     {
       key = "R";
@@ -107,6 +121,7 @@
       ];
     }
   ];
+
   "editor:save-file" = [
     {
       key = "S";
@@ -117,21 +132,27 @@
       modifiers = [ "Mod" ];
     }
   ];
+
   "editor:toggle-bold" = [ ];
+
   "editor:toggle-checklist-status" = [ ];
+
   "editor:toggle-comments" = [
     {
       key = "C";
       modifiers = [ "Mod" ];
     }
   ];
+
   "editor:toggle-italics" = [ ];
+
   "file-explorer:new-file" = [
     {
       key = "A";
       modifiers = [ "Alt" ];
     }
   ];
+
   "file-explorer:new-file-in-current-tab" = [
     {
       key = "A";
@@ -141,6 +162,7 @@
       ];
     }
   ];
+
   "file-explorer:new-folder" = [
     {
       key = "F";
@@ -150,12 +172,14 @@
       ];
     }
   ];
+
   "graph:open" = [
     {
       key = "G";
       modifiers = [ "Alt" ];
     }
   ];
+
   "graph:open-local" = [
     {
       key = "G";
@@ -165,8 +189,11 @@
       ];
     }
   ];
+
   "markdown:add-metadata-property" = [ ];
+
   "markdown:toggle-preview" = [ ];
+
   "omnisearch:show-modal" = [
     {
       key = "L";
@@ -176,24 +203,28 @@
       ];
     }
   ];
+
   "omnisearch:show-modal-infile" = [
     {
       key = "L";
       modifiers = [ "Alt" ];
     }
   ];
+
   "switcher:open" = [
     {
       key = "Enter";
       modifiers = [ "Alt" ];
     }
   ];
+
   "workspace:close" = [
     {
       key = "Q";
       modifiers = [ "Alt" ];
     }
   ];
+
   "workspace:close-others" = [
     {
       key = "Q";
@@ -203,28 +234,36 @@
       ];
     }
   ];
+
   "workspace:close-window" = [ ];
+
   "workspace:copy-path" = [
     {
       key = "C";
       modifiers = [ "Alt" ];
     }
   ];
+
   "workspace:edit-file-title" = [
     {
       key = "R";
       modifiers = [ "Alt" ];
     }
   ];
+
   "workspace:goto-last-tab" = [ ];
+
   "workspace:new-tab" = [
     {
       key = "W";
       modifiers = [ "Alt" ];
     }
   ];
+
   "workspace:next-tab" = [ ];
+
   "workspace:previous-tab" = [ ];
+
   "workspace:show-trash" = [
     {
       key = "\\";
@@ -278,4 +317,12 @@
       "modifiers" = [ "Mod" ];
     }
   ];
+
+  daily-notes = [
+    {
+      key = "D";
+      modifiers = [ "Alt" ];
+    }
+  ];
+  # keep-sorted end
 }

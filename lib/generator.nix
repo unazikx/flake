@@ -11,9 +11,10 @@ let
   homeLib = inputs.home-manager.lib;
 
   nxosModules = with inputs; [
+    # keep-sorted start
     agenix.nixosModules.default
-    dank-material-shell.nixosModules.dank-material-shell
     dank-material-shell-plugins.nixosModules.default
+    dank-material-shell.nixosModules.dank-material-shell
     disko.nixosModules.default
     home-manager.nixosModules.home-manager
     impermanence.nixosModules.impermanence
@@ -34,30 +35,35 @@ let
     telegram-ws-proxy.nixosModules.tg-ws-proxy
     zapret-discord.nixosModules.default
     zapret-presets.nixosModules.presets
+    # keep-sorted end
   ];
 
   homeModules = with inputs; [
-    dank-material-shell.homeModules.dank-material-shell
+    # keep-sorted start
     dank-material-shell-plugins.homeModules.default
+    dank-material-shell.homeModules.dank-material-shell
     glide-browser.homeModules.default
     mangowc.hmModules.mango
     niri-flake.homeModules.niri
     niri-flake.homeModules.stylix
+    nix-index-database.homeModules.default
     nixcord.homeModules.nixcord
     nixcraft.homeModules.default
-    nix-index-database.homeModules.default
     spicetify-nix.homeManagerModules.default
     telegram-ws-proxy.homeModules.tg-ws-proxy
     zen-browser.homeModules.twilight
+    # keep-sorted end
   ];
 
   flakesOverlays = with inputs; [
+    # keep-sorted start
     glide-browser.overlays.default
     niri-flake.overlays.niri
     nix-minecraft.overlays.default
     nur.overlays.default
     obsidian-plugins.overlays.default
     shattered-prism.overlays.default
+    # keep-sorted end
   ];
 in
 

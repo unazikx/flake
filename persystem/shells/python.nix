@@ -1,8 +1,12 @@
 {
+  ...
+}:
+
+{
   perSystem =
     {
+      inputs',
       pkgs,
-      lib,
       ...
     }:
     {
@@ -15,34 +19,17 @@
         '';
 
         packages = [
-          (pkgs.python314.withPackages (
-            _pkgs:
-            (lib.attrValues {
-              inherit (_pkgs)
-                aiohttp
-                requests
-                ;
-            })
-          ))
+          (pkgs.python314.withPackages (ps: [
+            # keep-sorted start
+            inputs'.my-own-packages.legacyPackages.anicli-api
+            inputs'.my-own-packages.legacyPackages.hdrezka-api
+            ps.aiohttp
+            ps.black
+            ps.gql
+            ps.requests
+            # keep-sorted end
+          ]))
         ];
-
-        # packages = (
-        #   lib.attrValues {
-        #     inherit (pkgs)
-        #       black
-        #       ;
-
-        #     python = pkgs.python314.withPackages (
-        #       _pkgs:
-        #       (lib.attrValues {
-        #         inherit (_pkgs)
-        #           aiohttp
-        #           requests
-        #           ;
-        #       })
-        #     );
-        #   }
-        # );
       };
     };
 }

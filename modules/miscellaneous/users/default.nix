@@ -42,27 +42,26 @@
                 openssh.authorizedKeys.keys = import ./sshKeys.nix;
 
                 extraGroups = [
-                  "audio"
-                  "input"
-                  "media"
-                  "video"
-                  "users"
-
+                  # keep-sorted start
                   "adbusers"
+                  "audio"
+                  "deluge"
                   "docker"
                   "gamemode"
+                  "input"
                   "libvirtd"
+                  "media"
+                  "minecraft"
                   "networkmanager"
                   "podman"
+                  "qbittorrent"
                   "suwayomi"
                   "terraria"
-                  "minecraft"
-                  "wheel"
-
-                  # torrent
-                  "deluge"
-                  "qbittorrent"
                   "transmission"
+                  "users"
+                  "video"
+                  "wheel"
+                  # keep-sorted end
                 ];
 
                 inherit

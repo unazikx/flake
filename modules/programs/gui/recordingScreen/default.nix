@@ -38,6 +38,7 @@
 
               plugins = lib.attrValues {
                 inherit (pkgs.obs-studio-plugins)
+                  # keep-sorted start
                   input-overlay
                   obs-backgroundremoval
                   obs-multi-rtmp
@@ -45,6 +46,7 @@
                   obs-vaapi
                   obs-vkcapture
                   wlrobs
+                  # keep-sorted end
                   ;
               };
             };

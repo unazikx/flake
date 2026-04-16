@@ -135,6 +135,7 @@
           fonts.packages = lib.attrValues (
             {
               inherit (pkgs)
+                # keep-sorted start
                 arkpandora_ttf
                 corefonts
                 gelasio
@@ -143,6 +144,7 @@
                 monocraft
                 noto-fonts
                 noto-fonts-cjk-sans
+                # keep-sorted end
                 ;
             }
             // {

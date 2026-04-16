@@ -13,6 +13,7 @@
         {
           imports = lib.attrValues {
             inherit (partsConfig.nixosModules)
+              # keep-sorted start
               clipboard
               dunst
               hyprlock
@@ -24,6 +25,7 @@
               wleave
               wob
               xdg
+              # keep-sorted end
               ;
           };
         };

@@ -5,6 +5,11 @@
 }:
 
 [
+  # keep-sorted start block=yes newline_separated=yes
+  { pkg = pkgs.obsidian-plugins.docxer; }
+
+  { pkg = pkgs.obsidian-plugins.format-with-prettier; }
+
   {
     pkg = pkgs.obsidian-plugins.obsidian-minimal-settings;
     settings = {
@@ -165,8 +170,5 @@
       "minimal-style@@workspace-background-translucent@@dark" = base07;
     };
   }
-
-  { pkg = pkgs.obsidian-plugins.format-with-prettier; }
-
-  { pkg = pkgs.obsidian-plugins.docxer; }
+  # keep-sorted end
 ]

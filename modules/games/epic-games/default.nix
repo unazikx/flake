@@ -19,39 +19,14 @@
           ...
         }:
         let
-          ini = pkgs.formats.ini { };
           json = pkgs.formats.json { };
         in
         {
-          persist.user.directories = [ ".config/legendary" ];
+          persist.user.directories = [ ".config/heroic" ];
 
-          hmPackages = [
-            pkgs.legendary-gl
-            pkgs.heroic
-          ];
+          hmPackages = [ pkgs.heroic ];
 
           hm.xdg.configFile = lib.mkMerge [
-            # legendary
-            {
-              "legendary/config.ini".source = ini.generate "legendary-config.ini" {
-                "Legendary" = {
-                  disable_auto_aliasing = false;
-                  disable_https = false;
-                  disable_update_check = false;
-                  disable_update_notice = false;
-                  install_dir =
-                    if (lib.configurationName == "pcRyazenka") then
-                      "/media/disks/fastBitch/Games"
-                    else
-                      config.hm.xdg.userDirs.download;
-                  locale = "en-US";
-                  log_level = "debug";
-                  max_memory = 2048;
-                  max_workers = 8;
-                };
-              };
-            }
-
             # heroic
             (with config.lib.stylix.colors.withHashtag; {
               "heroic/config.json".source = json.generate "heroic-config.json" {
@@ -133,7 +108,7 @@
 
                   contentFontFamily = config.stylix.fonts.sansSerif.name;
                   actionsFontFamily = config.stylix.fonts.sansSerif.name;
-                  allTilesInColor = false;
+                  allTilesInColor = true;
                   titlesAlwaysVisible = true;
                 };
               };

@@ -4,9 +4,7 @@
 }:
 
 let
-  pkg = pkgs.davinci-resolve-studio;
-
-  drv = pkg.override (_prev: {
+  drv = pkgs.davinci-resolve-studio.override (_prev: {
     buildFHSEnv =
       _old:
       (_prev.buildFHSEnv (

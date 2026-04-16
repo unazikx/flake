@@ -2,16 +2,28 @@
   keys = import ./binds.nix;
 
   editor = {
+    # keep-sorted start block=yes newline_separated=yes
     auto-completion = true;
+
     auto-info = true;
+
     auto-pairs = true;
+
     bufferline = "multiple";
+
     color-modes = true;
+
     completion-replace = true;
+
+    cursor-shape = {
+      insert = "bar";
+      normal = "block";
+      select = "underline";
+    };
+
     cursorline = true;
-    line-number = "relative";
-    mouse = true;
-    true-color = true;
+
+    file-picker.hidden = false;
 
     indent-guides = {
       render = true;
@@ -19,11 +31,14 @@
       skip-levels = 0;
     };
 
-    cursor-shape = {
-      insert = "bar";
-      normal = "block";
-      select = "underline";
+    line-number = "relative";
+
+    lsp = {
+      display-progress-messages = true;
+      display-inlay-hints = true;
     };
+
+    mouse = true;
 
     soft-wrap = {
       enable = true;
@@ -62,11 +77,7 @@
       mode.select = "SELECT";
     };
 
-    lsp = {
-      display-progress-messages = true;
-      display-inlay-hints = true;
-    };
-
-    file-picker.hidden = false;
+    true-color = true;
+    # keep-sorted end
   };
 }

@@ -14,6 +14,7 @@ lib.attrValues (
 
     # from ../../../../packages/firefox-addons/package.nix
     inherit (pkgs.own.firefox-addons)
+      # keep-sorted start
       darkreader
       libredirect
       mal-sync
@@ -27,6 +28,7 @@ lib.attrValues (
       ublock-origin
       voice-over-translation
       youtube-addon
+      # keep-sorted end
       ;
   }
   // (lib.optionalAttrs config.hm.programs.keepassxc.enable {

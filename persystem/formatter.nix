@@ -12,6 +12,7 @@
         programs = {
           deadnix.enable = true;
           nixfmt.enable = true;
+          keep-sorted.enable = true;
 
           prettier = {
             enable = true;

@@ -37,13 +37,16 @@ inputs.flake-parts.lib.mkFlake
       ])
 
       (inputs.import-tree [ ../persystem ])
+      # keep-sorted start
       inputs.devshell.flakeModule
       inputs.disko.flakeModule
+      inputs.files.flakeModules.default
       inputs.flake-parts.flakeModules.bundlers
       inputs.home-manager.flakeModules.default
       inputs.make-shell.flakeModules.default
       inputs.nix-wrapper-modules.flakeModules.default
       inputs.treefmt-nix.flakeModule
+      # keep-sorted end
     ];
 
     flake =

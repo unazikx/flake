@@ -13,6 +13,7 @@
         {
           imports = lib.attrValues {
             inherit (partsConfig.nixosModules)
+              # keep-sorted start
               epic-games
               hytale
               lsfg-vk
@@ -21,6 +22,7 @@
               r2modman
               steam
               umu-launcher
+              # keep-sorted end
               ;
           };
         };

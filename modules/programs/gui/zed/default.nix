@@ -21,18 +21,20 @@
             extraPackages = pkgs.default-lsp;
 
             extensions = [
-              "go"
-              "kotlin"
+              # keep-sorted start
               "csv"
-              "mdx"
+              "go"
               "go-snippets"
-              "markdown-snippets"
-              "toml"
-              "nix"
+              "kotlin"
               "lua"
+              "markdown-snippets"
               "marksman"
-              "nu"
               "material-icon-theme"
+              "mdx"
+              "nix"
+              "nu"
+              "toml"
+              # keep-sorted end
             ];
 
             userSettings = lib.mkMerge [

@@ -4,6 +4,7 @@
 
 {
   "AyuGramDesktop/tdata/ayu_settings.json".text = builtins.toJSON {
+    # keep-sorted start block=yes
     appIcon = "alt";
     channelBottomButton = 0;
     collapseSimilarChannels = true;
@@ -65,6 +66,7 @@
     useScheduledMessages = false;
     voiceConfirmation = false;
     wideMultiplier = 1.6;
+    # keep-sorted end
   };
 
   "AyuGramDesktop/tdata/shortcuts-custom.json".text =
@@ -75,6 +77,7 @@
       nor = key null;
     in
     builtins.toJSON [
+      # keep-sorted start
       (key "alt+," "previous_folder")
       (key "alt+." "next_folder")
       (key "alt+a" "show_archive")
@@ -89,11 +92,8 @@
       (key "alt+n" "folder5")
       (key "alt+q" "close_telegram")
       (key "alt+r" "read_chat")
-      (key "alt+s" "show_contacts")
-      (key "alt+v" "folder3")
-      (key "alt+x" "folder1")
-      (key "alt+z" "all_chats")
       (key "alt+return" "message")
+      (key "alt+s" "show_contacts")
       (key "alt+shift+" "media_previous")
       (key "alt+shift+." "media_next")
       (key "alt+shift+/" "media_playpause")
@@ -107,12 +107,14 @@
       (key "alt+shift+d" "show_chat_menu")
       (key "alt+shift+g" "last_chat")
       (key "alt+shift+q" "quit_telegram")
-      (key "alt+shift+s" "show_scheduled")
       (key "alt+shift+return" "message_silently")
+      (key "alt+shift+s" "show_scheduled")
+      (key "alt+v" "folder3")
+      (key "alt+x" "folder1")
+      (key "alt+z" "all_chats")
       (key "ctrl+alt+return" "message_scheduled")
-      (nor "media previous")
-      (nor "media next")
-      (nor "toggle media play/pause")
+      (nor "alt+down")
+      (nor "alt+up")
       (nor "ctrl+0")
       (nor "ctrl+1")
       (nor "ctrl+2")
@@ -123,25 +125,27 @@
       (nor "ctrl+7")
       (nor "ctrl+8")
       (nor "ctrl+9")
+      (nor "ctrl+\\")
+      (nor "ctrl+alt+end")
+      (nor "ctrl+alt+home")
+      (nor "ctrl+backtab")
       (nor "ctrl+f")
+      (nor "ctrl+f4")
       (nor "ctrl+j")
       (nor "ctrl+l")
       (nor "ctrl+m")
+      (nor "ctrl+pgdown")
+      (nor "ctrl+pgup")
       (nor "ctrl+q")
       (nor "ctrl+r")
-      (nor "ctrl+w")
-      (nor "ctrl+\\")
-      (nor "ctrl+tab")
-      (nor "ctrl+backtab")
-      (nor "ctrl+pgup")
-      (nor "ctrl+pgdown")
-      (nor "ctrl+f4")
+      (nor "ctrl+shift+down")
       (nor "ctrl+shift+tab")
       (nor "ctrl+shift+up")
-      (nor "ctrl+shift+down")
-      (nor "alt+up")
-      (nor "alt+down")
-      (nor "ctrl+alt+home")
-      (nor "ctrl+alt+end")
+      (nor "ctrl+tab")
+      (nor "ctrl+w")
+      (nor "media next")
+      (nor "media previous")
+      (nor "toggle media play/pause")
+      # keep-sorted end
     ];
 }

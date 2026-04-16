@@ -14,6 +14,7 @@ in
 
 {
   profile = {
+    # keep-sorted start
     "app.normandy.first_run" = false;
     "browser.display.use_system_colors" = true;
     "browser.ml.linkPreview.collapsed" = true;
@@ -70,23 +71,11 @@ in
     "reader.text_alignment" = "justify";
     "svg.context-properties.content.enabled" = true;
     "ui.key.menuAccessKeyFocuses" = false;
+    # keep-sorted end
   };
 
   extensions = {
-    "uBlock0@raymondhill.net".settings = {
-      selectedFilterLists = [
-        "ublock-filters"
-        "ublock-badware"
-        "ublock-privacy"
-        "ublock-unbreak"
-        "ublock-quick-fixes"
-      ];
-    };
-
-    "{7a7a4a92-a2a0-41d1-9fd7-1e92480d612d}".settings = {
-      dbInChromeStorage = true;
-    };
-
+    # keep-sorted start block=yes newline_separated=yes
     "84z74tXJKt8OUrTD@TSA".settings = {
       "selected_profile" = "1";
       "profiles"."1" = {
@@ -97,34 +86,6 @@ in
         "category_idx" = 0;
         "clearing" = false;
       };
-    };
-
-    "{036a55b4-5e72-4d05-a06c-cba2dfcc134a}".settings = {
-      hotkeys = {
-        hotkey-toggle-translation = "";
-        hotkey-translate-selected-text = "";
-        hotkey-swap-page-translation-service = "";
-        hotkey-show-original = "";
-        hotkey-translate-page-1 = "";
-        hotkey-translate-page-2 = "";
-        hotkey-translate-page-3 = "";
-        hotkey-hot-translate-selected-text = "";
-      };
-
-      autoTranslateWhenClickingALink = "no";
-      neverTranslateLangs = [ "ru" ];
-      originalUserAgent = "Mozilla/5.0 (X11; Linux x86_64; rv=146.0) Gecko/20100101 Firefox/146.0";
-      pageTranslatorService = "google";
-      popupPanelSection = 2;
-      showButtonInTheAddressBar = "yes";
-      showReleaseNotes = "no";
-      showTranslateSelectedContextMenu = "no";
-      targetLanguage = "ru";
-      targetLanguages = [ "ru" ];
-      translateClickingOnce = "yes";
-      translateSelectedWhenPressTwice = "no";
-      translateTextOverMouseWhenPressTwice = "no";
-      useOldPopup = "no";
     };
 
     "keepassxc-browser@keepassxc.org".settings = {
@@ -177,40 +138,90 @@ in
         };
       };
     };
+
+    "uBlock0@raymondhill.net".settings = {
+      selectedFilterLists = [
+        "ublock-filters"
+        "ublock-badware"
+        "ublock-privacy"
+        "ublock-unbreak"
+        "ublock-quick-fixes"
+      ];
+    };
+
+    "{036a55b4-5e72-4d05-a06c-cba2dfcc134a}".settings = {
+      hotkeys = {
+        hotkey-toggle-translation = "";
+        hotkey-translate-selected-text = "";
+        hotkey-swap-page-translation-service = "";
+        hotkey-show-original = "";
+        hotkey-translate-page-1 = "";
+        hotkey-translate-page-2 = "";
+        hotkey-translate-page-3 = "";
+        hotkey-hot-translate-selected-text = "";
+      };
+
+      autoTranslateWhenClickingALink = "no";
+      neverTranslateLangs = [ "ru" ];
+      originalUserAgent = "Mozilla/5.0 (X11; Linux x86_64; rv=146.0) Gecko/20100101 Firefox/146.0";
+      pageTranslatorService = "google";
+      popupPanelSection = 2;
+      showButtonInTheAddressBar = "yes";
+      showReleaseNotes = "no";
+      showTranslateSelectedContextMenu = "no";
+      targetLanguage = "ru";
+      targetLanguages = [ "ru" ];
+      translateClickingOnce = "yes";
+      translateSelectedWhenPressTwice = "no";
+      translateTextOverMouseWhenPressTwice = "no";
+      useOldPopup = "no";
+    };
+
+    "{7a7a4a92-a2a0-41d1-9fd7-1e92480d612d}".settings = {
+      dbInChromeStorage = true;
+    };
+    # keep-sorted end
   };
 
   policies = {
+    # keep-sorted start block=yes newline_separated=yes
     AppAutoUpdate = false;
+
     AutofillAddressEnabled = false;
+
     AutofillCreditCardEnabled = false;
+
     BackgroundAppUpdate = false;
+
     CaptivePortal = false;
+
     DisableAppUpdate = true;
+
     DisableBuiltinPDFViewer = true;
+
     DisableFirefoxScreenshots = true;
+
     DisableFirefoxStudies = true;
+
     DisableFormHistory = true;
+
     DisableMasterPasswordCreation = true;
+
     DisablePasswordReveal = true;
+
     DisablePocket = true;
+
     DisableProfileRefresh = true;
+
     DisableSetDesktopBackground = true;
+
     DisableTelemetry = true;
+
     DisplayBookmarksToolbar = false;
+
     DisplayMenuBar = "never";
+
     DontCheckDefaultBrowser = true;
-    HardwareAcceleration = true;
-    LegacyProfiles = true;
-    ManualAppUpdateOnly = true;
-    NetworkPrediction = false;
-    OfferToSaveLoginsDefault = false;
-    OfferToSaveLogins = false;
-    PasswordManagerEnabled = false;
-    PDFjs.Enabled = false;
-    PictureInPicture.Enabled = true;
-    PrimaryPassword = false;
-    PromptForDownloadLocation = false;
-    ShowHomeButton = false;
 
     EnableTrackingProtection = {
       Value = true;
@@ -218,25 +229,6 @@ in
       Cryptomining = true;
       Fingerprinting = false; # true -> force light theme
       EmailTracking = true;
-    };
-
-    SearchEngines = {
-      Default = "Google";
-      Remove = [
-        "Amazon.com"
-        "Bing"
-        "DuckDuckGo"
-        "DuckDuckGo Lite"
-        "eBay"
-        "MetaGer"
-        "Mojeek"
-        "Perplexity"
-        "SearXNG - searx.be"
-        "StartPage"
-        "Twitter"
-        "Wikipedia"
-        "Wikipedia (en)"
-      ];
     };
 
     ExtensionSettings = {
@@ -259,6 +251,28 @@ in
       Locked = false;
     };
 
+    HardwareAcceleration = true;
+
+    LegacyProfiles = true;
+
+    ManualAppUpdateOnly = true;
+
+    NetworkPrediction = false;
+
+    OfferToSaveLogins = false;
+
+    OfferToSaveLoginsDefault = false;
+
+    PDFjs.Enabled = false;
+
+    PasswordManagerEnabled = false;
+
+    PictureInPicture.Enabled = true;
+
+    PrimaryPassword = false;
+
+    PromptForDownloadLocation = false;
+
     SanitizeOnShutdown = {
       Cache = true;
       Cookies = false;
@@ -268,6 +282,28 @@ in
       OfflineApps = true;
       Sessions = false;
     };
+
+    SearchEngines = {
+      Default = "Google";
+      Remove = [
+        "Amazon.com"
+        "Bing"
+        "DuckDuckGo"
+        "DuckDuckGo Lite"
+        "eBay"
+        "MetaGer"
+        "Mojeek"
+        "Perplexity"
+        "SearXNG - searx.be"
+        "StartPage"
+        "Twitter"
+        "Wikipedia"
+        "Wikipedia (en)"
+      ];
+    };
+
+    ShowHomeButton = false;
+    # keep-sorted end
   };
 
   bookmarks =

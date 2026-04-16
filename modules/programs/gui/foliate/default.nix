@@ -24,18 +24,20 @@
                 json.generate "foliate-config.json"
                   {
                     catalogs = [
-                      {
-                        title = "Internet Archive";
-                        uri = "https://bookserver.archive.org/catalog";
-                      }
+                      # keep-sorted start block=yes
                       {
                         title = "Flibusta";
                         uri = "http://flibusta.is/opds";
                       }
                       {
+                        title = "Internet Archive";
+                        uri = "https://bookserver.archive.org/catalog";
+                      }
+                      {
                         title = "Samlib";
                         uri = "http://opdshome.uo1.net/samlib";
                       }
+                      # keep-sorted end
                     ];
                   };
             };

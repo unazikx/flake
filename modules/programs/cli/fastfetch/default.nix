@@ -23,27 +23,33 @@
               logo = {
                 type = "builtin";
                 source = "nixos_small";
+
                 padding = {
                   left = 1;
                   right = 2;
                   top = 1;
                 };
+
                 color = {
                   "1" = "cyan";
                   "2" = "blue";
                 };
               };
+
               display = {
                 separator = ": ";
+
                 color = {
                   keys = "cyan";
                   title = "blue";
                 };
+
                 size = {
                   ndigits = 1;
                   maxPrefix = "GB";
                 };
               };
+
               modules = [
                 {
                   type = "title";

@@ -4,6 +4,7 @@
 }:
 
 {
+  # keep-sorted start block=yes newline_separated=yes
   Browser = {
     Browser_AllowLocalhostWithPasskeys = true;
     BrowserType = "Firefox";
@@ -11,14 +12,7 @@
     UseCustomBrowser = true; # default is firefox
   };
 
-  General = {
-    AutoReloadOnChange = true;
-    AutoSaveAfterEveryChange = true;
-    AutoSaveOnExit = true;
-    BackupBeforeSave = true;
-    BackupFilePathPattern = "{DB_FILENAME}_old.kdbx";
-    ConfigVersion = 2;
-  };
+  FdoSecrets.Enabled = true;
 
   GUI = {
     ApplicationTheme = "classic";
@@ -43,6 +37,15 @@
         "colorful";
   };
 
+  General = {
+    AutoReloadOnChange = true;
+    AutoSaveAfterEveryChange = true;
+    AutoSaveOnExit = true;
+    BackupBeforeSave = true;
+    BackupFilePathPattern = "{DB_FILENAME}_old.kdbx";
+    ConfigVersion = 2;
+  };
+
   PasswordGenerator = {
     Length = 32;
 
@@ -59,6 +62,8 @@
     UpperCase = true;
   };
 
+  SSHAgent.Enabled = true;
+
   Security = {
     ClearClipboardTimeout = 12; # sec
     ClearSearch = true;
@@ -68,7 +73,5 @@
     LockDatabaseScreenLock = false;
     Security_HideNotes = true;
   };
-
-  SSHAgent.Enabled = true;
-  FdoSecrets.Enabled = true;
+  # keep-sorted end
 }

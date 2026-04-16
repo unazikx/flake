@@ -18,24 +18,7 @@
             enable = true;
 
             layout = [
-              {
-                label = "shutdown";
-                action = "systemctl poweroff";
-                text = "Shutdown";
-                keybind = "s";
-              }
-              {
-                label = "reboot";
-                action = "systemctl reboot";
-                text = "Reboot";
-                keybind = "r";
-              }
-              {
-                label = "suspend";
-                action = "systemctl suspend";
-                text = "Suspend";
-                keybind = "u";
-              }
+              # keep-sorted start block=yes
               {
                 label = "hibernate";
                 action = "systemctl hibernate";
@@ -54,6 +37,25 @@
                 text = "Logout";
                 keybind = "e";
               }
+              {
+                label = "reboot";
+                action = "systemctl reboot";
+                text = "Reboot";
+                keybind = "r";
+              }
+              {
+                label = "shutdown";
+                action = "systemctl poweroff";
+                text = "Shutdown";
+                keybind = "s";
+              }
+              {
+                label = "suspend";
+                action = "systemctl suspend";
+                text = "Suspend";
+                keybind = "u";
+              }
+              # keep-sorted end
             ];
 
             style = with config.lib.stylix.colors.withHashtag; ''

@@ -53,24 +53,30 @@
 
             default-lsp = lib.attrValues {
               inherit (pkgs)
+                # keep-sorted start
                 black
                 go
                 gopls
                 marksman
                 nixd
                 nixfmt
+                pyright
                 vscode-langservers-extracted
                 yaml-language-server
-                pyright
+                # keep-sorted end
                 ;
 
               inherit (pkgs.nodePackages)
+                # keep-sorted start
                 prettier
                 typescript-language-server
+                # keep-sorted end
                 ;
 
               inherit (pkgs.python314Packages)
+                # keep-sorted start
                 python-lsp-server
+                # keep-sorted end
                 ;
             };
 
@@ -83,12 +89,19 @@
                 inherit (_old)
                   # its all LTS
                   # https://adoptium.net/temurin/releases
-                  temurin-jre-bin-25
-                  temurin-jre-bin-21
+                  # keep-sorted start
                   temurin-jre-bin-17
+                  temurin-jre-bin-21
+                  temurin-jre-bin-25
                   temurin-jre-bin-8
+                  # keep-sorted end
                   ;
               };
+            };
+
+            portablemc = pkgs.portablemc.override {
+              textToSpeechSupport = false;
+              jre = _old.temurin-jre-bin-25;
             };
 
             ouch = pkgs.ouch.override {

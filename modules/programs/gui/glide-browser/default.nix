@@ -54,11 +54,13 @@
 
               extraConfig = lib.concatStringsSep "\n" (
                 map (file: lib.readFile file) [
+                  # keep-sorted start
                   "${inputs.betterfox}/Fastfox.js"
                   "${inputs.betterfox}/Peskyfox.js"
                   "${inputs.betterfox}/Securefox.js"
                   "${inputs.betterfox}/Smoothfox.js"
                   "${inputs.betterfox}/user.js"
+                  # keep-sorted end
                 ]
               );
             };

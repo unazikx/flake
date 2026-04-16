@@ -48,41 +48,36 @@
 
             colorScheme = "custom";
             customColorScheme = with config.lib.stylix.colors; {
-              main = base00;
-              main-elevated = base02;
-
-              sidebar = base01;
-              player = base00;
-              card = base00;
-              shadow = base00;
-              selected-row = base03;
+              # keep-sorted start
 
               accent = base03;
               accent-active = base03;
               accent-inactive = base02;
-
+              banner = base03;
               border-active = base03;
               border-inactive = base03;
-
-              header = base00;
-              highlight = base04;
-
-              text = base06;
-              subtext = base06;
-              sidebar-text = base07;
-
               button = base0B;
               button-active = base0B;
               button-disabled = base03;
-
+              card = base00;
+              equalizer = base0B;
+              header = base00;
+              highlight = base04;
+              highlight-elevated = base03;
+              main = base00;
+              main-elevated = base02;
+              misc = base02;
               notification = base0A;
               notification-error = base08;
-
+              player = base00;
+              selected-row = base03;
+              shadow = base00;
+              sidebar = base01;
+              sidebar-text = base07;
+              subtext = base06;
               tab-active = base04;
-              banner = base03;
-              misc = base02;
-              equalizer = base0B;
-              highlight-elevated = base03;
+              text = base06;
+              # keep-sorted end
             };
 
             spotifyLaunchFlags = "--password-store=basic";

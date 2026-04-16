@@ -26,16 +26,19 @@ in
 
   enabledExtensions = builtins.attrValues {
     inherit (extensions)
+      # keep-sorted start
       adblock
       beautifulLyrics
       betterGenres
       keyboardShortcut
       seekSong
+      # keep-sorted end
       ;
   };
 
   enabledSnippets = builtins.attrValues {
     inherit (snippets)
+      # keep-sorted start
       betterLyricsStyle
       centeredLyrics
       fixDjIcon
@@ -63,6 +66,7 @@ in
       removeTopSpacing
       roundedImages
       roundedNowPlaying
+      # keep-sorted end
       ;
   };
 }

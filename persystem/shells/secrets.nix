@@ -19,9 +19,11 @@
 
         packages = lib.attrValues {
           inherit (pkgs)
-            sops
+            # keep-sorted start
             age
+            sops
             ssh-to-age
+            # keep-sorted end
             ;
         };
       };

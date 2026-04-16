@@ -11,6 +11,7 @@ in
 
 {
   inherit (pkgs.yaziPlugins)
+    # keep-sorted start
     chmod
     full-border
     git
@@ -22,15 +23,18 @@ in
     smart-paste
     toggle-pane
     yatline
+    # keep-sorted end
     ;
 
   inherit (pkgs.own.yazi-plugins)
+    # keep-sorted start
     cba-preview
     convert
     djvu-preview
     office
     piper
     torrent-preview
+    # keep-sorted end
     ;
 }
 
