@@ -48,6 +48,12 @@
     };
 
     # flakes without dependencies
+    nilla-cli = {
+      type = "github";
+      owner = "nilla-nix";
+      repo = "cli";
+    };
+
     import-tree = {
       type = "github";
       owner = "vic";
@@ -64,14 +70,6 @@
       type = "github";
       owner = "mightyiam";
       repo = "files";
-    };
-
-    github-actions-nix = {
-      type = "github";
-      owner = "synapdeck";
-      repo = "github-actions-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-parts.follows = "flake-parts";
     };
 
     flake-utils = {
@@ -94,12 +92,6 @@
     };
 
     # flakes with dependencies
-    nilla-cli = {
-      type = "github";
-      owner = "nilla-nix";
-      repo = "cli";
-    };
-
     my-own-packages = {
       type = "github";
       owner = "unazikx";
@@ -144,6 +136,14 @@
       owner = "numtide";
       repo = "treefmt-nix";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    github-actions-nix = {
+      type = "github";
+      owner = "synapdeck";
+      repo = "github-actions-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-parts.follows = "flake-parts";
     };
 
     nix-math = {
