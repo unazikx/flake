@@ -100,6 +100,7 @@
                   "password"
                   "services/syncthing/cert"
                   "services/syncthing/key"
+                  "services/syncthing/password"
                   "tokens/hut"
                   # keep-sorted end
                 ] ./secrets.yaml;

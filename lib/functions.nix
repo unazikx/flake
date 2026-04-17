@@ -109,4 +109,20 @@
         };
       };
   };
+
+  minecraft = rec {
+    formatValue =
+      value:
+      if builtins.isList value then
+        "[${lib.concatMapStringsSep "," (x: "\"${toString x}\"") value}]"
+      else if builtins.isBool value then
+        (if value then "true" else "false")
+      else if builtins.isString value then
+        value
+      else
+        toString value;
+
+    genOptions =
+      options: lib.concatStringsSep "\n" (lib.mapAttrsToList (k: v: "${k}:${formatValue v}") options);
+  };
 }

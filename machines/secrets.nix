@@ -17,7 +17,6 @@
   "services/librefm"
   "services/minecraft"
   "services/minecraft-main"
-  "services/syncthing/password"
   "services/telegram-ws-proxy"
   "services/transmission"
   "services/vaultwarden"
