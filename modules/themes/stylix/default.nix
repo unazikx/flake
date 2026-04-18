@@ -138,26 +138,33 @@
             };
           };
 
-          fonts.packages = lib.attrValues (
-            {
-              inherit (pkgs)
-                # keep-sorted start
-                arkpandora_ttf
-                corefonts
-                gelasio
-                inter
-                liberation_ttf
-                monocraft
-                noto-fonts
-                noto-fonts-cjk-sans
-                # keep-sorted end
-                ;
-            }
-            // {
-              inherit (pkgs.own.fonts) gost segoe;
-              inherit (pkgs.wineWow64Packages) fonts;
-            }
-          );
+          fonts.packages = lib.attrValues {
+            inherit (pkgs)
+              # keep-sorted start
+              arkpandora_ttf
+              corefonts
+              gelasio
+              inter
+              liberation_ttf
+              monocraft
+              noto-fonts
+              noto-fonts-cjk-sans
+              # keep-sorted end
+              ;
+
+            inherit (pkgs.own.fonts)
+              # keep-sorted start
+              gost
+              segoe
+              # keep-sorted end
+              ;
+
+            inherit (pkgs.wineWow64Packages)
+              # keep-sorted start
+              fonts
+              # keep-sorted end
+              ;
+          };
         };
     };
 }
