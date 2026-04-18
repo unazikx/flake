@@ -11,4 +11,4 @@ lib.mkSecrets.sopsnix [
   "services/syncthing/password"
   "tokens/hut"
   # keep-sorted end
-] ./secrets.yaml
+] ./sops.yaml

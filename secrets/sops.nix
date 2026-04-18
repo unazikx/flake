@@ -1,5 +1,4 @@
 {
-  self,
   lib,
   ...
 }:
@@ -29,4 +28,4 @@
   "tokens/spotify-player"
   "tokens/viu"
   # keep-sorted end
-] "${self}/machines/secrets.yaml")
+] ./sops.yaml)

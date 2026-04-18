@@ -64,6 +64,7 @@
           ++ [
             (
               {
+                self,
                 pkgs,
                 lib,
                 config,
@@ -98,7 +99,7 @@
                   }) config.lib.stylix.colors.toList;
                 };
 
-                sops.secrets = import ./secrets.nix {
+                sops.secrets = import "${self}/secrets/${configurationName}/sops.nix" {
                   inherit lib;
                 };
 

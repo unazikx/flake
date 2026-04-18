@@ -52,8 +52,8 @@
               # INFO: default for every host secrets
               # for especially host create
               # > machines/machine/secerts.yaml
-              import "${self}/machines/secrets.nix" {
-                inherit self lib;
+              import "${self}/secrets/sops.nix" {
+                inherit lib;
               };
 
             age = {
