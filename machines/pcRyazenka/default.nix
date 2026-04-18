@@ -5,8 +5,11 @@
       config,
       ...
     }:
+    let
+      configurationName = baseNameOf ./.;
+    in
     {
-      nixosConfigurations = extendedLib.buildConfiguration (baseNameOf ./.) {
+      nixosConfigurations = extendedLib.buildConfiguration configurationName {
         hostName = "jetpure";
         userName = "nixzoid";
         hostPlatform = "x86_64-linux";
@@ -95,15 +98,9 @@
                   }) config.lib.stylix.colors.toList;
                 };
 
-                sops.secrets = lib.mkSecrets.sopsnix [
-                  # keep-sorted start
-                  "password"
-                  "services/syncthing/cert"
-                  "services/syncthing/key"
-                  "services/syncthing/password"
-                  "tokens/hut"
-                  # keep-sorted end
-                ] ./secrets.yaml;
+                sops.secrets = import ./secrets.nix {
+                  inherit lib;
+                };
 
                 hm.services.syncthing.settings.devices = lib.listToAttrs [
                   (lib.syncthing.mkDevice "nothing2a" "E2PI7IQ-ZCKQW2J-MQF4OYZ-MFEPN4T-NNMF3LP-2TEHSM3-ZIN5VW2-6CRSRQM")
@@ -142,7 +139,7 @@
           ];
       };
 
-      diskoConfigurations.${baseNameOf ./.} = import ./disko.nix {
+      diskoConfigurations.${configurationName} = import ./disko.nix {
         device = toString /dev/disk/by-id/ata-KINGSTON_SA400S37240G_50026B72828C9A2D;
         # https://www.kingston.com/en/ssd/a400-solid-state-drive
       };
