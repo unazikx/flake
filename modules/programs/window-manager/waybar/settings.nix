@@ -147,7 +147,7 @@
             bluetooth = "";
             bluetooth-muted = mkIcon color.base04 "󰂲";
           };
-          format-muted = "{format_source} / ${mkIcon color.base04 " "}";
+          format-muted = "{format_source} / ${mkIcon color.base04 ""}";
 
           format-source = "󰍬";
           format-source-muted = mkIcon color.base04 "󰍭";

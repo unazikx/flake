@@ -23,7 +23,7 @@ in
     "browser.startup.homepage" =
       if cfg.enable then
         (lib.concatStringsSep ":" [
-          cfg.settings.server.host
+          "127.0.0.1"
           (toString cfg.settings.server.port)
         ])
       else
