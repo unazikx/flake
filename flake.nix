@@ -146,6 +146,15 @@
       inputs.flake-parts.follows = "flake-parts";
     };
 
+    emanote = {
+      type = "github";
+      owner = "srid";
+      repo = "emanote";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-parts.follows = "flake-parts";
+      inputs.emanote-template.follows = "";
+    };
+
     nix-math = {
       type = "github";
       owner = "xddxdd";

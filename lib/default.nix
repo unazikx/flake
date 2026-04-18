@@ -40,6 +40,7 @@ inputs.flake-parts.lib.mkFlake
       # keep-sorted start
       inputs.devshell.flakeModule
       inputs.disko.flakeModule
+      # inputs.emanote.flakeModule
       inputs.files.flakeModules.default
       inputs.flake-parts.flakeModules.bundlers
       inputs.github-actions-nix.flakeModule
