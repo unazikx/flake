@@ -28,7 +28,11 @@
 
             guiAddress = "0.0.0.0:8384";
 
-            passwordFile = config.sopsnix."services/syncthing/password";
+            guiCredentials = {
+              username = lib.userName;
+              passwordFile = config.sopsnix."services/syncthing/password";
+            };
+
             cert = config.sopsnix."syncthing/cert" or null;
             key = config.sopsnix."syncthing/key" or null;
 
@@ -62,8 +66,6 @@
                 localAnnounceEnabled = true;
                 localAnnouncePort = 21027;
               };
-
-              gui.user = lib.userName;
             };
           };
 

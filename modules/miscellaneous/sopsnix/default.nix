@@ -52,7 +52,7 @@
               # INFO: default for every host secrets
               # for especially host create
               # > machines/machine/secerts.yaml
-              import "${self}/secrets/sops.nix" {
+              import "${self}/machines/secrets.nix" {
                 inherit lib;
               };
 

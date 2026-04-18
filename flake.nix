@@ -334,6 +334,22 @@
       inputs.flake-utils.follows = "flake-utils";
     };
 
+    xytz = {
+      type = "github";
+      owner = "xdagiz";
+      repo = "xytz";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
+    };
+
+    ytsub = {
+      type = "github";
+      owner = "sarowish";
+      repo = "ytsub";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
+    };
+
     zen-browser = {
       type = "github";
       owner = "0xc000022070";
@@ -465,7 +481,6 @@
       owner = "dmfrpro";
       repo = "tg-ws-proxy-flake";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-parts.follows = "flake-parts";
     };
 
     easyeffects-presets = {

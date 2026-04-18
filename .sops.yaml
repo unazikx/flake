@@ -8,12 +8,12 @@ keys:
 # > sops updatekeys ./file
 
 creation_rules:
-  - path_regex: secrets/thinkpadT14/sops.nix
+  - path_regex: secrets/thinkpadT14/secrets.nix
     key_groups:
       - age:
           - *thinkpadT14
 
-  - path_regex: secrets/pcRyazenka/sops.nix
+  - path_regex: secrets/pcRyazenka/secrets.nix
     key_groups:
       - age:
           - *pcRyazenka

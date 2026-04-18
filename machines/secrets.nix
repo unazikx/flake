@@ -3,7 +3,7 @@
   ...
 }:
 
-(lib.mkSecrets.sopsnix [
+lib.mkSecrets.sopsnix [
   # keep-sorted start
   "accounts/gmailPassword"
   "accounts/googleClient/id"
@@ -28,4 +28,4 @@
   "tokens/spotify-player"
   "tokens/viu"
   # keep-sorted end
-] ./sops.yaml)
+] ./secrets.yaml

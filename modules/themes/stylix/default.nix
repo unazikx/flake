@@ -111,8 +111,8 @@
                 # WARN:
                 # idk works this or not
                 emoji = {
-                  package = pkgs.nerd-fonts.symbols-only;
-                  name = "Symbols Only Nerd Font";
+                  package = pkgs.noto-fonts-color-emoji;
+                  name = "Noto Color Emoji";
                 };
               }
               {

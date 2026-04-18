@@ -32,7 +32,7 @@
               amneziawg
               cava
               discord
-              driftwm
+              # driftwm
               fastfetch
               firefox
               flood
@@ -58,6 +58,8 @@
               tuir
               yazi
               zapret
+              xytz
+              ytsub
               # keep-sorted end
               ;
           })
@@ -99,7 +101,7 @@
                   }) config.lib.stylix.colors.toList;
                 };
 
-                sops.secrets = import "${self}/secrets/${configurationName}/sops.nix" {
+                sops.secrets = import ./secrets.nix {
                   inherit lib;
                 };
 

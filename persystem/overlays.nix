@@ -43,42 +43,30 @@
 
             own = my-own-packages.legacyPackages.${system};
 
+            # keep-sorted start block=yes newline_separated=yes
+            better-than-adventure =
+              (pkgs.vanillaServers.vanilla.overrideAttrs rec {
+                version = "7.3_04";
+                src = _old.fetchurl {
+                  url = "https://github.com/Better-than-Adventure/bta-download-repo/releases/download/v${version}/bta.v${version}.server.jar";
+                  hash = "sha256-e8hQm3NejclSo8INGtn7TxEyE3/lBq1Cz7dRsDfcx2c=";
+                };
+              }).override
+                { jre_headless = _old.temurin-jre-bin-21; };
+
             driftwm = inputs.driftwm.packages.${system}.default;
+
             max-messenger = inputs.max-messenger.packages.${system}.default;
+
             nilla-cli = inputs.nilla-cli.packages.${system}.nilla-cli;
-            rc2nix = inputs.plasma-manager.packages.${system}.rc2nix;
 
-            zen-beta = inputs.zen-browser.packages.${system}.beta;
-            zen-twilight = inputs.zen-browser.packages.${system}.twilight;
-            zen-twilight-official = inputs.zen-browser.packages.${system}.twilight-official;
+            ouch = pkgs.ouch.override {
+              enableUnfree = true;
+            };
 
-            default-lsp = lib.attrValues {
-              inherit (pkgs)
-                # keep-sorted start
-                black
-                go
-                gopls
-                marksman
-                nixd
-                nixfmt
-                pyright
-                vscode-langservers-extracted
-                yaml-language-server
-                # keep-sorted end
-                ;
-
-              inherit (pkgs.nodePackages)
-                # keep-sorted start
-                prettier
-                typescript-language-server
-                # keep-sorted end
-                ;
-
-              inherit (pkgs.python314Packages)
-                # keep-sorted start
-                python-lsp-server
-                # keep-sorted end
-                ;
+            portablemc = pkgs.portablemc.override {
+              textToSpeechSupport = false;
+              jre = _old.temurin-jre-bin-25;
             };
 
             prismlauncher = pkgs.prismlauncher.override {
@@ -100,18 +88,7 @@
               };
             };
 
-            portablemc = pkgs.portablemc.override {
-              textToSpeechSupport = false;
-              jre = _old.temurin-jre-bin-25;
-            };
-
-            ouch = pkgs.ouch.override {
-              enableUnfree = true;
-            };
-
-            suwayomi-server = pkgs.suwayomi-server.override {
-              jdk21_headless = _old.temurin-jre-bin-21;
-            };
+            rc2nix = inputs.plasma-manager.packages.${system}.rc2nix;
 
             spotify-player = pkgs.spotify-player.override {
               withAudioBackend = "pulseaudio";
@@ -125,16 +102,51 @@
               withFuzzy = false;
             };
 
-            better-than-adventure =
-              (pkgs.vanillaServers.vanilla.overrideAttrs rec {
-                version = "7.3_04";
-                src = _old.fetchurl {
-                  url = "https://github.com/Better-than-Adventure/bta-download-repo/releases/download/v${version}/bta.v${version}.server.jar";
-                  hash = "sha256-e8hQm3NejclSo8INGtn7TxEyE3/lBq1Cz7dRsDfcx2c=";
-                };
+            suwayomi-server = pkgs.suwayomi-server.override {
+              jdk21_headless = _old.temurin-jre-bin-21;
+            };
 
-              }).override
-                { jre_headless = _old.temurin-jre-bin-21; };
+            xytz = inputs.xytz.packages.${system}.default.overrideAttrs {
+              vendorHash = "sha256-j4K61ESqtlfOD8S3E0vtL18aziSFztoU3V0KSLtJEME=";
+            };
+
+            ytsub = inputs.ytsub.packages.${system}.default;
+
+            zen-beta = inputs.zen-browser.packages.${system}.beta;
+
+            zen-twilight = inputs.zen-browser.packages.${system}.twilight;
+
+            zen-twilight-official = inputs.zen-browser.packages.${system}.twilight-official;
+            # keep-sorted end
+
+            default-lsp = lib.attrValues {
+              inherit (pkgs)
+                # keep-sorted start
+                black
+                go
+                gopls
+                marksman
+                nixd
+                nixfmt
+                pyright
+                vscode-langservers-extracted
+                yaml-language-server
+                # keep-sorted end
+                ;
+
+              inherit (pkgs)
+                # keep-sorted start
+                prettier
+                typescript-language-server
+                # keep-sorted end
+                ;
+
+              inherit (pkgs.python314Packages)
+                # keep-sorted start
+                python-lsp-server
+                # keep-sorted end
+                ;
+            };
           }
         );
     };
