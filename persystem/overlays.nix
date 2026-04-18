@@ -46,6 +46,7 @@
             driftwm = inputs.driftwm.packages.${system}.default;
             max-messenger = inputs.max-messenger.packages.${system}.default;
             nilla-cli = inputs.nilla-cli.packages.${system}.nilla-cli;
+            rc2nix = inputs.plasma-manager.packages.${system}.rc2nix;
 
             zen-beta = inputs.zen-browser.packages.${system}.beta;
             zen-twilight = inputs.zen-browser.packages.${system}.twilight;
