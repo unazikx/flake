@@ -20,11 +20,17 @@ let
       "bottom-right"
     ] (_: rounding);
 
-  border = color: {
-    active = { inherit color; };
-    inactive = { inherit color; };
-    urgent = { inherit color; };
-  };
+  border =
+    color:
+    lib.genAttrs
+      [
+        "active"
+        "inactive"
+        "urgent"
+      ]
+      (_: {
+        inherit color;
+      });
 
   size = height: width: {
     default-column-width.fixed = width;
