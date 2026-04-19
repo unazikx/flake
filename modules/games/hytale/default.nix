@@ -14,9 +14,13 @@
           ...
         }:
         {
-          persist.user.directories = [ ".local/share/hytale-launcher" ];
+          persist.user.directories = [
+            ".local/share/hytale-launcher"
+          ];
 
-          hmPackages = [ inputs.hytale-launcher.packages.${pkgs.system}.default ];
+          hmPackages = [
+            inputs.hytale-launcher.packages.${pkgs.system}.default
+          ];
         };
     };
 }

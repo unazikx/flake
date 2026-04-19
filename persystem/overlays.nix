@@ -56,6 +56,8 @@
 
             driftwm = inputs.driftwm.packages.${system}.default;
 
+            hytale-launcher = inputs.hytale-launcher.packages.${pkgs.system}.default;
+
             max-messenger = inputs.max-messenger.packages.${system}.default;
 
             nilla-cli = inputs.nilla-cli.packages.${system}.nilla-cli;
