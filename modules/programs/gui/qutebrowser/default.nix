@@ -29,29 +29,31 @@
           hm = {
             imports = [ ./whlist.nix ];
 
-            programs.qutebrowser = {
-              enable = true;
-              package = pkgs.qutebrowser;
+            programs.qutebrowser = lib.mkMerge [
+              {
+                enable = true;
+                package = pkgs.qutebrowser;
 
-              searchEngines = {
-                DEFAULT = "https://www.google.com/search?q={}";
-                _4get = "https://4get.nadeko.net/web?s={}";
-              };
+                searchEngines = {
+                  DEFAULT = "https://www.google.com/search?q={}";
+                  _4get = "https://4get.nadeko.net/web?s={}";
+                };
 
-              keyBindings = import ./binds.nix {
+                keyBindings = import ./binds.nix {
+                  inherit
+                    pkgs
+                    lib
+                    ;
+                };
+              }
+              (import ./settings.nix {
                 inherit
                   pkgs
                   lib
+                  config
                   ;
-              };
-            }
-            // (import ./settings.nix {
-              inherit
-                pkgs
-                lib
-                config
-                ;
-            });
+              })
+            ];
 
             xdg.mimeApps.associations.removed = lib.genAttrs [
               "image/avif"

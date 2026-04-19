@@ -57,16 +57,14 @@
               trash-cmd
               tuir
               yazi
-              zapret
-              xytz
               ytsub
+              zapret
               # keep-sorted end
               ;
           })
           ++ [
             (
               {
-                self,
                 pkgs,
                 lib,
                 config,

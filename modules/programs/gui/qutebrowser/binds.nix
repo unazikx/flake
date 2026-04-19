@@ -7,13 +7,15 @@
 {
   normal = {
     # keep-sorted start
-    ",," = "spawn --userscript ${lib.getExe pkgs.own.rbw-qutebrowser}";
+    ",," = "spawn --userscript ${lib.getExe pkgs.own.qutebrowser-extras.rbw-filler}";
     ",." = "spawn --userscript qute-keepass -p ~/Documents/passwords/db.kdbx";
     ",M" = "hint links spawn mpv {hint-url} ;; " + "message-info 'Video will be open in MPV'";
-    ",l" = "spawn --userscript ${lib.getExe pkgs.own.rbw-qutebrowser} username";
+    ",R" = "hint links userscript ${lib.getExe pkgs.own.qutebrowser-extras.translator}";
+    ",l" = "spawn --userscript ${lib.getExe pkgs.own.qutebrowser-extras.rbw-filler} username";
     ",m" = "spawn mpv {url} ;; " + "message-info 'Video will be open in MPV'";
-    ",p" = "spawn --userscript ${lib.getExe pkgs.own.rbw-qutebrowser} password";
-    ",t" = "spawn --userscript ${lib.getExe pkgs.own.rbw-qutebrowser} totp";
+    ",p" = "spawn --userscript ${lib.getExe pkgs.own.qutebrowser-extras.rbw-filler} password";
+    ",r" = "spawn --userscript ${lib.getExe pkgs.own.qutebrowser-extras.translator} --target_lang ru";
+    ",t" = "spawn --userscript ${lib.getExe pkgs.own.qutebrowser-extras.rbw-filler} totp";
     "<Alt-j>" = "tab-move +";
     "<Alt-k>" = "tab-move -";
     "<Alt-p>" = "open -w -- {clipboard}";
