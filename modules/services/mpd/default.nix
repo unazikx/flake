@@ -26,7 +26,7 @@
         {
           imports = lib.attrValues {
             inherit (partsConfig.nixosModules)
-              ncmpcpp
+              inori
               ;
           };
 
