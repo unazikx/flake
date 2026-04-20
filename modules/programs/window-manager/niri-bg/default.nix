@@ -19,6 +19,7 @@
             Unit = {
               Description = "Sets stylix image as background for niri";
               After = [ "niri.service" ];
+              Wants = [ "niri.service" ];
             };
 
             Service = {

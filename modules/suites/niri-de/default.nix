@@ -20,6 +20,7 @@
               kitty
               niri
               niri-bg
+              niri-sidebar
               tofi
               waybar
               wleave
