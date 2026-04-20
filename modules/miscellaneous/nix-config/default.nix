@@ -65,6 +65,7 @@
                 "https://niri.cachix.org"
                 "https://nix-gaming.cachix.org"
                 "https://unmojang.cachix.org"
+                "https://watersucks.cachix.org"
                 "https://winapps.cachix.org"
                 "https://xache.cachix.org"
                 # keep-sorted end
@@ -78,6 +79,7 @@
                 "nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="
                 "oss:KO872wNJkCDgmGN3xy9dT89WAhvv13EiKncTtHDItVU="
                 "unmojang.cachix.org-1:OfHnbBNduZ6Smx9oNbLFbYyvOWSoxb2uPcnXPj4EDQY="
+                "watersucks.cachix.org-1:6gadPC5R8iLWQ3EUtfu3GFrVY7X6I4Fwz/ihW25Jbv8="
                 "winapps.cachix.org-1:HI82jWrXZsQRar/PChgIx1unmuEsiQMQq+zt05CD36g="
                 "xache.cachix.org-1:InoMKnvFvDh+J5gFNHN1mmUONxvYJqFImLJY8/bl9YA="
                 # keep-sorted end

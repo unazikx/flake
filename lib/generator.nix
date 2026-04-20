@@ -26,6 +26,7 @@ let
     nix-gaming.nixosModules.platformOptimizations
     nix-gaming.nixosModules.wine
     nix-minecraft.nixosModules.minecraft-servers
+    nixos-cli.nixosModules.nixos-cli
     nixpkgs.nixosModules.notDetected
     nur.modules.nixos.default
     # proxy-suite-flake.nixosModules.default

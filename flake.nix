@@ -446,6 +446,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nixos-cli = {
+      type = "github";
+      owner = "nix-community";
+      repo = "nixos-cli";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-parts.follows = "flake-parts";
+    };
+
     winapps = {
       type = "github";
       owner = "winapps-org";
