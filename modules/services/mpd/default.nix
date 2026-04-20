@@ -6,7 +6,7 @@
 {
   flake =
     {
-      partsConfig,
+      _config,
       ...
     }:
     {
@@ -25,7 +25,7 @@
         in
         {
           imports = lib.attrValues {
-            inherit (partsConfig.nixosModules)
+            inherit (_config.nixosModules)
               inori
               ;
           };

@@ -5,7 +5,7 @@
 {
   flake =
     {
-      partsConfig,
+      _config,
       ...
     }:
     {
@@ -22,7 +22,7 @@
         {
           imports =
             (lib.attrValues {
-              inherit (partsConfig.nixosModules)
+              inherit (_config.nixosModules)
                 qbittorrent
                 ;
             })

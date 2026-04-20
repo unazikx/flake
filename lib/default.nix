@@ -59,7 +59,7 @@ inputs.flake-parts.lib.mkFlake
       {
         _module.args = {
           inherit extendedLib inputs;
-          partsConfig = config;
+          _config = config;
         };
 
         # INFO:

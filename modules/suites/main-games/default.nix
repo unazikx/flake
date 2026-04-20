@@ -1,7 +1,7 @@
 {
   flake =
     {
-      partsConfig,
+      _config,
       ...
     }:
     {
@@ -12,14 +12,13 @@
         }:
         {
           imports = lib.attrValues {
-            inherit (partsConfig.nixosModules)
+            inherit (_config.nixosModules)
               # keep-sorted start
               epic-games
               hytale
               lsfg-vk
               mumble
               prism-launcher
-              r2modman
               steam
               umu-launcher
               # keep-sorted end

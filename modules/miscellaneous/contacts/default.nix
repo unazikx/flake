@@ -5,7 +5,7 @@
 {
   flake =
     {
-      partsConfig,
+      _config,
       ...
     }:
     {
@@ -27,7 +27,7 @@
           persist.user.directories = [ ".contacts" ];
 
           imports = lib.attrValues {
-            inherit (partsConfig.nixosModules)
+            inherit (_config.nixosModules)
               vdirsyncer
               ;
           };
