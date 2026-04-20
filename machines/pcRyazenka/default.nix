@@ -114,11 +114,7 @@
                     (name: {
                       name = "/media/${name}";
                       value =
-                        {
-                          inherit name;
-                          options = [ "x-gvfs-show" ];
-                        }
-                        |> (
+                        (
                           {
                             name ? throw "set label pls",
                             options ? [ ],
@@ -128,7 +124,11 @@
                             fsType = "ext4";
                             inherit options;
                           }
-                        );
+                        )
+                          {
+                            inherit name;
+                            options = [ "x-gvfs-show" ];
+                          };
                     })
                     [
                       "fatKartman"

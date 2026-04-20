@@ -47,7 +47,6 @@
               auto-optimise-store = true;
 
               experimental-features = [
-                "pipe-operator"
                 "nix-command"
                 "flakes"
               ];
@@ -106,6 +105,10 @@
                 ;
             })
           ];
+
+          system.build = {
+            nixos-rebuild = lib.mkForce pkgs.own.nixos-rebuild;
+          };
 
           sops.templates = {
             "nixAccessTokens" = {

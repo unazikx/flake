@@ -15,7 +15,6 @@
           ...
         }:
         let
-          cfg = config.hm.programs.niri;
           pkg = pkgs.own.niri-sidebar;
 
           toml = pkgs.formats.toml { };
