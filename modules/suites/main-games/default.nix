@@ -15,6 +15,7 @@
             inherit (_config.nixosModules)
               # keep-sorted start
               epic-games
+              gale
               hytale
               lsfg-vk
               mumble
