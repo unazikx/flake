@@ -413,6 +413,7 @@
               "reboot" = "systemctl reboot";
               "suspend" = "systemctl suspend";
               "logout" = "loginctl terminate-user $USER";
+              "lock" = if config.hm.programs.hyprlock.enable then "hyprlock" else "loginctl lock-session";
             };
 
             menu-file = xmlGenerate "powerMenu" {
@@ -457,6 +458,16 @@
                       property = {
                         "@name" = "label";
                         "#text" = "Logout";
+                      };
+                    };
+                  }
+                  {
+                    object = {
+                      "@class" = "GtkMenuItem";
+                      "@id" = "lock";
+                      property = {
+                        "@name" = "label";
+                        "#text" = "Lock";
                       };
                     };
                   }

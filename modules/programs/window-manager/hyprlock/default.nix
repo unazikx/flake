@@ -15,6 +15,11 @@
           config,
           ...
         }:
+        let
+          inherit (config.lib.stylix)
+            colors
+            ;
+        in
         {
           hm = {
             programs.hyprlock = {
@@ -26,13 +31,20 @@
                   immediate_render = true;
                 };
 
-                background = lib.mkForce [
-                  {
-                    blur_passes = 4;
-                    blur_size = 12;
-                    path = inputs.wallpapers.plantFlower;
-                  }
-                ];
+                background = {
+                  color = "rgb(${colors.base03})";
+                  blur_passes = 4;
+                  blur_size = 12;
+                  path = inputs.wallpapers.plantFlower;
+                };
+
+                input-field = {
+                  check_color = "rgb(${colors.base0A})";
+                  fail_color = "rgb(${colors.base08})";
+                  font_color = "rgb(${colors.base05})";
+                  inner_color = "rgb(${colors.base00})";
+                  outer_color = "rgb(${colors.base01})";
+                };
 
                 animations = {
                   bezier = [
@@ -50,7 +62,7 @@
                 label = [
                   {
                     text = "$TIME";
-                    color = "rgb(${config.lib.stylix.colors.base05})";
+                    color = "rgb(${colors.base05})";
                     font_family = config.stylix.fonts.monospace.name;
                     font_size = config.stylix.fonts.sizes.applications * 7;
                     text_align = "center";
@@ -60,12 +72,12 @@
 
                     shadow_passes = 6;
                     shadow_size = 4;
-                    shadow_color = "rgb(${config.lib.stylix.colors.base00})";
+                    shadow_color = "rgb(${colors.base00})";
                   }
 
                   {
                     text = "󰌌 $LAYOUT";
-                    color = "rgb(${config.lib.stylix.colors.base05})";
+                    color = "rgb(${colors.base05})";
                     font_family = config.stylix.fonts.sansSerif.name;
                     font_size = config.stylix.fonts.sizes.applications;
                     halign = "left";
@@ -74,12 +86,12 @@
 
                     shadow_passes = 6;
                     shadow_size = 4;
-                    shadow_color = "rgb(${config.lib.stylix.colors.base00})";
+                    shadow_color = "rgb(${colors.base00})";
                   }
 
                   {
                     text = "cmd[update:1000] ${lib.getExe pkgs.own.hyprlock-battery}";
-                    color = "rgb(${config.lib.stylix.colors.base05})";
+                    color = "rgb(${colors.base05})";
                     font_family = config.stylix.fonts.sansSerif.name;
                     font_size = config.stylix.fonts.sizes.applications;
                     halign = "center";
@@ -88,17 +100,17 @@
 
                     shadow_passes = 6;
                     shadow_size = 4;
-                    shadow_color = "rgb(${config.lib.stylix.colors.base00})";
+                    shadow_color = "rgb(${colors.base00})";
                   }
                 ];
 
                 input-field = {
+
                   outline_thickness = 3;
                   fade_on_empty = true;
 
                   rounding = 18;
                 };
-
                 auth = {
                   pam.enabled = true;
                   fingerprint.enabled = true;

@@ -34,6 +34,8 @@
                 gdu.enable = false;
                 helix.enable = false;
                 hyprland.hyprpaper.enable = true;
+                hyprlock.enable = false;
+                hyprlock.image.enable = false;
                 kde.enable = false;
                 mako.enable = false;
                 mpv.enable = false;
