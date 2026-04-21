@@ -14,15 +14,14 @@
           ...
         }:
         {
+          hmPackages = [ pkgs.nix-output-monitor ];
+
           programs.nixos-cli = {
             enable = true;
 
-            option-cache.enable = true;
-
             settings = {
-              config_location = lib.flakeDir;
+              config_location = "${lib.flakeDir}#${lib.configurationName}";
 
-              use_nvd = true;
               apply.use_nom = true;
 
               differ = {

@@ -32,13 +32,13 @@
               amneziawg
               cava
               discord
-              # driftwm
               fastfetch
               firefox
               flood
               gdu
               helix
               minimal
+              nixos-cli
               obsidian
               qbittorrent
               qutebrowser
