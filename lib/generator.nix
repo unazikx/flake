@@ -15,7 +15,6 @@ let
     agenix.nixosModules.default
     dank-material-shell-plugins.nixosModules.default
     dank-material-shell.nixosModules.dank-material-shell
-    microvm-nix.nixosModules.microvm
     disko.nixosModules.default
     home-manager.nixosModules.home-manager
     impermanence.nixosModules.impermanence

@@ -1,6 +1,7 @@
 {
   flake =
     {
+      inputs,
       extendedLib,
       ...
     }:
@@ -14,6 +15,7 @@
         hostPlatform = "x86_64-linux";
 
         extraModules = [
+          inputs.microvm-nix.nixosModules.microvm
           (
             {
               pkgs,
