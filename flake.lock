@@ -51,22 +51,19 @@
     },
     "base16": {
       "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
+        "fromYaml": "fromYaml"
       },
       "locked": {
-        "lastModified": 1757418582,
-        "narHash": "sha256-KkFDwFKgi8xanF1wtlR4s60kVhVBJSq/ioNNBY3klp0=",
-        "owner": "azikxz",
-        "repo": "design",
-        "rev": "7531f1566c6e199bc6234091def536264b319d9b",
+        "lastModified": 1755819240,
+        "narHash": "sha256-qcMhnL7aGAuFuutH4rq9fvAhCpJWVHLcHVZLtPctPlo=",
+        "owner": "SenchoPens",
+        "repo": "base16.nix",
+        "rev": "75ed5e5e3fce37df22e49125181fa37899c3ccd6",
         "type": "github"
       },
       "original": {
-        "owner": "azikxz",
-        "ref": "base16",
-        "repo": "design",
+        "owner": "SenchoPens",
+        "repo": "base16.nix",
         "type": "github"
       }
     },
@@ -117,24 +114,6 @@
         "owner": "tinted-theming",
         "repo": "base16-vim",
         "rev": "577fe8125d74ff456cf942c733a85d769afe58b7",
-        "type": "github"
-      }
-    },
-    "base16_2": {
-      "inputs": {
-        "fromYaml": "fromYaml"
-      },
-      "locked": {
-        "lastModified": 1755819240,
-        "narHash": "sha256-qcMhnL7aGAuFuutH4rq9fvAhCpJWVHLcHVZLtPctPlo=",
-        "owner": "SenchoPens",
-        "repo": "base16.nix",
-        "rev": "75ed5e5e3fce37df22e49125181fa37899c3ccd6",
-        "type": "github"
-      },
-      "original": {
-        "owner": "SenchoPens",
-        "repo": "base16.nix",
         "type": "github"
       }
     },
@@ -1824,6 +1803,21 @@
         "type": "github"
       }
     },
+    "process-compose-flake": {
+      "locked": {
+        "lastModified": 1767863885,
+        "narHash": "sha256-XXekPAxzbv1DmHFo3Elmj/vDnvWc1V0jdDUvM0/Wf7k=",
+        "owner": "Platonic-Systems",
+        "repo": "process-compose-flake",
+        "rev": "99bea96cf269cfd235833ebdf645b567069fd398",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Platonic-Systems",
+        "repo": "process-compose-flake",
+        "type": "github"
+      }
+    },
     "proxy-suite-flake": {
       "inputs": {
         "nixpkgs": [
@@ -1873,7 +1867,6 @@
       "inputs": {
         "agenix": "agenix",
         "agenix-rekey": "agenix-rekey",
-        "base16": "base16",
         "betterfox": "betterfox",
         "dank-material-shell": "dank-material-shell",
         "dank-material-shell-plugins": "dank-material-shell-plugins",
@@ -1927,7 +1920,9 @@
         "obsidian-plugins": "obsidian-plugins",
         "pkgs-by-name": "pkgs-by-name",
         "plasma-manager": "plasma-manager",
+        "process-compose-flake": "process-compose-flake",
         "proxy-suite-flake": "proxy-suite-flake",
+        "services-flake": "services-flake",
         "shattered-prism": "shattered-prism",
         "sopsnix": "sopsnix",
         "spicetify-nix": "spicetify-nix",
@@ -1937,7 +1932,6 @@
         "treefmt-nix": "treefmt-nix_2",
         "umu-protonfixes": "umu-protonfixes",
         "viu": "viu",
-        "wallpapers": "wallpapers",
         "winapps": "winapps",
         "xytz": "xytz",
         "ytsub": "ytsub",
@@ -1985,6 +1979,21 @@
       "original": {
         "owner": "wlrfx",
         "repo": "scenefx",
+        "type": "github"
+      }
+    },
+    "services-flake": {
+      "locked": {
+        "lastModified": 1775955605,
+        "narHash": "sha256-EX0zJB4JZrKT4qGHrpdJfPXV7nuiHNXh59QoegZqiyc=",
+        "owner": "juspay",
+        "repo": "services-flake",
+        "rev": "4a59e9431242df7790b23e54944078352e4820af",
+        "type": "github"
+      },
+      "original": {
+        "owner": "juspay",
+        "repo": "services-flake",
         "type": "github"
       }
     },
@@ -2076,7 +2085,7 @@
     },
     "stylix": {
       "inputs": {
-        "base16": "base16_2",
+        "base16": "base16",
         "base16-fish": "base16-fish",
         "base16-helix": "base16-helix",
         "base16-vim": "base16-vim",
@@ -2424,27 +2433,6 @@
       "original": {
         "owner": "viu-media",
         "repo": "viu",
-        "type": "github"
-      }
-    },
-    "wallpapers": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1766838053,
-        "narHash": "sha256-TCXbSJRks3VZLsDzO9jWo9RT5AgXF/CcheXMUHIaeQc=",
-        "owner": "azikxz",
-        "repo": "design",
-        "rev": "df527e105182bdf5351bfe13cff9c749eb231754",
-        "type": "github"
-      },
-      "original": {
-        "owner": "azikxz",
-        "ref": "wallpapers",
-        "repo": "design",
         "type": "github"
       }
     },
