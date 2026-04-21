@@ -51,6 +51,7 @@ inputs.flake-parts.lib.mkFlake
         home-manager.flakeModules.default
         make-shell.flakeModules.default
         nix-wrapper-modules.flakeModules.default
+        nix-wrapper-modules.flakeModules.wrappers
         process-compose-flake.flakeModule
         treefmt-nix.flakeModule
         # keep-sorted end
@@ -68,6 +69,7 @@ inputs.flake-parts.lib.mkFlake
             self
             inputs
             ;
+
           _config = config;
         };
 
@@ -81,6 +83,7 @@ inputs.flake-parts.lib.mkFlake
 
     perSystem =
       {
+        system,
         ...
       }:
       {
@@ -89,6 +92,23 @@ inputs.flake-parts.lib.mkFlake
             extendedLib
             inputs
             ;
+
+          pkgs = import inputs.nixpkgs {
+            inherit system;
+
+            overlays = [
+              (_final: _prev: {
+                inherit (inputs.nix-wrapper-modules)
+                  wrapperModules
+                  ;
+
+                inherit (inputs.nix-wrapper-modules.lib)
+                  wrapPackage
+                  wrapModule
+                  ;
+              })
+            ];
+          };
         };
       };
 
