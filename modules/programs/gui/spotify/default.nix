@@ -24,7 +24,9 @@
             ".cache/spotify"
           ];
 
-          hmPackages = [ pkgs.spotdl ];
+          hmPackages = [
+            pkgs.spotdl
+          ];
 
           hm.programs.spicetify = {
             enable = true;

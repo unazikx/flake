@@ -15,7 +15,9 @@
           ...
         }:
         {
-          persist.directories = [ "/var/lib/tailscale" ];
+          persist.directories = [
+            "/var/lib/tailscale"
+          ];
 
           services.tailscale = {
             enable = true;

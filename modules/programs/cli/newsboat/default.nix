@@ -14,7 +14,13 @@
           ...
         }:
         {
-          hmPackages = [ pkgs.own.yt-id ];
+          persist.user.directories = [
+            ".local/share/newsboat"
+          ];
+
+          hmPackages = [
+            pkgs.own.yt-id
+          ];
 
           hm.programs.newsboat = {
             enable = true;

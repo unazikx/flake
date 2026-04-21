@@ -18,7 +18,9 @@
           ...
         }:
         {
-          persist.user.directories = [ ".config/obsidian" ];
+          persist.user.directories = [
+            ".config/obsidian"
+          ];
 
           hm = {
             programs.obsidian = {

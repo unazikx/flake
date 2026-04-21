@@ -17,6 +17,8 @@
           ...
         }:
         {
+          persist.user.directories = [ ];
+
           hm.programs.twitch-tui = {
             enable = true;
 

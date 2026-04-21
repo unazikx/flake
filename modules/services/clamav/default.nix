@@ -14,7 +14,9 @@
           ...
         }:
         {
-          persist.directories = [ "/var/lib/clamav" ];
+          persist.directories = [
+            "/var/lib/clamav"
+          ];
 
           services.clamav = {
             scanner.enable = true;

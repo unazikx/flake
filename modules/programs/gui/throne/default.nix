@@ -13,7 +13,9 @@
           ...
         }:
         {
-          persist.user.directories = [ ".config/Throne" ];
+          persist.user.directories = [
+            ".config/Throne"
+          ];
 
           programs.throne = {
             enable = true;

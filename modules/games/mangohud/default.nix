@@ -12,7 +12,9 @@
           ...
         }:
         {
-          persist.user.directories = [ ".mangohud-logs" ];
+          persist.user.directories = [
+            ".mangohud-logs"
+          ];
 
           hm.programs.mangohud = {
             enable = true;

@@ -19,9 +19,13 @@
           cfg = config.hm.services.syncthing;
         in
         {
-          persist.user.directories = [ ".local/state/syncthing" ];
+          persist.user.directories = [
+            ".local/state/syncthing"
+          ];
 
-          hmPackages = [ pkgs.stc-cli ];
+          hmPackages = [
+            pkgs.stc-cli
+          ];
 
           hm.services.syncthing = {
             enable = true;

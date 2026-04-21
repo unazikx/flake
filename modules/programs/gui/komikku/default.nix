@@ -18,7 +18,9 @@
             ".local/share/komikku"
           ];
 
-          hmPackages = [ pkgs.komikku ];
+          hmPackages = [
+            pkgs.komikku
+          ];
 
           hm.dconf.settings = {
             "info/febvre/Komikku" = {

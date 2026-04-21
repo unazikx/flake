@@ -22,9 +22,13 @@
           ...
         }:
         {
-          persist.user.directories = [ ".srb2" ];
+          persist.user.directories = [
+            ".srb2"
+          ];
 
-          hmPackages = [ pkgs.srb2 ];
+          hmPackages = [
+            pkgs.srb2
+          ];
         };
     };
 }

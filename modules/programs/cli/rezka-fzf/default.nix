@@ -18,9 +18,13 @@
           ...
         }:
         {
-          persist.user.directories = [ ".config/rezka-fzf" ];
+          persist.user.directories = [
+            ".config/rezka-fzf"
+          ];
 
-          hmPackages = [ pkgs.own.rezka-fzf ];
+          hmPackages = [
+            pkgs.own.rezka-fzf
+          ];
         };
     };
 }

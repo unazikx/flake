@@ -24,7 +24,9 @@
             savePath
           ];
 
-          packages = [ pkgs.own.torque ];
+          packages = [
+            pkgs.own.torque
+          ];
 
           services = {
             transmission = {

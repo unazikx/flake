@@ -25,7 +25,9 @@
           };
         in
         {
-          persist.user.directories = [ ".config/glide/glide" ];
+          persist.user.directories = [
+            ".config/glide/glide"
+          ];
 
           hm.programs.glide-browser = {
             enable = true;

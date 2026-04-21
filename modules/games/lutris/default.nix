@@ -15,7 +15,9 @@
           ...
         }:
         {
-          persist.user.directories = [ ".config/lutris" ];
+          persist.user.directories = [
+            ".config/lutris"
+          ];
 
           hm.programs.lutris = {
             enable = true;

@@ -18,9 +18,13 @@
           ...
         }:
         {
-          persist.user.directories = [ ".local/share/Trash" ];
+          persist.user.directories = [
+            ".local/share/Trash"
+          ];
 
-          hmPackages = [ pkgs.trash-cli ];
+          hmPackages = [
+            pkgs.trash-cli
+          ];
 
           hm.home.shellAliases = {
             rm = lib.getExe' pkgs.trash-cli "trash-put";

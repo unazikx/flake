@@ -14,7 +14,9 @@
           ...
         }:
         {
-          hmPackages = [ pkgs.nix-output-monitor ];
+          hmPackages = [
+            pkgs.nix-output-monitor
+          ];
 
           programs.nixos-cli = {
             enable = true;

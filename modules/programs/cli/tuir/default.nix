@@ -17,6 +17,8 @@
           ini = pkgs.formats.ini { };
         in
         {
+          persist.user.directories = [ ];
+
           hmPackages = [ pkgs.tuir ];
 
           hm.xdg.configFile = {

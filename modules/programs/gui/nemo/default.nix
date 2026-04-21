@@ -13,7 +13,9 @@
           ...
         }:
         {
-          hmPackages = [ pkgs.nemo ];
+          hmPackages = [
+            pkgs.nemo
+          ];
 
           hm.dconf.settings = {
             "org/nemo/icon-view" = {

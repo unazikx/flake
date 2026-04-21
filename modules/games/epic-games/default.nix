@@ -22,9 +22,13 @@
           json = pkgs.formats.json { };
         in
         {
-          persist.user.directories = [ ".config/heroic" ];
+          persist.user.directories = [
+            ".config/heroic"
+          ];
 
-          hmPackages = [ pkgs.heroic ];
+          hmPackages = [
+            pkgs.heroic
+          ];
 
           hm.xdg.configFile = lib.mkMerge [
             # heroic

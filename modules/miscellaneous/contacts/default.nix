@@ -24,7 +24,9 @@
           ];
         in
         {
-          persist.user.directories = [ ".contacts" ];
+          persist.user.directories = [
+            ".contacts"
+          ];
 
           imports = lib.attrValues {
             inherit (_config.nixosModules)

@@ -19,9 +19,13 @@
           ...
         }:
         {
-          persist.user.files = [ ".local/share/fish/fish_history" ];
+          persist.user.files = [
+            ".local/share/fish/fish_history"
+          ];
 
-          hmPackages = [ pkgs.grc ];
+          hmPackages = [
+            pkgs.grc
+          ];
 
           programs.fish.enable = true;
 

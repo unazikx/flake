@@ -16,12 +16,14 @@
           config,
           ...
         }:
-        (import ../prism-generator.nix {
-          inherit pkgs lib config;
-          persistDir = ".local/share/ShatterredPrism";
-          configDir = "ShatterredPrism/shatteredprism.cfg";
-          package = pkgs.shatteredprism;
-        })
-        // { };
+        lib.mkMerge [
+          (import ../prism-generator.nix {
+            inherit pkgs lib config;
+            persistDir = ".local/share/ShatterredPrism";
+            configDir = "ShatterredPrism/shatteredprism.cfg";
+            package = pkgs.shatteredprism;
+          })
+          { }
+        ];
     };
 }

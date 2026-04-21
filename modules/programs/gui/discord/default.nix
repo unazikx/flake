@@ -14,7 +14,9 @@
           ...
         }:
         {
-          persist.user.directories = [ ".config/equibop" ];
+          persist.user.directories = [
+            ".config/equibop"
+          ];
 
           hm.programs.nixcord = {
             enable = true;

@@ -17,7 +17,9 @@
           ...
         }:
         {
-          hmPackages = [ pkgs.own.zaread ];
+          hmPackages = [
+            pkgs.own.zaread
+          ];
 
           hm.programs.zathura = {
             enable = true;

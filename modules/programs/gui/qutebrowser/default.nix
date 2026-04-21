@@ -19,7 +19,9 @@
           ...
         }:
         {
-          persist.user.directories = [ ".local/share/qutebrowser" ];
+          persist.user.directories = [
+            ".local/share/qutebrowser"
+          ];
 
           hmPackages = with pkgs.python312Packages; [
             adblock

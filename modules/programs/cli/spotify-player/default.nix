@@ -16,14 +16,14 @@
           ...
         }:
         {
-          hm.programs.spotify-player = (
+          hm.programs.spotify-player = lib.mkMerge [
             {
               enable = true;
             }
-            // (import ./settings.nix {
+            (import ./settings.nix {
               inherit pkgs lib config;
             })
-          );
+          ];
         };
     };
 }

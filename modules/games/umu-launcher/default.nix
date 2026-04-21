@@ -19,7 +19,9 @@
           ...
         }:
         {
-          persist.user.directories = [ ".local/share/umu" ];
+          persist.user.directories = [
+            ".local/share/umu"
+          ];
 
           hmPackages = [
             pkgs.vkbasalt

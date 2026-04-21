@@ -28,7 +28,9 @@
             })
             ++ [ ./module.nix ];
 
-          persist.directories = [ "/var/lib/flood" ];
+          persist.directories = [
+            "/var/lib/flood"
+          ];
 
           services = {
             flood = {

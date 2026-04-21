@@ -13,7 +13,9 @@
           ...
         }:
         {
-          persist.directories = [ "/var/lib/ollama" ];
+          persist.directories = [
+            "/var/lib/ollama"
+          ];
 
           services = {
             ollama = {

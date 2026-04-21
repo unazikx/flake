@@ -18,7 +18,9 @@
             ".local/share/Mumble"
           ];
 
-          hmPackages = [ pkgs.mumble ];
+          hmPackages = [
+            pkgs.mumble
+          ];
         };
     };
 }

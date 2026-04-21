@@ -14,9 +14,13 @@
           ...
         }:
         {
-          persist.user.directories = [ ".minecraft" ];
+          persist.user.directories = [
+            ".minecraft"
+          ];
 
-          hmPackages = [ pkgs.portablemc ];
+          hmPackages = [
+            pkgs.portablemc
+          ];
 
           hm.home.file = {
             ".minecraft/options.txt".text = lib.minecraft.genOptions {

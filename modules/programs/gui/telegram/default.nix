@@ -33,7 +33,9 @@
             ".local/share/AyuGramDesktop/tdata"
           ];
 
-          hmPackages = [ pkgs.ayugram-desktop ];
+          hmPackages = [
+            pkgs.ayugram-desktop
+          ];
 
           hm = {
             xdg = {

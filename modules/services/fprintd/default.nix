@@ -14,7 +14,9 @@
           ...
         }:
         {
-          persist.directories = [ "/var/lib/fprint" ];
+          persist.directories = [
+            "/var/lib/fprint"
+          ];
 
           services.fprintd = {
             enable = true;

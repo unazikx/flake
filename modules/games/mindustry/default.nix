@@ -15,9 +15,13 @@
           ...
         }:
         {
-          persist.user.directories = [ ".local/share/Mindustry" ];
+          persist.user.directories = [
+            ".local/share/Mindustry"
+          ];
 
-          hmPackages = [ pkgs.mindustry ];
+          hmPackages = [
+            pkgs.mindustry
+          ];
 
           hm.xdg.dataFile =
             (

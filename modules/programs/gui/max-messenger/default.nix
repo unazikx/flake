@@ -18,7 +18,9 @@
         {
           persist.user.directories = [ ];
 
-          hmPackages = [ pkgs.max-messenger ];
+          hmPackages = [
+            pkgs.max-messenger
+          ];
 
           programs.firejail.wrappedBinaries = {
             max-messenger = {

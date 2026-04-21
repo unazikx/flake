@@ -15,7 +15,11 @@
           ...
         }:
         {
-          hmPackages = [ pkgs.tg ];
+          persist.user.directories = [ ];
+
+          hmPackages = [
+            pkgs.tg
+          ];
 
           hm.xdg.configFile = {
             "tg/conf.py".text =

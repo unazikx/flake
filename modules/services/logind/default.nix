@@ -13,16 +13,17 @@
           ...
         }:
         {
-          services.logind.settings.Login =
+          services.logind.settings.Login = lib.mkMerge [
+            {
+              "HandleLidSwitch" = "suspend";
+              "HandlePowerKeyLongPress" = "reboot";
+              "HandlePowerKey" = "suspend";
+            }
             (lib.genAttrs [
               "HandleLidSwitchExternalPower"
               "HandleLidSwitchDocked"
             ] (_: "ignore"))
-            // {
-              "HandleLidSwitch" = "suspend";
-              HandlePowerKeyLongPress = "reboot";
-              HandlePowerKey = "suspend";
-            };
+          ];
         };
     };
 }

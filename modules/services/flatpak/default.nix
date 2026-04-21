@@ -17,7 +17,9 @@
           ...
         }:
         {
-          persist.directories = [ "/var/lib/flatpak" ];
+          persist.directories = [
+            "/var/lib/flatpak"
+          ];
 
           services.flatpak = {
             enable = true;

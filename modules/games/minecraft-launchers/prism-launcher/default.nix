@@ -16,21 +16,23 @@
           config,
           ...
         }:
-        (import ../prism-generator.nix {
-          inherit pkgs lib config;
-          persistDir = ".local/share/PrismLauncher";
-          configDir = "PrismLauncher/prismlauncher.cfg";
-          package = pkgs.prismlauncher;
-        })
-        // {
-          hmMime = lib.mkMime {
-            "org.prismlauncher.PrismLauncher.desktop" = [
-              "x-scheme-handler/prismlauncher"
-              "x-scheme-handler/curseforge"
-              "application/x-modrinth-modpack+zip"
-              "application/zip"
-            ];
-          };
-        };
+        lib.mkMerge [
+          (import ../prism-generator.nix {
+            inherit pkgs lib config;
+            persistDir = ".local/share/PrismLauncher";
+            configDir = "PrismLauncher/prismlauncher.cfg";
+            package = pkgs.prismlauncher;
+          })
+          {
+            hmMime = lib.mkMime {
+              "org.prismlauncher.PrismLauncher.desktop" = [
+                "x-scheme-handler/prismlauncher"
+                "x-scheme-handler/curseforge"
+                "application/x-modrinth-modpack+zip"
+                "application/zip"
+              ];
+            };
+          }
+        ];
     };
 }

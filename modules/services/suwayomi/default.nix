@@ -21,9 +21,13 @@
           localDir = config.hm.xdg.userDirs.desktop + "/localManga";
         in
         {
-          hmPackages = [ pkgs.moku ];
+          hmPackages = [
+            pkgs.moku
+          ];
 
-          persist.user.directories = [ ".local/share/Tachidesk" ];
+          persist.user.directories = [
+            ".local/share/Tachidesk"
+          ];
 
           services = {
             suwayomi-server = lib.mkMerge [

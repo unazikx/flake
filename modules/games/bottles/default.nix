@@ -48,7 +48,9 @@
           ...
         }:
         {
-          persist.user.directories = [ ".local/share/bottles" ];
+          persist.user.directories = [
+            ".local/share/bottles"
+          ];
 
           hmPackages = [
             (pkgs.bottles.override {

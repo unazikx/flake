@@ -14,7 +14,9 @@
           ...
         }:
         {
-          hmPackages = [ pkgs.rc2nix ];
+          hmPackages = [
+            pkgs.rc2nix
+          ];
 
           services.desktopManager = {
             plasma6 = {

@@ -12,6 +12,11 @@
           ...
         }:
         {
+          persist.user.directories = [
+            ".cache/ytsub"
+            ".local/share/ytsub"
+          ];
+
           hm = {
             imports = [ ./module.nix ];
 

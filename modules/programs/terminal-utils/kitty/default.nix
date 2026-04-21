@@ -10,6 +10,7 @@
     {
       nixosModules.${baseNameOf ./.} =
         {
+          lib,
           config,
           ...
         }:
@@ -27,11 +28,12 @@
               inherit config;
             };
 
-            settings =
+            settings = lib.mkMerge [
               (import ./settings.nix)
-              // (import ./colors.nix {
+              (import ./colors.nix {
                 inherit config;
-              });
+              })
+            ];
           };
         };
     };

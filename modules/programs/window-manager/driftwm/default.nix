@@ -14,7 +14,9 @@
           ...
         }:
         {
-          hmPackages = [ pkgs.driftwm ];
+          hmPackages = [
+            pkgs.driftwm
+          ];
         };
     };
 }

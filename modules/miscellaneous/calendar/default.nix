@@ -23,7 +23,9 @@
           ];
         in
         {
-          persist.user.directories = [ ".calendar" ];
+          persist.user.directories = [
+            ".calendar"
+          ];
 
           imports = lib.attrValues {
             inherit (_config.nixosModules)

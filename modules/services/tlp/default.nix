@@ -12,7 +12,9 @@
           ...
         }:
         {
-          persist.directories = [ "/var/lib/tlp" ];
+          persist.directories = [
+            "/var/lib/tlp"
+          ];
 
           services.tlp = {
             enable = true;

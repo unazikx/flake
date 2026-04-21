@@ -18,7 +18,9 @@
             ".config/r2modmanPlus-local"
           ];
 
-          hmPackages = [ pkgs.r2modman ];
+          hmPackages = [
+            pkgs.r2modman
+          ];
         };
     };
 }

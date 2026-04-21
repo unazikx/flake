@@ -20,7 +20,9 @@
             ".local/share/gale"
           ];
 
-          hmPackages = [ pkgs.gale ];
+          hmPackages = [
+            pkgs.gale
+          ];
         };
     };
 }
