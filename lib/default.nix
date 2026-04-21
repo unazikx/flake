@@ -25,29 +25,30 @@ inputs.flake-parts.lib.mkFlake
   {
     systems = [ "x86_64-linux" ];
 
-    imports = [
+    imports = with inputs; [
       # INFO:
       # will import only default.nix configurations
       # semi-dendritic
-      (inputs.import-tree.filter (nxosLib.hasSuffix "default.nix") [
+      (import-tree.filter (nxosLib.hasSuffix "default.nix") [
         # https://import-tree.oeiuwq.com/getting-started/quick-start
         # directories with name ./_something will be ignored
         ../modules
         ../machines
       ])
 
-      (inputs.import-tree [ ../persystem ])
+      (import-tree [ ../persystem ])
+
       # keep-sorted start
-      inputs.devshell.flakeModule
-      inputs.disko.flakeModule
-      # inputs.emanote.flakeModule
-      inputs.files.flakeModules.default
-      inputs.flake-parts.flakeModules.bundlers
-      inputs.github-actions-nix.flakeModule
-      inputs.home-manager.flakeModules.default
-      inputs.make-shell.flakeModules.default
-      inputs.nix-wrapper-modules.flakeModules.default
-      inputs.treefmt-nix.flakeModule
+      devshell.flakeModule
+      disko.flakeModule
+      process-compose-flake.flakeModule
+      files.flakeModules.default
+      flake-parts.flakeModules.bundlers
+      github-actions-nix.flakeModule
+      home-manager.flakeModules.default
+      make-shell.flakeModules.default
+      nix-wrapper-modules.flakeModules.default
+      treefmt-nix.flakeModule
       # keep-sorted end
     ];
 
