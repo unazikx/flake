@@ -41,13 +41,13 @@ inputs.flake-parts.lib.mkFlake
       # keep-sorted start
       devshell.flakeModule
       disko.flakeModule
-      process-compose-flake.flakeModule
       files.flakeModules.default
       flake-parts.flakeModules.bundlers
       github-actions-nix.flakeModule
       home-manager.flakeModules.default
       make-shell.flakeModules.default
       nix-wrapper-modules.flakeModules.default
+      process-compose-flake.flakeModule
       treefmt-nix.flakeModule
       # keep-sorted end
     ];

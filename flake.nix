@@ -130,12 +130,6 @@
       repo = "files";
     };
 
-    process-compose-flake = {
-      type = "github";
-      owner = "Platonic-Systems";
-      repo = "process-compose-flake";
-    };
-
     firefox-addons = {
       type = "github";
       owner = "petrkozorezov";
@@ -386,6 +380,12 @@
       repo = "plasma-manager";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
+    };
+
+    process-compose-flake = {
+      type = "github";
+      owner = "Platonic-Systems";
+      repo = "process-compose-flake";
     };
 
     proxy-suite-flake = {
