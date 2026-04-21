@@ -44,34 +44,9 @@
             own = my-own-packages.legacyPackages.${system};
 
             # keep-sorted start block=yes newline_separated=yes
-            better-than-adventure =
-              (pkgs.vanillaServers.vanilla.overrideAttrs rec {
-                version = "7.3_04";
-                src = _old.fetchurl {
-                  url = "https://github.com/Better-than-Adventure/bta-download-repo/releases/download/v${version}/bta.v${version}.server.jar";
-                  hash = "sha256-e8hQm3NejclSo8INGtn7TxEyE3/lBq1Cz7dRsDfcx2c=";
-                };
-              }).override
-                { jre_headless = _old.temurin-jre-bin-21; };
+            _freesmlauncher = inputs.freesm-launcher.packages.${pkgs.system}.freesmlauncher;
 
-            driftwm = inputs.driftwm.packages.${system}.default;
-
-            hytale-launcher = inputs.hytale-launcher.packages.${pkgs.system}.default;
-
-            max-messenger = inputs.max-messenger.packages.${system}.default;
-
-            nilla-cli = inputs.nilla-cli.packages.${system}.nilla-cli;
-
-            ouch = pkgs.ouch.override {
-              enableUnfree = true;
-            };
-
-            portablemc = pkgs.portablemc.override {
-              textToSpeechSupport = false;
-              jre = _old.temurin-jre-bin-25;
-            };
-
-            prismlauncher = pkgs.prismlauncher.override {
+            _prismConfig = {
               gamemodeSupport = true;
               controllerSupport = true;
               textToSpeechSupport = false;
@@ -89,6 +64,37 @@
                   ;
               };
             };
+
+            better-than-adventure =
+              (pkgs.vanillaServers.vanilla.overrideAttrs rec {
+                version = "7.3_04";
+                src = _old.fetchurl {
+                  url = "https://github.com/Better-than-Adventure/bta-download-repo/releases/download/v${version}/bta.v${version}.server.jar";
+                  hash = "sha256-e8hQm3NejclSo8INGtn7TxEyE3/lBq1Cz7dRsDfcx2c=";
+                };
+              }).override
+                { jre_headless = _old.temurin-jre-bin-21; };
+
+            driftwm = inputs.driftwm.packages.${system}.default;
+
+            freesmlauncher = _old._freesmlauncher.override _old._prismConfig;
+
+            hytale-launcher = inputs.hytale-launcher.packages.${pkgs.system}.default;
+
+            max-messenger = inputs.max-messenger.packages.${system}.default;
+
+            nilla-cli = inputs.nilla-cli.packages.${system}.nilla-cli;
+
+            ouch = pkgs.ouch.override {
+              enableUnfree = true;
+            };
+
+            portablemc = pkgs.portablemc.override {
+              textToSpeechSupport = false;
+              jre = _old.temurin-jre-bin-25;
+            };
+
+            prismlauncher = pkgs.prismlauncher.override _old._prismConfig;
 
             rc2nix = inputs.plasma-manager.packages.${system}.rc2nix;
 

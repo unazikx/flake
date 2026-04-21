@@ -150,6 +150,13 @@
       repo = "flake-utils";
     };
 
+    freesm-launcher = {
+      type = "github";
+      owner = "FreesmTeam";
+      repo = "FreesmLauncher";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     github-actions-nix = {
       type = "github";
       owner = "synapdeck";
