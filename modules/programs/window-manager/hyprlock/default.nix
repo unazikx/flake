@@ -35,7 +35,7 @@
                   color = "rgb(${colors.base03})";
                   blur_passes = 4;
                   blur_size = 12;
-                  path = inputs.wallpapers.plantFlower;
+                  path = config.stylix.image;
                 };
 
                 input-field = {

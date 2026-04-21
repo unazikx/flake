@@ -96,8 +96,6 @@
                     ]
                   } {
                     body {
-                      background-image: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0)),
-                        url("file://${inputs.wallpapers."moonWithSputnik"}") !important;
                       background-position: center !important;
                       background-repeat: no-repeat !important;
                       background-attachment: fixed !important;
