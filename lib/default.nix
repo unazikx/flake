@@ -25,32 +25,36 @@ inputs.flake-parts.lib.mkFlake
   {
     systems = [ "x86_64-linux" ];
 
-    imports = with inputs; [
-      # INFO:
-      # will import only default.nix configurations
-      # semi-dendritic
-      (import-tree.filter (nxosLib.hasSuffix "default.nix") [
+    imports =
+      with inputs;
+      let
+        mkFilter = file: import-tree.filter (nxosLib.hasSuffix file);
+      in
+      [
+        # INFO:
+        # will import only default.nix configurations
+        # semi-dendritic
+
         # https://import-tree.oeiuwq.com/getting-started/quick-start
         # directories with name ./_something will be ignored
-        ../modules
-        ../machines
-      ])
+        (mkFilter "default.nix" [ ../modules ])
+        (mkFilter "configuration.nix" [ ../machines ])
 
-      (import-tree [ ../persystem ])
+        (import-tree [ ../persystem ])
 
-      # keep-sorted start
-      devshell.flakeModule
-      disko.flakeModule
-      files.flakeModules.default
-      flake-parts.flakeModules.bundlers
-      github-actions-nix.flakeModule
-      home-manager.flakeModules.default
-      make-shell.flakeModules.default
-      nix-wrapper-modules.flakeModules.default
-      process-compose-flake.flakeModule
-      treefmt-nix.flakeModule
-      # keep-sorted end
-    ];
+        # keep-sorted start
+        devshell.flakeModule
+        disko.flakeModule
+        files.flakeModules.default
+        flake-parts.flakeModules.bundlers
+        github-actions-nix.flakeModule
+        home-manager.flakeModules.default
+        make-shell.flakeModules.default
+        nix-wrapper-modules.flakeModules.default
+        process-compose-flake.flakeModule
+        treefmt-nix.flakeModule
+        # keep-sorted end
+      ];
 
     flake =
       {
@@ -59,7 +63,11 @@ inputs.flake-parts.lib.mkFlake
       }:
       {
         _module.args = {
-          inherit extendedLib inputs;
+          inherit
+            extendedLib
+            self
+            inputs
+            ;
           _config = config;
         };
 
@@ -76,7 +84,12 @@ inputs.flake-parts.lib.mkFlake
         ...
       }:
       {
-        _module.args = { inherit extendedLib inputs; };
+        _module.args = {
+          inherit
+            extendedLib
+            inputs
+            ;
+        };
       };
 
     debug = true;

@@ -15,6 +15,7 @@ let
     agenix.nixosModules.default
     dank-material-shell-plugins.nixosModules.default
     dank-material-shell.nixosModules.dank-material-shell
+    microvm-nix.nixosModules.microvm
     disko.nixosModules.default
     home-manager.nixosModules.home-manager
     impermanence.nixosModules.impermanence
@@ -156,7 +157,6 @@ rec {
           nxosModules
           ++ extraModules
           ++ [
-            self.diskoConfigurations.${configurationName}
             (
               { lib, config, ... }:
               let

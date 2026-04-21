@@ -1,8 +1,9 @@
 {
   flake =
     {
-      extendedLib,
+      self,
       config,
+      extendedLib,
       ...
     }:
     let
@@ -63,6 +64,8 @@
               ;
           })
           ++ [
+            self.diskoConfigurations.${configurationName}
+
             (
               {
                 pkgs,
