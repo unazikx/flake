@@ -1,6 +1,3 @@
-# INFO:
-# options list - https://nvf.notashelf.dev/options.html
-
 {
   perSystem =
     {
@@ -10,7 +7,7 @@
     {
       legacyPackages.${baseNameOf ./.} = {
         foot =
-          (pkgs.wrapperModules.foot.apply {
+          (pkgs.wrappers.foot.apply {
             inherit pkgs;
 
             settings = {
@@ -21,6 +18,7 @@
                 letter-spacing = 0;
                 pad = "20x20 center";
                 resize-by-cells = "yes";
+                dpi-aware = "yes";
               };
 
               bell.system = "no";

@@ -99,7 +99,7 @@ inputs.flake-parts.lib.mkFlake
             overlays = [
               (_final: _prev: {
                 inherit (inputs.nix-wrapper-modules)
-                  wrapperModules
+                  wrappers
                   ;
 
                 inherit (inputs.nix-wrapper-modules.lib)
