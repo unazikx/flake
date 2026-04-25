@@ -8,18 +8,18 @@ keys:
 # > sops updatekeys ./file
 
 creation_rules:
-  - path_regex: machines/thinkpadT14/secrets.nix
+  - path_regex: machines/thinkpadT14/.secrets.yaml
     key_groups:
       - age:
           - *thinkpadT14
 
-  - path_regex: machines/pcRyazenka/secrets.nix
+  - path_regex: machines/pcRyazenka/.secrets.yaml
     key_groups:
       - age:
           - *pcRyazenka
 
   # allows to create .<name>.ext
-  - path_regex: machines/secrets.yaml
+  - path_regex: machines/.secrets.yaml
     key_groups:
       - age:
           - *pcRyazenka
