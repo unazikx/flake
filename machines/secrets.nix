@@ -28,4 +28,4 @@ lib.mkSecrets.sopsnix [
   "tokens/spotify-player"
   "tokens/viu"
   # keep-sorted end
-] ./secrets.yaml
+] ./.secrets.yaml

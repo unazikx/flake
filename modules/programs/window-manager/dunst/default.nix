@@ -60,14 +60,18 @@
                     ];
               };
 
-              urgency_low.timeout = 3;
+              urgency_low = {
+                timeout = 3;
+              };
 
               urgency_normal = {
                 timeout = 5;
                 frame_color = lib.mkForce config.lib.stylix.colors.withHashtag.base04;
               };
 
-              urgency_critical.timeout = 0;
+              urgency_critical = {
+                timeout = 0;
+              };
             };
           };
         };
