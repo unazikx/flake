@@ -101,13 +101,13 @@
                 # INFO:
                 # for other text
                 sansSerif = {
-                  package = pkgs.nerd-fonts.roboto-mono;
-                  name = "CaskaydiaCove Nerd Font Propo";
+                  package = pkgs.inter;
+                  name = "Inter";
                 };
 
                 serif = {
-                  package = pkgs.nerd-fonts.roboto-mono;
-                  name = "RobotoMono Nerd Font Propo";
+                  package = pkgs.inter;
+                  name = "Inter";
                 };
 
                 # WARN:

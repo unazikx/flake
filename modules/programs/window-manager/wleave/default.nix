@@ -58,7 +58,7 @@
               with config.lib.stylix.colors.withHashtag;
               ''
                 * {
-                  font-family: "${config.stylix.fonts.monospace.name}";
+                  font-family: "${config.stylix.fonts.sansSerif.name}";
                   font-size: ${toString config.stylix.fonts.sizes.desktop}pt;
                   background-image: none;
                 }

@@ -24,7 +24,12 @@
             settings = {
               config_location = "${lib.flakeDir}#${lib.configurationName}";
 
-              apply.use_nom = true;
+              confirmation.always = true;
+
+              apply = {
+                use_nom = true;
+                reexec_as_root = true;
+              };
 
               differ = {
                 tool = "command";

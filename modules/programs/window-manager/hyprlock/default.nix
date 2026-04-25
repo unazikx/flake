@@ -75,7 +75,7 @@
                   }
 
                   {
-                    text = "󰌌 $LAYOUT";
+                    text = "󰌌  $LAYOUT";
                     color = "rgb(${colors.base05})";
                     font_family = config.stylix.fonts.sansSerif.name;
                     font_size = config.stylix.fonts.sizes.applications;
@@ -104,7 +104,6 @@
                 ];
 
                 input-field = {
-
                   outline_thickness = 3;
                   fade_on_empty = true;
 
