@@ -22,8 +22,8 @@
             enable = true;
 
             discord.enable = false; # why?
-            equibop.enable = true; # equibop is newgen vesktop
 
+            equibop.enable = true; # equibop is newgen vesktop
             equibopConfig = import ./settings.nix {
               inherit
                 lib
@@ -33,7 +33,7 @@
           };
 
           hmMime = lib.mkMime {
-            "vesktop.desktop" = [ "x-scheme-handler/discord" ];
+            "equibop.desktop" = [ "x-scheme-handler/discord" ];
           };
         };
     };
