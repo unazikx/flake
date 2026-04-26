@@ -35,6 +35,7 @@ let
     stylix.nixosModules.default
     telegram-ws-proxy.nixosModules.tg-ws-proxy
     zapret-discord.nixosModules.default
+    helium-flake.nixosModules.helium
     zapret-presets.nixosModules.presets
     # keep-sorted end
   ];
@@ -51,6 +52,7 @@ let
     nixcord.homeModules.nixcord
     nixcraft.homeModules.default
     spicetify-nix.homeManagerModules.default
+    helium-flake.homeModules.helium
     telegram-ws-proxy.homeModules.tg-ws-proxy
     zen-browser.homeModules.twilight
     # keep-sorted end

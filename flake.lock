@@ -945,6 +945,29 @@
         "type": "github"
       }
     },
+    "helium-flake": {
+      "inputs": {
+        "flake-parts": [
+          "flake-parts"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1776160196,
+        "narHash": "sha256-6vt4ebaJ/b5qeXapWzYtSh3g6Wd/8XOAJ2zo8wOAyQQ=",
+        "owner": "ntgn",
+        "repo": "helium-flake",
+        "rev": "9946ec4be3f81e48e49595bd9307bf544a05cee0",
+        "type": "gitlab"
+      },
+      "original": {
+        "owner": "ntgn",
+        "repo": "helium-flake",
+        "type": "gitlab"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -1271,11 +1294,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1776682159,
-        "narHash": "sha256-reXjfwHuCdkz94nJUXZrzBEAXuuBvddTy66Wyx/J8zU=",
+        "lastModified": 1777183065,
+        "narHash": "sha256-MIg4W38isDNY+WG+OQEa+5AZcIIs6riumawpsGSnrzE=",
         "owner": "unazikx",
         "repo": "nix-packages",
-        "rev": "b275d20d35b692ac7077bbde8ea0076728daa03c",
+        "rev": "5d75c2fdc58a36aa34cd5682b3e24face937c08a",
         "type": "github"
       },
       "original": {
@@ -1975,6 +1998,7 @@
         "freesm-launcher": "freesm-launcher",
         "github-actions-nix": "github-actions-nix",
         "glide-browser": "glide-browser",
+        "helium-flake": "helium-flake",
         "home-manager": "home-manager",
         "hytale-launcher": "hytale-launcher",
         "impermanence": "impermanence",

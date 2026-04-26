@@ -57,6 +57,14 @@
       inputs.home-manager.follows = "";
     };
 
+    helium-flake = {
+      type = "gitlab";
+      owner = "ntgn";
+      repo = "helium-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-parts.follows = "flake-parts";
+    };
+
     agenix-rekey = {
       type = "github";
       owner = "oddlama";
