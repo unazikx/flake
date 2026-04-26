@@ -16,6 +16,7 @@ let
     dank-material-shell-plugins.nixosModules.default
     dank-material-shell.nixosModules.dank-material-shell
     disko.nixosModules.default
+    helium-flake.nixosModules.helium
     home-manager.nixosModules.home-manager
     impermanence.nixosModules.impermanence
     lsfg-vk-flake.nixosModules.default
@@ -35,7 +36,6 @@ let
     stylix.nixosModules.default
     telegram-ws-proxy.nixosModules.tg-ws-proxy
     zapret-discord.nixosModules.default
-    helium-flake.nixosModules.helium
     zapret-presets.nixosModules.presets
     # keep-sorted end
   ];
@@ -45,6 +45,7 @@ let
     dank-material-shell-plugins.homeModules.default
     dank-material-shell.homeModules.dank-material-shell
     glide-browser.homeModules.default
+    helium-flake.homeModules.helium
     mangowc.hmModules.mango
     niri-flake.homeModules.niri
     niri-flake.homeModules.stylix
@@ -52,7 +53,6 @@ let
     nixcord.homeModules.nixcord
     nixcraft.homeModules.default
     spicetify-nix.homeManagerModules.default
-    helium-flake.homeModules.helium
     telegram-ws-proxy.homeModules.tg-ws-proxy
     zen-browser.homeModules.twilight
     # keep-sorted end
