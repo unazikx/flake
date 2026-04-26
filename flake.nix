@@ -65,6 +65,14 @@
       inputs.flake-parts.follows = "flake-parts";
     };
 
+    anyrun = {
+      type = "github";
+      owner = "anyrun-org";
+      repo = "anyrun";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-parts.follows = "flake-parts";
+    };
+
     dank-material-shell = {
       type = "github";
       owner = "AvengeMedia";
