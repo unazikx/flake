@@ -41,9 +41,9 @@
               plugins = lib.attrValues {
                 inherit (pkgs.obs-studio-plugins)
                   # keep-sorted start
+                  droidcam-obs
                   input-overlay
                   obs-backgroundremoval
-                  droidcam-obs
                   obs-multi-rtmp
                   obs-pipewire-audio-capture
                   obs-vaapi
