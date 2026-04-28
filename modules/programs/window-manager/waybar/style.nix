@@ -60,7 +60,7 @@ in
   }
 
   #workspaces button.active label {
-    color: ${base02};
+    color: ${base00};
     font-weight: bolder;
   }
 
