@@ -42,7 +42,7 @@ let
 
   homeModules = with inputs; [
     # keep-sorted start
-    anyrun.homeManagerModules.default
+    # anyrun.homeManagerModules.default
     dank-material-shell-plugins.homeModules.default
     dank-material-shell.homeModules.dank-material-shell
     glide-browser.homeModules.default

@@ -17,11 +17,7 @@
           ...
         }:
         let
-          inherit (config.hm.xdg.userDirs)
-            videos
-            ;
-
-          savePath = videos + "/videocasts";
+          savePath = "${config.hm.xdg.userDirs.videos}/videocasts";
 
           obsTheme = import ./obs-theme.nix {
             inherit config;
@@ -36,6 +32,8 @@
             pkgs.wf-recorder
           ];
 
+          programs.droidcam.enable = true;
+
           hm = {
             programs.obs-studio = {
               enable = true;
@@ -45,6 +43,7 @@
                   # keep-sorted start
                   input-overlay
                   obs-backgroundremoval
+                  droidcam-obs
                   obs-multi-rtmp
                   obs-pipewire-audio-capture
                   obs-vaapi
