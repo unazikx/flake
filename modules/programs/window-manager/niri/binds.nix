@@ -62,48 +62,50 @@ in
     (bind "${m}+M" (spawn-sh "spotify"))
     (bind "${m}+${s}+M" (spawn-sh "obsidian"))
   ]
-  ++
-    # main actions
-    [
-      (bind "${m}+${s}+Slash" show-hotkey-overlay) # help
+  # main actions
+  ++ [
+    (bind "${m}+${s}+Slash" show-hotkey-overlay) # help
 
-      (bind "${m}+Q" close-window)
+    (bind "${m}+Q" close-window)
 
-      (bind "${m}+Space" toggle-overview)
-      (bind "${m}+${a}+Space" toggle-window-floating)
-      (bind "${m}+${s}+Space" (
-        spawn-sh (
-          lib.getExe (
-            pkgs.writeShellScriptBin "niri-view-window-title" ''
-              cmd=$(niri msg pick-window)
-              title=$(awk -F'"' '/Title:/ {print $2}' <<< "$cmd")
-              app_id=$(awk -F'"' '/App ID:/ {print $2}' <<< "$cmd")
-              [ -n "$title" ] && ${lib.getExe pkgs.libnotify} \
-                -t 1000 -a niri-title "$title - $app_id"
-            ''
-          )
+    (bind "${m}+C" center-window)
+    (bind "${m}+${s}+C" center-column)
+
+    (bind "${m}+Space" toggle-overview)
+    (bind "${m}+${a}+Space" toggle-window-floating)
+    (bind "${m}+${s}+Space" (
+      spawn-sh (
+        lib.getExe (
+          pkgs.writeShellScriptBin "niri-view-window-title" ''
+            cmd=$(niri msg pick-window)
+            title=$(awk -F'"' '/Title:/ {print $2}' <<< "$cmd")
+            app_id=$(awk -F'"' '/App ID:/ {print $2}' <<< "$cmd")
+            [ -n "$title" ] && ${lib.getExe pkgs.libnotify} \
+              -t 1000 -a niri-title "$title - $app_id"
+          ''
         )
-      ))
+      )
+    ))
 
-      (bind "${m}+F" fullscreen-window)
-      (bind "${m}+${s}+F" maximize-column)
+    (bind "${m}+F" fullscreen-window)
+    (bind "${m}+${s}+F" maximize-column)
 
-      # (bind "Print" (spawn "niri" "msg" "action" "screenshot-screen"))
-      # (bind "${s}+Print" screenshot-window)
-      # https://github.com/sodiboo/niri-flake/issues/1380
-      # fuck it, i w'ont to fuck with this
+    # (bind "Print" (spawn "niri" "msg" "action" "screenshot-screen"))
+    # (bind "${s}+Print" screenshot-window)
+    # https://github.com/sodiboo/niri-flake/issues/1380
+    # fuck it, i w'ont to fuck with this
 
-      (bind "${m}+S" switch-preset-column-width)
-      (bind "${m}+${s}+S" switch-preset-window-height)
+    (bind "${m}+S" switch-preset-column-width)
+    (bind "${m}+${s}+S" switch-preset-window-height)
 
-      (bind "${m}+Minus" (set-column-width "-10%"))
-      (bind "${m}+Equal" (set-column-width "+10%"))
-      (bind "${m}+${s}+Minus" (set-window-height "-10%"))
-      (bind "${m}+${s}+Equal" (set-window-height "+10%"))
+    (bind "${m}+Minus" (set-column-width "-10%"))
+    (bind "${m}+Equal" (set-column-width "+10%"))
+    (bind "${m}+${s}+Minus" (set-window-height "-10%"))
+    (bind "${m}+${s}+Equal" (set-window-height "+10%"))
 
-      (bind "${m}+Comma" consume-window-into-column)
-      (bind "${m}+Period" expel-window-from-column)
-    ]
+    (bind "${m}+Comma" consume-window-into-column)
+    (bind "${m}+Period" expel-window-from-column)
+  ]
   # windows manipukating
   ++ [
     (bind "${m}+H" focus-column-left)
