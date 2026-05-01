@@ -39,12 +39,11 @@
               package = pkgs.steam.override {
                 # INFO:
                 # doenst works with greetd
-                # moved to hyprland
-                # extraArgs = concatStringsSep " " [
-                #   "-nochatui"
-                #   "-nofriendsui"
-                #   "-silent"
-                # ];
+                extraArgs = lib.concatStringsSep " " [
+                  "-nochatui"
+                  "-nofriendsui"
+                  "-silent"
+                ];
 
                 extraEnv = {
                   MANGOHUD = config.hm.programs.mangohud.enable;
@@ -84,29 +83,6 @@
               enable = true;
               enableRenice = true;
             };
-          };
-
-          hm.systemd.user.services.steam = {
-            Unit = {
-              Description = cfg.package.meta.description;
-              After = [ "graphical-session.target" ];
-            };
-
-            Service = {
-              ExecStart = lib.concatStringsSep " " [
-                (lib.getExe cfg.package)
-                "-nochatui"
-                "-nofriendsui"
-                "-silent"
-              ];
-
-              Type = "simple";
-              KillMode = "process";
-              Restart = "on-failure";
-              RestartSec = 5;
-            };
-
-            Install.WantedBy = [ "graphical-session.target" ];
           };
         };
     };

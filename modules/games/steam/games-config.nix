@@ -84,6 +84,18 @@ rec {
         worms-wmd = {
           id = 327030;
         };
+
+        citizen-sleeper = {
+          id = 1578650;
+        };
+
+        citizen-sleeper-2 = {
+          id = 2442460;
+        };
+
+        darksiders-genesis = {
+          id = 710920;
+        };
       }
     )
   ];
