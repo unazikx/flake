@@ -20,26 +20,26 @@
           toml = pkgs.formats.toml { };
         in
         {
-          hm.systemd.user.services.niri-sidebar = {
-            Unit = {
-              Description = pkg.meta.description;
-              After = [ "niri.service" ];
-              Wants = [ "niri.service" ];
-            };
-
-            Service = {
-              ExecStart = "${lib.getExe pkg} listen";
-
-              Type = "simple";
-              KillMode = "process";
-              Restart = "on-failure";
-              RestartSec = 5;
-            };
-
-            Install.WantedBy = [ "graphical-session.target" ];
-          };
-
           hm = {
+            systemd.user.services.niri-sidebar = {
+              Unit = {
+                Description = pkg.meta.description;
+                After = [ "niri.service" ];
+                Wants = [ "niri.service" ];
+              };
+
+              Service = {
+                ExecStart = "${lib.getExe pkg} listen";
+
+                Type = "simple";
+                KillMode = "process";
+                Restart = "on-failure";
+                RestartSec = 5;
+              };
+
+              Install.WantedBy = [ "graphical-session.target" ];
+            };
+
             xdg.configFile = {
               "niri-sidebar/config.toml".source = toml.generate "config.toml" {
                 geometry = {

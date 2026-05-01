@@ -21,6 +21,7 @@
               niri
               niri-bg
               niri-sidebar
+              sunsetr
               tofi
               waybar
               wleave
