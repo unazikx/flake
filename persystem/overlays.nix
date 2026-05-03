@@ -85,6 +85,13 @@
 
             nilla-cli = inputs.nilla-cli.packages.${system}.nilla-cli;
 
+            steam-flagged = lib.concatStringsSep " " [
+              (lib.getExe _old.steam)
+              "-nochatui"
+              "-nofriendsui"
+              "-silent"
+            ];
+
             ouch = pkgs.ouch.override {
               enableUnfree = true;
             };

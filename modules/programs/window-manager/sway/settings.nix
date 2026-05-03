@@ -52,7 +52,12 @@ lib.mkMerge [
         always = false;
       }
       {
-        command = lib.getExe config.programs.steam.package;
+        command = lib.concatStringsSep " " [
+          (lib.getExe config.programs.steam.package)
+          "-nochatui"
+          "-nofriendsui"
+          "-silent"
+        ];
         always = false;
       }
       {

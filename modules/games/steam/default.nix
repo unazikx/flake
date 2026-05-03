@@ -36,11 +36,11 @@
               package = pkgs.steam.override {
                 # INFO:
                 # doenst works with greetd
-                extraArgs = lib.concatStringsSep " " [
-                  "-nochatui"
-                  "-nofriendsui"
-                  "-silent"
-                ];
+                # extraArgs = lib.concatStringsSep " " [
+                #   "-nochatui"
+                #   "-nofriendsui"
+                #   "-silent"
+                # ];
 
                 extraEnv = {
                   MANGOHUD = config.hm.programs.mangohud.enable;

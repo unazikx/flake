@@ -234,7 +234,12 @@ with config.lib.stylix.colors.withHashtag;
 
   spawn-at-startup = [
     {
-      sh = lib.getExe config.programs.steam.package;
+      sh = lib.concatStringsSep " " [
+        (lib.getExe config.programs.steam.package)
+        "-nochatui"
+        "-nofriendsui"
+        "-silent"
+      ];
     }
     {
       sh = lib.concatStringsSep " " [
