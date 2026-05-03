@@ -39,11 +39,11 @@
               package = pkgs.steam.override {
                 # INFO:
                 # doenst works with greetd
-                extraArgs = lib.concatStringsSep " " [
-                  "-nochatui"
-                  "-nofriendsui"
-                  "-silent"
-                ];
+                # extraArgs = lib.concatStringsSep " " [
+                #   "-nochatui"
+                #   "-nofriendsui"
+                #   "-silent"
+                # ];
 
                 extraEnv = {
                   MANGOHUD = config.hm.programs.mangohud.enable;
@@ -82,6 +82,30 @@
             gamemode = {
               enable = true;
               enableRenice = true;
+            };
+          };
+
+          hm.systemd.user.services = {
+            steam-autostart = {
+              Unit = {
+                Description = cfg.package.meta.description;
+                PartOf = [ "basic.target" ];
+                After = [ "basic.target" ];
+              };
+
+              Service = {
+                ExecStart = lib.concatStringsSep " " [
+                  (lib.getExe cfg.package)
+                  "-nochatui"
+                  "-nofriendsui"
+                  "-silent"
+                ];
+
+                Restart = "always";
+                RestartSec = 5;
+              };
+
+              Install.WantedBy = [ "basic.target" ];
             };
           };
         };

@@ -15,6 +15,8 @@ let
         attrs
       ]
     );
+
+  steamapps = "${config.hm.xdg.dataHome}/Steam/steamapps";
 in
 
 rec {
@@ -105,6 +107,7 @@ rec {
       (mkAttrset
         {
           compatTool = defaultCompatTool;
+          startIn = "${steamapps}/compatdata/0/pfx";
         }
         {
           voices-of-the-void = {
