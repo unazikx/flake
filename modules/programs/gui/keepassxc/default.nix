@@ -61,6 +61,7 @@
               Unit = {
                 Description = cfg.package.meta.description;
                 After = [ "graphical-session.target" ];
+                PartOf = [ "graphical-session.target" ];
               };
 
               Service = {

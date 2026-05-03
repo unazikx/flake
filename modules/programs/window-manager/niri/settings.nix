@@ -14,14 +14,6 @@ with config.lib.stylix.colors.withHashtag;
     "eDP-1".scale = 1.0;
   };
 
-  binds = import ./binds.nix {
-    inherit
-      pkgs
-      lib
-      config
-      ;
-  };
-
   input = {
     keyboard.xkb = {
       layout = "us,ru";
@@ -231,6 +223,26 @@ with config.lib.stylix.colors.withHashtag;
       color = base00;
     };
   };
+
+  binds = import ./binds.nix {
+    inherit
+      pkgs
+      lib
+      config
+      ;
+  };
+
+  spawn-at-startup = [
+    {
+      sh = lib.getExe config.programs.steam.package;
+    }
+    {
+      sh = lib.concatStringsSep " " [
+        (lib.getExe pkgs.ayugram-desktop)
+        "-startintray"
+      ];
+    }
+  ];
 
   clipboard.disable-primary = true;
   gestures.hot-corners.enable = false;

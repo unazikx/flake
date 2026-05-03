@@ -53,27 +53,6 @@
               };
             };
 
-            systemd.user.services.telegram-tray = {
-              Unit = {
-                Description = pkgs.ayugram-desktop.meta.description;
-                After = [ "graphical-session.target" ];
-              };
-
-              Service = {
-                ExecStart = lib.concatStringsSep " " [
-                  (lib.getExe pkgs.ayugram-desktop)
-                  "-startintray"
-                ];
-
-                Type = "simple";
-                KillMode = "process";
-                Restart = "on-failure";
-                RestartSec = 5;
-              };
-
-              Install.WantedBy = [ "graphical-session.target" ];
-            };
-
             home.activation = lib.mkIf config.hm.stylix.enable {
               telegramTheme =
                 lib.hm.dag.entryAfter [ "" ]

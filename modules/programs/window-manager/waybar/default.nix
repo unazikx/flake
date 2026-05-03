@@ -25,7 +25,11 @@
 
           hm.programs.waybar = {
             enable = true;
-            systemd.enable = true;
+
+            systemd = {
+              enable = true;
+              targets = [ "niri.service" ];
+            };
 
             style = import ./style.nix {
               inherit

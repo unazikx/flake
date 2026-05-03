@@ -51,6 +51,17 @@ lib.mkMerge [
         command = lib.getExe pkgs.autotiling-rs;
         always = false;
       }
+      {
+        command = lib.getExe config.programs.steam.package;
+        always = false;
+      }
+      {
+        command = lib.concatStringsSep " " [
+          (lib.getExe pkgs.ayugram-desktop)
+          "-startintray"
+        ];
+        always = false;
+      }
     ];
 
     colors =
