@@ -4,6 +4,7 @@
 {
   flake =
     {
+      _config,
       ...
     }:
     {
@@ -15,13 +16,25 @@
           ...
         }:
         {
+          imports = lib.attrValues {
+            inherit (_config.nixosModules)
+              # keep-sorted start
+              swaylock
+              swayidle
+              i3status-rust
+              # keep-sorted end
+              ;
+          };
+
           hm.wayland.windowManager.sway = {
             enable = true;
+            xwayland = true;
+            systemd.enable = true;
 
             package = pkgs.swayfx;
 
             config = (
-              import ./settings/main.nix {
+              import ./settings.nix {
                 inherit
                   pkgs
                   lib
@@ -30,29 +43,25 @@
               }
             );
 
-            extraConfig = (
-              import ./settings/extra.nix {
-                inherit
-                  config
-                  ;
-              }
-            );
+            extraConfig =
+              with config.lib.stylix.colors.withHashtag;
+              # sway
+              ''
+                corner_radius 10
 
-            swaynag = {
-              enable = true;
+                blur enable
+                blur_xray off
 
-              settings = (
-                import ./swaynag.nix {
-                  inherit
-                    config
-                    ;
-                }
-              );
-            };
+                shadows disable
+                shadows_on_csd enable
+                shadow_color ${base00}
+                shadow_blur_radius 12
+
+                default_dim_inactive 0.4
+                layer_effects "waybar" shadows disable; corner_radius 0; blur disable
+              '';
 
             checkConfig = false;
-            xwayland = true;
-            systemd.enable = true;
           };
         };
     };

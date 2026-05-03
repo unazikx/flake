@@ -23,6 +23,8 @@
           toml = pkgs.formats.toml { };
         in
         {
+          hmPackages = [ pkgs.sunsetr ];
+
           hm = {
             systemd.user.services.sunsetr = {
               Unit = {

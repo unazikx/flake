@@ -34,6 +34,7 @@
               cava
               discord
               fastfetch
+              sway
               firefox
               flood
               gdu
