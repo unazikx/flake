@@ -19,9 +19,9 @@
           imports = lib.attrValues {
             inherit (_config.nixosModules)
               # keep-sorted start
-              swaylock
-              swayidle
               i3status-rust
+              swayidle
+              swaylock
               # keep-sorted end
               ;
           };

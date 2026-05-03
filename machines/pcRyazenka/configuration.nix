@@ -34,7 +34,6 @@
               cava
               discord
               fastfetch
-              sway
               firefox
               flood
               gdu
@@ -50,6 +49,7 @@
               rusted-tools
               sopsnix
               spotify
+              sway
               syncthing
               system-monitor
               tailscale
