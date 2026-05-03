@@ -15,17 +15,10 @@
           ...
         }:
         {
-          programs.niri = {
-            enable = true;
-            package = pkgs.niri-unstable;
-          };
-
           hm = {
             programs.niri = {
-              inherit (config.programs.niri)
-                enable
-                package
-                ;
+              enable = true;
+              package = pkgs.niri-unstable;
 
               settings = import ./settings.nix {
                 inherit

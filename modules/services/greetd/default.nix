@@ -18,6 +18,7 @@
         {
           services.greetd = {
             enable = true;
+
             useTextGreeter = true;
             greeterManagesPlymouth = true;
 
@@ -46,11 +47,7 @@
 
               initial_session = {
                 user = lib.userName;
-                command =
-                  if config.programs.uwsm.enable then
-                    "uwsm start niri-uwsm.desktop"
-                  else
-                    lib.getExe' config.programs.niri.package "niri-session";
+                command = lib.getExe' config.hm.programs.niri.package "niri-session";
               };
             };
           };
