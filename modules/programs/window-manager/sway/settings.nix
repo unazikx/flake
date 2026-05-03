@@ -23,8 +23,8 @@ lib.mkMerge [
     workspaceAutoBackAndForth = false;
 
     gaps = {
-      inner = 10;
-      outer = 4;
+      inner = 6;
+      outer = 2;
       smartBorders = "on";
       smartGaps = true;
     };
