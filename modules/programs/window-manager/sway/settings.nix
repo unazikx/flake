@@ -67,6 +67,13 @@ lib.mkMerge [
         ];
         always = false;
       }
+      {
+        command = lib.concatStringsSep " " [
+          (lib.getExe config.hm.programs.nixcord.equibop.package)
+          "--start-minimized"
+        ];
+        always = false;
+      }
     ];
 
     colors =

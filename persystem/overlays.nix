@@ -85,13 +85,6 @@
 
             nilla-cli = inputs.nilla-cli.packages.${system}.nilla-cli;
 
-            steam-flagged = lib.concatStringsSep " " [
-              (lib.getExe _old.steam)
-              "-nochatui"
-              "-nofriendsui"
-              "-silent"
-            ];
-
             ouch = pkgs.ouch.override {
               enableUnfree = true;
             };
@@ -116,6 +109,13 @@
               withSixel = false;
               withFuzzy = false;
             };
+
+            steam-flagged = lib.concatStringsSep " " [
+              (lib.getExe _old.steam)
+              "-nochatui"
+              "-nofriendsui"
+              "-silent"
+            ];
 
             suwayomi-server = pkgs.suwayomi-server.override {
               jdk21_headless = _old.temurin-jre-bin-21;

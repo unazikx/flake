@@ -14,17 +14,14 @@
           imports = lib.attrValues {
             inherit (_config.nixosModules)
               # keep-sorted start
-              clipboard
               dunst
-              hyprlock
-              kitty
-              niri
-              niri-bg
-              niri-sidebar
+              foot
+              i3status-rust
               sunsetr
+              sway
+              swayidle
+              swaylock
               tofi
-              waybar
-              wleave
               wob
               # keep-sorted end
               ;

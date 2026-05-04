@@ -4,7 +4,6 @@
 {
   flake =
     {
-      _config,
       ...
     }:
     {
@@ -16,16 +15,6 @@
           ...
         }:
         {
-          imports = lib.attrValues {
-            inherit (_config.nixosModules)
-              # keep-sorted start
-              i3status-rust
-              swayidle
-              swaylock
-              # keep-sorted end
-              ;
-          };
-
           hm.wayland.windowManager.sway = {
             enable = true;
             xwayland = true;

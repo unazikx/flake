@@ -26,6 +26,7 @@
               sound
               theming
               users
+              xdg
               # keep-sorted end
               ;
           };

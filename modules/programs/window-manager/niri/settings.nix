@@ -247,6 +247,12 @@ with config.lib.stylix.colors.withHashtag;
         "-startintray"
       ];
     }
+    {
+      sh = lib.concatStringsSep " " [
+        (lib.getExe config.hm.programs.nixcord.equibop.package)
+        "--start-minimized"
+      ];
+    }
   ];
 
   clipboard.disable-primary = true;

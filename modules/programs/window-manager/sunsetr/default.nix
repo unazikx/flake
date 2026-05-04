@@ -55,10 +55,11 @@
                   shutdown_duration = 2;
                   adaptive_interval = 1;
 
-                  night_temp = 3900;
-                  night_gamma = 90;
                   day_temp = 6500;
                   day_gamma = 100;
+
+                  night_temp = 4800;
+                  night_gamma = 90;
 
                   static_temp = 6500;
                   static_gamma = 100;

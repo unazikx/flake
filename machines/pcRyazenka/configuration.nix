@@ -49,7 +49,6 @@
               rusted-tools
               sopsnix
               spotify
-              sway
               syncthing
               system-monitor
               tailscale
