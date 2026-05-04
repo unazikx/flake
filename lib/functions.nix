@@ -125,4 +125,16 @@
     genOptions =
       options: lib.concatStringsSep "\n" (lib.mapAttrsToList (k: v: "${k}:${formatValue v}") options);
   };
+
+  steam = {
+    mkAttrset =
+      options:
+      lib.mapAttrs (
+        _: attrs:
+        lib.mkMerge [
+          options
+          attrs
+        ]
+      );
+  };
 }

@@ -1,23 +1,8 @@
 {
   pkgs,
   lib,
-  config,
   ...
 }:
-
-let
-  mkAttrset =
-    options:
-    lib.mapAttrs (
-      _: attrs:
-      lib.mkMerge [
-        options
-        attrs
-      ]
-    );
-
-  steamapps = "${config.hm.xdg.dataHome}/Steam/steamapps";
-in
 
 rec {
   enable = true;
@@ -26,7 +11,7 @@ rec {
   defaultCompatTool = "GE-Proton";
 
   apps = lib.mkMerge [
-    (mkAttrset
+    (lib.steam.mkAttrset
       {
         launchOptions = {
           wrappers = [ (lib.getExe pkgs.gamemode) ];
@@ -47,7 +32,7 @@ rec {
     )
 
     # default proton tool
-    (mkAttrset
+    (lib.steam.mkAttrset
       {
         compatTool = defaultCompatTool;
         launchOptions = {
@@ -101,31 +86,4 @@ rec {
       }
     )
   ];
-
-  nonSteamApps = lib.mkIf (lib.configurationName == "pcRyazenka") (
-    lib.mkMerge [
-      (mkAttrset
-        {
-          compatTool = defaultCompatTool;
-          startIn = "${steamapps}/compatdata/0/pfx";
-        }
-        {
-          voices-of-the-void = {
-            name = "Voices of the Void";
-            target = lib.getExe pkgs.own.games.votv;
-            launchOptions =
-              let
-                r2modman-enabled = true;
-              in
-              lib.mkIf r2modman-enabled {
-                env.WINEDLLOVERRIDES = "winhttp,version=n,b";
-                wrappers = [
-                  "${config.hm.xdg.configHome}/r2modmanPlus-local/VotV/linux_wrapper.sh"
-                ];
-              };
-          };
-        }
-      )
-    ]
-  );
 }
