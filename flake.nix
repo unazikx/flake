@@ -455,7 +455,7 @@
 
     steam-config-nix = {
       type = "github";
-      owner = "different-name";
+      owner = "unazikx";
       repo = "steam-config-nix";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-parts.follows = "flake-parts";

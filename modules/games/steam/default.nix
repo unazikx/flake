@@ -65,7 +65,7 @@
               };
 
               config = import ./games-config.nix {
-                inherit pkgs lib;
+                inherit pkgs lib config;
               };
 
               platformOptimizations.enable = true;

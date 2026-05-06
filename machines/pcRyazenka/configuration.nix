@@ -122,39 +122,9 @@
                     ]
                 );
 
-                programs.steam.config =
-                  let
-                    inherit (config.programs.steam.config) defaultCompatTool;
-                    steamapps = "${config.hm.xdg.dataHome}/Steam/steamapps";
-                  in
-                  {
-                    nonSteamApps = (
-                      lib.mkMerge [
-                        (lib.steam.mkAttrset
-                          {
-                            compatTool = defaultCompatTool;
-                            startIn = "${steamapps}/compatdata/0/pfx";
-                          }
-                          {
-                            voices-of-the-void = {
-                              name = "Voices of the Void";
-                              target = lib.getExe pkgs.own.games.votv;
-                              launchOptions =
-                                let
-                                  r2modman-enabled = true;
-                                in
-                                lib.mkIf r2modman-enabled {
-                                  env.WINEDLLOVERRIDES = "winhttp,version=n,b";
-                                  wrappers = [
-                                    "${config.hm.xdg.configHome}/r2modmanPlus-local/VotV/linux_wrapper.sh"
-                                  ];
-                                };
-                            };
-                          }
-                        )
-                      ]
-                    );
-                  };
+                programs.steam.config.nonSteamApps = {
+                  voices-of-the-void.enable = true;
+                };
               }
             )
           ];

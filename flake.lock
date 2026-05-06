@@ -2250,15 +2250,15 @@
         "systems": "systems_8"
       },
       "locked": {
-        "lastModified": 1773421780,
-        "narHash": "sha256-bkZGvIWV8JavLMQ2KzddrMCf9YBeiIM4OgdiwKcFx8M=",
-        "owner": "different-name",
+        "lastModified": 1778068119,
+        "narHash": "sha256-dd6DiZWiXLYIN2OxTcPG71zjdG+eE8726Yh5AvQ52vA=",
+        "owner": "unazikx",
         "repo": "steam-config-nix",
-        "rev": "7b8021b2739733c547e2fe02739e6b8452813aa7",
+        "rev": "8e8a8699093b8127fe44cc0ca2a2067388daedfd",
         "type": "github"
       },
       "original": {
-        "owner": "different-name",
+        "owner": "unazikx",
         "repo": "steam-config-nix",
         "type": "github"
       }
