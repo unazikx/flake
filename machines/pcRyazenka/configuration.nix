@@ -123,7 +123,8 @@
                 );
 
                 programs.steam.config.nonSteamApps = {
-                  voices-of-the-void.enable = true;
+                  super-tux-kart.enable = true;
+                  mindustry.enable = true;
                 };
               }
             )

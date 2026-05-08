@@ -114,35 +114,75 @@ in
         }
         {
           # keep-sorted start block=yes
-          voices-of-the-void = {
-            name = "Voices of the Void";
-            target = lib.getExe pkgs.own.games.votv;
+
+          freeciv = {
+            name = "FreeCiv";
+            target = lib.getExe pkgs.freeciv_gtk;
+            compatTool = null;
 
             icon = pkgs.fetchurl {
-              url = "https://cdn2.steamgriddb.com/icon/0c96dd4065a275bbd5bc71efcf28e74d/32/128x128.png";
-              sha256 = "sha256-LMvmxxNIBpkmbxNKSdsIREBCYAsFzG1T4e45wJIEVkM=";
+              url = "https://cdn2.steamgriddb.com/icon_thumb/e2b59155b6c9e8753f967f42ea5a4d3e.png";
+              sha256 = "sha256-pnoFLp1zLsNFFnZ4IRINa5OJwDfhHFW+r+V2zT0KuCY=";
             };
 
             artwork = {
               logo = pkgs.fetchurl {
-                url = "https://cdn2.steamgriddb.com/logo_thumb/d7a3803a2a6969551b7ff7b193c045e0.png";
-                sha256 = "sha256-+hAWVWNBKfOhDptJ0Xd9ufoxYKEXp/Mff5vkMKsLGkM=";
+                url = "https://cdn2.steamgriddb.com/logo_thumb/009da52122d75bc3150aa17e5e515204.png";
+                sha256 = "sha256-qsfTzwAwGmT5iDATcLap0xp/U43ia0Dc9AqmFcKecqw=";
               };
               hero = pkgs.fetchurl {
-                url = "https://cdn2.steamgriddb.com/hero_thumb/2daf64162521b454bbf048f88fecc0a5.jpg";
-                sha256 = "sha256-Ul4PAty9Sv6U+M504gfhplE6/xgCoafC7GjRLCOflUc=";
+                url = "https://cdn2.steamgriddb.com/hero_thumb/8d96feccca232653276d41d444536e10.jpg";
+                sha256 = "sha256-6G8igBjDg08KGcJ9vxWIlGa7kcpAyBKeorojpFUWsaw=";
               };
               banner = pkgs.fetchurl {
-                url = "https://cdn2.steamgriddb.com/thumb/169a4cfd73bb798780720bed9cf85b70.jpg";
-                sha256 = "sha256-b27VVYUIq2YgyX3I3xH2YVuN3d78mJ70jYqldcTQt4c=";
+                url = "https://cdn2.steamgriddb.com/thumb/53cc2097ca1a2e6c4a3b2bb499597bf0.jpg";
+                sha256 = "sha256-pQxkWem5gPDT6hXv3CDBoP5nlExQFS0h/1oPAc7ebaE=";
               };
               cover = pkgs.fetchurl {
-                url = "https://cdn2.steamgriddb.com/thumb/2be93c78abc53d25f7fac7847214f0dd.jpg";
-                sha256 = "sha256-hk1BTkAqW4B2RYd9YjIvxdtlB9PrlcqDVT2RFit1vKU=";
+                url = "https://cdn2.steamgriddb.com/thumb/0a4c93ddb993d7d200fa72c65c8e7239.jpg";
+                sha256 = "sha256-d8pHaeFqqISQFuO2d+GWDTqK0glHUzSYe4nfSBneAas=";
               };
             };
           };
+          lincity-ng = {
+            name = "LinCity";
+            target = lib.getExe pkgs.lincity-ng;
+            compatTool = null;
 
+            icon = pkgs.fetchurl {
+              url = "https://www.altlinux.org/Images.www.altlinux.org/2/2d/User-menu-LincityNG.png";
+              sha256 = "sha256-2eg2nexAROOQ9u2j/6ouXmjENpcsN0lI0jWMLzWuhuM=";
+            };
+          };
+          mindustry = {
+            name = "Mindustry";
+            target = lib.getExe pkgs.mindustry;
+            compatTool = null;
+
+            icon = pkgs.fetchurl {
+              url = "https://cdn2.steamgriddb.com/icon_thumb/c05225ad3adfb3f4b73a7d7d04d3c2d7.png";
+              sha256 = "sha256-+EbFzxORC8NrKH7Y/5lIzkd1KbMwODHhNPn20NEnsUk=";
+            };
+
+            artwork = {
+              logo = pkgs.fetchurl {
+                url = "https://cdn2.steamgriddb.com/logo_thumb/fa351d6bfd570ade7471195e5afd43f1.png";
+                sha256 = "sha256-daR199b4P5HBW1WuQJAggcx6j8bi0IDJYrBmrJ7q37c=";
+              };
+              hero = pkgs.fetchurl {
+                url = "https://cdn2.steamgriddb.com/hero_thumb/f4e3432b305e7e30ce4e6f981f260cce.jpg";
+                sha256 = "sha256-SvcqUHT5rsAQBV3xWFc0/HrQLxoDfB/dytQoBTlWQJk=";
+              };
+              banner = pkgs.fetchurl {
+                url = "https://cdn2.steamgriddb.com/thumb/e0f4585108cbed46d16e3cf0e9d86ba1.jpg";
+                sha256 = "sha256-SqiHD3Wx5wjR7qObvRlqSkSD/nbYs4YQn79o5LMef7M=";
+              };
+              cover = pkgs.fetchurl {
+                url = "https://cdn2.steamgriddb.com/thumb/518b0bc6ec175055a4bca965df70d379.jpg";
+                sha256 = "sha256-Sd3YBJ3m+UMTHBFW5GOHHVAAKFnqCCWFsY4nwPkq/no=";
+              };
+            };
+          };
           super-tux-kart = {
             name = "Super Tux Kart";
             target = lib.getExe pkgs.supertuxkart;
@@ -169,6 +209,34 @@ in
               cover = pkgs.fetchurl {
                 url = "https://cdn2.steamgriddb.com/thumb/27d2cb1a3963d82eec5cfddc21d15fd9.jpg";
                 sha256 = "sha256-EmO48QR43Bnz9/kjohR9unRoHj8DVTOs89iEUWX3wI8=";
+              };
+            };
+          };
+          voices-of-the-void = {
+            name = "Voices of the Void";
+            target = lib.getExe pkgs.own.games.votv;
+
+            icon = pkgs.fetchurl {
+              url = "https://cdn2.steamgriddb.com/icon/0c96dd4065a275bbd5bc71efcf28e74d/32/128x128.png";
+              sha256 = "sha256-LMvmxxNIBpkmbxNKSdsIREBCYAsFzG1T4e45wJIEVkM=";
+            };
+
+            artwork = {
+              logo = pkgs.fetchurl {
+                url = "https://cdn2.steamgriddb.com/logo_thumb/d7a3803a2a6969551b7ff7b193c045e0.png";
+                sha256 = "sha256-+hAWVWNBKfOhDptJ0Xd9ufoxYKEXp/Mff5vkMKsLGkM=";
+              };
+              hero = pkgs.fetchurl {
+                url = "https://cdn2.steamgriddb.com/hero_thumb/2daf64162521b454bbf048f88fecc0a5.jpg";
+                sha256 = "sha256-Ul4PAty9Sv6U+M504gfhplE6/xgCoafC7GjRLCOflUc=";
+              };
+              banner = pkgs.fetchurl {
+                url = "https://cdn2.steamgriddb.com/thumb/169a4cfd73bb798780720bed9cf85b70.jpg";
+                sha256 = "sha256-b27VVYUIq2YgyX3I3xH2YVuN3d78mJ70jYqldcTQt4c=";
+              };
+              cover = pkgs.fetchurl {
+                url = "https://cdn2.steamgriddb.com/thumb/2be93c78abc53d25f7fac7847214f0dd.jpg";
+                sha256 = "sha256-hk1BTkAqW4B2RYd9YjIvxdtlB9PrlcqDVT2RFit1vKU=";
               };
             };
           };
