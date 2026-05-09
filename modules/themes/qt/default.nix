@@ -1,3 +1,7 @@
+# WARN:
+# i switched to stylix kvantum
+# until i will not find any other qtct style
+#
 # INFO:
 # stylix have an weird qt
 # so i made own

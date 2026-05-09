@@ -29,21 +29,38 @@
 
             targets = lib.mkMerge [
               {
-                # keep-sorted start
+                # keep-sorted start block=yes newline_separated=yes
                 cava.rainbow.enable = true;
+
                 gdu.enable = false;
+
                 helix.enable = false;
+
                 hyprland.hyprpaper.enable = true;
+
                 hyprlock.enable = false;
+
                 hyprlock.image.enable = false;
+
                 kde.enable = false;
+
                 mako.enable = false;
+
                 mpv.enable = false;
+
                 nixcord.enable = true;
-                qt.enable = false;
+
+                qt = {
+                  enable = true;
+                  standardDialogs = "xdgdesktopportal";
+                };
+
                 spicetify.enable = false;
+
                 spotify-player.enable = false;
+
                 tofi.enable = false;
+
                 waybar.enable = false;
                 # keep-sorted end
               }

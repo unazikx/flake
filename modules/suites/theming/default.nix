@@ -15,7 +15,7 @@
             inherit (_config.nixosModules)
               # keep-sorted start
               gtk
-              qt
+              # qt
               stylix
               # keep-sorted end
               ;
