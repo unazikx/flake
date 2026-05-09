@@ -45,8 +45,8 @@ lib.mkMerge [
     })
     {
       "tab" = "tofi-drun | xargs swaymsg exec --";
-      "return" = "foot";
-      "shift+return" = "foot -a=foot_float";
+      "return" = "footclient";
+      "shift+return" = "footclient -a=foot_float";
 
       "b" = "qutebrowser";
       "shift+b" = "libreoffice";

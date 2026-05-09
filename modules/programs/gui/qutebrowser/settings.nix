@@ -7,7 +7,7 @@
 let
   inherit (pkgs) fetchurl;
 
-  terminal = "kitty";
+  terminal = "footclient";
 in
 
 {

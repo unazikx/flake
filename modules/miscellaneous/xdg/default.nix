@@ -85,7 +85,7 @@
 
                 settings = {
                   default = [
-                    "foot.desktop"
+                    "footclient.desktop"
                     "kitty.desktop"
                   ];
                 };

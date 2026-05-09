@@ -39,8 +39,8 @@ in
     ))
     (bind "${m}+${s}+Tab" (spawn-sh (ifDMS "dms ipc clipboard open" (lib.getExe pkgs.clapboard))))
 
-    (bind "${m}+Return" (spawn-sh "foot"))
-    (bind "${m}+${s}+Return" (spawn-sh "foot -a=foot_small"))
+    (bind "${m}+Return" (spawn-sh "footclient"))
+    (bind "${m}+${s}+Return" (spawn-sh "footclient -a=foot_small"))
     (bind "${m}+${a}+Return" (
       spawn-sh (
         lib.getExe (

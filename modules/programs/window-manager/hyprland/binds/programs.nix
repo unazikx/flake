@@ -14,8 +14,8 @@ let
 in
 
 [
-  (mod "return" "foot")
-  (shift "return" "foot -a=termfloat")
+  (mod "return" "footclient")
+  (shift "return" "footclient -a=termfloat")
 
   (mod "tab" "tofi-drun | xargs hyprctl dispatch exec -- ")
   (shift "tab" (lib.getExe pkgs.clapboard))
