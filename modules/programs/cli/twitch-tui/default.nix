@@ -1,5 +1,6 @@
 # INFO:
 # twitch chat in tui, not viewer
+# https://www.twitchchatdownloader.com
 #
 # WARN:
 # server doesnt works idk (russia)
