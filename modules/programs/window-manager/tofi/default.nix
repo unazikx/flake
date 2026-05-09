@@ -23,7 +23,7 @@
                 hide-cursor = true;
                 text-cursor = true;
 
-                font = config.stylix.fonts.sansSerif.name;
+                font = config.stylix.fonts.monospace.name;
 
                 width = "100%";
                 height = "100%";
