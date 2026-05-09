@@ -1,3 +1,7 @@
+# WARN:
+# unmaintained
+# i will never use it again
+#
 # INFO:
 # useful wm
 # with various qol things
