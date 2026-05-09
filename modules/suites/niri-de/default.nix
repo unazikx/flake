@@ -16,8 +16,8 @@
               # keep-sorted start
               clipboard
               dunst
+              foot
               hyprlock
-              kitty
               niri
               niri-bg
               niri-sidebar

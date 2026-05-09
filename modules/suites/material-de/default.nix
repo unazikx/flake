@@ -16,7 +16,7 @@
               # keep-sorted start
               clipboard
               dank-material-shell
-              kitty
+              foot
               niri
               xdg
               # keep-sorted end

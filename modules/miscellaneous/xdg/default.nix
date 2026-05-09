@@ -85,8 +85,8 @@
 
                 settings = {
                   default = [
-                    "kitty.desktop"
                     "foot.desktop"
+                    "kitty.desktop"
                   ];
                 };
               };

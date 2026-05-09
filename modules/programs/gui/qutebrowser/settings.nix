@@ -6,12 +6,8 @@
 
 let
   inherit (pkgs) fetchurl;
-  terminal = [
-    "kitty"
-    "--class"
-    "termfloat"
-    "-e"
-  ];
+
+  terminal = "kitty";
 in
 
 {
@@ -157,7 +153,8 @@ in
       chars = "asdfghjkl";
     };
 
-    editor.command = terminal ++ [
+    editor.command = [
+      terminal
       "hx"
       "{file}:{line}:{column0}"
     ];
@@ -165,19 +162,22 @@ in
     fileselect = {
       handler = "external";
 
-      single_file.command = terminal ++ [
+      single_file.command = [
+        terminal
         "yazi"
         "--chooser-file"
         "{}"
       ];
 
-      multiple_files.command = terminal ++ [
+      multiple_files.command = [
+        terminal
         "yazi"
         "--chooser-file"
         "{}"
       ];
 
-      folder.command = terminal ++ [
+      folder.command = [
+        terminal
         "yazi"
         "--chooser-file"
         "{}"

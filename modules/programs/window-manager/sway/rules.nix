@@ -41,6 +41,7 @@
       [
         # keep-sorted start
         "ani"
+        "foot_float"
         "io.bassi.Amberol"
         "kitty_float"
         "org.qbittorrent.qBittorrent"
@@ -80,6 +81,9 @@
       (appid "ani" "floating enable")
       (appid "ani" "resize set 590 px 430 px")
       (appid "com.ayugram.desktop" "floating_minimum_size 700 x 700")
+      (appid "foot_float" "floating enable")
+      (appid "foot_float" "move position center")
+      (appid "foot_float" "resize set 590 px 430 px")
       (appid "io.github.tdesktop_x64.TDesktop" "floating_minimum_size 700 x 700")
       (appid "kitty_float" "floating enable")
       (appid "kitty_float" "move position center")

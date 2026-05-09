@@ -14,8 +14,8 @@ let
 in
 
 [
-  (mod "return" "kitty")
-  (shift "return" "kitty --class=termfloat")
+  (mod "return" "foot")
+  (shift "return" "foot -a=termfloat")
 
   (mod "tab" "tofi-drun | xargs hyprctl dispatch exec -- ")
   (shift "tab" (lib.getExe pkgs.clapboard))

@@ -87,6 +87,9 @@ in
       {
         app-id = "kitty_small";
       }
+      {
+        app-id = "foot_small";
+      }
     ];
   }
 
