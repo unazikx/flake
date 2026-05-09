@@ -15,7 +15,7 @@
             inherit (_config.nixosModules)
               # keep-sorted start
               dunst
-              foot
+              kitty
               i3status-rust
               sunsetr
               sway
