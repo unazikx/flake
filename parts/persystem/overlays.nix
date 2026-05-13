@@ -1,8 +1,10 @@
 # INFO:
-# contains every overlays and sub-packages
+# overlays with 3rd party flakes
+# and nixpkgs revisions
 
 {
   inputs,
+  withSystem,
   ...
 }:
 
@@ -13,18 +15,15 @@
     }:
     {
       overlays.default =
-        with inputs;
-        (
-          _old: pkgs:
+        _old: _pkgs:
+        withSystem _pkgs.stdenv.hostPlatform.system (
           let
-            inherit (pkgs) lib;
-            inherit (pkgs.stdenv.hostPlatform) system;
+            inherit (_pkgs.stdenv.hostPlatform)
+              system
+              ;
 
             branch-config = {
-              inherit
-                system
-                ;
-
+              inherit system;
               config = {
                 inherit (_old.config)
                   allowBroken
@@ -35,16 +34,19 @@
             };
           in
           {
+            inputs',
+            ...
+          }:
+          {
             inherit system;
 
-            _2505 = import nixpkgs-2505 branch-config;
-            _2511 = import nixpkgs-2511 branch-config;
-            _2411 = import nixpkgs-2411 branch-config;
-
-            own = my-own-packages.legacyPackages.${system};
+            _2505 = import inputs.nixpkgs-2505 branch-config;
+            _2511 = import inputs.nixpkgs-2511 branch-config;
+            _2411 = import inputs.nixpkgs-2411 branch-config;
 
             # keep-sorted start block=yes newline_separated=yes
-            _freesmlauncher = inputs.freesm-launcher.packages.${pkgs.system}.freesmlauncher;
+            own = inputs'.custom-packages.legacyPackages;
+            _freesmlauncher = inputs.freesm-launcher.packages.${_pkgs.system}.freesmlauncher;
 
             _prismConfig = {
               gamemodeSupport = true;
@@ -66,7 +68,7 @@
             };
 
             better-than-adventure =
-              (pkgs.vanillaServers.vanilla.overrideAttrs rec {
+              (_pkgs.vanillaServers.vanilla.overrideAttrs rec {
                 version = "7.3_04";
                 src = _old.fetchurl {
                   url = "https://github.com/Better-than-Adventure/bta-download-repo/releases/download/v${version}/bta.v${version}.server.jar";
@@ -79,26 +81,26 @@
 
             freesmlauncher = _old._freesmlauncher.override _old._prismConfig;
 
-            hytale-launcher = inputs.hytale-launcher.packages.${pkgs.system}.default;
+            hytale-launcher = inputs.hytale-launcher.packages.${_pkgs.system}.default;
 
             max-messenger = inputs.max-messenger.packages.${system}.default;
 
             nilla-cli = inputs.nilla-cli.packages.${system}.nilla-cli;
 
-            ouch = pkgs.ouch.override {
+            ouch = _pkgs.ouch.override {
               enableUnfree = true;
             };
 
-            portablemc = pkgs.portablemc.override {
+            portablemc = _pkgs.portablemc.override {
               textToSpeechSupport = false;
               jre = _old.temurin-jre-bin-25;
             };
 
-            prismlauncher = pkgs.prismlauncher.override _old._prismConfig;
+            prismlauncher = _pkgs.prismlauncher.override _old._prismConfig;
 
             rc2nix = inputs.plasma-manager.packages.${system}.rc2nix;
 
-            spotify-player = pkgs.spotify-player.override {
+            spotify-player = _pkgs.spotify-player.override {
               withAudioBackend = "pulseaudio";
               withStreaming = true;
               withDaemon = true;
@@ -110,14 +112,14 @@
               withFuzzy = false;
             };
 
-            steam-flagged = lib.concatStringsSep " " [
-              (lib.getExe _old.steam)
+            steam-flagged = _pkgs.lib.concatStringsSep " " [
+              (_pkgs.lib.getExe _old.steam)
               "-nochatui"
               "-nofriendsui"
               "-silent"
             ];
 
-            suwayomi-server = pkgs.suwayomi-server.override {
+            suwayomi-server = _pkgs.suwayomi-server.override {
               jdk21_headless = _old.temurin-jre-bin-21;
             };
 
@@ -134,8 +136,8 @@
             zen-twilight-official = inputs.zen-browser.packages.${system}.twilight-official;
             # keep-sorted end
 
-            default-lsp = lib.attrValues {
-              inherit (pkgs)
+            default-lsp = _pkgs.lib.attrValues {
+              inherit (_pkgs)
                 # keep-sorted start
                 black
                 go
@@ -149,14 +151,14 @@
                 # keep-sorted end
                 ;
 
-              inherit (pkgs)
+              inherit (_pkgs)
                 # keep-sorted start
                 prettier
                 typescript-language-server
                 # keep-sorted end
                 ;
 
-              inherit (pkgs.python314Packages)
+              inherit (_pkgs.python314Packages)
                 # keep-sorted start
                 python-lsp-server
                 # keep-sorted end

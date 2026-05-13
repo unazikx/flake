@@ -20,6 +20,10 @@
             PASSWORDS
             ;
 
+          inherit (config.hm.services.syncthing.settings)
+            devices
+            ;
+
           cfg = config.hm.programs.keepassxc;
 
           ini = pkgs.formats.ini { };
@@ -80,11 +84,11 @@
             };
 
             services.syncthing.settings.folders = lib.listToAttrs [
-              (lib.syncthing.mkFolder {
+              (lib.mkSyncthing.folder {
                 name = "keepassdb";
                 id = "463hjpdhbmxnfbh4";
                 path = PASSWORDS;
-                devices = lib.syncthing.mkFilter config.hm.services.syncthing.settings.devices [ ];
+                devices = lib.mkSyncthing.filter devices [ ];
               })
             ];
           };

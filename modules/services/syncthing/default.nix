@@ -49,18 +49,18 @@
                 in
 
                 lib.listToAttrs [
-                  (lib.syncthing.mkFolder {
+                  (lib.mkSyncthing.folder {
                     name = "notes";
                     id = "kudfyfcmxhtpt8ta";
                     path = "${config.hm.xdg.userDirs.publicShare}/notes";
-                    devices = lib.syncthing.mkFilter devices [ ];
+                    devices = lib.mkSyncthing.filter devices [ ];
                   })
 
-                  (lib.syncthing.mkFolder {
+                  (lib.mkSyncthing.folder {
                     name = "tempbin";
                     id = "yew4af7dtnmnuwdr";
                     path = "${config.hm.xdg.userDirs.publicShare}/tempbin";
-                    devices = lib.syncthing.mkFilter devices [ ];
+                    devices = lib.mkSyncthing.filter devices [ ];
                   })
                 ];
 

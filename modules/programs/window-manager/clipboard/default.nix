@@ -30,11 +30,11 @@
               wl-clip-persist.enable = true;
 
               syncthing.settings.folders = lib.listToAttrs [
-                (lib.syncthing.mkFolder {
+                (lib.mkSyncthing.folder {
                   name = "clipboard";
                   id = "kudfyfcmxhtpt8ta";
                   path = "${config.hm.xdg.cacheHome}/clapboard";
-                  devices = lib.syncthing.mkFilter devices [
+                  devices = lib.mkSyncthing.filter devices [
                     "nothing2a"
                     "windauser"
                   ];

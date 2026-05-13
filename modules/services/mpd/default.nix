@@ -6,7 +6,6 @@
 {
   flake =
     {
-      _config,
       ...
     }:
     {
@@ -14,6 +13,7 @@
         {
           lib,
           config,
+          partsConfig,
           ...
         }:
         let
@@ -25,7 +25,7 @@
         in
         {
           imports = lib.attrValues {
-            inherit (_config.nixosModules)
+            inherit (partsConfig.nixosModules)
               inori
               ;
           };
@@ -99,11 +99,11 @@
             };
 
             syncthing.settings.folders = lib.listToAttrs [
-              (lib.syncthing.mkFolder {
+              (lib.mkSyncthing.folder {
                 name = "music";
                 id = "wfufr6w4fr7dyuhe";
                 path = "${config.hm.xdg.userDirs.music}";
-                devices = lib.syncthing.mkFilter devices [
+                devices = lib.mkSyncthing.filter devices [
                   "windauser"
                 ];
               })

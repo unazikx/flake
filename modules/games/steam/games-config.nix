@@ -20,7 +20,7 @@ in
   defaultCompatTool = "GE-Proton";
 
   apps = lib.mkMerge [
-    (lib.steam.mkAttrset
+    (lib.mkSteam.mkAttrset
       {
         launchOptions = {
           env.STEAM_COMPAT_DATA_PATH = "${steamapps}/compatdata/0/pfx";
@@ -44,7 +44,7 @@ in
     )
 
     # default proton tool
-    (lib.steam.mkAttrset
+    (lib.mkSteam.mkAttrset
       {
         compatTool = defaultCompatTool;
         launchOptions = {
@@ -104,7 +104,7 @@ in
 
   nonSteamApps = (
     lib.mkMerge [
-      (lib.steam.mkAttrset
+      (lib.mkSteam.mkAttrset
         {
           enable = lib.mkDefault false; # by default disabled
           compatTool = lib.mkDefault defaultCompatTool;

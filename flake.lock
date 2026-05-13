@@ -228,6 +228,45 @@
         "type": "github"
       }
     },
+    "custom-packages": {
+      "inputs": {
+        "emmanuelrosa-nix": [
+          "emmanuelrosa-nix"
+        ],
+        "flake-parts": [
+          "flake-parts"
+        ],
+        "nixpkgs": [
+          "custom-packages",
+          "nixpkgs-unstable"
+        ],
+        "nixpkgs-unstable": [
+          "nixpkgs"
+        ],
+        "nur": [
+          "nur"
+        ],
+        "pkgs-by-name": [
+          "pkgs-by-name"
+        ],
+        "treefmt-nix": [
+          "treefmt-nix"
+        ]
+      },
+      "locked": {
+        "lastModified": 1778482709,
+        "narHash": "sha256-Hg1urd2sgDNa7d4Fi8rDlsq84+c0zBXrGDWPWeBC1KU=",
+        "owner": "unazikx",
+        "repo": "nix-packages",
+        "rev": "62ef49b11f1908f7c5dfd5ca0ca6ff382c5c4128",
+        "type": "github"
+      },
+      "original": {
+        "owner": "unazikx",
+        "repo": "nix-packages",
+        "type": "github"
+      }
+    },
     "dank-material-shell": {
       "inputs": {
         "nixpkgs": [
@@ -1314,45 +1353,6 @@
         "type": "github"
       }
     },
-    "my-own-packages": {
-      "inputs": {
-        "emmanuelrosa-nix": [
-          "emmanuelrosa-nix"
-        ],
-        "flake-parts": [
-          "flake-parts"
-        ],
-        "nixpkgs": [
-          "my-own-packages",
-          "nixpkgs-unstable"
-        ],
-        "nixpkgs-unstable": [
-          "nixpkgs"
-        ],
-        "nur": [
-          "nur"
-        ],
-        "pkgs-by-name": [
-          "pkgs-by-name"
-        ],
-        "treefmt-nix": [
-          "treefmt-nix"
-        ]
-      },
-      "locked": {
-        "lastModified": 1778199362,
-        "narHash": "sha256-wK+XAnWT4zjlYWwVBRx7UHm7nIQws+unR5j1HrkK6dw=",
-        "owner": "unazikx",
-        "repo": "nix-packages",
-        "rev": "16d6375f0b1bbec927122f5ec59f041dc405e55a",
-        "type": "github"
-      },
-      "original": {
-        "owner": "unazikx",
-        "repo": "nix-packages",
-        "type": "github"
-      }
-    },
     "nilla-cli": {
       "locked": {
         "lastModified": 1772082371,
@@ -2029,6 +2029,7 @@
         "agenix-rekey": "agenix-rekey",
         "anyrun": "anyrun",
         "betterfox": "betterfox",
+        "custom-packages": "custom-packages",
         "dank-material-shell": "dank-material-shell",
         "dank-material-shell-plugins": "dank-material-shell-plugins",
         "devshell": "devshell_2",
@@ -2057,7 +2058,6 @@
         "microvm-nix": "microvm-nix",
         "minecraft-assets": "minecraft-assets",
         "musnix": "musnix",
-        "my-own-packages": "my-own-packages",
         "nilla-cli": "nilla-cli",
         "niri-flake": "niri-flake",
         "nix-cursors": "nix-cursors",

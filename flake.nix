@@ -260,7 +260,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    my-own-packages = {
+    custom-packages = {
       type = "github";
       owner = "unazikx";
       repo = "nix-packages";
@@ -569,5 +569,9 @@
     };
   };
 
-  outputs = args: import ./lib args;
+  outputs =
+    inputs:
+    inputs.flake-parts.lib.mkFlake {
+      inherit inputs;
+    } (inputs.import-tree ./parts);
 }

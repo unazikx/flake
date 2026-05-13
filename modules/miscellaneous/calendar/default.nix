@@ -5,7 +5,6 @@
 {
   flake =
     {
-      _config,
       ...
     }:
     {
@@ -13,6 +12,7 @@
         {
           lib,
           config,
+          partsConfig,
           ...
         }:
         let
@@ -28,7 +28,7 @@
           ];
 
           imports = lib.attrValues {
-            inherit (_config.nixosModules)
+            inherit (partsConfig.nixosModules)
               vdirsyncer
               ;
           };

@@ -5,18 +5,18 @@
 {
   flake =
     {
-      _config,
       ...
     }:
     {
       nixosModules.${baseNameOf ./.} =
         {
           lib,
+          partsConfig,
           ...
         }:
         {
           imports = lib.attrValues {
-            inherit (_config.nixosModules)
+            inherit (partsConfig.nixosModules)
               calendar
               ;
           };

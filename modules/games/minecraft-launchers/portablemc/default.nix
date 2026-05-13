@@ -23,7 +23,7 @@
           ];
 
           hm.home.file = {
-            ".minecraft/options.txt".text = lib.minecraft.genOptions {
+            ".minecraft/options.txt".text = lib.mkMinecraft.genOptions {
               # keep-sorted start block=yes
               "advancedItemTooltips" = false;
               "allowCursorChanges" = true;

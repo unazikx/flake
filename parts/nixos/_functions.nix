@@ -11,22 +11,20 @@
     ;
 
   mkSecrets = {
-    sopsnix =
+    fromFile =
       list: sopsFile:
       lib.genAttrs list (_n: {
         owner = lib.userName;
         inherit sopsFile;
       });
 
-    sopstem = filename: content: {
+    template = filename: content: {
       ${filename} = {
         owner = lib.userName;
         group = "users";
         inherit content;
       };
     };
-
-    agenix = throw "Agenix is not configured";
   };
 
   mkSymlink =
@@ -35,7 +33,9 @@
       pathStr = toString path;
       name = lib.hm.strings.storeFileName (baseNameOf pathStr);
     in
-    pkgs.runCommandLocal name { } "ln -s ${lib.escapeShellArg pathStr} $out";
+    pkgs.runCommandLocal name { } ''
+      ln -s ${lib.escapeShellArg pathStr} $out
+    '';
 
   mkFirefoxModule = import (
     lib.concatStringsSep "/" [
@@ -74,10 +74,10 @@
       ]
     );
 
-  syncthing = {
-    mkFilter = config: list: lib.attrNames (removeAttrs config list);
+  mkSyncthing = {
+    filter = config: list: lib.attrNames (removeAttrs config list);
 
-    mkDevice = name: id: {
+    device = name: id: {
       inherit name;
       value = {
         inherit id;
@@ -86,7 +86,7 @@
       };
     };
 
-    mkFolder =
+    folder =
       {
         id,
         name,
@@ -110,23 +110,26 @@
       };
   };
 
-  minecraft = rec {
-    formatValue =
-      value:
-      if builtins.isList value then
-        "[${lib.concatMapStringsSep "," (x: "\"${toString x}\"") value}]"
-      else if builtins.isBool value then
-        (if value then "true" else "false")
-      else if builtins.isString value then
-        value
-      else
-        toString value;
+  mkMinecraft =
+    let
+      formatValue =
+        value:
+        if builtins.isList value then
+          "[${lib.concatMapStringsSep "," (x: "\"${toString x}\"") value}]"
+        else if builtins.isBool value then
+          (if value then "true" else "false")
+        else if builtins.isString value then
+          value
+        else
+          toString value;
+    in
+    {
+      genOptions =
+        options:
+        lib.concatStringsSep "\n" (lib.mapAttrsToList (key: value: "${key}:${formatValue value}") options);
+    };
 
-    genOptions =
-      options: lib.concatStringsSep "\n" (lib.mapAttrsToList (k: v: "${k}:${formatValue v}") options);
-  };
-
-  steam = {
+  mkSteam = {
     mkAttrset =
       options:
       lib.mapAttrs (
@@ -135,6 +138,32 @@
           options
           attrs
         ]
+      );
+  };
+
+  mkDevices = {
+    byName =
+      list:
+      lib.listToAttrs (
+        map (name: {
+          name = "/media/${name}";
+          value =
+            (
+              {
+                name ? throw "set label pls",
+                options ? [ ],
+              }:
+              {
+                device = "/dev/disk/by-label/${name}";
+                fsType = "ext4";
+                inherit options;
+              }
+            )
+              {
+                inherit name;
+                options = [ "x-gvfs-show" ];
+              };
+        }) list
       );
   };
 }

@@ -3,7 +3,7 @@
   ...
 }:
 
-lib.mkSecrets.sopsnix [
+lib.mkSecrets.fromFile [
   # keep-sorted start
   "password"
   "services/sunsetr"

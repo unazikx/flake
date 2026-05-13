@@ -4,7 +4,6 @@
 {
   flake =
     {
-      _config,
       ...
     }:
     {
@@ -13,11 +12,12 @@
           pkgs,
           lib,
           config,
+          partsConfig,
           ...
         }:
         {
           imports = lib.attrValues {
-            inherit (_config.nixosModules)
+            inherit (partsConfig.nixosModules)
               emailing
               ;
           };
