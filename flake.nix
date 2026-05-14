@@ -73,6 +73,18 @@
       inputs.flake-parts.follows = "flake-parts";
     };
 
+    custom-packages = {
+      type = "github";
+      owner = "unazikx";
+      repo = "nix-packages";
+      inputs.nixpkgs-unstable.follows = "nixpkgs";
+      inputs.flake-parts.follows = "flake-parts";
+      inputs.pkgs-by-name.follows = "pkgs-by-name";
+      inputs.nur.follows = "nur";
+      inputs.treefmt-nix.follows = "treefmt-nix";
+      inputs.emmanuelrosa-nix.follows = "emmanuelrosa-nix";
+    };
+
     dank-material-shell = {
       type = "github";
       owner = "AvengeMedia";
@@ -258,18 +270,6 @@
       owner = "musnix";
       repo = "musnix";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    custom-packages = {
-      type = "github";
-      owner = "unazikx";
-      repo = "nix-packages";
-      inputs.nixpkgs-unstable.follows = "nixpkgs";
-      inputs.flake-parts.follows = "flake-parts";
-      inputs.pkgs-by-name.follows = "pkgs-by-name";
-      inputs.nur.follows = "nur";
-      inputs.treefmt-nix.follows = "treefmt-nix";
-      inputs.emmanuelrosa-nix.follows = "emmanuelrosa-nix";
     };
 
     nilla-cli = {

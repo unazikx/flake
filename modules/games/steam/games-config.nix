@@ -88,6 +88,9 @@ in
         sandbox = {
           id = 590830;
         };
+        space-haven = {
+          id = 979110;
+        };
         terraria = {
           id = 105600;
         };
