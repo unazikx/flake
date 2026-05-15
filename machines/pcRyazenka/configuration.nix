@@ -64,7 +64,7 @@
 
           # INFO:
           # nixos options and config
-          _systemConfig =
+          systemConfig =
             {
               self,
               pkgs,
