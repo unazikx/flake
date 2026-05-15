@@ -23,22 +23,23 @@ in
     (lib.mkSteam.mkAttrset
       {
         launchOptions = {
-          env.STEAM_COMPAT_DATA_PATH = "${steamapps}/compatdata/0/pfx";
+          env.STEAM_COMPAT_DATA_PATH = "${steamapps}/compatdata/0";
           wrappers = [ (lib.getExe pkgs.gamemode) ];
         };
       }
       {
-        # keep-sorted start block=yes
-
+        # keep-sorted start block=yes newline_separated=yes
         city-car-driving = {
           compatTool = "proton_8";
           id = 493490;
         };
+
         duck-game = {
           # https://www.protondb.com/app/312530#VBbR6m5Ilw
           compatTool = "proton_8";
           id = 312530;
         };
+
       }
       # keep-sorted end
     )
@@ -48,55 +49,68 @@ in
       {
         compatTool = defaultCompatTool;
         launchOptions = {
-          env.STEAM_COMPAT_DATA_PATH = "${steamapps}/compatdata/0/pfx";
+          env.STEAM_COMPAT_DATA_PATH = "${steamapps}/compatdata/0";
           wrappers = [ (lib.getExe pkgs.gamemode) ];
         };
       }
       {
-        # keep-sorted start block=yes
-
+        # keep-sorted start block=yes newline_separated=yes
         citizen-sleeper = {
           id = 1578650;
         };
+
         citizen-sleeper-2 = {
           id = 2442460;
         };
+
         counter-strike-cz = {
           id = 80;
         };
+
         darksiders-genesis = {
           id = 710920;
         };
+
         lucid-blocks = {
           id = 3495730;
         };
+
         noita = {
           id = 881100;
         };
+
         one-million-fatal-guns = {
           id = 155710;
         };
+
         plastic-warfare = {
           id = 490640;
         };
+
         project-zomboid = {
           id = 108600;
         };
+
         repo = {
           id = 3214660;
         };
+
         sandbox = {
           id = 590830;
         };
+
         space-haven = {
           id = 979110;
         };
+
         terraria = {
           id = 105600;
         };
+
         valheim = {
           id = 892970;
         };
+
         worms-wmd = {
           id = 327030;
         };
@@ -112,12 +126,11 @@ in
           enable = lib.mkDefault false; # by default disabled
           compatTool = lib.mkDefault defaultCompatTool;
           launchOptions = {
-            env.STEAM_COMPAT_DATA_PATH = "${steamapps}/compatdata/0/pfx";
+            env.STEAM_COMPAT_DATA_PATH = "${steamapps}/compatdata/0";
           };
         }
         {
-          # keep-sorted start block=yes
-
+          # keep-sorted start block=yes newline_separated=yes
           freeciv = {
             name = "FreeCiv";
             target = lib.getExe pkgs.freeciv_gtk;
@@ -147,6 +160,7 @@ in
               };
             };
           };
+
           lincity-ng = {
             name = "LinCity";
             target = lib.getExe pkgs.lincity-ng;
@@ -157,6 +171,7 @@ in
               sha256 = "sha256-2eg2nexAROOQ9u2j/6ouXmjENpcsN0lI0jWMLzWuhuM=";
             };
           };
+
           mindustry = {
             name = "Mindustry";
             target = lib.getExe pkgs.mindustry;
@@ -186,6 +201,7 @@ in
               };
             };
           };
+
           super-tux-kart = {
             name = "Super Tux Kart";
             target = lib.getExe pkgs.supertuxkart;
@@ -215,6 +231,7 @@ in
               };
             };
           };
+
           voices-of-the-void = {
             name = "Voices of the Void";
             target = lib.getExe pkgs.own.games.votv;
