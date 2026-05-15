@@ -66,6 +66,7 @@
 
             modules-right = [
               "group/trayGrp"
+              "custom/dunst"
               "niri/language"
               "group/dateGrp"
               "custom/spacing"
@@ -247,6 +248,23 @@
           icon-size = 18;
           show-passive-items = true;
           spacing = 8;
+        };
+
+        "custom/dunst" = {
+          tooltip = false;
+          rotate = 90;
+
+          on-click = "dunstctl set-paused toggle";
+          restart-interval = 1;
+
+          exec = lib.getExe (
+            pkgs.writeShellScriptBin "dunst-toggler.sh" ''
+              COUNT=$(dunstctl count waiting)
+              ENABLED=󰂚 ; DISABLED=󰂛
+              if [ $COUNT != 0 ]; then DISABLED=" $COUNT"; fi
+              if dunstctl is-paused | grep -q "false" ; then echo $ENABLED; else echo $DISABLED; fi
+            ''
+          );
         };
 
         "bluetooth#name" = {
