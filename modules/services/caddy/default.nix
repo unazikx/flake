@@ -37,6 +37,10 @@
                       (toString null);
                 });
           };
+
+          networking.hosts = {
+            "127.0.0.1" = lib.attrNames config.services.caddy.virtualHosts;
+          };
         };
     };
 }
