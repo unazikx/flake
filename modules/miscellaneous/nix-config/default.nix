@@ -46,6 +46,9 @@
               warn-dirty = false;
               auto-optimise-store = true;
 
+              max-jobs = 2;
+              cores = 2;
+
               experimental-features = [
                 "nix-command"
                 "flakes"
