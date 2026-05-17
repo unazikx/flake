@@ -211,7 +211,7 @@ in
   )
 
   {
-    default-column-width.proportion = 0.4;
+    default-column-width.proportion = 0.3;
     matches = [
       {
         app-id = "^steam$";
