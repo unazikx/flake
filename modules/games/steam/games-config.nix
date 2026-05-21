@@ -55,6 +55,10 @@ in
       }
       {
         # keep-sorted start block=yes newline_separated=yes
+        adventures-of-sir-kicksalot = {
+          id = 2629230;
+        };
+
         citizen-sleeper = {
           id = 1578650;
         };
