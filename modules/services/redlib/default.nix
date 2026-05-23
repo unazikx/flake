@@ -15,6 +15,8 @@
         }:
         let
           cfg = config.services.redlib;
+
+          inherit (config.services) caddy;
         in
         {
           services = {
@@ -22,7 +24,7 @@
               enable = true;
 
               port = 8118;
-              address = "127.0.0.1";
+              address = if caddy.enable then "0.0.0.0" else "127.0.0.1";
 
               settings = {
                 SFW_ONLY = "off";
