@@ -19,7 +19,6 @@
     app-background-color = config.lib.stylix.colors.withHashtag.base00;
 
     # hide-footer = true;
-    hide-desktop-navigation = true;
     custom-footer = "<b><p>ᓚᘏᗢ</p></b>";
   };
 
@@ -55,6 +54,9 @@
   pages = [
     {
       name = "Home";
+
+      hide-desktop-navigation = true;
+      show-mobile-header = true;
 
       center-vertically = true;
       width = "slim";
