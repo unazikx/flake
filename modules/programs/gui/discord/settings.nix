@@ -15,6 +15,7 @@ in
   frameless = true;
 
   plugins = {
+    # keep-sorted start block=yes newline_separated=yes
     accountPanelServerProfile.enable = true;
     alwaysAnimate.enable = true;
     alwaysExpandRoles.enable = true;
@@ -28,7 +29,7 @@ in
     betterRoleDot.enable = true;
     betterSettings.enable = true;
     betterUploadButton.enable = true;
-    betterUserArea.enable = true;
+    declutter.enable = true;
     commandPalette.enable = true;
     copyEmojiMarkdown.enable = true;
     dearrow.enable = true;
@@ -43,44 +44,47 @@ in
     USRBG.enable = true;
     youtubeAdblock.enable = true;
 
-    betterAudioPlayer = {
-      enable = true;
+    betterAudioPlayer = lib.mkMerge [
+      {
+        enable = true;
 
-      oscilloscopeSolidColor = mkRGB [
-        base0C-rgb-r
-        base0C-rgb-g
-        base0C-rgb-b
-      ];
-    }
-    // (
-      lib.genAttrs
-        [
-          "oscilloscopeColor"
-          "spectrographColor"
-        ]
-        (
-          _n:
-          mkRGB [
-            base0B-rgb-r
-            base0B-rgb-g
-            base0B-rgb-b
+        oscilloscopeSolidColor = mkRGB [
+          base0C-rgb-r
+          base0C-rgb-g
+          base0C-rgb-b
+        ];
+      }
+      (
+        lib.genAttrs
+          [
+            "oscilloscopeColor"
+            "spectrographColor"
           ]
-        )
-      // (lib.genAttrs
-        [
-          "spectrographSolidColor"
-          "oscilloscopeSolidColor"
-        ]
-        (
-          _n:
-          mkRGB [
-            base0C-rgb-r
-            base0C-rgb-g
-            base0C-rgb-b
+
+          (
+            _n:
+            mkRGB [
+              base0B-rgb-r
+              base0B-rgb-g
+              base0B-rgb-b
+            ]
+          )
+        // (lib.genAttrs
+          [
+            "spectrographSolidColor"
+            "oscilloscopeSolidColor"
           ]
+          (
+            _n:
+            mkRGB [
+              base0C-rgb-r
+              base0C-rgb-g
+              base0C-rgb-b
+            ]
+          )
         )
       )
-    );
+    ];
 
     betterFolders = {
       enable = true;
@@ -91,9 +95,10 @@ in
       showFolderIcon = 2;
     };
 
-    betterQuickReact = {
+    moreQuickReactions = {
       enable = true;
       compactMode = true;
     };
+    # keep-sorted end
   };
 }

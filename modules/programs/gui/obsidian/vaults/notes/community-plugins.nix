@@ -6,12 +6,12 @@
 
 [
   # keep-sorted start block=yes newline_separated=yes
-  { pkg = pkgs.obsidian-plugins.docxer; }
+  { pkg = pkgs.obsidian-community.plugins.docxer; }
 
-  { pkg = pkgs.obsidian-plugins.format-with-prettier; }
+  { pkg = pkgs.obsidian-community.plugins.format-with-prettier; }
 
   {
-    pkg = pkgs.obsidian-plugins.obsidian-minimal-settings;
+    pkg = pkgs.obsidian-community.plugins.obsidian-minimal-settings;
     settings = {
       lightStyle = "minimal-light";
       darkStyle = "minimal-dark";
@@ -48,7 +48,7 @@
   }
 
   {
-    pkg = pkgs.obsidian-plugins.obsidian-style-settings;
+    pkg = pkgs.obsidian-community.plugins.obsidian-style-settings;
     settings = with config.lib.stylix.colors.withHashtag; {
       "minimal-advanced@@styled-scrollbars" = true;
       "minimal-style@@active-line-on" = true;

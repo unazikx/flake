@@ -178,7 +178,7 @@ in
 
           mindustry = {
             name = "Mindustry";
-            target = lib.getExe pkgs.mindustry;
+            target = lib.getExe' pkgs.mindustry "mindustry";
             compatTool = null;
 
             icon = pkgs.fetchurl {

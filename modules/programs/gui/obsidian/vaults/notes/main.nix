@@ -27,7 +27,7 @@
       nativeMenus = false;
     };
 
-    themes = [ { pkg = pkgs.obsidian-plugins.minimal; } ];
+    themes = [ { pkg = pkgs.obsidian-community.themes.minimal; } ];
 
     corePlugins = [
       # keep-sorted start block=yes newline_separated=yes

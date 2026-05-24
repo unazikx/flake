@@ -32,13 +32,10 @@ let
     nixos-cli.nixosModules.nixos-cli
     nixpkgs.nixosModules.notDetected
     nur.modules.nixos.default
-    # proxy-suite-flake.nixosModules.default
+    proxy-suite-flake.nixosModules.default
     sopsnix.nixosModules.default
     steam-config-nix.nixosModules.default
     stylix.nixosModules.default
-    telegram-ws-proxy.nixosModules.tg-ws-proxy
-    zapret-discord.nixosModules.default
-    zapret-presets.nixosModules.presets
     # keep-sorted end
   ];
 

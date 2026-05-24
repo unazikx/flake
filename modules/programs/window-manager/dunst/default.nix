@@ -38,27 +38,6 @@
                     "10"
                     "10"
                   ];
-
-                  icon_path =
-                    lib.concatMapStringsSep ":"
-                      (
-                        category:
-                        "${cfg.icons.package}/share/icons/${
-                          if (cfg.polarity == "dark") then cfg.icons.dark else cfg.icons.light
-                        }/${config.hm.services.dunst.iconTheme.size}/${category}"
-                      )
-                      [
-                        "actions"
-                        "apps"
-                        "categories"
-                        "devices"
-                        "emblems"
-                        "emotes"
-                        "mimetypes"
-                        "places"
-                        "status"
-                        "symbolic"
-                      ];
                 };
 
                 urgency_low = {

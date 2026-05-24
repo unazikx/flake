@@ -26,7 +26,7 @@
             enable = true;
             enableDefaultConfig = false;
 
-            matchBlocks = {
+            settings = {
               "*" = {
                 addKeysToAgent = "no";
                 compression = true;

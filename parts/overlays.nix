@@ -16,11 +16,20 @@
     {
       overlays.default =
         _old: _pkgs:
-        withSystem _pkgs.stdenv.hostPlatform.system (
-          let
-            inherit (_pkgs.stdenv.hostPlatform)
-              system
-              ;
+        let
+          inherit (_pkgs.stdenv.hostPlatform) system;
+        in
+        withSystem system (
+          {
+            inputs',
+            ...
+          }:
+          {
+            inherit system;
+
+            _2505 = import inputs.nixpkgs-2505 _old.branch-config;
+            _2511 = import inputs.nixpkgs-2511 _old.branch-config;
+            _2411 = import inputs.nixpkgs-2411 _old.branch-config;
 
             branch-config = {
               inherit system;
@@ -32,17 +41,6 @@
                   ;
               };
             };
-          in
-          {
-            inputs',
-            ...
-          }:
-          {
-            inherit system;
-
-            _2505 = import inputs.nixpkgs-2505 branch-config;
-            _2511 = import inputs.nixpkgs-2511 branch-config;
-            _2411 = import inputs.nixpkgs-2411 branch-config;
 
             # keep-sorted start block=yes newline_separated=yes
             own = inputs'.custom-packages.legacyPackages;

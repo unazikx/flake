@@ -144,12 +144,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    files = {
-      type = "github";
-      owner = "mightyiam";
-      repo = "files";
-    };
-
     firefox-addons = {
       type = "github";
       owner = "petrkozorezov";
@@ -393,8 +387,8 @@
 
     obsidian-plugins = {
       type = "github";
-      owner = "unazikx";
-      repo = "obsidian-plugins-nix";
+      owner = "dax-dot-gay";
+      repo = "nix-obsidian-plugins";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

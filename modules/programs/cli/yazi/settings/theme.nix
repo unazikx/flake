@@ -99,11 +99,11 @@ lib.mkForce {
         inherit fg;
       }
       {
-        name = "*";
+        url = "*";
         inherit fg;
       }
       {
-        name = "*/";
+        url = "*/";
         inherit fg;
       }
       {

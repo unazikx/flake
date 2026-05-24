@@ -28,7 +28,7 @@
 
               vaults =
                 let
-                  dir = ./.;
+                  dir = ./vaults;
                   fromDir = (lib.filterAttrs (_name: type: type == "directory") (lib.readDir dir));
                 in
                 lib.mapAttrs (

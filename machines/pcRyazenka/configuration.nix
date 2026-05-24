@@ -42,6 +42,7 @@
             qutebrowser
             rbw
             recordingScreen
+            proxy-suite
             rezka-fzf
             rusted-tools
             sopsnix
@@ -56,7 +57,6 @@
             tuir
             yazi
             ytsub
-            zapret
             # keep-sorted end
             ;
 

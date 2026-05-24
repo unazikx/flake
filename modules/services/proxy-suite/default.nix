@@ -12,28 +12,16 @@
           config,
           ...
         }:
+        let
+          inherit (config.programs)
+            steam
+            ;
+        in
         {
           services.proxy-suite = {
             enable = true;
 
-            singBox = {
-              outbounds = [
-                # WARN:
-                # needs to fill
-                # ...
-              ];
-            };
-
-            zapret = {
-              enable = true;
-
-              # configName = "general(ALT)";
-              gameFilter = "all";
-
-              # syncDirectRouting = true;
-              # syncDirectRoutingUpstreamIps = false;
-              # syncDirectRoutingUserIps = true;
-            };
+            singBox.enable = false;
 
             tgWsProxy = {
               # INFO:
@@ -49,11 +37,11 @@
               secretFile = config.sopsnix."services/telegram-ws-proxy";
             };
 
-            tray = {
+            zapret = {
               enable = true;
 
-              autostart = true;
-              pollInterval = 5;
+              configName = "general(ALT)";
+              gameFilter = if steam.enable then "all" else "null";
             };
           };
         };
