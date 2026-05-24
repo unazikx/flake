@@ -76,7 +76,16 @@
           };
 
           # та же хуйня:wq
-          services.gnome.gnome-keyring.enable = lib.mkForce false;
+          services = {
+            gnome.gnome-keyring.enable = lib.mkForce false;
+
+            greetd.settings = {
+              initial_session = {
+                user = lib.userName;
+                command = lib.getExe' config.hm.programs.niri.package "niri-session";
+              };
+            };
+          };
         };
     };
 }

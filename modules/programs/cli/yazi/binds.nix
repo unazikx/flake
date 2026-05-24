@@ -78,14 +78,6 @@
       {
         on = [
           "b"
-          "t"
-        ];
-        run = "cd $XDG_TORRENTS_DIR";
-        desc = "Go to torrents";
-      }
-      {
-        on = [
-          "b"
           "d"
         ];
         run = "cd $XDG_DOWNLOAD_DIR";

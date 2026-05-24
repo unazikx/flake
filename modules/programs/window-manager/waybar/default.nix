@@ -1,6 +1,9 @@
 # INFO:
 # just simple bar for you
 # nothing garbage
+#
+# WARN:
+# only for niri
 
 {
   flake =

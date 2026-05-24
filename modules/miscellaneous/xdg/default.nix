@@ -62,7 +62,6 @@
                 extraConfig = {
                   SCREENSHOTS = config.hm.xdg.userDirs.pictures + "/screenshots";
                   FLAKE = toString lib.flakeDir;
-                  TORRENTS = config.services.qbittorrent.serverConfig.BitTorrent.Session.DefaultSavePath;
                   PASSWORDS = config.hm.xdg.userDirs.publicShare + "/passwords";
                 };
               };
@@ -91,7 +90,7 @@
                 };
               };
 
-              portal.enable = true;
+              portal.enable = if (config.hm.xdg.portal.extraPortals != [ ]) then true else false;
             };
 
             gtk.gtk3.bookmarks =

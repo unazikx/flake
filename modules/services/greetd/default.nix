@@ -12,7 +12,6 @@
         {
           pkgs,
           lib,
-          config,
           ...
         }:
         {
@@ -43,11 +42,6 @@
                     "input=red"
                   ])
                 ];
-              };
-
-              initial_session = {
-                user = lib.userName;
-                command = lib.getExe' config.hm.programs.niri.package "niri-session";
               };
             };
           };

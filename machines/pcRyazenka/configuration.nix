@@ -21,28 +21,25 @@
         extraModules = builtins.attrValues {
           inherit (config.nixosModules)
             # keep-sorted start
+            amneziawg
             basic-media
             basic-services
             basic-shell
+            cava
             desktop-hardware
             develop
-            main-games
-            niri-de
-            office-env
-            # keep-sorted end
-
-            # keep-sorted start
-            amneziawg
-            cava
             discord
             fastfetch
             firefox
             flood
             gdu
             helix
+            main-games
             minimal
+            niri-de
             nixos-cli
             obsidian
+            office-env
             proxy-suite
             qbittorrent
             qutebrowser
