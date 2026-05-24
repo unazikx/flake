@@ -75,8 +75,16 @@ in
           id = 710920;
         };
 
+        jalopy = {
+          id = 446020;
+        };
+
         lucid-blocks = {
           id = 3495730;
+        };
+
+        noexistence-you-me = {
+          id = 2873080;
         };
 
         noita = {
@@ -105,6 +113,10 @@ in
 
         space-haven = {
           id = 979110;
+        };
+
+        summer-in-mara = {
+          id = 962580;
         };
 
         terraria = {
