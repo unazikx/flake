@@ -13,9 +13,6 @@
           config,
           ...
         }:
-        let
-          cfg = config.stylix;
-        in
         {
           hm = {
             services.dunst = {

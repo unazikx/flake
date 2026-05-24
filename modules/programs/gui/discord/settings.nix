@@ -16,33 +16,19 @@ in
 
   plugins = {
     # keep-sorted start block=yes newline_separated=yes
-    accountPanelServerProfile.enable = true;
-    alwaysAnimate.enable = true;
-    alwaysExpandRoles.enable = true;
-    alwaysTrust.enable = true;
-    anonymiseFileNames.enable = true;
-    betterActivities.enable = true;
-    betterCommands.enable = true;
-    betterGifPicker.enable = true;
-    betterInvites.enable = true;
-    betterNotesBox.enable = true;
-    betterRoleDot.enable = true;
-    betterSettings.enable = true;
-    betterUploadButton.enable = true;
-    declutter.enable = true;
-    commandPalette.enable = true;
-    copyEmojiMarkdown.enable = true;
-    dearrow.enable = true;
-    decor.enable = true;
-    fakeNitro.enable = true;
-    gitHubRepos.enable = true;
-    globalBadges.enable = true;
-    hideMedia.enable = true;
-    mentionAvatars.enable = true;
-    openInApp.enable = true;
-    translate.enable = true;
     USRBG.enable = true;
-    youtubeAdblock.enable = true;
+
+    accountPanelServerProfile.enable = true;
+
+    alwaysAnimate.enable = true;
+
+    alwaysExpandRoles.enable = true;
+
+    alwaysTrust.enable = true;
+
+    anonymiseFileNames.enable = true;
+
+    betterActivities.enable = true;
 
     betterAudioPlayer = lib.mkMerge [
       {
@@ -86,6 +72,8 @@ in
       )
     ];
 
+    betterCommands.enable = true;
+
     betterFolders = {
       enable = true;
 
@@ -95,10 +83,48 @@ in
       showFolderIcon = 2;
     };
 
+    betterGifPicker.enable = true;
+
+    betterInvites.enable = true;
+
+    betterNotesBox.enable = true;
+
+    betterRoleDot.enable = true;
+
+    betterSettings.enable = true;
+
+    betterUploadButton.enable = true;
+
+    commandPalette.enable = true;
+
+    copyEmojiMarkdown.enable = true;
+
+    dearrow.enable = true;
+
+    declutter.enable = true;
+
+    decor.enable = true;
+
+    fakeNitro.enable = true;
+
+    gitHubRepos.enable = true;
+
+    globalBadges.enable = true;
+
+    hideMedia.enable = true;
+
+    mentionAvatars.enable = true;
+
     moreQuickReactions = {
       enable = true;
       compactMode = true;
     };
+
+    openInApp.enable = true;
+
+    translate.enable = true;
+
+    youtubeAdblock.enable = true;
     # keep-sorted end
   };
 }
