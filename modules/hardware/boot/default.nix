@@ -36,6 +36,7 @@
             consoleLogLevel = 0;
 
             kernelModules = [
+              "ntsync"
               "kvm-amd"
               "tun"
               "tap"

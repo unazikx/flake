@@ -38,11 +38,11 @@
             minimal
             nixos-cli
             obsidian
+            proxy-suite
             qbittorrent
             qutebrowser
             rbw
             recordingScreen
-            proxy-suite
             rezka-fzf
             rusted-tools
             sopsnix

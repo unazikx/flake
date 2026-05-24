@@ -27,9 +27,9 @@
           {
             inherit system;
 
+            _2411 = import inputs.nixpkgs-2411 _old.branch-config;
             _2505 = import inputs.nixpkgs-2505 _old.branch-config;
             _2511 = import inputs.nixpkgs-2511 _old.branch-config;
-            _2411 = import inputs.nixpkgs-2411 _old.branch-config;
 
             branch-config = {
               inherit system;
@@ -45,6 +45,10 @@
             # keep-sorted start block=yes newline_separated=yes
             own = inputs'.custom-packages.legacyPackages;
             _freesmlauncher = inputs.freesm-launcher.packages.${_pkgs.system}.freesmlauncher;
+
+            # inherit (_old._2511)
+            #   bubblewrap
+            #   ;
 
             _prismConfig = {
               gamemodeSupport = true;
