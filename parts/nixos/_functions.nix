@@ -1,4 +1,5 @@
 {
+  self,
   inputs,
   pkgs,
   lib,
@@ -60,19 +61,23 @@
       lib.zipAttrs
     ];
 
-  mkStylixImage =
-    image: colors:
-    pkgs.runCommand "stylix-image.png" { } (
-      lib.concatStringsSep " " [
-        (lib.getExe pkgs.lutgen)
-        "apply"
-        image
-        "-o"
-        "$out"
-        "--"
-        (builtins.concatStringsSep " " colors)
-      ]
-    );
+  mkStylix = {
+    image =
+      image: colors:
+      pkgs.runCommand "stylix-image.png" { } (
+        lib.concatStringsSep " " [
+          (lib.getExe pkgs.lutgen)
+          "apply"
+          image
+          "-o"
+          "$out"
+          "--"
+          (builtins.concatStringsSep " " colors)
+        ]
+      );
+
+    theme = name: import "${self}/modules/themes/base16/${name}.nix";
+  };
 
   mkSyncthing = {
     filter = config: list: lib.attrNames (removeAttrs config list);
@@ -164,6 +169,35 @@
                 options = [ "x-gvfs-show" ];
               };
         }) list
+      );
+  };
+
+  mkSpecialisations = {
+    fromDirectories =
+      directory: args:
+      let
+        specializationsList = (
+          lib.attrNames (lib.filterAttrs (_path: type: type == "regular") (lib.readDir directory))
+        );
+
+        nameFromFile = lib.removeSuffix ".nix";
+      in
+      lib.listToAttrs (
+        map (filename: {
+          name = nameFromFile filename;
+          value =
+            (
+              name:
+              {
+                configuration = {
+                  system.nixos.tags = [ name ];
+                  imports = [ ./${name}.nix ];
+                };
+              }
+              // args
+            )
+              (nameFromFile filename);
+        }) specializationsList
       );
   };
 }

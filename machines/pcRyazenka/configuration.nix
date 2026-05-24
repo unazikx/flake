@@ -1,4 +1,9 @@
 {
+  inputs,
+  ...
+}:
+
+{
   flake =
     {
       config,
@@ -62,48 +67,16 @@
 
           disko = config.diskoConfigurations.${configurationName};
 
-          # INFO:
-          # nixos options and config
-          systemConfig =
+          files = inputs.import-tree ./_files;
+
+          secrets =
             {
-              self,
-              pkgs,
               lib,
-              config,
               ...
             }:
             {
-              stylix = {
-                polarity = "dark";
-
-                base16Scheme = import "${self}/modules/themes/base16/paradise.nix";
-
-                image = lib.mkStylixImage (pkgs.fetchurl {
-                  url = "https://w.wallhaven.cc/full/og/wallhaven-ogl5z9.png";
-                  sha256 = "sha256-VvnBCulYtyVqJOQ5psLJyIvK8YffWPP8Stz9KgznGcY=";
-                }) config.lib.stylix.colors.toList;
-              };
-
               sops.secrets = import ./secrets.nix {
                 inherit lib;
-              };
-
-              hm.services.syncthing.settings.devices =
-                with lib.mkSyncthing;
-                lib.listToAttrs [
-                  (device "nothing2a" "E2PI7IQ-ZCKQW2J-MQF4OYZ-MFEPN4T-NNMF3LP-2TEHSM3-ZIN5VW2-6CRSRQM")
-                  (device "blackmamba" "3PWM3G4-KOBIRI7-ZSS63JJ-EWQX5VX-BC5F772-76CZATP-XBP6QOX-HFCGPQN")
-                  (device "windauser" "5NRFLQO-KFR4H7P-XGWMLNH-PSYDTNL-CF2D6JZ-PNEK76R-6DSYGSS-ZTFWQQF")
-                ];
-
-              fileSystems = lib.mkDevices.byName [
-                "fatKartman"
-                "fastRider"
-              ];
-
-              programs.steam.config.nonSteamApps = {
-                super-tux-kart.enable = true;
-                mindustry.enable = true;
               };
             };
         };

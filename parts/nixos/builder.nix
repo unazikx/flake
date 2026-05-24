@@ -138,7 +138,12 @@ in
                       ;
                   }
                   // (import ./_functions.nix {
-                    inherit inputs pkgs lib;
+                    inherit
+                      self
+                      inputs
+                      pkgs
+                      lib
+                      ;
                   })
                 )
               );
