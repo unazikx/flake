@@ -1151,6 +1151,30 @@
         "type": "github"
       }
     },
+    "late-sh": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "rust-overlay": "rust-overlay"
+      },
+      "locked": {
+        "lastModified": 1779708317,
+        "narHash": "sha256-6JkmVSK/IqXi1t997vel54y7qwl66b3f7N8pqXUzG1U=",
+        "owner": "mpiorowski",
+        "repo": "late-sh",
+        "rev": "5c01c15684626434fd27870da984ecdf3222b02e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mpiorowski",
+        "repo": "late-sh",
+        "type": "github"
+      }
+    },
     "libnbtplusplus": {
       "flake": false,
       "locked": {
@@ -2090,6 +2114,7 @@
         "hytale-launcher": "hytale-launcher",
         "impermanence": "impermanence",
         "import-tree": "import-tree",
+        "late-sh": "late-sh",
         "lsfg-vk-flake": "lsfg-vk-flake",
         "make-shell": "make-shell",
         "mangowc": "mangowc",
@@ -2145,6 +2170,27 @@
       }
     },
     "rust-overlay": {
+      "inputs": {
+        "nixpkgs": [
+          "late-sh",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1776222810,
+        "narHash": "sha256-5TD8MYqLMcJi9yV/9jq2dVUPtnu/lKZPD61esQCgvqs=",
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "rev": "4d6fee71fea68418a48992409b47f1183d0dd111",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "type": "github"
+      }
+    },
+    "rust-overlay_2": {
       "inputs": {
         "nixpkgs": [
           "ytsub",
@@ -2758,7 +2804,7 @@
         "nixpkgs": [
           "nixpkgs"
         ],
-        "rust-overlay": "rust-overlay"
+        "rust-overlay": "rust-overlay_2"
       },
       "locked": {
         "lastModified": 1779402886,

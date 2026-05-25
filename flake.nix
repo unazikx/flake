@@ -65,6 +65,14 @@
       inputs.flake-parts.follows = "flake-parts";
     };
 
+    late-sh = {
+      type = "github";
+      owner = "mpiorowski";
+      repo = "late-sh";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
+    };
+
     anyrun = {
       type = "github";
       owner = "anyrun-org";

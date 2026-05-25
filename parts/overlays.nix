@@ -81,6 +81,9 @@
 
             driftwm = inputs.driftwm.packages.${system}.default;
 
+            late = inputs.late-sh.packages.${system}.late;
+            late-sh = inputs.late-sh.packages.${system}.late-sh;
+
             freesmlauncher = _old._freesmlauncher.override _old._prismConfig;
 
             hytale-launcher = inputs.hytale-launcher.packages.${_pkgs.system}.default;
