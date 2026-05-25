@@ -1357,6 +1357,26 @@
         "type": "github"
       }
     },
+    "neu-nix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1779574346,
+        "narHash": "sha256-hFScTxwf3oaF11/jJ9kJqLQgRDoP/NuHm7QW+M4ibO8=",
+        "owner": "ricardomaps",
+        "repo": "neu-nix",
+        "rev": "6b67a47c3c87b4dcc7e8ee9c6eec36b1c88e3b11",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ricardomaps",
+        "repo": "neu-nix",
+        "type": "github"
+      }
+    },
     "nilla-cli": {
       "locked": {
         "lastModified": 1772082371,
@@ -2077,6 +2097,7 @@
         "microvm-nix": "microvm-nix",
         "minecraft-assets": "minecraft-assets",
         "musnix": "musnix",
+        "neu-nix": "neu-nix",
         "nilla-cli": "nilla-cli",
         "niri-flake": "niri-flake",
         "nix-cursors": "nix-cursors",

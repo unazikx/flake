@@ -66,6 +66,7 @@ let
     nur.overlays.default
     obsidian-plugins.overlays.default
     shattered-prism.overlays.default
+    neu-nix.overlays.default
     # keep-sorted end
   ];
 in

@@ -73,6 +73,13 @@
       inputs.flake-parts.follows = "flake-parts";
     };
 
+    neu-nix = {
+      type = "github";
+      owner = "ricardomaps";
+      repo = "neu-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     custom-packages = {
       type = "github";
       owner = "unazikx";
