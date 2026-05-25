@@ -14,6 +14,9 @@
           config,
           ...
         }:
+        let
+          cfg = config.hm.wayland.windowManager.sway;
+        in
         {
           hm.wayland.windowManager.sway = {
             enable = true;
@@ -51,6 +54,17 @@
               '';
 
             checkConfig = false;
+          };
+
+          services = {
+            gnome.gnome-keyring.enable = lib.mkForce false;
+
+            greetd.settings = {
+              initial_session = {
+                user = lib.userName;
+                command = lib.getExe cfg.package;
+              };
+            };
           };
         };
     };

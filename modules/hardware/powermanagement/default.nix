@@ -14,7 +14,6 @@
         {
           services = {
             upower.enable = true;
-            cpupower-gui.enable = true;
           };
 
           powerManagement = {

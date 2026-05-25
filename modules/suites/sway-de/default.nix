@@ -14,6 +14,7 @@
           imports = lib.attrValues {
             inherit (partsConfig.nixosModules)
               # keep-sorted start
+              clipboard
               dunst
               foot
               i3status-rust

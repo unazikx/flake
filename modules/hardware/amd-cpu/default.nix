@@ -22,6 +22,8 @@
               updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
             };
           };
+
+          services.cpupower-gui.enable = true;
         };
     };
 }

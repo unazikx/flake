@@ -60,11 +60,11 @@
                     block = "time";
                     format = " $icon $timestamp.datetime(f:'%d.%m.%Y / %H:%M') ";
                   }
-                  {
+                  (lib.mkIf config.services.upower.enable {
                     block = "battery";
                     driver = "upower";
                     format = " $icon $percentage ";
-                  }
+                  })
                   {
                     block = "menu";
                     text = " ⏻ ";
