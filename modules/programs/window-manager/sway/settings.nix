@@ -12,6 +12,14 @@ in
 
 lib.mkMerge [
   rec {
+    seat."*" =
+      let
+        mkSeconds = sec: toString (1000 * sec);
+      in
+      {
+        hide_cursor = mkSeconds 1;
+      };
+
     input."*" = {
       xkb_layout = "us,ru";
       xkb_options = "grp:caps_toggle";

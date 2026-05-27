@@ -53,6 +53,12 @@
                 layer_effects "waybar" shadows disable; corner_radius 0; blur disable
               '';
 
+            extraSessionCommands = with config.lib.stylix.colors; ''
+              export GRIMSHOT_SLURP_BACKGROUND = "${base00}CC"
+              export GRIMSHOT_SLURP_COLOR      = "${base08}FF"
+              export GRIMSHOT_SLURP_BORDER     = "${base02}CC"
+            '';
+
             checkConfig = false;
           };
 
