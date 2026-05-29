@@ -40,7 +40,7 @@
             zapret = {
               enable = true;
 
-              configName = "general(ALT)";
+              configName = "general (ALT12)";
               gameFilter = if steam.enable then "all" else "null";
             };
           };
