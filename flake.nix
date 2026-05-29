@@ -28,21 +28,28 @@
 
     nixpkgs-2505 = {
       type = "github";
-      owner = "NixOS";
+      owner = "nixos";
       repo = "nixpkgs";
       ref = "nixos-25.05";
     };
 
     nixpkgs-2511 = {
       type = "github";
-      owner = "NixOS";
+      owner = "nixos";
       repo = "nixpkgs";
       ref = "nixos-25.11";
     };
 
+    nixpkgs-2605 = {
+      type = "github";
+      owner = "nixos";
+      repo = "nixpkgs";
+      ref = "nixos-26.05";
+    };
+
     nixpkgs-2411 = {
       type = "github";
-      owner = "NixOS";
+      owner = "nixos";
       repo = "nixpkgs";
       ref = "nixos-24.11";
     };
@@ -87,15 +94,15 @@
 
     dank-material-shell = {
       type = "github";
-      owner = "AvengeMedia";
-      repo = "DankMaterialShell";
+      owner = "avengemedia";
+      repo = "dankmaterialshell";
       ref = "stable";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     dank-material-shell-plugins = {
       type = "github";
-      owner = "AvengeMedia";
+      owner = "avengemedia";
       repo = "dms-plugin-registry";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -166,8 +173,8 @@
 
     freesm-launcher = {
       type = "github";
-      owner = "FreesmTeam";
-      repo = "FreesmLauncher";
+      owner = "freesmteam";
+      repo = "freesmlauncher";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -246,7 +253,7 @@
 
     mangowc = {
       type = "github";
-      owner = "DreamMaoMao";
+      owner = "dreammaomao";
       repo = "mangowc";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-parts.follows = "flake-parts";
@@ -297,7 +304,7 @@
 
     nix-cursors = {
       type = "github";
-      owner = "LilleAila";
+      owner = "lilleaila";
       repo = "nix-cursors";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -333,7 +340,7 @@
 
     nix-minecraft = {
       type = "github";
-      owner = "Infinidoge";
+      owner = "infinidoge";
       repo = "nix-minecraft";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -348,7 +355,7 @@
 
     nix-wrapper-modules = {
       type = "github";
-      owner = "BirdeeHub";
+      owner = "birdeehub";
       repo = "nix-wrapper-modules";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -378,7 +385,7 @@
 
     nixos-hardware = {
       type = "github";
-      owner = "NixOS";
+      owner = "nixos";
       repo = "nixos-hardware";
       ref = "master";
     };
@@ -386,7 +393,7 @@
     nur = {
       type = "github";
       owner = "nix-community";
-      repo = "NUR";
+      repo = "nur";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-parts.follows = "flake-parts";
     };
@@ -423,13 +430,13 @@
 
     process-compose-flake = {
       type = "github";
-      owner = "Platonic-Systems";
+      owner = "platonic-systems";
       repo = "process-compose-flake";
     };
 
     proxy-suite-flake = {
       type = "github";
-      owner = "FUFSoB";
+      owner = "fufsob";
       repo = "proxy-suite-flake";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.zapret.follows = "zapret-discord-youtube";
@@ -443,21 +450,21 @@
 
     shattered-prism = {
       type = "github";
-      owner = "Noctilune";
-      repo = "ShatteredPrism";
+      owner = "noctilune";
+      repo = "shatteredprism";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     sopsnix = {
       type = "github";
-      owner = "Mic92";
+      owner = "mic92";
       repo = "sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     spicetify-nix = {
       type = "github";
-      owner = "Gerg-L";
+      owner = "gerg-l";
       repo = "spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -544,7 +551,7 @@
     # non flake tools
     umu-protonfixes = {
       type = "github";
-      owner = "Open-Wine-Components";
+      owner = "open-wine-components";
       repo = "umu-protonfixes";
       flake = false;
     };
@@ -552,13 +559,13 @@
     betterfox = {
       type = "github";
       owner = "yokoffing";
-      repo = "Betterfox";
+      repo = "betterfox";
       flake = false;
     };
 
     dns-malw-link = {
       type = "github";
-      owner = "ImMALWARE";
+      owner = "immalware";
       repo = "dns.malw.link";
       flake = false;
     };

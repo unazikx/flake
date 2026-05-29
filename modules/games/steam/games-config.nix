@@ -75,6 +75,26 @@ in
           id = 710920;
         };
 
+        dex-goty = {
+          id = 6910;
+        };
+
+        dex-human-revolution = {
+          id = 238010;
+        };
+
+        dex-invisible-war = {
+          id = 6920;
+        };
+
+        dex-mankid-divided = {
+          id = 337000;
+        };
+
+        dex-the-fall = {
+          id = 258180;
+        };
+
         factorio = {
           id = 427520;
         };
