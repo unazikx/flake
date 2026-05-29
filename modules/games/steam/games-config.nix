@@ -55,109 +55,61 @@ in
       }
       {
         # keep-sorted start block=yes newline_separated=yes
-        adventures-of-sir-kicksalot = {
-          id = 2629230;
-        };
+        adventures-of-sir-kicksalot.id = 2629230;
 
-        citizen-sleeper = {
-          id = 1578650;
-        };
+        citizen-sleeper-2.id = 2442460;
 
-        citizen-sleeper-2 = {
-          id = 2442460;
-        };
+        citizen-sleeper.id = 1578650;
 
-        counter-strike-cz = {
-          id = 80;
-        };
+        counter-strike-cz.id = 80;
 
-        darksiders-genesis = {
-          id = 710920;
-        };
+        darksiders-genesis.id = 710920;
 
-        dex-goty = {
-          id = 6910;
-        };
+        dex-goty.id = 6910;
 
-        dex-human-revolution = {
-          id = 238010;
-        };
+        dex-human-revolution.id = 238010;
 
-        dex-invisible-war = {
-          id = 6920;
-        };
+        dex-invisible-war.id = 6920;
 
-        dex-mankid-divided = {
-          id = 337000;
-        };
+        dex-mankid-divided.id = 337000;
 
-        dex-the-fall = {
-          id = 258180;
-        };
+        dex-the-fall.id = 258180;
 
-        factorio = {
-          id = 427520;
-        };
+        divinity-original-sin.id = 373420;
 
-        jalopy = {
-          id = 446020;
-        };
+        factorio.id = 427520;
 
-        lucid-blocks = {
-          id = 3495730;
-        };
+        jalopy.id = 446020;
 
-        noexistence-you-me = {
-          id = 2873080;
-        };
+        lucid-blocks.id = 3495730;
 
-        noita = {
-          id = 881100;
-        };
+        noexistence-you-me.id = 2873080;
 
-        one-million-fatal-guns = {
-          id = 155710;
-        };
+        noita.id = 881100;
 
-        paralives = {
-          id = 1118520;
-        };
+        one-million-fatal-guns.id = 155710;
 
-        plastic-warfare = {
-          id = 490640;
-        };
+        paralives.id = 1118520;
 
-        project-zomboid = {
-          id = 108600;
-        };
+        plastic-warfare.id = 490640;
 
-        repo = {
-          id = 3214660;
-        };
+        project-zomboid.id = 108600;
 
-        sandbox = {
-          id = 590830;
-        };
+        repo.id = 3214660;
 
-        space-haven = {
-          id = 979110;
-        };
+        sandbox.id = 590830;
 
-        summer-in-mara = {
-          id = 962580;
-        };
+        space-haven.id = 979110;
 
-        terraria = {
-          id = 105600;
-        };
+        summer-in-mara.id = 962580;
 
-        valheim = {
-          id = 892970;
-        };
+        supraland.id = 813630;
 
-        worms-wmd = {
-          id = 327030;
-        };
+        terraria.id = 105600;
+
+        valheim.id = 892970;
+
+        worms-wmd.id = 327030;
         # keep-sorted end
       }
     )
