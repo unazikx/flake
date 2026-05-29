@@ -61,12 +61,12 @@ let
   overlays = with inputs; [
     # keep-sorted start
     glide-browser.overlays.default
+    neu-nix.overlays.default
     niri-flake.overlays.niri
     nix-minecraft.overlays.default
     nur.overlays.default
     obsidian-plugins.overlays.default
     shattered-prism.overlays.default
-    neu-nix.overlays.default
     # keep-sorted end
   ];
 in

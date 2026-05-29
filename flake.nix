@@ -65,27 +65,12 @@
       inputs.flake-parts.follows = "flake-parts";
     };
 
-    late-sh = {
-      type = "github";
-      owner = "mpiorowski";
-      repo = "late-sh";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-utils.follows = "flake-utils";
-    };
-
     anyrun = {
       type = "github";
       owner = "anyrun-org";
       repo = "anyrun";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-parts.follows = "flake-parts";
-    };
-
-    neu-nix = {
-      type = "github";
-      owner = "ricardomaps";
-      repo = "neu-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     custom-packages = {
@@ -238,6 +223,14 @@
       repo = "import-tree";
     };
 
+    late-sh = {
+      type = "github";
+      owner = "mpiorowski";
+      repo = "late-sh";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
+    };
+
     lsfg-vk-flake = {
       type = "github";
       owner = "pabloaul";
@@ -278,6 +271,13 @@
       type = "github";
       owner = "musnix";
       repo = "musnix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    neu-nix = {
+      type = "github";
+      owner = "ricardomaps";
+      repo = "neu-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

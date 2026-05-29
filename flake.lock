@@ -2149,7 +2149,6 @@
         "xytz": "xytz",
         "ytsub": "ytsub",
         "zapret-discord-youtube": "zapret-discord-youtube",
-        "zapret2-flake": "zapret2-flake",
         "zen-browser": "zen-browser"
       }
     },
@@ -2841,26 +2840,6 @@
       "original": {
         "owner": "Flowseal",
         "repo": "zapret-discord-youtube",
-        "type": "github"
-      }
-    },
-    "zapret2-flake": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1775988490,
-        "narHash": "sha256-r3/iCOr6+px/X/g/KtHaDx2C5a5Gv8bb9so3BGAMmxA=",
-        "owner": "dmfrpro",
-        "repo": "zapret2-flake",
-        "rev": "d0867ec745c282eaacc985010482b199427b6f75",
-        "type": "github"
-      },
-      "original": {
-        "owner": "dmfrpro",
-        "repo": "zapret2-flake",
         "type": "github"
       }
     },

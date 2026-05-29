@@ -75,6 +75,10 @@ in
           id = 710920;
         };
 
+        factorio = {
+          id = 427520;
+        };
+
         jalopy = {
           id = 446020;
         };
@@ -93,6 +97,10 @@ in
 
         one-million-fatal-guns = {
           id = 155710;
+        };
+
+        paralives = {
+          id = 1118520;
         };
 
         plastic-warfare = {
