@@ -36,6 +36,7 @@ let
     sopsnix.nixosModules.default
     steam-config-nix.nixosModules.default
     stylix.nixosModules.default
+    zapret2.nixosModules.default
     # keep-sorted end
   ];
 

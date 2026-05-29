@@ -17,7 +17,9 @@
       overlays.default =
         _old: _pkgs:
         let
-          inherit (_pkgs.stdenv.hostPlatform) system;
+          inherit (_pkgs.stdenv.hostPlatform)
+            system
+            ;
         in
         withSystem system (
           {

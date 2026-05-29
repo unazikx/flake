@@ -788,7 +788,25 @@
     },
     "flake-utils_3": {
       "inputs": {
-        "systems": "systems_10"
+        "systems": "systems_7"
+      },
+      "locked": {
+        "lastModified": 1731533236,
+        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "flake-utils_4": {
+      "inputs": {
+        "systems": "systems_11"
       },
       "locked": {
         "lastModified": 1710146030,
@@ -1074,22 +1092,6 @@
       "original": {
         "owner": "nix-community",
         "repo": "home-manager",
-        "type": "github"
-      }
-    },
-    "hostlists": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1758137273,
-        "narHash": "sha256-ObCo3e+5VeUgY5J/NH2Ka7x9FC/a2z4Y/2y00XweN20=",
-        "owner": "Snowy-Fluffy",
-        "repo": "zapret.cfgs",
-        "rev": "52e1b547c6e9ac96836b09eab89f3e9edb7bb69b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Snowy-Fluffy",
-        "repo": "zapret.cfgs",
         "type": "github"
       }
     },
@@ -2047,9 +2049,7 @@
         "nixpkgs": [
           "nixpkgs"
         ],
-        "zapret": [
-          "zapret-discord"
-        ]
+        "zapret": "zapret"
       },
       "locked": {
         "lastModified": 1779110708,
@@ -2164,8 +2164,7 @@
         "winapps": "winapps",
         "xytz": "xytz",
         "ytsub": "ytsub",
-        "zapret-discord": "zapret-discord",
-        "zapret-presets": "zapret-presets",
+        "zapret2-flake": "zapret2-flake",
         "zen-browser": "zen-browser"
       }
     },
@@ -2309,7 +2308,7 @@
         "nixpkgs": [
           "nixpkgs"
         ],
-        "systems": "systems_7"
+        "systems": "systems_8"
       },
       "locked": {
         "lastModified": 1779567740,
@@ -2333,7 +2332,7 @@
         "nixpkgs": [
           "nixpkgs"
         ],
-        "systems": "systems_8"
+        "systems": "systems_9"
       },
       "locked": {
         "lastModified": 1778068119,
@@ -2366,7 +2365,7 @@
         "nur": [
           "nur"
         ],
-        "systems": "systems_9",
+        "systems": "systems_10",
         "tinted-kitty": "tinted-kitty",
         "tinted-schemes": "tinted-schemes",
         "tinted-tmux": "tinted-tmux",
@@ -2402,6 +2401,21 @@
       }
     },
     "systems_10": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
+    "systems_11": {
       "locked": {
         "lastModified": 1681028828,
         "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
@@ -2719,7 +2733,7 @@
     "winapps": {
       "inputs": {
         "flake-compat": "flake-compat_9",
-        "flake-utils": "flake-utils_3",
+        "flake-utils": "flake-utils_4",
         "nix-filter": "nix-filter_2",
         "nixpkgs": [
           "nixpkgs"
@@ -2820,22 +2834,21 @@
         "type": "github"
       }
     },
-    "zapret-discord": {
+    "zapret": {
       "inputs": {
-        "flake-utils": [
-          "flake-utils"
-        ],
+        "flake-utils": "flake-utils_3",
         "nixpkgs": [
+          "proxy-suite-flake",
           "nixpkgs"
         ],
         "zapret-flowseal": "zapret-flowseal"
       },
       "locked": {
-        "lastModified": 1779576453,
-        "narHash": "sha256-0ECVvxCjHVJNNvgKhM52EOvcoa7/dIrvoIRIlTQQRDQ=",
+        "lastModified": 1779994034,
+        "narHash": "sha256-rDNAp9IoScJ83ZD23+clu/3YjeFdT0poqzmf4sPAbio=",
         "owner": "kartavkun",
         "repo": "zapret-discord-youtube",
-        "rev": "0ece738985704242ade05e7769ffcac41f722ff5",
+        "rev": "f7e8d6767a8f26ee726150c247c675f9061e8bd4",
         "type": "github"
       },
       "original": {
@@ -2847,11 +2860,11 @@
     "zapret-flowseal": {
       "flake": false,
       "locked": {
-        "lastModified": 1778835707,
-        "narHash": "sha256-VLs4i0d1uJ9gVs7NhfZBPz2cs4LUcifJvIZDi4dM7ss=",
+        "lastModified": 1779984366,
+        "narHash": "sha256-6C70PGXROHvI+I4fR75r0xUEUU/v8tWpsiAJ7hVWX4s=",
         "owner": "Flowseal",
         "repo": "zapret-discord-youtube",
-        "rev": "197dafcaa3a05ab799df8b17865380d14c78ecb9",
+        "rev": "ef19845a801e4e743f7bdfdbd58f9745c6adbd60",
         "type": "github"
       },
       "original": {
@@ -2860,24 +2873,23 @@
         "type": "github"
       }
     },
-    "zapret-presets": {
+    "zapret2-flake": {
       "inputs": {
-        "hostlists": "hostlists",
         "nixpkgs": [
           "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1760267658,
-        "narHash": "sha256-VBVUeMHNlm7Qz2amFY7vL9wyPcwCkhCsOUukSn/9UXQ=",
-        "owner": "kotudemo",
-        "repo": "zapret-presets",
-        "rev": "c3c2bf5a9a9e96b9bf546603b80b1fe3d4adbcb6",
+        "lastModified": 1775988490,
+        "narHash": "sha256-r3/iCOr6+px/X/g/KtHaDx2C5a5Gv8bb9so3BGAMmxA=",
+        "owner": "dmfrpro",
+        "repo": "zapret2-flake",
+        "rev": "d0867ec745c282eaacc985010482b199427b6f75",
         "type": "github"
       },
       "original": {
-        "owner": "kotudemo",
-        "repo": "zapret-presets",
+        "owner": "dmfrpro",
+        "repo": "zapret2-flake",
         "type": "github"
       }
     },

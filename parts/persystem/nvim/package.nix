@@ -16,8 +16,6 @@
     }:
     {
       legacyPackages.${baseNameOf ./.} = {
-        nvchad = inputs'.nix-nvchad.packages.default;
-
         nvf-own =
           (inputs.nvf.lib.neovimConfiguration {
             inherit pkgs;

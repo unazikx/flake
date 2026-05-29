@@ -432,7 +432,6 @@
       owner = "FUFSoB";
       repo = "proxy-suite-flake";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.zapret.follows = "zapret-discord";
     };
 
     services-flake = {
@@ -524,18 +523,10 @@
       inputs.flake-utils.follows = "flake-utils";
     };
 
-    zapret-discord = {
+    zapret2-flake = {
       type = "github";
-      owner = "kartavkun";
-      repo = "zapret-discord-youtube";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-utils.follows = "flake-utils";
-    };
-
-    zapret-presets = {
-      type = "github";
-      owner = "kotudemo";
-      repo = "zapret-presets";
+      owner = "dmfrpro";
+      repo = "zapret2-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

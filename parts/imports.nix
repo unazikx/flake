@@ -30,7 +30,6 @@
       home-manager.flakeModules.default
       make-shell.flakeModules.default
       nix-wrapper-modules.flakeModules.default
-      nix-wrapper-modules.flakeModules.wrappers
       process-compose-flake.flakeModule
       treefmt-nix.flakeModule
       # keep-sorted end
