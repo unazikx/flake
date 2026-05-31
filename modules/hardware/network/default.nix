@@ -11,6 +11,7 @@
       nixosModules.${baseNameOf ./.} =
         {
           inputs,
+          pkgs,
           lib,
           ...
         }:
@@ -41,11 +42,12 @@
               "83.220.169.155"
             ];
 
-            extraHosts =
-              let
-                isLocal = true;
-              in
-              lib.readFile (if isLocal then ./hosts.txt else "${inputs.dns-malw-link.outPath}/hosts");
+            extraHosts = import ./hosts.nix {
+              inherit inputs pkgs lib;
+              blackList = [
+                "api.github.com"
+              ];
+            };
 
             # INFO:
             # rutracker trackers
