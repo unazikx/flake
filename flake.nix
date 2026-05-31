@@ -80,6 +80,13 @@
       inputs.flake-parts.follows = "flake-parts";
     };
 
+    betterfox = {
+      type = "github";
+      owner = "yokoffing";
+      repo = "betterfox";
+      flake = false;
+    };
+
     custom-packages = {
       type = "github";
       owner = "unazikx";
@@ -119,6 +126,13 @@
       owner = "nix-community";
       repo = "disko";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    dns-malw-link = {
+      type = "github";
+      owner = "immalware";
+      repo = "dns.malw.link";
+      flake = false;
     };
 
     driftwm = {
@@ -272,6 +286,13 @@
       owner = "microvm-nix";
       repo = "microvm.nix";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    minecraft-assets = {
+      type = "github";
+      owner = "azikxz";
+      repo = "assets";
+      flake = false;
     };
 
     musnix = {
@@ -500,6 +521,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    umu-protonfixes = {
+      type = "github";
+      owner = "open-wine-components";
+      repo = "umu-protonfixes";
+      flake = false;
+    };
+
     viu = {
       type = "github";
       owner = "viu-media";
@@ -547,35 +575,6 @@
       inputs.home-manager.follows = "home-manager";
     };
     # keep-sorted end
-
-    # non flake tools
-    umu-protonfixes = {
-      type = "github";
-      owner = "open-wine-components";
-      repo = "umu-protonfixes";
-      flake = false;
-    };
-
-    betterfox = {
-      type = "github";
-      owner = "yokoffing";
-      repo = "betterfox";
-      flake = false;
-    };
-
-    dns-malw-link = {
-      type = "github";
-      owner = "immalware";
-      repo = "dns.malw.link";
-      flake = false;
-    };
-
-    minecraft-assets = {
-      type = "github";
-      owner = "azikxz";
-      repo = "assets";
-      flake = false;
-    };
   };
 
   outputs =

@@ -36,7 +36,7 @@
             helix
             main-games
             minimal
-            niri-de
+            nilla
             nixos-cli
             obsidian
             office-env
@@ -49,6 +49,7 @@
             rusted-tools
             sopsnix
             spotify
+            sway-de
             syncthing
             system-monitor
             tailscale
