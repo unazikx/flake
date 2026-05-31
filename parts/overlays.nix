@@ -45,6 +45,24 @@
             };
 
             # keep-sorted start block=yes newline_separated=yes
+            late = inputs'.late-sh.packages.late;
+            late-sh = inputs'.late-sh.packages.late-sh;
+
+            nilla-cli = inputs'.nilla-cli.packages.nilla-cli;
+
+            ouch = _pkgs.ouch.override {
+              enableUnfree = true;
+            };
+
+            portablemc = _pkgs.portablemc.override {
+              textToSpeechSupport = false;
+              jre = _old.temurin-jre-bin-25;
+            };
+
+            prismlauncher = _pkgs.prismlauncher.override _old._prismConfig;
+
+            rc2nix = inputs'.plasma-manager.packages.rc2nix;
+
             own = inputs'.custom-packages.legacyPackages;
             _freesmlauncher = inputs.freesm-launcher.packages.${_pkgs.system}.freesmlauncher;
 
@@ -81,31 +99,7 @@
               }).override
                 { jre_headless = _old.temurin-jre-bin-21; };
 
-            driftwm = inputs.driftwm.packages.${system}.default;
-
-            late = inputs.late-sh.packages.${system}.late;
-            late-sh = inputs.late-sh.packages.${system}.late-sh;
-
-            freesmlauncher = _old._freesmlauncher.override _old._prismConfig;
-
-            hytale-launcher = inputs.hytale-launcher.packages.${_pkgs.system}.default;
-
-            max-messenger = inputs.max-messenger.packages.${system}.default;
-
-            nilla-cli = inputs.nilla-cli.packages.${system}.nilla-cli;
-
-            ouch = _pkgs.ouch.override {
-              enableUnfree = true;
-            };
-
-            portablemc = _pkgs.portablemc.override {
-              textToSpeechSupport = false;
-              jre = _old.temurin-jre-bin-25;
-            };
-
-            prismlauncher = _pkgs.prismlauncher.override _old._prismConfig;
-
-            rc2nix = inputs.plasma-manager.packages.${system}.rc2nix;
+            driftwm = inputs'.driftwm.packages.default;
 
             spotify-player = _pkgs.spotify-player.override {
               withAudioBackend = "pulseaudio";
@@ -126,21 +120,29 @@
               "-silent"
             ];
 
+            strom-games = inputs'.strom-nix.packages;
+
+            freesmlauncher = _old._freesmlauncher.override _old._prismConfig;
+
+            hytale-launcher = inputs.hytale-launcher.packages.${_pkgs.system}.default;
+
+            max-messenger = inputs'.max-messenger.packages.default;
+
             suwayomi-server = _pkgs.suwayomi-server.override {
               jdk21_headless = _old.temurin-jre-bin-21;
             };
 
-            xytz = inputs.xytz.packages.${system}.default.overrideAttrs {
+            xytz = inputs'.xytz.packages.default.overrideAttrs {
               vendorHash = "sha256-j4K61ESqtlfOD8S3E0vtL18aziSFztoU3V0KSLtJEME=";
             };
 
-            ytsub = inputs.ytsub.packages.${system}.default;
+            ytsub = inputs'.ytsub.packages.default;
 
-            zen-beta = inputs.zen-browser.packages.${system}.beta;
+            zen-beta = inputs'.zen-browser.packages.beta;
 
-            zen-twilight = inputs.zen-browser.packages.${system}.twilight;
+            zen-twilight = inputs'.zen-browser.packages.twilight;
 
-            zen-twilight-official = inputs.zen-browser.packages.${system}.twilight-official;
+            zen-twilight-official = inputs'.zen-browser.packages.twilight-official;
             # keep-sorted end
 
             default-lsp = _pkgs.lib.attrValues {

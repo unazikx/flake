@@ -498,6 +498,13 @@
       inputs.flake-parts.follows = "flake-parts";
     };
 
+    strom-nix = {
+      type = "github";
+      owner = "kraftwerk-gaming";
+      repo = "strom";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     stylix = {
       type = "github";
       owner = "danth";
