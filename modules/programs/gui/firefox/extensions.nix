@@ -16,6 +16,7 @@ lib.attrValues (
     inherit (pkgs.own.firefox-addons)
       # keep-sorted start
       darkreader
+      ipfs-companion
       libredirect
       mal-sync
       protondb-for-steam
