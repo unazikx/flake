@@ -54,61 +54,45 @@ in
         };
       }
       {
-        # keep-sorted start block=yes newline_separated=yes
+        # keep-sorted start block=yes
+
         adventures-of-sir-kicksalot.id = 2629230;
-
+        arctico.id = 325210;
         citizen-sleeper-2.id = 2442460;
-
         citizen-sleeper.id = 1578650;
-
         counter-strike-cz.id = 80;
-
         darksiders-genesis.id = 710920;
-
         dex-goty.id = 6910;
-
         dex-human-revolution.id = 238010;
-
         dex-invisible-war.id = 6920;
-
         dex-mankid-divided.id = 337000;
-
         dex-the-fall.id = 258180;
-
+        disco-elysium.id = 325210;
         divinity-original-sin.id = 373420;
-
         factorio.id = 427520;
-
+        flotsam.id = 821250;
+        iq-under-construction.id = 3771740;
         jalopy.id = 446020;
-
         lucid-blocks.id = 3495730;
-
         noexistence-you-me.id = 2873080;
-
         noita.id = 881100;
-
         one-million-fatal-guns.id = 155710;
-
         paralives.id = 1118520;
-
         plastic-warfare.id = 490640;
-
         project-zomboid.id = 108600;
-
         repo.id = 3214660;
-
         sandbox.id = 590830;
-
+        sleeping-dogs.id = 307690;
         space-haven.id = 979110;
-
         summer-in-mara.id = 962580;
-
+        supraland-six-inches.id = 1522870;
         supraland.id = 813630;
-
         terraria.id = 105600;
-
+        tes-iii.id = 22320;
+        tes-iv.id = 22330;
+        tes-v.id = 489830;
         valheim.id = 892970;
-
+        warhammer-boltgun.id = 2005010;
         worms-wmd.id = 327030;
         # keep-sorted end
       }
