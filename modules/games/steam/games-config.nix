@@ -49,13 +49,15 @@ in
       {
         compatTool = defaultCompatTool;
         launchOptions = {
-          env.STEAM_COMPAT_DATA_PATH = "${steamapps}/compatdata/0";
+          env = {
+            STEAM_COMPAT_DATA_PATH = "${steamapps}/compatdata/0";
+            PROTON_USE_NTSYNC = 1;
+          };
           wrappers = [ (lib.getExe pkgs.gamemode) ];
         };
       }
       {
         # keep-sorted start block=yes
-
         adventures-of-sir-kicksalot.id = 2629230;
         arctico.id = 325210;
         citizen-sleeper-2.id = 2442460;
@@ -69,6 +71,7 @@ in
         dex-the-fall.id = 258180;
         disco-elysium.id = 325210;
         divinity-original-sin.id = 373420;
+        elite-dangerous.id = 359320;
         factorio.id = 427520;
         flotsam.id = 821250;
         iq-under-construction.id = 3771740;

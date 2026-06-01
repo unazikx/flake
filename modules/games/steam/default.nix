@@ -79,6 +79,25 @@
               enableRenice = true;
             };
           };
+
+          systemd.user.services = {
+            steam-autostart = {
+              wantedBy = [ "graphical-session.target" ];
+              partOf = [ "graphical-session.target" ];
+              after = [ "graphical-session.target" ];
+
+              serviceConfig = {
+                ExecStart = lib.concatStringsSep " " [
+                  (lib.getExe config.programs.steam.package)
+                  "-nochatui"
+                  "-nofriendsui"
+                  "-silent"
+                ];
+                Restart = "always";
+                RestartSec = 2;
+              };
+            };
+          };
         };
     };
 }

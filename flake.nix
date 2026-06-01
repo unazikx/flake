@@ -95,8 +95,6 @@
       inputs.flake-parts.follows = "flake-parts";
       inputs.pkgs-by-name.follows = "pkgs-by-name";
       inputs.nur.follows = "nur";
-      inputs.treefmt-nix.follows = "treefmt-nix";
-      inputs.emmanuelrosa-nix.follows = "emmanuelrosa-nix";
     };
 
     dank-material-shell = {
@@ -163,6 +161,18 @@
       owner = "emmanuelrosa";
       repo = "erosanix";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    files = {
+      type = "github";
+      owner = "mightyiam";
+      repo = "files";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-parts.follows = "flake-parts";
+      inputs.import-tree.follows = "import-tree";
+      inputs.treefmt-nix.follows = "";
+      inputs.make-shell.follows = "";
+      inputs.git-hooks.follows = "";
     };
 
     firefox-addons = {

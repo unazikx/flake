@@ -59,15 +59,15 @@ lib.mkMerge [
         command = lib.getExe pkgs.autotiling-rs;
         always = false;
       }
-      {
-        command = lib.concatStringsSep " " [
-          (lib.getExe config.programs.steam.package)
-          "-nochatui"
-          "-nofriendsui"
-          "-silent"
-        ];
-        always = false;
-      }
+      # {
+      #   command = lib.concatStringsSep " " [
+      #     (lib.getExe config.programs.steam.package)
+      #     "-nochatui"
+      #     "-nofriendsui"
+      #     "-silent"
+      #   ];
+      #   always = false;
+      # }
       {
         command = lib.concatStringsSep " " [
           (lib.getExe pkgs.ayugram-desktop)
