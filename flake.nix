@@ -167,12 +167,7 @@
       type = "github";
       owner = "mightyiam";
       repo = "files";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-parts.follows = "flake-parts";
-      inputs.import-tree.follows = "import-tree";
-      inputs.treefmt-nix.follows = "";
-      inputs.make-shell.follows = "";
-      inputs.git-hooks.follows = "";
+      flake = false;
     };
 
     firefox-addons = {
