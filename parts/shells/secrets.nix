@@ -16,9 +16,7 @@
       ...
     }:
     {
-      devshells.secrets = {
-        name = "Secrets manager";
-
+      make-shells.secrets = {
         packages = [
           # keep-sorted start
           pkgs.age
@@ -26,19 +24,6 @@
           pkgs.ssh-to-age
           # keep-sorted end
         ];
-
-        commands = [
-          {
-            name = "secrets gen-age";
-            command = "ssh-to-age -private-key -i ~/.ssh/id_ed25519 > ~/.config/sops/age/keys.txt";
-            help = "Generates age key from ssh key";
-          }
-        ];
-
-        devshell.motd = ''
-          󰌾 {45}Welcome to Secrets management.{reset}
-          Enter 'menu' for general commands.
-        '';
       };
     };
 }
