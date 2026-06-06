@@ -10,13 +10,8 @@
       ...
     }:
     {
-      # idk devshells from numtide is shit
-      make-shells.python = {
-        shellHook = ''
-          if command -v fish > /dev/null 2>&1; then
-            exec fish
-          fi
-        '';
+      devshells.python-testing = {
+        name = "Python devshell";
 
         packages = [
           (pkgs.python314.withPackages (ps: [
@@ -30,6 +25,14 @@
             # keep-sorted end
           ]))
         ];
+
+        commands = [ ];
+
+        devshell.motd = ''
+           {45}Welcome to Python devshell.{reset}
+            (mainly for testing various software)
+          Enter 'menu' for general commands.
+        '';
       };
     };
 }
