@@ -62,6 +62,7 @@ in
         arctico.id = 325210;
         citizen-sleeper-2.id = 2442460;
         citizen-sleeper.id = 1578650;
+        counter-strike-cz-deleted-scenes.id = 100;
         counter-strike-cz.id = 80;
         darksiders-genesis.id = 710920;
         dex-goty.id = 6910;
@@ -74,9 +75,12 @@ in
         elite-dangerous.id = 359320;
         factorio.id = 427520;
         flotsam.id = 821250;
+        goat-simulator-remastered.id = 858710;
+        gravity-circuit.id = 858710;
         iq-under-construction.id = 3771740;
         jalopy.id = 446020;
         lucid-blocks.id = 3495730;
+        midnight-snack.id = 3363200;
         noexistence-you-me.id = 2873080;
         noita.id = 881100;
         one-million-fatal-guns.id = 155710;
@@ -88,6 +92,7 @@ in
         sleeping-dogs.id = 307690;
         space-haven.id = 979110;
         summer-in-mara.id = 962580;
+        supraball.id = 321400;
         supraland-six-inches.id = 1522870;
         supraland.id = 813630;
         terraria.id = 105600;
