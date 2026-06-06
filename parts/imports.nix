@@ -26,7 +26,6 @@
       devshell.flakeModule
       disko.flakeModule
       flake-parts.flakeModules.bundlers
-      "${files}/flake-module.nix"
       github-actions-nix.flakeModule
       home-manager.flakeModules.default
       make-shell.flakeModules.default

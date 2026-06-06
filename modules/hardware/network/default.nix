@@ -46,6 +46,20 @@
               inherit inputs pkgs lib;
               blackList = [
                 "api.github.com"
+                "api.spotify.com"
+                "login5.spotify.com"
+                "encore.scdn.co"
+                "gew1-spclient.spotify.com"
+                "spclient.wg.spotify.com"
+                "api-partner.spotify.com"
+                "aet.spotify.com"
+                "www.spotify.com"
+                "accounts.spotify.com"
+                "open.spotify.com"
+                "accounts.scdn.co"
+                "gew1-dealer.spotify.com"
+                "www-growth.scdn.co"
+
               ];
             };
 
