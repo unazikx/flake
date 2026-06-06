@@ -163,13 +163,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    files = {
-      type = "github";
-      owner = "mightyiam";
-      repo = "files";
-      flake = false;
-    };
-
     firefox-addons = {
       type = "github";
       owner = "petrkozorezov";
