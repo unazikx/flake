@@ -60,10 +60,12 @@ in
         # keep-sorted start block=yes
         adventures-of-sir-kicksalot.id = 2629230;
         arctico.id = 325210;
+        battletoads.id = 1244950;
         citizen-sleeper-2.id = 2442460;
         citizen-sleeper.id = 1578650;
         counter-strike-cz-deleted-scenes.id = 100;
         counter-strike-cz.id = 80;
+        cuphead.id = 268910;
         darksiders-genesis.id = 710920;
         dex-goty.id = 6910;
         dex-human-revolution.id = 238010;
@@ -71,6 +73,8 @@ in
         dex-mankid-divided.id = 337000;
         dex-the-fall.id = 258180;
         disco-elysium.id = 325210;
+        divine-divinity.id = 214170;
+        divinity-ii.id = 219780;
         divinity-original-sin.id = 373420;
         elite-dangerous.id = 359320;
         factorio.id = 427520;
@@ -81,6 +85,7 @@ in
         jalopy.id = 446020;
         lucid-blocks.id = 3495730;
         midnight-snack.id = 3363200;
+        minecraft-dungeons.id = 1672970;
         noexistence-you-me.id = 2873080;
         noita.id = 881100;
         one-million-fatal-guns.id = 155710;
