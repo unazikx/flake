@@ -43,7 +43,6 @@
 
                 extraGroups = [
                   # keep-sorted start
-                  "adbusers"
                   "audio"
                   "deluge"
                   "docker"
@@ -61,6 +60,7 @@
                   "users"
                   "video"
                   "wheel"
+                  config.services.kubo.group
                   # keep-sorted end
                 ];
 

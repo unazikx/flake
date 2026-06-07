@@ -34,6 +34,7 @@
             flood
             gdu
             helix
+            kubo
             main-games
             minimal
             nilla

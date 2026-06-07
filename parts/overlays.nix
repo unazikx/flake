@@ -45,7 +45,6 @@
             };
 
             # keep-sorted start block=yes newline_separated=yes
-
             _freesmlauncher = inputs.freesm-launcher.packages.${_pkgs.system}.freesmlauncher;
 
             _prismConfig = {

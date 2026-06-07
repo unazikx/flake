@@ -29,8 +29,6 @@
           nix = {
             package = pkgs.lixPackageSets.latest.lix;
 
-            channel.enable = false;
-
             registry =
               let
                 isFlake = (_: entry: lib.isType "flake" entry);
