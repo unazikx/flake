@@ -45,30 +45,8 @@
             };
 
             # keep-sorted start block=yes newline_separated=yes
-            late = inputs'.late-sh.packages.late;
-            late-sh = inputs'.late-sh.packages.late-sh;
 
-            nilla-cli = inputs'.nilla-cli.packages.nilla-cli;
-
-            ouch = _pkgs.ouch.override {
-              enableUnfree = true;
-            };
-
-            portablemc = _pkgs.portablemc.override {
-              textToSpeechSupport = false;
-              jre = _old.temurin-jre-bin-25;
-            };
-
-            prismlauncher = _pkgs.prismlauncher.override _old._prismConfig;
-
-            rc2nix = inputs'.plasma-manager.packages.rc2nix;
-
-            own = inputs'.custom-packages.legacyPackages;
             _freesmlauncher = inputs.freesm-launcher.packages.${_pkgs.system}.freesmlauncher;
-
-            # inherit (_old._2511)
-            #   bubblewrap
-            #   ;
 
             _prismConfig = {
               gamemodeSupport = true;
@@ -99,6 +77,10 @@
               }).override
                 { jre_headless = _old.temurin-jre-bin-21; };
 
+            determinate-nix = inputs'.determinate-nix.packages.nix;
+
+            nilla-cli = inputs'.nilla-cli.packages.nilla-cli;
+
             driftwm = inputs'.driftwm.packages.default;
 
             spotify-player = _pkgs.spotify-player.override {
@@ -126,6 +108,10 @@
 
             hytale-launcher = inputs.hytale-launcher.packages.${_pkgs.system}.default;
 
+            late = inputs'.late-sh.packages.late;
+
+            late-sh = inputs'.late-sh.packages.late-sh;
+
             max-messenger = inputs'.max-messenger.packages.default;
 
             suwayomi-server = _pkgs.suwayomi-server.override {
@@ -135,6 +121,21 @@
             xytz = inputs'.xytz.packages.default.overrideAttrs {
               vendorHash = "sha256-j4K61ESqtlfOD8S3E0vtL18aziSFztoU3V0KSLtJEME=";
             };
+
+            ouch = _pkgs.ouch.override {
+              enableUnfree = true;
+            };
+
+            portablemc = _pkgs.portablemc.override {
+              textToSpeechSupport = false;
+              jre = _old.temurin-jre-bin-25;
+            };
+
+            prismlauncher = _pkgs.prismlauncher.override _old._prismConfig;
+
+            rc2nix = inputs'.plasma-manager.packages.rc2nix;
+
+            own = inputs'.custom-packages.legacyPackages;
 
             ytsub = inputs'.ytsub.packages.default;
 

@@ -27,7 +27,9 @@
           ];
 
           nix = {
-            package = pkgs.lixPackageSets.stable.lix;
+            package = pkgs.lixPackageSets.latest.lix;
+
+            channel.enable = false;
 
             registry =
               let
@@ -45,6 +47,7 @@
             settings = {
               warn-dirty = false;
               auto-optimise-store = true;
+              builders-use-substitutes = true;
 
               max-jobs = 2;
               cores = 2;
@@ -61,6 +64,7 @@
 
               substituters = lib.mkForce [
                 "https://mirror.yandex.ru/nixos"
+                "https://install.determinate.systems"
                 # keep-sorted start
                 "https://freesmlauncher.cachix.org"
                 "https://lunaislazier.cachix.org"
@@ -74,6 +78,7 @@
 
               trusted-public-keys = lib.mkForce [
                 "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
+                "cache.flakehub.com-3:hJuILl5sVK4iKm86JzgdXW12Y2Hwd5G07qKtHTOcDCM="
                 # keep-sorted start
                 "freesmlauncher.cachix.org-1:Jcp5Q9wiLL+EDv8Mh7c6L9xGk+lXr7/otpKxMOuBuDs="
                 "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
@@ -95,18 +100,31 @@
             '';
           };
 
-          nixpkgs.overlays = [
-            (_f: p: {
-              inherit (p.lixPackageSets.stable)
-                # keep-sorted start
-                colmena
-                nix-eval-jobs
-                nix-fast-build
-                nixpkgs-review
-                # keep-sorted end
-                ;
-            })
-          ];
+          nixpkgs.overlays =
+            let
+              packages = [
+                # "nurl"
+              ];
+            in
+            [
+              (
+                _pkgs: _old:
+                lib.genAttrs packages (
+                  package:
+                  _old.${package}.override {
+                    nix = config.nix.package;
+                  }
+                )
+              )
+              (_pkgs: _old: {
+                inherit (_old.lixPackageSets.stable)
+                  nixpkgs-review
+                  nix-eval-jobs
+                  nix-fast-build
+                  colmena
+                  ;
+              })
+            ];
 
           system.build = {
             nixos-rebuild = lib.mkForce pkgs.own.nixos-rebuild;
