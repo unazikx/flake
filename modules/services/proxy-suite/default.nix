@@ -21,7 +21,9 @@
           services.proxy-suite = {
             enable = true;
 
-            singBox.enable = false;
+            proxy = {
+              singBox.enable = false;
+            };
 
             tgWsProxy = {
               # INFO:
