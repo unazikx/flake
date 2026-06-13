@@ -74,13 +74,12 @@
             #  default.nix
             servers =
               let
-                serverDirs = ./servers-list;
+                serverDirs = ./_servers-list;
 
-                loadServer = name: import (serverDirs + "/${name}/main.nix") args;
-
+                loadServer = name: import "${serverDirs}/${name}" args;
               in
               lib.mapAttrs (name: _: loadServer name) (
-                lib.filterAttrs (_: v: v == "directory") (builtins.readDir serverDirs)
+                lib.filterAttrs (_: v: v == "directory") (lib.readDir serverDirs)
               );
           };
         };

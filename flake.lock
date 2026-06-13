@@ -248,11 +248,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1780319923,
-        "narHash": "sha256-QmlH2IkIbuXuK9AoIzwXxOXg4SZIAoqiFytyV5Jhf8o=",
+        "lastModified": 1781232957,
+        "narHash": "sha256-nQl1rmjTCWUYOQejZPs5j7u1YO9gUJf1MBDCiZZ5HgU=",
         "owner": "unazikx",
         "repo": "nix-packages",
-        "rev": "85a20c242887036cd4715e94f68604c8e7237942",
+        "rev": "5e454d63f17e23c4c62cc189088b4a56dbf5317b",
         "type": "github"
       },
       "original": {
@@ -1656,15 +1656,15 @@
         "systems": "systems_5"
       },
       "locked": {
-        "lastModified": 1780028654,
-        "narHash": "sha256-rpHYDTAjj+DFy4sm48ewEsFof73sivpdkobM2Hv26d0=",
-        "owner": "infinidoge",
+        "lastModified": 1779568360,
+        "narHash": "sha256-6T2jaIPiTGnjtTpolY2+Rh7IIfkFVY6j8rDyJ3V2g2M=",
+        "owner": "hustlerone",
         "repo": "nix-minecraft",
-        "rev": "06475c68a76a6120c7ee3d4356b243965f28e323",
+        "rev": "813f295a842eabb3c0a5a55a8a411dfeaa09c804",
         "type": "github"
       },
       "original": {
-        "owner": "infinidoge",
+        "owner": "hustlerone",
         "repo": "nix-minecraft",
         "type": "github"
       }

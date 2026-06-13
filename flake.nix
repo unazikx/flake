@@ -359,7 +359,7 @@
 
     nix-minecraft = {
       type = "github";
-      owner = "infinidoge";
+      owner = "hustlerone";
       repo = "nix-minecraft";
       inputs.nixpkgs.follows = "nixpkgs";
     };

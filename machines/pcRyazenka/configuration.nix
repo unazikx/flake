@@ -56,6 +56,7 @@
             tailscale
             telegram
             throne
+            minecraft-servers
             translate-shell
             trash-cmd
             tuir

@@ -5,7 +5,6 @@
 }:
 
 {
-  enable = true;
   autoStart = true;
   # cause it is my personal pc, not server
 
@@ -15,7 +14,17 @@
   };
 
   # https://www.betterthanadventure.net
-  package = pkgs.better-than-adventure;
+  package =
+    (pkgs.vanillaServers.vanilla.overrideAttrs rec {
+      version = "7.3_04";
+      src = pkgs.fetchurl {
+        url = "https://github.com/Better-than-Adventure/bta-download-repo/releases/download/v${version}/bta.v${version}.server.jar";
+        hash = "sha256-e8hQm3NejclSo8INGtn7TxEyE3/lBq1Cz7dRsDfcx2c=";
+      };
+    }).override
+      {
+        jre_headless = pkgs.temurin-jre-bin-21;
+      };
 
   serverProperties = {
     # https://minecraft.wiki/w/Formatting_codes?section=8#Use_in_server.properties_and_pack.mcmeta

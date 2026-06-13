@@ -66,16 +66,6 @@
               };
             };
 
-            better-than-adventure =
-              (_pkgs.vanillaServers.vanilla.overrideAttrs rec {
-                version = "7.3_04";
-                src = _old.fetchurl {
-                  url = "https://github.com/Better-than-Adventure/bta-download-repo/releases/download/v${version}/bta.v${version}.server.jar";
-                  hash = "sha256-e8hQm3NejclSo8INGtn7TxEyE3/lBq1Cz7dRsDfcx2c=";
-                };
-              }).override
-                { jre_headless = _old.temurin-jre-bin-21; };
-
             determinate-nix = inputs'.determinate-nix.packages.nix;
 
             nilla-cli = inputs'.nilla-cli.packages.nilla-cli;
