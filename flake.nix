@@ -55,23 +55,6 @@
     };
 
     # keep-sorted start block=yes newline_separated=yes
-    agenix = {
-      type = "github";
-      owner = "ryantm";
-      repo = "agenix";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.darwin.follows = "";
-      inputs.home-manager.follows = "";
-    };
-
-    agenix-rekey = {
-      type = "github";
-      owner = "oddlama";
-      repo = "agenix-rekey";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-parts.follows = "flake-parts";
-    };
-
     anyrun = {
       type = "github";
       owner = "anyrun-org";
@@ -93,7 +76,6 @@
       repo = "nix-packages";
       inputs.nixpkgs-unstable.follows = "nixpkgs";
       inputs.flake-parts.follows = "flake-parts";
-      inputs.pkgs-by-name.follows = "pkgs-by-name";
       inputs.nur.follows = "nur";
     };
 
@@ -145,15 +127,6 @@
       owner = "azikxz";
       repo = "easyeffects-presets";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    emanote = {
-      type = "github";
-      owner = "srid";
-      repo = "emanote";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-parts.follows = "flake-parts";
-      inputs.emanote-template.follows = "";
     };
 
     emmanuelrosa-nix = {
@@ -271,14 +244,6 @@
       inputs.flake-parts.follows = "flake-parts";
     };
 
-    max-messenger = {
-      type = "github";
-      owner = "spiage";
-      repo = "max-messenger";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-utils.follows = "flake-utils";
-    };
-
     microvm-nix = {
       type = "github";
       owner = "microvm-nix";
@@ -291,13 +256,6 @@
       owner = "azikxz";
       repo = "assets";
       flake = false;
-    };
-
-    musnix = {
-      type = "github";
-      owner = "musnix";
-      repo = "musnix";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     neu-nix = {
@@ -364,14 +322,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nix-topology = {
-      type = "github";
-      owner = "oddlama";
-      repo = "nix-topology";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-parts.follows = "flake-parts";
-    };
-
     nix-wrapper-modules = {
       type = "github";
       owner = "birdeehub";
@@ -385,13 +335,6 @@
       repo = "nixcord";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-parts.follows = "flake-parts";
-    };
-
-    nixcraft = {
-      type = "github";
-      owner = "loystonpais";
-      repo = "nixcraft";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nixos-cli = {
@@ -431,12 +374,6 @@
       owner = "dax-dot-gay";
       repo = "nix-obsidian-plugins";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    pkgs-by-name = {
-      type = "github";
-      owner = "drupol";
-      repo = "pkgs-by-name-for-flake-parts";
     };
 
     plasma-manager = {
@@ -570,14 +507,6 @@
       repo = "zapret-discord-youtube";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
-    };
-
-    zen-browser = {
-      type = "github";
-      owner = "0xc000022070";
-      repo = "zen-browser-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.home-manager.follows = "home-manager";
     };
     # keep-sorted end
   };

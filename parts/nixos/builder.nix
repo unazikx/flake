@@ -14,7 +14,6 @@
 let
   nixosModules = with inputs; [
     # keep-sorted start
-    agenix.nixosModules.default
     dank-material-shell-plugins.nixosModules.default
     dank-material-shell.nixosModules.dank-material-shell
     disko.nixosModules.default
@@ -23,7 +22,6 @@ let
     impermanence.nixosModules.impermanence
     lsfg-vk-flake.nixosModules.default
     mangowc.nixosModules.mango
-    musnix.nixosModules.default
     nix-flatpak.nixosModules.nix-flatpak
     nix-gaming.nixosModules.pipewireLowLatency
     nix-gaming.nixosModules.platformOptimizations
@@ -51,10 +49,8 @@ let
     niri-flake.homeModules.stylix
     nix-index-database.homeModules.default
     nixcord.homeModules.nixcord
-    nixcraft.homeModules.default
     spicetify-nix.homeManagerModules.default
     telegram-ws-proxy.homeModules.tg-ws-proxy
-    zen-browser.homeModules.twilight
     # keep-sorted end
   ];
 

@@ -101,8 +101,6 @@
 
             late-sh = inputs'.late-sh.packages.late-sh;
 
-            max-messenger = inputs'.max-messenger.packages.default;
-
             suwayomi-server = _pkgs.suwayomi-server.override {
               jdk21_headless = _old.temurin-jre-bin-21;
             };
@@ -127,12 +125,6 @@
             own = inputs'.custom-packages.legacyPackages;
 
             ytsub = inputs'.ytsub.packages.default;
-
-            zen-beta = inputs'.zen-browser.packages.beta;
-
-            zen-twilight = inputs'.zen-browser.packages.twilight;
-
-            zen-twilight-official = inputs'.zen-browser.packages.twilight-official;
             # keep-sorted end
 
             default-lsp = _pkgs.lib.attrValues {

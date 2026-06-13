@@ -23,7 +23,6 @@
             extensions = [
               # keep-sorted start
               "csv"
-              "go"
               "go-snippets"
               "kotlin"
               "lua"
@@ -33,6 +32,16 @@
               "mdx"
               "nix"
               "nu"
+              "json5"
+              "latex"
+              "desktop"
+              "jq"
+              "todotxt"
+              "glsl"
+              "just"
+              "fish"
+              "ini"
+              "html"
               "toml"
               # keep-sorted end
             ];
@@ -50,7 +59,9 @@
 
               {
                 helix_mode = config.hm.programs.helix.enable;
-                vim_mode = config.hm.programs.neovim.enable or config.hm.programs.vim.enable;
+                vim_mode =
+                  config.hm.programs.neovim.enable or config.hm.programs.vim.enable
+                  && !config.hm.programs.helix.enable;
 
                 inlay_hints = {
                   show_type_hints = true;

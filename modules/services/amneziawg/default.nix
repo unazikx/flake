@@ -10,7 +10,7 @@
 # > git add --intent-to-add ./<name>.conf
 # > git update-index --skip-worktree --assume-unchanged ./<name>.conf
 #
-# or create secret file via sopsnix/agenix
+# or create secret file via sopsnix
 # like "vpn/amneziawg/<name>"
 #
 # rebuild
