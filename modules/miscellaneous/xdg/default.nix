@@ -90,7 +90,10 @@
                 };
               };
 
-              portal.enable = if (config.hm.xdg.portal.extraPortals != [ ]) then true else false;
+              portal = {
+                enable = true;
+                xdgOpenUsePortal = true;
+              };
             };
 
             gtk.gtk3.bookmarks =
