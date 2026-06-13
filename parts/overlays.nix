@@ -101,6 +101,10 @@
 
             late-sh = inputs'.late-sh.packages.late-sh;
 
+            own = inputs'.custom-packages.legacyPackages;
+
+            ytsub = inputs'.ytsub.packages.default;
+
             suwayomi-server = _pkgs.suwayomi-server.override {
               jdk21_headless = _old.temurin-jre-bin-21;
             };
@@ -121,10 +125,6 @@
             prismlauncher = _pkgs.prismlauncher.override _old._prismConfig;
 
             rc2nix = inputs'.plasma-manager.packages.rc2nix;
-
-            own = inputs'.custom-packages.legacyPackages;
-
-            ytsub = inputs'.ytsub.packages.default;
             # keep-sorted end
 
             default-lsp = _pkgs.lib.attrValues {

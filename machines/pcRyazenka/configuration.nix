@@ -36,6 +36,7 @@
             helix
             kubo
             main-games
+            minecraft-servers
             minimal
             nilla
             nixos-cli
@@ -56,7 +57,6 @@
             tailscale
             telegram
             throne
-            minecraft-servers
             translate-shell
             trash-cmd
             tuir
