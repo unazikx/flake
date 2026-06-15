@@ -102,12 +102,6 @@
 
             late-sh = inputs'.late-sh.packages.late-sh;
 
-            mindustry =
-              (_old.mindustry.override {
-                jdk17 = _pkgs.temurin-jre-bin;
-              }).overrideAttrs
-                { };
-
             own = inputs'.custom-packages.legacyPackages;
 
             ytsub = inputs'.ytsub.packages.default;
