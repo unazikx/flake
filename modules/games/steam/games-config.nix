@@ -84,6 +84,7 @@ in
         gravity-circuit.id = 858710;
         iq-under-construction.id = 3771740;
         jalopy.id = 446020;
+        killer-frequency.id = 1903620;
         lucid-blocks.id = 3495730;
         midnight-snack.id = 3363200;
         minecraft-dungeons.id = 1672970;
@@ -112,6 +113,8 @@ in
         tes-iii.id = 22320;
         tes-iv.id = 22330;
         tes-v.id = 489830;
+        the-escapists-2.id = 641990;
+        the-escapists.id = 298630;
         valheim.id = 892970;
         warhammer-boltgun.id = 2005010;
         worms-wmd.id = 327030;
