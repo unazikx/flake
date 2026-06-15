@@ -16,7 +16,7 @@ let
     # keep-sorted start
     dank-material-shell-plugins.nixosModules.default
     dank-material-shell.nixosModules.dank-material-shell
-    disko.nixosModules.default
+    disko.nixosModules.disko
     helium-flake.nixosModules.helium
     home-manager.nixosModules.home-manager
     impermanence.nixosModules.impermanence
@@ -31,16 +31,16 @@ let
     nixpkgs.nixosModules.notDetected
     nur.modules.nixos.default
     proxy-suite-flake.nixosModules.default
-    sopsnix.nixosModules.default
-    steam-config-nix.nixosModules.default
-    stylix.nixosModules.default
+    sopsnix.nixosModules.sops
+    steam-config-nix.nixosModules.steam-config-nix
+    stylix.nixosModules.stylix
     # keep-sorted end
   ];
 
   homeModules = with inputs; [
     # keep-sorted start
     # anyrun.homeManagerModules.default
-    dank-material-shell-plugins.homeModules.default
+    dank-material-shell-plugins.homeModules.dms-plugin-registry
     dank-material-shell.homeModules.dank-material-shell
     glide-browser.homeModules.default
     helium-flake.homeModules.helium
@@ -49,8 +49,7 @@ let
     niri-flake.homeModules.stylix
     nix-index-database.homeModules.default
     nixcord.homeModules.nixcord
-    spicetify-nix.homeManagerModules.default
-    telegram-ws-proxy.homeModules.tg-ws-proxy
+    spicetify-nix.homeManagerModules.spicetify
     # keep-sorted end
   ];
 
@@ -62,7 +61,6 @@ let
     nix-minecraft.overlays.default
     nur.overlays.default
     obsidian-plugins.overlays.default
-    shattered-prism.overlays.default
     # keep-sorted end
   ];
 in

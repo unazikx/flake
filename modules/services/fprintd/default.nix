@@ -20,12 +20,7 @@
 
           services.fprintd = {
             enable = true;
-            package = pkgs._2411.fprintd-tod;
-
-            tod = {
-              enable = true;
-              driver = pkgs._2411.libfprint-2-tod1-vfs0090;
-            };
+            package = pkgs.fprintd;
           };
         };
     };

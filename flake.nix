@@ -26,6 +26,13 @@
       ref = "nixos-unstable";
     };
 
+    nixpkgs-master = {
+      type = "github";
+      owner = "nixos";
+      repo = "nixpkgs";
+      ref = "master";
+    };
+
     nixpkgs-2505 = {
       type = "github";
       owner = "nixos";
@@ -33,25 +40,11 @@
       ref = "nixos-25.05";
     };
 
-    nixpkgs-2511 = {
-      type = "github";
-      owner = "nixos";
-      repo = "nixpkgs";
-      ref = "nixos-25.11";
-    };
-
     nixpkgs-2605 = {
       type = "github";
       owner = "nixos";
       repo = "nixpkgs";
       ref = "nixos-26.05";
-    };
-
-    nixpkgs-2411 = {
-      type = "github";
-      owner = "nixos";
-      repo = "nixpkgs";
-      ref = "nixos-24.11";
     };
 
     # keep-sorted start block=yes newline_separated=yes
@@ -91,13 +84,6 @@
       type = "github";
       owner = "avengemedia";
       repo = "dms-plugin-registry";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    devshell = {
-      type = "github";
-      owner = "numtide";
-      repo = "devshell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -143,6 +129,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    flake-aspects = {
+      type = "github";
+      owner = "denful";
+      repo = "flake-aspects";
+    };
+
     flake-parts = {
       type = "github";
       owner = "hercules-ci";
@@ -154,13 +146,6 @@
       type = "github";
       owner = "numtide";
       repo = "flake-utils";
-    };
-
-    freesm-launcher = {
-      type = "github";
-      owner = "freesmteam";
-      repo = "freesmlauncher";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     github-actions-nix = {
@@ -211,7 +196,7 @@
 
     import-tree = {
       type = "github";
-      owner = "vic";
+      owner = "denful";
       repo = "import-tree";
     };
 
@@ -251,13 +236,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    minecraft-assets = {
-      type = "github";
-      owner = "azikxz";
-      repo = "assets";
-      flake = false;
-    };
-
     neu-nix = {
       type = "github";
       owner = "ricardomaps";
@@ -276,7 +254,7 @@
       owner = "cmm";
       repo = "niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.nixpkgs-stable.follows = "nixpkgs-2511";
+      inputs.nixpkgs-stable.follows = "nixpkgs-2605";
     };
 
     nix-cursors = {
@@ -404,13 +382,6 @@
       repo = "services-flake";
     };
 
-    shattered-prism = {
-      type = "github";
-      owner = "noctilune";
-      repo = "shatteredprism";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     sopsnix = {
       type = "github";
       owner = "mic92";
@@ -449,39 +420,10 @@
       inputs.nur.follows = "nur";
     };
 
-    telegram-ws-proxy = {
-      type = "github";
-      owner = "dmfrpro";
-      repo = "tg-ws-proxy-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     treefmt-nix = {
       type = "github";
       owner = "numtide";
       repo = "treefmt-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    umu-protonfixes = {
-      type = "github";
-      owner = "open-wine-components";
-      repo = "umu-protonfixes";
-      flake = false;
-    };
-
-    viu = {
-      type = "github";
-      owner = "viu-media";
-      repo = "viu";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-utils.follows = "flake-utils";
-    };
-
-    winapps = {
-      type = "github";
-      owner = "winapps-org";
-      repo = "winapps";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

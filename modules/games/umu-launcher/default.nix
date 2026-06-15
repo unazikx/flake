@@ -12,7 +12,6 @@
     {
       nixosModules.${baseNameOf ./.} =
         {
-          inputs,
           pkgs,
           lib,
           config,
@@ -55,11 +54,6 @@
               '';
             })
           ];
-
-          hm.xdg.configFile."protonfixes" = {
-            recursive = true;
-            source = inputs.umu-protonfixes;
-          };
         };
     };
 }

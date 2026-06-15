@@ -15,11 +15,13 @@
     }:
     {
       overlays.default =
-        _old: _pkgs:
+        _pkgs: _old:
         let
-          inherit (_pkgs.stdenv.hostPlatform)
+          inherit (_old.stdenv.hostPlatform)
             system
             ;
+
+          build-branch = branch: import branch _pkgs.branch-config;
         in
         withSystem system (
           {
@@ -29,14 +31,13 @@
           {
             inherit system;
 
-            _2411 = import inputs.nixpkgs-2411 _old.branch-config;
-            _2505 = import inputs.nixpkgs-2505 _old.branch-config;
-            _2511 = import inputs.nixpkgs-2511 _old.branch-config;
+            _master = build-branch inputs.nixpkgs-master;
+            _2505 = build-branch inputs.nixpkgs-2505;
 
             branch-config = {
               inherit system;
               config = {
-                inherit (_old.config)
+                inherit (_pkgs.config)
                   allowBroken
                   allowInsecure
                   allowUnfree
@@ -52,8 +53,8 @@
               controllerSupport = true;
               textToSpeechSupport = false;
 
-              jdks = _old.lib.attrValues {
-                inherit (_old)
+              jdks = _pkgs.lib.attrValues {
+                inherit (_pkgs)
                   # its all LTS
                   # https://adoptium.net/temurin/releases
                   # keep-sorted start
@@ -72,7 +73,7 @@
 
             driftwm = inputs'.driftwm.packages.default;
 
-            spotify-player = _pkgs.spotify-player.override {
+            spotify-player = _old.spotify-player.override {
               withAudioBackend = "pulseaudio";
               withStreaming = true;
               withDaemon = true;
@@ -84,8 +85,8 @@
               withFuzzy = false;
             };
 
-            steam-flagged = _pkgs.lib.concatStringsSep " " [
-              (_pkgs.lib.getExe _old.steam)
+            steam-flagged = _old.lib.concatStringsSep " " [
+              (_old.lib.getExe _pkgs.steam)
               "-nochatui"
               "-nofriendsui"
               "-silent"
@@ -93,42 +94,48 @@
 
             strom-games = inputs'.strom-nix.packages;
 
-            freesmlauncher = _old._freesmlauncher.override _old._prismConfig;
+            freesmlauncher = _pkgs._freesmlauncher.override _pkgs._prismConfig;
 
-            hytale-launcher = inputs.hytale-launcher.packages.${_pkgs.system}.default;
+            hytale-launcher = inputs.hytale-launcher.packages.${_old.system}.default;
 
             late = inputs'.late-sh.packages.late;
 
             late-sh = inputs'.late-sh.packages.late-sh;
 
+            mindustry =
+              (_old.mindustry.override {
+                jdk17 = _pkgs.temurin-jre-bin;
+              }).overrideAttrs
+                { };
+
             own = inputs'.custom-packages.legacyPackages;
 
             ytsub = inputs'.ytsub.packages.default;
 
-            suwayomi-server = _pkgs.suwayomi-server.override {
-              jdk21_headless = _old.temurin-jre-bin-21;
+            suwayomi-server = _old.suwayomi-server.override {
+              jdk21_headless = _pkgs.temurin-jre-bin-21;
             };
 
             xytz = inputs'.xytz.packages.default.overrideAttrs {
               vendorHash = "sha256-j4K61ESqtlfOD8S3E0vtL18aziSFztoU3V0KSLtJEME=";
             };
 
-            ouch = _pkgs.ouch.override {
+            ouch = _old.ouch.override {
               enableUnfree = true;
             };
 
-            portablemc = _pkgs.portablemc.override {
+            portablemc = _old.portablemc.override {
               textToSpeechSupport = false;
-              jre = _old.temurin-jre-bin-25;
+              jre = _pkgs.temurin-jre-bin-25;
             };
 
-            prismlauncher = _pkgs.prismlauncher.override _old._prismConfig;
+            prismlauncher = _old.prismlauncher.override _pkgs._prismConfig;
 
             rc2nix = inputs'.plasma-manager.packages.rc2nix;
             # keep-sorted end
 
-            default-lsp = _pkgs.lib.attrValues {
-              inherit (_pkgs)
+            default-lsp = _old.lib.attrValues {
+              inherit (_old)
                 # keep-sorted start
                 black
                 go
@@ -136,20 +143,15 @@
                 marksman
                 nixd
                 nixfmt
+                prettier
                 pyright
+                typescript-language-server
                 vscode-langservers-extracted
                 yaml-language-server
                 # keep-sorted end
                 ;
 
-              inherit (_pkgs)
-                # keep-sorted start
-                prettier
-                typescript-language-server
-                # keep-sorted end
-                ;
-
-              inherit (_pkgs.python314Packages)
+              inherit (_old.python314Packages)
                 # keep-sorted start
                 python-lsp-server
                 # keep-sorted end

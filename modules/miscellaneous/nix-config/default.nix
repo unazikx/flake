@@ -71,6 +71,7 @@
                 "https://unmojang.cachix.org"
                 "https://winapps.cachix.org"
                 "https://xache.cachix.org"
+                "https://ytsub.cachix.org"
                 # keep-sorted end
               ];
 
@@ -85,6 +86,7 @@
                 "unmojang.cachix.org-1:OfHnbBNduZ6Smx9oNbLFbYyvOWSoxb2uPcnXPj4EDQY="
                 "winapps.cachix.org-1:HI82jWrXZsQRar/PChgIx1unmuEsiQMQq+zt05CD36g="
                 "xache.cachix.org-1:InoMKnvFvDh+J5gFNHN1mmUONxvYJqFImLJY8/bl9YA="
+                "ytsub.cachix.org-1:+//b4AUWp/46hIbTHVLhCU+DIP7TowiUWzM6Hsn8Ryg="
                 # keep-sorted end
               ];
             };

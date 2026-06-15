@@ -23,8 +23,8 @@
       (mkFilter "configuration.nix" [ ../machines ])
 
       # keep-sorted start
-      devshell.flakeModule
       disko.flakeModule
+      flake-aspects.flakeModule
       flake-parts.flakeModules.bundlers
       github-actions-nix.flakeModule
       home-manager.flakeModules.default
