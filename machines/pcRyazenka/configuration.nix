@@ -34,7 +34,6 @@
             flood
             gdu
             helix
-            kubo
             main-games
             minecraft-servers
             minimal

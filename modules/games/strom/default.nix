@@ -17,6 +17,10 @@
           ];
 
           hm.imports = [ ./module.nix ];
+
+          services.strom-ipfs-mirror = {
+            enable = true;
+          };
         };
     };
 }
