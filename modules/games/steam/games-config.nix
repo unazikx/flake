@@ -1,3 +1,8 @@
+# INFO:
+# list of variables for proton
+# dwproton - https://dawn.wine/dawn-winery/dwproton#runtime-config-options
+# proton-ge - https://github.com/gloriouseggroll/proton-ge-custom#options
+
 {
   pkgs,
   lib,
@@ -23,7 +28,9 @@ in
     (lib.mkSteam.mkAttrset
       {
         launchOptions = {
-          env.STEAM_COMPAT_DATA_PATH = "${steamapps}/compatdata/0";
+          env = {
+            STEAM_COMPAT_DATA_PATH = "${steamapps}/compatdata/0";
+          };
           wrappers = [ (lib.getExe pkgs.gamemode) ];
         };
       }
@@ -52,6 +59,9 @@ in
           env = {
             STEAM_COMPAT_DATA_PATH = "${steamapps}/compatdata/0";
             PROTON_USE_NTSYNC = 1;
+            # WINE_FULLSCREEN_FSR = 1;
+            # WINE_FULLSCREEN_FSR_STRENGTH = 5;
+            PROTON_USE_WOW64 = 1;
           };
           wrappers = [ (lib.getExe pkgs.gamemode) ];
         };
@@ -109,6 +119,7 @@ in
         supraball.id = 321400;
         supraland-six-inches.id = 1522870;
         supraland.id = 813630;
+        survivalists.id = 897450;
         terraria.id = 105600;
         tes-iii.id = 22320;
         tes-iv.id = 22330;
