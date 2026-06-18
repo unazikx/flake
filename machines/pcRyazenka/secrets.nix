@@ -11,5 +11,6 @@ lib.mkSecrets.fromFile [
   "services/syncthing/key"
   "services/syncthing/password"
   "tokens/hut"
+  "tokens/itchio"
   # keep-sorted end
 ] ./.secrets.yaml

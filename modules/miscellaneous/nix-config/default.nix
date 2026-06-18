@@ -21,10 +21,18 @@
             "/etc/nixos"
           ];
 
-          environment.systemPackages = with pkgs; [
-            hydra-check
-            own.hasher
-          ];
+          environment = {
+            systemPackages = with pkgs; [
+              hydra-check
+              own.hasher
+            ];
+
+            interactiveShellInit =
+              # bash
+              ''
+                export NIX_ITCHIO_API_KEY="$(cat ${config.sopsnix."tokens/itchio"})"
+              '';
+          };
 
           nix = {
             package = pkgs.lixPackageSets.latest.lix;
@@ -96,7 +104,7 @@
             # > githubToken.age | githubToken.yaml
             # access-tokens = github.com=23ac...b289
             extraOptions = ''
-              !include ${config.sopstem."nixAccessTokens"}
+              !include ${config.sopstem."nix-access-tokens"}
             '';
           };
 
@@ -130,11 +138,21 @@
             nixos-rebuild = lib.mkForce pkgs.own.nixos-rebuild;
           };
 
+          systemd.services = {
+            nix-daemon.serviceConfig.EnvironmentFile = config.sopstem."nix-itchio-key";
+          };
+
           sops.templates = {
-            "nixAccessTokens" = {
+            "nix-access-tokens" = {
               owner = lib.userName;
               content = ''
                 access-tokens = github.com=${config.sopsplace."tokens/github"}
+              '';
+            };
+
+            "nix-itchio-key" = {
+              content = ''
+                NIX_ITCHIO_API_KEY=${config.sopsplace."tokens/itchio"}
               '';
             };
           };

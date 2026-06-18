@@ -163,11 +163,11 @@
         "pkgs-by-name": "pkgs-by-name"
       },
       "locked": {
-        "lastModified": 1781232957,
-        "narHash": "sha256-nQl1rmjTCWUYOQejZPs5j7u1YO9gUJf1MBDCiZZ5HgU=",
+        "lastModified": 1781789225,
+        "narHash": "sha256-B+viTv5qUDdKw1CNY1RfZO+zE5OmuC1OkOmGRZrUf30=",
         "owner": "unazikx",
         "repo": "nix-packages",
-        "rev": "5e454d63f17e23c4c62cc189088b4a56dbf5317b",
+        "rev": "4d63ba1bf00278e71183272db26147cd1c1d1e5a",
         "type": "github"
       },
       "original": {

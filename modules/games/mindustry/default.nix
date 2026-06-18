@@ -60,6 +60,11 @@
                   sha256 = "sha256-WDzzfv4Bh9l6cMcf8QVNFETK+qX74PPN5AdbNWtcvRE=";
                 }
               ];
+
+          networking.firewall = lib.genAttrs [
+            "allowedTCPPorts"
+            "allowedUDPPorts"
+          ] (_n: [ 6567 ]);
         };
     };
 }

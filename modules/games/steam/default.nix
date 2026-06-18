@@ -29,6 +29,17 @@
 
               protontricks.enable = true;
               remotePlay.openFirewall = true;
+              gamescopeSession = {
+                enable = true;
+
+                env = {
+                  WINE_FULLSCREEN_FSR = "1";
+                };
+
+                args = [
+                  "-e"
+                ];
+              };
 
               extraCompatPackages = [
                 pkgs.proton-ge-bin
@@ -83,6 +94,12 @@
             };
           };
 
+          environment.systemPackages = [
+            (pkgs.writeShellScriptBin "steamos-session-select" ''
+              steam -shutdown
+            '')
+          ];
+
           systemd.user.services = {
             steam-autostart = {
               wantedBy = [ "graphical-session.target" ];
@@ -101,6 +118,19 @@
               };
             };
           };
+
+          networking.firewall =
+            lib.genAttrs
+              [
+                "allowedTCPPorts"
+                "allowedUDPPorts"
+              ]
+              (
+                _n:
+                (lib.attrValues {
+                  mindustry = 6567;
+                })
+              );
         };
     };
 }

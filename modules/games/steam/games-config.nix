@@ -189,7 +189,7 @@ in
 
           mindustry = {
             name = "Mindustry";
-            target = lib.getExe' pkgs.mindustry "mindustry";
+            target = lib.getExe pkgs.own.games.mindustry;
             compatTool = null;
 
             icon = pkgs.fetchurl {
