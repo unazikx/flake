@@ -14,6 +14,7 @@
 let
   nixosModules = with inputs; [
     # keep-sorted start
+    binternet-nix.nixosModules.binternet
     dank-material-shell-plugins.nixosModules.default
     dank-material-shell.nixosModules.dank-material-shell
     disko.nixosModules.disko

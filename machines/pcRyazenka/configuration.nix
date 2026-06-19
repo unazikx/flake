@@ -25,6 +25,7 @@
             basic-media
             basic-services
             basic-shell
+            binternet
             cava
             desktop-hardware
             develop

@@ -69,9 +69,28 @@
 
             determinate-nix = inputs'.determinate-nix.packages.nix;
 
+            binternet = inputs'.binternet-nix.packages.binternet;
+
+            late-sh = inputs'.late-sh.packages.late-sh;
+
+            own = inputs'.custom-packages.legacyPackages;
+
             nilla-cli = inputs'.nilla-cli.packages.nilla-cli;
 
             driftwm = inputs'.driftwm.packages.default;
+
+            ouch = _old.ouch.override {
+              enableUnfree = true;
+            };
+
+            portablemc = _old.portablemc.override {
+              textToSpeechSupport = false;
+              jre = _pkgs.temurin-jre-bin-25;
+            };
+
+            prismlauncher = _old.prismlauncher.override _pkgs._prismConfig;
+
+            rc2nix = inputs'.plasma-manager.packages.rc2nix;
 
             spotify-player = _old.spotify-player.override {
               withAudioBackend = "pulseaudio";
@@ -100,10 +119,6 @@
 
             late = inputs'.late-sh.packages.late;
 
-            late-sh = inputs'.late-sh.packages.late-sh;
-
-            own = inputs'.custom-packages.legacyPackages;
-
             ytsub = inputs'.ytsub.packages.default;
 
             suwayomi-server = _old.suwayomi-server.override {
@@ -113,19 +128,6 @@
             xytz = inputs'.xytz.packages.default.overrideAttrs {
               vendorHash = "sha256-j4K61ESqtlfOD8S3E0vtL18aziSFztoU3V0KSLtJEME=";
             };
-
-            ouch = _old.ouch.override {
-              enableUnfree = true;
-            };
-
-            portablemc = _old.portablemc.override {
-              textToSpeechSupport = false;
-              jre = _pkgs.temurin-jre-bin-25;
-            };
-
-            prismlauncher = _old.prismlauncher.override _pkgs._prismConfig;
-
-            rc2nix = inputs'.plasma-manager.packages.rc2nix;
             # keep-sorted end
 
             default-lsp = _old.lib.attrValues {

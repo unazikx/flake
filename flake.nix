@@ -63,6 +63,14 @@
       flake = false;
     };
 
+    binternet-nix = {
+      type = "github";
+      owner = "unazikx";
+      repo = "binternet-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-parts.follows = "flake-parts";
+    };
+
     custom-packages = {
       type = "github";
       owner = "unazikx";
