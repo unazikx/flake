@@ -27,8 +27,10 @@
             steam = {
               enable = true;
 
+              extest.enable = true;
               protontricks.enable = true;
               remotePlay.openFirewall = true;
+
               gamescopeSession = {
                 enable = true;
 

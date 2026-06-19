@@ -46,7 +46,6 @@ in
           compatTool = "proton_8";
           id = 312530;
         };
-
       }
       # keep-sorted end
     )

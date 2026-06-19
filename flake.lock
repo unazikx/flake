@@ -1729,11 +1729,11 @@
         "systems": "systems_7"
       },
       "locked": {
-        "lastModified": 1778068119,
-        "narHash": "sha256-dd6DiZWiXLYIN2OxTcPG71zjdG+eE8726Yh5AvQ52vA=",
+        "lastModified": 1781835343,
+        "narHash": "sha256-GWyTjc03r66Hq+SojzWkJagHv/kJE3SSrC+iypCxJ3s=",
         "owner": "unazikx",
         "repo": "steam-config-nix",
-        "rev": "8e8a8699093b8127fe44cc0ca2a2067388daedfd",
+        "rev": "2ca184046090f4f6e471b7a5021d64111369feb0",
         "type": "github"
       },
       "original": {
