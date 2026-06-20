@@ -38,7 +38,11 @@ in
         # keep-sorted start block=yes newline_separated=yes
         burnout-paradise-remastered = {
           compatTool = "GE-Proton";
-          launchOptions.args = [ "-skipvideos" ];
+          launchOptions = {
+            env = lib.mkForce { };
+            wrappers = lib.mkForce [ ];
+            args = [ "-skipvideos" ];
+          };
           id = 1238080;
         };
 
