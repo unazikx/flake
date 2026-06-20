@@ -25,6 +25,7 @@
       # keep-sorted start
       disko.flakeModule
       flake-aspects.flakeModule
+      flake-parts.flakeModules.modules
       flake-parts.flakeModules.bundlers
       github-actions-nix.flakeModule
       home-manager.flakeModules.default
