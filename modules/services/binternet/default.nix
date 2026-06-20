@@ -1,6 +1,5 @@
 # INFO:
-# idk auto sets cpu frequenct
-# and max tick
+# opensource fronrend for pinerest
 
 {
   flake =
@@ -19,6 +18,8 @@
             enable = true;
 
             package =
+              # INFO:
+              # override only for theming
               with config.lib.stylix.colors.withHashtag;
               pkgs.binternet.overrideAttrs (_old: {
                 fixupPhase = ''
