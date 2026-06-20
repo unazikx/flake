@@ -36,6 +36,12 @@ in
       }
       {
         # keep-sorted start block=yes newline_separated=yes
+        burnout-paradise-remastered = {
+          compatTool = "GE-Proton";
+          launchOptions.args = [ "-skipvideos" ];
+          id = 1238080;
+        };
+
         city-car-driving = {
           compatTool = "proton_8";
           id = 493490;
@@ -46,8 +52,8 @@ in
           compatTool = "proton_8";
           id = 312530;
         };
+        # keep-sorted end
       }
-      # keep-sorted end
     )
 
     # default proton tool
@@ -58,9 +64,6 @@ in
           env = {
             STEAM_COMPAT_DATA_PATH = "${steamapps}/compatdata/0";
             PROTON_USE_NTSYNC = 1;
-            # WINE_FULLSCREEN_FSR = 1;
-            # WINE_FULLSCREEN_FSR_STRENGTH = 5;
-            PROTON_USE_WOW64 = 1;
           };
           wrappers = [ (lib.getExe pkgs.gamemode) ];
         };

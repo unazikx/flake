@@ -25,7 +25,6 @@
             basic-media
             basic-services
             basic-shell
-            binternet
             cava
             desktop-hardware
             develop
@@ -36,11 +35,8 @@
             gdu
             helix
             main-games
-            minecraft-servers
             minimal
-            nilla
             nixos-cli
-            obsidian
             office-env
             proxy-suite
             qbittorrent
@@ -54,7 +50,6 @@
             sway-de
             syncthing
             system-monitor
-            tailscale
             telegram
             throne
             translate-shell

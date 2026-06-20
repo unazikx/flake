@@ -27,7 +27,6 @@
             steam = {
               enable = true;
 
-              extest.enable = true;
               protontricks.enable = true;
               remotePlay.openFirewall = true;
 
@@ -56,6 +55,16 @@
                 #   "-nofriendsui"
                 #   "-silent"
                 # ];
+
+                extraProfile =
+                  let
+                    steamapps = "${config.hm.xdg.dataHome}/Steam/steamapps";
+                  in
+                  # bash
+                  ''
+                    # fuck idk works that or not?
+                    export STEAM_COMPAT_DATA_PATH = "${steamapps}/compatdata/0"
+                  '';
 
                 extraEnv = {
                   MANGOHUD = config.hm.programs.mangohud.enable;
