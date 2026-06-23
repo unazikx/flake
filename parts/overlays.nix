@@ -71,6 +71,14 @@
 
             binternet = inputs'.binternet-nix.packages.binternet;
 
+            freesmlauncher = _pkgs._freesmlauncher.override _pkgs._prismConfig;
+
+            hytale-launcher = inputs.hytale-launcher.packages.${_old.system}.default;
+
+            late = inputs'.late-sh.packages.late;
+
+            ytsub = inputs'.ytsub.packages.default;
+
             late-sh = inputs'.late-sh.packages.late-sh;
 
             own = inputs'.custom-packages.legacyPackages;
@@ -112,14 +120,6 @@
             ];
 
             strom-games = inputs'.strom-nix.packages;
-
-            freesmlauncher = _pkgs._freesmlauncher.override _pkgs._prismConfig;
-
-            hytale-launcher = inputs.hytale-launcher.packages.${_old.system}.default;
-
-            late = inputs'.late-sh.packages.late;
-
-            ytsub = inputs'.ytsub.packages.default;
 
             suwayomi-server = _old.suwayomi-server.override {
               jdk21_headless = _pkgs.temurin-jre-bin-21;

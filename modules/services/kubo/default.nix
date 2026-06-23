@@ -21,7 +21,7 @@
           services.kubo = {
             enable = true;
 
-            dataDir = lib.mkDefault (toString /media/IPFS);
+            # dataDir = lib.mkDefault (toString /media/IPFS);
 
             autoMount = true;
             localDiscovery = true;
