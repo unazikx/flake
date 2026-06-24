@@ -105,6 +105,8 @@ in
         midnight-snack.id = 3363200;
         minecraft-dungeons.id = 1672970;
         minecraft-legends.id = 1928870;
+        need-for-speed-heat.id = 1222680;
+        need-for-speed.id = 1262540;
         noexistence-you-me.id = 2873080;
         noita.id = 881100;
         one-million-fatal-guns.id = 155710;
@@ -132,6 +134,7 @@ in
         tes-v.id = 489830;
         the-escapists-2.id = 641990;
         the-escapists.id = 298630;
+        the-witcher-3.id = 292030;
         valheim.id = 892970;
         warhammer-boltgun.id = 2005010;
         worms-wmd.id = 327030;
