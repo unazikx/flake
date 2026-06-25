@@ -76,6 +76,9 @@ in
         # keep-sorted start block=yes
         adventures-of-sir-kicksalot.id = 2629230;
         arctico.id = 325210;
+        batman-arkham-asylum.id = 35140;
+        batman-arkham-city.id = 200260;
+        batman-arkham-knight.id = 208650;
         battletoads.id = 1244950;
         citizen-sleeper-2.id = 2442460;
         citizen-sleeper.id = 1578650;
@@ -101,6 +104,8 @@ in
         iq-under-construction.id = 3771740;
         jalopy.id = 446020;
         killer-frequency.id = 1903620;
+        lego-batman-beyond-gotham.id = 313690;
+        lego-dc-super-villains.id = 829110;
         lucid-blocks.id = 3495730;
         midnight-snack.id = 3363200;
         minecraft-dungeons.id = 1672970;
