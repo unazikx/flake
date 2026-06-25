@@ -101,6 +101,7 @@ in
         flotsam.id = 821250;
         goat-simulator-remastered.id = 858710;
         gravity-circuit.id = 858710;
+        hard-truck-2.id = 4487840;
         iq-under-construction.id = 3771740;
         jalopy.id = 446020;
         killer-frequency.id = 1903620;
