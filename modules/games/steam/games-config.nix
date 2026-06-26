@@ -74,7 +74,9 @@ in
       }
       {
         # keep-sorted start block=yes
+        abiotic-factor.id = 427410;
         adventures-of-sir-kicksalot.id = 2629230;
+        apico.id = 1390190;
         arctico.id = 325210;
         batman-arkham-asylum.id = 35140;
         batman-arkham-city.id = 200260;
@@ -96,19 +98,26 @@ in
         divinity-ii.id = 219780;
         divinity-original-sin.id = 373420;
         dont-starve-together.id = 322330;
+        dusk.id = 519860;
         elite-dangerous.id = 359320;
         factorio.id = 427520;
         flotsam.id = 821250;
         goat-simulator-remastered.id = 858710;
         gravity-circuit.id = 858710;
         hard-truck-2.id = 4487840;
+        ion-fury.id = 562860;
         iq-under-construction.id = 3771740;
         jalopy.id = 446020;
         killer-frequency.id = 1903620;
         lego-batman-beyond-gotham.id = 313690;
+        lego-bricktales.id = 1898290;
+        lego-builders-journey.id = 1544360;
         lego-dc-super-villains.id = 829110;
+        lego-worlds.id = 332310;
         lucid-blocks.id = 3495730;
+        midbourne.id = 2355150;
         midnight-snack.id = 3363200;
+        mindustry.id = 1127400;
         minecraft-dungeons.id = 1672970;
         minecraft-legends.id = 1928870;
         need-for-speed-heat.id = 1222680;
@@ -124,8 +133,10 @@ in
         project-zomboid.id = 108600;
         repo.id = 3214660;
         sandbox.id = 590830;
+        satisfactory.id = 526870;
         serious-sam-tormental.id = 640340;
         sleeping-dogs.id = 307690;
+        snacktorio.id = 1902940;
         space-haven.id = 979110;
         streets-of-rouge.id = 512900;
         summer-in-mara.id = 962580;
@@ -138,12 +149,15 @@ in
         tes-iii.id = 22320;
         tes-iv.id = 22330;
         tes-v.id = 489830;
+        the-binding-of-isaac-rebirth.id = 250900;
         the-escapists-2.id = 641990;
         the-escapists.id = 298630;
         the-witcher-3.id = 292030;
+        theotown.id = 1084020;
         valheim.id = 892970;
         warhammer-boltgun.id = 2005010;
         worms-wmd.id = 327030;
+        your-only-move-is-hustle.id = 2212330;
         # keep-sorted end
       }
     )
@@ -161,77 +175,6 @@ in
         }
         {
           # keep-sorted start block=yes newline_separated=yes
-          freeciv = {
-            name = "FreeCiv";
-            target = lib.getExe pkgs.freeciv_gtk;
-            compatTool = null;
-
-            icon = pkgs.fetchurl {
-              url = "https://cdn2.steamgriddb.com/icon_thumb/e2b59155b6c9e8753f967f42ea5a4d3e.png";
-              sha256 = "sha256-pnoFLp1zLsNFFnZ4IRINa5OJwDfhHFW+r+V2zT0KuCY=";
-            };
-
-            artwork = {
-              logo = pkgs.fetchurl {
-                url = "https://cdn2.steamgriddb.com/logo_thumb/009da52122d75bc3150aa17e5e515204.png";
-                sha256 = "sha256-qsfTzwAwGmT5iDATcLap0xp/U43ia0Dc9AqmFcKecqw=";
-              };
-              hero = pkgs.fetchurl {
-                url = "https://cdn2.steamgriddb.com/hero_thumb/8d96feccca232653276d41d444536e10.jpg";
-                sha256 = "sha256-6G8igBjDg08KGcJ9vxWIlGa7kcpAyBKeorojpFUWsaw=";
-              };
-              banner = pkgs.fetchurl {
-                url = "https://cdn2.steamgriddb.com/thumb/53cc2097ca1a2e6c4a3b2bb499597bf0.jpg";
-                sha256 = "sha256-pQxkWem5gPDT6hXv3CDBoP5nlExQFS0h/1oPAc7ebaE=";
-              };
-              cover = pkgs.fetchurl {
-                url = "https://cdn2.steamgriddb.com/thumb/0a4c93ddb993d7d200fa72c65c8e7239.jpg";
-                sha256 = "sha256-d8pHaeFqqISQFuO2d+GWDTqK0glHUzSYe4nfSBneAas=";
-              };
-            };
-          };
-
-          lincity-ng = {
-            name = "LinCity";
-            target = lib.getExe pkgs.lincity-ng;
-            compatTool = null;
-
-            icon = pkgs.fetchurl {
-              url = "https://www.altlinux.org/Images.www.altlinux.org/2/2d/User-menu-LincityNG.png";
-              sha256 = "sha256-2eg2nexAROOQ9u2j/6ouXmjENpcsN0lI0jWMLzWuhuM=";
-            };
-          };
-
-          mindustry = {
-            name = "Mindustry";
-            target = lib.getExe pkgs.own.games.mindustry;
-            compatTool = null;
-
-            icon = pkgs.fetchurl {
-              url = "https://cdn2.steamgriddb.com/icon_thumb/c05225ad3adfb3f4b73a7d7d04d3c2d7.png";
-              sha256 = "sha256-+EbFzxORC8NrKH7Y/5lIzkd1KbMwODHhNPn20NEnsUk=";
-            };
-
-            artwork = {
-              logo = pkgs.fetchurl {
-                url = "https://cdn2.steamgriddb.com/logo_thumb/fa351d6bfd570ade7471195e5afd43f1.png";
-                sha256 = "sha256-daR199b4P5HBW1WuQJAggcx6j8bi0IDJYrBmrJ7q37c=";
-              };
-              hero = pkgs.fetchurl {
-                url = "https://cdn2.steamgriddb.com/hero_thumb/f4e3432b305e7e30ce4e6f981f260cce.jpg";
-                sha256 = "sha256-SvcqUHT5rsAQBV3xWFc0/HrQLxoDfB/dytQoBTlWQJk=";
-              };
-              banner = pkgs.fetchurl {
-                url = "https://cdn2.steamgriddb.com/thumb/e0f4585108cbed46d16e3cf0e9d86ba1.jpg";
-                sha256 = "sha256-SqiHD3Wx5wjR7qObvRlqSkSD/nbYs4YQn79o5LMef7M=";
-              };
-              cover = pkgs.fetchurl {
-                url = "https://cdn2.steamgriddb.com/thumb/518b0bc6ec175055a4bca965df70d379.jpg";
-                sha256 = "sha256-Sd3YBJ3m+UMTHBFW5GOHHVAAKFnqCCWFsY4nwPkq/no=";
-              };
-            };
-          };
-
           super-tux-kart = {
             name = "Super Tux Kart";
             target = lib.getExe pkgs.supertuxkart;
