@@ -21,10 +21,13 @@
           hm.programs.nixcord = {
             enable = true;
 
+            inherit (config.hm.home) homeDirectory;
+            xdgConfigHome = config.hm.xdg.configHome;
+
             discord.enable = false; # why?
 
-            equibop.enable = true; # equibop is newgen vesktop
-            equibopConfig = import ./settings.nix {
+            vesktop.enable = true; # equibop is newgen vesktop
+            vesktopConfig = import ./settings.nix {
               inherit
                 lib
                 config
