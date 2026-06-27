@@ -88,6 +88,7 @@ in
         counter-strike-cz.id = 80;
         cuphead.id = 268910;
         darksiders-genesis.id = 710920;
+        dead-cells.id = 586550;
         dex-goty.id = 6910;
         dex-human-revolution.id = 238010;
         dex-invisible-war.id = 6920;
@@ -95,13 +96,16 @@ in
         dex-the-fall.id = 258180;
         disco-elysium.id = 325210;
         divine-divinity.id = 214170;
-        divinity-ii.id = 219780;
+        divinity-2.id = 219780;
+        divinity-original-sin-2.id = 435150;
         divinity-original-sin.id = 373420;
         dont-starve-together.id = 322330;
         dusk.id = 519860;
         elite-dangerous.id = 359320;
         factorio.id = 427520;
         flotsam.id = 821250;
+        fnaf-popgoes.id = 1986840;
+        gloomwood.id = 1150760;
         goat-simulator-remastered.id = 858710;
         gravity-circuit.id = 858710;
         hard-truck-2.id = 4487840;
@@ -134,10 +138,14 @@ in
         repo.id = 3214660;
         sandbox.id = 590830;
         satisfactory.id = 526870;
+        selaco.id = 1592280;
         serious-sam-tormental.id = 640340;
+        shapez-2.id = 2162800;
         sleeping-dogs.id = 307690;
         snacktorio.id = 1902940;
         space-haven.id = 979110;
+        starbound.id = 211820;
+        stick-it-to-the-stickman.id = 2085540;
         streets-of-rouge.id = 512900;
         summer-in-mara.id = 962580;
         sunset-overdrive.id = 847370;
@@ -156,6 +164,7 @@ in
         theotown.id = 1084020;
         valheim.id = 892970;
         warhammer-boltgun.id = 2005010;
+        webbed.id = 1390350;
         worms-wmd.id = 327030;
         your-only-move-is-hustle.id = 2212330;
         # keep-sorted end

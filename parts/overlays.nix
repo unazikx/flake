@@ -98,6 +98,23 @@
 
             prismlauncher = _old.prismlauncher.override _pkgs._prismConfig;
 
+            proton-ge-bin = _old.proton-ge-bin.overrideAttrs {
+              pname = "proton-ge-bin";
+
+              dontUnpack = false;
+              patches = [ ./proton.patch ];
+
+              installPhase = ''
+                runHook preInstall
+
+                echo "proton-ge-bin should not be installed into environments." > $out
+                mkdir $steamcompattool
+                cp -r . $steamcompattool/
+
+                runHook postInstall
+              '';
+            };
+
             rc2nix = inputs'.plasma-manager.packages.rc2nix;
 
             spotify-player = _old.spotify-player.override {

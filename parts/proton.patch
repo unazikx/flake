@@ -1,0 +1,21 @@
+--- a/proton	2026-04-01 19:25:30.685223296 +0200
++++ b/proton	2026-04-01 19:25:30.706175835 +0200
+@@ -917,12 +917,13 @@
+                 # wine builtin dll
+                 # make the destination an absolute symlink
+                 contents = os.path.normpath(os.path.join(os.path.dirname(src), contents))
+-            if dll_copy:
+-                try_copyfile(src, dst)
+-            else:
+-                os.symlink(contents, dst)
++            os.symlink(contents, dst)
+         else:
+-            try_copyfile(src, dst)
++            # Symlink binaries, copy everything else (configs, .reg, .nls need to be writable)
++            if src.endswith(('.dll', '.exe', '.DLL', '.EXE', '.drv', '.ds', '.acm', '.ocx', '.ax', '.sys', '.cpl')):
++                os.symlink(src, dst)
++            else:
++                try_copyfile(src, dst)
+ 
+     def copy_pfx(self):
+         with open(self.tracked_files_file, "w") as tracked_files:
