@@ -38,6 +38,7 @@
             minimal
             nixos-cli
             office-env
+            opencode
             proxy-suite
             qbittorrent
             qutebrowser
