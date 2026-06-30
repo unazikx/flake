@@ -12,14 +12,10 @@ in
 
 lib.mkMerge [
   rec {
-    seat."*" =
-      let
-        mkSeconds = sec: toString (1000 * sec);
-      in
-      {
-        # hide_cursor = mkSeconds 1;
-        hide_cursor = "when-typing enable";
-      };
+    seat."*" = {
+      # hide_cursor = mkSeconds 1;
+      hide_cursor = "when-typing enable";
+    };
 
     input."*" = {
       xkb_layout = "us,ru";

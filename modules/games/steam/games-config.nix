@@ -78,6 +78,7 @@ in
         adventures-of-sir-kicksalot.id = 2629230;
         apico.id = 1390190;
         arctico.id = 325210;
+        barony.id = 371970;
         batman-arkham-asylum.id = 35140;
         batman-arkham-city.id = 200260;
         batman-arkham-knight.id = 208650;
@@ -160,6 +161,7 @@ in
         the-binding-of-isaac-rebirth.id = 250900;
         the-escapists-2.id = 641990;
         the-escapists.id = 298630;
+        the-long-dark.id = 305620;
         the-witcher-3.id = 292030;
         theotown.id = 1084020;
         valheim.id = 892970;

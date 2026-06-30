@@ -57,13 +57,6 @@
                         puffer
                         # keep-sorted end
                         ;
-
-                      inherit (pkgs.own.fish-plugins)
-                        # keep-sorted start
-                        # fish-helix
-                        # fish-logo
-                        # keep-sorted end
-                        ;
                     }
                   );
 
