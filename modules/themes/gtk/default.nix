@@ -41,7 +41,6 @@
                   "gtk4"
                 ]
                 (_: {
-                  theme = config.hm.gtk.theme;
                   inherit
                     extraConfig
                     ;

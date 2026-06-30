@@ -335,7 +335,7 @@
       type = "github";
       owner = "nixos";
       repo = "nixos-hardware";
-      ref = "master";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nur = {

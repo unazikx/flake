@@ -17,7 +17,8 @@ lib.mkMerge [
         mkSeconds = sec: toString (1000 * sec);
       in
       {
-        hide_cursor = mkSeconds 1;
+        # hide_cursor = mkSeconds 1;
+        hide_cursor = "when-typing enable";
       };
 
     input."*" = {

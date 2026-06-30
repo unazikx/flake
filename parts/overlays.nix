@@ -91,6 +91,9 @@
               enableUnfree = true;
             };
 
+            pnpm_10_29_2 = _old.pnpm_10;
+            pnpm_10_34_0 = _old.pnpm_10;
+
             portablemc = _old.portablemc.override {
               textToSpeechSupport = false;
               jre = _pkgs.temurin-jre-bin-25;

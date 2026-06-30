@@ -60,8 +60,8 @@
 
                       inherit (pkgs.own.fish-plugins)
                         # keep-sorted start
-                        fish-helix
-                        fish-logo
+                        # fish-helix
+                        # fish-logo
                         # keep-sorted end
                         ;
                     }
@@ -84,7 +84,7 @@
                 # fish
                 ''
                   # fish_vi_key_bindings
-                  fish_helix_key_bindings
+                  # fish_helix_key_bindings
 
                   # default
                   # ${d} d delete-char
@@ -117,7 +117,7 @@
               shellInitLast =
                 # fish
                 ''
-                  set fish_cursor_default      block
+                  set fish_cursor_default      line
                   set fish_cursor_insert       line
                   set fish_cursor_replace_one  underscore
                   set fish_cursor_replace      underscore

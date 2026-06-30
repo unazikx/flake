@@ -21,7 +21,6 @@
         extraModules = builtins.attrValues {
           inherit (config.nixosModules)
             # keep-sorted start
-            amneziawg
             basic-media
             basic-services
             basic-shell
