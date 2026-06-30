@@ -74,7 +74,7 @@ lib.mkMerge [
       }
       {
         command = lib.concatStringsSep " " [
-          (lib.getExe config.hm.programs.nixcord.equibop.package)
+          (lib.getExe config.hm.programs.nixcord.vesktop.package)
           "--start-minimized"
         ];
         always = false;

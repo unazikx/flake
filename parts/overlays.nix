@@ -31,8 +31,10 @@
           {
             inherit system;
 
+            _stable = build-branch inputs.nixpkgs-2605;
             _master = build-branch inputs.nixpkgs-master;
             _2505 = build-branch inputs.nixpkgs-2505;
+            _qutebrowser = build-branch inputs.nixpkgs-qutebrowser;
 
             branch-config = {
               inherit system;

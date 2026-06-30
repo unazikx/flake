@@ -47,6 +47,13 @@
       ref = "nixos-26.05";
     };
 
+    nixpkgs-qutebrowser = {
+      type = "github";
+      owner = "nixos";
+      repo = "nixpkgs";
+      rev = "567a49d1913ce81ac6e9582e3553dd90a955875f";
+    };
+
     # keep-sorted start block=yes newline_separated=yes
     anyrun = {
       type = "github";
