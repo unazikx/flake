@@ -951,6 +951,48 @@
         "type": "github"
       }
     },
+    "millennium": {
+      "inputs": {
+        "millennium-src": "millennium-src",
+        "nixpkgs": [
+          "nixos-millennium",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "dir": "packages/nix",
+        "lastModified": 1782748657,
+        "narHash": "sha256-myZJ9+YIhk/SyzDQMN0d1/ik9DdU9wPJ2LktjF5dAnI=",
+        "owner": "SteamClientHomebrew",
+        "repo": "Millennium",
+        "rev": "e6dac74fdf07fce1e8f8f1c80e4d7f8f6716bb0e",
+        "type": "github"
+      },
+      "original": {
+        "dir": "packages/nix",
+        "owner": "SteamClientHomebrew",
+        "ref": "next",
+        "repo": "Millennium",
+        "type": "github"
+      }
+    },
+    "millennium-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1782748533,
+        "narHash": "sha256-0YkQ3+NqTJWHEAGg2hWvWkt2S65yGQ0bs6iB26T3qgg=",
+        "owner": "SteamClientHomebrew",
+        "repo": "Millennium",
+        "rev": "d6aed733f9b2e55eca2cb973a0bef8d9e05c5fca",
+        "type": "github"
+      },
+      "original": {
+        "owner": "SteamClientHomebrew",
+        "repo": "Millennium",
+        "rev": "d6aed733f9b2e55eca2cb973a0bef8d9e05c5fca",
+        "type": "github"
+      }
+    },
     "mnw": {
       "locked": {
         "lastModified": 1780772958,
@@ -1273,6 +1315,30 @@
       "original": {
         "owner": "nixos",
         "repo": "nixos-hardware",
+        "type": "github"
+      }
+    },
+    "nixos-millennium": {
+      "inputs": {
+        "flake-parts": [
+          "flake-parts"
+        ],
+        "millennium": "millennium",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1782791961,
+        "narHash": "sha256-bFtknDgY0MbYajF/+nmjXL3bNbsnrlpAfB/hjU1PfSc=",
+        "owner": "re1n0",
+        "repo": "nixos-millennium",
+        "rev": "78d88672117111c6226f0cd115817d30a80d2b02",
+        "type": "github"
+      },
+      "original": {
+        "owner": "re1n0",
+        "repo": "nixos-millennium",
         "type": "github"
       }
     },
@@ -1622,6 +1688,7 @@
         "nixcord": "nixcord",
         "nixos-cli": "nixos-cli",
         "nixos-hardware": "nixos-hardware",
+        "nixos-millennium": "nixos-millennium",
         "nixpkgs": [
           "nixpkgs-unstable"
         ],
@@ -1794,15 +1861,16 @@
         "systems": "systems_7"
       },
       "locked": {
-        "lastModified": 1781835343,
-        "narHash": "sha256-GWyTjc03r66Hq+SojzWkJagHv/kJE3SSrC+iypCxJ3s=",
+        "lastModified": 1782871859,
+        "narHash": "sha256-V8GUQTtwYrwHFQ5eWQh2LYnMj/ecx5JtQVo1qJ1wZAA=",
         "owner": "unazikx",
         "repo": "steam-config-nix",
-        "rev": "2ca184046090f4f6e471b7a5021d64111369feb0",
+        "rev": "daf3974684309d5b445dbc51d3aa9ca53c1b27fe",
         "type": "github"
       },
       "original": {
         "owner": "unazikx",
+        "ref": "feat/winetricks",
         "repo": "steam-config-nix",
         "type": "github"
       }

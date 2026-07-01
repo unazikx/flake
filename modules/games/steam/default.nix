@@ -27,7 +27,6 @@
             steam = {
               enable = true;
 
-              protontricks.enable = true;
               remotePlay.openFirewall = true;
 
               gamescopeSession = {

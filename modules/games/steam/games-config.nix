@@ -24,12 +24,21 @@ in
 
   defaultCompatTool = "GE-Proton";
 
+  winetricks."shared" = {
+    winePrefix = "${steamapps}/compatdata/0";
+    verbs = [
+      "vcrun2022"
+      "corefonts"
+    ];
+  };
+
   apps = lib.mkMerge [
     (lib.mkSteam.mkAttrset
       {
         launchOptions = {
           env = {
             STEAM_COMPAT_DATA_PATH = "${steamapps}/compatdata/0";
+            PROTON_ENABLE_WAYLAND = 1;
           };
           wrappers = [ (lib.getExe pkgs.gamemode) ];
         };
@@ -68,6 +77,7 @@ in
           env = {
             STEAM_COMPAT_DATA_PATH = "${steamapps}/compatdata/0";
             PROTON_USE_NTSYNC = 1;
+            PROTON_ENABLE_WAYLAND = 1;
           };
           wrappers = [ (lib.getExe pkgs.gamemode) ];
         };
@@ -110,6 +120,8 @@ in
         goat-simulator-remastered.id = 858710;
         gravity-circuit.id = 858710;
         hard-truck-2.id = 4487840;
+        intravenous-2.id = 2608270;
+        intravenous.id = 1486630;
         ion-fury.id = 562860;
         iq-under-construction.id = 3771740;
         jalopy.id = 446020;

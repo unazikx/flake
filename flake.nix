@@ -345,6 +345,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nixos-millennium = {
+      type = "github";
+      owner = "re1n0";
+      repo = "nixos-millennium";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-parts.follows = "flake-parts";
+    };
+
     nur = {
       type = "github";
       owner = "nix-community";
@@ -414,6 +422,7 @@
       type = "github";
       owner = "unazikx";
       repo = "steam-config-nix";
+      ref = "feat/winetricks";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-parts.follows = "flake-parts";
     };
