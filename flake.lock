@@ -1340,7 +1340,7 @@
         "type": "github"
       }
     },
-    "nixpkgs-qutebrowser": {
+    "nixpkgs-previous": {
       "locked": {
         "lastModified": 1781577229,
         "narHash": "sha256-lrp67w8AulE9Ks53n27I45ADSzbOCn4H+CNW1Ck8B+8=",
@@ -1628,7 +1628,7 @@
         "nixpkgs-2505": "nixpkgs-2505",
         "nixpkgs-2605": "nixpkgs-2605",
         "nixpkgs-master": "nixpkgs-master",
-        "nixpkgs-qutebrowser": "nixpkgs-qutebrowser",
+        "nixpkgs-previous": "nixpkgs-previous",
         "nixpkgs-unstable": "nixpkgs-unstable_2",
         "nur": "nur",
         "nvf": "nvf",

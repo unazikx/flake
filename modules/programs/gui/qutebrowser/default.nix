@@ -34,7 +34,7 @@
             programs.qutebrowser = lib.mkMerge [
               {
                 enable = true;
-                package = pkgs._qutebrowser.qutebrowser;
+                package = pkgs._previous.qutebrowser;
                 # https://t.me/ru_nixos_flood/480935
 
                 searchEngines = {

@@ -34,7 +34,7 @@
             _stable = build-branch inputs.nixpkgs-2605;
             _master = build-branch inputs.nixpkgs-master;
             _2505 = build-branch inputs.nixpkgs-2505;
-            _qutebrowser = build-branch inputs.nixpkgs-qutebrowser;
+            _previous = build-branch inputs.nixpkgs-previous;
 
             branch-config = {
               inherit system;
@@ -104,7 +104,7 @@
 
             prismlauncher = _old.prismlauncher.override _pkgs._prismConfig;
 
-            proton-ge-bin = _old.proton-ge-bin.overrideAttrs {
+            proton-ge-bin = _pkgs._previous.proton-ge-bin.overrideAttrs {
               pname = "proton-ge-bin";
 
               dontUnpack = false;

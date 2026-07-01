@@ -33,6 +33,13 @@
       ref = "master";
     };
 
+    nixpkgs-previous = {
+      type = "github";
+      owner = "nixos";
+      repo = "nixpkgs";
+      rev = "567a49d1913ce81ac6e9582e3553dd90a955875f";
+    };
+
     nixpkgs-2505 = {
       type = "github";
       owner = "nixos";
@@ -45,13 +52,6 @@
       owner = "nixos";
       repo = "nixpkgs";
       ref = "nixos-26.05";
-    };
-
-    nixpkgs-qutebrowser = {
-      type = "github";
-      owner = "nixos";
-      repo = "nixpkgs";
-      rev = "567a49d1913ce81ac6e9582e3553dd90a955875f";
     };
 
     # keep-sorted start block=yes newline_separated=yes
@@ -359,7 +359,6 @@
       repo = "nvf";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-parts.follows = "flake-parts";
-      inputs.ndg.follows = "";
     };
 
     obsidian-plugins = {
@@ -463,7 +462,6 @@
       owner = "kartavkun";
       repo = "zapret-discord-youtube";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-utils.follows = "flake-utils";
     };
     # keep-sorted end
   };

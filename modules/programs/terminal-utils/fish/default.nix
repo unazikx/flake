@@ -103,6 +103,11 @@
                   ${pag}_progress     black  ${bg}=red
 
                   set fish_greeting
+
+                  abbr --erase '!!'
+                  abbr --erase '!$'
+                  abbr --erase '!*'
+                  abbr --erase '!^'
                 ''
 
               ;
