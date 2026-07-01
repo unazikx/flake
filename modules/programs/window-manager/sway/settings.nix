@@ -14,7 +14,7 @@ lib.mkMerge [
   rec {
     seat."*" = {
       # hide_cursor = mkSeconds 1;
-      hide_cursor = "when-typing enable";
+      # hide_cursor = "when-typing enable";
     };
 
     input."*" = {
