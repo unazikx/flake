@@ -29,6 +29,7 @@ in
     (lib.mkSteam.mkAttrset
       {
         desktopEntry.enable = true;
+        updateBehavior = "always";
         launchOptions = {
           env = {
             STEAM_COMPAT_DATA_PATH = "${steamapps}/compatdata/0";
@@ -39,7 +40,7 @@ in
       }
       {
         # keep-sorted start block=yes newline_separated=yes
-        burnout-paradise-remastered = {
+        "Burnout Paradise Remastered" = {
           compatTool = "GE-Proton";
           launchOptions = {
             env = lib.mkForce { };
@@ -50,12 +51,12 @@ in
           language = "russian";
         };
 
-        city-car-driving = {
+        "City Car Driving" = {
           compatTool = "proton_8";
           id = 493490;
         };
 
-        duck-game = {
+        "Duck Game" = {
           # https://www.protondb.com/app/312530#VBbR6m5Ilw
           compatTool = "proton_8";
           id = 312530;
@@ -68,6 +69,7 @@ in
     (lib.mkSteam.mkAttrset
       {
         desktopEntry.enable = true;
+        updateBehavior = "always";
         compatTool = defaultCompatTool;
         launchOptions = {
           env = {
@@ -80,273 +82,423 @@ in
       }
       {
         # keep-sorted start block=yes
-        abiotic-factor.id = 427410;
-        adventures-of-sir-kicksalot.id = 2629230;
-        apico.id = 1390190;
-        arctico.id = 325210;
-        baldurs-gate-3 = {
+        "Abiotic Factor" = {
+          id = 427410;
+        };
+        "Adventures Of Sir Kicksalot" = {
+          id = 2629230;
+        };
+        "Apico" = {
+          id = 1390190;
+        };
+        "Arctico" = {
+          id = 325210;
+        };
+        "Baldurs Gate 3" = {
           id = 1086940;
           language = "russian";
         };
-        barony = {
+        "Barony" = {
           id = 371970;
           betaBranch = "translation-fix";
         };
-        batman-arkham-asylum.id = 35140;
-        batman-arkham-city.id = 200260;
-        batman-arkham-knight.id = 208650;
-        battletoads = {
+        "Batman Arkham Asylum" = {
+          id = 35140;
+        };
+        "Batman Arkham City" = {
+          id = 200260;
+        };
+        "Batman Arkham Knight" = {
+          id = 208650;
+        };
+        "Battletoads" = {
           id = 1244950;
           language = "russian";
         };
-        beyond-divinity = {
+        "Beyond Divinity" = {
           id = 219760;
           language = "russian";
         };
-        carmageddon-max-damage = {
+        "Carmageddon Max Damage" = {
           id = 505170;
           language = "russian";
         };
-        citizen-sleeper-2.id = 2442460;
-        citizen-sleeper.id = 1578650;
-        coffee-talk-2.id = 1663220;
-        coffee-talk-tokyo.id = 3161220;
-        coffee-talk.id = 914800;
-        counter-strike-cz-deleted-scenes.id = 100;
-        counter-strike-cz.id = 80;
-        cuphead.id = 268910;
-        darksiders = {
-          id = 50620;
-          language = "russian";
+        "Citizen Sleeper 2" = {
+          id = 2442460;
         };
-        darksiders-genesis.id = 710920;
-        darksiders-ii = {
+        "Citizen Sleeper" = {
+          id = 1578650;
+        };
+        "Coffee Talk 2" = {
+          id = 1663220;
+        };
+        "Coffee Talk Tokyo" = {
+          id = 3161220;
+        };
+        "Coffee Talk" = {
+          id = 914800;
+        };
+        "Counter Strike CZ Deleted Scenes" = {
+          id = 100;
+        };
+        "Counter Strike CZ" = {
+          id = 80;
+        };
+        "Cuphead" = {
+          id = 268910;
+        };
+        "Darksiders Genesis" = {
+          id = 710920;
+        };
+        "Darksiders II" = {
           id = 388410;
           language = "russian";
         };
-        darksiders-iii = {
+        "Darksiders III" = {
           id = 606280;
           language = "russian";
         };
-        darksiders-warmastered = {
+        "Darksiders Warmastered" = {
           id = 462780;
           language = "russian";
         };
-        dead-cells = {
+        "Darksiders" = {
+          id = 50620;
+          language = "russian";
+        };
+        "Dead Cells" = {
           id = 588650;
           language = "russian";
         };
-        dex-goty.id = 6910;
-        dex-human-revolution = {
+        "Dex Goty" = {
+          id = 6910;
+        };
+        "Dex Human Revolution" = {
           id = 238010;
           language = "russian";
         };
-        dex-invisible-war.id = 6920;
-        dex-mankid-divided = {
+        "Dex Invisible War" = {
+          id = 6920;
+        };
+        "Dex Mankid Divided" = {
           id = 337000;
           language = "russian";
         };
-        dex-the-fall = {
+        "Dex The Fall" = {
           id = 258180;
           language = "russian";
         };
-        disco-elysium = {
+        "Disco Elysium" = {
           id = 632470;
           language = "russian";
         };
-        divine-divinity = {
+        "Divine Divinity" = {
           id = 214170;
           language = "russian";
         };
-        divinity-2 = {
+        "Divinity 2" = {
           id = 219780;
           language = "russian";
         };
-        divinity-original-sin = {
-          id = 373420;
-          language = "russian";
-        };
-        divinity-original-sin-2 = {
+        "Divinity Original Sin 2" = {
           id = 435150;
           language = "russian";
         };
-        dont-starve-together.id = 322330;
-        dusk = {
+        "Divinity Original Sin" = {
+          id = 373420;
+          language = "russian";
+        };
+        "Dont Starve Together" = {
+          id = 322330;
+        };
+        "Dusk" = {
           id = 519860;
           language = "russian";
         };
-        easy-delivery-co.id = 3293010;
-        elite-dangerous = {
+        "Easy Delivery Co" = {
+          id = 3293010;
+        };
+        "Elite Dangerous" = {
           id = 359320;
           language = "russian";
         };
-        enter-the-gungeon = {
+        "Enter The Gungeon" = {
           id = 311690;
           language = "russian";
         };
-        exit-the-gungeon.id = 1209490;
-        factorio = {
+        "Exit The Gungeon" = {
+          id = 1209490;
+        };
+        "Factorio" = {
           id = 427520;
           language = "russian";
         };
-        flotsam.id = 821250;
-        fnaf-popgoes.id = 1986840;
-        gloomwood.id = 1150760;
-        goat-simulator-remastered.id = 1762930;
-        gravity-circuit.id = 858710;
-        hard-truck-2 = {
-          id = 4487840;
-          language = "russian";
+        "Flotsam" = {
+          id = 821250;
         };
-        garrys-mod = {
+        "Fnaf Popgoes" = {
+          id = 1986840;
+        };
+        "Garrys Mod" = {
           id = 4487840;
           betaBranch = "x86-64";
         };
-        hollow-knight-silksong.id = 1030300;
-        hollow-knight.id = 367520;
-        hrot.id = 824600;
-        hydroneer.id = 1106840;
-        intravenous-2.id = 2608270;
-        intravenous.id = 1486630;
-        ion-fury.id = 562860;
-        iq-under-construction.id = 3771740;
-        jalopy.id = 446020;
-        kerbal-space-program = {
+        "Gloomwood" = {
+          id = 1150760;
+        };
+        "Goat Simulator Remastered" = {
+          id = 1762930;
+        };
+        "Gravity Circuit" = {
+          id = 858710;
+        };
+        "Hard Truck 2" = {
+          id = 4487840;
+          language = "russian";
+        };
+        "Hollow Knight Silksong" = {
+          id = 1030300;
+        };
+        "Hollow Knight" = {
+          id = 367520;
+        };
+        "Hrot" = {
+          id = 824600;
+        };
+        "Hydroneer" = {
+          id = 1106840;
+        };
+        "Intravenous 2" = {
+          id = 2608270;
+        };
+        "Intravenous" = {
+          id = 1486630;
+        };
+        "Ion Fury" = {
+          id = 562860;
+        };
+        "Iq Under Construction" = {
+          id = 3771740;
+        };
+        "Jalopy" = {
+          id = 446020;
+        };
+        "Kerbal Space Program" = {
           id = 220200;
           language = "russian";
         };
-        killer-frequency = {
+        "Killer Frequency" = {
           id = 1903620;
           language = "russian";
         };
-        kynseed.id = 758870;
-        lego-batman-beyond-gotham.id = 313690;
-        lego-bricktales = {
+        "Kynseed" = {
+          id = 758870;
+        };
+        "Lego Batman Beyond Gotham" = {
+          id = 313690;
+        };
+        "Lego Bricktales" = {
           id = 1898290;
           language = "russian";
         };
-        lego-builders-journey.id = 1544360;
-        lego-dc-super-villains = {
+        "Lego Builders Journey" = {
+          id = 1544360;
+        };
+        "Lego Dc Super Villains" = {
           id = 829110;
           language = "russian";
         };
-        lego-worlds = {
+        "Lego Worlds" = {
           id = 332310;
           language = "russian";
         };
-        lucid-blocks.id = 3495730;
-        midbourne.id = 2355150;
-        midnight-snack.id = 3363200;
-        mindustry.id = 1127400;
-        minecraft-dungeons.id = 1672970;
-        minecraft-legends.id = 1928870;
-        necesse = {
+        "Lucid Blocks" = {
+          id = 3495730;
+        };
+        "Midbourne" = {
+          id = 2355150;
+        };
+        "Midnight Snack" = {
+          id = 3363200;
+        };
+        "Mindustry" = {
+          id = 1127400;
+        };
+        "Minecraft Dungeons" = {
+          id = 1672970;
+        };
+        "Minecraft Legends" = {
+          id = 1928870;
+        };
+        "Necesse" = {
           id = 1169040;
           language = "russian";
         };
-        need-for-speed = {
-          id = 1262540;
-          language = "russian";
-        };
-        need-for-speed-heat = {
+        "Need For Speed Heat" = {
           id = 1222680;
           language = "russian";
         };
-        noexistence-you-me.id = 2873080;
-        noita.id = 881100;
-        one-million-fatal-guns.id = 155710;
-        ori-and-the-blind-forest = {
-          id = 261570;
+        "Need For Speed" = {
+          id = 1262540;
           language = "russian";
         };
-        ori-and-the-blind-forest-definitive-edition = {
+        "Noexistence You Me" = {
+          id = 2873080;
+        };
+        "Noita" = {
+          id = 881100;
+        };
+        "One Million Fatal Guns" = {
+          id = 155710;
+        };
+        "Ori And The Blind Forest Definitive Edition" = {
           id = 387290;
           language = "russian";
         };
-        ori-and-the-will-of-the-wisps.id = 1057090;
-        overcooked = {
+        "Ori And The Blind Forest" = {
+          id = 261570;
+          language = "russian";
+        };
+        "Ori And The Will Of The Wisps" = {
+          id = 1057090;
+        };
+        "Overcooked" = {
           id = 448510;
           language = "russian";
         };
-        paralives.id = 1118520;
-        plastic-warfare.id = 490640;
-        project-warlock-2.id = 1640300;
-        project-zomboid = {
+        "Paralives" = {
+          id = 1118520;
+        };
+        "Plastic Warfare" = {
+          id = 490640;
+        };
+        "Project Warlock 2" = {
+          id = 1640300;
+        };
+        "Project Zomboid" = {
           id = 108600;
           betaBranch = "unstable";
         };
-        repo.id = 3214660;
-        sandbox.id = 590830;
-        satisfactory.id = 526870;
-        selaco.id = 1592280;
-        serious-sam-tormental.id = 640340;
-        shapez-2.id = 2162800;
-        shapez.id = 1318690;
-        sleeping-dogs = {
+        "Repo" = {
+          id = 3214660;
+        };
+        "Sandbox" = {
+          id = 590830;
+        };
+        "Satisfactory" = {
+          id = 526870;
+        };
+        "Selaco" = {
+          id = 1592280;
+        };
+        "Serious Sam Tormental" = {
+          id = 640340;
+        };
+        "Shapez 2" = {
+          id = 2162800;
+        };
+        "Shapez" = {
+          id = 1318690;
+        };
+        "Sleeping Dogs" = {
           id = 307690;
           language = "russian";
         };
-        snacktorio.id = 1902940;
-        space-haven.id = 979110;
-        starbound.id = 211820;
-        stick-it-to-the-stickman = {
+        "Snacktorio" = {
+          id = 1902940;
+        };
+        "Space Haven" = {
+          id = 979110;
+        };
+        "Starbound" = {
+          id = 211820;
+        };
+        "Stick It To The Stickman" = {
           id = 2085540;
           language = "russian";
         };
-        streets-of-rouge = {
+        "Streets Of Rouge" = {
           id = 512900;
           language = "russian";
         };
-        summer-in-mara.id = 962580;
-        sunset-overdrive = {
+        "Summer In Mara" = {
+          id = 962580;
+        };
+        "Sunset Overdrive" = {
           id = 847370;
           language = "russian";
         };
-        supraball.id = 321400;
-        supraland-six-inches.id = 1522870;
-        supraland.id = 813630;
-        terraria.id = 105600;
-        tes-iii.id = 22320;
-        tes-iv.id = 22330;
-        tes-v = {
+        "Supraball" = {
+          id = 321400;
+        };
+        "Supraland Six Inches" = {
+          id = 1522870;
+        };
+        "Supraland" = {
+          id = 813630;
+        };
+        "Terraria" = {
+          id = 105600;
+        };
+        "Tes Iii" = {
+          id = 22320;
+        };
+        "Tes Iv" = {
+          id = 22330;
+        };
+        "Tes V" = {
           id = 489830;
           language = "russian";
         };
-        the-binding-of-isaac-rebirth.id = 250900;
-        the-escapists = {
-          id = 298630;
-          language = "russian";
+        "The Binding Of Isaac Rebirth" = {
+          id = 250900;
         };
-        the-escapists-2 = {
+        "The Escapists 2" = {
           id = 641990;
           language = "russian";
         };
-        the-long-dark.id = 305620;
-        the-survivalists = {
+        "The Escapists" = {
+          id = 298630;
+          language = "russian";
+        };
+        "The Long Dark" = {
+          id = 305620;
+        };
+        "The Survivalists" = {
           id = 897450;
           language = "russian";
         };
-        the-witcher-3 = {
+        "The Witcher 3" = {
           id = 292030;
           language = "russian";
         };
-        theotown.id = 1084020;
-        travelers-rest.id = 1139980;
-        valheim.id = 892970;
-        warhammer-boltgun.id = 2005010;
-        watch-dogs = {
+        "Theotown" = {
+          id = 1084020;
+        };
+        "Travelers Rest" = {
+          id = 1139980;
+        };
+        "Valheim" = {
+          id = 892970;
+        };
+        "Warhammer Boltgun" = {
+          id = 2005010;
+        };
+        "Watch Dogs" = {
           id = 243470;
           language = "russian";
         };
-        webbed = {
+        "Webbed" = {
           id = 1390350;
           language = "russian";
         };
-        worms-wmd = {
+        "Worms Wmd" = {
           id = 327030;
           language = "russian";
         };
-        your-only-move-is-hustle.id = 2212330;
+        "Your Only Move Is Hustle" = {
+          id = 2212330;
+        };
         # keep-sorted end
       }
     )
