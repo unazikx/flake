@@ -420,9 +420,8 @@
 
     steam-config-nix = {
       type = "github";
-      owner = "unazikx";
+      owner = "different-name";
       repo = "steam-config-nix";
-      ref = "feat/winetricks";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-parts.follows = "flake-parts";
     };

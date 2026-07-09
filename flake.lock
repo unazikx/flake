@@ -1861,16 +1861,15 @@
         "systems": "systems_7"
       },
       "locked": {
-        "lastModified": 1782871859,
-        "narHash": "sha256-V8GUQTtwYrwHFQ5eWQh2LYnMj/ecx5JtQVo1qJ1wZAA=",
-        "owner": "unazikx",
+        "lastModified": 1783258469,
+        "narHash": "sha256-WNNE9Fm/DHj6ppMCxdAujyRamcNeng9wC3se0aw/oPc=",
+        "owner": "different-name",
         "repo": "steam-config-nix",
-        "rev": "daf3974684309d5b445dbc51d3aa9ca53c1b27fe",
+        "rev": "87b661b33f5f7cf441d4e2234ab302bdd6c6b310",
         "type": "github"
       },
       "original": {
-        "owner": "unazikx",
-        "ref": "feat/winetricks",
+        "owner": "different-name",
         "repo": "steam-config-nix",
         "type": "github"
       }
