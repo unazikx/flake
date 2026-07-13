@@ -1,112 +1,89 @@
-# INFO:
-# best video player
-#
-# WARN:
-# by default anime4k is enabled
+{
+  zen,
+  ...
+}:
 
 {
-  flake =
-    {
-      ...
-    }:
-    {
-      nixosModules.${baseNameOf ./.} =
-        {
-          pkgs,
-          lib,
-          config,
-          ...
-        }:
-        let
-          theme = import ./theme.nix {
-            inherit
-              config
-              lib
-              ;
-          };
-          settings = import ./settings.nix {
-            inherit pkgs lib;
-          };
-        in
-        {
-          hm.programs.mpv = {
-            enable = true;
+  zen.programs.gui.mpv = {
+    description = ''
+      best video player
 
-            bindings = import ./bindings.nix;
+      by default anime4k is enabled
+    '';
 
-            scripts = import ./scripts.nix {
-              inherit
-                pkgs
-                ;
-            };
+    includes = [
+      zen.programs.gui.mpv.anime4k
+      zen.programs.gui.mpv.bindings
+      zen.programs.gui.mpv.scripts
+      zen.programs.gui.mpv.settings
+      zen.programs.gui.mpv.theme
+    ];
 
-            scriptOpts = settings.script // theme.uosc;
+    homeManager =
+      { ... }:
+      {
+        programs.mpv.enable = true;
 
-            config = settings.config // theme.conf;
-
-            extraInput = settings.extra;
-          };
-
-          hmMime = lib.mkMime {
-            "mpv.desktop" = [
-              "application/mxf"
-              "application/sdp"
-              "application/smil"
-              "application/streamingmedia"
-              "application/vnd.apple.mpegurl"
-              "application/vnd.ms-asf"
-              "application/vnd.rn-realmedia"
-              "application/vnd.rn-realmedia-vbr"
-              "application/x-cue"
-              "application/x-extension-m4a"
-              "application/x-extension-mp4"
-              "application/x-matroska"
-              "application/x-mpegurl"
-              "application/x-ogm"
-              "application/x-ogm-video"
-              "application/x-shorten"
-              "application/x-smil"
-              "application/x-streamingmedia"
-              "video/3gp"
-              "video/3gpp"
-              "video/3gpp2"
-              "video/avi"
-              "video/divx"
-              "video/dv"
-              "video/fli"
-              "video/flv"
-              "video/mkv"
-              "video/mp2t"
-              "video/mp4"
-              "video/mp4v-es"
-              "video/mpeg"
-              "video/msvideo"
-              "video/ogg"
-              "video/quicktime"
-              "video/vnd.divx"
-              "video/vnd.mpegurl"
-              "video/vnd.rn-realvideo"
-              "video/webm"
-              "video/x-avi"
-              "video/x-flc"
-              "video/x-flic"
-              "video/x-flv"
-              "video/x-m4v"
-              "video/x-matroska"
-              "video/x-mpeg2"
-              "video/x-mpeg3"
-              "video/x-ms-afs"
-              "video/x-ms-asf"
-              "video/x-msvideo"
-              "video/x-ms-wmv"
-              "video/x-ms-wmx"
-              "video/x-ms-wvxvideo"
-              "video/x-ogm"
-              "video/x-ogm+ogg"
-              "video/x-theora"
-              "video/x-theora+ogg"
-            ];
-          };
+        xdg.mimeApps.defaultApplications = {
+          "video/*" = "mpv.desktop";
+          "application/mxf" = "mpv.desktop";
+          "application/sdp" = "mpv.desktop";
+          "application/smil" = "mpv.desktop";
+          "application/streamingmedia" = "mpv.desktop";
+          "application/vnd.apple.mpegurl" = "mpv.desktop";
+          "application/vnd.ms-asf" = "mpv.desktop";
+          "application/vnd.rn-realmedia" = "mpv.desktop";
+          "application/vnd.rn-realmedia-vbr" = "mpv.desktop";
+          "application/x-cue" = "mpv.desktop";
+          "application/x-extension-m4a" = "mpv.desktop";
+          "application/x-extension-mp4" = "mpv.desktop";
+          "application/x-matroska" = "mpv.desktop";
+          "application/x-mpegurl" = "mpv.desktop";
+          "application/x-ogm" = "mpv.desktop";
+          "application/x-ogm-video" = "mpv.desktop";
+          "application/x-shorten" = "mpv.desktop";
+          "application/x-smil" = "mpv.desktop";
+          "application/x-streamingmedia" = "mpv.desktop";
+          "application/ogg" = "mpv.desktop";
+          "video/3gp" = "mpv.desktop";
+          "video/3gpp" = "mpv.desktop";
+          "video/3gpp2" = "mpv.desktop";
+          "video/avi" = "mpv.desktop";
+          "video/divx" = "mpv.desktop";
+          "video/dv" = "mpv.desktop";
+          "video/fli" = "mpv.desktop";
+          "video/flv" = "mpv.desktop";
+          "video/mkv" = "mpv.desktop";
+          "video/mp2t" = "mpv.desktop";
+          "video/mp4" = "mpv.desktop";
+          "video/mp4v-es" = "mpv.desktop";
+          "video/mpeg" = "mpv.desktop";
+          "video/msvideo" = "mpv.desktop";
+          "video/ogg" = "mpv.desktop";
+          "video/quicktime" = "mpv.desktop";
+          "video/vnd.divx" = "mpv.desktop";
+          "video/vnd.mpegurl" = "mpv.desktop";
+          "video/vnd.rn-realvideo" = "mpv.desktop";
+          "video/webm" = "mpv.desktop";
+          "video/x-avi" = "mpv.desktop";
+          "video/x-flc" = "mpv.desktop";
+          "video/x-flic" = "mpv.desktop";
+          "video/x-flv" = "mpv.desktop";
+          "video/x-m4v" = "mpv.desktop";
+          "video/x-matroska" = "mpv.desktop";
+          "video/x-mpeg2" = "mpv.desktop";
+          "video/x-mpeg3" = "mpv.desktop";
+          "video/x-ms-afs" = "mpv.desktop";
+          "video/x-ms-asf" = "mpv.desktop";
+          "video/x-msvideo" = "mpv.desktop";
+          "video/x-ms-wmv" = "mpv.desktop";
+          "video/x-ms-wmx" = "mpv.desktop";
+          "video/x-ms-wvxvideo" = "mpv.desktop";
+          "video/x-ogm" = "mpv.desktop";
+          "video/x-ogm+ogg" = "mpv.desktop";
+          "video/x-theora" = "mpv.desktop";
+          "video/x-theora+ogg" = "mpv.desktop";
         };
-    };
+      };
+  };
 }

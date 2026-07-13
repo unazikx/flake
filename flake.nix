@@ -1,24 +1,9 @@
 {
-  description = ''
-    .__   __.  __  ___   ___ 
-    |  \ |  | |  | \  \ /  / 
-    |   \|  | |  |  \  V  /  
-    |  . `  | |  |   >   <   
-    |  |\   | |  |  /  .  \  
-    |__| \__| |__| /__/ \__\ 
-                             
-      ______   ______   .__   __.  _______  __    _______ 
-     /      | /  __  \  |  \ |  | |   ____||  |  /  _____|
-    |  ,----'|  |  |  | |   \|  | |  |__   |  | |  |  __  
-    |  |     |  |  |  | |  . `  | |   __|  |  | |  | |_ | 
-    |  `----.|  `--'  | |  |\   | |  |     |  | |  |__| | 
-     \______| \______/  |__| \__| |__|     |__|  \______| 
-  '';
-
   inputs = {
     nixpkgs.follows = "nixpkgs-unstable";
+    darwin.follows = "nix-darwin";
 
-    # nixpkgs revisions and versions
+    # nixpkgs branches
     nixpkgs-unstable = {
       type = "github";
       owner = "nixos";
@@ -26,32 +11,25 @@
       ref = "nixos-unstable";
     };
 
-    nixpkgs-master = {
-      type = "github";
-      owner = "nixos";
-      repo = "nixpkgs";
-      ref = "master";
-    };
-
-    nixpkgs-previous = {
+    nixpkgs-unstable-prev = {
       type = "github";
       owner = "nixos";
       repo = "nixpkgs";
       rev = "567a49d1913ce81ac6e9582e3553dd90a955875f";
     };
 
-    nixpkgs-2505 = {
-      type = "github";
-      owner = "nixos";
-      repo = "nixpkgs";
-      ref = "nixos-25.05";
-    };
-
-    nixpkgs-2605 = {
+    nixpkgs-stable = {
       type = "github";
       owner = "nixos";
       repo = "nixpkgs";
       ref = "nixos-26.05";
+    };
+
+    nixpkgs-stable-prev = {
+      type = "github";
+      owner = "nixos";
+      repo = "nixpkgs";
+      ref = "nixos-25.05";
     };
 
     # keep-sorted start block=yes newline_separated=yes
@@ -78,16 +56,20 @@
       inputs.flake-parts.follows = "flake-parts";
     };
 
-    custom-packages = {
+    den = {
       type = "github";
-      owner = "unazikx";
-      repo = "nix-packages";
-      inputs.nixpkgs-unstable.follows = "nixpkgs";
-      inputs.flake-parts.follows = "flake-parts";
-      inputs.nur.follows = "nur";
+      owner = "denful";
+      repo = "den";
     };
 
-    dank-material-shell = {
+    disko = {
+      type = "github";
+      owner = "nix-community";
+      repo = "disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    dms = {
       type = "github";
       owner = "avengemedia";
       repo = "dankmaterialshell";
@@ -95,17 +77,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    dank-material-shell-plugins = {
+    dms-plugins = {
       type = "github";
       owner = "avengemedia";
       repo = "dms-plugin-registry";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    disko = {
-      type = "github";
-      owner = "nix-community";
-      repo = "disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -251,6 +226,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    myown = {
+      type = "github";
+      owner = "unazikx";
+      repo = "nix-packages";
+      inputs.nixpkgs-unstable.follows = "nixpkgs";
+      inputs.flake-parts.follows = "flake-parts";
+      inputs.nur.follows = "nur";
+    };
+
     neu-nix = {
       type = "github";
       owner = "ricardomaps";
@@ -269,13 +253,20 @@
       owner = "cmm";
       repo = "niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.nixpkgs-stable.follows = "nixpkgs-2605";
+      inputs.nixpkgs-stable.follows = "nixpkgs-stable";
     };
 
     nix-cursors = {
       type = "github";
       owner = "lilleaila";
       repo = "nix-cursors";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nix-darwin = {
+      type = "github";
+      owner = "nix-darwin";
+      repo = "nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -366,7 +357,6 @@
       owner = "notashelf";
       repo = "nvf";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-parts.follows = "flake-parts";
     };
 
     obsidian-plugins = {
@@ -395,7 +385,6 @@
       owner = "fufsob";
       repo = "proxy-suite-flake";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.zapret.follows = "zapret-discord-youtube";
     };
 
     services-flake = {
@@ -464,19 +453,16 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
     };
-
-    zapret-discord-youtube = {
-      type = "github";
-      owner = "kartavkun";
-      repo = "zapret-discord-youtube";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     # keep-sorted end
   };
 
   outputs =
     inputs:
-    inputs.flake-parts.lib.mkFlake {
-      inherit inputs;
-    } (inputs.import-tree ./parts);
+    inputs.flake-parts.lib.mkFlake { inherit inputs; } (
+      inputs.import-tree [
+        ./configurations
+        ./modules
+        ./parts
+      ]
+    );
 }

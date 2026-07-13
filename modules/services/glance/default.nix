@@ -1,65 +1,53 @@
-# INFO:
-# best dashboard
-# fr, i use it everyday
-#
-# ...нет напиздел, еще делаю
+{
+  zen,
+  ...
+}:
 
 {
-  flake =
-    {
-      ...
-    }:
-    {
-      nixosModules.${baseNameOf ./.} =
-        {
-          lib,
-          config,
-          ...
-        }:
-        let
-          cfg = config.services.glance;
-          isRu = true;
-        in
-        {
-          sops.secrets = {
-            "services/glance" = {
-              restartUnits = [ "glance.service" ];
-            };
-          };
+  zen.services.glance = {
+    description = ''
+      best dashboard
+      fr, i use it everyday
 
-          services = {
-            glance = {
-              enable = true;
-              openFirewall = true;
+      ...нет напиздел, еще делаю
+    '';
 
-              environmentFile = config.sopsnix."services/glance";
+    includes = [
+      zen.services.glance.settings
+    ];
 
-              settings = (
-                import ./settings.nix {
-                  inherit lib config isRu;
+    nixos =
+      {
+        lib,
+        config,
+        host,
+        ...
+      }:
+      let
+        cfg = config.services.glance;
+      in
+      {
+        services.glance = {
+          enable = true;
+          openFirewall = true;
 
-                  mkHsl = (
-                    import ./mkHsl.nix {
-                      inherit lib config;
-                    }
-                  );
-                }
-              );
-            };
-
-            caddy.virtualHosts =
-              lib.genAttrs
-                [
-                  "${lib.hostName}.local"
-                  "glance.${lib.hostName}.local"
-                ]
-                (_: {
-                  extraConfig = ''
-                    encode zstd gzip
-                    reverse_proxy http://0.0.0.0:${toString cfg.settings.server.port}
-                  '';
-                });
-          };
+          environmentFile = config.sops.secrets."services/glance".path;
         };
-    };
+
+        services.caddy.virtualHosts =
+          lib.genAttrs
+            [
+              "${host.hostName}.local"
+              "glance.${host.hostName}.local"
+            ]
+            (_: {
+              extraConfig = ''
+                encode zstd gzip
+                reverse_proxy http://${cfg.settings.server.host}:${toString cfg.settings.server.port}
+              '';
+            });
+
+        sops.secrets."services/glance" = { };
+      };
+  };
 }

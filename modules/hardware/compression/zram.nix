@@ -1,0 +1,26 @@
+{
+  ...
+}:
+
+{
+  zen.hardware.compression.zram = {
+    description = ''
+      compress ram with zstd
+    '';
+
+    nixos =
+      {
+        ...
+      }:
+      {
+        zramSwap = {
+          enable = true;
+
+          algorithm = "zstd";
+          memoryPercent = 100;
+          priority = 1000;
+          swapDevices = 1;
+        };
+      };
+  };
+}

@@ -1,0 +1,51 @@
+{
+  zen,
+  ...
+}:
+
+{
+  zen.programs.editors.helix = {
+    description = ''
+      best text editor
+      and code editor
+    '';
+
+    includes = [
+      zen.programs.editors.helix.binds
+      zen.programs.editors.helix.languages
+      zen.programs.editors.helix.settings
+      zen.programs.editors.helix.theme
+    ];
+
+    homeManager =
+      {
+        pkgs,
+        ...
+      }:
+      {
+        home.shellAliases.e = "$EDITOR"; # cause defaultEditor
+
+        programs.helix = {
+          enable = true;
+
+          defaultEditor = true;
+          extraPackages = [
+            # keep-sorted start
+            pkgs.black
+            pkgs.go
+            pkgs.gopls
+            pkgs.marksman
+            pkgs.nixd
+            pkgs.nixfmt
+            pkgs.prettier
+            pkgs.pyright
+            pkgs.python312Packages.python-lsp-server
+            pkgs.typescript-language-server
+            pkgs.vscode-langservers-extracted
+            pkgs.yaml-language-server
+            # keep-sorted end
+          ];
+        };
+      };
+  };
+}

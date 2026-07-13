@@ -1,0 +1,52 @@
+{
+  ...
+}:
+
+{
+  zen.programs.cli.nixos-cli = {
+    description = ''
+      unified NixOS replacement tools
+    '';
+
+    nixos =
+      {
+        inputs,
+        pkgs,
+        lib,
+        host,
+        ...
+      }:
+      {
+        imports = [
+          inputs.nixos-cli.nixosModules.nixos-cli
+        ];
+
+        environment.systemPackages = [
+          pkgs.nix-output-monitor
+        ];
+
+        programs.nixos-cli = {
+          enable = true;
+
+          settings = {
+            config_location = "${host.flakeDir}#${host.hostName}";
+
+            confirmation.always = true;
+
+            apply = {
+              use_nom = true;
+              reexec_as_root = true;
+            };
+
+            differ = {
+              tool = "command";
+              command = [
+                (lib.getExe pkgs.nvd)
+                "diff"
+              ];
+            };
+          };
+        };
+      };
+  };
+}

@@ -1,7 +1,3 @@
-# INFO:
-# > nix fmt
-# will format every .nix and .md
-
 {
   ...
 }:

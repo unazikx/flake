@@ -1,55 +1,56 @@
-# INFO:
-# use 'yy' wrapper fot cd in yazi directory
+{
+  zen,
+  ...
+}:
 
 {
-  flake =
-    {
-      ...
-    }:
-    {
-      nixosModules.${baseNameOf ./.} =
-        {
-          pkgs,
-          lib,
-          config,
-          ...
-        }:
-        {
-          hm = {
-            programs.yazi = {
-              enable = true;
+  zen.programs.cli.yazi = {
+    description = ''
+      best file manager
+      use 'yy' wrapper fot cd in yazi directory
+    '';
 
-              extraPackages = lib.attrValues {
-                inherit (pkgs)
-                  djvulibre
-                  ffmpegthumbnailer
-                  glow
-                  imagemagick
-                  jq
-                  p7zip-rar
-                  transmission_4
-                  wl-clipboard
-                  ouch
-                  ;
+    includes = [
+      zen.programs.cli.yazi.binds
+      zen.programs.cli.yazi.icons
+      zen.programs.cli.yazi.settings
+      zen.programs.cli.yazi.theme
+    ];
 
-                # ouch = pkgs.ouch.override { enableUnfree = true; };
-              };
-            }
-            // (import ./settings/main.nix {
-              inherit
-                pkgs
-                lib
-                config
-                ;
-            });
+    homeManager =
+      {
+        pkgs,
+        ...
+      }:
+      {
+        programs.yazi = {
+          enable = true;
 
-            xdg.mimeApps = {
-              defaultApplications = {
-                "inode/directory" = [ "yazi.desktop" ];
-                "inode/mount-point" = [ "yazi.desktop" ];
-              };
-            };
+          shellWrapperName = "yy";
+
+          extraPackages = [
+            # keep-sorted start
+            pkgs.djvulibre
+            pkgs.ffmpegthumbnailer
+            pkgs.glow
+            pkgs.imagemagick
+            pkgs.jq
+            pkgs.ouch
+            pkgs.p7zip-rar
+            pkgs.transmission_4
+            pkgs.wl-clipboard
+            # keep-sorted end
+          ];
+        };
+
+        stylix.targets.yazi.enable = false;
+
+        xdg.mimeApps = {
+          defaultApplications = {
+            "inode/directory" = [ "yazi.desktop" ];
+            "inode/mount-point" = [ "yazi.desktop" ];
           };
         };
-    };
+      };
+  };
 }

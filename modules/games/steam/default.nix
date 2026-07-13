@@ -1,146 +1,112 @@
-# WARN:
-# for unified prefix use
-# STEAM_COMPAT_DATA_PATH=your_path_withouts_strings_around %command%
+{
+  zen,
+  ...
+}:
 
 {
-  flake =
-    {
-      ...
-    }:
-    {
-      nixosModules.${baseNameOf ./.} =
-        {
-          pkgs,
-          lib,
-          config,
-          ...
-        }:
-        {
-          persist.user.directories = [
-            ".local/share/Steam"
-            ".steam"
-          ];
+  zen.games.steam = {
+    description = ''
+      for unified prefix use:
+      STEAM_COMPAT_DATA_PATH=your_path_withouts_strings_around %command%
 
-          hardware.xpadneo.enable = true;
+      config options:
+      https://github.com/different-name/steam-config-nix/blob/master/options.md
+    '';
 
-          programs = {
-            steam = {
+    includes = [
+      zen.games.steam.non-steam-games
+      zen.games.steam.steam-games
+    ];
+
+    nixos =
+      {
+        pkgs,
+        lib,
+        config,
+        ...
+      }:
+      {
+        hardware.xpadneo.enable = true;
+
+        programs = {
+          steam = {
+            enable = true;
+
+            extraCompatPackages = [
+              pkgs.proton-ge-bin-patched
+            ];
+
+            remotePlay.openFirewall = true;
+
+            gamescopeSession = {
               enable = true;
 
-              remotePlay.openFirewall = true;
-
-              gamescopeSession = {
-                enable = true;
-
-                env = {
-                  WINE_FULLSCREEN_FSR = "1";
-                };
-
-                args = [
-                  "-e"
-                ];
+              env = {
+                WINE_FULLSCREEN_FSR = "1";
               };
 
-              extraCompatPackages = [
-                pkgs.proton-ge-bin
-                pkgs.dwproton-bin
+              args = [
+                "-e"
               ];
-
-              package = pkgs.steam.override {
-                # INFO:
-                # doenst works with greetd
-                # extraArgs = lib.concatStringsSep " " [
-                #   "-nochatui"
-                #   "-nofriendsui"
-                #   "-silent"
-                # ];
-
-                extraProfile =
-                  let
-                    steamapps = "${config.hm.xdg.dataHome}/Steam/steamapps";
-                  in
-                  # bash
-                  ''
-                    # fuck idk works that or not?
-                    export STEAM_COMPAT_DATA_PATH = "${steamapps}/compatdata/0"
-                  '';
-
-                extraEnv = {
-                  MANGOHUD = config.hm.programs.mangohud.enable;
-                  OBS_VKCAPTURE = true;
-                  RADV_TEX_ANISO = 16;
-                  PROTON_USE_NTSYNC = 1;
-                };
-
-                extraPkgs =
-                  pkgs: with pkgs; [
-                    config.hm.programs.mangohud.package
-                  ];
-
-                extraLibraries =
-                  pkgs: with pkgs; [
-                    SDL
-                    SDL2
-                    sdl3
-                    wayland
-                    gtk2
-                  ];
-              };
-
-              config = import ./games-config.nix {
-                inherit pkgs lib config;
-              };
-
-              platformOptimizations.enable = true;
-            };
-
-            gamescope = {
-              enable = true;
-            };
-
-            gamemode = {
-              enable = true;
-              enableRenice = true;
             };
           };
 
-          environment.systemPackages = [
-            (pkgs.writeShellScriptBin "steamos-session-select" ''
-              steam -shutdown
-            '')
-          ];
-
-          systemd.user.services = {
-            steam-autostart = {
-              wantedBy = [ "graphical-session.target" ];
-              partOf = [ "graphical-session.target" ];
-              after = [ "graphical-session.target" ];
-
-              serviceConfig = {
-                ExecStart = lib.concatStringsSep " " [
-                  (lib.getExe config.programs.steam.package)
-                  "-nochatui"
-                  "-nofriendsui"
-                  "-silent"
-                ];
-                Restart = "always";
-                RestartSec = 2;
-              };
-            };
+          gamescope = {
+            enable = true;
           };
 
-          networking.firewall =
-            lib.genAttrs
-              [
-                "allowedTCPPorts"
-                "allowedUDPPorts"
-              ]
-              (
-                _n:
-                (lib.attrValues {
-                  mindustry = 6567;
-                })
-              );
+          gamemode = {
+            enable = true;
+            enableRenice = true;
+          };
         };
-    };
+
+        environment.systemPackages = [
+          # WARN:
+          # idk it isnt works
+          (pkgs.writeShellScriptBin "steamos-session-select" ''
+            steam -shutdown
+          '')
+        ];
+
+        systemd.user.services = {
+          steam-autostart = {
+            wantedBy = [ "graphical-session.target" ];
+            partOf = [ "graphical-session.target" ];
+            after = [ "graphical-session.target" ];
+
+            serviceConfig = {
+              ExecStart = lib.concatStringsSep " " [
+                (lib.getExe config.programs.steam.package)
+                "-nochatui"
+                "-nofriendsui"
+                "-silent"
+              ];
+              Restart = "always";
+              RestartSec = 2;
+            };
+          };
+        };
+      };
+
+    homeManagerNixos =
+      {
+        inputs,
+        pkgs,
+        ...
+      }:
+      {
+        imports = [
+          inputs.steam-config-nix.homeModules.steam-config-nix
+        ];
+
+        programs.steam.config = {
+          enable = true;
+          onSteamRunning = "close";
+          # ^^^ close Steam and apply the changes, waiting for any running games to exit first
+
+          defaultCompatTool = pkgs.proton-ge-bin-patched;
+        };
+      };
+  };
 }

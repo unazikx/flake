@@ -1,87 +1,57 @@
-# INFO:
-# minecraft servers launches via systemd units
-# 25500 - 25599 ports are for minecraft servers
+{
+  ...
+}:
 
 {
-  flake =
-    {
-      ...
-    }:
-    {
-      nixosModules.${baseNameOf ./.} =
-        {
-          pkgs,
-          lib,
-          config,
-          ...
-        }@args: # needed
-        let
-          cfg = config.services.minecraft-servers;
+  zen.services = {
+    description = ''
+      minecraft servers launches via systemd units
+      25500 - 25599 ports are for minecraft servers
 
-          dir = "/var/lib/minecraft";
-        in
-        {
-          persist.directories = [ dir ];
+      plan: add servers
+    '';
 
-          sops.secrets = {
-            "services/minecraft" = {
-              owner = lib.mkForce cfg.user;
+    includes = [ ];
 
-              reloadUnits = lib.concatMap (name: [
-                "${"minecraft-server-${name}.socket"}"
-                "${"minecraft-server-${name}.service"}"
-              ]) (lib.attrNames cfg.servers);
-              # when u change password
-              # servers will be restarted
-            };
-          };
+    nixos =
+      {
+        pkgs,
+        lib,
+        config,
+        ...
+      }:
+      let
+        cfg = config.services.minecraft-servers;
+        dir = "/var/lib/minecraft";
+      in
+      {
+        environment.systemPackages = [
+          pkgs.packwiz
+          pkgs.mcrcon
+        ];
 
-          packages = lib.attrValues {
-            inherit (pkgs)
-              packwiz
-              mcrcon
-              ;
-          };
+        services.minecraft-servers = {
+          enable = true;
+          openFirewall = true;
 
-          # i made two secrets couse owners diffirent
-          hm.home.sessionVariables = {
-            MCRCON_PASS = "$(cat ${config.sopsnix."services/minecraft-main"})";
-          };
+          eula = true;
+          dataDir = dir;
 
-          services.minecraft-servers = {
-            enable = true;
-            openFirewall = true;
-
-            eula = true;
-            dataDir = dir;
-            environmentFile = config.sopsnix."services/minecraft";
-            # ^^^ just a plain file
-            #
-            # password=yourawesomepass
-
-            # INFO:
-            # auto generator server
-            # .
-            #  servers
-            # ├  modded
-            # │ ├──  jvmOpts.nix
-            # │ ├──  main.nix
-            # │ └──  mods.nix
-            # └  vanilla
-            #   ├──  jvmOpts.nix
-            #   ├──  main.nix
-            #   └──  mods.nix
-            #  default.nix
-            servers =
-              let
-                serverDirs = ./_servers-list;
-
-                loadServer = name: import "${serverDirs}/${name}" args;
-              in
-              lib.mapAttrs (name: _: loadServer name) (
-                lib.filterAttrs (_: v: v == "directory") (lib.readDir serverDirs)
-              );
-          };
+          # password=yourawesomepass
+          environmentFile = config.sops.secrets."services/minecraft".path;
+          # just a plain file ^^^
         };
-    };
+
+        sops.secrets."services/minecraft" = {
+          owner = lib.mkForce cfg.user;
+
+          # when u change password
+          # servers will be restarted
+          reloadUnits = lib.concatMap (name: [
+            "minecraft-server-${name}.socket"
+            "minecraft-server-${name}.service"
+          ]) (lib.attrNames cfg.servers);
+        };
+      };
+  };
 }

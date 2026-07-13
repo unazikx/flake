@@ -1,161 +1,110 @@
-# INFO:
-# best torrent client
+{
+  ...
+}:
 
 {
-  flake =
-    {
-      ...
-    }:
-    {
-      nixosModules.${baseNameOf ./.} =
-        {
-          pkgs,
-          lib,
-          config,
-          ...
-        }:
-        let
-          cfg = config.services.qbittorrent;
+  zen.services.qbittorrent = {
+    description = ''
+      best torrent client
 
-          # toml = pkgs.formats.toml { };
-          json = pkgs.formats.json { };
+      services.qbittorrent.serverConfig = {
+        BitTorrent.Session.DefaultSavePath = lib.mkDefault "...";
+      };
+      use for override download dir ^^^
+    '';
 
-          savePath = "/media/torrents";
-        in
-        {
-          persist.directories = [
-            "/var/lib/qBittorrent"
-            savePath
-          ];
+    os =
+      {
+        pkgs,
+        lib,
+        config,
+        ...
+      }:
+      let
+        cfg = config.services.qbittorrent;
+      in
+      {
+        services.qbittorrent = {
+          enable = true;
+          openFirewall = true;
 
-          environment.systemPackages = lib.attrValues {
-            inherit (pkgs)
-              qbittorrent-cli
-              ;
-          };
+          webuiPort = 8112;
+          torrentingPort = 6881;
 
-          services = {
-            qbittorrent = {
-              enable = true;
-              openFirewall = true;
+          serverConfig = {
+            LegalNotice.Accepted = true;
 
-              webuiPort = 8112;
-              torrentingPort = 6881;
-
-              serverConfig = {
-                LegalNotice.Accepted = true;
-
-                BitTorrent.Session = {
-                  TempPathEnabled = true;
-                  DefaultSavePath = savePath;
-                  QueueingSystemEnabled = true;
-                  IgnoreSlowTorrentsForQueueing = true;
-                  SlowTorrentsDownloadRate = 40; # kbps
-                  SlowTorrentsUploadRate = 40; # kbps
-                  GlobalMaxInactiveSeedingMinutes = 43800;
-                  GlobalMaxSeedingMinutes = 10080;
-                  GlobalMaxRatio = 2;
-                  MaxActiveCheckingTorrents = 2;
-                  MaxActiveDownloads = 5;
-                  MaxActiveUploads = 15;
-                  MaxActiveTorrents = 20;
-                  MaxConnections = 600;
-                  MaxUploads = 200;
-                };
-
-                Preferences.WebUI = {
-                  Enabled = true;
-                  AuthSubnetWhitelistEnabled = true;
-                  LocalHostAuth = false;
-                  UseUPnP = true;
-                  Username = lib.userName;
-                  Password_PBKDF2 = "@ByteArray(zYghDjh/mF8Cfw98MObGbw==:KUACE4R/NKLtGopaVWs07bGFC//DTfdWP8yf2lAxxZ44LMY+KQ5zOaGMYEBmhPNOPXou422ujdthPrFYNgnFNA==)";
-                  Address = "0.0.0.0"; # access for localhost without login
-                };
-
-                RSS.Session = {
-                  EnableProcessing = true;
-                  MaxArticlesPerFeed = 2000;
-                  RefreshInterval = 10;
-                };
-
-                Network.Proxy = {
-                  # INFO:
-                  #
-                  # px1.blockme.site:3128
-                  # px2.blockme.site:3128
-                  #
-                  # https://rutracker.org/forum/viewtopic.php?t=5134313
-                  HostnameLookupEnabled = true;
-                  IP = "px1.blockme.site";
-                  Port = 3128;
-                  Type = "HTTP";
-                };
-
-                AutoRun = {
-                  enabled = true;
-                  program = "${lib.getExe pkgs.libnotify} -a qbitTorrent -i qbittorrent '%N finished in %D' -u critical";
-                  /*
-                    %N: Torrent name
-                    %L: Category
-                    %G: Tags (separated by comma)
-                    %F: Content path (same as root path for multifile torrent)
-                    %R: Root path (first torrent subdirectory path)
-                    %D: Save path
-                    %C: Number of files
-                    %Z: Torrent size (bytes)
-                    %T: Current tracker
-                    %I: Info hash v1
-                    %J: Info hash v2
-                    %K: Torrent ID
-                  */
-                };
-              };
+            BitTorrent.Session = {
+              TempPathEnabled = true;
+              DefaultSavePath = lib.mkDefault "/media/torrents";
+              QueueingSystemEnabled = true;
+              IgnoreSlowTorrentsForQueueing = true;
+              SlowTorrentsDownloadRate = 40; # kbps
+              SlowTorrentsUploadRate = 40; # kbps
+              GlobalMaxInactiveSeedingMinutes = 43800;
+              GlobalMaxSeedingMinutes = 10080;
+              GlobalMaxRatio = 2;
+              MaxActiveCheckingTorrents = 2;
+              MaxActiveDownloads = 5;
+              MaxActiveUploads = 15;
+              MaxActiveTorrents = 20;
+              MaxConnections = 600;
+              MaxUploads = 200;
             };
 
-            caddy.virtualHosts =
-              lib.genAttrs
-                [
-                  "qbittorrent.${lib.hostName}.local"
-                ]
-                (_: {
-                  extraConfig = ''
-                    encode zstd gzip
-                    reverse_proxy http://0.0.0.0:${toString cfg.webuiPort}
-                  '';
-                });
-          };
-
-          hm.home.file = {
-            # WARN:
-            # developer is fucking idiot
-            # https://github.com/ludviglundgren/qbittorrent-cli/blob/master/README.md#configuration
-            #
-            # "qbt/.qbt.toml".source = toml.generate "qbt-config.toml" {
-            #   qbittorrent.addr = "http://127.0.0.1:${toString cfg.webuiPort}";
-            # };
-
-            ".qbt/settings.json".source = json.generate "qbt-config.json" {
-              Url = "http://127.0.0.1:${toString cfg.webuiPort}";
+            Preferences.WebUI = {
+              Enabled = true;
+              Address = "0.0.0.0"; # access for localhost without login
+              AuthSubnetWhitelistEnabled = true;
+              LocalHostAuth = false;
+              UseUPnP = true;
+              Username = config.sops.placeholder."services/qbittorrent/username";
+              Password_PBKDF2 = config.sops.placeholder."services/qbittorrent/password";
             };
-          };
 
-          systemd.services.qbittorrent = {
-            serviceConfig = {
-              UMask = "0002"; # 775
+            RSS.Session = {
+              EnableProcessing = true;
+              MaxArticlesPerFeed = 2000;
+              RefreshInterval = 10;
             };
-          };
 
-          tmp.qbittorrent = {
-            "${savePath}".d = {
-              inherit (config.services.qbittorrent)
-                user
-                group
-                ;
-
-              mode = "0775";
+            Network.Proxy = {
+              # INFO:
+              # px1.blockme.site:3128
+              # px2.blockme.site:3128
+              # https://rutracker.org/forum/viewtopic.php?t=5134313
+              HostnameLookupEnabled = true;
+              IP = "px1.blockme.site";
+              Port = 3128;
+              Type = "HTTP";
             };
           };
         };
-    };
+
+        # WARN:
+        # overrides writeText file by sops template
+        systemd.services.qbittorrent = {
+          restartTriggers = lib.optionals (cfg.serverConfig != { }) (lib.mkForce [ ]);
+          serviceConfig.ExecStartPre = lib.mkIf (cfg.serverConfig != { }) (
+            lib.mkForce ''
+              ${lib.getExe' pkgs.coreutils "ln"} -s ${
+                config.sops.templates."qbittorrent-config".path
+              } "${cfg.profileDir}/qBittorrent/config/qBittorrent.conf"
+            ''
+          );
+        };
+
+        sops.secrets."services/qbittorrent/username" = {
+          reloadUnits = [ "qbittorrent.service" ];
+        };
+
+        sops.secrets."services/qbittorrent/password" = {
+          reloadUnits = [ "qbittorrent.service" ];
+        };
+
+        sops.templates."qbittorrent-config" = {
+          content = (lib.gendeepINI cfg.serverConfig);
+        };
+      };
+  };
 }

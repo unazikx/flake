@@ -1,9 +1,0 @@
-{
-  ...
-}:
-
-{
-  services = {
-    minecraft-servers.servers = { };
-  };
-}

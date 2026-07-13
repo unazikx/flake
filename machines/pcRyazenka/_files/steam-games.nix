@@ -1,7 +1,0 @@
-{
-  ...
-}:
-
-{
-  programs.steam.config.nonSteamApps = { };
-}
