@@ -5,24 +5,21 @@
 }:
 
 let
+  clean = lib.filterAttrs (name: _: !lib.hasPrefix "_" name);
+
+  toEntry =
+    name: conf:
+    lib.optional (conf ? sopsKey) {
+      inherit name;
+      key = conf.sopsKey;
+    };
+
   dig =
     attrs:
     lib.flatten (
       lib.mapAttrsToList (
-        _: value:
-        lib.flatten (
-          lib.mapAttrsToList (
-            name: conf:
-            lib.optionals (conf ? sopsKey) [
-              {
-                name = name;
-                key = conf.sopsKey;
-              }
-            ]
-          ) (lib.filterAttrs (name: _: !lib.hasPrefix "_" name) value)
-        )
-        ++ dig (value.users or { })
-      ) (lib.filterAttrs (name: _: !lib.hasPrefix "_" name) attrs)
+        _: value: lib.flatten (lib.mapAttrsToList toEntry (clean value)) ++ dig (value.users or { })
+      ) (clean attrs)
     );
 
   allKeys = dig (config.den.hosts or { }) ++ dig (config.den.homes or { });
