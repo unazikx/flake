@@ -11,12 +11,10 @@
 # > sops updatekeys ./file
 
 keys:
-  - &pcRyazenka age16dzy76gf6jcw03cppgghm7a8ld4g57f73z85wcj9fvq7w3ct53rs4rclm7
-  - &thinkpadT14 age16ermygpuxg2k6mmyu3q9nzjptzjdqz6kyswnhpxktqa58stff5cs3aupl6
+  - &jetpure age16dzy76gf6jcw03cppgghm7a8ld4g57f73z85wcj9fvq7w3ct53rs4rclm7
 
 creation_rules:
   - path_regex: .+\.(yaml|json|env|ini)$
     key_groups:
       - age:
-          - *pcRyazenka
-          - *thinkpadT14
+          - *jetpure

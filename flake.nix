@@ -41,6 +41,18 @@
       inputs.flake-parts.follows = "flake-parts";
     };
 
+    files = {
+      type = "github";
+      owner = "sini";
+      repo = "files";
+    };
+
+    dag = {
+      type = "github";
+      owner = "denful";
+      repo = "dag";
+    };
+
     betterfox = {
       type = "github";
       owner = "yokoffing";
@@ -95,20 +107,6 @@
       type = "github";
       owner = "malbiruk";
       repo = "driftwm";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    easyeffects-presets = {
-      type = "github";
-      owner = "azikxz";
-      repo = "easyeffects-presets";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    emmanuelrosa-nix = {
-      type = "github";
-      owner = "emmanuelrosa";
-      repo = "erosanix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -198,13 +196,6 @@
       inputs.flake-utils.follows = "flake-utils";
     };
 
-    lsfg-vk-flake = {
-      type = "github";
-      owner = "pabloaul";
-      repo = "lsfg-vk-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     make-shell = {
       type = "github";
       owner = "nicknovitski";
@@ -233,13 +224,6 @@
       inputs.nixpkgs-unstable.follows = "nixpkgs";
       inputs.flake-parts.follows = "flake-parts";
       inputs.nur.follows = "nur";
-    };
-
-    neu-nix = {
-      type = "github";
-      owner = "ricardomaps";
-      repo = "neu-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nilla-cli = {
@@ -282,13 +266,6 @@
       repo = "nix-gaming";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-parts.follows = "flake-parts";
-    };
-
-    nix-index-database = {
-      type = "github";
-      owner = "nix-community";
-      repo = "nix-index-database";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nix-math = {
