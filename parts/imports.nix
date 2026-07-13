@@ -10,18 +10,12 @@
     lib.platforms.darwin
   ];
 
-  _module.args.dag = inputs.dag.lib {
-    inherit
-      lib
-      ;
-  };
-
   imports = [
     # keep-sorted start
     inputs.den.flakeModule
+    inputs.files.flakeModules.default
     inputs.flake-aspects.flakeModule
     inputs.flake-parts.flakeModules.bundlers
-    inputs.files.flakeModules.default
     inputs.flake-parts.flakeModules.modules
     inputs.github-actions-nix.flakeModule
     inputs.make-shell.flakeModules.default

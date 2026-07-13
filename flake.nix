@@ -41,18 +41,6 @@
       inputs.flake-parts.follows = "flake-parts";
     };
 
-    files = {
-      type = "github";
-      owner = "sini";
-      repo = "files";
-    };
-
-    dag = {
-      type = "github";
-      owner = "denful";
-      repo = "dag";
-    };
-
     betterfox = {
       type = "github";
       owner = "yokoffing";
@@ -108,6 +96,12 @@
       owner = "malbiruk";
       repo = "driftwm";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    files = {
+      type = "github";
+      owner = "sini";
+      repo = "files";
     };
 
     firefox-addons = {
