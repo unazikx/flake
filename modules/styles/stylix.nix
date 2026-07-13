@@ -48,7 +48,7 @@
 
           x11.enable = config.stylix.targets.xresources.enable;
           gtk.enable = config.stylix.targets.gtk.enable;
-          sway.enable = config.stylix.targets.sway.enable;
+          # sway.enable = config.stylix.targets.sway.enable;
         };
 
         stylix = {
