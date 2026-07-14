@@ -93,6 +93,17 @@
       repo = "flake-utils";
     };
 
+    halley-flake = {
+      type = "github";
+      owner = "binarylinuxx";
+      repo = "halley-flake";
+      inputs = {
+        flake-utils.follows = "flake-utils";
+        halley-unstable-dev-src.follows = "";
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
+
     helium-flake = {
       type = "gitlab";
       owner = "ntgn";

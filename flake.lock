@@ -548,6 +548,66 @@
         "type": "github"
       }
     },
+    "halley-flake": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "halley-stable-src": "halley-stable-src",
+        "halley-unstable-dev-src": [],
+        "halley-unstable-src": "halley-unstable-src",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1783952123,
+        "narHash": "sha256-/8x0vEhIVDCaWfWEEfwrQfXTkpAGhmgwLN9xOb/bIqI=",
+        "owner": "binarylinuxx",
+        "repo": "halley-flake",
+        "rev": "4c2776f01b37d86a25895604a1a7ade34b97aebd",
+        "type": "github"
+      },
+      "original": {
+        "owner": "binarylinuxx",
+        "repo": "halley-flake",
+        "type": "github"
+      }
+    },
+    "halley-stable-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1782881068,
+        "narHash": "sha256-9OEt4bvik7nr7BmKyLp8YA87U8+zjUVsBIyZ73qWcb0=",
+        "owner": "saltnpepper97",
+        "repo": "halley",
+        "rev": "6548e866c098347c02cac33a0d9894e205438da1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "saltnpepper97",
+        "ref": "v0.5.0",
+        "repo": "halley",
+        "type": "github"
+      }
+    },
+    "halley-unstable-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1782881784,
+        "narHash": "sha256-6r6lmH/GQpygmIrJ6m57iJWdyE5zYnGPt4238UrqdP0=",
+        "owner": "saltnpepper97",
+        "repo": "halley",
+        "rev": "654e1ed173616520a478f0b733534cbad98f0733",
+        "type": "github"
+      },
+      "original": {
+        "owner": "saltnpepper97",
+        "ref": "main",
+        "repo": "halley",
+        "type": "github"
+      }
+    },
     "helium-flake": {
       "inputs": {
         "flake-parts": [
@@ -1120,6 +1180,7 @@
         "flake-file": "flake-file",
         "flake-parts": "flake-parts",
         "flake-utils": "flake-utils_2",
+        "halley-flake": "halley-flake",
         "helium-flake": "helium-flake",
         "home-manager": "home-manager",
         "hytale-launcher": "hytale-launcher",
