@@ -17,6 +17,7 @@
       nixzoid = {
         classes = [ "homeManager" ];
         defaultWm = "sway";
+        defaultShell = "fish";
       };
     };
   };
@@ -65,6 +66,8 @@
       # keep-sorted start
       zen.games.gale
       zen.games.heroic
+      zen.programs.terminal.fish
+      zen.programs.terminal.zoxide
       zen.games.minecraft.prismlauncher
       zen.games.steam
       zen.miscellaneous.users
@@ -93,7 +96,6 @@
       zen.programs.terminal.trash
       zen.services.greetd
       zen.suites.music
-      zen.suites.shell
       zen.suites.theming
       # keep-sorted end
     ];
