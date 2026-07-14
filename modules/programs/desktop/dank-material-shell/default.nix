@@ -4,6 +4,23 @@
 }:
 
 {
+  flake-file.inputs = {
+    dms = {
+      type = "github";
+      owner = "avengemedia";
+      repo = "dankmaterialshell";
+      ref = "stable";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    dms-plugins = {
+      type = "github";
+      owner = "avengemedia";
+      repo = "dms-plugin-registry";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+  };
+
   zen.programs.desktop.dank-material-shell = {
     description = ''
       modern clipboard with tofi frontend

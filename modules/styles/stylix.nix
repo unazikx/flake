@@ -3,6 +3,24 @@
 }:
 
 {
+  flake-file.inputs = {
+    stylix = {
+      type = "github";
+      owner = "danth";
+      repo = "stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-parts.follows = "flake-parts";
+      inputs.nur.follows = "nur";
+    };
+
+    nix-cursors = {
+      type = "github";
+      owner = "lilleaila";
+      repo = "nix-cursors";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+  };
+
   zen.styles.stylix = {
     os =
       {

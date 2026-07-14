@@ -3,6 +3,14 @@
 }:
 
 {
+  flake-file.inputs = {
+    nilla-cli = {
+      type = "github";
+      owner = "nilla-nix";
+      repo = "cli";
+    };
+  };
+
   zen.programs.cli.nilla = {
     description = ''
       export shell variables for tokens

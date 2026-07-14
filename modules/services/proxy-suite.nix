@@ -3,6 +3,15 @@
 }:
 
 {
+  flake-file.inputs = {
+    proxy-suite-flake = {
+      type = "github";
+      owner = "fufsob";
+      repo = "proxy-suite-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+  };
+
   zen.services.glance = {
     description = ''
       bundles sing-box,

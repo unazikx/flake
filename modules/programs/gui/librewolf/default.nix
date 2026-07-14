@@ -4,6 +4,22 @@
 }:
 
 {
+  flake-file.inputs = {
+    betterfox = {
+      type = "github";
+      owner = "yokoffing";
+      repo = "betterfox";
+      flake = false;
+    };
+
+    firefox-addons = {
+      type = "github";
+      owner = "petrkozorezov";
+      repo = "firefox-addons-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+  };
+
   zen.programs.gui.librewolf = {
     description = ''
       used for sound perfecting

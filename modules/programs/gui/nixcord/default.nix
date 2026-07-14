@@ -4,6 +4,16 @@
 }:
 
 {
+  flake-file.inputs = {
+    nixcord = {
+      type = "github";
+      owner = "kaylorben";
+      repo = "nixcord";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-parts.follows = "flake-parts";
+    };
+  };
+
   zen.programs.gui.nixcord = {
     description = ''
       discord modded client

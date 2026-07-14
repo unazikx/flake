@@ -3,6 +3,15 @@
 }:
 
 {
+  flake-file.inputs = {
+    spicetify-nix = {
+      type = "github";
+      owner = "gerg-l";
+      repo = "spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+  };
+
   zen.programs.gui.spotify = {
     description = ''
       idk how to login, i am via ~~dns.malw.link~~

@@ -4,6 +4,16 @@
 }:
 
 {
+  flake-file.inputs = {
+    steam-config-nix = {
+      type = "github";
+      owner = "different-name";
+      repo = "steam-config-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-parts.follows = "flake-parts";
+    };
+  };
+
   zen.games.steam = {
     description = ''
       for unified prefix use:

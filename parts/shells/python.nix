@@ -20,8 +20,8 @@
         packages = [
           (pkgs.python314.withPackages (ps: [
             # keep-sorted start
-            inputs'.custom-packages.legacyPackages.anicli-api
-            inputs'.custom-packages.legacyPackages.hdrezka-api
+            inputs'.myown.legacyPackages.anicli-api
+            inputs'.myown.legacyPackages.hdrezka-api
             ps.aiohttp
             ps.black
             ps.gql

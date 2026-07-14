@@ -3,6 +3,15 @@
 }:
 
 {
+  flake-file.inputs = {
+    hytale-launcher = {
+      type = "github";
+      owner = "unazikx";
+      repo = "hytale-launcher-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+  };
+
   zen.games.hytale.launcher = {
     description = ''
       official launcher for hytale

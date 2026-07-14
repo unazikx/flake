@@ -4,6 +4,15 @@
 }:
 
 {
+  flake-file.inputs = {
+    driftwm = {
+      type = "github";
+      owner = "malbiruk";
+      repo = "driftwm";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+  };
+
   zen.programs.desktop.driftwm =
     {
       isDefault ? false,

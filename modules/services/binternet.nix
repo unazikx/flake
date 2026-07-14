@@ -3,6 +3,16 @@
 }:
 
 {
+  flake-file.inputs = {
+    binternet-nix = {
+      type = "github";
+      owner = "unazikx";
+      repo = "binternet-nix";
+      inputs.nixpkgs-unstable.follows = "nixpkgs";
+      inputs.flake-parts.follows = "flake-parts";
+    };
+  };
+
   zen.services.binternet = {
     description = ''
       opensource fronrend for pinerest

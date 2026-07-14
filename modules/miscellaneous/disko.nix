@@ -3,6 +3,15 @@
 }:
 
 {
+  flake-file.inputs = {
+    disko = {
+      type = "github";
+      owner = "nix-community";
+      repo = "disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+  };
+
   zen.miscellaneous.disko = {
     description = ''
       declarative disk partitioning and formatting

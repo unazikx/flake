@@ -3,6 +3,14 @@
 }:
 
 {
+  flake-file.inputs = {
+    nix-flatpak = {
+      type = "github";
+      owner = "gmodena";
+      repo = "nix-flatpak";
+    };
+  };
+
   zen.services.flatpak = {
     description = ''
       self packages in containers

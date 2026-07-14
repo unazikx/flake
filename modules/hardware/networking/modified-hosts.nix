@@ -3,6 +3,15 @@
 }:
 
 {
+  flake-file.inputs = {
+    dns-malw-link = {
+      type = "github";
+      owner = "immalware";
+      repo = "dns.malw.link";
+      flake = false;
+    };
+  };
+
   zen.hardware.networking.hosts = blackList: {
     description = ''
       modified dns malw link hosts file

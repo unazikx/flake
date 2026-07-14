@@ -3,6 +3,15 @@
 }:
 
 {
+  flake-file.inputs = {
+    nix-minecraft = {
+      type = "github";
+      owner = "hustlerone";
+      repo = "nix-minecraft";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+  };
+
   zen.services = {
     description = ''
       minecraft servers launches via systemd units

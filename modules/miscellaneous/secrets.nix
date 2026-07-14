@@ -4,6 +4,15 @@
 }:
 
 {
+  flake-file.inputs = {
+    sops-nix = {
+      type = "github";
+      owner = "mic92";
+      repo = "sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+  };
+
   zen.miscellaneous.secrets =
     let
       secretsFile = "${self}/configurations/secrets.yaml";
@@ -19,7 +28,7 @@
         }:
         {
           imports = [
-            inputs.sopsnix.nixosModules.sops
+            inputs.sops-nix.nixosModules.sops
           ];
 
           environment.systemPackages = [
@@ -46,7 +55,7 @@
         }:
         {
           imports = [
-            inputs.sopsnix.nixosModules.sops
+            inputs.sops-nix.nixosModules.sops
           ];
         };
 
@@ -57,7 +66,7 @@
         }:
         {
           imports = [
-            inputs.sopsnix.darwinModules.sops
+            inputs.sops-nix.darwinModules.sops
           ];
         };
 
@@ -71,7 +80,7 @@
         }:
         {
           imports = [
-            inputs.sopsnix.homeModules.sops
+            inputs.sops-nix.homeModules.sops
           ];
 
           home.packages = [

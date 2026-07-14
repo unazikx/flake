@@ -3,6 +3,15 @@
 }:
 
 {
+  flake-file.inputs = {
+    strom-nix = {
+      type = "github";
+      owner = "kraftwerk-gaming";
+      repo = "strom";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+  };
+
   zen.games.strom = {
     description = ''
       packaged games for nixos

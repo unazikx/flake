@@ -5,6 +5,16 @@
 }:
 
 {
+  flake-file.inputs = {
+    niri-flake = {
+      type = "github";
+      owner = "cmm";
+      repo = "niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs-stable.follows = "nixpkgs-stable";
+    };
+  };
+
   zen.programs.desktop.niri = {
     description = ''
       the best window manager ever

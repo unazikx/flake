@@ -3,6 +3,16 @@
 }:
 
 {
+  flake-file.inputs = {
+    nixos-cli = {
+      type = "github";
+      owner = "nix-community";
+      repo = "nixos-cli";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-parts.follows = "flake-parts";
+    };
+  };
+
   zen.programs.cli.nixos-cli = {
     description = ''
       unified NixOS replacement tools

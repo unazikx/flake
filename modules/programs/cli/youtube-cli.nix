@@ -3,6 +3,24 @@
 }:
 
 {
+  flake-file.inputs = {
+    xytz = {
+      type = "github";
+      owner = "xdagiz";
+      repo = "xytz";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
+    };
+
+    ytsub = {
+      type = "github";
+      owner = "sarowish";
+      repo = "ytsub";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
+    };
+  };
+
   zen.programs.cli.youtube-cli = {
     description = ''
       various tools for youtube

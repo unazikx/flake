@@ -3,6 +3,16 @@
 }:
 
 {
+  flake-file.inputs = {
+    helium-flake = {
+      type = "gitlab";
+      owner = "ntgn";
+      repo = "helium-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-parts.follows = "flake-parts";
+    };
+  };
+
   zen.programs.gui.helium = {
     description = ''
       chromium based distro
