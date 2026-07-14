@@ -6,17 +6,19 @@
 {
   zen.programs.gui.qutebrowser = {
     description = ''
-      VERY UNSTABLE BROWSER
+      ~~VERY UNSTABLE BROWSER~~
 
-      if u cant login Google use this:
-      :set -u https://accounts.google.com/* content.headers.user_agent "Mozilla/5.0 ({os_info}; rv:135.0) Gecko/20100101 Firefox/135"
+      okay its began stable
+      very much shizocode
     '';
 
     includes = [
       zen.programs.gui.qutebrowser.bindings
       zen.programs.gui.qutebrowser.quickmarks
+      zen.programs.gui.qutebrowser.rules
       zen.programs.gui.qutebrowser.settings
       zen.programs.gui.qutebrowser.theme
+      zen.programs.gui.qutebrowser.userstyles
     ];
 
     homeManager =
