@@ -66,8 +66,6 @@
       # keep-sorted start
       zen.games.gale
       zen.games.heroic
-      zen.programs.terminal.fish
-      zen.programs.terminal.zoxide
       zen.games.minecraft.prismlauncher
       zen.games.steam
       zen.miscellaneous.users
@@ -92,8 +90,10 @@
       zen.programs.gui.spotify
       zen.programs.gui.throne
       zen.programs.gui.zathura
+      zen.programs.terminal.fish
       zen.programs.terminal.translate-shell
       zen.programs.terminal.trash
+      zen.programs.terminal.zoxide
       zen.services.greetd
       zen.suites.music
       zen.suites.theming
