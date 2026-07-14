@@ -15,14 +15,12 @@
 
     includes = [
       zen.programs.editors.opencode.caveman
-      zen.programs.editors.opencode.oh-my-opencode
+      # zen.programs.editors.opencode.oh-my-opencode
       # zen.programs.editors.opencode.superpowers
     ];
 
     homeManager =
       {
-        pkgs,
-        lib,
         ...
       }:
       {
@@ -32,8 +30,6 @@
           enableMcpIntegration = true;
 
           settings = {
-            model = "opencode-go/deepseek-v4-flash";
-            small_model = "opencode-go/mimo-v2-omni";
             lsp = true;
 
             # formatter = {

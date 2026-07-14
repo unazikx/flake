@@ -15,7 +15,7 @@
       {
         programs.opencode = {
           settings = {
-            plugin = [ "oh-my-opencode-slim@2.1.0" ];
+            plugin = [ "oh-my-opencode-slim@2.1.1" ];
 
             agent = {
               build.disable = true;
@@ -38,7 +38,7 @@
             autoUpdate = false;
             showStartupToast = false;
 
-            preset = "main";
+            preset = "opencode-zen-free";
 
             presets = {
               opencode-zen-free = {
