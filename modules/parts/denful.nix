@@ -51,6 +51,13 @@
 
     prune-lock.enable = true;
 
+    check-hooks = [
+      {
+        index = 10;
+        exec = "nix fmt";
+      }
+    ];
+
     style = {
       sep.inputs = "
           \n
