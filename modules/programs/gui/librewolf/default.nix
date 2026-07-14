@@ -5,6 +5,7 @@
 
 {
   flake-file.inputs = {
+    # keep-sorted start block=yes newline_separated=yes
     betterfox = {
       type = "github";
       owner = "yokoffing";
@@ -18,6 +19,7 @@
       repo = "firefox-addons-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # keep-sorted end
   };
 
   zen.programs.gui.librewolf = {

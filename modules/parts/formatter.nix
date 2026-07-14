@@ -4,11 +4,15 @@
 }:
 
 {
-  flake-file.inputs.treefmt-nix = {
-    type = "github";
-    owner = "numtide";
-    repo = "treefmt-nix";
-    inputs.nixpkgs.follows = "nixpkgs";
+  flake-file.inputs = {
+    # keep-sorted start block=yes newline_separated=yes
+    treefmt-nix = {
+      type = "github";
+      owner = "numtide";
+      repo = "treefmt-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    # keep-sorted end
   };
 
   imports = [

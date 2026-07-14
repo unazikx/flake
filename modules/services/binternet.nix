@@ -4,6 +4,7 @@
 
 {
   flake-file.inputs = {
+    # keep-sorted start block=yes newline_separated=yes
     binternet-nix = {
       type = "github";
       owner = "unazikx";
@@ -11,6 +12,7 @@
       inputs.nixpkgs-unstable.follows = "nixpkgs";
       inputs.flake-parts.follows = "flake-parts";
     };
+    # keep-sorted end
   };
 
   zen.services.binternet = {

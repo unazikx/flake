@@ -4,12 +4,14 @@
 
 {
   flake-file.inputs = {
+    # keep-sorted start block=yes newline_separated=yes
     hytale-launcher = {
       type = "github";
       owner = "unazikx";
       repo = "hytale-launcher-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # keep-sorted end
   };
 
   zen.games.hytale.launcher = {

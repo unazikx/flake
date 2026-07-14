@@ -5,12 +5,14 @@
 
 {
   flake-file.inputs = {
+    # keep-sorted start block=yes newline_separated=yes
     driftwm = {
       type = "github";
       owner = "malbiruk";
       repo = "driftwm";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # keep-sorted end
   };
 
   zen.programs.desktop.driftwm =

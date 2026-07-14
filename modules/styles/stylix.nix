@@ -4,6 +4,14 @@
 
 {
   flake-file.inputs = {
+    # keep-sorted start block=yes newline_separated=yes
+    nix-cursors = {
+      type = "github";
+      owner = "lilleaila";
+      repo = "nix-cursors";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     stylix = {
       type = "github";
       owner = "danth";
@@ -12,13 +20,7 @@
       inputs.flake-parts.follows = "flake-parts";
       inputs.nur.follows = "nur";
     };
-
-    nix-cursors = {
-      type = "github";
-      owner = "lilleaila";
-      repo = "nix-cursors";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # keep-sorted end
   };
 
   zen.styles.stylix = {

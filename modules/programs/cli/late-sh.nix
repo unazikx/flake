@@ -4,6 +4,7 @@
 
 {
   flake-file.inputs = {
+    # keep-sorted start block=yes newline_separated=yes
     late-sh = {
       type = "github";
       owner = "mpiorowski";
@@ -11,6 +12,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
     };
+    # keep-sorted end
   };
 
   zen.programs.cli.late-sh = {

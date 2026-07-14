@@ -4,6 +4,7 @@
 
 {
   flake-file.inputs = {
+    # keep-sorted start block=yes newline_separated=yes
     nixos-cli = {
       type = "github";
       owner = "nix-community";
@@ -11,6 +12,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-parts.follows = "flake-parts";
     };
+    # keep-sorted end
   };
 
   zen.programs.cli.nixos-cli = {

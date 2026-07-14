@@ -4,12 +4,14 @@
 
 {
   flake-file.inputs = {
+    # keep-sorted start block=yes newline_separated=yes
     proxy-suite-flake = {
       type = "github";
       owner = "fufsob";
       repo = "proxy-suite-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # keep-sorted end
   };
 
   zen.services.glance = {

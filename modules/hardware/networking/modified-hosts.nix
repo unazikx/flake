@@ -4,12 +4,14 @@
 
 {
   flake-file.inputs = {
+    # keep-sorted start block=yes newline_separated=yes
     dns-malw-link = {
       type = "github";
       owner = "immalware";
       repo = "dns.malw.link";
       flake = false;
     };
+    # keep-sorted end
   };
 
   zen.hardware.networking.hosts = blackList: {

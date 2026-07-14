@@ -4,12 +4,14 @@
 
 {
   flake-file.inputs = {
+    # keep-sorted start block=yes newline_separated=yes
     nix-minecraft = {
       type = "github";
       owner = "hustlerone";
       repo = "nix-minecraft";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # keep-sorted end
   };
 
   zen.services = {

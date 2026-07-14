@@ -5,12 +5,14 @@
 
 {
   flake-file.inputs = {
+    # keep-sorted start block=yes newline_separated=yes
     sops-nix = {
       type = "github";
       owner = "mic92";
       repo = "sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # keep-sorted end
   };
 
   zen.miscellaneous.secrets =

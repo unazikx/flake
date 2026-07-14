@@ -5,6 +5,7 @@
 
 {
   flake-file.inputs = {
+    # keep-sorted start block=yes newline_separated=yes
     steam-config-nix = {
       type = "github";
       owner = "different-name";
@@ -12,6 +13,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-parts.follows = "flake-parts";
     };
+    # keep-sorted end
   };
 
   zen.games.steam = {

@@ -4,12 +4,14 @@
 
 {
   flake-file.inputs = {
+    # keep-sorted start block=yes newline_separated=yes
     spicetify-nix = {
       type = "github";
       owner = "gerg-l";
       repo = "spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # keep-sorted end
   };
 
   zen.programs.gui.spotify = {

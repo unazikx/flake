@@ -5,6 +5,7 @@
 
 {
   flake-file.inputs = {
+    # keep-sorted start block=yes newline_separated=yes
     dms = {
       type = "github";
       owner = "avengemedia";
@@ -19,6 +20,7 @@
       repo = "dms-plugin-registry";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # keep-sorted end
   };
 
   zen.programs.desktop.dank-material-shell = {

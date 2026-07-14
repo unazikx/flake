@@ -4,10 +4,14 @@
 }:
 
 {
-  flake-file.inputs.files = {
-    type = "github";
-    owner = "sini";
-    repo = "files";
+  flake-file.inputs = {
+    # keep-sorted start block=yes newline_separated=yes
+    files = {
+      type = "github";
+      owner = "sini";
+      repo = "files";
+    };
+    # keep-sorted end
   };
 
   imports = [

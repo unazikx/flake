@@ -5,9 +5,8 @@
 }:
 
 {
-  # systems = den.systems;
-
   flake-file.inputs = {
+    # keep-sorted start block=yes newline_separated=yes
     den = {
       type = "github";
       owner = "denful";
@@ -32,6 +31,7 @@
       owner = "denful";
       repo = "import-tree";
     };
+    # keep-sorted end
   };
 
   flake-file = {
@@ -45,7 +45,6 @@
           inputs.import-tree [
             ./configurations
             ./modules
-            ./parts
           ]
         )
       '';

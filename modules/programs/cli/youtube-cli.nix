@@ -4,6 +4,7 @@
 
 {
   flake-file.inputs = {
+    # keep-sorted start block=yes newline_separated=yes
     xytz = {
       type = "github";
       owner = "xdagiz";
@@ -19,6 +20,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
     };
+    # keep-sorted end
   };
 
   zen.programs.cli.youtube-cli = {

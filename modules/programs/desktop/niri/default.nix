@@ -6,6 +6,7 @@
 
 {
   flake-file.inputs = {
+    # keep-sorted start block=yes newline_separated=yes
     niri-flake = {
       type = "github";
       owner = "cmm";
@@ -13,6 +14,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.nixpkgs-stable.follows = "nixpkgs-stable";
     };
+    # keep-sorted end
   };
 
   zen.programs.desktop.niri = {

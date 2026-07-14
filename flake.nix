@@ -345,7 +345,6 @@
       inputs.import-tree [
         ./configurations
         ./modules
-        ./parts
       ]
     );
 }

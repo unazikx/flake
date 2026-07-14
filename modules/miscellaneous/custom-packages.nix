@@ -4,6 +4,7 @@
 
 {
   flake-file.inputs = {
+    # keep-sorted start block=yes newline_separated=yes
     myown = {
       type = "github";
       owner = "unazikx";
@@ -20,5 +21,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-parts.follows = "flake-parts";
     };
+    # keep-sorted end
   };
 }
