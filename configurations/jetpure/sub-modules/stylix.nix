@@ -3,8 +3,8 @@
 }:
 
 {
-  zen.styles.stylix.provides = {
-    jetpure.nixos =
+  zen.hosts.jetpure = {
+    nixos =
       {
         inputs',
         pkgs,
@@ -111,8 +111,10 @@
           # keep-sorted end
         ];
       };
+  };
 
-    nixzoid.homeManagerNixos =
+  zen.users.nixzoid = {
+    homeManagerNixos =
       {
         lib,
         user,

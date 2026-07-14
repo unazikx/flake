@@ -16,6 +16,11 @@
         ...
       }:
       {
+        environment.variables = {
+          RUSTICL_ENABLE = "radeonsi";
+          ROC_ENABLE_PRE_VEGA = 1;
+        };
+
         hardware = {
           cpu.amd = {
             ryzen-smu.enable = true;
