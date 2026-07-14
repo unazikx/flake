@@ -17,7 +17,7 @@
           enable = true;
 
           algorithm = "zstd";
-          memoryPercent = 100;
+          memoryPercent = 75;
           priority = 1000;
           swapDevices = 1;
         };
