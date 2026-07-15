@@ -87,9 +87,11 @@
           restartTriggers = lib.optionals (cfg.serverConfig != { }) (lib.mkForce [ ]);
           serviceConfig.ExecStartPre = lib.mkIf (cfg.serverConfig != { }) (
             lib.mkForce ''
+              CONFIG_PATH="${cfg.profileDir}/qBittorrent/config/qBittorrent.conf"
+              rm -f $CONFIG_PATH
               ${lib.getExe' pkgs.coreutils "ln"} -s ${
                 config.sops.templates."qbittorrent-config".path
-              } "${cfg.profileDir}/qBittorrent/config/qBittorrent.conf"
+              } $CONFIG_PATH
             ''
           );
         };
