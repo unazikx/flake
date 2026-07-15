@@ -62,6 +62,8 @@
               UseUPnP = true;
               Username = "@USERNAME@";
               Password_PBKDF2 = "@PASSWORD@";
+              # ^^^ generate password
+              #     https://gist.github.com/hastinbe/8b8d247f17481cfc262a98d661bc0fd5
             };
 
             RSS.Session = {
