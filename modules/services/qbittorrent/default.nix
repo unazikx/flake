@@ -31,6 +31,8 @@
           webuiPort = 8112;
           torrentingPort = 6881;
 
+          profileDir = "/var/lib/qBittorrent";
+
           serverConfig = {
             LegalNotice.Accepted = true;
 
@@ -58,8 +60,8 @@
               AuthSubnetWhitelistEnabled = true;
               LocalHostAuth = false;
               UseUPnP = true;
-              Username = config.sops.placeholder."services/qbittorrent/username";
-              Password_PBKDF2 = config.sops.placeholder."services/qbittorrent/password";
+              Username = "@USERNAME@";
+              Password_PBKDF2 = "@PASSWORD@";
             };
 
             RSS.Session = {
@@ -81,31 +83,27 @@
           };
         };
 
-        # WARN:
-        # overrides writeText file by sops template
         systemd.services.qbittorrent = {
-          restartTriggers = lib.optionals (cfg.serverConfig != { }) (lib.mkForce [ ]);
-          serviceConfig.ExecStartPre = lib.mkIf (cfg.serverConfig != { }) (
-            lib.mkForce ''
-              CONFIG_PATH="${cfg.profileDir}/qBittorrent/config/qBittorrent.conf"
-              rm -f $CONFIG_PATH
-              ${lib.getExe' pkgs.coreutils "ln"} -s ${
-                config.sops.templates."qbittorrent-config".path
-              } $CONFIG_PATH
-            ''
-          );
+          serviceConfig.ExecStartPre = lib.mkAfter [
+            # password
+            "${lib.getExe pkgs.replace-secret} '@PASSWORD@' ${
+              config.sops.secrets."services/qbittorrent/password".path
+            } ${cfg.profileDir}/qBittorrent/config/qBittorrent.conf"
+            # username
+            "${lib.getExe pkgs.replace-secret} '@USERNAME@' ${
+              config.sops.secrets."services/qbittorrent/username".path
+            } ${cfg.profileDir}/qBittorrent/config/qBittorrent.conf"
+          ];
         };
 
         sops.secrets."services/qbittorrent/username" = {
+          owner = cfg.user;
           reloadUnits = [ "qbittorrent.service" ];
         };
 
         sops.secrets."services/qbittorrent/password" = {
+          owner = cfg.user;
           reloadUnits = [ "qbittorrent.service" ];
-        };
-
-        sops.templates."qbittorrent-config" = {
-          content = (lib.gendeepINI cfg.serverConfig);
         };
       };
   };

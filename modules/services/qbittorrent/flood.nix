@@ -29,17 +29,33 @@
       {
         services.flood = {
           enable = true;
-          openFirewall = true;
 
-          host = "0.0.0.0";
+          host = "localhost";
           port = 8113;
 
           extraArgs = [
-            "--auth none"
-            "--qburl http://${qbCfg.serverConfig.Preferences.WebUI.Address}:${toString qbCfg.webuiPort}"
-            "--qbuser $PASSWORD"
-            "--qbpass $USERNAME"
+            "--auth"
+            "none"
+            "--qburl"
+            "http://${qbCfg.serverConfig.Preferences.WebUI.Address}:${toString qbCfg.webuiPort}"
+            "--qbuser"
+            "$PASSWORD"
+            "--qbpass"
+            "$USERNAME"
           ];
+        };
+
+        systemd.services.flood = {
+          # INFO:
+          # PASSWORD=...
+          # USERNAME=...
+          serviceConfig = {
+            EnvironmentFile = config.sops.secrets."services/qbittorrent/flood".path;
+            User = qbCfg.user;
+            Group = qbCfg.group;
+          };
+
+          path = [ pkgs.mediainfo ];
         };
 
         services.caddy.virtualHosts =
@@ -54,16 +70,11 @@
               '';
             });
 
-        systemd.services.flood = {
-          # INFO:
-          # PASSWORD=...
-          # USERNAME=...
-          serviceConfig.EnvironmentFile = config.sops.secrets."services/qbittorrent/flood".path;
-          path = [ pkgs.mediainfo ];
-        };
-
         sops.secrets."services/qbittorrent/flood" = {
-          reloadUnits = [ "flood.service" ];
+          reloadUnits = [
+            "qbittorrent.service"
+            "flood.service"
+          ];
         };
       };
   };
