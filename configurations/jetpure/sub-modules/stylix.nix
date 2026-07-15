@@ -12,6 +12,9 @@
         config,
         ...
       }:
+      let
+        colors = config.lib.stylix.colors;
+      in
       {
         stylix = {
           polarity = "dark";
@@ -40,7 +43,7 @@
           image = lib.stylix.mkImage pkgs (pkgs.fetchurl {
             url = "https://w.wallhaven.cc/full/og/wallhaven-ogl5z9.png";
             sha256 = "sha256-VvnBCulYtyVqJOQ5psLJyIvK8YffWPP8Stz9KgznGcY=";
-          }) config.lib.stylix.colors.toList;
+          }) colors.toList;
 
           icons = {
             enable = true;
@@ -54,16 +57,11 @@
           cursor = {
             size = 24;
             name = "GoogleDot-Custom";
-            package = inputs'.nix-cursors.packages.google-cursor.override (
-              let
-                colors = config.lib.stylix.colors.withHashtag;
-              in
-              {
-                background_color = colors.base0E;
-                outline_color = colors.base00;
-                accent_color = colors.base0E;
-              }
-            );
+            package = inputs'.nix-cursors.packages.google-cursor.override {
+              background_color = colors.base0E;
+              outline_color = colors.base00;
+              accent_color = colors.base0E;
+            };
           };
 
           fonts = {
