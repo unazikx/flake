@@ -86,6 +86,7 @@
       zen.programs.gui.easy-effects
       zen.programs.gui.librewolf
       zen.programs.gui.nixcord
+      zen.programs.gui.obs-studio
       zen.programs.gui.qutebrowser
       zen.programs.gui.spotify
       zen.programs.gui.throne
