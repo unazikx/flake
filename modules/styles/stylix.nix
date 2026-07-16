@@ -14,8 +14,9 @@
 
     stylix = {
       type = "github";
-      owner = "danth";
+      owner = "panchoh";
       repo = "stylix";
+      ref = "fix/stylix--set-home-pointerCursor-enable";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-parts.follows = "flake-parts";
       inputs.nur.follows = "nur";
@@ -55,22 +56,9 @@
 
     homeManager =
       {
-        config,
         ...
       }:
       {
-        # https://github.com/nix-community/stylix/pull/2407
-        home.pointerCursor = {
-          enable =
-            config.stylix.targets.xresources.enable
-            || config.stylix.targets.gtk.enable
-            || config.stylix.targets.sway.enable;
-
-          x11.enable = config.stylix.targets.xresources.enable;
-          gtk.enable = config.stylix.targets.gtk.enable;
-          # sway.enable = config.stylix.targets.sway.enable;
-        };
-
         stylix = {
           enable = true;
           overlays.enable = true;
