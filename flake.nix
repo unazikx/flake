@@ -273,6 +273,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    pkgs-by-name = {
+      type = "github";
+      owner = "drupol";
+      repo = "pkgs-by-name-for-flake-parts";
+    };
+
     proxy-suite-flake = {
       type = "github";
       owner = "fufsob";
@@ -313,8 +319,9 @@
 
     stylix = {
       type = "github";
-      owner = "danth";
+      owner = "panchoh";
       repo = "stylix";
+      ref = "fix/stylix--set-home-pointerCursor-enable";
       inputs = {
         flake-parts.follows = "flake-parts";
         nixpkgs.follows = "nixpkgs";

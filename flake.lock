@@ -1141,6 +1141,21 @@
         "type": "github"
       }
     },
+    "pkgs-by-name_2": {
+      "locked": {
+        "lastModified": 1769286518,
+        "narHash": "sha256-F7VlUICvYp2wJKyQqM6d46BNEZCzMQ6dMH9zbmjuybc=",
+        "owner": "drupol",
+        "repo": "pkgs-by-name-for-flake-parts",
+        "rev": "7ba1cd4a9a72c9c6c272018a63f090f2c912a171",
+        "type": "github"
+      },
+      "original": {
+        "owner": "drupol",
+        "repo": "pkgs-by-name-for-flake-parts",
+        "type": "github"
+      }
+    },
     "proxy-suite-flake": {
       "inputs": {
         "nixpkgs": [
@@ -1208,6 +1223,7 @@
         "nixpkgs-unstable-prev": "nixpkgs-unstable-prev",
         "nur": "nur",
         "nvf": "nvf",
+        "pkgs-by-name": "pkgs-by-name_2",
         "proxy-suite-flake": "proxy-suite-flake",
         "sops-nix": "sops-nix",
         "spicetify-nix": "spicetify-nix",
@@ -1372,15 +1388,16 @@
         "tinted-zed": "tinted-zed"
       },
       "locked": {
-        "lastModified": 1783358511,
-        "narHash": "sha256-/F85cBWvU8b2hpawuCog464065ZTJtdMgVPWwJ9yHjE=",
-        "owner": "danth",
+        "lastModified": 1784064535,
+        "narHash": "sha256-clgBV9S6DRmPI+2LEx0OkYXlCIyx/3u/6lj3cJVXpcs=",
+        "owner": "panchoh",
         "repo": "stylix",
-        "rev": "14814ef555d8148ab82eba5054e654cd9eae3a1f",
+        "rev": "82d32180b5638c3476667bccd2a05202ebcee46e",
         "type": "github"
       },
       "original": {
-        "owner": "danth",
+        "owner": "panchoh",
+        "ref": "fix/stylix--set-home-pointerCursor-enable",
         "repo": "stylix",
         "type": "github"
       }
