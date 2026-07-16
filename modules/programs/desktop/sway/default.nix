@@ -87,21 +87,27 @@
           checkConfig = false;
         };
 
-        xdg.portal = {
-          config.sway = {
-            default = [
-              "wlr"
-              "gtk"
-            ];
-            "org.freedesktop.impl.portal.FileChooser" = "gtk";
-            "org.freedesktop.impl.portal.OpenURI" = "gtk";
-            "org.freedesktop.impl.portal.ScreenCast" = "wlr";
-            "org.freedesktop.impl.portal.Screenshot" = "wlr";
+        xdg = {
+          portal = {
+            config.sway = {
+              default = [
+                "wlr"
+                "gtk"
+              ];
+              "org.freedesktop.impl.portal.FileChooser" = "gtk";
+              "org.freedesktop.impl.portal.OpenURI" = "gtk";
+              "org.freedesktop.impl.portal.ScreenCast" = "wlr";
+              "org.freedesktop.impl.portal.Screenshot" = "wlr";
+            };
+
+            # i know
+            # https://github.com/sodiboo/niri-flake/blob/74053f79cad0f6c3a4a0be6b7928795d2e6a9f4b/flake.nix#L559
+            extraPortals = [ pkgs.xdg-desktop-portal-wlr ];
           };
 
-          # i know
-          # https://github.com/sodiboo/niri-flake/blob/74053f79cad0f6c3a4a0be6b7928795d2e6a9f4b/flake.nix#L559
-          extraPortals = [ pkgs.xdg-desktop-portal-wlr ];
+          terminal-exec = {
+            settings.sway = [ "foot.desktop" ];
+          };
         };
       };
   };

@@ -33,10 +33,6 @@
             };
           };
         };
-
-        xdg.terminal-exec = {
-          settings.default = [ "footclient.desktop" ];
-        };
       };
   };
 }
