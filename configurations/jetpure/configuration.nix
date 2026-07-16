@@ -54,6 +54,7 @@
       zen.services.glance
       zen.services.qbittorrent.flood
       zen.services.tailscale
+      zen.services.vaultwarden
       zen.styles.stylix
       zen.suites.hardware
       zen.suites.media
@@ -68,6 +69,7 @@
       zen.games.heroic
       zen.games.minecraft.prismlauncher
       zen.games.steam
+      zen.games.xbox.keyboard
       zen.miscellaneous.users
       zen.miscellaneous.xdg
       zen.programs.cli.cava
@@ -84,6 +86,7 @@
       zen.programs.editors.opencode
       zen.programs.gui.ayugram
       zen.programs.gui.easy-effects
+      zen.programs.gui.keepassxc
       zen.programs.gui.librewolf
       zen.programs.gui.nixcord
       zen.programs.gui.obs-studio
