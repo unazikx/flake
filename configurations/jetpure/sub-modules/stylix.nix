@@ -58,9 +58,9 @@
             size = 24;
             name = "GoogleDot-Custom";
             package = inputs'.nix-cursors.packages.google-cursor.override {
-              background_color = colors.base0E;
-              outline_color = colors.base00;
-              accent_color = colors.base0E;
+              background_color = colors.withHashtag.base0E;
+              outline_color = colors.withHashtag.base00;
+              accent_color = colors.withHashtag.base0E;
             };
           };
 
