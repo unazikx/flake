@@ -6,15 +6,17 @@
   zen.services.vaultwarden = {
     description = ''
       completly anonymous password manager
-      use: Keyguard (android)
-           rbw (linux)
-           bitwarden addons (firefox)
+
+      keyguard (android)
+      rbw (linux)
+      bitwarden addons (firefox)
     '';
 
     os =
       {
         lib,
         config,
+        host,
         ...
       }:
       let
@@ -36,19 +38,18 @@
           };
 
           environmentFile = config.sops.secrets."services/vaultwarden".path;
-          domain = "vault.${lib.hostName}.local";
         };
 
         systemd.services.vaultwarden.serviceConfig = {
           StateDirectory = lib.mkForce (baseNameOf cfg.config.dataFolder);
         };
 
-        networking.firewall."allowedTCPPorts" = [ cfg.config.rocketPort ];
+        networking.firewall.allowedTCPPorts = [ cfg.config.rocketPort ];
 
         services.caddy.virtualHosts =
           lib.genAttrs
             [
-              "vaultwarden.${lib.hostName}.local"
+              "vaultwarden.${host.hostName}.local"
             ]
             (_: {
               extraConfig = ''
