@@ -14,7 +14,6 @@
         pkgs,
         lib,
         config,
-        user,
         ...
       }:
       let

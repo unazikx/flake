@@ -84,10 +84,6 @@
                   id = 427410;
                 };
 
-                "Crow Country" = {
-                  id = 1996010;
-                };
-
                 "Adventures Of Sir Kicksalot" = {
                   id = 2629230;
                 };
@@ -176,6 +172,10 @@
 
                 "Counter Strike: Condition Zero" = {
                   id = 80;
+                };
+
+                "Crow Country" = {
+                  id = 1996010;
                 };
 
                 "Cuphead" = {
