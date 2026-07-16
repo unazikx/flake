@@ -84,6 +84,10 @@
                   id = 427410;
                 };
 
+                "Crow Country" = {
+                  id = 1996010;
+                };
+
                 "Adventures Of Sir Kicksalot" = {
                   id = 2629230;
                 };
