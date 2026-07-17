@@ -12,12 +12,10 @@
     homeManager =
       {
         pkgs,
-        lib,
         config,
         ...
       }:
       let
-        cfg = config.programs.keepassxc;
         ini = pkgs.formats.ini { };
         pwdir = config.xdg.userDirs.publicShare;
       in
@@ -66,6 +64,9 @@
               BackupBeforeSave = true;
               BackupFilePathPattern = "{DB_FILENAME}_old.kdbx";
               ConfigVersion = 2;
+              OpenPreviousDatabasesOnStartup = true;
+              RememberLastDatabases = true;
+              RememberLastKeyFiles = true;
             };
 
             PasswordGenerator = {
@@ -102,30 +103,20 @@
         xdg.cacheFile = {
           "keepassxc/keepassxc.ini".source = ini.generate "keepassxc-config.ini" {
             General = {
-              LastDir = pwdir;
+              LastDir = "${pwdir}/keepass";
               LastActiveDatabase = "${pwdir}/keepass/db.kdbx";
               LastDatabases = "${pwdir}/keepass/db.kdbx";
               LastOpenedDatabases = "${pwdir}/keepass/db.kdbx";
             };
-          };
-        };
 
-        systemd.user.services = {
-          keepassxc-autostart = {
-            Unit.After = [ "graphical-session.target" ];
-            Install.WantedBy = [ "graphical-session.target" ];
-
-            Service = {
-              Type = "simple";
-              KillMode = "process";
-
-              ExecStart = lib.concatStringsSep " " [
-                (lib.getExe cfg.package)
-                "--minimized"
-              ];
-
-              Restart = "on-failure";
-              RestartSec = 5;
+            GUI = {
+              GroupSplitterState = "640, 340";
+              ListViewState = ''@ByteArray(\0\0\0\xff\0\0\0\0\0\0\0\x1\0\0\0\0\0\0\0\x1\x1\0\0\0\x11\0\0\0\0\0\0\0\x4\0\0\0\x5\0\0\0\x6\0\0\0\a\0\0\0\b\0\0\0\t\0\0\0\n\0\0\0\v\0\0\0\f\0\0\0\x1\0\0\0\r\0\0\0\x3\0\0\0\xe\0\0\0\x2\0\0\0\xf\0\0\0\x10\0\0\0\x11\0\0\0\0\0\0\0\n\0\0\0\xe\0\0\0\f\0\0\0\x1\0\0\0\x2\0\0\0\x3\0\0\0\x4\0\0\0\x5\0\0\0\x6\0\0\0\a\0\0\0\b\0\0\0\t\0\0\0\v\0\0\0\r\0\0\0\xf\0\0\0\x10\0\0\0\x11\x63\xf7\0\0\0\0\v\0\0\0\r\0\0\0\x64\0\0\0\xf\0\0\0\x1a\0\0\0\t\0\0\0\x64\0\0\0\v\0\0\0\x64\0\0\0\n\0\0\0\x1a\0\0\0\x5\0\0\0o\0\0\0\a\0\0\0\x64\0\0\0\x6\0\0\0\x64\0\0\0\0\0\0\0\x64\0\0\0\x3\0\0\0\x64\0\0\0\x2\0\0\0\xf6\0\0\x3\xe3\0\0\0\x11\x1\x1\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x64\0\0\0\x1\0\0\0\x81\0\0\0\0\0\0\0\x11\0\0\0\0\0\0\0\x1\0\0\0\0\0\0\0\0\0\0\0\x1\0\0\0\0\0\0\0\x1a\0\0\0\x1\0\0\0\x2\0\0\0\x1a\0\0\0\x1\0\0\0\x2\0\0\x1\v\0\0\0\x1\0\0\0\0\0\0\0\0\0\0\0\x1\0\0\0\0\0\0\0\0\0\0\0\x1\0\0\0\0\0\0\x1\xab\0\0\0\x1\0\0\0\0\0\0\0\0\0\0\0\x1\0\0\0\0\0\0\0\0\0\0\0\x1\0\0\0\0\0\0\0\0\0\0\0\x1\0\0\0\0\0\0\0\xf9\0\0\0\x1\0\0\0\0\0\0\0\0\0\0\0\x1\0\0\0\0\0\0\0\0\0\0\0\x1\0\0\0\0\0\0\0\0\0\0\0\x1\0\0\0\0\0\0\0\0\0\0\0\x1\0\0\0\0\0\0\0\0\0\0\0\x1\0\0\0\0\0\0\x3\xe8\x1\0\0\0\x64)'';
+              MainWindowGeometry = ''@ByteArray(\x1\xd9\xd0\xcb\0\x3\0\0\0\0\0\0\0\0\0\0\0\0\x3\xae\0\0\x4\b\0\0\0\0\0\0\0\0\0\0\x3\xae\0\0\x4\b\0\0\0\0\x2\0\0\0\a\x80\0\0\0\0\0\0\0\0\0\0\x3\xae\0\0\x4\b)'';
+              MainWindowState = ''@ByteArray(\0\0\0\xff\0\0\0\0\xfd\0\0\0\0\0\0\x3\xaf\0\0\x3\xcc\0\0\0\x4\0\0\0\x4\0\0\0\b\0\0\0\b\xfc\0\0\0\x1\0\0\0\x2\0\0\0\x1\0\0\0\xe\0t\0o\0o\0l\0\x42\0\x61\0r\0\0\0\0\0\xff\xff\xff\xff\0\0\0\0\0\0\0\0)'';
+              PreviewSplitterState = "980, 0";
+              SearchViewState = "@ByteArray()";
+              SplitterState = "230, 1700";
             };
           };
         };
