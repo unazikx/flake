@@ -11,13 +11,13 @@
         config,
         ...
       }:
+      let
+        colors = config.lib.stylix.colors.withHashtag;
+        json = pkgs.formats.json { };
+      in
       {
         programs.dank-material-shell = {
           settings.customThemeFile = lib.mkForce (
-            let
-              colors = config.lib.stylix.colors.withHashtag;
-              json = pkgs.formats.json { };
-            in
             json.generate "dank-material-shell-theme.json" {
               name = "Stylix-${config.stylix.polarity}";
               # keep-sorted start block=yes

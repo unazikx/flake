@@ -10,7 +10,7 @@
       }:
       {
         programs.dank-material-shell = {
-          plugins = [
+          plugins =
             # keep-sorted start block=yes
             {
               calculator = {
@@ -22,8 +22,7 @@
                   calcEngine = "default";
                 };
               };
-            }
-            {
+
               dankBitwarden = {
                 # unknows date
                 # no, just...no
@@ -36,15 +35,13 @@
                   noTrigger = false;
                 };
               };
-            }
-            {
-              dms-niri-screenshot = {
+
+              niriScreenshot = {
                 settings = {
                   customPath = "~/Pictures/screenshots/scr_%d-%m-%y_%H:%M:%S.png";
                 };
               };
-            }
-            {
+
               niriWindows = {
                 enable = true;
                 settings = {
@@ -53,8 +50,7 @@
                   trigger = "win";
                 };
               };
-            }
-            {
+
               steamfriends = {
                 enable = true;
                 settings = {
@@ -63,8 +59,7 @@
                 };
               };
               # keep-sorted end
-            }
-          ];
+            };
         };
       };
   };

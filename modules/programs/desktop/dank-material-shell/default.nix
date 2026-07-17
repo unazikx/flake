@@ -30,17 +30,24 @@
     '';
 
     includes = [
-      zen.programs.desktop.dank-material-shell.plugins
+      # zen.programs.desktop.dank-material-shell.plugins
       zen.programs.desktop.dank-material-shell.settings
       zen.programs.desktop.dank-material-shell.theme
     ];
 
     homeManager =
       {
+        inputs,
         pkgs,
         ...
       }:
       {
+        imports = [
+          inputs.dms.homeModules.dank-material-shell
+          inputs.dms-plugins.homeModules.dms-plugin-registry
+          inputs.dms.homeModules.niri
+        ];
+
         programs.dank-material-shell = {
           enable = true;
           systemd.enable = true;

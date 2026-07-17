@@ -24,17 +24,10 @@
     '';
 
     includes = [
-      zen.programs.desktop.clapboard
-      zen.programs.desktop.dunst
+      zen.programs.desktop.dank-material-shell
       zen.programs.desktop.niri.binds
       zen.programs.desktop.niri.rules
       zen.programs.desktop.niri.settings
-      zen.programs.desktop.niri.waybar
-      zen.programs.desktop.sunsetr
-      zen.programs.desktop.tofi
-      zen.programs.desktop.waybar
-      zen.programs.desktop.wleave
-      zen.programs.desktop.wob
       zen.programs.terminal.foot
     ];
 
@@ -47,7 +40,7 @@
       }:
       {
         services.displayManager.sessionPackages = [
-          pkgs.niri-unstable
+          pkgs.niri
         ];
 
         # fucking idiots why blyat?
@@ -58,7 +51,7 @@
           greetd.settings = {
             initial_session = lib.mkIf (user.defaultWm == "niri") {
               user = user.userName;
-              command = lib.getExe' pkgs.niri-unstable "niri-session";
+              command = lib.getExe' pkgs.niri "niri-session";
             };
           };
         };
@@ -75,46 +68,42 @@
         config,
         ...
       }:
+      let
+        colors = config.lib.stylix.colors.withHashtag;
+      in
       {
         imports = [
           inputs.niri-flake.homeModules.niri
           inputs.niri-flake.homeModules.stylix
-          inputs.dms-plugins.homeModules.dms-plugin-registry
-          inputs.dms.homeModules.dank-material-shell
         ];
 
         programs.niri = {
           enable = true;
-          package = pkgs.niri-unstable;
+          package = pkgs.niri;
 
-          extraConfig = lib.mkAfter (
-            let
-              colors = config.lib.stylix.colors.withHashtag;
-            in
-            ''
-              recent-windows {
-                debounce-ms 750
-                open-delay-ms 150
+          extraConfig = lib.mkAfter ''
+            recent-windows {
+              debounce-ms 750
+              open-delay-ms 150
 
-                highlight {
-                  active-color "${colors.base04}ff"
-                  urgent-color "${colors.base08}ff"
-                  padding 30
-                  corner-radius 12
-                }
-
-                previews {
-                  max-height 480
-                  max-scale 0.5
-                }
-
-                binds {
-                  Alt+Tab         { next-window; }
-                  Alt+Shift+Tab   { previous-window; }
-                }
+              highlight {
+                active-color "${colors.base04}ff"
+                urgent-color "${colors.base08}ff"
+                padding 30
+                corner-radius 12
               }
-            ''
-          );
+
+              previews {
+                max-height 480
+                max-scale 0.5
+              }
+
+              binds {
+                Alt+Tab         { next-window; }
+                Alt+Shift+Tab   { previous-window; }
+              }
+            }
+          '';
         };
 
         # та же хуйня:wq
