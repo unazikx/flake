@@ -12,6 +12,10 @@
         ...
       }:
       {
+        nix.extraOptions = ''
+          !include ${config.sops.templates."nix-access-tokens".path}
+        '';
+
         sops.age.keyFile =
           let
             home = config.users.users.${user.userName}.home;
@@ -40,6 +44,15 @@
             })
           )
         ];
+
+        sops.templates = {
+          "nix-access-tokens" = {
+            owner = user.userName;
+            content = ''
+              access-tokens = github.com=${config.sops.placeholder."programs/github"}
+            '';
+          };
+        };
       };
   };
 }
