@@ -1,4 +1,5 @@
 {
+  zen,
   ...
 }:
 
@@ -11,7 +12,7 @@
     '';
 
     includes = [
-      # zen.virtualization.podman
+      zen.hardware.virtualization.podman
     ];
 
     homeManager =
