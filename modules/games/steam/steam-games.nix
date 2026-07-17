@@ -299,6 +299,10 @@
                   id = 821250;
                 };
 
+                "Gambonanza" = {
+                  id = 3509230;
+                };
+
                 "Garrys Mod" = {
                   id = 4000;
                   betaBranch = "x86-64";
@@ -545,6 +549,10 @@
                 "Stick It to the Stickman" = {
                   id = 2085540;
                   language = "russian";
+                };
+
+                "Storebound" = {
+                  id = 3417410;
                 };
 
                 "Streets Of Rouge" = {
