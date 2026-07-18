@@ -286,6 +286,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    scroll-flake = {
+      type = "github";
+      owner = "diax170";
+      repo = "scroll-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     sops-nix = {
       type = "github";
       owner = "mic92";
