@@ -197,6 +197,16 @@
       repo = "nix-flatpak";
     };
 
+    nix-math = {
+      type = "github";
+      owner = "xddxdd";
+      repo = "nix-math";
+      inputs = {
+        flake-parts.follows = "flake-parts";
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
+
     nix-minecraft = {
       type = "github";
       owner = "hustlerone";

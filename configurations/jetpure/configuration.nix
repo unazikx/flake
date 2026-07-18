@@ -52,6 +52,7 @@
       zen.programs.cli.rusted-tools
       zen.services.caddy
       zen.services.glance
+      zen.services.proxy-suite
       zen.services.qbittorrent.flood
       zen.services.tailscale
       zen.services.vaultwarden

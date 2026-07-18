@@ -904,6 +904,29 @@
         "type": "github"
       }
     },
+    "nix-math": {
+      "inputs": {
+        "flake-parts": [
+          "flake-parts"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1782186959,
+        "narHash": "sha256-YWUcFge5KsiVcMeDtfbGw/A1iLmY/2ChFztelQiALSQ=",
+        "owner": "xddxdd",
+        "repo": "nix-math",
+        "rev": "a8de20648e26d2874fc04e26683c2ae2bec6ea0e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "xddxdd",
+        "repo": "nix-math",
+        "type": "github"
+      }
+    },
     "nix-minecraft": {
       "inputs": {
         "flake-compat": "flake-compat_3",
@@ -1208,6 +1231,7 @@
         "nix-cursors": "nix-cursors",
         "nix-darwin": "nix-darwin",
         "nix-flatpak": "nix-flatpak",
+        "nix-math": "nix-math",
         "nix-minecraft": "nix-minecraft",
         "nixcord": "nixcord",
         "nixos-cli": "nixos-cli",

@@ -6,7 +6,6 @@
   zen.users.nixzoid = {
     nixos =
       {
-        lib,
         config,
         user,
         ...
@@ -22,28 +21,42 @@
           in
           "${home}/.config/sops/age/keys.txt";
 
-        sops.secrets = lib.mkMerge [
-          (lib.genAttrs
-            [
-              "programs/cachix"
-              "programs/github"
-            ]
-            (_: {
-              owner = user.userName;
-            })
-          )
-          (lib.genAttrs
-            [
-              "password"
-              "services/sunsetr"
-              "services/telegram-ws"
-            ]
-            (_: {
-              owner = user.userName;
-              sopsFile = ../secrets.yaml;
-            })
-          )
-        ];
+        sops.secrets = {
+          "programs/cachix" = {
+            owner = user.userName;
+            sopsFile = ../secrets.yaml;
+          };
+
+          "programs/git/user" = {
+            owner = user.userName;
+            sopsFile = ../secrets.yaml;
+          };
+
+          "programs/git/mail" = {
+            owner = user.userName;
+            sopsFile = ../secrets.yaml;
+          };
+
+          "password" = {
+            owner = user.userName;
+            sopsFile = ../secrets.yaml;
+          };
+
+          "programs/github" = {
+            owner = user.userName;
+            sopsFile = ../secrets.yaml;
+          };
+
+          "services/sunsetr" = {
+            owner = user.userName;
+            sopsFile = ../secrets.yaml;
+          };
+
+          "services/telegram-ws" = {
+            owner = user.userName;
+            sopsFile = ../secrets.yaml;
+          };
+        };
 
         sops.templates = {
           "nix-access-tokens" = {
