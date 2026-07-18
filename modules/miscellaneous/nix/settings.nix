@@ -63,9 +63,6 @@
           CACHIX_AUTH_TOKEN = "$(cat ${config.sops.secrets."programs/cachix".path})";
           GITHUB_TOKEN = "$(cat ${config.sops.secrets."programs/github".path})";
         };
-
-        sops.secrets."programs/cachix" = { };
-        sops.secrets."programs/github" = { };
       };
   };
 }

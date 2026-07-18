@@ -15,47 +15,22 @@
           !include ${config.sops.templates."nix-access-tokens".path}
         '';
 
-        sops.age.keyFile =
-          let
-            home = config.users.users.${user.userName}.home;
-          in
-          "${home}/.config/sops/age/keys.txt";
+        sops.defaultSopsFile = ./_secrets.yaml;
 
         sops.secrets = {
+          # keep-sorted start block=yes newline_separated=yes
+          "password/nixzoid" = {
+            owner = user.userName;
+          };
+
           "programs/cachix" = {
             owner = user.userName;
-            sopsFile = ../secrets.yaml;
-          };
-
-          "programs/git/user" = {
-            owner = user.userName;
-            sopsFile = ../secrets.yaml;
-          };
-
-          "programs/git/mail" = {
-            owner = user.userName;
-            sopsFile = ../secrets.yaml;
-          };
-
-          "password" = {
-            owner = user.userName;
-            sopsFile = ../secrets.yaml;
           };
 
           "programs/github" = {
             owner = user.userName;
-            sopsFile = ../secrets.yaml;
           };
-
-          "services/sunsetr" = {
-            owner = user.userName;
-            sopsFile = ../secrets.yaml;
-          };
-
-          "services/telegram-ws" = {
-            owner = user.userName;
-            sopsFile = ../secrets.yaml;
-          };
+          # keep-sorted end
         };
 
         sops.templates = {
@@ -65,6 +40,33 @@
               access-tokens = github.com=${config.sops.placeholder."programs/github"}
             '';
           };
+        };
+      };
+
+    user =
+      {
+        config,
+        ...
+      }:
+      {
+        hashedPasswordFile = config.sops.secrets."password/nixzoid".path;
+      };
+
+    homeManager =
+      {
+        ...
+      }:
+      {
+        sops.defaultSopsFile = ./_secrets.yaml;
+
+        sops.secrets = {
+          # keep-sorted start block=yes newline_separated=yes
+          "programs/git/mail" = { };
+
+          "programs/git/user" = { };
+
+          "services/sunsetr" = { };
+          # keep-sorted end
         };
       };
   };

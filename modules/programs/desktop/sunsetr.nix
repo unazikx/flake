@@ -11,25 +11,16 @@
       universal for all wayland comp
     '';
 
-    nixos =
-      {
-        ...
-      }:
-      {
-        sops.secrets."services/sunsetr" = { };
-      };
-
     homeManagerNixos =
       {
         config,
-        osConfig,
         ...
       }:
       {
         services.sunsetr = {
           enable = true;
 
-          geoLocation = config.lib.file.mkOutOfStoreSymlink osConfig.sops.secrets."services/sunsetr".path;
+          geoLocation = config.lib.file.mkOutOfStoreSymlink config.sops.secrets."services/sunsetr".path;
 
           settings = {
             backend = "auto";

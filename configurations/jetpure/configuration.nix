@@ -105,14 +105,5 @@
       zen.suites.theming
       # keep-sorted end
     ];
-
-    user =
-      {
-        config,
-        ...
-      }:
-      {
-        hashedPasswordFile = config.sops.secrets."password".path;
-      };
   };
 }

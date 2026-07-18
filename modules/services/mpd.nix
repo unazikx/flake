@@ -10,16 +10,6 @@
       https://wiki.archlinux.org/title/Music_Player_Daemon#Clients
     '';
 
-    nixos =
-      {
-        ...
-      }:
-      {
-        sops.secrets."services/mpd" = {
-          reloadUnits = [ "mpdscribble.service" ];
-        };
-      };
-
     homeManager =
       {
         lib,
@@ -84,23 +74,16 @@
         services.mpdscribble.enable = true;
 
         services.playerctld.enable = true;
-      };
 
-    homeManagerNixos =
-      {
-        osConfig,
-        ...
-      }:
-      {
         services.mpdscribble = {
           endpoints = {
             "last.fm" = {
-              passwordFile = osConfig.sops.secrets."services/mpd".path;
+              passwordFile = config.sops.secrets."services/mpd".path;
               username = "azikx6"; # cause azikx was taken already... eh...
             };
 
             "libre.fm" = {
-              passwordFile = osConfig.sops.secrets."services/mpd".path;
+              passwordFile = config.sops.secrets."services/mpd".path;
               username = "_azikx";
             };
           };

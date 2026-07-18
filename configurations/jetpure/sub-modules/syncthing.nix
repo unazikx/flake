@@ -4,30 +4,6 @@
 
 {
   zen.users.nixzoid = {
-    nixos =
-      {
-        user,
-        ...
-      }:
-      {
-        sops.secrets = {
-          "services/syncthing/gui" = {
-            owner = user.userName;
-            sopsFile = ../secrets.yaml;
-          };
-
-          "services/syncthing/cert" = {
-            owner = user.userName;
-            sopsFile = ../secrets.yaml;
-          };
-
-          "services/syncthing/key" = {
-            owner = user.userName;
-            sopsFile = ../secrets.yaml;
-          };
-        };
-      };
-
     homeManager =
       {
         lib,
@@ -71,6 +47,12 @@
               # keep-sorted end
             };
           };
+        };
+
+        sops.secrets = {
+          "services/syncthing/gui" = { };
+          "services/syncthing/cert" = { };
+          "services/syncthing/key" = { };
         };
       };
   };

@@ -46,8 +46,6 @@
                 reverse_proxy http://${cfg.settings.server.host}:${toString cfg.settings.server.port}
               '';
             });
-
-        sops.secrets."services/glance" = { };
       };
   };
 }

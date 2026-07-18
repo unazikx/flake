@@ -60,8 +60,6 @@
             gameFilter = if config.programs.steam.enable then "all" else "null";
           };
         };
-
-        sops.secrets."services/telegram-ws" = { };
       };
   };
 }

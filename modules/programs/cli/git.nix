@@ -12,22 +12,14 @@
 
     nixos =
       {
-        config,
-        user,
+        pkgs,
         ...
       }:
       {
-        sops.templates."git-user" = {
-          owner = user.userName;
-          content = ''
-            [user]
-              name = ${config.sops.placeholder."programs/git/user"}
-              email = ${config.sops.placeholder."programs/git/mail"}
-          '';
+        programs.git = {
+          enable = true;
+          package = pkgs.gitMinimal;
         };
-
-        sops.secrets."programs/git/user" = { };
-        sops.secrets."programs/git/mail" = { };
       };
 
     homeManager =
@@ -70,18 +62,19 @@
           };
 
           signing.format = null;
-        };
-      };
 
-    homeManagerNixos =
-      {
-        osConfig,
-        ...
-      }:
-      {
-        programs.git.includes = [
-          { path = osConfig.sops.templates."git-user".path; }
-        ];
+          includes = [
+            { path = config.sops.templates."git-user".path; }
+          ];
+        };
+
+        sops.templates."git-user" = {
+          content = ''
+            [user]
+              name = ${config.sops.placeholder."programs/git/user"}
+              email = ${config.sops.placeholder."programs/git/mail"}
+          '';
+        };
       };
   };
 }
