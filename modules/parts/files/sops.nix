@@ -26,21 +26,23 @@ let
 in
 
 {
-  perSystem = { ... }: {
-    files.file.".sops.yaml" = {
-      text = ''
-        # INFO:
-        # nix run nixpkgs#ssh-to-age -- < ~/.ssh/id_ed25519.pub
+  perSystem =
+    {
+      ...
+    }:
+    {
+      files.file.".sops.yaml" = {
+        yaml = {
+          keys = map (entry: {
+            name = entry.name;
+            key = entry.key;
+          }) allKeys;
 
-        keys:
-          ${lib.concatStringsSep "\n" (map (entry: "- &${entry.name} ${entry.key}") allKeys)}
-
-        creation_rules:
-          - path_regex: .+\.(yaml|json|env|ini)$
-            key_groups:
-              - age:
-                  ${lib.concatStringsSep "\n" (map (entry: "- *${entry.name}") allKeys)}
-      '';
+          creation_rules = map (e: {
+            path_regex = "configurations/${e.name}/sub-modules/_secrets\\.yaml$";
+            key_groups = [ { age = [ e.key ]; } ];
+          }) allKeys;
+        };
+      };
     };
-  };
 }

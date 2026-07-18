@@ -1,11 +1,8 @@
-# INFO:
-# nix run nixpkgs#ssh-to-age -- < ~/.ssh/id_ed25519.pub
-
-keys:
-  - &jetpure age16dzy76gf6jcw03cppgghm7a8ld4g57f73z85wcj9fvq7w3ct53rs4rclm7
-
 creation_rules:
-  - path_regex: .+\.(yaml|json|env|ini)$
-    key_groups:
+  - key_groups:
       - age:
-          - *jetpure
+          - age16dzy76gf6jcw03cppgghm7a8ld4g57f73z85wcj9fvq7w3ct53rs4rclm7
+    path_regex: configurations/jetpure/sub-modules/_secrets\.yaml$
+keys:
+  - key: age16dzy76gf6jcw03cppgghm7a8ld4g57f73z85wcj9fvq7w3ct53rs4rclm7
+    name: jetpure
