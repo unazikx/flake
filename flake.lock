@@ -1255,6 +1255,7 @@
         "steam-config-nix": "steam-config-nix",
         "strom-nix": "strom-nix",
         "stylix": "stylix",
+        "tele": "tele",
         "treefmt-nix": "treefmt-nix",
         "xytz": "xytz",
         "ytsub": "ytsub"
@@ -1570,6 +1571,29 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "tele": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1784322183,
+        "narHash": "sha256-jr8jOWjE+TAlAJMOnsrC22G7taOPmTrMtdL3BavaMpg=",
+        "owner": "sorokin-vladimir",
+        "repo": "tele",
+        "rev": "712bae202a81bb4b41642b5cd5a28fd76f832e89",
+        "type": "github"
+      },
+      "original": {
+        "owner": "sorokin-vladimir",
+        "repo": "tele",
         "type": "github"
       }
     },

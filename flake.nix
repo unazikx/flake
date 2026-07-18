@@ -346,6 +346,16 @@
       };
     };
 
+    tele = {
+      type = "github";
+      owner = "sorokin-vladimir";
+      repo = "tele";
+      inputs = {
+        flake-utils.follows = "flake-utils";
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
+
     treefmt-nix = {
       type = "github";
       owner = "numtide";
