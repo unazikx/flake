@@ -61,6 +61,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    duck-game-rebuilt-nix = {
+      type = "github";
+      owner = "klof44";
+      repo = "duckgamerebuilt-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     files = {
       type = "github";
       owner = "sini";

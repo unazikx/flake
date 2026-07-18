@@ -239,6 +239,26 @@
         "type": "github"
       }
     },
+    "duck-game-rebuilt-nix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1776725523,
+        "narHash": "sha256-1cE6cdE5BgQzVsBXyW9r3wUi5KyI14B4nRxNGxGs8oU=",
+        "owner": "klof44",
+        "repo": "duckgamerebuilt-nix",
+        "rev": "7a8741c4a9de956db122e4702c2dd1a4447b3181",
+        "type": "github"
+      },
+      "original": {
+        "owner": "klof44",
+        "repo": "duckgamerebuilt-nix",
+        "type": "github"
+      }
+    },
     "files": {
       "locked": {
         "lastModified": 1780084175,
@@ -1213,6 +1233,7 @@
         "dms-plugins": "dms-plugins",
         "dns-malw-link": "dns-malw-link",
         "driftwm": "driftwm",
+        "duck-game-rebuilt-nix": "duck-game-rebuilt-nix",
         "files": "files",
         "firefox-addons": "firefox-addons",
         "flake-file": "flake-file",
