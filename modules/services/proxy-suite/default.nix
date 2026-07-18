@@ -23,7 +23,6 @@
     '';
 
     includes = [
-      zen.services.proxy-suite.per-app-routing
       zen.services.proxy-suite.proxy
       zen.services.proxy-suite.tg-ws-proxy
       zen.services.proxy-suite.zapret

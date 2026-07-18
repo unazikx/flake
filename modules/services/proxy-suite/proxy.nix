@@ -15,7 +15,7 @@
             enable = true;
 
             port = 1080;
-            selection = "selector";
+            selection = "urltest";
 
             singBox = {
               enable = true;
@@ -32,6 +32,25 @@
               {
                 tag = "Finland";
                 urlFile = config.sops.secrets."vpn/finland".path;
+              }
+            ];
+          };
+
+          perAppRouting = {
+            enable = true;
+
+            profiles = [
+              {
+                name = "tun";
+                route = "tun";
+              }
+              {
+                name = "zapret";
+                route = "zapret";
+              }
+              {
+                name = "direct";
+                route = "direct";
               }
             ];
           };
