@@ -5,7 +5,7 @@
 
 {
   den.default = {
-    nixos =
+    os =
       {
         ...
       }:
