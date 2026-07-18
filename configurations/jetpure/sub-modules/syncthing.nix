@@ -59,12 +59,13 @@
 
             folders = {
               # keep-sorted start block=yes newline_separated=yes
-              "${config.xdg.userDirs.publicShare}/synchron" = {
-                id = lib.hashString "md5" "synchron";
-                devices = [ "nothing2a" ];
-              };
               "${config.xdg.userDirs.music}" = {
                 id = lib.hashString "md5" "music";
+                devices = [ "nothing2a" ];
+              };
+
+              "${config.xdg.userDirs.publicShare}/synchron" = {
+                id = lib.hashString "md5" "synchron";
                 devices = [ "nothing2a" ];
               };
               # keep-sorted end

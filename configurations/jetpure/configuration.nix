@@ -86,6 +86,7 @@
       zen.programs.editors.helix
       zen.programs.editors.opencode
       zen.programs.gui.ayugram
+      zen.programs.gui.blender
       zen.programs.gui.easy-effects
       zen.programs.gui.keepassxc
       zen.programs.gui.librewolf

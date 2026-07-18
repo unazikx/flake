@@ -35,6 +35,7 @@
             pkgs.go
             pkgs.gopls
             pkgs.marksman
+            pkgs.netcat
             pkgs.nixd
             pkgs.nixfmt
             pkgs.prettier

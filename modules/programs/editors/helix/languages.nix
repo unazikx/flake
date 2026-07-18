@@ -24,13 +24,45 @@
                 }
               )
               [
+                # keep-sorted start block=yes
                 {
-                  name = "nix";
+                  name = "css";
 
-                  language-servers = [ "nixd" ];
+                  language-servers = [ "vscode-css-language-server" ];
 
                   formatter = {
-                    command = "nixfmt";
+                    command = "prettier";
+                    args = [
+                      "--use-tabs"
+                      "--parser"
+                      "css"
+                    ];
+                  };
+                }
+                {
+                  name = "gdscript";
+
+                  language-servers = [ "godot" ];
+
+                  formatter = {
+                    command = "nc";
+                    args = [
+                      "127.0.0.1"
+                      "6005"
+                    ];
+                  };
+                }
+                {
+                  name = "go";
+
+                  language-servers = [
+                    "gopls"
+                    "golangci-lint-langserver"
+                    "codebook"
+                  ];
+
+                  formatter = {
+                    command = "gofmt";
                   };
                 }
                 {
@@ -62,34 +94,6 @@
                   };
                 }
                 {
-                  name = "css";
-
-                  language-servers = [ "vscode-css-language-server" ];
-
-                  formatter = {
-                    command = "prettier";
-                    args = [
-                      "--use-tabs"
-                      "--parser"
-                      "css"
-                    ];
-                  };
-                }
-                {
-                  name = "scss";
-
-                  language-servers = [ "vscode-css-language-server" ];
-
-                  formatter = {
-                    command = "prettier";
-                    args = [
-                      "--use-tabs"
-                      "--parser"
-                      "scss"
-                    ];
-                  };
-                }
-                {
                   name = "markdown";
 
                   language-servers = [ "marksman" ];
@@ -104,16 +108,34 @@
                   };
                 }
                 {
-                  name = "typescript";
+                  name = "nix";
 
-                  language-servers = [ "typescript-language-server" ];
+                  language-servers = [ "nixd" ];
+
+                  formatter = {
+                    command = "nixfmt";
+                  };
+                }
+                {
+                  name = "python";
+
+                  language-servers = [ "pylsp" ];
+
+                  formatter = {
+                    command = "black";
+                  };
+                }
+                {
+                  name = "scss";
+
+                  language-servers = [ "vscode-css-language-server" ];
 
                   formatter = {
                     command = "prettier";
                     args = [
                       "--use-tabs"
                       "--parser"
-                      "typescript"
+                      "scss"
                     ];
                   };
                 }
@@ -147,6 +169,20 @@
                   };
                 }
                 {
+                  name = "typescript";
+
+                  language-servers = [ "typescript-language-server" ];
+
+                  formatter = {
+                    command = "prettier";
+                    args = [
+                      "--use-tabs"
+                      "--parser"
+                      "typescript"
+                    ];
+                  };
+                }
+                {
                   name = "yaml";
 
                   language-servers = [ "yaml-language-server" ];
@@ -160,28 +196,7 @@
                     ];
                   };
                 }
-                {
-                  name = "python";
-
-                  language-servers = [ "pylsp" ];
-
-                  formatter = {
-                    command = "black";
-                  };
-                }
-                {
-                  name = "go";
-
-                  language-servers = [
-                    "gopls"
-                    "golangci-lint-langserver"
-                    "codebook"
-                  ];
-
-                  formatter = {
-                    command = "gofmt";
-                  };
-                }
+                # keep-sorted end
               ];
         };
       };
