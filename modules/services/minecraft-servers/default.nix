@@ -49,11 +49,11 @@
           dataDir = dir;
 
           # password=yourawesomepass
-          environmentFile = config.sops.secrets."services/minecraft".path;
+          environmentFile = config.sops.secrets."services/minecraft/environment".path;
           # just a plain file ^^^
         };
 
-        sops.secrets."services/minecraft" = {
+        sops.secrets."services/minecraft/environment" = {
           owner = lib.mkForce cfg.user;
 
           # when u change password

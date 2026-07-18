@@ -7,7 +7,6 @@
     os =
       {
         lib,
-        config,
         ...
       }:
       {
@@ -58,8 +57,15 @@
             # keep-sorted end
           ];
         };
+      };
 
-        environment.sessionVariables = {
+    homeManager =
+      {
+        config,
+        ...
+      }:
+      {
+        home.sessionVariables = {
           CACHIX_AUTH_TOKEN = "$(cat ${config.sops.secrets."programs/cachix".path})";
           GITHUB_TOKEN = "$(cat ${config.sops.secrets."programs/github".path})";
         };

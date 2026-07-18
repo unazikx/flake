@@ -71,6 +71,7 @@
       zen.games.minecraft.prismlauncher
       zen.games.steam
       zen.games.xbox.keyboard
+      zen.miscellaneous.nix
       zen.miscellaneous.users
       zen.miscellaneous.xdg
       zen.programs.cli.cava

@@ -6,40 +6,22 @@
   zen.users.nixzoid = {
     nixos =
       {
-        config,
-        user,
         ...
       }:
       {
-        nix.extraOptions = ''
-          !include ${config.sops.templates."nix-access-tokens".path}
-        '';
-
         sops.defaultSopsFile = ./_secrets.yaml;
 
         sops.secrets = {
-          # keep-sorted start block=yes newline_separated=yes
-          "password/nixzoid" = {
-            owner = user.userName;
-          };
-
-          "programs/cachix" = {
-            owner = user.userName;
-          };
-
-          "programs/github" = {
-            owner = user.userName;
-          };
+          # keep-sorted start block=yes
+          "password/nixzoid" = { };
+          "services/glance" = { };
+          "services/minecraft/environment" = { };
+          "services/qbittorrent/flood" = { };
+          "services/qbittorrent/password" = { };
+          "services/qbittorrent/username" = { };
+          "services/telegram-ws" = { };
+          "services/vaultwarden" = { };
           # keep-sorted end
-        };
-
-        sops.templates = {
-          "nix-access-tokens" = {
-            owner = user.userName;
-            content = ''
-              access-tokens = github.com=${config.sops.placeholder."programs/github"}
-            '';
-          };
         };
       };
 
@@ -54,19 +36,33 @@
 
     homeManager =
       {
+        config,
         ...
       }:
       {
+        nix.extraOptions = ''
+          !include ${config.sops.templates."nix-access-tokens".path}
+        '';
+
         sops.defaultSopsFile = ./_secrets.yaml;
 
         sops.secrets = {
-          # keep-sorted start block=yes newline_separated=yes
+          # keep-sorted start block=yes
+          "programs/cachix" = { };
           "programs/git/mail" = { };
-
           "programs/git/user" = { };
-
+          "programs/github" = { };
+          "services/mpd" = { };
           "services/sunsetr" = { };
           # keep-sorted end
+        };
+
+        sops.templates = {
+          "nix-access-tokens" = {
+            content = ''
+              access-tokens = github.com=${config.sops.placeholder."programs/github"}
+            '';
+          };
         };
       };
   };
