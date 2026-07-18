@@ -14,7 +14,7 @@
     # keep-sorted end
   };
 
-  zen.services.glance = {
+  zen.services.proxy-suite = {
     description = ''
       bundles sing-box,
       zapret-discord-youtube,
