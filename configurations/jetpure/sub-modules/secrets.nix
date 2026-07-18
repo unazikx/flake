@@ -21,6 +21,7 @@
           "services/qbittorrent/username" = { };
           "services/telegram-ws" = { };
           "services/vaultwarden" = { };
+          "vpn/finland" = { };
           # keep-sorted end
         };
       };
