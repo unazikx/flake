@@ -22,6 +22,7 @@
           "minecraft"
           "networkmanager"
           "podman"
+          "proxy-suite"
           "qbittorrent"
           "suwayomi"
           "terraria"

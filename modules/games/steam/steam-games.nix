@@ -483,6 +483,10 @@
                   id = 1118520;
                 };
 
+                "Pathogenic" = {
+                  id = 3808690;
+                };
+
                 "Plastic Warfare" = {
                   id = 490640;
                 };
@@ -581,6 +585,10 @@
                   id = 813630;
                 };
 
+                "TABS" = {
+                  id = 508440;
+                };
+
                 "Terraria" = {
                   id = 105600;
                 };
@@ -628,6 +636,14 @@
 
                 "Theotown" = {
                   id = 1084020;
+                };
+
+                "Torchlight II" = {
+                  id = 200710;
+                };
+
+                "Torchlight" = {
+                  id = 41500;
                 };
 
                 "Travelers Rest" = {
