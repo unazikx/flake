@@ -39,7 +39,7 @@
                 }
                 {
                   block = "sound";
-                  format = " $icon {$volume.eng(w:2)|} ";
+                  format = " $icon {$volume.eng(w:2) |}";
                   max_vol = 100;
                 }
                 {
