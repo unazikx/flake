@@ -142,6 +142,10 @@
                   id = 2904040;
                 };
 
+                "Cinderia" = {
+                  id = 3214610;
+                };
+
                 "Citizen Sleeper 2" = {
                   id = 2442460;
                 };
