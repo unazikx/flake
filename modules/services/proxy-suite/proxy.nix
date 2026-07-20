@@ -14,14 +14,19 @@
           proxy = {
             enable = true;
 
+            listenAddress = "0.0.0.0";
             port = 1080;
-            selection = "urltest";
 
             singBox = {
               enable = true;
             };
 
             tun = {
+              enable = true;
+              perApp.enable = true;
+            };
+
+            tproxy = {
               enable = true;
               perApp.enable = true;
             };
@@ -39,14 +44,17 @@
           perAppRouting = {
             enable = true;
 
+            createDefaultProfiles = true;
+            proxychains.enable = true;
+
             profiles = [
               {
                 name = "tun";
                 route = "tun";
               }
               {
-                name = "zapret";
-                route = "zapret";
+                name = "tproxy";
+                route = "tproxy";
               }
               {
                 name = "direct";
