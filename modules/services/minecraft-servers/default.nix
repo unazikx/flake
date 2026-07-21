@@ -1,4 +1,5 @@
 {
+  zen,
   ...
 }:
 
@@ -14,7 +15,7 @@
     # keep-sorted end
   };
 
-  zen.services = {
+  zen.services.minecraft-servers = {
     description = ''
       minecraft servers launches via systemd units
       25500 - 25599 ports are for minecraft servers
@@ -22,7 +23,10 @@
       plan: add servers
     '';
 
-    includes = [ ];
+    includes = [
+      zen.services.minecraft-servers.terra-firma-greg
+      zen.services.minecraft-servers.vortex
+    ];
 
     nixos =
       {
