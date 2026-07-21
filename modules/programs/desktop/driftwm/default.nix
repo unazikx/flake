@@ -45,10 +45,14 @@
         # fucking idiots why blyat?
         # я вас всех в жопу ебал бляди нахуя
         services = {
+          displayManager = {
+            defaultSession = lib.mkIf (user.defaultWm == "driftwm") "driftwm-session";
+          };
+
           gnome.gnome-keyring.enable = lib.mkForce false;
 
           greetd.settings = {
-            initial_session = lib.mkIf (user.defaultWm == "halley") {
+            initial_session = lib.mkIf (user.defaultWm == "driftwm") {
               user = lib.userName;
               command = lib.getExe config.programs.driftwm.package;
             };

@@ -53,6 +53,10 @@
         # fucking idiots why blyat?
         # я вас всех в жопу ебал бляди нахуя
         services = {
+          displayManager = {
+            defaultSession = lib.mkIf (user.defaultWm == "scroll") "scroll";
+          };
+
           gnome.gnome-keyring.enable = lib.mkForce false;
 
           greetd.settings = {

@@ -76,6 +76,11 @@
 
   imports = [
     inputs.den.flakeModule
+    # inputs.den.flakeOutputs.apps
+    # inputs.den.flakeOutputs.checks
+    # inputs.den.flakeOutputs.devShells
+    # inputs.den.flakeOutputs.flake
+    # inputs.den.flakeOutputs.packages
     inputs.flake-file.flakeModules.default
     inputs.flake-parts.flakeModules.bundlers
     inputs.flake-parts.flakeModules.modules
@@ -87,7 +92,9 @@
       ...
     }:
     {
-      packages = den.lib.nh.denPackages { } pkgs;
+      packages = den.lib.nh.denPackages {
+        defaultAction = "switch";
+      } pkgs;
     };
 
   debug = true;

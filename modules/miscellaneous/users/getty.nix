@@ -9,9 +9,15 @@
         ...
       }:
       {
-        services.getty = {
-          autologinUser = user;
-          autologinOnce = true;
+        services = {
+          displayManager = {
+            autoLogin.user = user;
+          };
+
+          getty = {
+            autologinUser = user;
+            autologinOnce = true;
+          };
         };
       };
   };

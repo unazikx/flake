@@ -42,6 +42,10 @@
         # fucking idiots why blyat?
         # я вас всех в жопу ебал бляди нахуя
         services = {
+          displayManager = {
+            defaultSession = lib.mkIf (user.defaultWm == "niri") "sway";
+          };
+
           gnome.gnome-keyring.enable = lib.mkForce false;
 
           greetd.settings = {
