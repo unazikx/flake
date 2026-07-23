@@ -186,6 +186,11 @@
                   id = 268910;
                 };
 
+                "Cursemark" = {
+                  id = 3219180;
+                  language = "russian";
+                };
+
                 "Darksiders Genesis" = {
                   id = 710920;
                 };
