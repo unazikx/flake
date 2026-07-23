@@ -8,6 +8,7 @@
     system = "x86_64-linux";
     class = "nixos";
 
+    defaultUser = "nixzoid";
     sopsKey = "age16dzy76gf6jcw03cppgghm7a8ld4g57f73z85wcj9fvq7w3ct53rs4rclm7";
     flakeDir = toString /etc/nixos;
     drive = toString /dev/disk/by-id/ata-KINGSTON_SA400S37240G_50026B72828C9A2D;
@@ -41,7 +42,6 @@
         "gew1-dealer.spotify.com"
         "www-growth.scdn.co"
       ])
-      (zen.miscellaneous.users.getty "nixzoid")
       zen.games.xbox.driver
       zen.hardware.cpu-gpu
       zen.hardware.mounting

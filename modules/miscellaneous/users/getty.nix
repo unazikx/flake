@@ -3,24 +3,25 @@
 }:
 
 {
-  zen.miscellaneous.users.getty = user: {
+  zen.miscellaneous.users.getty = {
     nixos =
       {
+        host,
         ...
       }:
       {
         services = {
           displayManager = {
-            autoLogin.user = user;
+            autoLogin.user = host.defaultUser;
           };
 
           getty = {
-            autologinUser = user;
+            autologinUser = host.defaultUser;
             autologinOnce = true;
           };
 
           greetd.settings = {
-            default_session.user = user;
+            default_session.user = host.defaultUser;
           };
         };
       };
