@@ -7,6 +7,23 @@
 {
   flake-file.inputs = {
     # keep-sorted start block=yes newline_separated=yes
+    myown = {
+      type = "github";
+      owner = "unazikx";
+      repo = "nix-packages";
+      inputs.nixpkgs-unstable.follows = "nixpkgs";
+      inputs.flake-parts.follows = "flake-parts";
+      inputs.nur.follows = "nur";
+    };
+
+    nur = {
+      type = "github";
+      owner = "nix-community";
+      repo = "nur";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-parts.follows = "flake-parts";
+    };
+
     pkgs-by-name = {
       type = "github";
       owner = "drupol";

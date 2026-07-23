@@ -4,9 +4,16 @@
 
 {
   flake-file.inputs = {
-    # keep-sorted start block=yes newline_separated=yes
+    nixpkgs.follows = "nixpkgs-unstable";
+    nixpkgs-prev.follows = "nixpkgs-unstable-prev";
+    nixpkgs-stable.follows = "nixpkgs-2605";
+    nixpkgs-stable-prev.follows = "nixpkgs-2505";
+
     darwin.follows = "nix-darwin";
 
+    nixpkgs-lib.follows = "nixpkgs";
+
+    # keep-sorted start block=yes newline_separated=yes
     flake-utils = {
       type = "github";
       owner = "numtide";
@@ -27,20 +34,18 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixpkgs-lib.follows = "nixpkgs";
-
-    nixpkgs-stable = {
-      type = "github";
-      owner = "nixos";
-      repo = "nixpkgs";
-      ref = "nixos-26.05";
-    };
-
-    nixpkgs-stable-prev = {
+    nixpkgs-2505 = {
       type = "github";
       owner = "nixos";
       repo = "nixpkgs";
       ref = "nixos-25.05";
+    };
+
+    nixpkgs-2605 = {
+      type = "github";
+      owner = "nixos";
+      repo = "nixpkgs";
+      ref = "nixos-26.05";
     };
 
     nixpkgs-unstable = {
@@ -56,8 +61,6 @@
       repo = "nixpkgs";
       rev = "567a49d1913ce81ac6e9582e3553dd90a955875f";
     };
-
-    nixpkgs.follows = "nixpkgs-unstable";
     # keep-sorted end
   };
 }

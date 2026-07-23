@@ -243,21 +243,27 @@
 
     nixpkgs.follows = "nixpkgs-unstable";
 
-    nixpkgs-lib.follows = "nixpkgs";
+    nixpkgs-2505 = {
+      type = "github";
+      owner = "nixos";
+      repo = "nixpkgs";
+      ref = "nixos-25.05";
+    };
 
-    nixpkgs-stable = {
+    nixpkgs-2605 = {
       type = "github";
       owner = "nixos";
       repo = "nixpkgs";
       ref = "nixos-26.05";
     };
 
-    nixpkgs-stable-prev = {
-      type = "github";
-      owner = "nixos";
-      repo = "nixpkgs";
-      ref = "nixos-25.05";
-    };
+    nixpkgs-lib.follows = "nixpkgs";
+
+    nixpkgs-prev.follows = "nixpkgs-unstable-prev";
+
+    nixpkgs-stable.follows = "nixpkgs-2605";
+
+    nixpkgs-stable-prev.follows = "nixpkgs-2505";
 
     nixpkgs-unstable = {
       type = "github";
