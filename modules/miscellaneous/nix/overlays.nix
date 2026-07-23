@@ -12,7 +12,6 @@
         _final -> final attr set where already we have something
         _old -> old final attr set where we have a blank overlays
       '';
-
     }
     (lib.genAttrs
       [
@@ -32,9 +31,10 @@
               # for fallback compatibility
               inherit system;
 
-              _previous = build-branch inputs.nixpkgs-unstable-prev;
+              _previous = build-branch inputs.nixpkgs-prev;
               _stable = build-branch inputs.nixpkgs-stable;
               _stable-prev = build-branch inputs.nixpkgs-stable-prev;
+              _unstable = build-branch inputs.nixpkgs-unstable;
 
               branch-config = {
                 inherit system;
