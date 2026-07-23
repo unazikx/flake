@@ -18,23 +18,11 @@
 
     nixos =
       {
-        pkgs,
-        lib,
-        config,
         ...
       }:
       {
-        hardware.xpad-noone.enable = true;
-        boot.extraModulePackages = [
-          config.boot.kernelPackages.xone
-        ];
-
+        hardware.xone.enable = true;
         hardware.xpadneo.enable = true;
-
-        services.udev.extraRules = ''
-          KERNEL=="hidraw*", SUBSYSTEM=="hidraw", KERNELS=="*045E:028E*", OWNER:="root", GROUP:="root", MODE:="0000", RUN+="${lib.getExe' pkgs.acl "setfacl"} -b /dev/%k"
-          SUBSYSTEM=="input", KERNEL=="event*", ATTRS{name}=="Xbox Wireless Controller", ATTRS{phys}=="?*", SYMLINK+="input/xbox_gamepad"
-        '';
       };
   };
 }

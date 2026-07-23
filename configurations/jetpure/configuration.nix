@@ -42,6 +42,7 @@
         "www-growth.scdn.co"
       ])
       (zen.miscellaneous.users.getty "nixzoid")
+      zen.games.xbox.driver
       zen.hardware.cpu-gpu
       zen.hardware.mounting
       zen.miscellaneous.disko
@@ -52,6 +53,7 @@
       zen.programs.cli.rusted-tools
       zen.services.caddy
       zen.services.glance
+      zen.services.greetd
       zen.services.proxy-suite
       zen.services.qbittorrent.flood
       zen.services.tailscale
@@ -70,7 +72,6 @@
       zen.games.heroic
       zen.games.minecraft.prismlauncher
       zen.games.steam
-      zen.games.xbox.keyboard
       zen.miscellaneous.nix
       zen.miscellaneous.users
       zen.miscellaneous.xdg
@@ -101,7 +102,6 @@
       zen.programs.terminal.translate-shell
       zen.programs.terminal.trash
       zen.programs.terminal.zoxide
-      zen.services.greetd
       zen.suites.music
       zen.suites.theming
       # keep-sorted end

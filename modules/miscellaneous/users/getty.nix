@@ -18,6 +18,10 @@
             autologinUser = user;
             autologinOnce = true;
           };
+
+          greetd.settings = {
+            default_session.user = user;
+          };
         };
       };
   };

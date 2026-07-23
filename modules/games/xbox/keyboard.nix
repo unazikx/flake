@@ -20,6 +20,7 @@
     nixos =
       {
         self',
+        pkgs,
         lib,
         ...
       }:
@@ -59,6 +60,11 @@
             };
           };
         };
+
+        services.udev.extraRules = ''
+          KERNEL=="hidraw*", SUBSYSTEM=="hidraw", KERNELS=="*045E:028E*", OWNER:="root", GROUP:="root", MODE:="0000", RUN+="${lib.getExe' pkgs.acl "setfacl"} -b /dev/%k"
+          SUBSYSTEM=="input", KERNEL=="event*", ATTRS{name}=="Xbox Wireless Controller", ATTRS{phys}=="?*", SYMLINK+="input/xbox_gamepad"
+        '';
       };
 
     user =

@@ -13,7 +13,6 @@
       {
         pkgs,
         lib,
-        user,
         ...
       }:
       {
@@ -24,27 +23,24 @@
           greeterManagesPlymouth = true;
 
           settings = {
-            default_session = {
-              user = user.userName;
-              command = lib.concatStringsSep " " [
-                (lib.getExe pkgs.tuigreet)
-                "--asterisks"
-                "--remember"
-                "--remember-session"
-                "--time"
-                "--theme"
-                (lib.concatStringsSep ";" [
-                  "border=magenta"
-                  "text=cyan"
-                  "prompt=green"
-                  "time=red"
-                  "action=blue"
-                  "button=yellow"
-                  "container=black"
-                  "input=red"
-                ])
-              ];
-            };
+            default_session.command = lib.concatStringsSep " " [
+              (lib.getExe pkgs.tuigreet)
+              "--asterisks"
+              "--remember"
+              "--remember-session"
+              "--time"
+              "--theme"
+              (lib.concatStringsSep ";" [
+                "border=magenta"
+                "text=cyan"
+                "prompt=green"
+                "time=red"
+                "action=blue"
+                "button=yellow"
+                "container=black"
+                "input=red"
+              ])
+            ];
           };
         };
 
