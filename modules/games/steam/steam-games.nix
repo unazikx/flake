@@ -96,6 +96,10 @@
                   id = 325210;
                 };
 
+                "Ascend to ZERO" = {
+                  id = 2697940;
+                };
+
                 "Baldurs Gate 3" = {
                   id = 1086940;
                   language = "russian";
@@ -331,6 +335,14 @@
 
                 "Gravity Circuit" = {
                   id = 858710;
+                };
+
+                "Hades" = {
+                  id = 1145360;
+                };
+
+                "Happy Humble Burger Farm" = {
+                  id = 1433340;
                 };
 
                 "Hard Truck 2" = {

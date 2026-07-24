@@ -75,7 +75,7 @@
   };
 
   imports = [
-    inputs.den.flakeModule
+    inputs.den.flakeModules.default
     # inputs.den.flakeOutputs.apps
     # inputs.den.flakeOutputs.checks
     # inputs.den.flakeOutputs.devShells
