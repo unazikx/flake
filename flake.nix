@@ -316,6 +316,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    shojiwm = {
+      type = "github";
+      owner = "bea4dev";
+      repo = "shojiwm";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     sops-nix = {
       type = "github";
       owner = "mic92";

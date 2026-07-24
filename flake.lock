@@ -1281,6 +1281,7 @@
         "pkgs-by-name": "pkgs-by-name_2",
         "proxy-suite-flake": "proxy-suite-flake",
         "scroll-flake": "scroll-flake",
+        "shojiwm": "shojiwm",
         "sops-nix": "sops-nix",
         "spicetify-nix": "spicetify-nix",
         "steam-config-nix": "steam-config-nix",
@@ -1387,6 +1388,26 @@
         "owner": "dawsers",
         "ref": "refs/tags/1.12.15",
         "repo": "scroll",
+        "type": "github"
+      }
+    },
+    "shojiwm": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1784700668,
+        "narHash": "sha256-Bz/k2TqSZoQpGpatbhyW2pNr7UpPG7ZkQKhT9mnYPxg=",
+        "owner": "bea4dev",
+        "repo": "shojiwm",
+        "rev": "2502c96638b7a671e99a1e5b8ec1477526f081c1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "bea4dev",
+        "repo": "shojiwm",
         "type": "github"
       }
     },

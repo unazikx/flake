@@ -85,6 +85,7 @@
       zen.programs.cli.yazi
       zen.programs.cli.youtube-cli
       zen.programs.desktop.sway
+      zen.programs.desktop.shojiwm
       zen.programs.editors.helix
       zen.programs.editors.opencode
       zen.programs.gui.ayugram
