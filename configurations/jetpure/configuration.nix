@@ -70,6 +70,7 @@
       # keep-sorted start
       zen.games.gale
       zen.games.heroic
+      zen.games.hytale.launcher
       zen.games.minecraft.prismlauncher
       zen.games.steam
       zen.miscellaneous.nix
