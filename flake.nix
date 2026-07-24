@@ -17,6 +17,17 @@
       };
     };
 
+    chaotic-nyx = {
+      type = "github";
+      owner = "chaotic-cx";
+      repo = "nyx";
+      ref = "nyxpkgs-unstable";
+      inputs = {
+        home-manager.follows = "home-manager";
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
+
     darwin.follows = "nix-darwin";
 
     den = {
@@ -139,6 +150,13 @@
       type = "github";
       owner = "denful";
       repo = "import-tree";
+    };
+
+    jovian-nixos = {
+      type = "github";
+      owner = "jovian-experiments";
+      repo = "jovian-nixos";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     late-sh = {

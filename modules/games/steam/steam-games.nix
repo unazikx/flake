@@ -96,10 +96,6 @@
                   id = 325210;
                 };
 
-                "Ascend to ZERO" = {
-                  id = 2697940;
-                };
-
                 "Baldurs Gate 3" = {
                   id = 1086940;
                   language = "russian";
@@ -188,11 +184,6 @@
 
                 "Cuphead" = {
                   id = 268910;
-                };
-
-                "Cursemark" = {
-                  id = 3219180;
-                  language = "russian";
                 };
 
                 "Darksiders Genesis" = {
@@ -362,10 +353,6 @@
                   id = 824600;
                 };
 
-                "Hydroneer" = {
-                  id = 1106840;
-                };
-
                 "Intravenous 2" = {
                   id = 2608270;
                 };
@@ -384,11 +371,6 @@
 
                 "Jalopy" = {
                   id = 446020;
-                };
-
-                "Kerbal Space Program" = {
-                  id = 220200;
-                  language = "russian";
                 };
 
                 "Killer Frequency" = {
@@ -665,10 +647,6 @@
 
                 "Torchlight" = {
                   id = 41500;
-                };
-
-                "Travelers Rest" = {
-                  id = 1139980;
                 };
 
                 "Valheim" = {

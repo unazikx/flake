@@ -45,6 +45,7 @@
       zen.games.xbox.driver
       zen.hardware.cpu-gpu
       zen.hardware.mounting
+      zen.miscellaneous.chaotic-nyx
       zen.miscellaneous.disko
       zen.miscellaneous.minimal
       zen.miscellaneous.nix
@@ -69,6 +70,7 @@
     includes = [
       # keep-sorted start
       zen.games.gale
+      zen.games.jovian-nixos
       zen.games.heroic
       zen.games.minecraft.prismlauncher
       zen.games.steam
