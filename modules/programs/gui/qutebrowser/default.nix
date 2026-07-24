@@ -25,6 +25,7 @@
       {
         pkgs,
         lib,
+        config,
         ...
       }:
       {
@@ -33,9 +34,20 @@
 
           package = pkgs._previous.qutebrowser;
 
-          searchEngines = {
-            DEFAULT = "https://www.google.com/search?q={}";
-          };
+          searchEngines =
+            # PLEASE SORRY FOR REC
+            rec # OOOOOOHHHH NOOOOO FUUUUUUUCCCCKKKK
+            # PLEEEEEASEEEESESE SSSSOOOOORRRRRYYYYY
+            {
+              DEFAULT = forget;
+              # keep-sorted start
+              forget = "https://4get.ca/web?s={}";
+              google = "https://www.google.com/search?q={}";
+              nixsearch = "https://nixsearch.thekoppe.com/?q={}";
+              github = "https://github.com/search?q={}";
+              youtube = "https://www.youtube.com/results?search_query={}";
+              # keep-sorted end
+            };
 
           greasemonkey = [
             (pkgs.fetchurl {
@@ -64,11 +76,6 @@
             })
           ];
         };
-
-        home.packages = [
-          pkgs.python312Packages.adblock
-          pkgs.python312Packages.requests
-        ];
 
         xdg.mimeApps.associations.removed = lib.genAttrs [
           "image/avif"
