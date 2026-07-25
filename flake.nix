@@ -324,6 +324,17 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    pedantix = {
+      type = "github";
+      owner = "swarsel";
+      repo = "pedantix";
+      inputs = {
+        flake-parts.follows = "flake-parts";
+        nixpkgs.follows = "nixpkgs";
+        treefmt-nix.follows = "treefmt-nix";
+      };
+    };
+
     pkgs-by-name = {
       type = "github";
       owner = "drupol";
