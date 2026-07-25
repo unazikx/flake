@@ -33,8 +33,6 @@
     nixos =
       {
         pkgs,
-        lib,
-        config,
         ...
       }:
       {
@@ -78,31 +76,14 @@
             steam -shutdown
           '')
         ];
-
-        systemd.user.services = {
-          steam-autostart = {
-            wantedBy = [ "graphical-session.target" ];
-            partOf = [ "graphical-session.target" ];
-            after = [ "graphical-session.target" ];
-
-            serviceConfig = {
-              ExecStart = lib.concatStringsSep " " [
-                (lib.getExe config.programs.steam.package)
-                "-nochatui"
-                "-nofriendsui"
-                "-silent"
-              ];
-              Restart = "always";
-              RestartSec = 2;
-            };
-          };
-        };
       };
 
     homeManagerNixos =
       {
         inputs,
         pkgs,
+        lib,
+        osConfig,
         ...
       }:
       {
@@ -116,6 +97,29 @@
           # ^^^ close Steam and apply the changes, waiting for any running games to exit first
 
           defaultCompatTool = pkgs.proton-ge-bin-patched;
+        };
+
+        systemd.user.services = {
+          steam-autostart = {
+            Unit = {
+              PartOf = [ "graphical-session.target" ];
+              After = [ "graphical-session.target" ];
+            };
+
+            Install = {
+              WantedBy = [ "graphical-session.target" ];
+            };
+
+            Service = {
+              ExecStart = lib.concatStringsSep " " [
+                (lib.getExe osConfig.programs.steam.package)
+                "-nochatui"
+                "-nofriendsui"
+                "-silent"
+              ];
+              Restart = "always";
+            };
+          };
         };
       };
   };

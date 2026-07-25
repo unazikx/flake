@@ -534,6 +534,11 @@
                   id = 526870;
                 };
 
+                "Scarlet Nexus" = {
+                  id = 775500;
+                  language = "russian";
+                };
+
                 "Selaco" = {
                   id = 1592280;
                 };
