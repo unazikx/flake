@@ -133,6 +133,11 @@
                   language = "russian";
                 };
 
+                "Bulletstorm" = {
+                  id = 501590;
+                  language = "russian";
+                };
+
                 "Carmageddon Max Damage" = {
                   id = 505170;
                   language = "russian";
@@ -478,6 +483,11 @@
                   id = 1057090;
                 };
 
+                "Overcooked 2" = {
+                  id = 728880;
+                  language = "russian";
+                };
+
                 "Overcooked" = {
                   id = 448510;
                 };
@@ -509,6 +519,10 @@
 
                 "S&box" = {
                   id = 590830;
+                };
+
+                "SULFUR" = {
+                  id = 2124120;
                 };
 
                 "Saints Row: The Third Remastered" = {
