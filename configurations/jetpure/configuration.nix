@@ -85,6 +85,7 @@
       zen.programs.cli.ssh
       zen.programs.cli.yazi
       zen.programs.cli.youtube-cli
+      zen.programs.desktop.mangowc
       zen.programs.desktop.sway
       zen.programs.editors.helix
       zen.programs.editors.opencode

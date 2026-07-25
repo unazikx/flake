@@ -175,6 +175,16 @@
       repo = "make-shell";
     };
 
+    mangowc = {
+      type = "github";
+      owner = "mangowm";
+      repo = "mango";
+      inputs = {
+        flake-parts.follows = "flake-parts";
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
+
     myown = {
       type = "github";
       owner = "unazikx";

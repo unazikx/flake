@@ -25,7 +25,6 @@
       {
         pkgs,
         lib,
-        config,
         ...
       }:
       {
@@ -42,9 +41,9 @@
               DEFAULT = forget;
               # keep-sorted start
               forget = "https://4get.ca/web?s={}";
+              github = "https://github.com/search?q={}";
               google = "https://www.google.com/search?q={}";
               nixsearch = "https://nixsearch.thekoppe.com/?q={}";
-              github = "https://github.com/search?q={}";
               youtube = "https://www.youtube.com/results?search_query={}";
               # keep-sorted end
             };
