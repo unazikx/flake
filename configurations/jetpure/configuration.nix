@@ -82,6 +82,7 @@
       zen.programs.cli.git
       zen.programs.cli.monitor
       zen.programs.cli.rbw
+      zen.programs.cli.spotatui
       zen.programs.cli.ssh
       zen.programs.cli.yazi
       zen.programs.cli.youtube-cli
