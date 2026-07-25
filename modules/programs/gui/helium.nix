@@ -36,8 +36,12 @@
       {
         inputs,
         lib,
+        osConfig,
         ...
       }:
+      let
+        glanceCfg = osConfig.services.glance;
+      in
       {
         imports = [
           inputs.helium-flake.homeModules.helium
@@ -57,12 +61,20 @@
             )
           );
 
-          extraFlags = [ "--force-dark-mode" ];
-
           extraPolicies = {
-            HomepageLocation = "https://start.duckduckgo.com";
+            HomepageLocation =
+              if glanceCfg.enable then
+                (lib.concatStringsSep ":" [
+                  glanceCfg.settings.server.host
+                  (toString glanceCfg.settings.server.port)
+                ])
+              else
+                "https://start.duckduckgo.com";
+
             PasswordManagerEnabled = false;
+
             DeveloperToolsAvailability = 1;
+
             ManagedBookmarks = [
               {
                 toplevel_name = "Nix Ecosystem";
