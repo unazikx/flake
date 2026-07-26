@@ -55,9 +55,9 @@ in
       };
 
       settings = lib.mkOption {
-        type = lib.types.nullOr lib.types.str;
+        type = yaml.type;
         default = null;
-        description = "Content for $$XDG_CONFIG_HOME/spotatui/config.yml, written when non-null.";
+        description = "Content for $XDG_CONFIG_HOME/spotatui/config.yml, written when non-null.";
       };
     };
   };
@@ -66,7 +66,7 @@ in
     home.packages = lib.mkIf (cfg.package != null) [ cfg.package ];
 
     xdg.configFile = {
-      "spotatui/config.yml".text = lib.mkIf (cfg.settings != null) (
+      "spotatui/config.yml".source = lib.mkIf (cfg.settings != null) (
         yaml.generate "spotatui-config.yml" cfg.settings
       );
     };
