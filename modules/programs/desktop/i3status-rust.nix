@@ -22,9 +22,9 @@
           bars = {
             default = {
               blocks = [
-                {
+                (lib.mkIf config.services.playerctld.enable {
                   block = "music";
-                  format = " {$title.str(max_w:50)|} / <i>!$artist</i> $prev $play $next ";
+                  format = " {$title.str(max_w:50)|} / <i>!$artist</i> $prev $play $next ($volume) ";
                   format_alt = " [$player] $prev $play $next ";
                   click = [
                     {
@@ -36,7 +36,7 @@
                       action = "volume_down";
                     }
                   ];
-                }
+                })
                 {
                   block = "sound";
                   format = " $icon {$volume.eng(w:2) |}";
