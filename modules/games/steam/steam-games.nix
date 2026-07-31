@@ -29,9 +29,23 @@
           launchOptions = {
             env = {
               PROTON_ENABLE_WAYLAND = 1;
+              PROTON_USE_NTSYNC = 1;
             };
+
             wrappers = [
-              (lib.getExe osConfig.programs.gamemode.package)
+              (
+                let
+                  mangohud = config.programs.mangohud;
+                in
+                lib.mkIf mangohud.enable (lib.getExe mangohud.package)
+              )
+
+              (
+                let
+                  gamemode = osConfig.programs.gamemode;
+                in
+                lib.mkIf gamemode.enable (lib.getExe gamemode.package)
+              )
             ];
           };
 
@@ -497,6 +511,7 @@
               };
 
               "Pathogenic" = {
+                compatTool = null;
                 id = 3808690;
               };
 

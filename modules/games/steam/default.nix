@@ -26,6 +26,8 @@
     '';
 
     includes = [
+      zen.games.gamemode
+      zen.games.mangohud
       zen.games.steam.non-steam-games
       zen.games.steam.steam-games
     ];
@@ -61,11 +63,6 @@
 
           gamescope = {
             enable = true;
-          };
-
-          gamemode = {
-            enable = true;
-            enableRenice = true;
           };
         };
 
