@@ -926,11 +926,11 @@
         "pkgs-by-name": "pkgs-by-name"
       },
       "locked": {
-        "lastModified": 1784529483,
-        "narHash": "sha256-kMLh4PySUeFquORoqXdw2LO5RH0tUsCRlhfitv7xFaM=",
+        "lastModified": 1785479744,
+        "narHash": "sha256-a9IxRmd6NKgtAWqfN9MDphxRyR4QOmunfmlMB6YjTG0=",
         "owner": "unazikx",
         "repo": "nix-packages",
-        "rev": "180ec87a10421105558e2cf157174ddbde0187eb",
+        "rev": "51e786b4a3d443615da328669767592441a27527",
         "type": "github"
       },
       "original": {
