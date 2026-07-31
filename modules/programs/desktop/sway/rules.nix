@@ -55,31 +55,76 @@
             border = 3;
             commands =
               let
-                rules = is: rule: command: {
-                  inherit command;
-                  criteria.${is} = rule;
-                };
+                mkRules =
+                  is: attrs:
+                  lib.concatLists (
+                    lib.mapAttrsToList (
+                      rule: cmds:
+                      map (command: {
+                        inherit command;
+                        criteria.${is} = rule;
+                      }) cmds
+                    ) attrs
+                  );
               in
-              [
-                # keep-sorted start
-                (rules "app_id" "Choose Files" "move position center")
-                (rules "app_id" "Choose Files" "resize set 70 ppt 40 ppt")
-                (rules "app_id" "Media viewer" "fullscreen enable")
-                (rules "app_id" "Media viewer" "move position center")
-                (rules "app_id" "foot_float" "floating enable")
-                (rules "app_id" "foot_float" "move position center")
-                (rules "app_id" "foot_float" "resize set 40 ppt 40 ppt")
-                (rules "app_id" "kitty_float" "floating enable")
-                (rules "app_id" "kitty_float" "move position center")
-                (rules "app_id" "kitty_float" "resize set 40 ppt 40 ppt")
-                (rules "app_id" "mpv" "dim_inactive 0.0")
-                (rules "app_id" "xdg-desktop-portal-gtk" "move position center")
-                (rules "app_id" "xdg-desktop-portal-gtk" "resize set 70 ppt 40 ppt")
-                (rules "title" "Choose Files" "floating enable")
-                (rules "title" "Friends List" "resize set 30 ppt 100 ppt")
-                (rules "title" "Media viewer" "floating enable")
-                (rules "title" "xdg-desktop-portal-gtk" "floating enable")
-                # keep-sorted end
+              lib.flatten [
+                (mkRules "app_id" {
+                  # keep-sorted start block=yes
+                  "Choose Files" = [
+                    "move position center"
+                    "resize set 70 ppt 40 ppt"
+                  ];
+
+                  "Media viewer" = [
+                    "fullscreen enable"
+                    "move position center"
+                  ];
+
+                  "foot_float" = [
+                    "floating enable"
+                    "move position center"
+                    "resize set 40 ppt 40 ppt"
+                  ];
+
+                  "kitty_float" = [
+                    "floating enable"
+                    "move position center"
+                    "resize set 40 ppt 40 ppt"
+                  ];
+
+                  "mpv" = [
+                    "dim_inactive 0.0"
+                  ];
+
+                  "org.qutebrowser.qutebrowser" = [
+                    "fullscreen disable"
+                  ];
+
+                  "xdg-desktop-portal-gtk" = [
+                    "move position center"
+                    "resize set 70 ppt 40 ppt"
+                  ];
+                  # keep-sorted end
+                })
+                (mkRules "title" {
+                  # keep-sorted start block=yes
+                  "Choose Files" = [
+                    "floating enable"
+                  ];
+
+                  "Friends List" = [
+                    "resize set 30 ppt 100 ppt"
+                  ];
+
+                  "Media viewer" = [
+                    "floating enable"
+                  ];
+
+                  "xdg-desktop-portal-gtk" = [
+                    "floating enable"
+                  ];
+                  # keep-sorted end
+                })
               ];
           };
 
