@@ -70,36 +70,31 @@
               lib.flatten [
                 (mkRules "app_id" {
                   # keep-sorted start block=yes
+
                   "Choose Files" = [
                     "move position center"
                     "resize set 70 ppt 40 ppt"
                   ];
-
                   "Media viewer" = [
                     "fullscreen enable"
                     "move position center"
                   ];
-
                   "foot_float" = [
                     "floating enable"
                     "move position center"
                     "resize set 40 ppt 40 ppt"
                   ];
-
                   "kitty_float" = [
                     "floating enable"
                     "move position center"
                     "resize set 40 ppt 40 ppt"
                   ];
-
                   "mpv" = [
                     "dim_inactive 0.0"
                   ];
-
                   "org.qutebrowser.qutebrowser" = [
                     "fullscreen disable"
                   ];
-
                   "xdg-desktop-portal-gtk" = [
                     "move position center"
                     "resize set 70 ppt 40 ppt"
@@ -108,18 +103,16 @@
                 })
                 (mkRules "title" {
                   # keep-sorted start block=yes
+
                   "Choose Files" = [
                     "floating enable"
                   ];
-
                   "Friends List" = [
                     "resize set 30 ppt 100 ppt"
                   ];
-
                   "Media viewer" = [
                     "floating enable"
                   ];
-
                   "xdg-desktop-portal-gtk" = [
                     "floating enable"
                   ];
