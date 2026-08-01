@@ -422,6 +422,22 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    vicinae = {
+      type = "github";
+      owner = "vicinaehq";
+      repo = "vicinae";
+    };
+
+    vicinae-extensions = {
+      type = "github";
+      owner = "vicinaehq";
+      repo = "extensions";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        vicinae.follows = "vicinae";
+      };
+    };
+
     xytz = {
       type = "github";
       owner = "xdagiz";

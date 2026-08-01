@@ -25,7 +25,7 @@
                 "q" = "kill";
                 "f" = "fullscreen";
 
-                "space" = "floating toggle; " + "resize set 90 ppt 90 ppt";
+                "shift+space" = "floating toggle; " + "resize set 90 ppt 90 ppt";
                 "alt+space" = "move position center";
 
                 "g" = "layout tabbed";
@@ -49,6 +49,8 @@
               })
               {
                 "tab" = "tofi-drun | xargs swaymsg exec --";
+                "space" = "vicinae toggle";
+
                 "return" = "footclient";
                 "shift+return" = "footclient -a=foot_float";
 
@@ -105,16 +107,29 @@
               }
             )
 
-            {
-              "${cfg.config.modifier}+ctrl+h" = "resize shrink width 10 px or 10 ppt";
-              "${cfg.config.modifier}+ctrl+j" = "resize shrink height 10 px or 10 ppt";
-              "${cfg.config.modifier}+ctrl+k" = "resize grow height 10 px or 10 ppt";
-              "${cfg.config.modifier}+ctrl+l" = "resize grow width 10 px or 10 ppt";
-              "${cfg.config.modifier}+ctrl+left" = "resize shrink width 10 px or 10 ppt";
-              "${cfg.config.modifier}+ctrl+down" = "resize shrink height 10 px or 10 ppt";
-              "${cfg.config.modifier}+ctrl+up" = "resize grow height 10 px or 10 ppt";
-              "${cfg.config.modifier}+ctrl+right" = "resize grow width 10 px or 10 ppt";
-            }
+            (lib.concatMapAttrs
+              (key: axis: {
+                "${cfg.config.modifier}+ctrl+${key}" = "resize shrink ${axis} 10 px or 10 ppt";
+              })
+              {
+                h = "width";
+                j = "height";
+                left = "width";
+                down = "height";
+              }
+            )
+
+            (lib.concatMapAttrs
+              (key: axis: {
+                "${cfg.config.modifier}+ctrl+${key}" = "resize grow ${axis} 10 px or 10 ppt";
+              })
+              {
+                k = "height";
+                l = "width";
+                up = "height";
+                right = "width";
+              }
+            )
           ];
         };
       };
