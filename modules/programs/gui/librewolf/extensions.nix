@@ -6,14 +6,14 @@
   zen.programs.gui.librewolf.extensions = {
     homeManager =
       {
-        inputs',
+        self',
         config,
         user,
         ...
       }:
       let
         colors = config.lib.stylix.colors.withHashtag;
-        myown = inputs'.myown.legacyPackages.firefox-addons;
+        myown = self'.legacyPackages.firefox-addons;
       in
       {
         programs.librewolf = {

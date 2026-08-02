@@ -5,7 +5,7 @@
 {
   perSystem =
     {
-      inputs',
+      self',
       pkgs,
       ...
     }:
@@ -20,12 +20,11 @@
         packages = [
           (pkgs.python314.withPackages (ps: [
             # keep-sorted start
-            inputs'.myown.legacyPackages.anicli-api
-            inputs'.myown.legacyPackages.hdrezka-api
             ps.aiohttp
             ps.black
             ps.gql
             ps.requests
+            self'.legacyPackages.ani-cli-ru.client
             # keep-sorted end
           ]))
         ];

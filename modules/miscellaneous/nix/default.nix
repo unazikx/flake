@@ -19,15 +19,15 @@
 
     nixos =
       {
+        self',
         inputs,
-        inputs',
         pkgs,
         lib,
         ...
       }:
       {
         environment.systemPackages = [
-          inputs'.myown.legacyPackages.hasher
+          self'.legacyPackages.hasher
           pkgs.cachix
           pkgs.hydra-check
           pkgs.nix-tree

@@ -6,26 +6,21 @@
   zen.programs.gui.qutebrowser.bindings = {
     homeManager =
       {
-        inputs',
+        self',
         lib,
         ...
       }:
-      let
-        myown = inputs'.myown.legacyPackages;
-      in
       {
         programs.qutebrowser.keyBindings = {
           normal = {
             # keep-sorted start
-            ",," = "spawn --userscript ${lib.getExe myown.qutebrowser-extras.rbw-filler}";
+            ",," = "spawn --userscript ${lib.getExe self'.legacyPackages.qutebrowser.rbw-filler}";
             ",." = "spawn --userscript qute-keepass -p ~/Documents/passwords/db.kdbx";
             ",M" = "hint links spawn mpv {hint-url} ;; " + "message-info 'Video will be open in MPV'";
-            ",R" = "hint links userscript ${lib.getExe myown.qutebrowser-extras.translator}";
-            ",l" = "spawn --userscript ${lib.getExe myown.qutebrowser-extras.rbw-filler} username";
+            ",l" = "spawn --userscript ${lib.getExe self'.legacyPackages.qutebrowser.rbw-filler} username";
             ",m" = "spawn mpv {url} ;; " + "message-info 'Video will be open in MPV'";
-            ",p" = "spawn --userscript ${lib.getExe myown.qutebrowser-extras.rbw-filler} password";
-            ",r" = "spawn --userscript ${lib.getExe myown.qutebrowser-extras.translator} --target_lang ru";
-            ",t" = "spawn --userscript ${lib.getExe myown.qutebrowser-extras.rbw-filler} totp";
+            ",p" = "spawn --userscript ${lib.getExe self'.legacyPackages.qutebrowser.rbw-filler} password";
+            ",t" = "spawn --userscript ${lib.getExe self'.legacyPackages.qutebrowser.rbw-filler} totp";
             "<Alt-j>" = "tab-move +";
             "<Alt-k>" = "tab-move -";
             "<Alt-p>" = "open -w -- {clipboard}";

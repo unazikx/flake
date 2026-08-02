@@ -14,12 +14,12 @@
 
     homeManager =
       {
-        inputs',
+        self',
         ...
       }:
       {
         home.packages = [
-          inputs'.myown.legacyPackages.anicli-ru
+          self'.legacyPackages.ani-cli-ru.client
         ];
       };
   };

@@ -11,7 +11,7 @@
 
     homeManager =
       {
-        inputs',
+        self',
         pkgs,
         ...
       }:
@@ -19,7 +19,7 @@
         programs.fetchit = {
           enable = true;
 
-          package = inputs'.myown.legacyPackages.fetchit;
+          package = self'.legacyPackages.fetchit;
 
           settings =
             # lua

@@ -22,11 +22,14 @@ in
           ({ colors }: {
             home.activation = {
               telegramTheme =
-                lib.hm.dag.entryAfter [ ]
+                lib.hm.dag.entryAfter
+                  [
+                    "writeBoundary"
+                  ]
                   "run ${
                     lib.getExe (
                       cfg.themePackage.override {
-                        cacheDir = config.xdg.cacheHome;
+                        outputDir = config.xdg.cacheHome;
                         colors = colors.withHashtag;
                       }
                     )

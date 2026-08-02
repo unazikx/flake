@@ -11,7 +11,7 @@
 
     homeManager =
       {
-        inputs',
+        self',
         pkgs,
         lib,
         config,
@@ -19,7 +19,9 @@
       }:
       {
         home.packages = [
-          inputs'.myown.legacyPackages.zaread
+          (self'.legacyPackages.zaread.override {
+            libreoffice = pkgs.libreoffice-fresh;
+          })
         ];
 
         programs.zathura = {

@@ -6,8 +6,8 @@
   zen.programs.gui.librewolf.profiles = {
     homeManager =
       {
+        self',
         inputs,
-        inputs',
         pkgs,
         lib,
         config,
@@ -43,7 +43,7 @@
               };
             };
 
-            userChrome = lib.readFile inputs'.myown.legacyPackages.firefox-themes.little-fox;
+            userChrome = lib.readFile self'.legacyPackages.firefox-themes.little-fox;
 
             userContent =
               with config.lib.stylix.colors.withHashtag;

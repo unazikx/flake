@@ -6,13 +6,13 @@
   zen.services.minecraft-servers.terra-firma-greg = {
     nixos =
       {
-        inputs',
+        self',
         pkgs,
         lib,
         ...
       }:
       let
-        modpack = inputs'.myown.legacyPackages.games.terrafirmagreg;
+        modpack = self'.legacyPackages.minecraft-servers.terra-firma-greg;
       in
       {
         services.minecraft-servers.servers = {

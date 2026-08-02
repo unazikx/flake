@@ -6,7 +6,7 @@
   zen.programs.cli.yazi.settings = {
     homeManager =
       {
-        inputs',
+        self',
         pkgs,
         lib,
         config,
@@ -327,7 +327,7 @@
                   yatline
                   ;
 
-                inherit (inputs'.myown.legacyPackages.yazi-plugins)
+                inherit (self'.legacyPackages.yazi-plugins)
                   cba-preview
                   convert
                   djvu-preview

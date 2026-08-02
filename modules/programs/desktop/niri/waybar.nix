@@ -6,7 +6,6 @@
   zen.programs.desktop.niri.waybar = {
     homeManager =
       {
-        inputs',
         pkgs,
         lib,
         config,
@@ -270,7 +269,6 @@
 
               max-length = 12;
 
-              on-click = lib.getExe inputs'.myown.legacyPackages.wofi-bluetooth;
               on-click-right = "bluetoothctl disconnect";
             };
 
@@ -286,7 +284,6 @@
 
               max-length = 12;
 
-              on-click = lib.getExe inputs'.myown.legacyPackages.wofi-bluetooth;
               on-click-right = "bluetoothctl disconnect";
             };
 

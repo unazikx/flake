@@ -50,16 +50,7 @@
         programs.helium = {
           enable = true;
 
-          extensions = lib.attrValues (
-            import (
-              lib.concatStringsSep "/" [
-                inputs.myown
-                "packages"
-                "helium-addons"
-                "output.nix.hidden"
-              ]
-            )
-          );
+          extensions = [ ];
 
           extraPolicies = {
             HomepageLocation =

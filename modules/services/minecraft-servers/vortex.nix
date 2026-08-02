@@ -6,13 +6,13 @@
   zen.services.minecraft-servers.vortex = {
     nixos =
       {
-        inputs',
+        self',
         pkgs,
         lib,
         ...
       }:
       let
-        modpack = inputs'.myown.legacyPackages.games.vortex;
+        modpack = self'.legacyPackages.minecraft-servers.vortex;
       in
       {
         services.minecraft-servers.servers = {

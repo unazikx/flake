@@ -21,7 +21,7 @@ python312Packages.buildPythonApplication (_old: {
     python312Packages.hatchling
   ];
 
-  dependencies = [
+  dependencies = lib.flatten [
     # keep-sorted start
     python312Packages.attrs
     python312Packages.hatchling

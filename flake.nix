@@ -185,17 +185,6 @@
       };
     };
 
-    myown = {
-      type = "github";
-      owner = "unazikx";
-      repo = "nix-packages";
-      inputs = {
-        flake-parts.follows = "flake-parts";
-        nixpkgs-unstable.follows = "nixpkgs";
-        nur.follows = "nur";
-      };
-    };
-
     nilla-cli = {
       type = "github";
       owner = "nilla-nix";

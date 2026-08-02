@@ -6,6 +6,7 @@
   zen.hosts.jetpure = {
     nixos =
       {
+        self',
         inputs',
         pkgs,
         lib,
@@ -96,8 +97,6 @@
 
         fonts.packages = [
           # keep-sorted start
-          inputs'.myown.legacyPackages.fonts.gost
-          inputs'.myown.legacyPackages.fonts.segoe
           pkgs.arkpandora_ttf
           pkgs.corefonts
           pkgs.gelasio
@@ -106,6 +105,8 @@
           pkgs.monocraft
           pkgs.noto-fonts
           pkgs.noto-fonts-cjk-sans
+          self'.legacyPackages.fonts.gost
+          self'.legacyPackages.fonts.segoe
           # keep-sorted end
         ];
       };

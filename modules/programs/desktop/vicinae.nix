@@ -41,7 +41,6 @@
             #   };
             # };
 
-            close_on_focus_loss = true;
             pop_on_backspace = true;
 
             providers = {

@@ -11,15 +11,10 @@
 
     homeManager =
       {
-        inputs',
         pkgs,
         ...
       }:
       {
-        home.packages = [
-          inputs'.myown.legacyPackages.rbw-fzf
-        ];
-
         programs.rbw = {
           enable = true;
 
@@ -32,9 +27,7 @@
           };
         };
 
-        dbus.packages = [
-          pkgs.gcr
-        ];
+        dbus.packages = [ pkgs.gcr ];
       };
   };
 }

@@ -16,7 +16,7 @@
 
     homeManager =
       {
-        inputs',
+        self',
         config,
         ...
       }:
@@ -24,7 +24,7 @@
         programs.ayugram-desktop = {
           enable = true;
 
-          themePackage = inputs'.myown.legacyPackages.walogram;
+          themePackage = self'.legacyPackages.walogram;
 
           settings = {
             # keep-sorted start block=yes

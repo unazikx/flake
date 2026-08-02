@@ -18,7 +18,7 @@
 
     homeManager =
       {
-        inputs',
+        self',
         lib,
         config,
         ...
@@ -97,7 +97,7 @@
                 }
 
                 {
-                  text = "cmd[update:1000] ${lib.getExe inputs'.myown.legacyPackages.hyprlock-battery}";
+                  text = "cmd[update:1000] ${lib.getExe self'.legacyPackages.hyprlock-battery}";
                   color = "rgb(${colors.base05})";
                   font_family = fonts.sansSerif.name;
                   font_size = fonts.sizes.applications;
