@@ -5,18 +5,11 @@
 {
   flake-file.inputs = {
     # keep-sorted start block=yes newline_separated=yes
-    vicinae = {
-      type = "github";
-      owner = "vicinaehq";
-      repo = "vicinae";
-    };
-
     vicinae-extensions = {
       type = "github";
       owner = "vicinaehq";
       repo = "extensions";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.vicinae.follows = "vicinae";
     };
     # keep-sorted end
   };
@@ -28,7 +21,6 @@
 
     homeManager =
       {
-        inputs,
         inputs',
         pkgs,
         config,
@@ -38,17 +30,15 @@
         extensions = inputs'.vicinae-extensions.packages;
       in
       {
-        imports = [
-          inputs.vicinae.homeManagerModules.default
-        ];
-
         programs.vicinae = {
           enable = true;
           package = pkgs.vicinae;
 
           settings = {
-            # launcher_window.compact_mode = {
-            #   enabled = true;
+            # launcher_window = {
+            #   compact_mode = {
+            #     enabled = true;
+            #   };
             # };
 
             providers = {
@@ -64,25 +54,29 @@
 
           extensions = [
             # keep-sorted start block=yes
+            extensions.bitwarden
             extensions.color-converter
             extensions.firefox
             extensions.keepassxc
-            extensions.nix
+            extensions.player-pilot
             extensions.protondb-search
+            extensions.pulseaudio
             extensions.timer
-            extensions.wallhaven
-            extensions.wikipedia
             extensions.zoxide-recent-directories
+            # keep-sorted end
+
+            # https://www.raycast.com/store
+            # keep-sorted start block=yes newline_separated=yes
+            # (config.lib.vicinae.mkRayCastExtension {
+            #   name = "youtube";
+            #   src = "${inputs.raycast-extensions}/extensions/youtube";
+            # })
             # keep-sorted end
           ];
 
           systemd = {
             enable = true;
             autoStart = true;
-
-            environment = {
-              USE_LAYER_SHELL = 1;
-            };
           };
         };
       };
