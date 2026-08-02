@@ -38,12 +38,13 @@
 
   perSystem =
     {
+      config,
       system,
       ...
     }:
     {
       pkgsDirectory = "${self}/packages";
-      # pkgsNameSeparator = ".";
+      pkgsNameSeparator = "/";
 
       _module.args.pkgs = import inputs.nixpkgs {
         inherit
@@ -53,6 +54,11 @@
         config.allowUnfree = true;
         overlays = [
           inputs.nur.overlays.default
+          (_new: _prev: {
+            self = self;
+            system = system;
+            local = config.packages;
+          })
         ];
       };
     };

@@ -1,10 +1,11 @@
 {
-  writeText,
+  writeShellApplication,
 }:
 
-writeText "gamepad-rumble"
-  # python
-  ''
+writeShellApplication {
+  name = "rumble-py";
+
+  text = ''
     import sys, time
     from evdev import InputDevice, ff, ecodes
 
@@ -27,4 +28,5 @@ writeText "gamepad-rumble"
     dev.write(ecodes.EV_FF, eid, count)
     time.sleep((length + delay) * count / 1000 + 0.05)
     dev.erase_effect(eid)
-  ''
+  '';
+}

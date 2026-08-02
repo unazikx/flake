@@ -14,7 +14,7 @@ writeShellApplication {
     evsieve
   ];
 
-  text = /* shell */ ''
+  text = ''
     GAMEPAD_PATH="/dev/input/xbox_gamepad"
 
     while [ ! -e "$GAMEPAD_PATH" ];
