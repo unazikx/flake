@@ -13,7 +13,7 @@
       }:
       let
         colors = config.lib.stylix.colors.withHashtag;
-        myown = self'.legacyPackages.firefox-addons;
+        extensions = self'.legacyPackages.firefox-addons;
       in
       {
         programs.librewolf = {
@@ -23,22 +23,22 @@
 
               packages = [
                 # keep-sorted start
-                myown.bitwarden-password-manager
-                myown.darkreader
-                myown.ipfs-companion
-                myown.keepassxc-browser
-                myown.libredirect
-                myown.mal-sync
-                myown.protondb-for-steam
-                myown.redirectnixwiki
-                myown.sponsorblock
-                myown.steam-database
-                myown.styl-us
-                myown.torrserver-adder
-                myown.traduzir-paginas-web
-                myown.ublock-origin
-                myown.voice-over-translation
-                myown.youtube-addon
+                extensions.bitwarden-password-manager
+                extensions.darkreader
+                extensions.ipfs-companion
+                extensions.keepassxc-browser
+                extensions.libredirect
+                extensions.mal-sync
+                extensions.protondb-for-steam
+                extensions.redirectnixwiki
+                extensions.sponsorblock
+                extensions.steam-database
+                extensions.styl-us
+                extensions.torrserver-adder
+                extensions.traduzir-paginas-web
+                extensions.ublock-origin
+                extensions.voice-over-translation
+                extensions.youtube-addon
                 # keep-sorted end
               ];
 
