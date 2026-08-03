@@ -56,6 +56,10 @@
               selection-background-corner-radius = 18;
             };
         };
+
+        stylix.targets = {
+          tofi.enable = false;
+        };
       };
   };
 }

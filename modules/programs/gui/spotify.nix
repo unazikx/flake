@@ -138,6 +138,10 @@
             # keep-sorted end
           };
         };
+
+        stylix.targets = {
+          spicetify.enable = false;
+        };
       };
   };
 }

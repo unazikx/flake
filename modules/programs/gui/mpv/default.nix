@@ -84,6 +84,10 @@
           "video/x-theora" = "mpv.desktop";
           "video/x-theora+ogg" = "mpv.desktop";
         };
+
+        stylix.targets = {
+          mpv.enable = false;
+        };
       };
   };
 }

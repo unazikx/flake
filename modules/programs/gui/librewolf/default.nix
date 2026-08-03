@@ -45,6 +45,7 @@
         pkgs,
         lib,
         config,
+        user,
         ...
       }:
       {
@@ -54,6 +55,13 @@
           nativeMessagingHosts = lib.flatten [
             (lib.optionals config.programs.keepassxc.enable pkgs.keepassxc)
           ];
+        };
+
+        stylix.targets = {
+          librewolf = {
+            colorTheme.enable = true;
+            profileNames = [ user.userName ];
+          };
         };
       };
   };

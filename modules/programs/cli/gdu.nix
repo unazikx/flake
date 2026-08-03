@@ -73,6 +73,10 @@
                 - /run
             '';
         };
+
+        stylix.targets = {
+          gdu.enable = false;
+        };
       };
   };
 }

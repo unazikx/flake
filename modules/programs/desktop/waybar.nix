@@ -18,6 +18,14 @@
           enable = true;
           systemd.enable = true;
         };
+
+        stylix.targets = {
+          waybar = {
+            enableLeftBackColors = true;
+            enableCenterBackColors = true;
+            enableRightBackColors = true;
+          };
+        };
       };
   };
 }

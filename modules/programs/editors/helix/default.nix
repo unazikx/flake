@@ -47,6 +47,10 @@
             # keep-sorted end
           ];
         };
+
+        stylix.targets = {
+          helix.enable = false;
+        };
       };
   };
 }

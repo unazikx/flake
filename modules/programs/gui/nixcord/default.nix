@@ -47,6 +47,10 @@
 
           discord.enable = false; # why?
         };
+
+        stylix.targets = {
+          nixcord.enable = false;
+        };
       };
   };
 }
