@@ -38,12 +38,21 @@
                 tag = "Finland";
                 urlFile = config.sops.secrets."vpn/finland".path;
               }
+              {
+                tag = "Sweden";
+                urlFile = config.sops.secrets."vpn/sweden".path;
+              }
+              {
+                tag = "Kazakhstan";
+                urlFile = config.sops.secrets."vpn/kazakhstan".path;
+              }
             ];
 
             subscriptions = [
+              # https://github.com/AvenCores/goida-vpn-configs/blob/main/source/config/urls.json
               {
-                tag = "MIFA-Vless";
-                urlFile = config.sops.secrets."vpn/mifa/vless".path;
+                tag = "OpenProxyList";
+                url = "https://raw.githubusercontent.com/roosterkid/openproxylist/main/V2RAY_RAW.txt";
               }
             ];
           };
@@ -73,6 +82,8 @@
 
         sops.secrets = {
           "vpn/finland" = { };
+          "vpn/kazakhstan" = { };
+          "vpn/sweden" = { };
           "vpn/mifa/vless" = { };
         };
       };
