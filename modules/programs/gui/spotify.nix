@@ -34,7 +34,7 @@
       }:
       let
         colors = config.lib.stylix.colors;
-        addons = inputs'.spicetify-nix.legacyPackages;
+        spicetify = inputs'.spicetify-nix.legacyPackages;
       in
       {
         imports = [
@@ -48,7 +48,7 @@
           windowManagerPatch = true;
           wayland = true;
 
-          theme = addons.themes.sleek // {
+          theme = spicetify.themes.sleek // {
             additionalCss =
               # css
               ''
@@ -60,43 +60,48 @@
 
           enabledExtensions = [
             # keep-sorted start
-            addons.extensions.adblock
-            addons.extensions.beautifulLyrics
-            addons.extensions.betterGenres
-            addons.extensions.keyboardShortcut
-            addons.extensions.seekSong
+            spicetify.extensions.adblock
+            spicetify.extensions.beautifulLyrics
+            spicetify.extensions.betterGenres
+            spicetify.extensions.copyToClipboard
+            spicetify.extensions.focusMode
+            spicetify.extensions.keyboardShortcut
+            spicetify.extensions.lastfm
+            spicetify.extensions.madeForYouShortcut
+            spicetify.extensions.queueTime
+            spicetify.extensions.seekSong
             # keep-sorted end
           ];
 
           enabledSnippets = [
             # keep-sorted start
-            addons.snippets.betterLyricsStyle
-            addons.snippets.centeredLyrics
-            addons.snippets.fixDjIcon
-            addons.snippets.fixLikedButton
-            addons.snippets.fixLikedIcon
-            addons.snippets.fixNowPlayingIcon
-            addons.snippets.fixPlaylistAndFolderPosition
-            addons.snippets.fixPlaylistHover
-            addons.snippets.fixProgressBar
-            addons.snippets.fixedEpisodesIcon
-            addons.snippets.hideDownloadButton
-            addons.snippets.hideFriendActivityButton
-            addons.snippets.hideFullScreenButton
-            addons.snippets.hideMiniPlayerButton
-            addons.snippets.hideNowPlayingViewButton
-            addons.snippets.hidePlayCount
-            addons.snippets.hidePlayingGif
-            addons.snippets.hideProfileUsername
-            addons.snippets.hideSidebarScrollbar
-            addons.snippets.moreVisibleUnplayableTracks
-            addons.snippets.prettyLyrics
-            addons.snippets.queueTopSidePanel
-            addons.snippets.removeGradient
-            addons.snippets.removeTheArtistsAndCreditsSectionsFromTheSidebar
-            addons.snippets.removeTopSpacing
-            addons.snippets.roundedImages
-            addons.snippets.roundedNowPlaying
+            spicetify.snippets.betterLyricsStyle
+            spicetify.snippets.centeredLyrics
+            spicetify.snippets.fixDjIcon
+            spicetify.snippets.fixLikedButton
+            spicetify.snippets.fixLikedIcon
+            spicetify.snippets.fixNowPlayingIcon
+            spicetify.snippets.fixPlaylistAndFolderPosition
+            spicetify.snippets.fixPlaylistHover
+            spicetify.snippets.fixProgressBar
+            spicetify.snippets.fixedEpisodesIcon
+            spicetify.snippets.hideDownloadButton
+            spicetify.snippets.hideFriendActivityButton
+            spicetify.snippets.hideFullScreenButton
+            spicetify.snippets.hideMiniPlayerButton
+            spicetify.snippets.hideNowPlayingViewButton
+            spicetify.snippets.hidePlayCount
+            spicetify.snippets.hidePlayingGif
+            spicetify.snippets.hideProfileUsername
+            spicetify.snippets.hideSidebarScrollbar
+            spicetify.snippets.moreVisibleUnplayableTracks
+            spicetify.snippets.prettyLyrics
+            spicetify.snippets.queueTopSidePanel
+            spicetify.snippets.removeGradient
+            spicetify.snippets.removeTheArtistsAndCreditsSectionsFromTheSidebar
+            spicetify.snippets.removeTopSpacing
+            spicetify.snippets.roundedImages
+            spicetify.snippets.roundedNowPlaying
             # keep-sorted end
           ];
 
