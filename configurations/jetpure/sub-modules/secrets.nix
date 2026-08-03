@@ -22,6 +22,7 @@
           "services/telegram-ws" = { };
           "services/vaultwarden" = { };
           "vpn/finland" = { };
+          "vpn/mifa/vless" = { };
           # keep-sorted end
         };
       };

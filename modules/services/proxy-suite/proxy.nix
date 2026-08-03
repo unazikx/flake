@@ -39,6 +39,13 @@
                 urlFile = config.sops.secrets."vpn/finland".path;
               }
             ];
+
+            subscriptions = [
+              {
+                tag = "MIFA-Vless";
+                urlFile = config.sops.secrets."vpn/mifa/vless".path;
+              }
+            ];
           };
 
           perAppRouting = {
