@@ -99,7 +99,6 @@
           };
 
           extraConfig =
-            with config.lib.stylix.colors.withHashtag;
             # sway
             ''
               corner_radius 10
@@ -109,7 +108,7 @@
 
               shadows disable
               shadows_on_csd enable
-              shadow_color ${base00}
+              shadow_color ${colors.base00}
               shadow_blur_radius 12
 
               default_dim_inactive 0.4
