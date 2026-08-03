@@ -9,10 +9,10 @@ yaziPlugins.mkYaziPlugin {
   version = "git";
 
   src = fetchFromGitHub {
-    owner = "JohWQ";
+    owner = "twempi";
     repo = "convert.yazi";
-    rev = "91b921a0430c3670437b680e2fbf5ce66ea61d93";
-    hash = "sha256-bWhqg8m6Ea19JI8gYg7H6oC0Ely+ky9ck/jT6oUEKNQ=";
+    rev = "97946adfc3ab769c4586a9c1780c475c6699f820";
+    hash = "sha256-cD4s1NXz09+DmBcYb95OMUez1RMiro7Y4YzRPKI0wtA=";
   };
 
   meta = {
