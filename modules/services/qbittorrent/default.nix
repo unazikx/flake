@@ -98,6 +98,11 @@
           ];
         };
 
+        sops.secrets = {
+          "services/qbittorrent/password" = { };
+          "services/qbittorrent/username" = { };
+        };
+
         sops.secrets."services/qbittorrent/username" = {
           owner = cfg.user;
           reloadUnits = [ "qbittorrent.service" ];

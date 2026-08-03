@@ -68,6 +68,11 @@
           ];
         };
 
+        sops.secrets = {
+          "programs/git/mail" = { };
+          "programs/git/user" = { };
+        };
+
         sops.templates."git-user" = {
           content = ''
             [user]

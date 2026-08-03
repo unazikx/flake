@@ -88,6 +88,10 @@
             };
           };
         };
+
+        sops.secrets = {
+          "services/mpd" = { };
+        };
       };
   };
 }

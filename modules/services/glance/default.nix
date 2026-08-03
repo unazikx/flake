@@ -34,6 +34,10 @@
           environmentFile = config.sops.secrets."services/glance".path;
         };
 
+        sops.secrets = {
+          "services/glance" = { };
+        };
+
         services.caddy.virtualHosts =
           lib.genAttrs
             [

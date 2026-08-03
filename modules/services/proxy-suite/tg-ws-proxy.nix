@@ -25,6 +25,10 @@
             secretFile = config.sops.secrets."services/telegram-ws".path;
           };
         };
+
+        sops.secrets = {
+          "services/telegram-ws" = { };
+        };
       };
   };
 }

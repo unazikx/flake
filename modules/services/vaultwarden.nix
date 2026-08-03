@@ -58,6 +58,10 @@
               '';
             });
 
+        sops.secrets = {
+          "services/vaultwarden" = { };
+        };
+
         sops.secrets."services/vaultwarden" = {
           reloadUnits = [ "vaultwarden.service" ];
         };

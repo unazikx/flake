@@ -11,7 +11,7 @@
 
     user =
       {
-        lib,
+        config,
         user,
         ...
       }:
@@ -21,10 +21,7 @@
         home = "/home/${user.userName}";
         createHome = true;
 
-        hashedPasswordFile = lib.mkDefault (throw ''
-          Please, set up <users.users.userName.hashedPasswordFile>.
-          $ mkpasswd
-        '');
+        hashedPasswordFile = config.sops.secrets."password/${user.userName}".path;
       };
   };
 }

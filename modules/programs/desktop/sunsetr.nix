@@ -79,6 +79,10 @@
             };
           };
         };
+
+        sops.secrets = {
+          "services/sunsetr" = { };
+        };
       };
   };
 }

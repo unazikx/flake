@@ -57,6 +57,10 @@
           # just a plain file ^^^
         };
 
+        sops.secrets = {
+          "services/minecraft/environment" = { };
+        };
+
         sops.secrets."services/minecraft/environment" = {
           owner = lib.mkForce cfg.user;
 

@@ -1,9 +1,14 @@
 {
+  zen,
   ...
 }:
 
 {
-  zen.users.nixzoid = {
+  zen.hosts.jetpure = {
+    includes = [
+      zen.miscellaneous.users
+    ];
+
     nixos =
       {
         ...
@@ -12,30 +17,12 @@
         sops.defaultSopsFile = ./_secrets.yaml;
 
         sops.secrets = {
-          # keep-sorted start block=yes
           "password/nixzoid" = { };
-          "services/glance" = { };
-          "services/minecraft/environment" = { };
-          "services/qbittorrent/flood" = { };
-          "services/qbittorrent/password" = { };
-          "services/qbittorrent/username" = { };
-          "services/telegram-ws" = { };
-          "services/vaultwarden" = { };
-          "vpn/finland" = { };
-          "vpn/mifa/vless" = { };
-          # keep-sorted end
         };
       };
+  };
 
-    user =
-      {
-        config,
-        ...
-      }:
-      {
-        hashedPasswordFile = config.sops.secrets."password/nixzoid".path;
-      };
-
+  zen.users.nixzoid = {
     homeManager =
       {
         config,
@@ -47,17 +34,6 @@
         '';
 
         sops.defaultSopsFile = ./_secrets.yaml;
-
-        sops.secrets = {
-          # keep-sorted start block=yes
-          "programs/cachix" = { };
-          "programs/git/mail" = { };
-          "programs/git/user" = { };
-          "programs/github" = { };
-          "services/mpd" = { };
-          "services/sunsetr" = { };
-          # keep-sorted end
-        };
 
         sops.templates = {
           "nix-access-tokens" = {

@@ -70,6 +70,10 @@
               '';
             });
 
+        sops.secrets = {
+          "services/qbittorrent/flood" = { };
+        };
+
         sops.secrets."services/qbittorrent/flood" = {
           reloadUnits = [
             "qbittorrent.service"

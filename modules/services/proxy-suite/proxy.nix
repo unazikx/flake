@@ -70,6 +70,11 @@
             ];
           };
         };
+
+        sops.secrets = {
+          "vpn/finland" = { };
+          "vpn/mifa/vless" = { };
+        };
       };
   };
 }
