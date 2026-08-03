@@ -81,6 +81,11 @@
                 id = 325210;
               };
 
+              "Balatro" = {
+                id = 2379780;
+                language = "russian";
+              };
+
               "Baldurs Gate 3" = {
                 id = 1086940;
                 language = "russian";
