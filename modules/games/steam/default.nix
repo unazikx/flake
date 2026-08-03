@@ -34,6 +34,7 @@
 
     nixos =
       {
+        self',
         pkgs,
         ...
       }:
@@ -43,7 +44,7 @@
             enable = true;
 
             extraCompatPackages = [
-              pkgs.proton-ge-bin-patched
+              self'.legacyPackages.proton.ge-patched
             ];
 
             remotePlay.openFirewall = true;
@@ -77,8 +78,8 @@
 
     homeManagerNixos =
       {
+        self',
         inputs,
-        pkgs,
         lib,
         osConfig,
         ...
@@ -93,7 +94,7 @@
           onSteamRunning = "close";
           # ^^^ close Steam and apply the changes, waiting for any running games to exit first
 
-          defaultCompatTool = pkgs.proton-ge-bin-patched;
+          defaultCompatTool = self'.legacyPackages.proton.ge-patched;
         };
 
         systemd.user.services = {

@@ -13,6 +13,7 @@
 
     homeManager =
       {
+        self',
         pkgs,
         lib,
         config,
@@ -20,6 +21,7 @@
         ...
       }:
       let
+        colors = config.lib.stylix.colors.withHashtag;
         json = pkgs.formats.json { };
       in
       {
@@ -29,7 +31,7 @@
 
         xdg.configFile = lib.mkMerge [
           # heroic
-          (with config.lib.stylix.colors.withHashtag; {
+          {
             "heroic/config.json".source = json.generate "heroic-config.json" {
               userHome = config.home.homeDirectory;
               defaultSettings = {
@@ -72,7 +74,7 @@
                 wineCrossoverBottle = "Heroic";
                 winePrefix = "${config.xdg.userDirs.publicShare}/wine-prefix";
                 wineVersion = {
-                  bin = "${pkgs.proton-ge-bin-patched.steamcompattool}/proton";
+                  bin = "${self'.legacyPackages.proton.ge-patched.steamcompattool}/proton";
                   name = "GE-Proton";
                   type = "proton";
                 };
@@ -118,53 +120,53 @@
               # css
               ''
                 body.stylix {
-                  --accent: ${base09};
+                  --accent: ${colors.base09};
                   --accent-overlay: var(--accent);
 
                   --action-icon-active: var(--accent);
                   --action-icon-hover: var(--text-default);
                   --action-icon: var(--navbar-accent);
                   
-                  --anticheat-broken: ${base0A};
+                  --anticheat-broken: ${colors.base0A};
                   --anticheat-denied: var(--danger);
-                  --anticheat-planned: ${base0E};
+                  --anticheat-planned: ${colors.base0E};
                   --anticheat-running: var(--text-default);
-                  --anticheat-supported: ${base0B};
+                  --anticheat-supported: ${colors.base0B};
                   
-                  --background: ${base00};
-                  --background-darker: ${base01};
-                  --background-secondary: ${base01};
-                  --background-lighter: ${base02};
+                  --background: ${colors.base00};
+                  --background-darker: ${colors.base01};
+                  --background-secondary: ${colors.base01};
+                  --background-lighter: ${colors.base02};
 
-                  --danger: ${base0F};
-                  --danger-hover: ${base08};
+                  --danger: ${colors.base0F};
+                  --danger-hover: ${colors.base08};
 
-                  --icon-disabled: ${base04};
+                  --icon-disabled: ${colors.base04};
                   --icons-background: var(--background-lighter);
 
                   --modal-background: var(--body-background);
                   --modal-border: var(--body-background);
 
-                  --navbar-accent: ${base04};
-                  --navbar-active-background: ${base01};
+                  --navbar-accent: ${colors.base04};
+                  --navbar-active-background: ${colors.base01};
                   --navbar-active: var(--accent);
                   --navbar-background: var(--background);
 
                   --neutral-06: var(--text-default);
 
-                  --primary: ${base08};
-                  --primary-hover: ${base09};
+                  --primary: ${colors.base08};
+                  --primary-hover: ${colors.base09};
 
-                  --success: ${base0C};
-                  --success-hover: ${base0B};
+                  --success: ${colors.base0C};
+                  --success-hover: ${colors.base0B};
 
-                  --text-default: ${base05};
+                  --text-default: ${colors.base05};
                   --text-secondary: var(--text-default);
                   --text-tertiary: var(--background);
                   --text-title: var(--text-default);
 
                   --body-background: var(--background-darker);
-                  --cancel-button: ${base08};
+                  --cancel-button: ${colors.base08};
                   --current-background: var(--body-background);
                   --input-background: var(--background);
                 }
@@ -175,7 +177,7 @@
               filename = "stylix.css";
               author = "${user.userName}";
             };
-          })
+          }
         ];
       };
   };

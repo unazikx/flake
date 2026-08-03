@@ -11,17 +11,18 @@
 
     homeManager =
       {
-        pkgs,
+        self',
+        config,
         ...
       }:
       {
         programs.lutris = {
           enable = true;
 
-          defaultWinePackage = pkgs.proton-ge-bin-patched;
+          defaultWinePackage = self'.legacyPackages.proton.ge-patched;
 
           protonPackages = [
-            pkgs.proton-ge-bin-patched
+            config.programs.lutris.defaultWinePackage
           ];
         };
       };
