@@ -49,7 +49,17 @@
             ];
           };
 
+          removeFiles = {
+            prefix = [
+              "drive_c/vrclient"
+            ];
+
+            install = [ ];
+          };
+
           files = {
+            prefix = { };
+
             install = { };
           };
         };
