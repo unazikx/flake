@@ -80,6 +80,8 @@
               }
             ];
           };
+
+          zapret.perApp.enable = true;
         };
 
         sops.secrets = {
