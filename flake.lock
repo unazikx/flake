@@ -1534,11 +1534,11 @@
         "scroll-stable": "scroll-stable"
       },
       "locked": {
-        "lastModified": 1784337818,
-        "narHash": "sha256-aT5fhsNuofBKzTrINxMdLDCJ3OxRPm9Bg3oMGUUYww4=",
+        "lastModified": 1785806658,
+        "narHash": "sha256-u/oxE75H8pSue7UnHIXohBmgGp/F339V2UbVde9cxdE=",
         "owner": "diax170",
         "repo": "scroll-flake",
-        "rev": "f2c21d8753e40d1b140c0b85518b8d8338fb1258",
+        "rev": "acbb5ff007f8f9dea4c7c67e42908f9db6111858",
         "type": "github"
       },
       "original": {
@@ -1550,11 +1550,11 @@
     "scroll-git": {
       "flake": false,
       "locked": {
-        "lastModified": 1784288138,
-        "narHash": "sha256-OyfQU+j/ox9OJhaVXAEDJQUErgneeV67eObUMs/ReZs=",
+        "lastModified": 1785788204,
+        "narHash": "sha256-UrycX0/ISWfwuxrYgAzFc4SFi65HZpwcsXxEgtcyR+E=",
         "owner": "dawsers",
         "repo": "scroll",
-        "rev": "262b38c83e305cd646ac0b86daf38bd550cab64d",
+        "rev": "b76d4282de28d0c8cf05d1f937e910b212acd434",
         "type": "github"
       },
       "original": {
@@ -1567,16 +1567,16 @@
     "scroll-stable": {
       "flake": false,
       "locked": {
-        "lastModified": 1779743761,
-        "narHash": "sha256-NbeQO+iVgpzD/R9TBhqG9T0eS/Hpn5FVqCg+upS5cSQ=",
+        "lastModified": 1784288138,
+        "narHash": "sha256-OyfQU+j/ox9OJhaVXAEDJQUErgneeV67eObUMs/ReZs=",
         "owner": "dawsers",
         "repo": "scroll",
-        "rev": "03cc80e83294913b7289dcc6607a406a2a5c67ac",
+        "rev": "262b38c83e305cd646ac0b86daf38bd550cab64d",
         "type": "github"
       },
       "original": {
         "owner": "dawsers",
-        "ref": "refs/tags/1.12.15",
+        "ref": "refs/tags/1.12.17",
         "repo": "scroll",
         "type": "github"
       }

@@ -19,6 +19,8 @@
 
           settings = {
             behavior = {
+              enable_global_song_count = false;
+
               startup_route = "home";
 
               sidebar_position = "hidden";
