@@ -135,8 +135,8 @@
               };
 
               "Burnout Paradise: Remastered" = {
-                compatTool = "GE-Proton";
                 id = 1238080;
+                compatTool = "GE-Proton";
                 language = "russian";
                 launchOptions = {
                   args = [ "-skipvideos" ];
@@ -165,8 +165,8 @@
               };
 
               "City Car Driving" = {
-                compatTool = "proton_8";
                 id = 493490;
+                compatTool = "proton_8";
               };
 
               "Clownfield" = {
@@ -284,8 +284,8 @@
 
               "Duck Game" = {
                 # https://www.protondb.com/app/312530#VBbR6m5Ilw
-                compatTool = "proton_8";
                 id = 312530;
+                compatTool = "proton_8";
               };
 
               "Dusk" = {
@@ -526,8 +526,8 @@
               };
 
               "Pathogenic" = {
-                compatTool = null;
                 id = 3808690;
+                compatTool = null;
               };
 
               "Plastic Warfare" = {
@@ -752,6 +752,7 @@
                 # keep-sorted start block=yes newline_separated=yes
                 "Beyond Sunset" = {
                   id = 1665260;
+                  compatTool = null;
                   launchOptionsStr = "${lib.getExe pkgs.gzdoom} -iwad %command%";
                 };
                 # keep-sorted end
