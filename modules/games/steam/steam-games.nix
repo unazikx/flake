@@ -12,6 +12,7 @@
 
     homeManagerNixos =
       {
+        pkgs,
         lib,
         config,
         osConfig,
@@ -67,12 +68,7 @@
       {
         programs.steam.config = {
           apps = lib.mkMerge [
-            (lib.mkGames {
-              launchOptions = {
-                env.STEAM_COMPAT_DATA_PATH = "${steamapps}/compatdata/0";
-              };
-            } { })
-
+            # default launch options
             (lib.mkGames defaultParameters {
               # keep-sorted start block=yes newline_separated=yes
               "Abiotic Factor" = {
@@ -304,6 +300,10 @@
               "Elite Dangerous" = {
                 id = 359320;
                 language = "russian";
+              };
+
+              "Enter The Chronosphere" = {
+                id = 1969810;
               };
 
               "Enter The Gungeon" = {
@@ -573,6 +573,10 @@
                 id = 1592280;
               };
 
+              "Sephiria" = {
+                id = 2436940;
+              };
+
               "Serious Sam Tormental" = {
                 id = 640340;
               };
@@ -639,6 +643,10 @@
 
               "TABS" = {
                 id = 508440;
+              };
+
+              "Tales of the Neon Sea" = {
+                id = 828740;
               };
 
               "Terraria" = {
@@ -734,6 +742,28 @@
               };
               # keep-sorted end
             })
+
+            # launch specific games
+            (lib.mkGames
+              (lib.removeAttrs defaultParameters [
+                "launchOptions"
+              ])
+              {
+                # keep-sorted start block=yes newline_separated=yes
+                "Beyond Sunset" = {
+                  id = 1665260;
+                  launchOptionsStr = "${lib.getExe pkgs.gzdoom} -iwad %command%";
+                };
+                # keep-sorted end
+              }
+            )
+
+            # games for inified prefix
+            (lib.mkGames {
+              launchOptions = {
+                env.STEAM_COMPAT_DATA_PATH = "${steamapps}/compatdata/0";
+              };
+            } { })
           ];
         };
       };
