@@ -14,6 +14,8 @@
           proxy = {
             enable = true;
 
+            selection = "selector";
+
             listenAddress = "0.0.0.0";
             port = 1080;
 

@@ -9,7 +9,7 @@ python312Packages.buildPythonApplication {
   version = "git";
 
   src = writeTextFile {
-    name = "hasher";
+    name = "hasher-raw";
 
     text =
       # python

@@ -9,7 +9,7 @@ python312Packages.buildPythonApplication {
   version = "git";
 
   src = writeTextFile {
-    name = "hasher";
+    name = "rbw-filler-raw";
 
     text =
       # python
@@ -144,7 +144,7 @@ python312Packages.buildPythonApplication {
   format = "other";
 
   installPhase = ''
-    install -Dm755 $src $out/bin/hasher
+    install -Dm755 $src $out/bin/rbw-filler
   '';
 
   meta = {
