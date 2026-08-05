@@ -716,6 +716,10 @@
                   id = 41500;
                 };
 
+                "Untitled Goose Game" = {
+                  id = 837470;
+                };
+
                 "Valheim" = {
                   id = 892970;
                 };
