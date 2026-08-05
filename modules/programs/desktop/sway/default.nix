@@ -21,6 +21,7 @@
       zen.programs.desktop.sway.rules
       zen.programs.desktop.sway.settings
       zen.programs.desktop.tofi
+      zen.programs.desktop.wayshot
       zen.programs.desktop.wob
       zen.programs.terminal.foot
     ];
@@ -57,7 +58,7 @@
         };
       };
 
-    homeManager =
+    homeManagerNixos =
       {
         pkgs,
         config,

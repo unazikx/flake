@@ -65,13 +65,11 @@
 
             (
               let
-                pictures = "${config.xdg.userDirs.pictures}/$(date +'scr_%d-%m-%y_%H:%M:%S.png')";
-                screenshot = mode: "exec ${lib.getExe pkgs.sway-contrib.grimshot} savecopy ${mode} ${pictures}";
+                screenshot = "exec ${lib.getExe config.programs.wayshot.package}";
               in
               {
-                "Print" = screenshot "anything";
-                "Print+Shift" = screenshot "output";
-                "Print+Alt" = screenshot "active";
+                "Print" = "${screenshot} -g";
+                "Print+Shift" = screenshot;
               }
             )
 
