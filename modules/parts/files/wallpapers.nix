@@ -39,16 +39,12 @@ let
     };
 
   formatEntry = name: entry: ''
-    ---
-
     __${name}__ -> (${entry.page} - ${entry.original})
 
     ![${name}](${entry.small})
   '';
 
   formatTag = name: url: ''
-    ---
-
     __${name}__ -> (${url})
   '';
 
@@ -63,19 +59,15 @@ in
     {
       files.file."wallpapers.md" = {
         text = ''
-          # Wallpapers generated from https://wallhaven.cc
+          ## Wallpapers
 
           ${lib.concatStringsSep "\n\n" (lib.mapAttrsToList formatEntry list)}
-
-          ---
 
           ## Tags
 
           ${lib.concatStringsSep "\n\n" (lib.mapAttrsToList formatTag tags)}
 
-          ---
-
-          ## Total: ${toString (lib.length (lib.attrNames list))} wallpapers
+          ## Total: ${toString (lib.length (lib.attrNames list))} wallpapers from https://wallhaven.cc
         '';
       };
     };
