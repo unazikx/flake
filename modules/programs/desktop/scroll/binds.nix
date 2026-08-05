@@ -3,7 +3,7 @@
 }:
 
 {
-  zen.programs.desktop.sway.binds = {
+  zen.programs.desktop.scroll.binds = {
     homeManagerNixos =
       {
         lib,
@@ -11,10 +11,10 @@
         ...
       }:
       let
-        cfg = config.wayland.windowManager.sway;
+        cfg = config.wayland.windowManager.scroll;
       in
       {
-        wayland.windowManager.sway.config = {
+        wayland.windowManager.scroll.config = {
           keybindings = lib.mkMerge [
             (lib.concatMapAttrs
               (key: command: {
@@ -24,7 +24,7 @@
                 "q" = "kill";
                 "f" = "fullscreen";
 
-                "shift+space" = "floating toggle; " + "resize set 90 ppt 90 ppt";
+                "shift+space" = "floating toggle; resize set 90 ppt 90 ppt";
                 "alt+space" = "move position center";
 
                 "g" = "layout tabbed";
@@ -35,7 +35,7 @@
 
                 "p" = "move scratchpad";
                 "shift+P" = "scratchpad show";
-                "alt+P" = "scratchpad show; " + "floating toggle";
+                "alt+P" = "scratchpad show; floating toggle";
 
                 "home" = "exit";
                 "shift+home" = "reload";
@@ -101,30 +101,6 @@
                 down = "down";
                 up = "up";
                 right = "right";
-              }
-            )
-
-            (lib.concatMapAttrs
-              (key: axis: {
-                "${cfg.config.modifier}+ctrl+${key}" = "resize shrink ${axis} 10 px or 10 ppt";
-              })
-              {
-                h = "width";
-                j = "height";
-                left = "width";
-                down = "height";
-              }
-            )
-
-            (lib.concatMapAttrs
-              (key: axis: {
-                "${cfg.config.modifier}+ctrl+${key}" = "resize grow ${axis} 10 px or 10 ppt";
-              })
-              {
-                k = "height";
-                l = "width";
-                up = "height";
-                right = "width";
               }
             )
           ];

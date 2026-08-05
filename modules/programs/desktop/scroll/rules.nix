@@ -3,7 +3,7 @@
 }:
 
 {
-  zen.programs.desktop.sway.rules = {
+  zen.programs.desktop.scroll.rules = {
     homeManagerNixos =
       {
         config,
@@ -11,10 +11,10 @@
         ...
       }:
       let
-        cfg = config.wayland.windowManager.sway;
+        cfg = config.wayland.windowManager.scroll;
       in
       {
-        wayland.windowManager.sway.config = {
+        wayland.windowManager.scroll.config = {
           assigns = lib.mkMerge [
             (lib.mapAttrs
               (
@@ -84,7 +84,6 @@
               lib.flatten [
                 (mkRules "app_id" {
                   # keep-sorted start block=yes
-
                   "Choose Files" = [
                     "move position center"
                     "resize set 70 ppt 40 ppt"
@@ -117,7 +116,6 @@
                 })
                 (mkRules "title" {
                   # keep-sorted start block=yes
-
                   "Choose Files" = [
                     "floating enable"
                   ];

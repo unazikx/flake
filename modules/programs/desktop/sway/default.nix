@@ -15,6 +15,7 @@
       zen.programs.desktop.dunst
       zen.programs.desktop.i3status-rust
       zen.programs.desktop.sunsetr
+      zen.programs.desktop.sway.bar
       zen.programs.desktop.sway.binds
       zen.programs.desktop.swayidle
       zen.programs.desktop.swaylock

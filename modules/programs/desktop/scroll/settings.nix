@@ -3,10 +3,9 @@
 }:
 
 {
-  zen.programs.desktop.sway.settings = {
+  zen.programs.desktop.scroll.settings = {
     homeManagerNixos =
       {
-        pkgs,
         lib,
         config,
         ...
@@ -15,7 +14,7 @@
         colors = config.lib.stylix.colors.withHashtag;
       in
       {
-        wayland.windowManager.sway = {
+        wayland.windowManager.scroll = {
           config = {
             seat."*" = {
               # hide_cursor = mkSeconds 1;
@@ -39,10 +38,6 @@
             };
 
             startup = [
-              {
-                command = lib.getExe pkgs.autotiling-rs;
-                always = false;
-              }
               {
                 command = "AyuGram -startintray";
                 always = false;
@@ -96,23 +91,15 @@
                 text = colors.base05;
               };
             };
+
+            modes = lib.mkForce { };
           };
 
           extraConfig =
             # sway
             ''
-              corner_radius 10
-
-              blur enable
-              blur_xray off
-
-              shadows disable
-              shadows_on_csd enable
-              shadow_color ${colors.base00}
-              shadow_blur_radius 12
-
-              default_dim_inactive 0.4
-              layer_effects "waybar" shadows disable; corner_radius 0; blur disable
+              maximize_if_single true
+              scratchpad_minimize true
             '';
         };
       };

@@ -26,8 +26,14 @@
       zen.programs.desktop.clapboard
       zen.programs.desktop.dunst
       zen.programs.desktop.i3status-rust
+      zen.programs.desktop.scroll.bar
+      zen.programs.desktop.scroll.binds
+      zen.programs.desktop.scroll.rules
+      zen.programs.desktop.scroll.settings
+      zen.programs.desktop.scroll.specific
       zen.programs.desktop.sunsetr
       zen.programs.desktop.tofi
+      zen.programs.desktop.wayshot
       zen.programs.terminal.foot
     ];
 
@@ -70,75 +76,48 @@
 
     homeManagerNixos =
       {
+        inputs,
         pkgs,
-        lib,
-        config,
         osConfig,
         ...
       }:
-      let
-        colors = config.lib.stylix.colors.withHashtag;
-        fonts = config.stylix.fonts;
-        cfg = config.programs.scroll;
-      in
       {
-        programs.scroll = {
+        imports = [
+          inputs.scroll-flake.homeModules.default
+        ];
+
+        wayland.windowManager.scroll = {
           enable = true;
+
+          xwayland = true;
+          systemd.enable = true;
 
           package = osConfig.programs.scroll.package;
 
-          settings = lib.concatStringsSep "\n" [
-            ''
-              set $mod   Mod4
-              set $term  ${lib.getExe config.programs.foot.package "footclient"}
-              set $menu  ${lib.getExe config.programs.tofi.package "tofi-drun"} | xargs ${lib.getExe cfg.package "scrollmsg"} exec --
-            ''
-            (lib.readFile ./config)
-            ''
-              client.background        ${colors.base00}
-              client.focused           ${colors.base01} ${colors.base00} ${colors.base05} ${colors.base01} ${colors.base01}
-              client.focused_inactive  ${colors.base00} ${colors.base00} ${colors.base05} ${colors.base00} ${colors.base00}
-              client.unfocused         ${colors.base00} ${colors.base00} ${colors.base05} ${colors.base00} ${colors.base00}
-              client.urgent            ${colors.base08} ${colors.base00} ${colors.base05} ${colors.base08} ${colors.base08}
-              client.placeholder       ${colors.base01} ${colors.base00} ${colors.base05} ${colors.base01} ${colors.base01}
-
-              bar {
-                id        0
-                font      pango:${fonts.monospace.name} ${toString fonts.sizes.desktop}
-                mode      hide
-                position  bottom
-                
-                status_command ${lib.getExe config.programs.i3status-rust.package} ${
-                  lib.concatStringsSep "/" [
-                    config.xdg.configHome
-                    "i3status-rust"
-                    "config-default.toml"
-                  ]
-                }
-
-                colors {
-                  background          ${colors.base00}
-                  statusline          ${colors.base05}
-                  focused_workspace   ${colors.base01} ${colors.base01} ${colors.base04}
-                  active_workspace    ${colors.base00} ${colors.base00} ${colors.base05}
-                  inactive_workspace  ${colors.base00} ${colors.base00} ${colors.base03}
-                  urgent_workspace    ${colors.base00} ${colors.base08} ${colors.base00}
-                }
-              }
-            ''
-          ];
+          checkConfig = false;
         };
 
-        xdg.configFile."scroll/config" = {
-          onChange =
-            # bash
-            ''
-              scrollSocket="''${XDG_RUNTIME_DIR:-/run/user/$UID}/scroll-ipc.$UID.$(${lib.getExe' pkgs.procps "pgrep"} --uid $UID -x scroll || true).sock"
+        xdg = {
+          portal = {
+            config.scroll = {
+              default = [
+                "wlr"
+                "gtk"
+              ];
+              "org.freedesktop.impl.portal.FileChooser" = "gtk";
+              "org.freedesktop.impl.portal.OpenURI" = "gtk";
+              "org.freedesktop.impl.portal.ScreenCast" = "wlr";
+              "org.freedesktop.impl.portal.Screenshot" = "wlr";
+            };
 
-              if [ -S "$scrollSocket" ]; then
-                ${lib.getExe' config.programs.scroll.package "scrollmsg"} -s $scrollSocket reload
-              fi
-            '';
+            # i know
+            # https://github.com/sodiboo/niri-flake/blob/74053f79cad0f6c3a4a0be6b7928795d2e6a9f4b/flake.nix#L559
+            extraPortals = [ pkgs.xdg-desktop-portal-wlr ];
+          };
+
+          terminal-exec = {
+            settings.scroll = [ "foot.desktop" ];
+          };
         };
       };
   };
