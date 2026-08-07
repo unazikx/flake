@@ -306,13 +306,6 @@
       };
     };
 
-    nvf = {
-      type = "github";
-      owner = "notashelf";
-      repo = "nvf";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     pedantix = {
       type = "github";
       owner = "swarsel";
