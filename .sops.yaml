@@ -2,7 +2,7 @@ creation_rules:
   - key_groups:
       - age:
           - age16dzy76gf6jcw03cppgghm7a8ld4g57f73z85wcj9fvq7w3ct53rs4rclm7
-    path_regex: configurations/jetpure/sub-modules/_secrets\.yaml$
+    path_regex: secrets/jetpure\.yaml$
 keys:
   - key: age16dzy76gf6jcw03cppgghm7a8ld4g57f73z85wcj9fvq7w3ct53rs4rclm7
     name: jetpure

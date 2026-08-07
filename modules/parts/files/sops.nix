@@ -39,7 +39,7 @@ in
           }) allKeys;
 
           creation_rules = map (e: {
-            path_regex = "configurations/${e.name}/sub-modules/_secrets\\.yaml$";
+            path_regex = "secrets/${e.name}\\.yaml$";
             key_groups = [ { age = [ e.key ]; } ];
           }) allKeys;
         };
