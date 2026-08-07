@@ -32,6 +32,13 @@
             });
 
         dconf.settings = {
+          "org/gnome/desktop/wm/preferences" = {
+            action-right-click-titlebar = "none";
+            action-double-click-titlebar = "none";
+            action-middle-click-titlebar = "none";
+            button-layout = "";
+          };
+
           "org/gnome/desktop/interface" = {
             color-scheme = if (polarity == "dark") then "prefer-dark" else "prefer-light";
           };
