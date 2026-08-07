@@ -40,7 +40,6 @@
             pkgs.nixfmt
             pkgs.prettier
             pkgs.pyright
-            pkgs.python312Packages.python-lsp-server
             pkgs.typescript-language-server
             pkgs.vscode-langservers-extracted
             pkgs.yaml-language-server

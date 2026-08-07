@@ -29,7 +29,6 @@
             (lib.mkGames
               {
                 desktopEntry.enable = true;
-                updateBehavior = "always";
                 compatTool = lib.mkDefault cfg.defaultCompatTool;
 
                 launchOptions = {
@@ -56,17 +55,7 @@
                 };
 
                 removeFiles = {
-                  prefix = [
-                    "drive_c/vrclient"
-                  ];
-
-                  install = [ ];
-                };
-
-                files = {
-                  prefix = { };
-
-                  install = { };
+                  prefix = [ "drive_c/vrclient" ];
                 };
               }
               {
@@ -288,6 +277,10 @@
                   language = "russian";
                 };
 
+                "Doloc Town" = {
+                  id = 2285550;
+                };
+
                 "Dont Starve Together" = {
                   id = 322330;
                 };
@@ -397,6 +390,10 @@
                   id = 824600;
                 };
 
+                "Hyper Light Drifter" = {
+                  id = 257850;
+                };
+
                 "Intravenous 2" = {
                   id = 2608270;
                 };
@@ -471,6 +468,11 @@
 
                 "Minecraft Legends" = {
                   id = 1928870;
+                };
+
+                "Moonlighter" = {
+                  id = 606150;
+                  language = "russian";
                 };
 
                 "My Summer Car" = {
@@ -553,6 +555,11 @@
                   betaBranch = "unstable";
                 };
 
+                "Quake" = {
+                  id = 2310;
+                  language = "russian";
+                };
+
                 "REPO" = {
                   id = 3214660;
                 };
@@ -563,6 +570,10 @@
 
                 "SULFUR" = {
                   id = 2124120;
+                };
+
+                "SUMMERHOUSE" = {
+                  id = 2533960;
                 };
 
                 "Saints Row: The Third Remastered" = {

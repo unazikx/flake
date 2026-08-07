@@ -26,9 +26,21 @@
 
     nixos =
       {
+        inputs,
         ...
       }:
       {
+        imports = [
+          inputs.strom-nix.nixosModules.ipfs-mirror
+          inputs.strom-nix.nixosModules.strom-desktop
+        ];
+
+        programs.strom-desktop = {
+          enable = true;
+
+          flake = inputs.strom-nix.outPath;
+        };
+
         services.strom-ipfs-mirror = {
           enable = true;
         };
