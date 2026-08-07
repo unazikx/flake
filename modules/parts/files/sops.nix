@@ -14,15 +14,22 @@ let
       key = conf.sopsKey;
     };
 
-  dig =
+  searchKeyFrom =
     attrs:
     lib.flatten (
       lib.mapAttrsToList (
-        _: value: lib.flatten (lib.mapAttrsToList toEntry (clean value)) ++ dig (value.users or { })
+        _: value:
+        lib.flatten [
+          (lib.mapAttrsToList toEntry (clean value))
+          (searchKeyFrom (value.users or { }))
+        ]
       ) (clean attrs)
     );
 
-  allKeys = dig (config.den.hosts or { }) ++ dig (config.den.homes or { });
+  allKeys = lib.flatten [
+    (searchKeyFrom (config.den.hosts or { }))
+    (searchKeyFrom (config.den.homes or { }))
+  ];
 in
 
 {
@@ -33,14 +40,18 @@ in
     {
       files.file.".sops.yaml" = {
         yaml = {
-          keys = map (entry: {
-            name = entry.name;
-            key = entry.key;
+          keys = map (configuration: {
+            name = configuration.name;
+            key = configuration.key;
           }) allKeys;
 
-          creation_rules = map (e: {
-            path_regex = "secrets/${e.name}\\.yaml$";
-            key_groups = [ { age = [ e.key ]; } ];
+          creation_rules = map (configuration: {
+            path_regex = "secrets/${configuration.name}\\.yaml$";
+            key_groups = [
+              {
+                age = [ configuration.key ];
+              }
+            ];
           }) allKeys;
         };
       };
