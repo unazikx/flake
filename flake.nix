@@ -451,11 +451,16 @@
 
   outputs =
     inputs:
-    inputs.flake-parts.lib.mkFlake { inherit inputs; } (
-      inputs.import-tree [
-        ./configurations
-        ./modules
-        ./shells
-      ]
-    );
+    inputs.flake-parts.lib.mkFlake
+      {
+        inherit inputs;
+      }
+      (
+        inputs.import-tree [
+          ./configurations
+          ./files
+          ./modules
+          ./shells
+        ]
+      );
 }

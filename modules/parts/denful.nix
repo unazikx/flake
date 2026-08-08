@@ -13,12 +13,6 @@
       repo = "den";
     };
 
-    flake-file = {
-      type = "github";
-      owner = "denful";
-      repo = "flake-file";
-    };
-
     flake-parts = {
       type = "github";
       owner = "hercules-ci";
@@ -32,40 +26,6 @@
       repo = "import-tree";
     };
     # keep-sorted end
-  };
-
-  flake-file = {
-    do-not-edit = "";
-
-    outputs =
-      # nix
-      ''
-        inputs:
-        inputs.flake-parts.lib.mkFlake { inherit inputs; } (
-          inputs.import-tree [
-            ./configurations
-            ./modules
-            ./shells
-          ]
-        )
-      '';
-
-    prune-lock.enable = true;
-
-    style = {
-      sep.inputs = "
-          \n
-        ";
-
-      sortPriority = {
-        flake = [
-          "description"
-          "inputs"
-          "outputs"
-          "nixConfig"
-        ];
-      };
-    };
   };
 
   imports = [
