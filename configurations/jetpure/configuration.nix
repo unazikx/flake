@@ -107,6 +107,7 @@
       zen.programs.terminal.translate-shell
       zen.programs.terminal.trash
       zen.programs.terminal.zoxide
+      zen.suites.gamedev
       zen.suites.music
       zen.suites.theming
       # keep-sorted end

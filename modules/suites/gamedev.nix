@@ -4,7 +4,7 @@
 }:
 
 {
-  zen.suites.media = {
+  zen.suites.gamedev = {
     includes = [
       # keep-sorted start
       zen.programs.gui.blender

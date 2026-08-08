@@ -99,13 +99,13 @@
 
   den.schema.flake-parts.includes = [
     # keep-sorted start
-    zen.flake-parts.default
     den.policies.apps-to-flake-parts
     den.policies.files-to-flake-parts
     den.policies.makeshell-to-flake-parts
     den.policies.packages-to-flake-parts
     den.policies.root-to-flake-parts
     den.policies.treefmt-to-flake-parts
+    zen.flake-parts.default
     # keep-sorted end
   ];
 
