@@ -20,6 +20,7 @@
           build = rev: import rev _final._branch-config;
         in
         {
+          _master = build inputs.nixpkgs-master;
           _previous = build inputs.nixpkgs-prev;
           _stable = build inputs.nixpkgs-stable;
           _stable-prev = build inputs.nixpkgs-stable-prev;

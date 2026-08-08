@@ -276,6 +276,13 @@
 
     nixpkgs-lib.follows = "nixpkgs";
 
+    nixpkgs-master = {
+      type = "github";
+      owner = "nixos";
+      repo = "nixpkgs";
+      ref = "master";
+    };
+
     nixpkgs-prev.follows = "nixpkgs-unstable-prev";
 
     nixpkgs-stable.follows = "nixpkgs-2605";
