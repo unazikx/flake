@@ -33,27 +33,29 @@ let
 in
 
 {
-  perSystem =
-    {
-      ...
-    }:
-    {
-      files.file.".sops.yaml" = {
-        yaml = {
-          keys = map (configuration: {
-            name = configuration.name;
-            key = configuration.key;
-          }) allKeys;
+  zen.flake-parts.default = {
+    files =
+      {
+        ...
+      }:
+      {
+        file.".sops.yaml" = {
+          yaml = {
+            keys = map (configuration: {
+              name = configuration.name;
+              key = configuration.key;
+            }) allKeys;
 
-          creation_rules = map (configuration: {
-            path_regex = "secrets/${configuration.name}\\.yaml$";
-            key_groups = [
-              {
-                age = [ configuration.key ];
-              }
-            ];
-          }) allKeys;
+            creation_rules = map (configuration: {
+              path_regex = "secrets/${configuration.name}\\.yaml$";
+              key_groups = [
+                {
+                  age = [ configuration.key ];
+                }
+              ];
+            }) allKeys;
+          };
         };
       };
-    };
+  };
 }

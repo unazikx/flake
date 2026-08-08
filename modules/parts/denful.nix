@@ -45,6 +45,7 @@
           inputs.import-tree [
             ./configurations
             ./modules
+            ./shells
           ]
         )
       '';
@@ -93,16 +94,16 @@
     ];
   };
 
-  perSystem =
-    {
-      pkgs,
-      ...
-    }:
-    {
-      packages = den.lib.nh.denPackages {
+  zen.flake-parts.default = {
+    packages =
+      {
+        pkgs,
+        ...
+      }:
+      den.lib.nh.denPackages {
         defaultAction = "switch";
       } pkgs;
-    };
+  };
 
   debug = true;
 }

@@ -27,32 +27,34 @@
     inputs.pkgs-by-name.flakeModule
   ];
 
-  perSystem =
-    {
-      config,
-      system,
-      ...
-    }:
-    {
-      pkgsDirectory = "${self}/packages";
-      pkgsNameSeparator = "/";
+  zen.flake-parts.default = {
+    root =
+      {
+        config,
+        system,
+        ...
+      }:
+      {
+        pkgsDirectory = "${self}/packages";
+        pkgsNameSeparator = "-";
 
-      _module.args.pkgs = import inputs.nixpkgs {
-        inherit
-          system
-          ;
+        _module.args.pkgs = import inputs.nixpkgs {
+          inherit
+            system
+            ;
 
-        config.allowUnfree = true;
-        overlays = [
-          self.overlays.nixpkgs-branches
-          self.overlays.system-backport
-          inputs.nur.overlays.default
-          (_new: _prev: {
-            self = self;
-            system = system;
-            local = config.packages;
-          })
-        ];
+          config.allowUnfree = true;
+          overlays = [
+            self.overlays.nixpkgs-branches
+            self.overlays.system-backport
+            inputs.nur.overlays.default
+            (_new: _prev: {
+              self = self;
+              system = system;
+              local = config.packages;
+            })
+          ];
+        };
       };
-    };
+  };
 }

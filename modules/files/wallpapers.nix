@@ -52,23 +52,25 @@ let
 in
 
 {
-  perSystem =
-    {
-      ...
-    }:
-    {
-      files.file."wallpapers.md" = {
-        text = ''
-          ## Wallpapers
+  zen.flake-parts.default = {
+    files =
+      {
+        ...
+      }:
+      {
+        file."wallpapers.md" = {
+          text = ''
+            ## Wallpapers
 
-          ${lib.concatStringsSep "\n\n" (lib.mapAttrsToList formatEntry list)}
+            ${lib.concatStringsSep "\n\n" (lib.mapAttrsToList formatEntry list)}
 
-          ## Tags
+            ## Tags
 
-          ${lib.concatStringsSep "\n\n" (lib.mapAttrsToList formatTag tags)}
+            ${lib.concatStringsSep "\n\n" (lib.mapAttrsToList formatTag tags)}
 
-          ## Total: ${toString (lib.length (lib.attrNames list))} wallpapers from https://wallhaven.cc
-        '';
+            ## Total: ${toString (lib.length (lib.attrNames list))} wallpapers from https://wallhaven.cc
+          '';
+        };
       };
-    };
+  };
 }

@@ -41,18 +41,18 @@
       ref = "nixos-25.05";
     };
 
-    nixpkgs-master = {
-      type = "github";
-      owner = "nixos";
-      repo = "nixpkgs";
-      ref = "master";
-    };
-
     nixpkgs-2605 = {
       type = "github";
       owner = "nixos";
       repo = "nixpkgs";
       ref = "nixos-26.05";
+    };
+
+    nixpkgs-master = {
+      type = "github";
+      owner = "nixos";
+      repo = "nixpkgs";
+      ref = "master";
     };
 
     nixpkgs-unstable = {

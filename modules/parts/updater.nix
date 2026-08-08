@@ -3,22 +3,22 @@
 }:
 
 {
-  perSystem =
-    {
-      self',
-      ...
-    }:
-    {
-      apps = {
+  zen.flake-parts.default = {
+    apps =
+      {
+        config,
+        ...
+      }:
+      {
         update-packages = rec {
-          program = self'.packages.update-packages;
+          program = config.packages.update-packages;
           meta = program.meta;
         };
 
         firefox-fetcher = rec {
-          program = self'.packages.firefox-fetcher;
+          program = config.packages.firefox-fetcher;
           meta = program.meta;
         };
       };
-    };
+  };
 }

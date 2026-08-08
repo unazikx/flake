@@ -29,12 +29,12 @@
     inputs.pedantix.flakeModules.default
   ];
 
-  perSystem =
-    {
-      ...
-    }:
-    {
-      treefmt = {
+  zen.flake-parts.default = {
+    treefmt =
+      {
+        ...
+      }:
+      {
         programs = {
           deadnix = {
             enable = true;
@@ -102,5 +102,5 @@
           };
         };
       };
-    };
+  };
 }

@@ -445,6 +445,7 @@
       inputs.import-tree [
         ./configurations
         ./modules
+        ./shells
       ]
     );
 }

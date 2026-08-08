@@ -13,26 +13,16 @@
   # '';
 
   den.classes = {
-    homeManagerNixos.description = "HomeManager modules for Linux hosts";
-    homeManagerDarwin.description = "HomeManager modules for Darwin hosts";
-    homeManagerOS.description = "HomeManager modules for Darwin and Linux hosts";
-    homeManagerStandalone.description = "HomeManager modules for Home configurations";
+    # keep-sorted start
+    homeManagerDarwin = { };
+    homeManagerNixos = { };
+    homeManagerOS = { };
+    homeManagerStandalone = { };
+    # keep-sorted end
   };
 
   den.policies = {
-    homeManagerNixos =
-      {
-        host,
-        ...
-      }:
-      lib.optional (host.class == "nixos") (
-        den.lib.policy.route {
-          fromClass = "homeManagerNixos";
-          intoClass = "homeManager";
-          path = [ ];
-        }
-      );
-
+    # keep-sorted start block=yes newline_separated=yes
     homeManagerDarwin =
       {
         host,
@@ -41,6 +31,19 @@
       lib.optional (host.class == "darwin") (
         den.lib.policy.route {
           fromClass = "homeManagerDarwin";
+          intoClass = "homeManager";
+          path = [ ];
+        }
+      );
+
+    homeManagerNixos =
+      {
+        host,
+        ...
+      }:
+      lib.optional (host.class == "nixos") (
+        den.lib.policy.route {
+          fromClass = "homeManagerNixos";
           intoClass = "homeManager";
           path = [ ];
         }
@@ -71,12 +74,15 @@
           path = [ ];
         }
       );
+    # keep-sorted end
   };
 
   den.schema.user.includes = [
-    den.policies.homeManagerNixos
+    # keep-sorted start
     den.policies.homeManagerDarwin
+    den.policies.homeManagerNixos
     den.policies.homeManagerOS
     den.policies.homeManagerStandalone
+    # keep-sorted end
   ];
 }

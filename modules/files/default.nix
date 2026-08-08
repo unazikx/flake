@@ -18,14 +18,14 @@
     inputs.files.flakeModules.default
   ];
 
-  perSystem =
-    {
-      ...
-    }:
-    {
-      files = {
+  zen.flake-parts.default = {
+    files =
+      {
+        ...
+      }:
+      {
         generateApp = true;
         treefmt.enable = true;
       };
-    };
+  };
 }
