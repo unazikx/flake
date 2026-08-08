@@ -49,9 +49,9 @@
       zen.miscellaneous.disko
       zen.miscellaneous.home-manager
       zen.miscellaneous.minimal
-      zen.miscellaneous.version
       zen.miscellaneous.nix
       zen.miscellaneous.secrets
+      zen.miscellaneous.version
       zen.programs.cli.nixos-cli
       zen.programs.cli.rusted-tools
       zen.services.caddy
