@@ -8,6 +8,7 @@
     system = "x86_64-linux";
     class = "nixos";
 
+    isInstaller = false;
     defaultUser = "nixzoid";
     sopsKey = "age16dzy76gf6jcw03cppgghm7a8ld4g57f73z85wcj9fvq7w3ct53rs4rclm7";
     flakeDir = toString /etc/nixos;
@@ -46,7 +47,9 @@
       zen.hardware.cpu-gpu
       zen.hardware.mounting
       zen.miscellaneous.disko
+      zen.miscellaneous.home-manager
       zen.miscellaneous.minimal
+      zen.miscellaneous.version
       zen.miscellaneous.nix
       zen.miscellaneous.secrets
       zen.programs.cli.nixos-cli

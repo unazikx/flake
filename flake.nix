@@ -28,8 +28,6 @@
       };
     };
 
-    darwin.follows = "nix-darwin";
-
     den = {
       type = "github";
       owner = "denful";
@@ -128,6 +126,24 @@
       repo = "helium-flake";
       inputs = {
         flake-parts.follows = "flake-parts";
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
+
+    hjem = {
+      type = "github";
+      owner = "feel-co";
+      repo = "hjem";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    hjem-rum = {
+      type = "github";
+      owner = "snugnug";
+      repo = "hjem-rum";
+      inputs = {
+        hjem.follows = "hjem";
+        nix-darwin.follows = "nix-darwin";
         nixpkgs.follows = "nixpkgs";
       };
     };
@@ -260,20 +276,6 @@
 
     nixpkgs.follows = "nixpkgs-unstable";
 
-    nixpkgs-2505 = {
-      type = "github";
-      owner = "nixos";
-      repo = "nixpkgs";
-      ref = "nixos-25.05";
-    };
-
-    nixpkgs-2605 = {
-      type = "github";
-      owner = "nixos";
-      repo = "nixpkgs";
-      ref = "nixos-26.05";
-    };
-
     nixpkgs-lib.follows = "nixpkgs";
 
     nixpkgs-master = {
@@ -283,11 +285,19 @@
       ref = "master";
     };
 
-    nixpkgs-prev.follows = "nixpkgs-unstable-prev";
+    nixpkgs-stable = {
+      type = "github";
+      owner = "nixos";
+      repo = "nixpkgs";
+      ref = "nixos-26.05";
+    };
 
-    nixpkgs-stable.follows = "nixpkgs-2605";
-
-    nixpkgs-stable-prev.follows = "nixpkgs-2505";
+    nixpkgs-stable-prev = {
+      type = "github";
+      owner = "nixos";
+      repo = "nixpkgs";
+      ref = "nixos-25.05";
+    };
 
     nixpkgs-unstable = {
       type = "github";

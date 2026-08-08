@@ -4,7 +4,7 @@
 }:
 
 {
-  den.default = {
+  zen.miscellaneous.version = {
     os =
       {
         ...

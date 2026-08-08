@@ -714,6 +714,52 @@
         "type": "gitlab"
       }
     },
+    "hjem": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1785929776,
+        "narHash": "sha256-qwppDYdtxqtDpI1iSp7bs8prOJ0KQSvhJchfROD04f0=",
+        "owner": "feel-co",
+        "repo": "hjem",
+        "rev": "b610953d0c56da6b28fd39c21bd193b88e91341c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "feel-co",
+        "repo": "hjem",
+        "type": "github"
+      }
+    },
+    "hjem-rum": {
+      "inputs": {
+        "hjem": [
+          "hjem"
+        ],
+        "nix-darwin": [
+          "nix-darwin"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1785849747,
+        "narHash": "sha256-xnf/+FjpHFCAVgfE81RXLucvr9fgHdkkvNe6LYGuOXE=",
+        "owner": "snugnug",
+        "repo": "hjem-rum",
+        "rev": "7db915475dcae2d69b7f9dd3e9cec3f7f2abe6f9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "snugnug",
+        "repo": "hjem-rum",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -1103,38 +1149,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-2505": {
-      "locked": {
-        "lastModified": 1767313136,
-        "narHash": "sha256-16KkgfdYqjaeRGBaYsNrhPRRENs0qzkQVUooNHtoy2w=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "ac62194c3917d5f474c1a844b6fd6da2db95077d",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "nixos-25.05",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs-2605": {
-      "locked": {
-        "lastModified": 1785858998,
-        "narHash": "sha256-fKCq5jphd6l/Ms6gc3dptkw/TcKLYub9lQE5g6rbbkc=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "04607e1165ac22c5fde6dcc54c9e0b3c0487c555",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "nixos-26.05",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nixpkgs-master": {
       "locked": {
         "lastModified": 1786160537,
@@ -1163,6 +1177,38 @@
       "original": {
         "owner": "NixOS",
         "ref": "nixos-26.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs-stable": {
+      "locked": {
+        "lastModified": 1785989512,
+        "narHash": "sha256-HFQhkQcl5D1hUNoen3SGHCSFCt2Bg6uP+HgbrnA3InQ=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "445d861c6d31b4af0c79d8d4be2331f762a361d7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-26.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs-stable-prev": {
+      "locked": {
+        "lastModified": 1767313136,
+        "narHash": "sha256-16KkgfdYqjaeRGBaYsNrhPRRENs0qzkQVUooNHtoy2w=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "ac62194c3917d5f474c1a844b6fd6da2db95077d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-25.05",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -1315,9 +1361,6 @@
         "betterfox": "betterfox",
         "binternet-nix": "binternet-nix",
         "chaotic-nyx": "chaotic-nyx",
-        "darwin": [
-          "nix-darwin"
-        ],
         "den": "den",
         "disko": "disko",
         "dms": "dms",
@@ -1332,6 +1375,8 @@
         "flake-utils": "flake-utils_2",
         "halley-flake": "halley-flake",
         "helium-flake": "helium-flake",
+        "hjem": "hjem",
+        "hjem-rum": "hjem-rum",
         "home-manager": "home-manager",
         "hytale-launcher": "hytale-launcher",
         "import-tree": "import-tree",
@@ -1351,21 +1396,12 @@
         "nixpkgs": [
           "nixpkgs-unstable"
         ],
-        "nixpkgs-2505": "nixpkgs-2505",
-        "nixpkgs-2605": "nixpkgs-2605",
         "nixpkgs-lib": [
           "nixpkgs"
         ],
         "nixpkgs-master": "nixpkgs-master",
-        "nixpkgs-prev": [
-          "nixpkgs-unstable-prev"
-        ],
-        "nixpkgs-stable": [
-          "nixpkgs-2605"
-        ],
-        "nixpkgs-stable-prev": [
-          "nixpkgs-2505"
-        ],
+        "nixpkgs-stable": "nixpkgs-stable",
+        "nixpkgs-stable-prev": "nixpkgs-stable-prev",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "nixpkgs-unstable-prev": "nixpkgs-unstable-prev",
         "nur": "nur",

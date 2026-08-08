@@ -25,7 +25,7 @@
           in
           {
             _master = build inputs.nixpkgs-master;
-            _previous = build inputs.nixpkgs-prev;
+            _previous = build inputs.nixpkgs-unstable-prev;
             _stable = build inputs.nixpkgs-stable;
             _stable-prev = build inputs.nixpkgs-stable-prev;
             _unstable = build inputs.nixpkgs-unstable;

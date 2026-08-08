@@ -41,7 +41,7 @@
           enable = true;
 
           settings = {
-            config_location = "${host.flakeDir}#${host.hostName}";
+            config_location = lib.mkIf (host.isInstaller != true) "${host.flakeDir}#${host.hostName}";
 
             confirmation.always = true;
 

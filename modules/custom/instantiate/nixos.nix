@@ -16,26 +16,9 @@
         (lib.mkIf (host.class == "nixos") (
           { modules }:
           inputs.nixpkgs.lib.nixosSystem {
-            modules = lib.flatten [
+            inherit
               modules
-              (
-                {
-                  options,
-                  ...
-                }:
-                {
-                  config = lib.mkIf (options ? home-manager) {
-                    home-manager.extraSpecialArgs = {
-                      inherit
-                        self
-                        inputs
-                        ;
-                    };
-                  };
-                }
-              )
-            ];
-
+              ;
             specialArgs = {
               inherit
                 self
