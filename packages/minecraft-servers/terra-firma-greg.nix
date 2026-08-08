@@ -6,7 +6,7 @@
 
 stdenv.mkDerivation (_old: {
   pname = "terra-firma-greg";
-  version = "0.13.6";
+  version = "0.13.7";
 
   src = fetchzip {
     url = "https://github.com/TerraFirmaGreg-Team/Modpack-Modern/releases/download/${_old.version}/TerraFirmaGreg-Modern-${_old.version}-serverpack.zip";
