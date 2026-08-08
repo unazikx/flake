@@ -49,6 +49,10 @@
 
             remotePlay.openFirewall = true;
 
+            protontricks = {
+              enable = true;
+            };
+
             gamescopeSession = {
               enable = true;
 
