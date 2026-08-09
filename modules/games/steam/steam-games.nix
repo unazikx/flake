@@ -296,6 +296,11 @@
                   language = "russian";
                 };
 
+                "Dying Light" = {
+                  id = 239140;
+                  language = "russian";
+                };
+
                 "Easy Delivery Co" = {
                   id = 3293010;
                 };
@@ -441,6 +446,11 @@
                   language = "russian";
                 };
 
+                "LEGO: Marvel Super Heroes 2" = {
+                  id = 647830;
+                  language = "russian";
+                };
+
                 "LEGO: Worlds" = {
                   id = 332310;
                   language = "russian";
@@ -448,6 +458,11 @@
 
                 "Lucid Blocks" = {
                   id = 3495730;
+                };
+
+                "Maneater" = {
+                  id = 629820;
+                  language = "russian";
                 };
 
                 "Midbourne" = {
@@ -481,6 +496,10 @@
 
                 "My Winter Car" = {
                   id = 4164420;
+                };
+
+                "NTE: Neverness to Everness" = {
+                  id = 4508340;
                 };
 
                 "Necesse" = {
