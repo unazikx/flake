@@ -21,6 +21,8 @@
 
               partitions = {
                 esp = {
+                  label = "boot-efi";
+
                   size = "512M";
                   type = "EF00";
 
@@ -36,7 +38,21 @@
                   };
                 };
 
+                swap = {
+                  label = "swap-${host.hostName}";
+
+                  size = "${toString host.hardware.ramSize}G";
+
+                  content = {
+                    type = "swap";
+                    discardPolicy = "both";
+                    resumeDevice = true;
+                  };
+                };
+
                 root = {
+                  label = "nixos-${host.hostName}";
+
                   size = "100%";
 
                   content = {

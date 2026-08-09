@@ -8,7 +8,11 @@
     system = "x86_64-linux";
     class = "nixos";
 
-    isInstaller = false;
+    hardware = {
+      isInstaller = false;
+      ramSize = 32;
+    };
+
     defaultUser = "nixzoid";
     sopsKey = "age16dzy76gf6jcw03cppgghm7a8ld4g57f73z85wcj9fvq7w3ct53rs4rclm7";
     flakeDir = toString /etc/nixos;
