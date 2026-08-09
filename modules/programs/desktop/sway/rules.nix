@@ -61,6 +61,22 @@
                 # keep-sorted end
               }
             )
+
+            (lib.mapAttrs
+              (
+                _:
+                map (title: {
+                  inherit title;
+                })
+              )
+              {
+                # keep-sorted start block=yes newline_separated=yes
+                "5" = [
+                  "Steam"
+                ];
+                # keep-sorted end
+              }
+            )
           ];
 
           window = {
