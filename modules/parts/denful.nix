@@ -5,6 +5,10 @@
 }:
 
 {
+  _module.args = {
+    __findFile = den.lib.__findFile;
+  };
+
   flake-file.inputs = {
     # keep-sorted start block=yes newline_separated=yes
     den = {
@@ -29,12 +33,8 @@
   };
 
   imports = [
+    (inputs.den.namespace "zen" true)
     inputs.den.flakeModules.default
-    # inputs.den.flakeOutputs.apps
-    # inputs.den.flakeOutputs.checks
-    # inputs.den.flakeOutputs.devShells
-    # inputs.den.flakeOutputs.flake
-    # inputs.den.flakeOutputs.packages
     inputs.flake-file.flakeModules.default
     inputs.flake-parts.flakeModules.bundlers
     inputs.flake-parts.flakeModules.modules
