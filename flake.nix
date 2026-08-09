@@ -28,6 +28,12 @@
       };
     };
 
+    dag = {
+      type = "github";
+      owner = "denful";
+      repo = "dag";
+    };
+
     den = {
       type = "github";
       owner = "denful";

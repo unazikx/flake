@@ -1,11 +1,18 @@
 {
   inputs,
+  lib,
   ...
 }:
 
 {
   flake-file.inputs = {
     # keep-sorted start block=yes newline_separated=yes
+    dag = {
+      type = "github";
+      owner = "denful";
+      repo = "dag";
+    };
+
     files = {
       type = "github";
       owner = "sini";
@@ -17,6 +24,10 @@
   imports = [
     inputs.files.flakeModules.default
   ];
+
+  _module.args.dag = inputs.dag.lib {
+    inherit lib;
+  };
 
   zen.flake-parts.default = {
     files =
