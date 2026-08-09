@@ -14,6 +14,7 @@
   zen.hosts.spaceship = {
     includes = [
       # keep-sorted start block=yes
+      (zen.hardware.networking.hosts [ ])
       zen.miscellaneous.nix.settings
       zen.programs.cli.nixos-cli
       zen.styles.stylix
@@ -40,6 +41,13 @@
           pkgs.disko
           pkgs.helix
           pkgs.sops
+        ];
+
+        networking.nameservers = [
+          "1.1.1.1"
+          "8.8.8.8"
+          "84.21.189.133"
+          "83.220.169.155"
         ];
 
         users.defaultUserShell = config.programs.fish.package;
