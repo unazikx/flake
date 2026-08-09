@@ -571,7 +571,6 @@
 
                 "Project Zomboid" = {
                   id = 108600;
-                  betaBranch = "unstable";
                 };
 
                 "Quake" = {

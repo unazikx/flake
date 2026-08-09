@@ -38,18 +38,6 @@
                   };
                 };
 
-                swap = {
-                  label = "swap-${host.hostName}";
-
-                  size = "${toString host.hardware.ramSize}G";
-
-                  content = {
-                    type = "swap";
-                    discardPolicy = "both";
-                    resumeDevice = true;
-                  };
-                };
-
                 root = {
                   label = "nixos-${host.hostName}";
 

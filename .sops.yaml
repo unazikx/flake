@@ -1,8 +1,8 @@
 creation_rules:
   - key_groups:
       - age:
-          - age16dzy76gf6jcw03cppgghm7a8ld4g57f73z85wcj9fvq7w3ct53rs4rclm7
+          - age1c3z633k2m0vgfn5vjflu763lzadg2lddfnzwwyhvmyf053quqqtsh0cdqz
     path_regex: secrets/jetpure\.yaml$
 keys:
-  - key: age16dzy76gf6jcw03cppgghm7a8ld4g57f73z85wcj9fvq7w3ct53rs4rclm7
+  - key: age1c3z633k2m0vgfn5vjflu763lzadg2lddfnzwwyhvmyf053quqqtsh0cdqz
     name: jetpure
