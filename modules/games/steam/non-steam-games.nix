@@ -26,10 +26,8 @@
               (lib.mkGames
                 {
                   enable = lib.mkDefault false; # by default disabled
-                  launchOptions = {
-                    env = {
-                      STEAM_COMPAT_DATA_PATH = "${steamapps}/compatdata/0";
-                    };
+                  env = {
+                    STEAM_COMPAT_DATA_PATH = "${steamapps}/compatdata/0";
                   };
                 }
                 {
@@ -43,10 +41,8 @@
                 {
                   enable = lib.mkDefault false; # by default disabled
                   compatTool = cfg.defaultCompatTool;
-                  launchOptions = {
-                    env = {
-                      STEAM_COMPAT_DATA_PATH = "${steamapps}/compatdata/0";
-                    };
+                  env = {
+                    STEAM_COMPAT_DATA_PATH = "${steamapps}/compatdata/0";
                   };
                 }
                 {

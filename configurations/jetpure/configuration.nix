@@ -59,7 +59,7 @@
       zen.services.glance
       zen.services.greetd
       zen.services.proxy-suite
-      # zen.services.qbittorrent.flood
+      zen.services.qbittorrent.flood
       zen.services.tailscale
       zen.services.vaultwarden
       zen.styles.stylix
@@ -74,7 +74,7 @@
       # keep-sorted start
       zen.games.gale
       zen.games.heroic
-      # zen.games.hytale.launcher
+      zen.games.hytale.launcher
       zen.games.minecraft.prismlauncher
       zen.games.steam
       zen.games.umu-launcher
@@ -93,7 +93,7 @@
       zen.programs.cli.youtube-cli
       zen.programs.desktop.mangowc
       zen.programs.desktop.sway
-      # zen.programs.desktop.vicinae
+      zen.programs.desktop.vicinae
       zen.programs.editors.helix
       zen.programs.editors.opencode
       zen.programs.gui.ayugram

@@ -31,31 +31,29 @@
                 desktopEntry.enable = true;
                 compatTool = lib.mkDefault cfg.defaultCompatTool;
 
-                launchOptions = {
-                  env = {
-                    PROTON_ENABLE_WAYLAND = 1;
-                    PROTON_USE_NTSYNC = 1;
-                  };
+                wrappers = [
+                  (
+                    let
+                      mangohud = config.programs.mangohud;
+                    in
+                    lib.mkIf mangohud.enable (lib.getExe mangohud.package)
+                  )
 
-                  wrappers = [
-                    (
-                      let
-                        mangohud = config.programs.mangohud;
-                      in
-                      lib.mkIf mangohud.enable (lib.getExe mangohud.package)
-                    )
+                  (
+                    let
+                      gamemode = osConfig.programs.gamemode;
+                    in
+                    lib.mkIf gamemode.enable (lib.getExe gamemode.package)
+                  )
+                ];
 
-                    (
-                      let
-                        gamemode = osConfig.programs.gamemode;
-                      in
-                      lib.mkIf gamemode.enable (lib.getExe gamemode.package)
-                    )
-                  ];
+                env = {
+                  PROTON_ENABLE_WAYLAND = 1;
+                  PROTON_USE_NTSYNC = 1;
                 };
 
-                removeFiles = {
-                  prefix = [ "drive_c/vrclient" ];
+                files.prefix = {
+                  remove = [ "drive_c/vrclient" ];
                 };
               }
               {
@@ -115,12 +113,10 @@
 
                 "Beyond Sunset" = {
                   id = 1665260;
-                  launchOptions = {
-                    wrappers = lib.mkAfter [
-                      (lib.getExe pkgs.gzdoom)
-                      "-iwad"
-                    ];
-                  };
+                  wrappers = lib.mkAfter [
+                    (lib.getExe pkgs.gzdoom)
+                    "-iwad"
+                  ];
                 };
 
                 "Breathedge" = {
@@ -137,9 +133,7 @@
                   id = 1238080;
                   compatTool = "GE-Proton";
                   language = "russian";
-                  launchOptions = {
-                    args = [ "-skipvideos" ];
-                  };
+                  args = [ "-skipvideos" ];
                 };
 
                 "Carmageddon Max Damage" = {
@@ -789,9 +783,7 @@
 
             # games for inified prefix
             (lib.mkGames {
-              launchOptions = {
-                env.STEAM_COMPAT_DATA_PATH = "${steamapps}/compatdata/0";
-              };
+              env.STEAM_COMPAT_DATA_PATH = "${steamapps}/compatdata/0";
             } { })
           ];
         };

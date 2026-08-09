@@ -400,9 +400,8 @@
 
     stylix = {
       type = "github";
-      owner = "panchoh";
+      owner = "nix-community";
       repo = "stylix";
-      ref = "fix/stylix--set-home-pointerCursor-enable";
       inputs = {
         flake-parts.follows = "flake-parts";
         nixpkgs.follows = "nixpkgs";
