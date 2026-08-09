@@ -14,8 +14,8 @@
   zen.hosts.spaceship = {
     includes = [
       # keep-sorted start block=yes
-      zen.programs.cli.nixos-cli
       zen.miscellaneous.nix.settings
+      zen.programs.cli.nixos-cli
       zen.styles.stylix
       # keep-sorted end
     ];
