@@ -4,7 +4,7 @@
 
 {
   zen.hosts.jetpure = {
-    nixos =
+    disko =
       {
         host,
         ...

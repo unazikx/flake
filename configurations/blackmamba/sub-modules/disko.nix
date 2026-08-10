@@ -4,7 +4,7 @@
 
 {
   zen.hosts.blackmamba = {
-    nixos =
+    disko =
       {
         host,
         ...

@@ -1,4 +1,5 @@
 {
+  inputs,
   ...
 }:
 
@@ -13,6 +14,10 @@
     };
     # keep-sorted end
   };
+
+  imports = [
+    inputs.disko.flakeModules.default
+  ];
 
   zen.miscellaneous.disko = {
     description = ''
