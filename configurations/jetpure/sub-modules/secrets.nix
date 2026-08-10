@@ -12,10 +12,11 @@
     nixos =
       {
         self,
+        host,
         ...
       }:
       {
-        sops.defaultSopsFile = "${self}/secrets/jetpure.yaml";
+        sops.defaultSopsFile = "${self}/secrets/${host.hostName}.yaml";
 
         sops.secrets = {
           "password/nixzoid" = {
@@ -34,6 +35,7 @@
       {
         self,
         config,
+        host,
         ...
       }:
       {
@@ -41,7 +43,7 @@
           !include ${config.sops.templates."nix-access-tokens".path}
         '';
 
-        sops.defaultSopsFile = "${self}/secrets/jetpure.yaml";
+        sops.defaultSopsFile = "${self}/secrets/${host.hostName}.yaml";
 
         sops.templates = {
           "nix-access-tokens" = {
