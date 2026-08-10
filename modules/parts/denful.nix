@@ -1,6 +1,7 @@
 {
   inputs,
   den,
+  zen,
   ...
 }:
 

@@ -17,83 +17,103 @@
 
   den.policies = {
     # keep-sorted start block=yes newline_separated=yes
-    apps-to-flake-parts = _: [
-      (den.lib.policy.route {
-        fromClass = "apps";
-        intoClass = "flake-parts";
-        path = [
-          "apps"
-        ];
-        adaptArgs =
-          {
-            config,
-            ...
-          }:
-          config.allModuleArgs;
-      })
-    ];
+    apps-to-flake-parts =
+      {
+        ...
+      }:
+      [
+        (den.lib.policy.route {
+          fromClass = "apps";
+          intoClass = "flake-parts";
+          path = [
+            "apps"
+          ];
+          adaptArgs =
+            {
+              config,
+              ...
+            }:
+            config.allModuleArgs;
+        })
+      ];
 
-    files-to-flake-parts = _: [
-      (den.lib.policy.route {
-        fromClass = "files";
-        intoClass = "flake-parts";
-        path = [
-          "files"
-        ];
-        adaptArgs =
-          {
-            config,
-            ...
-          }:
-          config.allModuleArgs;
-      })
-    ];
+    files-to-flake-parts =
+      {
+        ...
+      }:
+      [
+        (den.lib.policy.route {
+          fromClass = "files";
+          intoClass = "flake-parts";
+          path = [
+            "files"
+          ];
+          adaptArgs =
+            {
+              config,
+              ...
+            }:
+            config.allModuleArgs;
+        })
+      ];
 
-    makeshell-to-flake-parts = _: [
-      (den.lib.policy.route {
-        fromClass = "make-shell";
-        intoClass = "flake-parts";
-        path = [
-          "make-shell"
-        ];
-        adaptArgs =
-          {
-            config,
-            ...
-          }:
-          config.allModuleArgs;
-      })
-    ];
+    makeshell-to-flake-parts =
+      {
+        ...
+      }:
+      [
+        (den.lib.policy.route {
+          fromClass = "make-shell";
+          intoClass = "flake-parts";
+          path = [
+            "make-shell"
+          ];
+          adaptArgs =
+            {
+              config,
+              ...
+            }:
+            config.allModuleArgs;
+        })
+      ];
 
-    root-to-flake-parts = _: [
-      (den.lib.policy.route {
-        fromClass = "root";
-        intoClass = "flake-parts";
-        path = [ ];
-        adaptArgs =
-          {
-            config,
-            ...
-          }:
-          config.allModuleArgs;
-      })
-    ];
+    root-to-flake-parts =
+      {
+        ...
+      }:
+      [
+        (den.lib.policy.route {
+          fromClass = "root";
+          intoClass = "flake-parts";
+          path = [ ];
+          adaptArgs =
+            {
+              config,
+              ...
+            }:
+            config.allModuleArgs;
+        })
+      ];
 
-    treefmt-to-flake-parts = _: [
-      (den.lib.policy.route {
-        fromClass = "treefmt";
-        intoClass = "flake-parts";
-        path = [
-          "treefmt"
-        ];
-        adaptArgs =
-          {
-            config,
-            ...
-          }:
-          config.allModuleArgs;
-      })
-    ];
+    treefmt-to-flake-parts =
+      {
+        ...
+      }:
+      [
+        (den.lib.policy.route {
+          fromClass = "treefmt";
+          intoClass = "flake-parts";
+          path = [
+            "treefmt"
+          ];
+          adaptArgs =
+            {
+              config,
+              ...
+            }:
+            config.allModuleArgs;
+        })
+      ];
     # keep-sorted end
   };
 
