@@ -1,5 +1,5 @@
 {
-  # self,
+  inputs,
   den,
   ...
 }:
@@ -27,6 +27,7 @@
             }:
             {
               imports = [
+                inputs.disko.nixosModules.default
                 self.diskoConfigurations.${host.hostName}
               ];
             };
