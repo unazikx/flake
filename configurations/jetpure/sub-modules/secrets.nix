@@ -18,8 +18,13 @@
         sops.defaultSopsFile = "${self}/secrets/jetpure.yaml";
 
         sops.secrets = {
-          "password/nixzoid" = { };
-          "password/root" = { };
+          "password/nixzoid" = {
+            neededForUsers = true;
+          };
+
+          "password/root" = {
+            neededForUsers = true;
+          };
         };
       };
   };

@@ -48,6 +48,7 @@
       zen.hardware.cpu-gpu
       zen.hardware.mounting
       zen.miscellaneous.disko
+      zen.services.nitter
       zen.miscellaneous.home-manager
       zen.miscellaneous.minimal
       zen.miscellaneous.nix
