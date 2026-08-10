@@ -3,6 +3,19 @@
 }:
 
 {
+  zen.hosts.jetpure = {
+    nixos =
+      {
+        config,
+        ...
+      }:
+      {
+        users.users.root = {
+          hashedPasswordFile = config.sops.secrets."password/root".path;
+        };
+      };
+  };
+
   zen.users.hackerx = {
     user =
       {

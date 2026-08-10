@@ -15,10 +15,13 @@
         ...
       }:
       {
+        users.mutableUsers = false;
+
         sops.defaultSopsFile = "${self}/secrets/jetpure.yaml";
 
         sops.secrets = {
           "password/nixzoid" = { };
+          "password/root" = { };
         };
       };
   };
