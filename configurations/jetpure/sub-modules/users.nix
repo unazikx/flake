@@ -10,8 +10,12 @@
         ...
       }:
       {
-        users.users.root = {
-          hashedPasswordFile = config.sops.secrets."password/root".path;
+        users = {
+          mutableUsers = false;
+
+          users.root = {
+            hashedPasswordFile = config.sops.secrets."password/root".path;
+          };
         };
       };
   };
