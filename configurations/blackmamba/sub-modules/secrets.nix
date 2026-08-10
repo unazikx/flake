@@ -19,7 +19,13 @@
         sops.defaultSopsFile = "${self}/secrets/${host.hostName}.yaml";
 
         sops.secrets = {
-          "password/hackerx" = { };
+          "password/hackerx" = {
+            neededForUsers = true;
+          };
+
+          "password/root" = {
+            neededForUsers = true;
+          };
         };
       };
   };
