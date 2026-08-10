@@ -38,6 +38,17 @@
                   };
                 };
 
+                swap = {
+                  label = "swap-${host.hostName}";
+
+                  size = "32G";
+
+                  content = {
+                    type = "swap";
+                    resumeDevice = true;
+                  };
+                };
+
                 root = {
                   label = "nixos-${host.hostName}";
 
