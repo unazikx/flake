@@ -41,11 +41,6 @@
           in
           {
             yaml = {
-              keys = map (configuration: {
-                name = configuration.name;
-                key = configuration.key;
-              }) allKeys;
-
               creation_rules = map (configuration: {
                 path_regex = "secrets/${configuration.name}\\.yaml$";
                 key_groups = [
