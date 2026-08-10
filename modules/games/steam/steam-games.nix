@@ -435,6 +435,11 @@
                   id = 1544360;
                 };
 
+                "LEGO: City Undercover" = {
+                  id = 578330;
+                  language = "russian";
+                };
+
                 "LEGO: DC Super Villains" = {
                   id = 829110;
                   language = "russian";
@@ -442,6 +447,16 @@
 
                 "LEGO: Marvel Super Heroes 2" = {
                   id = 647830;
+                  language = "russian";
+                };
+
+                "LEGO: Marvel Super Heroes" = {
+                  id = 249130;
+                  language = "russian";
+                };
+
+                "LEGO: Star Wars The Skywalker Saga" = {
+                  id = 920210;
                   language = "russian";
                 };
 

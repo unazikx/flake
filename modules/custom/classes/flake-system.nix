@@ -15,6 +15,21 @@
 
   den.policies = {
     # keep-sorted start block=yes newline_separated=yes
+    disko-other-to-flake =
+      {
+        ...
+      }:
+      [
+        (den.lib.policy.route {
+          fromClass = "diskoUSB";
+          intoClass = "flake";
+          path = [
+            "flake"
+            "diskoConfigurations"
+          ];
+        })
+      ];
+
     disko-to-flake =
       {
         host,
@@ -51,29 +66,14 @@
             config.allModuleArgs;
         })
       ];
-
-    disko-other-to-flake =
-      {
-        ...
-      }:
-      [
-        (den.lib.policy.route {
-          fromClass = "diskoUSB";
-          intoClass = "flake";
-          path = [
-            "flake"
-            "diskoConfigurations"
-          ];
-        })
-      ];
     # keep-sorted end
   };
 
   den.schema.flake-system.includes = [
     # keep-sorted start
-    zen.disko.default
-    den.policies.disko-to-flake
     den.policies.disko-other-to-flake
+    den.policies.disko-to-flake
+    zen.disko.default
     # keep-sorted end
   ];
 }
