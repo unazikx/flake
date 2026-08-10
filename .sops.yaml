@@ -1,8 +1,14 @@
 creation_rules:
   - key_groups:
       - age:
+          - age1334jkz6qgtwqctj20zct5ha8psd5ds5yz5n6frxrrwj74l8jcg3qeywx0a
+    path_regex: secrets/blackmamba\.yaml$
+  - key_groups:
+      - age:
           - age1c3z633k2m0vgfn5vjflu763lzadg2lddfnzwwyhvmyf053quqqtsh0cdqz
     path_regex: secrets/jetpure\.yaml$
 keys:
+  - key: age1334jkz6qgtwqctj20zct5ha8psd5ds5yz5n6frxrrwj74l8jcg3qeywx0a
+    name: blackmamba
   - key: age1c3z633k2m0vgfn5vjflu763lzadg2lddfnzwwyhvmyf053quqqtsh0cdqz
     name: jetpure

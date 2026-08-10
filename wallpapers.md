@@ -20,6 +20,22 @@
 
 ![GTA VI: Palmsbeach](https://th.wallhaven.cc/small/d8/d8o6wg.jpg)
 
+**Gavryl fog** -> (https://wallhaven.cc/w/w5x65p - https://w.wallhaven.cc/full/w5/wallhaven-w5x65p.png)
+
+![Gavryl fog](https://th.wallhaven.cc/small/w5/w5x65p.jpg)
+
+**Gavryl snowday** -> (https://wallhaven.cc/w/z88dww - https://w.wallhaven.cc/full/z8/wallhaven-z88dww.png)
+
+![Gavryl snowday](https://th.wallhaven.cc/small/z8/z88dww.jpg)
+
+**Gavryl sundown** -> (https://wallhaven.cc/w/rq6yqm - https://w.wallhaven.cc/full/rq/wallhaven-rq6yqm.png)
+
+![Gavryl sundown](https://th.wallhaven.cc/small/rq/rq6yqm.jpg)
+
+**Gavryl sunrise** -> (https://wallhaven.cc/w/575r67 - https://w.wallhaven.cc/full/57/wallhaven-575r67.png)
+
+![Gavryl sunrise](https://th.wallhaven.cc/small/57/575r67.jpg)
+
 **Jax TADC** -> (https://wallhaven.cc/w/mlgomm - https://w.wallhaven.cc/full/ml/wallhaven-mlgomm.png)
 
 ![Jax TADC](https://th.wallhaven.cc/small/ml/mlgomm.jpg)
@@ -36,6 +52,10 @@
 
 ![Puyo Puyo](https://th.wallhaven.cc/small/qr/qrmell.jpg)
 
+**Pyramidas** -> (https://wallhaven.cc/w/jed11w - https://w.wallhaven.cc/full/je/wallhaven-jed11w.png)
+
+![Pyramidas](https://th.wallhaven.cc/small/je/jed11w.jpg)
+
 **Sayonara Lara** -> (https://wallhaven.cc/w/jeyy15 - https://w.wallhaven.cc/full/je/wallhaven-jeyy15.png)
 
 ![Sayonara Lara](https://th.wallhaven.cc/small/je/jeyy15.jpg)
@@ -43,6 +63,10 @@
 **Silhouette** -> (https://wallhaven.cc/w/e86xlo - https://w.wallhaven.cc/full/e8/wallhaven-e86xlo.png)
 
 ![Silhouette](https://th.wallhaven.cc/small/e8/e86xlo.jpg)
+
+**Skullus** -> (https://wallhaven.cc/w/ogj11l - https://w.wallhaven.cc/full/og/wallhaven-ogj11l.png)
+
+![Skullus](https://th.wallhaven.cc/small/og/ogj11l.jpg)
 
 **Stanley Parable** -> (https://wallhaven.cc/w/9o9w3x - https://w.wallhaven.cc/full/9o/wallhaven-9o9w3x.png)
 
@@ -54,4 +78,4 @@
 
 **Stray** -> (https://wallhaven.cc/tag/134796)
 
-## Total: 12 wallpapers from https://wallhaven.cc
+## Total: 18 wallpapers from https://wallhaven.cc
