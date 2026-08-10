@@ -21,29 +21,29 @@
           polarity = "dark";
 
           base16Scheme = lib.mkForce {
-            name = "Paradise";
-            author = "manas140";
-            base00 = "#151515";
-            base01 = "#1f1f1f";
-            base02 = "#2e2e2e";
-            base03 = "#424242";
-            base04 = "#bbb6b6";
-            base05 = "#e8e3e3";
-            base06 = "#e8e3e3";
-            base07 = "#e8e3e3";
-            base08 = "#b66467";
-            base09 = "#d9bc8c";
-            base0A = "#d9bc8c";
-            base0B = "#8c977d";
-            base0C = "#8aa6a2";
-            base0D = "#8da3b9";
-            base0E = "#a988b0";
-            base0F = "#bbb6b6";
+            name = "Jellybeans";
+            author = "https://github.com/fredhappyface";
+            base00 = "#121212";
+            base01 = "#929292";
+            base02 = "#bdbdbd";
+            base03 = "#c5c5c5";
+            base04 = "#cdcdcd";
+            base05 = "#d5d5d5";
+            base06 = "#dedede";
+            base07 = "#ffffff";
+            base08 = "#ffa1a1";
+            base09 = "#ffba7b";
+            base0A = "#ffdca0";
+            base0B = "#bddeab";
+            base0C = "#1ab2a8";
+            base0D = "#b1d8f6";
+            base0E = "#fbdaff";
+            base0F = "#713939";
           };
 
           image = lib.stylix.mkImage pkgs (pkgs.fetchurl {
-            url = "https://w.wallhaven.cc/full/og/wallhaven-ogl5z9.png";
-            sha256 = "sha256-VvnBCulYtyVqJOQ5psLJyIvK8YffWPP8Stz9KgznGcY=";
+            url = "https://w.wallhaven.cc/full/w5/wallhaven-w5x65p.jpg";
+            sha256 = "sha256-aUTvlXBCEwi6gPmosh4vgTzbcr3YyJllFm0E5lLW5ks=";
           }) colors.toList;
 
           icons = {

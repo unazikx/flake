@@ -22,7 +22,7 @@
 
           base16Scheme = lib.mkForce {
             name = "Paradise";
-            author = "manas140";
+            author = "https://github.com/manas140";
             base00 = "#151515";
             base01 = "#1f1f1f";
             base02 = "#2e2e2e";
