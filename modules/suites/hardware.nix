@@ -9,7 +9,6 @@
       # keep-sorted start
       zen.hardware.bluetooth
       zen.hardware.boot
-      zen.hardware.compression.zram
       zen.hardware.networking
       zen.hardware.security
       zen.hardware.sound.pipewire

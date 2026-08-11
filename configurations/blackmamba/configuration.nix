@@ -44,11 +44,12 @@
         "gew1-dealer.spotify.com"
         "www-growth.scdn.co"
       ])
+      zen.hardware.compression.zswap
       zen.hardware.cpu-gpu
       zen.hardware.mounting
+      zen.hardware.power
       zen.miscellaneous.disko
       zen.miscellaneous.home-manager
-      zen.hardware.power
       zen.miscellaneous.minimal
       zen.miscellaneous.nix
       zen.miscellaneous.secrets
