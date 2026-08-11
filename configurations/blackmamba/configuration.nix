@@ -10,8 +10,13 @@
 
     isInstaller = false;
     sopsKey = "age1334jkz6qgtwqctj20zct5ha8psd5ds5yz5n6frxrrwj74l8jcg3qeywx0a";
-    drive = toString /dev/disk/by-id/nvme-RPFTJ256PDD2MWX_SS0R27339Z1CD95Z1273;
-    # https://www.impactcomputers.com/hard-drives-ssd/union-memory-rpftj256pdd2mwx
+
+    drives = {
+      system = toString /dev/disk/by-id/nvme-RPFTJ256PDD2MWX_SS0R27339Z1CD95Z1273;
+      # https://www.impactcomputers.com/hard-drives-ssd/union-memory-rpftj256pdd2mwx
+
+      samsanya = toString /dev/disk/by-id/nvme-SAMSUNG_MZVKW512HMJP-000H1_S34CNX0JA08028;
+    };
 
     flakeDir = toString /etc/nixos;
     defaultUser = "hackerx";

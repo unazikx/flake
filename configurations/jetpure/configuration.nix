@@ -10,8 +10,11 @@
 
     isInstaller = false;
     sopsKey = "age1c3z633k2m0vgfn5vjflu763lzadg2lddfnzwwyhvmyf053quqqtsh0cdqz";
-    drive = toString /dev/disk/by-id/ata-KINGSTON_SA400S37240G_50026B72828C9A2D;
-    # https://www.kingston.com/en/ssd/a400-solid-state-drive
+
+    drives = {
+      system = toString /dev/disk/by-id/ata-KINGSTON_SA400S37240G_50026B72828C9A2D;
+      # https://www.kingston.com/en/ssd/a400-solid-state-drive
+    };
 
     flakeDir = toString /etc/nixos;
     defaultUser = "nixzoid";
