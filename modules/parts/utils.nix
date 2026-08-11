@@ -5,13 +5,6 @@
 {
   flake-file.inputs = {
     # keep-sorted start block=yes newline_separated=yes
-    nixos-hardware = {
-      type = "github";
-      owner = "NixOS";
-      repo = "nixos-hardware";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     flake-utils = {
       type = "github";
       owner = "numtide";
@@ -24,6 +17,13 @@
       repo = "nix-math";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-parts.follows = "flake-parts";
+    };
+
+    nixos-hardware = {
+      type = "github";
+      owner = "NixOS";
+      repo = "nixos-hardware";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     # keep-sorted end
   };

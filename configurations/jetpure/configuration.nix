@@ -81,11 +81,9 @@
       zen.games.hytale.launcher
       zen.games.minecraft.prismlauncher
       zen.games.steam
-      zen.games.umu-launcher
       zen.miscellaneous.nix
       zen.miscellaneous.users
       zen.miscellaneous.xdg
-      zen.programs.cli.cava
       zen.programs.cli.fastfetch
       zen.programs.cli.gdu
       zen.programs.cli.git
@@ -94,8 +92,6 @@
       zen.programs.cli.spotatui
       zen.programs.cli.ssh
       zen.programs.cli.yazi
-      zen.programs.cli.youtube-cli
-      zen.programs.desktop.mangowc
       zen.programs.desktop.sway
       zen.programs.desktop.vicinae
       zen.programs.editors.helix
@@ -115,8 +111,8 @@
       zen.programs.terminal.translate-shell
       zen.programs.terminal.trash
       zen.programs.terminal.zoxide
+      zen.services.playerctld
       zen.suites.gamedev
-      zen.suites.music
       zen.suites.theming
       # keep-sorted end
     ];
