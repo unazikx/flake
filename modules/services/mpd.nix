@@ -1,4 +1,5 @@
 {
+  zen,
   ...
 }:
 
@@ -9,6 +10,10 @@
       use frontend for listen music
       https://wiki.archlinux.org/title/Music_Player_Daemon#Clients
     '';
+
+    includes = [
+      zen.services.playerctld
+    ];
 
     homeManager =
       {
@@ -72,8 +77,6 @@
         };
 
         services.mpdscribble.enable = true;
-
-        services.playerctld.enable = true;
 
         services.mpdscribble = {
           endpoints = {
