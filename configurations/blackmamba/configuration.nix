@@ -47,6 +47,7 @@
       zen.hardware.mounting
       zen.miscellaneous.disko
       zen.miscellaneous.home-manager
+      zen.hardware.power
       zen.miscellaneous.minimal
       zen.miscellaneous.nix
       zen.miscellaneous.secrets
