@@ -526,6 +526,10 @@
                   language = "russian";
                 };
 
+                "New Super Lucky's Tale" = {
+                  id = 1038300;
+                };
+
                 "Noexistence You Me" = {
                   id = 2873080;
                 };
@@ -675,6 +679,10 @@
                 "Sunset Overdrive" = {
                   id = 847370;
                   language = "russian";
+                };
+
+                "Super Lucky's Tale" = {
+                  id = 847360;
                 };
 
                 "Supraball" = {
