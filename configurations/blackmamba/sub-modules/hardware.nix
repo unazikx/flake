@@ -12,6 +12,7 @@
       {
         imports = [
           inputs.nixpkgs.nixosModules.notDetected
+          inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t14-amd-gen1
         ];
 
         boot = {

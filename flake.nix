@@ -280,6 +280,13 @@
       };
     };
 
+    nixos-hardware = {
+      type = "github";
+      owner = "NixOS";
+      repo = "nixos-hardware";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nixpkgs.follows = "nixpkgs-unstable";
 
     nixpkgs-lib.follows = "nixpkgs";
