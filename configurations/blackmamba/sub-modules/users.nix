@@ -3,7 +3,7 @@
 }:
 
 {
-  zen.hosts.jetpure = {
+  zen.hosts.blackmamba = {
     nixos =
       {
         config,
