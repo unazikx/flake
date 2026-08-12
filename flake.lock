@@ -1,5 +1,28 @@
 {
   "nodes": {
+    "aurelia": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1786536077,
+        "narHash": "sha256-8b44T/kkl2rwTCEW3kf6MxZMojsCO/bb8x2wL5nznzI=",
+        "owner": "drackrath",
+        "repo": "aurelia",
+        "rev": "cc1167718f46bfb4d25fff37007fb9f15d12c47e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "drackrath",
+        "repo": "aurelia",
+        "type": "github"
+      }
+    },
     "base16": {
       "inputs": {
         "fromYaml": "fromYaml"
@@ -1395,6 +1418,7 @@
     },
     "root": {
       "inputs": {
+        "aurelia": "aurelia",
         "betterfox": "betterfox",
         "binternet-nix": "binternet-nix",
         "chaotic-nyx": "chaotic-nyx",

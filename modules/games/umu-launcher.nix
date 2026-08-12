@@ -16,7 +16,6 @@
         ...
       }:
       let
-        steamapps = "${config.xdg.dataHome}/Steam/steamapps";
         steam = config.programs.steam.config.defaultCompatTool;
       in
       {
@@ -24,7 +23,6 @@
           (pkgs.umu-launcher.override {
             extraEnv = {
               PROTONPATH = steam.steamcompattool;
-              WINEPREFIX = "${steamapps}/compatdata/0";
             };
           })
         ];
