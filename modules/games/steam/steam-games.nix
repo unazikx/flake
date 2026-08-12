@@ -500,6 +500,7 @@
 
                 "Moonlighter" = {
                   id = 606150;
+                  compatTool = null;
                   language = "russian";
                 };
 
