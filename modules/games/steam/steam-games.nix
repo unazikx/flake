@@ -313,6 +313,10 @@
                   language = "russian";
                 };
 
+                "EthrA (playtest)" = {
+                  id = 4986460;
+                };
+
                 "Exit The Gungeon" = {
                   id = 1209490;
                 };
