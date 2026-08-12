@@ -17,7 +17,7 @@
             selection = "selector";
 
             listenAddress = "0.0.0.0";
-            port = 1080;
+            port = 1020;
 
             singBox = {
               enable = true;
@@ -41,20 +41,16 @@
                 urlFile = config.sops.secrets."vpn/finland".path;
               }
               {
-                tag = "Sweden";
-                urlFile = config.sops.secrets."vpn/sweden".path;
-              }
-              {
-                tag = "Kazakhstan";
-                urlFile = config.sops.secrets."vpn/kazakhstan".path;
+                tag = "France";
+                urlFile = config.sops.secrets."vpn/france".path;
               }
             ];
 
             subscriptions = [
-              # https://github.com/AvenCores/goida-vpn-configs/blob/main/source/config/urls.json
+              # https://avencores.github.io/goida-vpn-site
               {
-                tag = "OpenProxyList";
-                url = "https://raw.githubusercontent.com/roosterkid/openproxylist/main/V2RAY_RAW.txt";
+                tag = "Igreck";
+                url = "https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/23.txt";
               }
             ];
           };
@@ -85,10 +81,9 @@
         };
 
         sops.secrets = {
+          "vpn/ashley-vpn" = { };
           "vpn/finland" = { };
-          "vpn/kazakhstan" = { };
-          "vpn/sweden" = { };
-          "vpn/mifa/vless" = { };
+          "vpn/france" = { };
         };
       };
   };

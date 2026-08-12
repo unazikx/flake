@@ -126,30 +126,4 @@ inputs: lib: _new:
       s
       l
     ];
-
-  drives = {
-    byName =
-      list:
-      lib.listToAttrs (
-        map (name: {
-          name = "/media/${name}";
-          value =
-            (
-              {
-                name ? throw "set label pls",
-                options ? [ ],
-              }:
-              {
-                device = "/dev/disk/by-label/${name}";
-                fsType = "ext4";
-                inherit options;
-              }
-            )
-              {
-                inherit name;
-                options = [ "x-gvfs-show" ];
-              };
-        }) list
-      );
-  };
 }

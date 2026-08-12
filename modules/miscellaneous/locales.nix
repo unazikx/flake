@@ -13,7 +13,7 @@
       {
         services = {
           chrony.enable = true;
-          automatic-timezoned.enable = true;
+          tzupdate.enable = true;
         };
 
         networking.timeServers = lib.flatten [

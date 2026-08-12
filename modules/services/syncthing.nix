@@ -9,9 +9,11 @@
       idk how but i will hide id devices
     '';
 
-    homeManager =
+    homeManagerNixos =
       {
         pkgs,
+        config,
+        user,
         ...
       }:
       {
@@ -24,12 +26,26 @@
 
           guiAddress = "0.0.0.0:8384";
 
+          guiCredentials = {
+            username = user.userName;
+            passwordFile = config.sops.secrets."services/syncthing/gui".path;
+          };
+
+          cert = config.sops.secrets."services/syncthing/cert".path or null;
+          key = config.sops.secrets."services/syncthing/key".path or null;
+
           settings.options = {
             relaysEnabled = true;
             urAccepted = -1;
             localAnnounceEnabled = true;
             localAnnouncePort = 21027;
           };
+        };
+
+        sops.secrets = {
+          "services/syncthing/gui" = { };
+          "services/syncthing/cert" = { };
+          "services/syncthing/key" = { };
         };
       };
   };

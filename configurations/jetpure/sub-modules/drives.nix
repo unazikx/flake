@@ -10,10 +10,20 @@
         ...
       }:
       {
-        fileSystems = lib.drives.byName [
-          "fatKartman"
-          "fastRider"
-        ];
+        fileSystems = lib.listToAttrs (
+          lib.map
+            (drive: {
+              name = "/media/${drive}";
+              value = {
+                device = "/dev/disk/by-label/${drive}";
+                options = [ "x-gvfs-show" ];
+              };
+            })
+            [
+              "fatKartman"
+              "fastRider"
+            ]
+        );
       };
   };
 }
