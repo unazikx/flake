@@ -10,7 +10,7 @@
       }:
       {
         fileSystems = {
-          "fatKartman" = {
+          "/media/fatKartman" = {
             device = "/dev/disk/by-label/fatKartman";
             fsType = "ext4";
             options = [
@@ -18,7 +18,7 @@
             ];
           };
 
-          "fastRider" = {
+          "/media/fastRider" = {
             device = "/dev/disk/by-label/fastRider";
             fsType = "ext4";
             options = [
