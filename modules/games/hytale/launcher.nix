@@ -26,12 +26,23 @@
     homeManagerNixos =
       {
         inputs',
+        pkgs,
         ...
       }:
+      let
+        json = pkgs.formats.json { };
+      in
       {
         home.packages = [
           inputs'.hytale-launcher.packages.hytale-launcher
         ];
+
+        xdg.dataFile = {
+          "Hytale/settings.json".source = json.generate "hytale-settings.json" {
+            disable_window_controls = true;
+            language = "ru";
+          };
+        };
       };
   };
 }
