@@ -14,7 +14,7 @@
     # keep-sorted end
   };
 
-  zen.miscellaneous.secrets = {
+  zen.miscellaneous.sops-nix = {
     os =
       {
         pkgs,

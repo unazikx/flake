@@ -56,7 +56,7 @@
       zen.miscellaneous.minimal
       zen.miscellaneous.nix
       zen.miscellaneous.nix.ncro
-      zen.miscellaneous.secrets
+      zen.miscellaneous.sops-nix
       zen.miscellaneous.version
       zen.programs.cli.nixos-cli
       zen.programs.cli.rusted-tools
