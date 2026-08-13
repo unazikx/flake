@@ -10,7 +10,6 @@
 
     homeManager =
       {
-        config,
         ...
       }:
       {
@@ -24,7 +23,6 @@
             };
 
             file = {
-              path = "${config.xdg.userDirs.pictures}/screenshots";
               name_format = "screenshot_%F_%T";
               # ^^^ https://docs.rs/chrono/latest/chrono/format/strftime/index.html
               encoding = "jpg";

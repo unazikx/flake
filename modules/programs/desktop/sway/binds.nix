@@ -64,11 +64,11 @@
 
             (
               let
-                screenshot = "exec ${lib.getExe config.programs.wayshot.package}";
+                screenshot = "exec ${lib.getExe config.programs.wayshot.package} ${config.xdg.userDirs.pictures}";
               in
               {
                 "Print" = "${screenshot} -g";
-                "Print+Shift" = screenshot;
+                "Print+Shift" = "${screenshot}";
               }
             )
 
