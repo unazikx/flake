@@ -48,12 +48,16 @@
               in
               {
                 page = url;
-                original = "https://w.wallhaven.cc/full/${sub}/wallhaven-${id}.png";
+                jpg = "https://w.wallhaven.cc/full/${sub}/wallhaven-${id}.jpg";
+                png = "https://w.wallhaven.cc/full/${sub}/wallhaven-${id}.png";
                 small = "https://th.wallhaven.cc/small/${sub}/${id}.jpg";
               };
 
             formatEntry = name: entry: ''
-              __${name}__ -> (${entry.page} - ${entry.original})
+              __${name}__ -> (_${entry.page}_)
+
+              - jpg: ${entry.jpg}
+              - png: ${entry.png}
 
               ![${name}](${entry.small})
             '';
@@ -67,6 +71,8 @@
           {
             text = ''
               ## Wallpapers
+
+              !!! DONT BLAME ME IF PNG OR JPG NOT WORKING
 
               ${lib.concatStringsSep "\n\n" (lib.mapAttrsToList formatEntry list)}
 
