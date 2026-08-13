@@ -56,9 +56,9 @@
                 checkForUpdatesOnStartup = true;
                 autoUpdateGames = false;
 
-                defaultInstallPath = "${config.xdg.userDirs.publicShare}/Games";
+                defaultInstallPath = "${config.home.homeDirectory}/.heroic/games";
                 defaultSteamPath = "${config.home.homeDirectory}/.steam/steam";
-                defaultWinePrefix = "${config.xdg.userDirs.publicShare}/wine-prefix";
+                defaultWinePrefix = "${config.home.homeDirectory}/.heroic/prefixes";
 
                 language = "en";
                 maxWorkers = 0;
