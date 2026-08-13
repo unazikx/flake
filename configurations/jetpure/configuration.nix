@@ -83,6 +83,7 @@
       zen.games.hytale.launcher
       zen.games.minecraft.prismlauncher
       zen.games.steam
+      zen.games.strom
       zen.games.umu-launcher
       zen.miscellaneous.nix
       zen.miscellaneous.users

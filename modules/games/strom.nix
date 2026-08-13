@@ -1,4 +1,5 @@
 {
+  zen,
   ...
 }:
 
@@ -21,8 +22,12 @@
       searching way to package games to standalone file
 
       list of available games:
-      https://github.com/kraftwerk-gaming/strom/blob/master/README.md#games
+      https://ash.radicle.garden/raw/rad:zaCSBVa8UbKNEWBcmRTW1m9fZXhu/head/web/gui/index.html
     '';
+
+    includes = [
+      zen.services.kubo
+    ];
 
     nixos =
       {
