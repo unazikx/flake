@@ -14,7 +14,6 @@
       # zen.miscellaneous.nix.lix
       zen.miscellaneous.nix.overlays
       zen.miscellaneous.nix.settings
-      zen.miscellaneous.nix.substituters
     ];
 
     nixos =

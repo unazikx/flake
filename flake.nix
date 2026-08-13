@@ -217,6 +217,13 @@
       };
     };
 
+    ncro = {
+      type = "github";
+      owner = "manic-systems";
+      repo = "ncro";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nilla-cli = {
       type = "github";
       owner = "nilla-nix";

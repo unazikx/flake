@@ -942,6 +942,26 @@
         "type": "github"
       }
     },
+    "ncro": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1786045750,
+        "narHash": "sha256-q3A6b0bIqOM1Ewzzi/dp/+MAzmAkAIpGwyE1KPBBxcM=",
+        "owner": "manic-systems",
+        "repo": "ncro",
+        "rev": "c6e07f2adeca2b7673b52628e531187dcbfc34e9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "manic-systems",
+        "repo": "ncro",
+        "type": "github"
+      }
+    },
     "nilla-cli": {
       "locked": {
         "lastModified": 1783759909,
@@ -1446,6 +1466,7 @@
         "late-sh": "late-sh",
         "make-shell": "make-shell",
         "mangowc": "mangowc",
+        "ncro": "ncro",
         "nilla-cli": "nilla-cli",
         "niri-flake": "niri-flake",
         "nix-cursors": "nix-cursors",
