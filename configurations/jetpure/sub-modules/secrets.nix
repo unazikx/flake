@@ -16,7 +16,7 @@
         ...
       }:
       {
-        sops.defaultSopsFile = "${self}/secrets/${host.hostName}.yaml";
+        sops.defaultSopsFile = "${self}/secrets/${host.hostName}/generic.yaml";
 
         sops.secrets = {
           "password/nixzoid" = {
@@ -43,7 +43,7 @@
           !include ${config.sops.templates."nix-access-tokens".path}
         '';
 
-        sops.defaultSopsFile = "${self}/secrets/${host.hostName}.yaml";
+        sops.defaultSopsFile = "${self}/secrets/${host.hostName}/generic.yaml";
 
         sops.templates = {
           "nix-access-tokens" = {

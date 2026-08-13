@@ -43,14 +43,6 @@
             yaml = {
               creation_rules = lib.flatten [
                 (map (configuration: {
-                  path_regex = "secrets/${configuration.name}\\.yaml$";
-                  key_groups = [
-                    {
-                      age = [ configuration.key ];
-                    }
-                  ];
-                }) allKeys)
-                (map (configuration: {
                   path_regex = "secrets/${configuration.name}/[^/]+\.(yaml|json|env|ini)$";
                   key_groups = [
                     {
