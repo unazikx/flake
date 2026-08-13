@@ -105,8 +105,8 @@
           pkgs.monocraft
           pkgs.noto-fonts
           pkgs.noto-fonts-cjk-sans
-          self'.legacyPackages.fonts.gost
-          self'.legacyPackages.fonts.segoe
+          self'.packages.fonts-gost
+          self'.packages.fonts-segoe
           # keep-sorted end
         ];
       };

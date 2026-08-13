@@ -26,7 +26,7 @@
       }:
       {
         environment.systemPackages = [
-          self'.legacyPackages.hasher
+          self'.packages.hasher
           pkgs.cachix
           pkgs.hydra-check
           pkgs.nix-tree

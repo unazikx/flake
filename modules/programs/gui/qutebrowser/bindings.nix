@@ -14,13 +14,13 @@
         programs.qutebrowser.keyBindings = {
           normal = {
             # keep-sorted start
-            ",," = "spawn --userscript ${lib.getExe self'.legacyPackages.qutebrowser.rbw-filler}";
+            ",," = "spawn --userscript ${lib.getExe self'.packages.qutebrowser-rbw-filler}";
             ",." = "spawn --userscript qute-keepass -p ~/Documents/passwords/db.kdbx";
             ",M" = "hint links spawn mpv {hint-url} ;; " + "message-info 'Video will be open in MPV'";
-            ",l" = "spawn --userscript ${lib.getExe self'.legacyPackages.qutebrowser.rbw-filler} username";
+            ",l" = "spawn --userscript ${lib.getExe self'.packages.qutebrowser-rbw-filler} username";
             ",m" = "spawn mpv {url} ;; " + "message-info 'Video will be open in MPV'";
-            ",p" = "spawn --userscript ${lib.getExe self'.legacyPackages.qutebrowser.rbw-filler} password";
-            ",t" = "spawn --userscript ${lib.getExe self'.legacyPackages.qutebrowser.rbw-filler} totp";
+            ",p" = "spawn --userscript ${lib.getExe self'.packages.qutebrowser-rbw-filler} password";
+            ",t" = "spawn --userscript ${lib.getExe self'.packages.qutebrowser-rbw-filler} totp";
             "<Alt-j>" = "tab-move +";
             "<Alt-k>" = "tab-move -";
             "<Alt-p>" = "open -w -- {clipboard}";

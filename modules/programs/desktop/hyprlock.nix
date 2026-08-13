@@ -97,7 +97,7 @@
                 }
 
                 {
-                  text = "cmd[update:1000] ${lib.getExe self'.legacyPackages.hyprlock-battery}";
+                  text = "cmd[update:1000] ${lib.getExe self'.packages.hyprlock-battery}";
                   color = "rgb(${colors.base05})";
                   font_family = fonts.sansSerif.name;
                   font_size = fonts.sizes.applications;

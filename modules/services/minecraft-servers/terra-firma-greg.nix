@@ -12,7 +12,7 @@
         ...
       }:
       let
-        modpack = self'.legacyPackages.minecraft-servers.terra-firma-greg;
+        modpack = self'.packages.minecraft-servers-terra-firma-greg;
       in
       {
         services.minecraft-servers.servers = {

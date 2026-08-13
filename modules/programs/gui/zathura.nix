@@ -19,7 +19,7 @@
       }:
       {
         home.packages = [
-          (self'.legacyPackages.zaread.override {
+          (self'.packages.zaread.override {
             libreoffice = pkgs.libreoffice-fresh;
           })
         ];

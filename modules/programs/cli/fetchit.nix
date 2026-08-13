@@ -19,7 +19,7 @@
         programs.fetchit = {
           enable = true;
 
-          package = self'.legacyPackages.fetchit;
+          package = self'.packages.fetchit;
 
           settings =
             # lua

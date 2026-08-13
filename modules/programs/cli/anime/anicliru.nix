@@ -19,7 +19,7 @@
       }:
       {
         home.packages = [
-          self'.legacyPackages.ani-cli-ru.client
+          self'.packages.ani-cli-ru-client
         ];
       };
   };

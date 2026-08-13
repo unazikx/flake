@@ -24,7 +24,7 @@
         programs.ayugram-desktop = {
           enable = true;
 
-          themePackage = self'.legacyPackages.walogram;
+          themePackage = self'.packages.walogram;
 
           settings = {
             # keep-sorted start block=yes

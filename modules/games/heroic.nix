@@ -74,7 +74,7 @@
                 wineCrossoverBottle = "Heroic";
                 winePrefix = "${config.xdg.userDirs.publicShare}/wine-prefix";
                 wineVersion = {
-                  bin = "${self'.legacyPackages.proton.ge-patched.steamcompattool}/proton";
+                  bin = "${self'.packages.proton-ge-patched.steamcompattool}/proton";
                   name = "GE-Proton";
                   type = "proton";
                 };

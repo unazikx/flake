@@ -44,7 +44,7 @@
             enable = true;
 
             extraCompatPackages = [
-              self'.legacyPackages.proton.ge-patched
+              self'.packages.proton-ge-patched
             ];
 
             remotePlay.openFirewall = true;
@@ -98,7 +98,7 @@
           onSteamRunning = "close";
           # ^^^ close Steam and apply the changes, waiting for any running games to exit first
 
-          defaultCompatTool = self'.legacyPackages.proton.ge-patched;
+          defaultCompatTool = self'.packages.proton-ge-patched;
         };
 
         systemd.user.services = {

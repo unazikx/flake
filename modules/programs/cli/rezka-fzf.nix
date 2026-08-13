@@ -16,7 +16,7 @@
       }:
       {
         home.packages = [
-          self'.legacyPackages.hdrezka.client
+          self'.packages.hdrezka-client
         ];
       };
   };

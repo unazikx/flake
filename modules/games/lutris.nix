@@ -19,7 +19,7 @@
         programs.lutris = {
           enable = true;
 
-          defaultWinePackage = self'.legacyPackages.proton.ge-patched;
+          defaultWinePackage = self'.packages.proton-ge-patched;
 
           protonPackages = [
             config.programs.lutris.defaultWinePackage

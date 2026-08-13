@@ -23,7 +23,7 @@
 
           server = {
             staticDir = toString (
-              self'.legacyPackages.nitter-assets.override {
+              self'.packages.nitter-assets.override {
                 colors = config.lib.stylix.colors.withHashtag;
               }
             );

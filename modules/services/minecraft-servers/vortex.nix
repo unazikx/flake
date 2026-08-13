@@ -12,7 +12,7 @@
         ...
       }:
       let
-        modpack = self'.legacyPackages.minecraft-servers.vortex;
+        modpack = self'.packages.minecraft-servers-vortex;
       in
       {
         services.minecraft-servers.servers = {

@@ -28,8 +28,8 @@
         hardware.uinput.enable = true;
 
         environment.systemPackages = [
-          self'.legacyPackages.xbox.gamepad-kbd-toggle
-          self'.legacyPackages.xbox.gamepad-rumble
+          self'.packages.xbox-gamepad-kbd-toggle
+          self'.packages.xbox-gamepad-rumble
         ];
 
         systemd.user = {
@@ -41,7 +41,7 @@
             startLimitBurst = 3;
             serviceConfig = {
               Type = "simple";
-              ExecStart = lib.getExe self'.legacyPackages.xbox.gamepad-kbd;
+              ExecStart = lib.getExe self'.packages.xbox-gamepad-kbd;
               Restart = "on-failure";
               RestartSec = 2;
             };
@@ -54,7 +54,7 @@
             after = [ "graphical-session.target" ];
             serviceConfig = {
               Type = "simple";
-              ExecStart = lib.getExe self'.legacyPackages.xbox.gamepad-kbd-watch;
+              ExecStart = lib.getExe self'.packages.xbox-gamepad-kbd-watch;
               Restart = "always";
               RestartSec = 3;
             };
