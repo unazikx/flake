@@ -9,15 +9,15 @@
     class = "nixos";
 
     isInstaller = false;
-    sopsKey = "age1c3z633k2m0vgfn5vjflu763lzadg2lddfnzwwyhvmyf053quqqtsh0cdqz";
+    flakeDir = toString /etc/nixos;
+    defaultUser = "nixzoid";
 
     drives = {
       system = toString /dev/disk/by-id/ata-KINGSTON_SA400S37240G_50026B72828C9A2D;
       # https://www.kingston.com/en/ssd/a400-solid-state-drive
     };
 
-    flakeDir = toString /etc/nixos;
-    defaultUser = "nixzoid";
+    sopsKey = "age1c3z633k2m0vgfn5vjflu763lzadg2lddfnzwwyhvmyf053quqqtsh0cdqz";
 
     users = {
       nixzoid = {
@@ -51,6 +51,7 @@
       zen.hardware.compression.zram
       zen.hardware.cpu-gpu
       zen.hardware.mounting
+      zen.miscellaneous.agenix
       zen.miscellaneous.disko
       zen.miscellaneous.home-manager
       zen.miscellaneous.minimal

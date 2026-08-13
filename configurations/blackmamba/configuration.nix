@@ -9,7 +9,8 @@
     class = "nixos";
 
     isInstaller = false;
-    sopsKey = "age1334jkz6qgtwqctj20zct5ha8psd5ds5yz5n6frxrrwj74l8jcg3qeywx0a";
+    flakeDir = toString /etc/nixos;
+    defaultUser = "hackerx";
 
     drives = {
       system = toString /dev/disk/by-id/nvme-RPFTJ256PDD2MWX_SS0R27339Z1CD95Z1273;
@@ -18,8 +19,7 @@
       samsanya = toString /dev/disk/by-id/nvme-SAMSUNG_MZVKW512HMJP-000H1_S34CNX0JA08028;
     };
 
-    flakeDir = toString /etc/nixos;
-    defaultUser = "hackerx";
+    sopsKey = "age1334jkz6qgtwqctj20zct5ha8psd5ds5yz5n6frxrrwj74l8jcg3qeywx0a";
 
     users = {
       hackerx = {
@@ -57,7 +57,7 @@
       zen.miscellaneous.home-manager
       zen.miscellaneous.minimal
       zen.miscellaneous.nix
-      zen.miscellaneous.secrets
+      zen.miscellaneous.sops-nix
       zen.miscellaneous.version
       zen.programs.cli.nixos-cli
       zen.programs.cli.rusted-tools

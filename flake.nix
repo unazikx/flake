@@ -1,5 +1,16 @@
 {
   inputs = {
+    agenix = {
+      type = "github";
+      owner = "ryantm";
+      repo = "agenix";
+      inputs = {
+        darwin.follows = "nix-darwin";
+        home-manager.follows = "home-manager";
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
+
     aurelia = {
       type = "github";
       owner = "drackrath";
