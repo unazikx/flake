@@ -757,6 +757,16 @@
 
                 "Tinkerlands" = {
                   id = 2617700;
+                  files = {
+                    prefix.patch = {
+                      "drive_c/users/steamuser/AppData/Local/Tinkerlands/useroptions.conf" = {
+                        format = "json";
+                        content = {
+                          language = 9.0; # russian
+                        };
+                      };
+                    };
+                  };
                 };
 
                 "Torchlight II" = {
