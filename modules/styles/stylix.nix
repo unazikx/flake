@@ -21,6 +21,7 @@
       inputs.nur.follows = "nur";
     };
 
+    # https://tinted-theming.github.io/tinted-gallery
     tinted-theming = {
       type = "github";
       owner = "tinted-theming";

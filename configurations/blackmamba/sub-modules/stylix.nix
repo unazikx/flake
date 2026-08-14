@@ -21,7 +21,7 @@
         stylix = {
           polarity = "dark";
 
-          base16Scheme = lib.mkForce "${inputs.tinted-theming}/base16/vesper.yaml";
+          base16Scheme = lib.mkForce "${inputs.tinted-theming}/base16/classic-dark.yaml";
 
           image = lib.stylix.mkImage pkgs (pkgs.fetchurl {
             url = "https://w.wallhaven.cc/full/w5/wallhaven-w5x65p.jpg";
