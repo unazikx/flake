@@ -1528,6 +1528,7 @@
         "strom-nix": "strom-nix",
         "stylix": "stylix",
         "tele": "tele",
+        "tinted-theming": "tinted-theming",
         "treefmt-nix": "treefmt-nix_2",
         "vicinae-extensions": "vicinae-extensions",
         "xytz": "xytz",
@@ -1982,6 +1983,22 @@
         "owner": "tinted-theming",
         "repo": "schemes",
         "rev": "9bd28ed313560db3c5b605c63bc4e309e78e3fc8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "tinted-theming",
+        "repo": "schemes",
+        "type": "github"
+      }
+    },
+    "tinted-theming": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1786274241,
+        "narHash": "sha256-LMHxSQJIv6QJJkO9W7sAkJujlwusFf9/Ct0SYJ6GyHQ=",
+        "owner": "tinted-theming",
+        "repo": "schemes",
+        "rev": "fdca32a0d14ec80ad83a78a9ccb85592ca6cb9e1",
         "type": "github"
       },
       "original": {

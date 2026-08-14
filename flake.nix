@@ -454,6 +454,13 @@
       };
     };
 
+    tinted-theming = {
+      type = "github";
+      owner = "tinted-theming";
+      repo = "schemes";
+      flake = false;
+    };
+
     treefmt-nix = {
       type = "github";
       owner = "numtide";

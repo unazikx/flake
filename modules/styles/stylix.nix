@@ -20,6 +20,13 @@
       inputs.flake-parts.follows = "flake-parts";
       inputs.nur.follows = "nur";
     };
+
+    tinted-theming = {
+      type = "github";
+      owner = "tinted-theming";
+      repo = "schemes";
+      flake = false;
+    };
     # keep-sorted end
   };
 
