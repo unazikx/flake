@@ -51,10 +51,6 @@
                   PROTON_ENABLE_WAYLAND = 1;
                   PROTON_USE_NTSYNC = 1;
                 };
-
-                files.prefix = {
-                  remove = [ "drive_c/vrclient" ];
-                };
               }
               {
                 # keep-sorted start block=yes newline_separated=yes
@@ -757,6 +753,10 @@
 
                 "Theotown" = {
                   id = 1084020;
+                };
+
+                "Tinkerlands" = {
+                  id = 2617700;
                 };
 
                 "Torchlight II" = {

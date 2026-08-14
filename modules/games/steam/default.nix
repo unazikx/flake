@@ -105,7 +105,15 @@
           steam-autostart = {
             Unit = {
               PartOf = [ "graphical-session.target" ];
-              After = [ "graphical-session.target" ];
+
+              After = [
+                "graphical-session.target"
+                "steam-config-patcher.service"
+              ];
+
+              Requires = [
+                "steam-config-patcher.service"
+              ];
             };
 
             Install = {
