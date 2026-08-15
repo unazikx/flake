@@ -38,7 +38,6 @@
                     in
                     lib.mkIf mangohud.enable (lib.getExe mangohud.package)
                   )
-
                   (
                     let
                       gamemode = osConfig.programs.gamemode;
@@ -56,6 +55,10 @@
                 # keep-sorted start block=yes newline_separated=yes
                 "Abiotic Factor" = {
                   id = 427410;
+                };
+
+                "Sandustry" = {
+                  id = 2764460;
                 };
 
                 "Adventures Of Sir Kicksalot" = {

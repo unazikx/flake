@@ -105,15 +105,7 @@
           steam-autostart = {
             Unit = {
               PartOf = [ "graphical-session.target" ];
-
-              After = [
-                "graphical-session.target"
-                "steam-config-patcher.service"
-              ];
-
-              Requires = [
-                "steam-config-patcher.service"
-              ];
+              After = [ "graphical-session.target" ];
             };
 
             Install = {
@@ -125,8 +117,8 @@
                 (lib.getExe osConfig.programs.steam.package)
                 "-nochatui"
                 "-nofriendsui"
-                "-silent"
               ];
+
               Restart = "always";
             };
           };
