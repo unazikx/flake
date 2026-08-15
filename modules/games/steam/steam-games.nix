@@ -57,10 +57,6 @@
                   id = 427410;
                 };
 
-                "Sandustry" = {
-                  id = 2764460;
-                };
-
                 "Adventures Of Sir Kicksalot" = {
                   id = 2629230;
                 };
@@ -614,6 +610,10 @@
                 "Saints Row: The Third Remastered" = {
                   id = 978300;
                   language = "russian";
+                };
+
+                "Sandustry" = {
+                  id = 2764460;
                 };
 
                 "Satisfactory" = {
