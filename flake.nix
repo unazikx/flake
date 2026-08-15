@@ -475,6 +475,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    xmcl = {
+      type = "github";
+      owner = "x45iq";
+      repo = "xmcl-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     xytz = {
       type = "github";
       owner = "xdagiz";

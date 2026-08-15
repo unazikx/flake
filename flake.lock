@@ -1531,6 +1531,7 @@
         "tinted-theming": "tinted-theming",
         "treefmt-nix": "treefmt-nix_2",
         "vicinae-extensions": "vicinae-extensions",
+        "xmcl": "xmcl",
         "xytz": "xytz",
         "ytsub": "ytsub"
       }
@@ -2146,6 +2147,26 @@
       "original": {
         "owner": "lassulus",
         "repo": "wrappers",
+        "type": "github"
+      }
+    },
+    "xmcl": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1786693144,
+        "narHash": "sha256-29M3xs3VRfAjuSsHzDMR6ds1PrjDbYkCpVmJk2TU2as=",
+        "owner": "x45iq",
+        "repo": "xmcl-nix",
+        "rev": "9cf797d6ab7173abdc1a1ecf12781dcb2f622f3e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "x45iq",
+        "repo": "xmcl-nix",
         "type": "github"
       }
     },
