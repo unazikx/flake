@@ -10,6 +10,7 @@
     # keep-sorted start
     disko = { };
     diskoUSB = { };
+    actions = { };
     # keep-sorted end
   };
 
@@ -26,6 +27,21 @@
           path = [
             "flake"
             "diskoConfigurations"
+          ];
+        })
+      ];
+
+    actions-to-flake =
+      {
+        ...
+      }:
+      [
+        (den.lib.policy.route {
+          fromClass = "actions";
+          intoClass = "flake";
+          path = [
+            "flake"
+            "REPLACE_ME"
           ];
         })
       ];
@@ -71,9 +87,10 @@
 
   den.schema.flake-system.includes = [
     # keep-sorted start
+    den.policies.actions-other-to-flake
     den.policies.disko-other-to-flake
     den.policies.disko-to-flake
-    zen.disko.default
+    zen.flake-system.default
     # keep-sorted end
   ];
 }

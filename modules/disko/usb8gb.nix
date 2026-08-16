@@ -3,7 +3,7 @@
 }:
 
 {
-  zen.disko.default = {
+  zen.flake-system.default = {
     diskoUSB =
       {
         ...
