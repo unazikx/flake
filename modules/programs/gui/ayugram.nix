@@ -1,4 +1,5 @@
 {
+  zen,
   ...
 }:
 
@@ -13,6 +14,10 @@
       i respect deleted messages
       i use it ONLY for bw (black-white) icon tray
     '';
+
+    includes = [
+      zen.custom.ayugram-desktop
+    ];
 
     homeManager =
       {

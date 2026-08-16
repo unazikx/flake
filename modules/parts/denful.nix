@@ -34,6 +34,7 @@
 
   imports = [
     (inputs.den.namespace "zen" true)
+    (inputs.den.namespace "mod" true)
     inputs.den.flakeModules.default
     inputs.flake-file.flakeModules.default
     inputs.flake-parts.flakeModules.bundlers

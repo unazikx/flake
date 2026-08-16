@@ -1,4 +1,5 @@
 {
+  zen,
   ...
 }:
 
@@ -7,6 +8,10 @@
     description = ''
       web radio for lofi girl and links
     '';
+
+    includes = [
+      zen.custom.lowfi
+    ];
 
     homeManager =
       {

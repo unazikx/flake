@@ -26,6 +26,7 @@
     '';
 
     includes = [
+      zen.custom.strom
       zen.services.kubo
     ];
 

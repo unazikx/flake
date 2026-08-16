@@ -1,4 +1,5 @@
 {
+  zen,
   ...
 }:
 
@@ -8,6 +9,10 @@
       tui spotify client
       very simple and useful
     '';
+
+    includes = [
+      zen.custom.spotatui
+    ];
 
     homeManager =
       {

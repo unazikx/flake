@@ -1,4 +1,5 @@
 {
+  zen,
   ...
 }:
 
@@ -10,6 +11,10 @@
 
       rm replaced by trash-put
     '';
+
+    includes = [
+      zen.custom.trash
+    ];
 
     homeManager =
       {

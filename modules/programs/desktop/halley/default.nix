@@ -1,4 +1,5 @@
 {
+  zen,
   ...
 }:
 
@@ -23,7 +24,9 @@
       and similar to driftwm
     '';
 
-    includes = [ ];
+    includes = [
+      zen.custom.halley
+    ];
 
     nixos =
       {

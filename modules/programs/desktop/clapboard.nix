@@ -11,6 +11,7 @@
     '';
 
     includes = [
+      zen.custom.clapboard
       zen.programs.desktop.tofi
     ];
 

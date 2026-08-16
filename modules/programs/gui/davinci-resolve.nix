@@ -1,4 +1,5 @@
 {
+  zen,
   ...
 }:
 
@@ -13,6 +14,10 @@
       list of patches:
       https://rutracker.org/forum/viewtopic.php?t=6088055
     '';
+
+    includes = [
+      zen.custom.davinci-resolve
+    ];
 
     homeManager =
       {

@@ -1,4 +1,5 @@
 {
+  zen,
   ...
 }:
 
@@ -7,6 +8,10 @@
     description = ''
       stream and record ur screen
     '';
+
+    includes = [
+      zen.custom.obs-studio
+    ];
 
     homeManager =
       {

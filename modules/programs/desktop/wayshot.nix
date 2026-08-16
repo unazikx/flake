@@ -1,4 +1,5 @@
 {
+  zen,
   ...
 }:
 
@@ -7,6 +8,10 @@
     description = ''
       simple screenshoter
     '';
+
+    includes = [
+      zen.custom.wayshot
+    ];
 
     homeManager =
       {

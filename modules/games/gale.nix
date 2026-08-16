@@ -1,4 +1,5 @@
 {
+  zen,
   ...
 }:
 
@@ -9,6 +10,10 @@
       with launcher to steam
       and pretty ui ye
     '';
+
+    includes = [
+      zen.custom.gale
+    ];
 
     homeManager =
       {

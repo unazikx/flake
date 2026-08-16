@@ -1,4 +1,5 @@
 {
+  zen,
   ...
 }:
 
@@ -27,6 +28,10 @@
     description = ''
       various tools for youtube
     '';
+
+    includes = [
+      zen.custom.ytsub
+    ];
 
     homeManager =
       {

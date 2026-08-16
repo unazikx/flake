@@ -1,4 +1,5 @@
 {
+  zen,
   ...
 }:
 
@@ -8,6 +9,10 @@
       best texture/skin maker
       and minecraft animations
     '';
+
+    includes = [
+      zen.custom.blockbench
+    ];
 
     homeManager =
       {

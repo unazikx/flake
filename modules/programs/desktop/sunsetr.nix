@@ -1,4 +1,5 @@
 {
+  zen,
   ...
 }:
 
@@ -10,6 +11,10 @@
 
       universal for all wayland comp
     '';
+
+    includes = [
+      zen.custom.sunsetr
+    ];
 
     homeManagerNixos =
       {

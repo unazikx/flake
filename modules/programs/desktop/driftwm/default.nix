@@ -22,6 +22,7 @@
     '';
 
     includes = [
+      zen.custom.driftwm
       zen.programs.desktop.driftwm.shaders
     ];
 

@@ -15,6 +15,7 @@
     '';
 
     includes = [
+      zen.custom.easy-effects
       zen.programs.gui.easy-effects.presets
     ];
 

@@ -1,4 +1,5 @@
 {
+  zen,
   ...
 }:
 
@@ -8,6 +9,10 @@
       customizable fetcher
       idk very strange
     '';
+
+    includes = [
+      zen.custom.fetchit
+    ];
 
     homeManager =
       {

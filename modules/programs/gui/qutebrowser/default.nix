@@ -13,6 +13,7 @@
     '';
 
     includes = [
+      zen.custom.qutebrowser
       zen.programs.gui.qutebrowser.bindings
       zen.programs.gui.qutebrowser.quickmarks
       zen.programs.gui.qutebrowser.rules

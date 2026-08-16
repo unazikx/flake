@@ -1,4 +1,5 @@
 {
+  zen,
   ...
 }:
 
@@ -8,6 +9,10 @@
       disk usage from directory
       > gdu /path/to/path
     '';
+
+    includes = [
+      zen.custom.gdu
+    ];
 
     homeManager =
       {

@@ -1,4 +1,5 @@
 {
+  zen,
   ...
 }:
 
@@ -7,6 +8,10 @@
     description = ''
       just read books from various sources
     '';
+
+    includes = [
+      zen.custom.foliate
+    ];
 
     homeManager =
       {

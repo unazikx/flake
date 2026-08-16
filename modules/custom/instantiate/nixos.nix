@@ -19,13 +19,20 @@
             inherit
               modules
               ;
+
             specialArgs = {
               inherit
                 self
                 inputs
                 ;
 
-              lib = lib.extend (import ./_lib.nix inputs);
+              lib = lib.extend (
+                import ./_lib.nix {
+                  inherit
+                    inputs
+                    ;
+                }
+              );
             };
           }
         ))
