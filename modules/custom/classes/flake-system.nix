@@ -87,7 +87,7 @@
 
   den.schema.flake-system.includes = [
     # keep-sorted start
-    den.policies.actions-other-to-flake
+    den.policies.actions-to-flake
     den.policies.disko-other-to-flake
     den.policies.disko-to-flake
     zen.flake-system.default

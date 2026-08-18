@@ -5,7 +5,7 @@
 }:
 
 python312Packages.buildPythonPackage (_old: {
-  pname = "hdrezka-api";
+  pname = "hdrezkaapi";
   version = "11.2.3";
   pyproject = true;
 
