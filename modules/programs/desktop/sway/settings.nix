@@ -22,9 +22,15 @@
               # hide_cursor = "when-typing enable";
             };
 
-            input."*" = {
-              xkb_layout = "us,ru";
-              xkb_options = "grp:caps_toggle";
+            input = {
+              "*" = {
+                xkb_layout = "us,ru";
+                xkb_options = "grp:caps_toggle";
+              };
+
+              "type:touchpad" = {
+                tap = "enabled";
+              };
             };
 
             modifier = "Mod4";
