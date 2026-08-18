@@ -8,29 +8,14 @@
 {
   den.classes = {
     # keep-sorted start
+    actions = { };
     disko = { };
     diskoUSB = { };
-    actions = { };
     # keep-sorted end
   };
 
   den.policies = {
     # keep-sorted start block=yes newline_separated=yes
-    disko-other-to-flake =
-      {
-        ...
-      }:
-      [
-        (den.lib.policy.route {
-          fromClass = "diskoUSB";
-          intoClass = "flake";
-          path = [
-            "flake"
-            "diskoConfigurations"
-          ];
-        })
-      ];
-
     actions-to-flake =
       {
         ...
@@ -42,6 +27,21 @@
           path = [
             "flake"
             "REPLACE_ME"
+          ];
+        })
+      ];
+
+    disko-other-to-flake =
+      {
+        ...
+      }:
+      [
+        (den.lib.policy.route {
+          fromClass = "diskoUSB";
+          intoClass = "flake";
+          path = [
+            "flake"
+            "diskoConfigurations"
           ];
         })
       ];
