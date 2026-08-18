@@ -3,7 +3,7 @@
 }:
 
 {
-  zen.programs.gui.easy-effects.presets = {
+  zen.programs.gui.easy-effects.perfectEQ = {
     homeManager =
       {
         lib,

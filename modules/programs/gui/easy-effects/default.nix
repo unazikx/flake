@@ -16,7 +16,8 @@
 
     includes = [
       zen.custom.easy-effects
-      zen.programs.gui.easy-effects.presets
+      zen.programs.gui.easy-effects.perfectEQ
+      zen.programs.gui.easy-effects.thinkpadT14
     ];
 
     homeManager =
