@@ -1,103 +1,58 @@
 {
-  inputs,
   ...
 }:
 
 {
-  flake-file.inputs = {
-    # keep-sorted start block=yes newline_separated=yes
-    pedantix = {
-      type = "github";
-      owner = "swarsel";
-      repo = "pedantix";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-parts.follows = "flake-parts";
-      inputs.treefmt-nix.follows = "treefmt-nix";
-    };
-
-    treefmt-nix = {
-      type = "github";
-      owner = "numtide";
-      repo = "treefmt-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    # keep-sorted end
-  };
-
-  imports = [
-    inputs.treefmt-nix.flakeModule
-    inputs.pedantix.flakeModules.default
-  ];
-
   zen.flake-parts.default = {
-    treefmt =
+    root =
       {
+        pkgs,
         ...
       }:
       {
-        programs = {
-          deadnix = {
-            enable = true;
-            includes = [ "*.nix" ];
-          };
+        # https://github.com/numtide/treefmt-nix/tree/main/examples
+        formatter = pkgs.treefmt.withConfig {
+          runtimeInputs = [
+            # keep-sorted start block=yes
+            pkgs.deadnix
+            pkgs.keep-sorted
+            pkgs.nixfmt
+            pkgs.prettier
+            # keep-sorted end
+          ];
 
-          keep-sorted.enable = true;
+          settings = {
+            formatter = {
+              # keep-sorted start block=yes newline_separated=yes
+              deadnix = {
+                command = "deadnix";
+                excludes = [ ];
+                includes = [ "*.nix" ];
+                options = [ "--edit" ];
+              };
 
-          nixfmt = {
-            enable = true;
-            includes = [ "*.nix" ];
-          };
+              keep-sorted = {
+                command = "keep-sorted";
+                excludes = [ ];
+                includes = [ "*" ];
+                options = [ ];
+              };
 
-          pedantix = {
-            enable = false;
-            includes = [ "*.nix" ];
-            excludes = [
-              "flake.nix"
-              "configuration.nix"
-            ];
+              nixfmt = {
+                command = "nixfmt";
+                includes = [ "*.nix" ];
+              };
 
-            settings = {
-              args.first = [
-                "self"
-                "self'"
-                "inputs"
-                "inputs'"
-                "pkgs"
-                "lib"
-                "config"
-                "osConfig"
-                "host"
-                "user"
-              ];
-              attrs.first = [
-                "flake-file"
-                "den"
-                "zen"
-                "imports"
-                "enable"
-                "package"
-                # flake-fil
-                "type"
-                "owner"
-                "repo"
-                "ref"
-                "inputs"
-              ];
-              formatter = "off";
-              top-level-blank-lines = 1;
-            };
-          };
-
-          prettier = {
-            enable = true;
-            includes = [ "*.md" ];
-
-            settings = {
-              bracketSameLine = true;
-              bracketSpacing = true;
-              embeddedLanguageFormatting = "auto";
-              tabWidth = 2;
-              useTabs = true;
+              prettier = {
+                command = "prettier";
+                excludes = [ ];
+                includes = [
+                  "*.md"
+                  "*.mdx"
+                ];
+                options = [ "--write" ];
+              };
+              # keep-sorted end
             };
           };
         };

@@ -94,26 +94,6 @@
             config.allModuleArgs;
         })
       ];
-
-    treefmt-to-flake-parts =
-      {
-        ...
-      }:
-      [
-        (den.lib.policy.route {
-          fromClass = "treefmt";
-          intoClass = "flake-parts";
-          path = [
-            "treefmt"
-          ];
-          adaptArgs =
-            {
-              config,
-              ...
-            }:
-            config.allModuleArgs;
-        })
-      ];
     # keep-sorted end
   };
 
@@ -124,7 +104,6 @@
     den.policies.makeshell-to-flake-parts
     den.policies.packages-to-flake-parts
     den.policies.root-to-flake-parts
-    den.policies.treefmt-to-flake-parts
     zen.flake-parts.default
     # keep-sorted end
   ];

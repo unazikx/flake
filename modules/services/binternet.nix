@@ -1,28 +1,21 @@
 {
+  zen,
   ...
 }:
 
 {
-  flake-file.inputs = {
-    # keep-sorted start block=yes newline_separated=yes
-    binternet-nix = {
-      type = "github";
-      owner = "unazikx";
-      repo = "binternet-nix";
-      inputs.nixpkgs-unstable.follows = "nixpkgs";
-      inputs.flake-parts.follows = "flake-parts";
-    };
-    # keep-sorted end
-  };
-
   zen.services.binternet = {
     description = ''
       opensource fronrend for pinerest
     '';
 
+    includes = [
+      zen.custom.binternet
+    ];
+
     nixos =
       {
-        pkgs,
+        self',
         config,
         ...
       }:
@@ -37,7 +30,7 @@
               colors = config.lib.stylix.colors.withHashtag;
               fonts = config.stylix.fonts;
             in
-            pkgs.binternet.overrideAttrs (_old: {
+            self'.packages.binternet.overrideAttrs (_old: {
               fixupPhase = ''
                 substituteInPlace $out/misc/style-dark.css \
                   --replace-fail \

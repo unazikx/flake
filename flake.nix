@@ -28,16 +28,6 @@
       flake = false;
     };
 
-    binternet-nix = {
-      type = "github";
-      owner = "unazikx";
-      repo = "binternet-nix";
-      inputs = {
-        flake-parts.follows = "flake-parts";
-        nixpkgs-unstable.follows = "nixpkgs";
-      };
-    };
-
     chaotic-nyx = {
       type = "github";
       owner = "chaotic-cx";
@@ -136,17 +126,6 @@
       repo = "flake-utils";
     };
 
-    halley-flake = {
-      type = "github";
-      owner = "binarylinuxx";
-      repo = "halley-flake";
-      inputs = {
-        flake-utils.follows = "flake-utils";
-        halley-unstable-dev-src.follows = "";
-        nixpkgs.follows = "nixpkgs";
-      };
-    };
-
     helium-flake = {
       type = "gitlab";
       owner = "ntgn";
@@ -193,13 +172,6 @@
       type = "github";
       owner = "denful";
       repo = "import-tree";
-    };
-
-    jovian-nixos = {
-      type = "github";
-      owner = "jovian-experiments";
-      repo = "jovian-nixos";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     late-sh = {
@@ -364,17 +336,6 @@
       };
     };
 
-    pedantix = {
-      type = "github";
-      owner = "swarsel";
-      repo = "pedantix";
-      inputs = {
-        flake-parts.follows = "flake-parts";
-        nixpkgs.follows = "nixpkgs";
-        treefmt-nix.follows = "treefmt-nix";
-      };
-    };
-
     pkgs-by-name = {
       type = "github";
       owner = "drupol";
@@ -392,13 +353,6 @@
       type = "github";
       owner = "diax170";
       repo = "scroll-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    shojiwm = {
-      type = "github";
-      owner = "bea4dev";
-      repo = "shojiwm";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -444,28 +398,11 @@
       };
     };
 
-    tele = {
-      type = "github";
-      owner = "sorokin-vladimir";
-      repo = "tele";
-      inputs = {
-        flake-utils.follows = "flake-utils";
-        nixpkgs.follows = "nixpkgs";
-      };
-    };
-
     tinted-theming = {
       type = "github";
       owner = "tinted-theming";
       repo = "schemes";
       flake = false;
-    };
-
-    treefmt-nix = {
-      type = "github";
-      owner = "numtide";
-      repo = "treefmt-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     vicinae-extensions = {
@@ -480,26 +417,6 @@
       owner = "x45iq";
       repo = "xmcl-nix";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    xytz = {
-      type = "github";
-      owner = "xdagiz";
-      repo = "xytz";
-      inputs = {
-        flake-utils.follows = "flake-utils";
-        nixpkgs.follows = "nixpkgs";
-      };
-    };
-
-    ytsub = {
-      type = "github";
-      owner = "sarowish";
-      repo = "ytsub";
-      inputs = {
-        flake-utils.follows = "flake-utils";
-        nixpkgs.follows = "nixpkgs";
-      };
     };
   };
 

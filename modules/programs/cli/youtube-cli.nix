@@ -4,26 +4,6 @@
 }:
 
 {
-  flake-file.inputs = {
-    # keep-sorted start block=yes newline_separated=yes
-    xytz = {
-      type = "github";
-      owner = "xdagiz";
-      repo = "xytz";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-utils.follows = "flake-utils";
-    };
-
-    ytsub = {
-      type = "github";
-      owner = "sarowish";
-      repo = "ytsub";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-utils.follows = "flake-utils";
-    };
-    # keep-sorted end
-  };
-
   zen.programs.cli.youtube-cli = {
     description = ''
       various tools for youtube
@@ -35,12 +15,12 @@
 
     homeManager =
       {
-        inputs',
+        self',
         ...
       }:
       {
         home.packages = [
-          inputs'.xytz.packages.default
+          self'.packages.xytz
         ];
 
         programs.ytsub = {
