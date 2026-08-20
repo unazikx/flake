@@ -1,4 +1,5 @@
 {
+  zen,
   ...
 }:
 
@@ -8,6 +9,10 @@
       server for manga/manhwa reading
       with builtin webui
     '';
+
+    includes = [
+      zen.services.syncyomi
+    ];
 
     nixos =
       {
@@ -27,15 +32,18 @@
             port = 4567;
 
             initialOpenInBrowserEnabled = false;
+            databaseType = "POSTGRESQL";
 
-            globalUpdateInterval = 6.0;
+            globalUpdateInterval = 6;
+            updateMangas = true;
+
             extensionRepos = (
               map (p: ("https://raw.githubusercontent.com/" + p)) [
                 "yuzono/manga-repo/repo/index.min.json"
+                "keiyoushi/extensions/repo/index.pb"
               ]
             );
 
-            updateMangas = true;
             downloadAsCbz = true;
             downloadConversions = lib.listToAttrs (
               map
@@ -60,10 +68,10 @@
 
             downloadsPath = "${cfg.dataDir}/downloads";
 
-            # syncYomiEnabled = true;
-            # syncYomiHost = syncyomi.config.host;
-            # syncYomiApiKey = "...";
-            # syncInterval = 2;
+            syncYomiEnabled = config.services.syncyomi.enable;
+            syncYomiHost = config.services.syncyomi.config.host;
+            syncYomiApiKey = "...";
+            syncInterval = "10s";
           };
         };
 
@@ -78,6 +86,16 @@
                 reverse_proxy http://${cfg.settings.server.ip}:${toString cfg.settings.server.port}
               '';
             });
+      };
+
+    user =
+      {
+        ...
+      }:
+      {
+        extraGroups = [
+          "suwayomi"
+        ];
       };
   };
 }
