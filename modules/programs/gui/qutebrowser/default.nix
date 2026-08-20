@@ -26,6 +26,7 @@
       {
         pkgs,
         lib,
+        config,
         ...
       }:
       {
@@ -35,17 +36,21 @@
           package = pkgs._previous.qutebrowser;
 
           searchEngines =
+            let
+              marks = config.programs.qutebrowser.quickmarks;
+            in
             # PLEASE SORRY FOR REC
             rec # OOOOOOHHHH NOOOOO FUUUUUUUCCCCKKKK
             # PLEEEEEASEEEESESE SSSSOOOOORRRRRYYYYY
             {
               DEFAULT = forget;
               # keep-sorted start
-              forget = "https://4get.ca/web?s={}";
-              github = "https://github.com/search?q={}";
-              google = "https://www.google.com/search?q={}";
-              nixsearch = "https://nixsearch.thekoppe.com/?q={}";
-              youtube = "https://www.youtube.com/results?search_query={}";
+              forget = "${marks.forget}/web?s={}";
+              github = "${marks.github}/search?q={}";
+              google = "${marks.google}/search?q={}";
+              nixsearch = "${marks.nixSearch}/?q={}";
+              nixpkgs = "${marks.nixpkgs}&query={}";
+              youtube = "${marks.youtube}/results?search_query={}";
               # keep-sorted end
             };
 

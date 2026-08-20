@@ -54,6 +54,8 @@
           egsDB = "egdata.app";
 
           # study
+          forget = "4get.ca";
+          google = "www.google.com";
           chatGpt = "chatgpt.com";
           deekpeek = "chat.deepseek.com";
           claude = "claude.ai";
