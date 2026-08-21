@@ -82,7 +82,6 @@
       zen.games.gale
       zen.games.heroic
       zen.games.hytale.launcher
-      zen.games.minecraft.prismlauncher
       zen.games.minecraft.xmcl
       zen.games.steam
       zen.games.umu-launcher
@@ -95,13 +94,11 @@
       zen.programs.cli.monitor
       zen.programs.cli.rbw
       zen.programs.cli.rezka-fzf
-      zen.programs.cli.spotatui
       zen.programs.cli.ssh
       zen.programs.cli.yazi
       zen.programs.desktop.sway
       zen.programs.desktop.vicinae
       zen.programs.editors.helix
-      zen.programs.editors.opencode
       zen.programs.gui.ayugram
       zen.programs.gui.blender
       zen.programs.gui.easy-effects
@@ -118,7 +115,6 @@
       zen.programs.terminal.trash
       zen.programs.terminal.zoxide
       zen.services.playerctld
-      zen.suites.gamedev
       zen.suites.theming
       # keep-sorted end
     ];
