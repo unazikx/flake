@@ -31,6 +31,9 @@
         config,
         ...
       }:
+      let
+        fonts = config.stylix.fonts;
+      in
       {
         imports = [
           inputs.xmcl.homeModules.xmcl
@@ -75,9 +78,39 @@
             maxAPISockets = 16;
             maxSockets = 64;
             replaceNatives = "legacy-only";
-            theme = "system";
             windowTranslucent = false;
             # keep-sorted end
+          };
+
+          theme = {
+            colors = {
+              # keep-sorted start block=yes
+              assets.backgroundMusic = [ ];
+              settings = {
+                backgroundColorOverlay = true;
+                backgroundImageFit = "cover";
+                backgroundMusicPlayOrder = "sequential";
+                backgroundType = "none";
+                backgroundVolume = 1;
+                blur = 3;
+                fontSize = fonts.sizes.applications + 2;
+                blurAppBar = 3;
+                blurCard = 20;
+                blurSidebar = 3;
+                borderRadiusEnabled = true;
+              };
+              ui = "keystone";
+              version = 1;
+              # keep-sorted end
+            };
+
+            css =
+              # css
+              ''
+                .v-system-bar {
+                  display: none
+                }
+              '';
           };
         };
       };

@@ -48,8 +48,8 @@
               forget = "${marks.forget}/web?s={}";
               github = "${marks.github}/search?q={}";
               google = "${marks.google}/search?q={}";
-              nixsearch = "${marks.nixSearch}/?q={}";
               nixpkgs = "${marks.nixpkgs}&query={}";
+              nixsearch = "${marks.nixSearch}/?q={}";
               youtube = "${marks.youtube}/results?search_query={}";
               # keep-sorted end
             };
