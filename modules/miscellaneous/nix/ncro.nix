@@ -68,6 +68,11 @@
                 ];
               }
               {
+                "https://cache.xinux.uz" = [
+                  "cache.xinux.uz:BXCrtqejFjWzWEB9YuGB7X2MV4ttBur1N8BkwQRdH+0="
+                ];
+              }
+              {
                 "https://install.determinate.systems" = [
                   "cache.flakehub.com-3:hJuILl5sVK4iKm86JzgdXW12Y2Hwd5G07qKtHTOcDCM="
                 ];
