@@ -115,10 +115,10 @@
               json.generate "xmcl-theme.json" cfg.theme.colors
             );
 
-            "xmcl/css.json".text = lib.mkIf (cfg.theme.css != null) cfg.theme.css;
+            "xmcl/theme.css".text = lib.mkIf (cfg.theme.css != null) cfg.theme.css;
 
             "xmcl/root".text = ''
-              ${config.xdg.stateHome}/xmcl
+              ${config.xdg.dataHome}/xmcl
             '';
           };
         };

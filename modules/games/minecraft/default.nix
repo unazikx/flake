@@ -5,6 +5,8 @@
 {
   zen.games.minecraft = {
     meta = {
+      defaultJRE = pkgs: pkgs.temurin-jre-bin-25;
+
       temurinJRE = pkgs: [
         # its all LTS
         # https://adoptium.net/temurin/releases

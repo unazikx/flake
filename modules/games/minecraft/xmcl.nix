@@ -28,6 +28,7 @@
       {
         inputs,
         pkgs,
+        lib,
         config,
         ...
       }:
@@ -63,7 +64,7 @@
             globalEnv = { };
             globalFastLaunch = false;
             globalHideLauncher = true;
-            globalJava = "";
+            globalJava = lib.getExe (zen.games.minecraft.meta.defaultJRE pkgs);
             globalMaxMemory = 8192;
             globalMcOptions = [ ];
             globalMinMemory = 256;
