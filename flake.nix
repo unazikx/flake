@@ -200,6 +200,13 @@
       };
     };
 
+    matugen-nix = {
+      type = "github";
+      owner = "unazikx";
+      repo = "matugen-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     ncro = {
       type = "github";
       owner = "manic-systems";

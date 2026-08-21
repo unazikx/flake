@@ -808,6 +808,26 @@
         "type": "github"
       }
     },
+    "matugen-nix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1787313486,
+        "narHash": "sha256-jnntxhemCB1bwjnbH76V0A/ZmV6x6eZu+RW0Es01BO0=",
+        "owner": "unazikx",
+        "repo": "matugen-nix",
+        "rev": "dc7c4759220bf50944394ab5879197cdcb60a819",
+        "type": "github"
+      },
+      "original": {
+        "owner": "unazikx",
+        "repo": "matugen-nix",
+        "type": "github"
+      }
+    },
     "ncro": {
       "inputs": {
         "nixpkgs": [
@@ -1281,6 +1301,7 @@
         "late-sh": "late-sh",
         "make-shell": "make-shell",
         "mangowc": "mangowc",
+        "matugen-nix": "matugen-nix",
         "ncro": "ncro",
         "nilla-cli": "nilla-cli",
         "niri-flake": "niri-flake",
