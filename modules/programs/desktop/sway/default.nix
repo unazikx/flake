@@ -22,6 +22,7 @@
       zen.programs.desktop.sway.rules
       zen.programs.desktop.sway.settings
       zen.programs.desktop.tofi
+      zen.programs.desktop.uwsm
       zen.programs.desktop.wayshot
       zen.programs.desktop.wob
       zen.programs.terminal.foot
@@ -35,10 +36,22 @@
         user,
         ...
       }:
+      let
+        cfg = config.programs.sway;
+        uwsm = config.programs.uwsm;
+      in
       {
         programs.sway = {
           enable = true;
           package = pkgs.swayfx;
+        };
+
+        programs.uwsm = {
+          waylandCompositors.sway = {
+            prettyName = cfg.package.pname;
+            comment = cfg.package.meta.description;
+            binPath = "/run/current-system/sw/bin/${cfg.package.meta.mainProgram}";
+          };
         };
 
         # fucking idiots why blyat?
@@ -53,7 +66,11 @@
           greetd.settings = {
             initial_session = lib.mkIf (user.defaultWm == "sway") {
               user = user.userName;
-              command = lib.getExe config.programs.sway.package;
+              command =
+                if uwsm.enable then
+                  "${lib.getExe uwsm.package} start sway-uwsm.desktop"
+                else
+                  lib.getExe cfg.package;
             };
           };
         };
