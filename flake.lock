@@ -815,11 +815,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1787313486,
-        "narHash": "sha256-jnntxhemCB1bwjnbH76V0A/ZmV6x6eZu+RW0Es01BO0=",
+        "lastModified": 1787360517,
+        "narHash": "sha256-L7Xhm15zMiEqEkTmbAL6W4ltUAJg0e4BdfyhgTZJpVM=",
         "owner": "unazikx",
         "repo": "matugen-nix",
-        "rev": "dc7c4759220bf50944394ab5879197cdcb60a819",
+        "rev": "dfd602f796c8146e5a2de68f10656c56c2db3a3e",
         "type": "github"
       },
       "original": {
