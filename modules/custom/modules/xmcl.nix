@@ -63,6 +63,19 @@
                             dark = if (polarity == "dark") then true else false;
                           };
                         };
+
+                        css =
+                          # css
+                          ''
+                            .bg-blue {
+                              color: ${colors.withHashtag.base00};
+                              background-color: ${colors.withHashtag.base09};
+                            }
+
+                            .tabs[data-v-4b209390]:after {
+                                background: ${colors.withHashtag.base0A};
+                            }
+                          '';
                       };
                     };
                   }

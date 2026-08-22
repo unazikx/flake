@@ -21,17 +21,6 @@
       idk what say also
     '';
 
-    nixos =
-      {
-        inputs,
-        ...
-      }:
-      {
-        imports = [
-          inputs.helium.nixosModules.helium
-        ];
-      };
-
     homeManagerNixos =
       {
         inputs,
