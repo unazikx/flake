@@ -39,5 +39,26 @@
           };
         };
       };
+
+    homeManagerNixos =
+      {
+        inputs,
+        osConfig,
+        ...
+      }:
+      {
+        imports = [
+          inputs.matugen-nix.homeManagerModules.matugen
+        ];
+
+        matugen = {
+          inherit (osConfig.matugen)
+            enable
+            mode
+            prefer
+            wallpaper
+            ;
+        };
+      };
   };
 }

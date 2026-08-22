@@ -11,6 +11,10 @@
       };
     };
 
+    matugen-nix-files = {
+      url = "/home/nixzoid/Documents/matugen-nix-templates";
+    };
+
     aurelia = {
       type = "github";
       owner = "drackrath";

@@ -8,12 +8,23 @@
       just audio visualizer
     '';
 
-    homeManager = {
-      programs.cava.enable = true;
+    homeManager =
+      {
+        inputs,
+        ...
+      }:
+      {
+        imports = [
+          inputs.matugen-nix-files.homeModules.cava
+        ];
 
-      stylix.targets = {
-        cava.rainbow.enable = true;
+        programs.cava.enable = true;
+
+        matugen.targets.cava.enable = true;
+
+        stylix.targets = {
+          cava.rainbow.enable = false;
+        };
       };
-    };
   };
 }
