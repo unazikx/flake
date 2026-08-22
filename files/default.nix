@@ -36,7 +36,7 @@
       }:
       {
         generateApp = true;
-        treefmt.enable = true;
+        treefmt.enable = false;
       };
   };
 }

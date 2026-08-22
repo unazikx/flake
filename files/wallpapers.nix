@@ -25,9 +25,13 @@
               "Gavryl sunrise" = "https://wallhaven.cc/w/575r67";
               "Jax TADC" = "https://wallhaven.cc/w/mlgomm";
               "Lipsgarets" = "https://wallhaven.cc/w/po7ove";
+              "Minecraft Amethyst" = "https://wallhaven.cc/w/l8qq3l";
+              "Minecraft Birch" = "https://wallhaven.cc/w/e7651w";
+              "Minecraft Moon Derpy" = "https://wallhaven.cc/w/l36362";
               "Oceanview" = "https://wallhaven.cc/w/w5d657";
               "Puyo Puyo" = "https://wallhaven.cc/w/qrmell";
               "Pyramidas" = "https://wallhaven.cc/w/jed11w";
+              "Sakura Train" = "https://wallhaven.cc/w/yqg6r7";
               "Sayonara Lara" = "https://wallhaven.cc/w/jeyy15";
               "Silhouette" = "https://wallhaven.cc/w/e86xlo";
               "Skullus" = "https://wallhaven.cc/w/ogj11l";

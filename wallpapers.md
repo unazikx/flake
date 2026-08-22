@@ -79,6 +79,27 @@
 
 ![Lipsgarets](https://th.wallhaven.cc/small/po/po7ove.jpg)
 
+**Minecraft Amethyst** -> (_https://wallhaven.cc/w/l8qq3l_)
+
+- jpg: https://w.wallhaven.cc/full/l8/wallhaven-l8qq3l.jpg
+- png: https://w.wallhaven.cc/full/l8/wallhaven-l8qq3l.png
+
+![Minecraft Amethyst](https://th.wallhaven.cc/small/l8/l8qq3l.jpg)
+
+**Minecraft Birch** -> (_https://wallhaven.cc/w/e7651w_)
+
+- jpg: https://w.wallhaven.cc/full/e7/wallhaven-e7651w.jpg
+- png: https://w.wallhaven.cc/full/e7/wallhaven-e7651w.png
+
+![Minecraft Birch](https://th.wallhaven.cc/small/e7/e7651w.jpg)
+
+**Minecraft Moon Derpy** -> (_https://wallhaven.cc/w/l36362_)
+
+- jpg: https://w.wallhaven.cc/full/l3/wallhaven-l36362.jpg
+- png: https://w.wallhaven.cc/full/l3/wallhaven-l36362.png
+
+![Minecraft Moon Derpy](https://th.wallhaven.cc/small/l3/l36362.jpg)
+
 **Oceanview** -> (_https://wallhaven.cc/w/w5d657_)
 
 - jpg: https://w.wallhaven.cc/full/w5/wallhaven-w5d657.jpg
@@ -99,6 +120,13 @@
 - png: https://w.wallhaven.cc/full/je/wallhaven-jed11w.png
 
 ![Pyramidas](https://th.wallhaven.cc/small/je/jed11w.jpg)
+
+**Sakura Train** -> (_https://wallhaven.cc/w/yqg6r7_)
+
+- jpg: https://w.wallhaven.cc/full/yq/wallhaven-yqg6r7.jpg
+- png: https://w.wallhaven.cc/full/yq/wallhaven-yqg6r7.png
+
+![Sakura Train](https://th.wallhaven.cc/small/yq/yqg6r7.jpg)
 
 **Sayonara Lara** -> (_https://wallhaven.cc/w/jeyy15_)
 
@@ -134,4 +162,4 @@
 
 **Stray** -> (https://wallhaven.cc/tag/134796)
 
-## Total: 18 wallpapers from https://wallhaven.cc
+## Total: 22 wallpapers from https://wallhaven.cc
