@@ -202,7 +202,7 @@
 
     matugen-nix = {
       type = "github";
-      owner = "unazikx";
+      owner = "mois3y";
       repo = "matugen-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
