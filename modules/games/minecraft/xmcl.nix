@@ -33,6 +33,7 @@
         ...
       }:
       let
+        colors = config.lib.stylix.colors;
         fonts = config.stylix.fonts;
       in
       {
@@ -86,12 +87,13 @@
           theme = {
             colors = {
               # keep-sorted start block=yes
-              assets.backgroundMusic = [ ];
+              assets = {
+                backgroundMusic = [ ];
+              };
+
               settings = {
                 backgroundColorOverlay = true;
-                backgroundImageFit = "cover";
                 backgroundMusicPlayOrder = "sequential";
-                backgroundType = "none";
                 backgroundVolume = 1;
                 blur = 3;
                 fontSize = fonts.sizes.applications + 2;
@@ -112,6 +114,11 @@
                   display: none
                 }
               '';
+
+            background = lib.stylix.mkImage pkgs (pkgs.fetchurl {
+              url = "https://w.wallhaven.cc/full/l8/wallhaven-l8qq3l.png";
+              sha256 = "sha256-M6bRjpDNR3TClnEyd4WlQtuONkB0JHFZ2x7t3MLRhFE=";
+            }) colors.toList;
           };
         };
       };

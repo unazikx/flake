@@ -91,6 +91,12 @@
                 default = null;
                 description = "XMCL css theme options.";
               };
+
+              background = lib.mkOption {
+                type = lib.types.nullOr lib.types.path;
+                default = null;
+                description = "XMCL background path to symlink.";
+              };
             };
           };
         };
@@ -98,7 +104,21 @@
         config = lib.mkIf cfg.enable {
           programs.xmcl = {
             theme.colors = {
+              assets = lib.mkIf (cfg.theme.background != null) (
+                lib.genAttrs
+                  [
+                    "backgroundImageDark"
+                    "backgroundImageLight"
+                  ]
+                  (_: {
+                    url = "http://launcher/theme-media/background"; # why?
+                    type = "image";
+                  })
+              );
+
               settings = {
+                backgroundType = lib.mkIf (cfg.theme.background != null) "image";
+                backgroundImageFit = lib.mkIf (cfg.theme.background != null) "cover";
                 customCssEnabled = lib.mkIf (cfg.theme.css != null) true;
               };
             };
@@ -111,15 +131,19 @@
               json.generate "xmcl-setting.json" cfg.settings
             );
 
+            "xmcl/root".text = ''
+              ${config.xdg.dataHome}/xmcl
+            '';
+
             "xmcl/theme.json".source = lib.mkIf (cfg.theme.colors != { }) (
               json.generate "xmcl-theme.json" cfg.theme.colors
             );
 
             "xmcl/theme.css".text = lib.mkIf (cfg.theme.css != null) cfg.theme.css;
 
-            "xmcl/root".text = ''
-              ${config.xdg.dataHome}/xmcl
-            '';
+            "xmcl/theme-media/background".source = lib.mkIf (cfg.theme.background != null) (
+              config.lib.file.mkOutOfStoreSymlink cfg.theme.background
+            );
           };
         };
       };
