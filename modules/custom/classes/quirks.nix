@@ -5,7 +5,7 @@
 {
   den.quirks = {
     # keep-sorted start
-    wiki = { };
+    # wiki = { };
     # keep-sorted end
   };
 }

@@ -18,10 +18,18 @@
     description = ''
       official launcher for hytale
       built from zip archive instead flatpak
-
-      source:
-      https://github.com/unazikx/hytale-launcher-nix
     '';
+
+    wiki = {
+      "Hytale Launcher" = {
+        links = [
+          {
+            name = "nix-package";
+            url = "https://github.com/unazikx/hytale-launcher-nix";
+          }
+        ];
+      };
+    };
 
     homeManagerNixos =
       {

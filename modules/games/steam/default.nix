@@ -32,6 +32,37 @@
       zen.games.steam.steam-games
     ];
 
+    wiki = {
+      "Steam".links = [
+        # keep-sorted start block=yes newline_separated=yes
+        {
+          name = "arch-steam";
+          url = "https://wiki.archlinux.org/title/Steam";
+        }
+
+        {
+          name = "jovian-nixos";
+          url = "https://github.com/Jovian-Experiments/Jovian-NixOS";
+        }
+
+        {
+          name = "proton-db";
+          url = "https://protondb.com";
+        }
+
+        {
+          name = "steam-config-nix";
+          url = "https://github.com/different-name/steam-config-nix/blob/master/options.md";
+        }
+
+        {
+          name = "steam-db";
+          url = "https://steamdb.info";
+        }
+        # keep-sorted end
+      ];
+    };
+
     nixos =
       {
         self',

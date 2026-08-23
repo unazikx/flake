@@ -22,6 +22,10 @@
           ];
 
           settings = {
+            excludes = [
+              ".gitignore"
+            ];
+
             formatter = {
               # keep-sorted start block=yes newline_separated=yes
               deadnix = {

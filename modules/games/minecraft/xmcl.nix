@@ -87,10 +87,7 @@
           theme = {
             colors = {
               # keep-sorted start block=yes
-              assets = {
-                backgroundMusic = [ ];
-              };
-
+              assets.backgroundMusic = [ ];
               settings = {
                 backgroundColorOverlay = true;
                 backgroundMusicPlayOrder = "sequential";

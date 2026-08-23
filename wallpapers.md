@@ -1,4 +1,4 @@
-## Wallpapers
+# Wallpapers
 
 !!! DONT BLAME ME IF PNG OR JPG NOT WORKING
 

@@ -8,10 +8,11 @@
   den.classes = {
     # keep-sorted start
     apps = { };
-    devshell = { };
     files = { };
+    make-shell = { };
     packages = { };
-    treefmt = { };
+    root = { };
+    wiki = { };
     # keep-sorted end
   };
 
@@ -94,6 +95,26 @@
             config.allModuleArgs;
         })
       ];
+
+    wiki-to-flake-parts =
+      {
+        ...
+      }:
+      [
+        (den.lib.policy.route {
+          fromClass = "wiki";
+          intoClass = "flake-parts";
+          path = [
+            "wiki"
+          ];
+          adaptArgs =
+            {
+              config,
+              ...
+            }:
+            config.allModuleArgs;
+        })
+      ];
     # keep-sorted end
   };
 
@@ -104,6 +125,7 @@
     den.policies.makeshell-to-flake-parts
     den.policies.packages-to-flake-parts
     den.policies.root-to-flake-parts
+    den.policies.wiki-to-flake-parts
     zen.flake-parts.default
     # keep-sorted end
   ];

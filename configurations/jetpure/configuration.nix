@@ -101,7 +101,6 @@
       zen.programs.editors.helix
       zen.programs.gui.ayugram
       zen.programs.gui.blender
-      zen.programs.cli.cava
       zen.programs.gui.easy-effects
       zen.programs.gui.keepassxc
       zen.programs.gui.librewolf

@@ -11,12 +11,14 @@
     actions = { };
     disko = { };
     diskoUSB = { };
+    overlays = { };
+    root = { };
     # keep-sorted end
   };
 
   den.policies = {
     # keep-sorted start block=yes newline_separated=yes
-    actions-to-flake =
+    actions-to-flake-system =
       {
         ...
       }:
@@ -31,7 +33,7 @@
         })
       ];
 
-    disko-other-to-flake =
+    disko-other-to-flake-system =
       {
         ...
       }:
@@ -46,7 +48,7 @@
         })
       ];
 
-    disko-to-flake =
+    disko-to-flake-system =
       {
         host,
         ...
@@ -82,14 +84,45 @@
             config.allModuleArgs;
         })
       ];
+
+    overlays-to-flake-system =
+      {
+        ...
+      }:
+      [
+        (den.lib.policy.route {
+          fromClass = "overlays";
+          intoClass = "flake";
+          path = [
+            "flake"
+            "overlays"
+          ];
+        })
+      ];
+
+    root-to-flake-system =
+      {
+        ...
+      }:
+      [
+        (den.lib.policy.route {
+          fromClass = "root";
+          intoClass = "flake";
+          path = [
+            "flake"
+          ];
+        })
+      ];
     # keep-sorted end
   };
 
   den.schema.flake-system.includes = [
     # keep-sorted start
-    den.policies.actions-to-flake
-    den.policies.disko-other-to-flake
-    den.policies.disko-to-flake
+    den.policies.actions-to-flake-system
+    den.policies.disko-other-to-flake-system
+    den.policies.disko-to-flake-system
+    den.policies.overlays-to-flake-system
+    den.policies.root-to-flake-system
     zen.flake-system.default
     # keep-sorted end
   ];
