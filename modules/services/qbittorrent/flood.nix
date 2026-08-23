@@ -53,6 +53,20 @@
             EnvironmentFile = config.sops.secrets."services/qbittorrent/flood".path;
             User = qbCfg.user;
             Group = qbCfg.group;
+
+            ExecStart = lib.mkForce (
+              lib.concatStringsSep " " (
+                [
+                  (lib.getExe cfg.package)
+                  "--host"
+                  cfg.host
+                  "--port"
+                  (toString cfg.port)
+                  "--rundir=/var/lib/flood"
+                ]
+                ++ cfg.extraArgs
+              )
+            );
           };
 
           path = [ pkgs.mediainfo ];
