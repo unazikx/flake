@@ -21,14 +21,14 @@
     '';
 
     wiki = {
-      "Hytale Launcher" = {
-        links = [
-          {
-            name = "nix-package";
-            url = "https://github.com/unazikx/hytale-launcher-nix";
-          }
-        ];
-      };
+      "Hytale Launcher".links = [
+        # keep-sorted start block=yes
+        {
+          name = "nix-package";
+          url = "https://github.com/unazikx/hytale-launcher-nix";
+        }
+        # keep-sorted end
+      ];
     };
 
     homeManagerNixos =
