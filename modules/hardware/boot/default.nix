@@ -12,7 +12,6 @@
 
     includes = [
       zen.hardware.boot.kernel
-      zen.hardware.boot.loader
       zen.hardware.boot.plymouth
     ];
   };

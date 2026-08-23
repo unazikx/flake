@@ -3,7 +3,7 @@
 }:
 
 {
-  zen.hardware.boot.loader = {
+  zen.hardware.boot.systemd-boot = {
     description = ''
       program that start systems
       and provides generations

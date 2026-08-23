@@ -49,6 +49,7 @@
         "gew1-dealer.spotify.com"
         "www-growth.scdn.co"
       ])
+      zen.hardware.boot.systemd-boot
       zen.hardware.compression.zswap
       zen.hardware.cpu-gpu
       zen.hardware.mounting

@@ -48,6 +48,7 @@
         "www-growth.scdn.co"
       ])
       zen.games.xbox.driver
+      zen.hardware.boot.systemd-boot
       zen.hardware.compression.zram
       zen.hardware.cpu-gpu
       zen.hardware.mounting

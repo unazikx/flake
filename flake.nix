@@ -348,6 +348,16 @@
       };
     };
 
+    occt-nix = {
+      type = "github";
+      owner = "daaboulex";
+      repo = "occt-nix";
+      inputs = {
+        flake-parts.follows = "flake-parts";
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
+
     pkgs-by-name = {
       type = "github";
       owner = "drupol";
