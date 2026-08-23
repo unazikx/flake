@@ -599,13 +599,13 @@
                   id = 3214660;
                 };
 
+                "Risk of Rain (2013)" = {
+                  id = 248820;
+                };
+
                 "Risk of Rain: Returns" = {
                   id = 1337520;
                   language = "russian";
-                };
-
-                "Risk of Rain (2013)" = {
-                  id = 248820;
                 };
 
                 "S&box" = {
