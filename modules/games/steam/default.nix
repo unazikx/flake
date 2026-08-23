@@ -131,6 +131,7 @@
           # ^^^ close Steam and apply the changes, waiting for any running games to exit first
 
           defaultCompatTool = self'.packages.proton-ge-patched;
+          displayRatesAsBits = false;
         };
 
         systemd.user.services = {

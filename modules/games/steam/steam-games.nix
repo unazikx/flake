@@ -30,6 +30,9 @@
               {
                 desktopEntry.enable = true;
                 compatTool = lib.mkDefault cfg.defaultCompatTool;
+                allowDownloadsWhileRunning = lib.mkDefault "always";
+
+                systemd.enable = true;
 
                 wrappers = [
                   (
