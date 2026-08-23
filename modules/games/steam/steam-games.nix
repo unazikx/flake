@@ -604,6 +604,10 @@
                   language = "russian";
                 };
 
+                "Risk of Rain (2013)" = {
+                  id = 248820;
+                };
+
                 "S&box" = {
                   id = 590830;
                 };
