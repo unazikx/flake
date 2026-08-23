@@ -43,7 +43,7 @@
       {
         programs.sway = {
           enable = true;
-          package = pkgs.swayfx;
+          package = pkgs.sway;
         };
 
         programs.uwsm = {
@@ -80,16 +80,18 @@
       {
         pkgs,
         config,
+        osConfig,
         ...
       }:
       {
         wayland.windowManager.sway = {
-          enable = true;
+          inherit (osConfig.programs.sway)
+            enable
+            package
+            ;
 
           xwayland = true;
           systemd.enable = true;
-
-          package = pkgs.swayfx;
 
           extraSessionCommands = with config.lib.stylix.colors; ''
             export GRIMSHOT_SLURP_BACKGROUND = "${base00}CC"
