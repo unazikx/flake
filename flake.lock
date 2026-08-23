@@ -714,11 +714,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1786237153,
-        "narHash": "sha256-mV0GTR8ENdbdiAFrqewrhdiS7SmgLDQ0Se8cmgUFkh8=",
+        "lastModified": 1787480011,
+        "narHash": "sha256-O7QDEgBU7KZSQ13ZbjIg/m+7BsJYh4+CZ3cmt9+a8w8=",
         "owner": "unazikx",
         "repo": "hytale-launcher-nix",
-        "rev": "7aad859485ec1e6659bb27c07f11916df074774e",
+        "rev": "3b03d78627c258734c63d836a96776dada12ebfd",
         "type": "github"
       },
       "original": {

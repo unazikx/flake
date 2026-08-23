@@ -43,6 +43,10 @@
           ''
             # Wiki for various programs, and my notes for them
 
+            > take icons from here:
+            > https://dashboardicons.com
+            > https://simpleicons.org
+
             ${lib.concatStrings (
               map (name: formatWiki name config.wiki.${name}) (builtins.attrNames config.wiki)
             )}
