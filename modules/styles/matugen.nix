@@ -11,6 +11,12 @@
       repo = "matugen-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    matugen-nix-templates = {
+      type = "github";
+      owner = "unazikx";
+      repo = "matugen-nix-templates";
+    };
     # keep-sorted end
   };
 
@@ -49,6 +55,7 @@
       {
         imports = [
           inputs.matugen-nix.homeManagerModules.matugen
+          inputs.matugen-nix-templates.homeModules.default
         ];
 
         matugen = {

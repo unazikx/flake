@@ -828,16 +828,19 @@
         "type": "github"
       }
     },
-    "matugen-nix-files": {
+    "matugen-nix-templates": {
       "locked": {
-        "lastModified": 1787373826,
-        "narHash": "sha256-UaR6+vSvd08EEteN+jJA+4kPn6r9NN0QQ0awd91oBkU=",
-        "path": "/home/nixzoid/Documents/matugen-nix-templates",
-        "type": "path"
+        "lastModified": 1787446161,
+        "narHash": "sha256-D/vQX0B7Iy1nWvNrTk91jsIcvTCBB7u88YIdrRjQtVk=",
+        "owner": "unazikx",
+        "repo": "matugen-nix-templates",
+        "rev": "8fa50c1834260dfbb949484cf1e52a03442e3783",
+        "type": "github"
       },
       "original": {
-        "path": "/home/nixzoid/Documents/matugen-nix-templates",
-        "type": "path"
+        "owner": "unazikx",
+        "repo": "matugen-nix-templates",
+        "type": "github"
       }
     },
     "ncro": {
@@ -1314,7 +1317,7 @@
         "make-shell": "make-shell",
         "mangowc": "mangowc",
         "matugen-nix": "matugen-nix",
-        "matugen-nix-files": "matugen-nix-files",
+        "matugen-nix-templates": "matugen-nix-templates",
         "ncro": "ncro",
         "nilla-cli": "nilla-cli",
         "niri-flake": "niri-flake",

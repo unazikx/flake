@@ -11,10 +11,6 @@
       };
     };
 
-    matugen-nix-files = {
-      url = "/home/nixzoid/Documents/matugen-nix-templates";
-    };
-
     aurelia = {
       type = "github";
       owner = "drackrath";
@@ -209,6 +205,12 @@
       owner = "mois3y";
       repo = "matugen-nix";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    matugen-nix-templates = {
+      type = "github";
+      owner = "unazikx";
+      repo = "matugen-nix-templates";
     };
 
     ncro = {
