@@ -6,7 +6,7 @@
 
 python312Packages.buildPythonApplication (_old: {
   pname = "anicli_api";
-  version = "0.10.1";
+  version = "0.12.0";
   pyproject = true;
 
   src = fetchPypi {
@@ -14,7 +14,7 @@ python312Packages.buildPythonApplication (_old: {
       pname
       version
       ;
-    hash = "sha256-/R41ojd+uWgMB1GwpHKPKsJRJqHZWBjmgXEdY2DRdXw=";
+    hash = "sha256-vl1NVoFGh68qSN/N7ZIUOq1CKq44xvQyqZX/oJ5r1mo=";
   };
 
   build-system = [

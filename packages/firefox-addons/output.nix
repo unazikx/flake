@@ -3,10 +3,10 @@ buildFirefoxXpiAddon:
 {
   "bitwarden-password-manager" = buildFirefoxXpiAddon {
     pname = "bitwarden-password-manager";
-    version = "2026.7.0";
+    version = "2026.8.0";
     addonId = "{446900e4-71c2-419f-a6a7-df9c091e268b}";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4915668/bitwarden_password_manager-2026.7.0.xpi";
-    sha256 = "11836eb9d2abc9914bb337b57e20c5a09cf44f24fa572f7e886384fd350a5112";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4970633/bitwarden_password_manager-2026.8.0.xpi";
+    sha256 = "989ee33f19329af1fc155dcebb7f90a517a7259cea4bfbdd660923d25a7d465a";
     meta = { };
   };
 
@@ -84,46 +84,46 @@ buildFirefoxXpiAddon:
 
   "steam-database" = buildFirefoxXpiAddon {
     pname = "steam-database";
-    version = "4.35";
+    version = "4.37";
     addonId = "firefox-extension@steamdb.info";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4891926/steam_database-4.35.xpi";
-    sha256 = "37c1cdc2eafa701e365eb8e0ef2a5051b956ea1e9941b399b5ab3fa4214fc123";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4967437/steam_database-4.37.xpi";
+    sha256 = "d280d9a8be7fe8bcdffd60697daf5903cb4da67912569510fb7a8bd68562d6cc";
     meta = { };
   };
 
   "styl-us" = buildFirefoxXpiAddon {
     pname = "styl-us";
-    version = "2.4.8";
+    version = "2.4.11";
     addonId = "{7a7a4a92-a2a0-41d1-9fd7-1e92480d612d}";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4907275/styl_us-2.4.8.xpi";
-    sha256 = "455426890a38bd3ee511000112ece51675f8bbc21e988be2170c3ae6900cbedf";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4970801/styl_us-2.4.11.xpi";
+    sha256 = "a1fb8025132ad77f3f81dcdf6ac6a31798048a95ea65b975d12b335116df0224";
     meta = { };
   };
 
   "torrserver-adder" = buildFirefoxXpiAddon {
     pname = "torrserver-adder";
-    version = "2.0.5";
+    version = "2.0.6.1";
     addonId = "84z74tXJKt8OUrTD@TSA";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4264581/torrserver_adder-2.0.5.xpi";
-    sha256 = "6783c13fe423c14fbf9dd23ea3232167dc78eeb298594ab802aa9a7b094fb365";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4948608/torrserver_adder-2.0.6.1.xpi";
+    sha256 = "71b180ffa586c3c6b6bbde8e9c489f23aadbf718432f6b072f273d4cd3cab81c";
     meta = { };
   };
 
   "traduzir-paginas-web" = buildFirefoxXpiAddon {
     pname = "traduzir-paginas-web";
-    version = "10.1.1.1";
+    version = "10.2.1.0";
     addonId = "{036a55b4-5e72-4d05-a06c-cba2dfcc134a}";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4455681/traduzir_paginas_web-10.1.1.1.xpi";
-    sha256 = "dc94a7efac63468f7d34a74bedf5c8b360a67c99d213bb5b1a1d55d911797782";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4962745/traduzir_paginas_web-10.2.1.0.xpi";
+    sha256 = "67f4b90279426590ccf88f85aef14509948b4e661682d938a93c0bcce94c523b";
     meta = { };
   };
 
   "ublock-origin" = buildFirefoxXpiAddon {
     pname = "ublock-origin";
-    version = "1.72.2";
+    version = "1.73.0";
     addonId = "uBlock0@raymondhill.net";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4888680/ublock_origin-1.72.2.xpi";
-    sha256 = "40c315b0da7871868155ecfae7a50a58dfa0920aebd865e008214986f1b7c578";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4940584/ublock_origin-1.73.0.xpi";
+    sha256 = "bccc51a773150af4af6e1fd62c7bfdeb7238b79ff2381b998fa9f2e38f64786a";
     meta = { };
   };
 

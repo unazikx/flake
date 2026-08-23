@@ -6,7 +6,7 @@
 
 yaziPlugins.mkYaziPlugin {
   pname = "piper";
-  version = "1.0";
+  version = "1.1.1";
 
   src = fetchFromGitHub {
     owner = "alberti42";

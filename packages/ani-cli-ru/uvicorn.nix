@@ -6,7 +6,7 @@
 
 python312Packages.buildPythonApplication (_old: {
   pname = "uvicorn";
-  version = "0.52.1";
+  version = "0.52.4";
   pyproject = true;
 
   src = fetchPypi {
@@ -14,7 +14,7 @@ python312Packages.buildPythonApplication (_old: {
       pname
       version
       ;
-    hash = "sha256-ES7GYYFBiay8zT97hkYBR8wGX8ksCCGvp4kYeA5DVN0=";
+    hash = "sha256-c6z+5HoLEzxd4T0hlJLWLYox6TX0/m5BojJFGhU3n4Y=";
   };
 
   build-system = [
