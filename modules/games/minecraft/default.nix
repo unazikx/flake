@@ -6,7 +6,17 @@
   zen.games.minecraft = {
     wiki = {
       "Minecraft Modpacks" = {
+        extra = ''
+          my modrinth lists with good modpacks:
+          https://modrinth.com/collection/dB2Obqjo
+        '';
+
         links = [
+          {
+            name = "minecraft-wiki";
+            url = "https://minecraft.wiki";
+            logo = "https://minecraft.wiki/images/Wiki.png";
+          }
           {
             name = "eternal-fire-studio";
             url = "https://boosty.to/rein1_modpacks";

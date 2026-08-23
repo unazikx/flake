@@ -6,6 +6,11 @@
 
 ## **Minecraft Modpacks**
 
+my modrinth lists with good modpacks:
+https://modrinth.com/collection/dB2Obqjo
+
+- <img src="https://minecraft.wiki/images/Wiki.png" height="24"> minecraft-wiki -> https://minecraft.wiki
+
 - <img src="https://images.boosty.to/user/25844628/avatar" height="24"> eternal-fire-studio -> https://boosty.to/rein1_modpacks
 
 - <img src="https://vrtx.su/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.2skjwur5alw0-.png&w=64&q=75" height="24"> vortex -> https://vrtx.su
