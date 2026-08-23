@@ -38,22 +38,27 @@
         {
           name = "arch-steam";
           url = "https://wiki.archlinux.org/title/Steam";
+          logo = "https://archlinux.org/static/archlinux_common_style/archlogo.svg";
         }
         {
           name = "jovian-nixos";
           url = "https://github.com/Jovian-Experiments/Jovian-NixOS";
+          logo = "https://images.seeklogo.com/logo-png/40/2/steam-deck-logo-png_seeklogo-409559.png";
         }
         {
           name = "proton-db";
           url = "https://protondb.com";
+          logo = "https://ghsexplosion.com/wp-content/uploads/2021/10/Proton.png";
         }
         {
           name = "steam-config-nix";
           url = "https://github.com/different-name/steam-config-nix/blob/master/options.md";
+          logo = "https://avatars.githubusercontent.com/u/49257026";
         }
         {
           name = "steam-db";
           url = "https://steamdb.info";
+          logo = "https://wiki.archiveteam.org/images/d/d8/SteamDB_logo.png";
         }
         # keep-sorted end
       ];

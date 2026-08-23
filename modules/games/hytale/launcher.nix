@@ -26,6 +26,7 @@
         {
           name = "nix-package";
           url = "https://github.com/unazikx/hytale-launcher-nix";
+          logo = "https://accounts.hytale.com/images/logo-leaves.webp";
         }
         # keep-sorted end
       ];

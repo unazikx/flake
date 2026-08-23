@@ -9,6 +9,7 @@
       zen.custom.wiki
       zen.games.steam
       zen.games.hytale.launcher
+      zen.games.minecraft
     ];
 
     files =
@@ -20,7 +21,14 @@
       {
         file."wiki.md".text =
           let
-            formatLinks = links: lib.concatStrings (map (link: "- [_${link.name}_](${link.url})\n") links);
+            formatLinks =
+              links:
+              lib.concatStrings (
+                map (link: ''
+                  - [_${link.name}_](${link.url})
+                    ![logo for ${link.name}](${toString link.logo})
+                '') links
+              );
 
             formatWiki = name: data: ''
               ## __${name}__

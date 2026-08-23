@@ -596,6 +596,11 @@
                   id = 3214660;
                 };
 
+                "Risk of Rain: Returns" = {
+                  id = 1337520;
+                  language = "russian";
+                };
+
                 "S&box" = {
                   id = 590830;
                 };
@@ -803,11 +808,16 @@
                   language = "russian";
                 };
 
+                "Worms: Reloaded" = {
+                  id = 22600;
+                  language = "russian";
+                };
+
                 "Worms: Ultimate Mayhem" = {
                   id = 70600;
                 };
 
-                "Worms: Wmd" = {
+                "Worms: WMD" = {
                   id = 327030;
                   language = "russian";
                 };

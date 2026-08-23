@@ -8,10 +8,16 @@
       let
         urlType = lib.types.submodule {
           options = {
+            logo = lib.mkOption {
+              type = lib.types.str;
+              description = "Logo for URL.";
+              example = "https://example.com/wiki";
+            };
+
             name = lib.mkOption {
               type = lib.types.str;
               description = "Name for URL.";
-              example = "https://example.com/wiki";
+              example = "example";
             };
 
             url = lib.mkOption {
