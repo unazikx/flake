@@ -149,7 +149,6 @@
       repo = "hjem-rum";
       inputs = {
         hjem.follows = "hjem";
-        nix-darwin.follows = "nix-darwin";
         nixpkgs.follows = "nixpkgs";
       };
     };

@@ -17,7 +17,6 @@
       owner = "snugnug";
       repo = "hjem-rum";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.nix-darwin.follows = "nix-darwin";
       inputs.hjem.follows = "hjem";
     };
     # keep-sorted end
