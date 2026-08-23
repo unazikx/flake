@@ -42,6 +42,11 @@
             url = "https://www.curseforge.com/minecraft/modpacks/cabin";
             logo = "https://media.forgecdn.net/avatars/thumbnails/899/846/256/256/638346046780138525.png";
           }
+          {
+            name = "freshcraft";
+            url = "https://freshcraft.org/modpacks";
+            logo = "https://freshcraft.org/images/logo.png";
+          }
         ];
       };
     };

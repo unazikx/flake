@@ -1,8 +1,12 @@
 # Wiki for various programs, and my notes for them
 
+> take icons from here:
+> https://dashboardicons.com
+> https://simpleicons.org
+
 ## **Hytale Launcher**
 
-- <img src="https://accounts.hytale.com/images/logo-leaves.webp" height="24"> nix-package -> https://github.com/unazikx/hytale-launcher-nix
+- <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/hytale.png" height="24"> nix-package -> https://github.com/unazikx/hytale-launcher-nix
 
 ## **Minecraft Modpacks**
 
@@ -20,6 +24,8 @@ https://modrinth.com/collection/dB2Obqjo
 - <img src="https://cdn.modrinth.com/data/6HvKwSky/d100be12ed4f630466412f805e068da29b6e4898_96.webp" height="24"> homestead -> https://modrinth.com/modpack/homestead
 
 - <img src="https://media.forgecdn.net/avatars/thumbnails/899/846/256/256/638346046780138525.png" height="24"> cabin -> https://www.curseforge.com/minecraft/modpacks/cabin
+
+- <img src="https://freshcraft.org/images/logo.png" height="24"> freshcraft -> https://freshcraft.org/modpacks
 
 ## **Steam**
 
