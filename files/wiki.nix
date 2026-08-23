@@ -25,8 +25,10 @@
               links:
               lib.concatStrings (
                 map (link: ''
-                  - [_${link.name}_](${link.url})
-                    ![logo for ${link.name}](${toString link.logo})
+                  - <img src="${link.logo}" height="24"> ${link.name} -> ${link.url}
+
+                    ${toString link.extra}
+
                 '') links
               );
 

@@ -10,22 +10,22 @@
           {
             name = "eternal-fire-studio";
             url = "https://boosty.to/rein1_modpacks";
-            logo = "https://media.forgecdn.net/avatars/thumbnails/899/846/256/256/638346046780138525.png";
+            logo = "https://images.boosty.to/user/25844628/avatar";
           }
           {
             name = "vortex";
             url = "https://vrtx.su";
-            logo = "https://media.forgecdn.net/avatars/thumbnails/899/846/256/256/638346046780138525.png";
+            logo = "https://vrtx.su/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.2skjwur5alw0-.png&w=64&q=75";
           }
           {
             name = "terra-firma-greg";
             url = "https://terrafirmagreg.team";
-            logo = "https://media.forgecdn.net/avatars/thumbnails/899/846/256/256/638346046780138525.png";
+            logo = "https://terrafirmagreg.team/storage/img/64x-256p-tfg-logo-v4.gif";
           }
           {
             name = "homestead";
             url = "https://modrinth.com/modpack/homestead";
-            logo = "https://media.forgecdn.net/avatars/thumbnails/899/846/256/256/638346046780138525.png";
+            logo = "https://cdn.modrinth.com/data/6HvKwSky/d100be12ed4f630466412f805e068da29b6e4898_96.webp";
           }
           {
             name = "cabin";

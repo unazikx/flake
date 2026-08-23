@@ -38,7 +38,7 @@
         {
           name = "arch-steam";
           url = "https://wiki.archlinux.org/title/Steam";
-          logo = "https://archlinux.org/static/archlinux_common_style/archlogo.svg";
+          logo = "https://www.vhv.rs/dpng/d/76-762941_archlinux-icon-crystal-arch-linux-icon-png-transparent.png";
         }
         {
           name = "jovian-nixos";
@@ -48,7 +48,7 @@
         {
           name = "proton-db";
           url = "https://protondb.com";
-          logo = "https://ghsexplosion.com/wp-content/uploads/2021/10/Proton.png";
+          logo = "https://www.protondb.com/sites/protondb/images/site-logo.svg";
         }
         {
           name = "steam-config-nix";

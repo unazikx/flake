@@ -11,7 +11,7 @@
             logo = lib.mkOption {
               type = lib.types.str;
               description = "Logo for URL.";
-              example = "https://example.com/wiki";
+              example = "https://example.com/logo";
             };
 
             name = lib.mkOption {
@@ -24,6 +24,12 @@
               type = lib.types.str;
               description = "URL for wiki.";
               example = "https://example.com/wiki";
+            };
+
+            extra = lib.mkOption {
+              type = lib.types.nullOr lib.types.lines;
+              description = "Extra content for this wiki url.";
+              example = "example";
             };
           };
         };
@@ -43,7 +49,7 @@
             };
 
             extra = lib.mkOption {
-              type = lib.types.nullOr lib.types.str;
+              type = lib.types.nullOr lib.types.lines;
               default = "";
               description = "Extra content or configuration for this wiki source.";
               example = ''
