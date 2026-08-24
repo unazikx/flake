@@ -21,7 +21,7 @@
               # keep-sorted start block=yes
               "attributes" = colors.base09;
               "comment" = {
-                fg = colors.base02;
+                fg = colors.base03;
                 modifiers = [ "italic" ];
               };
               "constant" = colors.base09;

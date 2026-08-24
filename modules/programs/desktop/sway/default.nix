@@ -43,7 +43,7 @@
       {
         programs.sway = {
           enable = true;
-          package = pkgs.sway;
+          package = pkgs.swayfx;
         };
 
         programs.uwsm = {

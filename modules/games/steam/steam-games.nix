@@ -57,722 +57,722 @@
               }
               {
                 # keep-sorted start block=yes newline_separated=yes
-                "Abiotic Factor" = {
-                  id = 427410;
+                "427410" = {
+                  name = "Abiotic Factor";
                 };
 
-                "Adventures Of Sir Kicksalot" = {
-                  id = 2629230;
+                "2629230" = {
+                  name = "Adventures Of Sir Kicksalot";
                 };
 
-                "Apico" = {
-                  id = 1390190;
+                "1390190" = {
+                  name = "Apico";
                 };
 
-                "Arctico" = {
-                  id = 325210;
+                "325210" = {
+                  name = "Arctico";
                 };
 
-                "Balatro" = {
-                  id = 2379780;
+                "2379780" = {
+                  name = "Balatro";
                   language = "russian";
                 };
 
-                "Baldurs Gate 3" = {
-                  id = 1086940;
+                "1086940" = {
+                  name = "Baldurs Gate 3";
                   language = "russian";
                 };
 
-                "Barony" = {
-                  id = 371970;
+                "371970" = {
+                  name = "Barony";
                   betaBranch = "translation-fix";
                 };
 
-                "Batman: Arkham Asylum" = {
-                  id = 35140;
+                "35140" = {
+                  name = "Batman: Arkham Asylum";
                 };
 
-                "Batman: Arkham City" = {
-                  id = 200260;
+                "200260" = {
+                  name = "Batman: Arkham City";
                 };
 
-                "Batman: Arkham Knight" = {
-                  id = 208650;
+                "208650" = {
+                  name = "Batman: Arkham Knight";
                 };
 
-                "Battletoads" = {
-                  id = 1244950;
+                "1244950" = {
+                  name = "Battletoads";
                   language = "russian";
                 };
 
-                "Beyond Divinity" = {
-                  id = 219760;
+                "219760" = {
+                  name = "Beyond Divinity";
                   language = "russian";
                 };
 
-                "Beyond Sunset" = {
-                  id = 1665260;
+                "1665260" = {
+                  name = "Beyond Sunset";
                   wrappers = lib.mkAfter [
                     (lib.getExe pkgs.gzdoom)
                     "-iwad"
                   ];
                 };
 
-                "Breathedge" = {
-                  id = 738520;
+                "738520" = {
+                  name = "Breathedge";
                   language = "russian";
                 };
 
-                "Bulletstorm" = {
-                  id = 501590;
+                "501590" = {
+                  name = "Bulletstorm";
                   language = "russian";
                 };
 
-                "Burnout Paradise: Remastered" = {
-                  id = 1238080;
+                "1238080" = {
+                  name = "Burnout Paradise: Remastered";
                   compatTool = "GE-Proton";
                   language = "russian";
                   args = [ "-skipvideos" ];
                 };
 
-                "Carmageddon Max Damage" = {
-                  id = 505170;
+                "505170" = {
+                  name = "Carmageddon Max Damage";
                   language = "russian";
                 };
 
-                "Cheap Car Repair" = {
-                  id = 2904040;
+                "2904040" = {
+                  name = "Cheap Car Repair";
                 };
 
-                "Cinderia" = {
-                  id = 3214610;
+                "3214610" = {
+                  name = "Cinderia";
                 };
 
-                "Citizen Sleeper 2" = {
-                  id = 2442460;
+                "2442460" = {
+                  name = "Citizen Sleeper 2";
                 };
 
-                "Citizen Sleeper" = {
-                  id = 1578650;
+                "1578650" = {
+                  name = "Citizen Sleeper";
                 };
 
-                "City Car Driving" = {
-                  id = 493490;
+                "493490" = {
+                  name = "City Car Driving";
                   compatTool = "proton_8";
                 };
 
-                "Clownfield" = {
-                  id = 1591520;
+                "1591520" = {
+                  name = "Clownfield";
                 };
 
-                "Coffee Talk 2" = {
-                  id = 1663220;
+                "1663220" = {
+                  name = "Coffee Talk 2";
                 };
 
-                "Coffee Talk Tokyo" = {
-                  id = 3161220;
+                "3161220" = {
+                  name = "Coffee Talk Tokyo";
                 };
 
-                "Coffee Talk" = {
-                  id = 914800;
+                "914800" = {
+                  name = "Coffee Talk";
                 };
 
-                "Counter Strike: Condition Zero - Deleted Scenes" = {
-                  id = 100;
+                "100" = {
+                  name = "Counter Strike: Condition Zero - Deleted Scenes";
                 };
 
-                "Counter Strike: Condition Zero" = {
-                  id = 80;
+                "80" = {
+                  name = "Counter Strike: Condition Zero";
                 };
 
-                "Crow Country" = {
-                  id = 1996010;
+                "1996010" = {
+                  name = "Crow Country";
                 };
 
-                "Cuphead" = {
-                  id = 268910;
+                "268910" = {
+                  name = "Cuphead";
                 };
 
-                "Darksiders Genesis" = {
-                  id = 710920;
+                "710920" = {
+                  name = "Darksiders Genesis";
                 };
 
-                "Darksiders II Deathinitive Edition" = {
-                  id = 388410;
+                "388410" = {
+                  name = "Darksiders II Deathinitive Edition";
                   language = "russian";
                 };
 
-                "Darksiders III" = {
-                  id = 606280;
+                "606280" = {
+                  name = "Darksiders III";
                   language = "russian";
                 };
 
-                "Darksiders Warmastered Edition" = {
-                  id = 462780;
+                "462780" = {
+                  name = "Darksiders Warmastered Edition";
                   language = "russian";
                 };
 
-                "Darksiders" = {
-                  id = 50620;
+                "50620" = {
+                  name = "Darksiders";
                   language = "russian";
                 };
 
-                "Dead Cells" = {
-                  id = 588650;
+                "588650" = {
+                  name = "Dead Cells";
                   language = "russian";
                 };
 
-                "Deus Ex: GOTY" = {
-                  id = 6910;
+                "6910" = {
+                  name = "Deus Ex: GOTY";
                 };
 
-                "Deus Ex: Human Revolution" = {
-                  id = 238010;
+                "238010" = {
+                  name = "Deus Ex: Human Revolution";
                   language = "russian";
                 };
 
-                "Deus Ex: Invisible War" = {
-                  id = 6920;
+                "6920" = {
+                  name = "Deus Ex: Invisible War";
                 };
 
-                "Deus Ex: Mankid Divided" = {
-                  id = 337000;
+                "337000" = {
+                  name = "Deus Ex: Mankid Divided";
                   language = "russian";
                 };
 
-                "Deus Ex: The Fall" = {
-                  id = 258180;
+                "258180" = {
+                  name = "Deus Ex: The Fall";
                   language = "russian";
                 };
 
-                "Disco Elysium" = {
-                  id = 632470;
+                "632470" = {
+                  name = "Disco Elysium";
                   language = "russian";
                 };
 
-                "Divine Divinity" = {
-                  id = 214170;
+                "214170" = {
+                  name = "Divine Divinity";
                   language = "russian";
                 };
 
-                "Divinity: 2 - Developer's Cut" = {
-                  id = 219780;
+                "219780" = {
+                  name = "Divinity: 2 - Developer's Cut";
                   language = "russian";
                 };
 
-                "Divinity: Original Sin 2" = {
-                  id = 435150;
+                "435150" = {
+                  name = "Divinity: Original Sin 2";
                   language = "russian";
                 };
 
-                "Divinity: Original Sin" = {
-                  id = 373420;
+                "373420" = {
+                  name = "Divinity: Original Sin";
                   language = "russian";
                 };
 
-                "Doloc Town" = {
-                  id = 2285550;
+                "2285550" = {
+                  name = "Doloc Town";
                 };
 
-                "Dont Starve Together" = {
-                  id = 322330;
+                "322330" = {
+                  name = "Dont Starve Together";
                 };
 
-                "Duck Game" = {
+                "312530" = {
                   # https://www.protondb.com/app/312530#VBbR6m5Ilw
-                  id = 312530;
+                  name = "Duck Game";
                   compatTool = "proton_8";
                 };
 
-                "Dusk" = {
-                  id = 519860;
+                "519860" = {
+                  name = "Dusk";
                   language = "russian";
                 };
 
-                "Dying Light" = {
-                  id = 239140;
+                "239140" = {
+                  name = "Dying Light";
                   language = "russian";
                 };
 
-                "Easy Delivery Co" = {
-                  id = 3293010;
+                "3293010" = {
+                  name = "Easy Delivery Co";
                 };
 
-                "Elite Dangerous" = {
-                  id = 359320;
+                "359320" = {
+                  name = "Elite Dangerous";
                   language = "russian";
                 };
 
-                "Enter The Chronosphere" = {
-                  id = 1969810;
+                "1969810" = {
+                  name = "Enter The Chronosphere";
                 };
 
-                "Enter The Gungeon" = {
-                  id = 311690;
+                "311690" = {
+                  name = "Enter The Gungeon";
                   language = "russian";
                 };
 
-                "EthrA (playtest)" = {
-                  id = 4986460;
+                "4986460" = {
+                  name = "EthrA (playtest)";
                 };
 
-                "Exit The Gungeon" = {
-                  id = 1209490;
+                "1209490" = {
+                  name = "Exit The Gungeon";
                 };
 
-                "FNAF Popgoes" = {
-                  id = 1986840;
+                "1986840" = {
+                  name = "FNAF Popgoes";
                 };
 
-                "Factorio" = {
-                  id = 427520;
+                "427520" = {
+                  name = "Factorio";
                   language = "russian";
                 };
 
-                "Flotsam" = {
-                  id = 821250;
+                "821250" = {
+                  name = "Flotsam";
                 };
 
-                "Gambonanza" = {
-                  id = 3509230;
+                "3509230" = {
+                  name = "Gambonanza";
                 };
 
-                "Garrys Mod" = {
-                  id = 4000;
+                "4000" = {
+                  name = "Garrys Mod";
                   betaBranch = "x86-64";
                 };
 
-                "Gloomwood" = {
-                  id = 1150760;
+                "1150760" = {
+                  name = "Gloomwood";
                 };
 
-                "Goat Simulator Remastered" = {
-                  id = 1762930;
+                "1762930" = {
+                  name = "Goat Simulator Remastered";
                 };
 
-                "Graveyard Keeper" = {
-                  id = 599140;
+                "599140" = {
+                  name = "Graveyard Keeper";
                 };
 
-                "Gravity Circuit" = {
-                  id = 858710;
+                "858710" = {
+                  name = "Gravity Circuit";
                 };
 
-                "Hades" = {
-                  id = 1145360;
+                "1145360" = {
+                  name = "Hades";
                 };
 
-                "Happy Humble Burger Farm" = {
-                  id = 1433340;
+                "1433340" = {
+                  name = "Happy Humble Burger Farm";
                 };
 
-                "Hard Truck 2" = {
-                  id = 4487840;
+                "4487840" = {
+                  name = "Hard Truck 2";
                   language = "russian";
                 };
 
-                "Hitman: Absolution" = {
-                  id = 203140;
+                "203140" = {
+                  name = "Hitman: Absolution";
                   language = "russian";
                 };
 
-                "Hitman: Blood Money" = {
-                  id = 6860;
+                "6860" = {
+                  name = "Hitman: Blood Money";
                 };
 
-                "Hollow Knight" = {
-                  id = 367520;
+                "367520" = {
+                  name = "Hollow Knight";
                 };
 
-                "Hollow Knight: Silksong" = {
-                  id = 1030300;
+                "1030300" = {
+                  name = "Hollow Knight: Silksong";
                 };
 
-                "Hrot" = {
-                  id = 824600;
+                "824600" = {
+                  name = "Hrot";
                 };
 
-                "Hyper Light Drifter" = {
-                  id = 257850;
+                "257850" = {
+                  name = "Hyper Light Drifter";
                 };
 
-                "Intravenous 2" = {
-                  id = 2608270;
+                "2608270" = {
+                  name = "Intravenous 2";
                 };
 
-                "Intravenous" = {
-                  id = 1486630;
+                "1486630" = {
+                  name = "Intravenous";
                 };
 
-                "Ion Fury" = {
-                  id = 562860;
+                "562860" = {
+                  name = "Ion Fury";
                 };
 
-                "Iq Under Construction" = {
-                  id = 3771740;
+                "3771740" = {
+                  name = "Iq Under Construction";
                 };
 
-                "Jalopy" = {
-                  id = 446020;
+                "446020" = {
+                  name = "Jalopy";
                 };
 
-                "Killer Frequency" = {
-                  id = 1903620;
+                "1903620" = {
+                  name = "Killer Frequency";
                   language = "russian";
                 };
 
-                "Kynseed" = {
-                  id = 758870;
+                "758870" = {
+                  name = "Kynseed";
                 };
 
-                "LEGO: Batman Beyond Gotham" = {
-                  id = 313690;
+                "313690" = {
+                  name = "LEGO: Batman Beyond Gotham";
                 };
 
-                "LEGO: Bricktales" = {
-                  id = 1898290;
+                "1898290" = {
+                  name = "LEGO: Bricktales";
                   language = "russian";
                 };
 
-                "LEGO: Builders Journey" = {
-                  id = 1544360;
+                "1544360" = {
+                  name = "LEGO: Builders Journey";
                 };
 
-                "LEGO: City Undercover" = {
-                  id = 578330;
+                "578330" = {
+                  name = "LEGO: City Undercover";
                   language = "russian";
                 };
 
-                "LEGO: DC Super Villains" = {
-                  id = 829110;
+                "829110" = {
+                  name = "LEGO: DC Super Villains";
                   language = "russian";
                 };
 
-                "LEGO: Marvel Super Heroes 2" = {
-                  id = 647830;
+                "647830" = {
+                  name = "LEGO: Marvel Super Heroes 2";
                   language = "russian";
                 };
 
-                "LEGO: Marvel Super Heroes" = {
-                  id = 249130;
+                "249130" = {
+                  name = "LEGO: Marvel Super Heroes";
                   language = "russian";
                 };
 
-                "LEGO: Star Wars The Skywalker Saga" = {
-                  id = 920210;
+                "920210" = {
+                  name = "LEGO: Star Wars The Skywalker Saga";
                   language = "russian";
                 };
 
-                "LEGO: Worlds" = {
-                  id = 332310;
+                "332310" = {
+                  name = "LEGO: Worlds";
                   language = "russian";
                 };
 
-                "Lucid Blocks" = {
-                  id = 3495730;
+                "3495730" = {
+                  name = "Lucid Blocks";
                 };
 
-                "Maneater" = {
-                  id = 629820;
+                "629820" = {
+                  name = "Maneater";
                   language = "russian";
                 };
 
-                "Midbourne" = {
-                  id = 2355150;
+                "2355150" = {
+                  name = "Midbourne";
                 };
 
-                "Midnight Snack" = {
-                  id = 3363200;
+                "3363200" = {
+                  name = "Midnight Snack";
                 };
 
-                "Mindustry" = {
-                  id = 1127400;
+                "1127400" = {
+                  name = "Mindustry";
                 };
 
-                "Minecraft Dungeons" = {
-                  id = 1672970;
+                "1672970" = {
+                  name = "Minecraft Dungeons";
                 };
 
-                "Minecraft Legends" = {
-                  id = 1928870;
+                "1928870" = {
+                  name = "Minecraft Legends";
                 };
 
-                "Moonlighter" = {
-                  id = 606150;
+                "606150" = {
+                  name = "Moonlighter";
                   compatTool = null;
                   language = "russian";
                 };
 
-                "My Summer Car" = {
-                  id = 516750;
+                "516750" = {
+                  name = "My Summer Car";
                 };
 
-                "My Winter Car" = {
-                  id = 4164420;
+                "4164420" = {
+                  name = "My Winter Car";
                 };
 
-                "NTE: Neverness to Everness" = {
-                  id = 4508340;
+                "4508340" = {
+                  name = "NTE: Neverness to Everness";
                 };
 
-                "Necesse" = {
-                  id = 1169040;
+                "1169040" = {
+                  name = "Necesse";
                   language = "russian";
                 };
 
-                "Need For Speed" = {
-                  id = 1262540;
+                "1262540" = {
+                  name = "Need For Speed";
                   language = "russian";
                 };
 
-                "Need For Speed: Heat" = {
-                  id = 1222680;
+                "1222680" = {
+                  name = "Need For Speed: Heat";
                   language = "russian";
                 };
 
-                "New Super Lucky's Tale" = {
-                  id = 1038300;
+                "1038300" = {
+                  name = "New Super Lucky's Tale";
                 };
 
-                "Noexistence You Me" = {
-                  id = 2873080;
+                "2873080" = {
+                  name = "Noexistence You Me";
                 };
 
-                "Noita" = {
-                  id = 881100;
+                "881100" = {
+                  name = "Noita";
                 };
 
-                "One Million Fatal Guns" = {
-                  id = 155710;
+                "155710" = {
+                  name = "One Million Fatal Guns";
                 };
 
-                "Ori and the Blind Forest - Definitive Edition" = {
-                  id = 387290;
+                "387290" = {
+                  name = "Ori and the Blind Forest - Definitive Edition";
                   language = "russian";
                 };
 
-                "Ori and the Blind Forest" = {
-                  id = 261570;
+                "261570" = {
+                  name = "Ori and the Blind Forest";
                   language = "russian";
                 };
 
-                "Ori and the Will of the Wisps" = {
-                  id = 1057090;
+                "1057090" = {
+                  name = "Ori and the Will of the Wisps";
                 };
 
-                "Overcooked 2" = {
-                  id = 728880;
+                "728880" = {
+                  name = "Overcooked 2";
                   language = "russian";
                 };
 
-                "Overcooked" = {
-                  id = 448510;
+                "448510" = {
+                  name = "Overcooked";
                 };
 
-                "Paralives" = {
-                  id = 1118520;
+                "1118520" = {
+                  name = "Paralives";
                 };
 
-                "Pathogenic" = {
-                  id = 3808690;
+                "3808690" = {
+                  name = "Pathogenic";
                   compatTool = null;
                 };
 
-                "Plastic Warfare" = {
-                  id = 490640;
+                "490640" = {
+                  name = "Plastic Warfare";
                 };
 
-                "Project Warlock 2" = {
-                  id = 1640300;
+                "1640300" = {
+                  name = "Project Warlock 2";
                 };
 
-                "Project Zomboid" = {
-                  id = 108600;
+                "108600" = {
+                  name = "Project Zomboid";
                 };
 
-                "Quake" = {
-                  id = 2310;
+                "2310" = {
+                  name = "Quake";
                   language = "russian";
                 };
 
-                "REPO" = {
-                  id = 3214660;
+                "3214660" = {
+                  name = "REPO";
                 };
 
-                "Risk of Rain (2013)" = {
-                  id = 248820;
+                "248820" = {
+                  name = "Risk of Rain (2013)";
                 };
 
-                "Risk of Rain: Returns" = {
-                  id = 1337520;
+                "1337520" = {
+                  name = "Risk of Rain: Returns";
                   language = "russian";
                 };
 
-                "S&box" = {
-                  id = 590830;
+                "590830" = {
+                  name = "S&box";
                 };
 
-                "SULFUR" = {
-                  id = 2124120;
+                "2124120" = {
+                  name = "SULFUR";
                 };
 
-                "SUMMERHOUSE" = {
-                  id = 2533960;
+                "2533960" = {
+                  name = "SUMMERHOUSE";
                 };
 
-                "Saints Row: The Third Remastered" = {
-                  id = 978300;
+                "978300" = {
+                  name = "Saints Row: The Third Remastered";
                   language = "russian";
                 };
 
-                "Sandustry" = {
-                  id = 2764460;
+                "2764460" = {
+                  name = "Sandustry";
                 };
 
-                "Satisfactory" = {
-                  id = 526870;
+                "526870" = {
+                  name = "Satisfactory";
                 };
 
-                "Scarlet Nexus" = {
-                  id = 775500;
+                "775500" = {
+                  name = "Scarlet Nexus";
                   language = "russian";
                 };
 
-                "Selaco" = {
-                  id = 1592280;
+                "1592280" = {
+                  name = "Selaco";
                 };
 
-                "Sephiria" = {
-                  id = 2436940;
+                "2436940" = {
+                  name = "Sephiria";
                 };
 
-                "Serious Sam Tormental" = {
-                  id = 640340;
+                "640340" = {
+                  name = "Serious Sam Tormental";
                 };
 
-                "Shapez 2 - factory" = {
-                  id = 2162800;
+                "2162800" = {
+                  name = "Shapez 2 - factory";
                 };
 
-                "Shapez" = {
-                  id = 1318690;
+                "1318690" = {
+                  name = "Shapez";
                 };
 
-                "Sleeping Dogs" = {
-                  id = 307690;
+                "307690" = {
+                  name = "Sleeping Dogs";
                   language = "russian";
                 };
 
-                "Snacktorio" = {
-                  id = 1902940;
+                "1902940" = {
+                  name = "Snacktorio";
                 };
 
-                "Space Haven" = {
-                  id = 979110;
+                "979110" = {
+                  name = "Space Haven";
                 };
 
-                "Starbound" = {
-                  id = 211820;
+                "211820" = {
+                  name = "Starbound";
                 };
 
-                "Stick It to the Stickman" = {
-                  id = 2085540;
+                "2085540" = {
+                  name = "Stick It to the Stickman";
                   language = "russian";
                 };
 
-                "Storebound" = {
-                  id = 3417410;
+                "3417410" = {
+                  name = "Storebound";
                 };
 
-                "Streets Of Rouge" = {
-                  id = 512900;
+                "512900" = {
+                  name = "Streets Of Rouge";
                   language = "russian";
                 };
 
-                "Summer In Mara" = {
-                  id = 962580;
+                "962580" = {
+                  name = "Summer In Mara";
                 };
 
-                "Sunset Overdrive" = {
-                  id = 847370;
+                "847370" = {
+                  name = "Sunset Overdrive";
                   language = "russian";
                 };
 
-                "Super Lucky's Tale" = {
-                  id = 847360;
+                "847360" = {
+                  name = "Super Lucky's Tale";
                 };
 
-                "Supraball" = {
-                  id = 321400;
+                "321400" = {
+                  name = "Supraball";
                 };
 
-                "Supraland Six Inches Under" = {
-                  id = 1522870;
+                "1522870" = {
+                  name = "Supraland Six Inches Under";
                 };
 
-                "Supraland" = {
-                  id = 813630;
+                "813630" = {
+                  name = "Supraland";
                 };
 
-                "TABS" = {
-                  id = 508440;
+                "508440" = {
+                  name = "TABS";
                 };
 
-                "Tales of the Neon Sea" = {
-                  id = 828740;
+                "828740" = {
+                  name = "Tales of the Neon Sea";
                 };
 
-                "Terraria" = {
-                  id = 105600;
+                "105600" = {
+                  name = "Terraria";
                 };
 
-                "The Binding Of Isaac: Rebirth" = {
-                  id = 250900;
+                "250900" = {
+                  name = "The Binding Of Isaac: Rebirth";
                 };
 
-                "The Elder Scrolls III: Morrowind" = {
-                  id = 22320;
+                "22320" = {
+                  name = "The Elder Scrolls III: Morrowind";
                 };
 
-                "The Elder Scrolls IV: Oblivion" = {
-                  id = 22330;
+                "22330" = {
+                  name = "The Elder Scrolls IV: Oblivion";
                 };
 
-                "The Elder Scrolls V: Skyrim" = {
-                  id = 489830;
+                "489830" = {
+                  name = "The Elder Scrolls V: Skyrim";
                   language = "russian";
                 };
 
-                "The Escapists 2" = {
-                  id = 641990;
+                "641990" = {
+                  name = "The Escapists 2";
                   language = "russian";
                 };
 
-                "The Escapists" = {
-                  id = 298630;
+                "298630" = {
+                  name = "The Escapists";
                   language = "russian";
                 };
 
-                "The Long Dark" = {
-                  id = 305620;
+                "305620" = {
+                  name = "The Long Dark";
                 };
 
-                "The Survivalists" = {
-                  id = 897450;
+                "897450" = {
+                  name = "The Survivalists";
                   language = "russian";
                 };
 
-                "The Witcher 3" = {
-                  id = 292030;
+                "292030" = {
+                  name = "The Witcher 3";
                   language = "russian";
                 };
 
-                "Theotown" = {
-                  id = 1084020;
+                "1084020" = {
+                  name = "Theotown";
                 };
 
-                "Tinkerlands" = {
-                  id = 2617700;
+                "2617700" = {
+                  name = "Tinkerlands";
                   files = {
                     prefix.patch = {
                       "drive_c/users/steamuser/AppData/Local/Tinkerlands/useroptions.conf" = {
@@ -785,56 +785,56 @@
                   };
                 };
 
-                "Torchlight II" = {
-                  id = 200710;
+                "200710" = {
+                  name = "Torchlight II";
                 };
 
-                "Torchlight" = {
-                  id = 41500;
+                "41500" = {
+                  name = "Torchlight";
                 };
 
-                "Untitled Goose Game" = {
-                  id = 837470;
+                "837470" = {
+                  name = "Untitled Goose Game";
                 };
 
-                "Valheim" = {
-                  id = 892970;
+                "892970" = {
+                  name = "Valheim";
                 };
 
-                "Warhammer 40.000: Boltgun" = {
-                  id = 2005010;
+                "2005010" = {
+                  name = "Warhammer 40.000: Boltgun";
                 };
 
-                "Watch Dogs" = {
-                  id = 243470;
+                "243470" = {
+                  name = "Watch Dogs";
                   language = "russian";
                 };
 
-                "Webbed" = {
-                  id = 1390350;
+                "1390350" = {
+                  name = "Webbed";
                   language = "russian";
                 };
 
-                "Worms: Reloaded" = {
-                  id = 22600;
+                "22600" = {
+                  name = "Worms: Reloaded";
                   language = "russian";
                 };
 
-                "Worms: Ultimate Mayhem" = {
-                  id = 70600;
+                "70600" = {
+                  name = "Worms: Ultimate Mayhem";
                 };
 
-                "Worms: WMD" = {
-                  id = 327030;
+                "327030" = {
+                  name = "Worms: WMD";
                   language = "russian";
                 };
 
-                "Wrath: Aeon of Ruin" = {
-                  id = 1000410;
+                "1000410" = {
+                  name = "Wrath: Aeon of Ruin";
                 };
 
-                "Your Only Move is Hustle" = {
-                  id = 2212330;
+                "2212330" = {
+                  name = "Your Only Move is Hustle";
                 };
                 # keep-sorted end
               }

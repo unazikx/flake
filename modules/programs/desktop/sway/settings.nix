@@ -103,6 +103,17 @@
               };
             };
           };
+
+          extraConfig =
+            # sway
+            ''
+              default_dim_inactive 0.4
+
+              shadows disable
+              shadows_on_csd enable
+              shadow_color ${colors.base00}
+              shadow_blur_radius 12
+            '';
         };
       };
   };
