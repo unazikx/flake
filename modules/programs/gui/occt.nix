@@ -1,4 +1,5 @@
 {
+  zen,
   ...
 }:
 
@@ -21,15 +22,36 @@
       stress test, benchmark, and pc hardware stability
     '';
 
-    nixos =
+    includes = [
+      zen.custom.occt
+    ];
+
+    homeManagerNixos =
       {
         inputs',
+        pkgs,
         ...
       }:
       {
-        environment.systemPackages = [
-          inputs'.occt.packages.occt
-        ];
+        programs.occt = {
+          enable = true;
+
+          package = inputs'.occt-nix.packages.occt.overrideAttrs {
+            # ocbase doesnt pin versions
+            # only rolling
+            version = "rolling";
+
+            # ┃ error: hash mismatch in fixed-output derivation '/nix/store/2nw7rzcfrfbyz15hpalxk2nk44jln076-branch-Stable.drv':
+            # ┃          specified: sha256-enzdar1UlJDI02waM2WzVCpXgmxrbt0Dn9AUdHV1WYc=
+            # ┃             got:    sha256-E9b5QIJADoHYNFdN67wmvW6QPH0TjzXaIOgDVOJq+Hc=
+            src = pkgs.fetchurl {
+              url = "https://www.ocbase.com/download-bin/edition:Personal/os:Linux/branch:Stable";
+              sha256 = "sha256-E9b5QIJADoHYNFdN67wmvW6QPH0TjzXaIOgDVOJq+Hc=";
+            };
+          };
+
+          disableUpdates = true;
+        };
       };
   };
 }
