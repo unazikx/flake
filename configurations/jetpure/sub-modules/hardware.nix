@@ -16,7 +16,14 @@
         ];
 
         boot = {
-          kernelPackages = pkgs.linuxPackages_zen;
+          kernelPackages =
+            (pkgs.linuxKernel.packagesFor (
+              let
+                cachy = pkgs.cachyosKernels;
+              in
+              cachy.linux-cachyos-latest-lto-x86_64-v3
+            )).extend
+              (final: prev: { });
 
           tmp.cleanOnBoot = true;
           consoleLogLevel = 0;
