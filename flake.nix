@@ -28,6 +28,14 @@
       flake = false;
     };
 
+    cachyos-kernel-nix = {
+      type = "github";
+      owner = "xddxdd";
+      repo = "nix-cachyos-kernel";
+      ref = "release";
+      inputs.flake-parts.follows = "flake-parts";
+    };
+
     chaotic-nyx = {
       type = "github";
       owner = "chaotic-cx";

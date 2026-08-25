@@ -7,6 +7,7 @@
     nixos =
       {
         inputs,
+        pkgs,
         ...
       }:
       {
@@ -15,6 +16,8 @@
         ];
 
         boot = {
+          kernelPackages = pkgs.linuxPackages_zen;
+
           tmp.cleanOnBoot = true;
           consoleLogLevel = 0;
 
