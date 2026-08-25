@@ -15,7 +15,9 @@
           services.binternet = {
             enable = lib.mkEnableOption "Binternet";
 
-            package = lib.mkPackageOption pkgs "binternet";
+            package = lib.mkPackageOption pkgs "binternet" {
+              nullable = true;
+            };
 
             openFirewall = lib.mkEnableOption "Open the firewall";
 

@@ -18,7 +18,9 @@
         options.services.cpupower-gui = {
           enable = lib.mkEnableOption "CpuPower-GUI";
 
-          package = lib.mkPackageOption pkgs "cpupower-gui" { };
+          package = lib.mkPackageOption pkgs "cpupower-gui" {
+            nullable = true;
+          };
         };
 
         config = lib.mkIf cfg.enable {
