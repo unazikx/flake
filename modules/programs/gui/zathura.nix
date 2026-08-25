@@ -1,4 +1,5 @@
 {
+  zen,
   ...
 }:
 
@@ -9,6 +10,10 @@
       with zaread -> converts office into pdf
     '';
 
+    includes = [
+      zen.programs.gui.libreoffice
+    ];
+
     homeManager =
       {
         self',
@@ -17,10 +22,15 @@
         config,
         ...
       }:
+      let
+        cfg = config.programs.zathura;
+        libreoffice = config.programs.libreoffice;
+      in
       {
         home.packages = [
           (self'.packages.zaread.override {
-            libreoffice = pkgs.libreoffice-fresh;
+            libreoffice = libreoffice.package;
+            zathura = cfg.package;
           })
         ];
 

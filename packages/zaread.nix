@@ -3,6 +3,7 @@
   fetchurl,
   libreoffice,
   md2pdf,
+  zathura,
   lib,
 }:
 
@@ -12,6 +13,7 @@ writeShellApplication {
   runtimeInputs = [
     libreoffice
     md2pdf
+    zathura
   ];
 
   text = lib.readFile (fetchurl {
