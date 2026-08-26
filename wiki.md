@@ -27,6 +27,15 @@ https://modrinth.com/collection/dB2Obqjo
 
 - <img src="https://freshcraft.org/images/logo.png" height="24"> freshcraft -> https://freshcraft.org/modpacks
 
+## **Noctalia**
+
+dont use their flake, noctalia also in nixpkgs
+
+use `nix eval --expr --impure 'builtins.fromTOML (builtins.readFile ./noctalia.toml)'`
+for make nix attrs config from toml
+
+- <img src="https://docs.noctalia.dev/_astro/noctalia-logo.BwXc-yKG.svg" height="24"> noctalia-wiki -> https://docs.noctalia.dev/noctalia
+
 ## **Steam**
 
 - <img src="https://www.vhv.rs/dpng/d/76-762941_archlinux-icon-crystal-arch-linux-icon-png-transparent.png" height="24"> arch-steam -> https://wiki.archlinux.org/title/Steam
@@ -39,4 +48,4 @@ https://modrinth.com/collection/dB2Obqjo
 
 - <img src="https://wiki.archiveteam.org/images/d/d8/SteamDB_logo.png" height="24"> steam-db -> https://steamdb.info
 
-## Total: 3 wikis
+## Total: 4 wikis
