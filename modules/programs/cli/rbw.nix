@@ -20,7 +20,7 @@
 
           settings = {
             "email" = "xfalwa@gmail.com";
-            "base_url" = "https://vaultwarden.servx.netcraze.club";
+            "base_url" = "https://vaultwarden.servx.crazedns.ru";
             "lock_timeout" = 60 * 30;
             "sync_interval" = 4;
             "pinentry" = pkgs.pinentry-gnome3;
