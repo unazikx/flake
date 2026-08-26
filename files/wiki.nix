@@ -6,10 +6,13 @@
 {
   zen.flake-parts.default = {
     includes = [
+      # keep-sorted start
       zen.custom.wiki
-      zen.games.steam
       zen.games.hytale.launcher
       zen.games.minecraft
+      zen.games.steam
+      zen.programs.desktop.noctalia
+      # keep-sorted end
     ];
 
     files =
