@@ -23,7 +23,7 @@
               in
               cachy.linux-cachyos-latest-lto-x86_64-v3
             )).extend
-              (final: prev: { });
+              (_final: _prev: { });
 
           tmp.cleanOnBoot = true;
           consoleLogLevel = 0;
