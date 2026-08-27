@@ -69,6 +69,16 @@
                   name = "Hollow Knight: Silksong";
                 };
 
+                "1030830" = {
+                  name = "Mafia II: Definitive Edition";
+                  language = "russian";
+                };
+
+                "1030840" = {
+                  name = "Mafia: Definitive Edition";
+                  language = "russian";
+                };
+
                 "1038300" = {
                   name = "New Super Lucky's Tale";
                 };
@@ -527,6 +537,11 @@
                   language = "russian";
                 };
 
+                "360430" = {
+                  name = "Mafia III: Definitive Edition";
+                  language = "russian";
+                };
+
                 "367520" = {
                   name = "Hollow Knight";
                 };
@@ -627,6 +642,11 @@
                   name = "EthrA (playtest)";
                 };
 
+                "50130" = {
+                  name = "Mafia II (Classic)";
+                  language = "russian";
+                };
+
                 "501590" = {
                   name = "Bulletstorm";
                   language = "russian";
@@ -699,6 +719,11 @@
 
                 "629820" = {
                   name = "Maneater";
+                  language = "russian";
+                };
+
+                "632360" = {
+                  name = "Risk of Rain 2";
                   language = "russian";
                 };
 
@@ -800,6 +825,10 @@
 
                 "858710" = {
                   name = "Gravity Circuit";
+                };
+
+                "870780" = {
+                  name = "Control Ultimate Edition";
                 };
 
                 "881100" = {

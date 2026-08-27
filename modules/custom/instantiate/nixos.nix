@@ -5,16 +5,19 @@
 }:
 
 {
-  den.schema.host =
-    {
-      lib,
-      host,
-      ...
-    }:
-    {
-      config.instantiate = lib.mkMerge [
-        (lib.mkIf (host.class == "nixos") (
-          { modules }:
+  den.schema.host.imports = [
+    (
+      {
+        lib,
+        config,
+        ...
+      }:
+      lib.mkIf (config.class == "nixos") {
+        instantiate =
+          {
+            modules,
+            ...
+          }:
           inputs.nixpkgs.lib.nixosSystem {
             inherit
               modules
@@ -34,8 +37,8 @@
                 }
               );
             };
-          }
-        ))
-      ];
-    };
+          };
+      }
+    )
+  ];
 }
