@@ -108,6 +108,18 @@
       repo = "files";
     };
 
+    finix = {
+      type = "github";
+      owner = "finix-community";
+      repo = "finix";
+    };
+
+    finix-community = {
+      type = "github";
+      owner = "finix-community";
+      repo = "community-modules";
+    };
+
     firefox-addons = {
       type = "github";
       owner = "petrkozorezov";

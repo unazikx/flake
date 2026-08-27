@@ -345,6 +345,36 @@
         "type": "github"
       }
     },
+    "finix": {
+      "locked": {
+        "lastModified": 1787524290,
+        "narHash": "sha256-mU5vhbdK8uBO1Cgc7pxUo5OadG2mb+TbU1mFhylEZz4=",
+        "owner": "finix-community",
+        "repo": "finix",
+        "rev": "78fd549fa5410ad1e5683efbba2d0f1728c12f3d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "finix-community",
+        "repo": "finix",
+        "type": "github"
+      }
+    },
+    "finix-community": {
+      "locked": {
+        "lastModified": 1787694080,
+        "narHash": "sha256-5xJYZmz8bz7SPHseUdGGlJUPPDUZUmXpBb21jAlbjDw=",
+        "owner": "finix-community",
+        "repo": "community-modules",
+        "rev": "6062166edac360360a29e2dd85ce7d80ab2aefc4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "finix-community",
+        "repo": "community-modules",
+        "type": "github"
+      }
+    },
     "firefox-addons": {
       "inputs": {
         "flake-utils": "flake-utils",
@@ -1452,6 +1482,8 @@
         "driftwm": "driftwm",
         "duck-game-rebuilt-nix": "duck-game-rebuilt-nix",
         "files": "files",
+        "finix": "finix",
+        "finix-community": "finix-community",
         "firefox-addons": "firefox-addons",
         "flake-file": "flake-file",
         "flake-parts": "flake-parts",
