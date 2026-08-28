@@ -10,6 +10,7 @@
       zen.custom.wiki
       zen.games.hytale.launcher
       zen.games.minecraft
+      zen.games.srb2
       zen.games.steam
       zen.programs.desktop.noctalia
       # keep-sorted end

@@ -36,6 +36,12 @@ for make nix attrs config from toml
 
 - <img src="https://docs.noctalia.dev/_astro/noctalia-logo.BwXc-yKG.svg" height="24"> noctalia-wiki -> https://docs.noctalia.dev/noctalia
 
+## **Sonic Robo Blast 2**
+
+- <img src="https://srb2mb-externaldata.nyc3.cdn.digitaloceanspaces.com/data/assets/logo/srb2mb_sonic.png" height="24"> addons-list -> https://mb.srb2.org/addons
+
+- <img src="https://www.srb2.org/wp-content/themes/srb2/images/srb2org-banner.png" height="24"> multiplayer-guide -> https://www.srb2.org/about/multiplayer
+
 ## **Steam**
 
 - <img src="https://www.vhv.rs/dpng/d/76-762941_archlinux-icon-crystal-arch-linux-icon-png-transparent.png" height="24"> arch-steam -> https://wiki.archlinux.org/title/Steam
@@ -48,4 +54,4 @@ for make nix attrs config from toml
 
 - <img src="https://wiki.archiveteam.org/images/d/d8/SteamDB_logo.png" height="24"> steam-db -> https://steamdb.info
 
-## Total: 4 wikis
+## Total: 5 wikis
