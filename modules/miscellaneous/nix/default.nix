@@ -16,7 +16,7 @@
       zen.miscellaneous.nix.settings
     ];
 
-    nixos =
+    os =
       {
         self',
         inputs,
@@ -49,6 +49,29 @@
         };
 
         nixpkgs.config.allowUnfree = true;
+      };
+
+    finix =
+      {
+        inputs,
+        lib,
+        config,
+        ...
+      }:
+      {
+        options.nixpkgs = {
+          hostPlatform = lib.mkOption { type = lib.types.str; };
+          config = lib.mkOption {
+            type = lib.types.attrs;
+            default = { };
+          };
+        };
+        config.nixpkgs.pkgs = import inputs.nixpkgs {
+          system = config.nixpkgs.hostPlatform;
+          inherit (config.nixpkgs)
+            config
+            ;
+        };
       };
 
     homeManager =

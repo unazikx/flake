@@ -12,13 +12,13 @@
         config,
         ...
       }:
-      lib.mkIf (config.class == "nixos") {
+      lib.mkIf (config.class == "finix") {
         instantiate =
           {
             modules,
             ...
           }:
-          inputs.nixpkgs.lib.nixosSystem {
+          inputs.finix.lib.finixSystem {
             inherit
               modules
               ;
@@ -37,6 +37,11 @@
                 ;
             };
           };
+
+        intoAttr = [
+          "nixosConfigurations"
+          config.name
+        ];
       }
     )
   ];
