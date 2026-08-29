@@ -5,13 +5,6 @@
 {
   flake-file.inputs = {
     # keep-sorted start block=yes newline_separated=yes
-    nix-cursors = {
-      type = "github";
-      owner = "lilleaila";
-      repo = "nix-cursors";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     stylix = {
       type = "github";
       owner = "nix-community";

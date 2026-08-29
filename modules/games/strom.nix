@@ -4,16 +4,16 @@
 }:
 
 {
-  flake-file.inputs = {
-    # keep-sorted start block=yes newline_separated=yes
-    strom-nix = {
-      type = "github";
-      owner = "kraftwerk-gaming";
-      repo = "strom";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    # keep-sorted end
-  };
+  # flake-file.inputs = {
+  #   # keep-sorted start block=yes newline_separated=yes
+  #   strom-nix = {
+  #     type = "github";
+  #     owner = "kraftwerk-gaming";
+  #     repo = "strom";
+  #     inputs.nixpkgs.follows = "nixpkgs";
+  #   };
+  #   # keep-sorted end
+  # };
 
   zen.games.strom = {
     description = ''

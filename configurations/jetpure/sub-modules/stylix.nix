@@ -7,7 +7,6 @@
     nixos =
       {
         self',
-        inputs',
         pkgs,
         lib,
         config,
@@ -57,8 +56,8 @@
 
           cursor = {
             size = 24;
-            name = "GoogleDot-Custom";
-            package = inputs'.nix-cursors.packages.google-cursor.override {
+            name = "googledot-custom";
+            package = self'.packages.cursors-google-cursor.override {
               background_color = colors.withHashtag.base0E;
               outline_color = colors.withHashtag.base00;
               accent_color = colors.withHashtag.base0E;

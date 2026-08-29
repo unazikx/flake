@@ -3,17 +3,17 @@
 }:
 
 {
-  flake-file.inputs = {
-    # keep-sorted start block=yes newline_separated=yes
-    late-sh = {
-      type = "github";
-      owner = "mpiorowski";
-      repo = "late-sh";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-utils.follows = "flake-utils";
-    };
-    # keep-sorted end
-  };
+  # flake-file.inputs = {
+  #   # keep-sorted start block=yes newline_separated=yes
+  #   late-sh = {
+  #     type = "github";
+  #     owner = "mpiorowski";
+  #     repo = "late-sh";
+  #     inputs.nixpkgs.follows = "nixpkgs";
+  #     inputs.flake-utils.follows = "flake-utils";
+  #   };
+  #   # keep-sorted end
+  # };
 
   zen.programs.cli.late-sh = {
     description = ''

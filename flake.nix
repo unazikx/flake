@@ -146,16 +146,6 @@
       repo = "flake-utils";
     };
 
-    helium-flake = {
-      type = "gitlab";
-      owner = "ntgn";
-      repo = "helium-flake";
-      inputs = {
-        flake-parts.follows = "flake-parts";
-        nixpkgs.follows = "nixpkgs";
-      };
-    };
-
     hjem = {
       type = "github";
       owner = "feel-co";
@@ -191,16 +181,6 @@
       type = "github";
       owner = "denful";
       repo = "import-tree";
-    };
-
-    late-sh = {
-      type = "github";
-      owner = "mpiorowski";
-      repo = "late-sh";
-      inputs = {
-        flake-utils.follows = "flake-utils";
-        nixpkgs.follows = "nixpkgs";
-      };
     };
 
     make-shell = {
@@ -253,13 +233,6 @@
         nixpkgs.follows = "nixpkgs";
         nixpkgs-stable.follows = "nixpkgs-stable";
       };
-    };
-
-    nix-cursors = {
-      type = "github";
-      owner = "lilleaila";
-      repo = "nix-cursors";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nix-darwin = {
@@ -368,16 +341,6 @@
       };
     };
 
-    occt-nix = {
-      type = "github";
-      owner = "daaboulex";
-      repo = "occt-nix";
-      inputs = {
-        flake-parts.follows = "flake-parts";
-        nixpkgs.follows = "nixpkgs";
-      };
-    };
-
     pkgs-by-name = {
       type = "github";
       owner = "drupol";
@@ -420,13 +383,6 @@
         flake-parts.follows = "flake-parts";
         nixpkgs.follows = "nixpkgs";
       };
-    };
-
-    strom-nix = {
-      type = "github";
-      owner = "kraftwerk-gaming";
-      repo = "strom";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     stylix = {
