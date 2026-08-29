@@ -13,7 +13,8 @@
     }
     (lib.genAttrs
       [
-        "os"
+        "nixos"
+        "darwin"
         "homeManager"
       ]
       (_: {

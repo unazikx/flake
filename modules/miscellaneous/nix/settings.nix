@@ -3,44 +3,70 @@
 }:
 
 {
-  zen.miscellaneous.nix.settings = {
-    os =
-      {
-        ...
-      }:
-      {
-        nix.settings = {
-          warn-dirty = false;
-          auto-optimise-store = true;
-          builders-use-substitutes = true;
+  zen.miscellaneous.nix.settings =
+    let
+      settings = {
+        warn-dirty = false;
+        auto-optimise-store = true;
+        builders-use-substitutes = true;
 
-          max-jobs = 2;
-          cores = 2;
+        max-jobs = 2;
+        cores = 2;
 
-          experimental-features = [
-            "nix-command"
-            "flakes"
-          ];
+        experimental-features = [
+          "nix-command"
+          "flakes"
+        ];
 
-          trusted-users = [ "@wheel" ];
-        };
+        trusted-users = [ "@wheel" ];
       };
-
-    homeManager =
-      {
-        config,
-        ...
-      }:
-      {
-        home.sessionVariables = {
-          CACHIX_AUTH_TOKEN = "$(cat ${config.sops.secrets."programs/cachix".path})";
-          GITHUB_TOKEN = "$(cat ${config.sops.secrets."programs/github".path})";
+    in
+    {
+      nixos =
+        {
+          ...
+        }:
+        {
+          nix = {
+            inherit settings;
+          };
         };
 
-        sops.secrets = {
-          "programs/cachix" = { };
-          "programs/github" = { };
+      finix =
+        {
+          ...
+        }:
+        {
+          services.nix-daemon = {
+            inherit settings;
+          };
         };
-      };
-  };
+
+      darwin =
+        {
+          ...
+        }:
+        {
+          nix = {
+            inherit settings;
+          };
+        };
+
+      homeManager =
+        {
+          config,
+          ...
+        }:
+        {
+          home.sessionVariables = {
+            CACHIX_AUTH_TOKEN = "$(cat ${config.sops.secrets."programs/cachix".path})";
+            GITHUB_TOKEN = "$(cat ${config.sops.secrets."programs/github".path})";
+          };
+
+          sops.secrets = {
+            "programs/cachix" = { };
+            "programs/github" = { };
+          };
+        };
+    };
 }

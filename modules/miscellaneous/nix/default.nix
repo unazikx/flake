@@ -11,6 +11,7 @@
     '';
 
     includes = [
+      zen.custom.nixpkgs
       # zen.miscellaneous.nix.lix
       zen.miscellaneous.nix.overlays
       zen.miscellaneous.nix.settings
@@ -19,9 +20,7 @@
     os =
       {
         self',
-        inputs,
         pkgs,
-        lib,
         ...
       }:
       {
@@ -33,6 +32,16 @@
           pkgs.nurl
         ];
 
+        nixpkgs.config.allowUnfree = true;
+      };
+
+    nixos =
+      {
+        inputs,
+        lib,
+        ...
+      }:
+      {
         nix = {
           enable = true;
 
@@ -47,30 +56,23 @@
             ))
               (isFlake inputs);
         };
-
-        nixpkgs.config.allowUnfree = true;
       };
 
     finix =
       {
-        inputs,
-        lib,
-        config,
+        self,
         ...
       }:
       {
-        options.nixpkgs = {
-          hostPlatform = lib.mkOption { type = lib.types.str; };
-          config = lib.mkOption {
-            type = lib.types.attrs;
-            default = { };
-          };
+        services.nix-daemon = {
+          enable = true;
         };
-        config.nixpkgs.pkgs = import inputs.nixpkgs {
-          system = config.nixpkgs.hostPlatform;
-          inherit (config.nixpkgs)
-            config
-            ;
+
+        nixpkgs = {
+          overlays = [
+            self.overlays.nixpkgs-branches
+            self.overlays.system-backport
+          ];
         };
       };
 
