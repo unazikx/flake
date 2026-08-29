@@ -4,6 +4,16 @@
 > https://dashboardicons.com
 > https://simpleicons.org
 
+## **Finix**
+
+nixos distro replaces systemd to finit
+
+- <img src="https://avatars.githubusercontent.com/u/234074672" height="24"> main-repository -> https://github.com/finix-community/finix
+
+- <img src="https://avatars.githubusercontent.com/u/234074672" height="24"> options-search -> https://finix-community.github.io/finix
+
+- <img src="https://avatars.githubusercontent.com/u/234074672" height="24"> community-modules -> https://github.com/finix-community/community-modules
+
 ## **Hytale Launcher**
 
 - <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/hytale.png" height="24"> nix-package -> https://github.com/unazikx/hytale-launcher-nix
@@ -54,4 +64,4 @@ for make nix attrs config from toml
 
 - <img src="https://wiki.archiveteam.org/images/d/d8/SteamDB_logo.png" height="24"> steam-db -> https://steamdb.info
 
-## Total: 5 wikis
+## Total: 6 wikis

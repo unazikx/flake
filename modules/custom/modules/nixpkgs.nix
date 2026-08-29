@@ -2,7 +2,6 @@
   zen.custom.nixpkgs = {
     finix =
       {
-        self,
         inputs,
         lib,
         config,
