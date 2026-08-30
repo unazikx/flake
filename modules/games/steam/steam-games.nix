@@ -532,6 +532,10 @@
                   name = "Batman: Arkham Asylum";
                 };
 
+                "3516590" = {
+                  name = "Allumeria";
+                };
+
                 "359320" = {
                   name = "Elite Dangerous";
                   language = "russian";
