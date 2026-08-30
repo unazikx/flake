@@ -12,13 +12,6 @@
       repo = "betterfox";
       flake = false;
     };
-
-    firefox-addons = {
-      type = "github";
-      owner = "petrkozorezov";
-      repo = "firefox-addons-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     # keep-sorted end
   };
 

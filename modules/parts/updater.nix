@@ -41,6 +41,11 @@
           program = config.packages.firefox-fetcher;
           meta = program.meta;
         };
+
+        hytale-fetcher = rec {
+          program = config.packages.hytale-fetcher;
+          meta = program.meta;
+        };
       };
   };
 }

@@ -3,22 +3,22 @@
 }:
 
 {
-  flake-file.inputs = {
-    # keep-sorted start block=yes newline_separated=yes
-    matugen-nix = {
-      type = "github";
-      owner = "mois3y";
-      repo = "matugen-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+  # flake-file.inputs = {
+  #   # keep-sorted start block=yes newline_separated=yes
+  #   matugen-nix = {
+  #     type = "github";
+  #     owner = "mois3y";
+  #     repo = "matugen-nix";
+  #     inputs.nixpkgs.follows = "nixpkgs";
+  #   };
 
-    matugen-nix-templates = {
-      type = "github";
-      owner = "unazikx";
-      repo = "matugen-nix-templates";
-    };
-    # keep-sorted end
-  };
+  #   matugen-nix-templates = {
+  #     type = "github";
+  #     owner = "unazikx";
+  #     repo = "matugen-nix-templates";
+  #   };
+  #   # keep-sorted end
+  # };
 
   zen.styles.matugen = {
     nixos =

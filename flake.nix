@@ -11,16 +11,6 @@
       };
     };
 
-    aurelia = {
-      type = "github";
-      owner = "drackrath";
-      repo = "aurelia";
-      inputs = {
-        flake-utils.follows = "flake-utils";
-        nixpkgs.follows = "nixpkgs";
-      };
-    };
-
     betterfox = {
       type = "github";
       owner = "yokoffing";
@@ -88,20 +78,6 @@
       flake = false;
     };
 
-    driftwm = {
-      type = "github";
-      owner = "malbiruk";
-      repo = "driftwm";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    duck-game-rebuilt-nix = {
-      type = "github";
-      owner = "klof44";
-      repo = "duckgamerebuilt-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     files = {
       type = "github";
       owner = "sini";
@@ -118,13 +94,6 @@
       type = "github";
       owner = "finix-community";
       repo = "community-modules";
-    };
-
-    firefox-addons = {
-      type = "github";
-      owner = "petrkozorezov";
-      repo = "firefox-addons-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     flake-file = {
@@ -192,19 +161,6 @@
       };
     };
 
-    matugen-nix = {
-      type = "github";
-      owner = "mois3y";
-      repo = "matugen-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    matugen-nix-templates = {
-      type = "github";
-      owner = "unazikx";
-      repo = "matugen-nix-templates";
-    };
-
     ncro = {
       type = "github";
       owner = "manic-systems";
@@ -233,12 +189,6 @@
       owner = "nix-darwin";
       repo = "nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    nix-flatpak = {
-      type = "github";
-      owner = "gmodena";
-      repo = "nix-flatpak";
     };
 
     nix-math = {

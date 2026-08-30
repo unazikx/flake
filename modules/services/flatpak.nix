@@ -3,15 +3,15 @@
 }:
 
 {
-  flake-file.inputs = {
-    # keep-sorted start block=yes newline_separated=yes
-    nix-flatpak = {
-      type = "github";
-      owner = "gmodena";
-      repo = "nix-flatpak";
-    };
-    # keep-sorted end
-  };
+  # flake-file.inputs = {
+  #   # keep-sorted start block=yes newline_separated=yes
+  #   nix-flatpak = {
+  #     type = "github";
+  #     owner = "gmodena";
+  #     repo = "nix-flatpak";
+  #   };
+  #   # keep-sorted end
+  # };
 
   zen.services.flatpak = {
     description = ''

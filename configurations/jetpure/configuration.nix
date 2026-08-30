@@ -69,7 +69,6 @@
       zen.services.qbittorrent.flood
       zen.services.tailscale
       zen.services.vaultwarden
-      zen.styles.matugen
       zen.styles.stylix
       zen.suites.hardware
       zen.suites.media

@@ -4,17 +4,6 @@
 }:
 
 {
-  flake-file.inputs = {
-    # keep-sorted start block=yes newline_separated=yes
-    driftwm = {
-      type = "github";
-      owner = "malbiruk";
-      repo = "driftwm";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    # keep-sorted end
-  };
-
   zen.programs.desktop.driftwm = {
     description = ''
       infinite canvas wayland
@@ -28,19 +17,16 @@
 
     nixos =
       {
-        inputs,
+        self',
         lib,
         config,
         user,
         ...
       }:
       {
-        imports = [
-          inputs.driftwm.nixosModules.default
-        ];
-
         programs.driftwm = {
           enable = true;
+          package = self'.packages.driftwm;
         };
 
         # fucking idiots why blyat?
@@ -61,18 +47,19 @@
         };
       };
 
-    homeManager =
+    homeManagerNixos =
       {
-        inputs',
         pkgs,
         lib,
+        osConfig,
         ...
       }:
       {
         programs.driftwm = {
-          enable = true;
-
-          package = inputs'.driftwm.packages.default;
+          inherit (osConfig.programs.driftwm)
+            enable
+            package
+            ;
 
           settings = {
             focus_follows_mouse = true;
