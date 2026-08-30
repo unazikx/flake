@@ -3,17 +3,6 @@
 }:
 
 {
-  flake-file.inputs = {
-    # keep-sorted start block=yes newline_separated=yes
-    hytale-launcher = {
-      type = "github";
-      owner = "unazikx";
-      repo = "hytale-launcher-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    # keep-sorted end
-  };
-
   zen.games.hytale.launcher = {
     description = ''
       official launcher for hytale
@@ -22,19 +11,17 @@
 
     wiki = {
       "Hytale Launcher".links = [
-        # keep-sorted start block=yes
         {
-          name = "nix-package";
+          name = "nix-package-previous";
           url = "https://github.com/unazikx/hytale-launcher-nix";
           logo = "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/hytale.png";
         }
-        # keep-sorted end
       ];
     };
 
     homeManagerNixos =
       {
-        inputs',
+        self',
         pkgs,
         ...
       }:
@@ -43,7 +30,7 @@
       in
       {
         home.packages = [
-          inputs'.hytale-launcher.packages.hytale-launcher
+          self'.packages.hytale-launcher-wrapped
         ];
 
         xdg.dataFile = {

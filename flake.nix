@@ -170,13 +170,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hytale-launcher = {
-      type = "github";
-      owner = "unazikx";
-      repo = "hytale-launcher-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     import-tree = {
       type = "github";
       owner = "denful";
