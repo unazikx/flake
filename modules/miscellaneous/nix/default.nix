@@ -55,6 +55,10 @@
               }
             ))
               (isFlake inputs);
+
+          channel.enable = false;
+
+          settings.flake-registry = "";
         };
       };
 
