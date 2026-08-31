@@ -32,6 +32,7 @@
 
         profiles.minimal = {
           enable = true;
+          withFlakes = true;
           deviceManager = "udev";
         };
       };
