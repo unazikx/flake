@@ -19,6 +19,10 @@
 
     sopsKey = "age1c3z633k2m0vgfn5vjflu763lzadg2lddfnzwwyhvmyf053quqqtsh0cdqz";
 
+    ageSecrets = [
+      "vpn/cf-warp"
+    ];
+
     users = {
       nixzoid = {
         classes = [ "homeManager" ];

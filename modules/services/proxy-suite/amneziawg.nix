@@ -33,15 +33,15 @@
 
             profiles = {
               cf-warp = {
-                configFile = config.sops.secrets."vpn/awg-warp".path;
+                configFile = config.age.secrets."vpn/cf-warp".path;
               };
             };
           };
         };
 
-        sops.secrets = {
-          "vpn/awg-warp" = { };
-        };
+        # sops.secrets = {
+        #   "vpn/awg-warp" = { };
+        # };
       };
   };
 }

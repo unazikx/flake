@@ -19,6 +19,7 @@
   zen.miscellaneous.agenix = {
     os =
       {
+        self,
         inputs',
         pkgs,
         host,
@@ -35,6 +36,22 @@
           variables = {
             RULES = "${host.flakeDir}/.age.nix";
           };
+        };
+
+        age = {
+          identityPaths = [
+            "/home/${host.defaultUser}/.ssh/id_ed25519"
+            "/var/lib/id_ed25519"
+          ];
+
+          secrets = builtins.listToAttrs (
+            map (name: {
+              inherit name;
+              value = {
+                file = "${self}/secrets/${host.hostName}/${name}.age";
+              };
+            }) host.ageSecrets
+          );
         };
       };
 

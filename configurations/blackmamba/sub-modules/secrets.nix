@@ -16,7 +16,7 @@
         ...
       }:
       {
-        sops.defaultSopsFile = "${self}/secrets/${host.hostName}/generic.yaml";
+        sops.defaultSopsFile = "${self}/secrets/${host.hostName}/sops.yaml";
 
         sops.secrets = {
           "password/hackerx" = {
@@ -43,7 +43,7 @@
           !include ${config.sops.templates."nix-access-tokens".path}
         '';
 
-        sops.defaultSopsFile = "${self}/secrets/${host.hostName}/generic.yaml";
+        sops.defaultSopsFile = "${self}/secrets/${host.hostName}/sops.yaml";
 
         sops.templates = {
           "nix-access-tokens" = {
