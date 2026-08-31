@@ -1081,11 +1081,11 @@
         "zapret": "zapret"
       },
       "locked": {
-        "lastModified": 1786949983,
-        "narHash": "sha256-4yzPIzhsKsqvR7iDZLlW/DELtZpoZDRIElklA6CISpw=",
+        "lastModified": 1788095263,
+        "narHash": "sha256-NLaMCPZfGFvFNItGjWLzoR48iCLpclnC4dDXlt5D9Fw=",
         "owner": "fufsob",
         "repo": "proxy-suite-flake",
-        "rev": "539f6a13ee6e96aaa931f66351bfc88c612e7364",
+        "rev": "a456534801240870ea1ffaaff5f5ac0926b17240",
         "type": "github"
       },
       "original": {

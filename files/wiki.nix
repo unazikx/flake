@@ -14,6 +14,7 @@
       zen.games.steam
       zen.miscellaneous.finix
       zen.programs.desktop.noctalia
+      zen.services.proxy-suite.amneziawg
       # keep-sorted end
     ];
 

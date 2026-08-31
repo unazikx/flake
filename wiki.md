@@ -4,6 +4,12 @@
 > https://dashboardicons.com
 > https://simpleicons.org
 
+## **AmneziaWG**
+
+- <img src="https://cdn4.telesco.pe/file/Ipobmmlb3skF6PriGAZMIZBEPuYuBgEmsd6a9bHPd_mITBnViXtnk8_QG11dMzZl1BAFbQzDM1MdrEF3HLd-hWRbznzwE3Y3ZGdtpwdPI_xz8WEfomcOiWMtohd7R671iMJ8RaKI0U1Lg5NjVPE3QH1LcEU5cS18km9cFQ0HX8NJzrJ8eUfa7qcnXqaBMJWCSFFSSEzpou8Vg-T3RLulhYBV-va1EvjQSCw44bMtaE5jpDgvU-aYsDZkNm8qeo8GmkX5SRhdy5Yc-qUxJBvlGr2vesUBVyUcWmmU7PCW91wmaUqg1V1C5HKevZQLTab9b6T2i7CZ7T_JfSoTYqG2Dw.jpg" height="24"> warp-generator -> https://warp_generator_bot.t.me
+
+- <img src="https://cdn4.telesco.pe/file/O4ev9Y3fy3XEU8CI5mBVd31esISWdfSed2BRq7UYFB_ZDI81EaYp8Xn_BaDJhLiEp6OG7jKl7qtrSnUVq0xfBhJ3JFmJ0yk-6PQueucQtUYdm4FXnH7wucu-O_IznKlopdfId4KjDj-NKRHOYfhlpXBXiqJ1avqCns2eEhj_2ZasFdwPi2KkTT2MJW72z8YlzsL76skYGv96bCrFQvylYkZC-MqLcJrO9tYsiifGiIQY_pTvdmtQngEZkK0pTWt5fBi8CqutE-LW9O3kdKTIWDQJN7TH7QrDsMk7O9rd7AEVWztlKsaMez-jp3KH-YEN-ecaW2c0GzYwK2sMaxERFg.jpg" height="24"> warp-status -> https://cfwarpstatus.t.me
+
 ## **Finix**
 
 nixos distro replaces systemd to finit
@@ -64,4 +70,4 @@ for make nix attrs config from toml
 
 - <img src="https://wiki.archiveteam.org/images/d/d8/SteamDB_logo.png" height="24"> steam-db -> https://steamdb.info
 
-## Total: 6 wikis
+## Total: 7 wikis
