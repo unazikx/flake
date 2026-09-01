@@ -50,7 +50,7 @@
               value = {
                 file = "${self}/secrets/${host.hostName}/${name}.age";
               };
-            }) host.ageSecrets
+            }) (import "${self}/.age.nix")._bare.${host.hostName}
           );
         };
       };
@@ -79,9 +79,11 @@
 
     homeManager =
       {
+        self,
         inputs,
         inputs',
         pkgs,
+        host,
         ...
       }:
       {
@@ -94,6 +96,17 @@
           pkgs.age
           pkgs.ssh-to-age
         ];
+
+        age = {
+          secrets = builtins.listToAttrs (
+            map (name: {
+              inherit name;
+              value = {
+                file = "${self}/secrets/${host.hostName}/${name}.age";
+              };
+            }) (import "${self}/.age.nix")._bare.${host.hostName}
+          );
+        };
       };
 
     homeManagerNixos =

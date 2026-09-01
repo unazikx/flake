@@ -13,7 +13,10 @@ let
         };
       }) secrets;
     in
-    builtins.listToAttrs secretsList;
+    (builtins.listToAttrs secretsList)
+    // {
+      _bare.${hostname} = secrets;
+    };
 
   mapping = args: (map (config: processHost config args.${config}) (builtins.attrNames args));
 in
