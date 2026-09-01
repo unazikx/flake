@@ -155,6 +155,10 @@
                   name = "Shapez";
                 };
 
+                "1326470" = {
+                  name = "Sons Of The Forest";
+                };
+
                 "1337520" = {
                   name = "Risk of Rain: Returns";
                   language = "russian";
@@ -353,6 +357,10 @@
                   language = "russian";
                 };
 
+                "242760" = {
+                  name = "The Forest";
+                };
+
                 "243470" = {
                   name = "Watch Dogs";
                   language = "russian";
@@ -417,6 +425,10 @@
 
                 "2629230" = {
                   name = "Adventures Of Sir Kicksalot";
+                };
+
+                "264710" = {
+                  name = "Subnautica";
                 };
 
                 "268910" = {
@@ -544,6 +556,10 @@
                 "360430" = {
                   name = "Mafia III: Definitive Edition";
                   language = "russian";
+                };
+
+                "361420" = {
+                  name = "ASTRONEER";
                 };
 
                 "367520" = {
@@ -827,6 +843,10 @@
                   language = "russian";
                 };
 
+                "848450" = {
+                  name = "Subnautica: Below Zero";
+                };
+
                 "858710" = {
                   name = "Gravity Circuit";
                 };
@@ -855,6 +875,10 @@
                 "920210" = {
                   name = "LEGO: Star Wars The Skywalker Saga";
                   language = "russian";
+                };
+
+                "962130" = {
+                  name = "Groundedr";
                 };
 
                 "962580" = {
