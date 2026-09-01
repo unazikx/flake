@@ -47,6 +47,11 @@
             url = "https://freshcraft.org/modpacks";
             logo = "https://freshcraft.org/images/logo.png";
           }
+          {
+            name = "craftoria";
+            url = "https://www.curseforge.com/minecraft/modpacks/craftoria";
+            logo = "https://media.forgecdn.net/avatars/thumbnails/1066/473/256/256/638600434802547442.png";
+          }
         ];
       };
     };

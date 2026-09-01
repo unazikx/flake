@@ -43,6 +43,8 @@ https://modrinth.com/collection/dB2Obqjo
 
 - <img src="https://freshcraft.org/images/logo.png" height="24"> freshcraft -> https://freshcraft.org/modpacks
 
+- <img src="https://media.forgecdn.net/avatars/thumbnails/1066/473/256/256/638600434802547442.png" height="24"> craftoria -> https://www.curseforge.com/minecraft/modpacks/craftoria
+
 ## **Noctalia**
 
 dont use their flake, noctalia also in nixpkgs
