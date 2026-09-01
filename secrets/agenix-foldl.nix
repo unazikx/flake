@@ -15,10 +15,30 @@ let
     in
     (builtins.listToAttrs secretsList)
     // {
-      _bare.${hostname} = secrets;
+      _bare = {
+        ${hostname} = secrets;
+      };
     };
 
   mapping = args: (map (config: processHost config args.${config}) (builtins.attrNames args));
 in
 
-args: builtins.foldl' (default: attrs: default // attrs) { } (mapping args)
+args:
+
+let
+  processed = mapping args;
+
+  ageFiles = builtins.foldl' (
+    acc: hostResult:
+    let
+      cleanResult = removeAttrs hostResult [ "_bare" ];
+    in
+    acc // cleanResult
+  ) { } processed;
+
+  bareAttrs = builtins.foldl' (
+    acc: hostResult: if (hostResult ? _bare) then (acc // hostResult._bare) else acc
+  ) { } processed;
+in
+
+ageFiles // { _bare = bareAttrs; }

@@ -8,10 +8,12 @@
       {
         lib,
         config,
+        osConfig,
         ...
       }:
       let
         cfg = config.wayland.windowManager.sway;
+        proxy-suite = osConfig.services.proxy-suite;
       in
       {
         wayland.windowManager.sway.config = {
@@ -53,7 +55,11 @@
                 "return" = "footclient";
                 "shift+return" = "footclient -a=foot_float";
 
-                "b" = "qutebrowser";
+                "b" =
+                  if (proxy-suite.zapret.enable && proxy-suite.perAppRouting.enable) then
+                    "proxy-ctl wrap zapret -- qutebrowser"
+                  else
+                    "qutebrowser";
                 "shift+b" = "libreoffice";
                 "v" = "AyuGram";
                 "shift+v" = "equibop";
