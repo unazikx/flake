@@ -15,7 +15,11 @@
 
             on = {
               # just useful
-              workflow_dispatch = { };
+              workflow_dispatch = {
+                inputs.prefixes = {
+                  required = true;
+                };
+              };
             };
 
             jobs = {
@@ -46,6 +50,19 @@
                       # ^^^ https://app.cachix.org/cache/xache
                       authToken = "\${{ secrets.CACHIX_AUTH_TOKEN }}";
                     };
+                  }
+                  {
+                    name = "Add additional prefix ignores";
+                    env = {
+                      PREFIXES_DATA = "\${{ inputs.prefixes }}";
+                      FILE = "github-actions-inputs";
+                    };
+                    run =
+                      # bash
+                      ''
+                        echo $PREFIXES_IGNORES > $FILE
+                        git add $FILE
+                      '';
                   }
                   {
                     name = "Build cachix-farmer";

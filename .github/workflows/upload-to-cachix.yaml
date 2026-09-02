@@ -16,9 +16,19 @@ jobs:
         with:
           authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
           name: xache
+      - env:
+          FILE: github-actions-inputs
+          PREFIXES_DATA: ${{ inputs.prefixes }}
+        name: Add additional prefix ignores
+        run: |
+          echo $PREFIXES_IGNORES > $FILE
+          git add $FILE
       - name: Build cachix-farmer
         run: |
           nix build .#__cachix-farmed --no-link --print-out-paths
 name: Upload prebuilt Nix binaries to Cachix
 "on":
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      prefixes:
+        required: true

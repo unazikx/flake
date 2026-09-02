@@ -1,4 +1,5 @@
 {
+  self,
   ...
 }:
 
@@ -15,20 +16,29 @@
         legacyPackages = {
           __cachix =
             let
-              prefixes = [
-                # keep-sorted start
-                "aurelia"
-                "cursors"
-                "firefox-themes"
-                "fonts"
-                "minecraft-servers"
-                "proton"
-                "write-flake"
-                "write-inputs"
-                "write-lock"
-                "yazi-plugins"
-                # keep-sorted end
-              ];
+              prefixes =
+                let
+                  file = "${self}/github-actions-inputs";
+                  additionalPrefixes = (lib.splitString " " (lib.trim (lib.readFile file)));
+                  defaultPrefixes = [
+                    # keep-sorted start
+                    "aurelia"
+                    "cursors"
+                    "firefox-themes"
+                    "fonts"
+                    "minecraft-servers"
+                    "proton"
+                    "write-flake"
+                    "write-inputs"
+                    "write-lock"
+                    "yazi-plugins"
+                    # keep-sorted end
+                  ];
+                in
+                if (lib.pathExists file) then
+                  (lib.unique (additionalPrefixes ++ defaultPrefixes))
+                else
+                  defaultPrefixes;
             in
             lib.filterAttrs (
               name: value:
