@@ -52,7 +52,7 @@
                     run =
                       # bash
                       ''
-                        nix build .#__cachix-test --no-link --print-out-paths
+                        nix build .#__cachix-farmed --no-link --print-out-paths
                       '';
                   }
                 ];

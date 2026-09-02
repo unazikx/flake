@@ -41,14 +41,6 @@
           __cachix-farmed = pkgs.linkFarm "cachix-packages" (
             builtins.mapAttrs (_name: drv: drv) config.legacyPackages.__cachix
           );
-
-          __cachix-test = pkgs.linkFarm "all-cachix-packages" {
-            inherit (config.packages)
-              zaread
-              hasher
-              niri-sidebar
-              ;
-          };
         };
       };
   };
