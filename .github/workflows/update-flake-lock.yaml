@@ -1,0 +1,34 @@
+jobs:
+  update-flake:
+    name: Run update-lock
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+      - name: Install Nix
+        uses: cachix/install-nix-action@v31
+        with:
+          extra_nix_config: |
+            experimental-features = nix-command flakes
+          nix_path: nixpkgs=channel:nixos-unstable
+      - name: Run update-lock
+        run: |
+          nix flake update
+          nix flake lock
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+
+          if ! git diff --cached --quiet; then
+            git commit -m "flake: updated nix-lock [automated]"
+            git push
+          else
+            echo "No changes from updater"
+          fi
+name: Update Nix flake lock file
+"on":
+  workflow_dispatch: {}
+permissions:
+  contents: write
