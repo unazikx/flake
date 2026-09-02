@@ -3,13 +3,13 @@
 }:
 
 {
-  zen.games.steam.non-steam-games = {
+  zen.games.steam-config.non-steam-games = {
     description = ''
       side games from nixpkgs and not only
       packaged to steam, cause xdg desktop is shi
     '';
 
-    homeManager =
+    homeManagerNixos =
       {
         lib,
         config,

@@ -3,7 +3,7 @@
 }:
 
 {
-  zen.games.steam.steam-games = {
+  zen.games.steam-config.steam-games = {
     description = ''
       list of variables for proton
       dwproton: https://dawn.wine/dawn-winery/dwproton#runtime-config-options

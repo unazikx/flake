@@ -28,8 +28,7 @@
     includes = [
       zen.games.gamemode
       zen.games.mangohud
-      zen.games.steam.non-steam-games
-      zen.games.steam.steam-games
+      zen.games.steam-config
     ];
 
     wiki = {
@@ -46,19 +45,14 @@
           logo = "https://images.seeklogo.com/logo-png/40/2/steam-deck-logo-png_seeklogo-409559.png";
         }
         {
-          name = "proton-db";
-          url = "https://protondb.com";
-          logo = "https://www.protondb.com/sites/protondb/images/site-logo.svg";
-        }
-        {
-          name = "steam-config-nix";
-          url = "https://github.com/different-name/steam-config-nix/blob/master/options.md";
-          logo = "https://avatars.githubusercontent.com/u/49257026";
-        }
-        {
           name = "steam-db";
           url = "https://steamdb.info";
           logo = "https://wiki.archiveteam.org/images/d/d8/SteamDB_logo.png";
+        }
+        {
+          name = "proton-db";
+          url = "https://protondb.com";
+          logo = "https://www.protondb.com/sites/protondb/images/site-logo.svg";
         }
         # keep-sorted end
       ];
@@ -110,52 +104,6 @@
             steam -shutdown
           '')
         ];
-      };
-
-    homeManagerNixos =
-      {
-        self',
-        inputs,
-        lib,
-        osConfig,
-        ...
-      }:
-      {
-        imports = [
-          inputs.steam-config-nix.homeModules.steam-config-nix
-        ];
-
-        programs.steam.config = {
-          enable = true;
-          onSteamRunning = "close";
-          # ^^^ close Steam and apply the changes, waiting for any running games to exit first
-
-          defaultCompatTool = self'.packages.proton-ge-patched;
-          displayRatesAsBits = false;
-        };
-
-        systemd.user.services = {
-          steam-autostart = {
-            Unit = {
-              PartOf = [ "graphical-session.target" ];
-              After = [ "graphical-session.target" ];
-            };
-
-            Install = {
-              WantedBy = [ "graphical-session.target" ];
-            };
-
-            Service = {
-              ExecStart = lib.concatStringsSep " " [
-                (lib.getExe osConfig.programs.steam.package)
-                "-nochatui"
-                "-nofriendsui"
-              ];
-
-              Restart = "always";
-            };
-          };
-        };
       };
   };
 }
