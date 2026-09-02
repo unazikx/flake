@@ -21,6 +21,8 @@
           general = {
             autostart = [
               "${lib.getExe pkgs.swaybg} -m fill -i ${config.stylix.image}"
+              "vesktop --start-minimized"
+              "AyuGram -startintray"
               "noctalia"
             ];
 
@@ -98,7 +100,7 @@
             corner_radius = 12;
             drag_opacity = 0.75;
 
-            border_focused = colors.base0E;
+            border_focused = colors.base00;
             border_unfocused = colors.base00;
             scratchpad_border_focused = colors.base0C;
             scratchpad_border_unfocused = colors.base00;
@@ -138,7 +140,7 @@
 
           layout = {
             mode = "scrolling";
-            gap = 12;
+            gap = 8;
 
             width_presets = [
               0.333

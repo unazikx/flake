@@ -41,6 +41,7 @@
     ];
 
     meta = {
+      layout = "scrolling";
       workspaceCount = 8;
     };
 

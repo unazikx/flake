@@ -45,6 +45,7 @@
 
                   "Space" = "overview-toggle";
                   "Shift+Space" = "column-center";
+
                   "T" = "window-toggle-floating";
                   "P" = "window-toggle-pinned";
                   "F" = "window-toggle-maximize-to-edges";
@@ -98,6 +99,7 @@
                 })
                 {
                   "Mod+Tab" = "panel-toggle launcher";
+                  "Mod+Alt+Space" = "dock-toggle";
 
                   "Mod+W" = "window-switcher";
                   "Mod+Z" = "panel-toggle launcher /emo";

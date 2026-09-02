@@ -6,6 +6,7 @@
   zen.programs.desktop.noctalia.settings = {
     homeManager =
       {
+        lib,
         config,
         ...
       }:
@@ -20,7 +21,7 @@
                   "workspaces"
                   "screenshot"
                 ];
-                concave_edge_corners = false;
+                concave_edge_corners = true;
                 contact_shadow = true;
                 end = [
                   "tray"
@@ -35,7 +36,7 @@
                   "session"
                 ];
                 margin_ends = 0;
-                position = "bottom";
+                position = lib.mkDefault "bottom";
                 radius = 0;
                 start = [
                   "launcher"
@@ -46,10 +47,12 @@
                 ];
               };
             };
+
             control_center = {
               sidebar = "none";
               sidebar_section = "none";
             };
+
             dock = {
               active_scale = 0.9;
               concave_edge_corners = false;
@@ -59,23 +62,30 @@
               launcher_position = "start";
               margin_edge = 8;
               reserve_space = false;
+              smart_auto_hide = true;
             };
+
             hot_corners = {
               delay_ms = 700;
             };
+
             lockscreen = {
               blur_intensity = 1;
               blurred_desktop = true;
               tint_intensity = 0.55;
             };
+
             lockscreen_widgets = {
               enabled = true;
+
               grid = {
                 cell_size = 32;
                 major_interval = 4;
                 visible = true;
               };
+
               schema_version = 2;
+
               widget = {
                 "lockscreen-login-box@HDMI-A-1" = {
                   box_height = 196;
@@ -104,6 +114,7 @@
                   };
                   type = "login_box";
                 };
+
                 lockscreen-widget-0000000000000001 = {
                   box_height = 128;
                   box_width = 352;
@@ -122,20 +133,24 @@
                   type = "clock";
                 };
               };
+
               widget_order = [
                 "lockscreen-login-box@HDMI-A-1"
                 "lockscreen-widget-0000000000000001"
               ];
             };
+
             osd = {
               border = false;
             };
+
             plugins = {
               enabled = [
                 "cleboost/anilist"
                 "radimous/prismlauncher-instances"
               ];
             };
+
             shell = {
               button_borders = false;
               input_borders = false;
@@ -145,12 +160,14 @@
                   Russian = "ru";
                 };
               };
+
               launcher = {
                 compact = true;
                 show_app_actions = true;
                 show_app_origin_indicator = false;
                 sort_by_usage = false;
               };
+
               panel = {
                 borders = false;
                 clipboard_placement = "attached";
@@ -160,6 +177,7 @@
                 open_near_click_launcher = true;
                 polkit_placement = "attached";
               };
+
               panel_anchor_bar = "default";
               password_style = "random";
               popup_borders = false;
@@ -168,30 +186,37 @@
                 direction = "center";
               };
             };
+
             theme = {
               mode = config.stylix.polarity;
             };
+
             widget = {
               launcher = {
                 glyph = "noctalia";
               };
+
               media = {
                 hide_album_art = true;
                 hide_when_no_media = true;
                 max_length = 512;
               };
+
               network = {
                 show_label = false;
                 vpn_status = "both";
               };
+
               taskbar = {
                 show_active_indicator = false;
                 show_window_title = true;
               };
+
               tray = {
                 drawer = true;
                 hide_passive = false;
               };
+
               workspaces = {
                 active_pill_size = 2;
                 empty_color = "outline";
