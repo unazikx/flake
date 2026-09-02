@@ -17,6 +17,7 @@
             let
               prefixes = [
                 # keep-sorted start
+                "aurelia"
                 "cursors"
                 "firefox-themes"
                 "fonts"
