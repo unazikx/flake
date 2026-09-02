@@ -61,6 +61,24 @@
               "R2-pc.s3.amazonaws.com"
               "R2-pc.stryder.respawn.com"
               "R2-pc-stats.stryder.respawn.com"
+
+              # steam exludes
+              # https://steamcommunity.com/discussions/forum/26/590688141302576561
+              "steampowered.com"
+              "steamcommunity.com"
+              "steamstatic.com"
+              "steamcdn-a.akamaihd.net"
+              "steamuserimages-a.akamaihd.net"
+              "steamcontent.com"
+              "steam-api.com"
+              "steam-chat.com"
+              "s.team"
+              "valvesoftware.com"
+              "steamgames.com"
+              "steam.tv"
+              "steamdeck.com"
+              "playartifact.com"
+              "underlords.com"
             ];
           };
         };
