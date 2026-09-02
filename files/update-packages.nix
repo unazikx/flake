@@ -30,7 +30,7 @@
                 steps = [
                   {
                     name = "Checkout";
-                    uses = "actions/checkout@v6";
+                    uses = "actions/checkout@v7";
                   }
                   {
                     name = "Install Nix";

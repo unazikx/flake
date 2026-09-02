@@ -61,10 +61,6 @@
                   name = "Counter Strike: Condition Zero - Deleted Scenes";
                 };
 
-                "2737300" = {
-                  name = "Parking Garage Rally Circuit";
-                };
-
                 "1000410" = {
                   name = "Wrath: Aeon of Ruin";
                 };
@@ -441,6 +437,10 @@
 
                 "268910" = {
                   name = "Cuphead";
+                };
+
+                "2737300" = {
+                  name = "Parking Garage Rally Circuit";
                 };
 
                 "2764460" = {
