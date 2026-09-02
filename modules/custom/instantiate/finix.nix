@@ -1,6 +1,7 @@
 {
   self,
   inputs,
+  zen,
   ...
 }:
 
@@ -10,9 +11,12 @@
       {
         lib,
         config,
+        host,
         ...
       }:
       lib.mkIf (config.class == "finix") {
+        aspect = zen.hosts.${host.hostName};
+
         instantiate =
           {
             modules,

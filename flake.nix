@@ -304,7 +304,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    sops-nix = {
+    sopsnix = {
       type = "github";
       owner = "mic92";
       repo = "sops-nix";

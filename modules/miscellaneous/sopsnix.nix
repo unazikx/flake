@@ -5,7 +5,7 @@
 {
   flake-file.inputs = {
     # keep-sorted start block=yes newline_separated=yes
-    sops-nix = {
+    sopsnix = {
       type = "github";
       owner = "mic92";
       repo = "sops-nix";
@@ -14,7 +14,7 @@
     # keep-sorted end
   };
 
-  zen.miscellaneous.sops-nix = {
+  zen.miscellaneous.sopsnix = {
     os =
       {
         pkgs,
@@ -46,7 +46,7 @@
       }:
       {
         imports = [
-          inputs.sops-nix.nixosModules.sops
+          inputs.sopsnix.nixosModules.sops
         ];
       };
 
@@ -57,7 +57,7 @@
       }:
       {
         imports = [
-          inputs.sops-nix.darwinModules.sops
+          inputs.sopsnix.darwinModules.sops
         ];
       };
 
@@ -71,7 +71,7 @@
       }:
       {
         imports = [
-          inputs.sops-nix.homeModules.sops
+          inputs.sopsnix.homeModules.sops
         ];
 
         home.packages = [

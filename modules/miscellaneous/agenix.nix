@@ -41,7 +41,8 @@
         age = {
           identityPaths = [
             "/home/${host.defaultUser}/.ssh/id_ed25519"
-            "/var/lib/id_ed25519"
+            "/root/.ssh/id_ed25519"
+            "/secrets/root/id_ed25519"
           ];
 
           secrets = builtins.listToAttrs (
@@ -83,7 +84,8 @@
         inputs,
         inputs',
         pkgs,
-        host,
+        config,
+        user,
         ...
       }:
       {
@@ -98,13 +100,18 @@
         ];
 
         age = {
+          identityPaths = [
+            "${config.home.homeDirectory}/.ssh/id_ed25519"
+            "/secrets/${user.userName}/.ssh/id_ed25519"
+          ];
+
           secrets = builtins.listToAttrs (
             map (name: {
               inherit name;
               value = {
-                file = "${self}/secrets/${host.hostName}/${name}.age";
+                file = "${self}/secrets/${user.userName}/${name}.age";
               };
-            }) (import "${self}/.age.nix")._bare.${host.hostName}
+            }) (import "${self}/.age.nix")._bare.${user.userName}
           );
         };
       };

@@ -1142,7 +1142,7 @@
         "pkgs-by-name": "pkgs-by-name",
         "proxy-suite-flake": "proxy-suite-flake",
         "scroll-flake": "scroll-flake",
-        "sops-nix": "sops-nix",
+        "sopsnix": "sopsnix",
         "spicetify-nix": "spicetify-nix",
         "steam-config-nix": "steam-config-nix",
         "stylix": "stylix",
@@ -1231,7 +1231,7 @@
         "type": "github"
       }
     },
-    "sops-nix": {
+    "sopsnix": {
       "inputs": {
         "nixpkgs": [
           "nixpkgs"

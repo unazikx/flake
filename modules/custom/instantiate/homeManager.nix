@@ -6,26 +6,28 @@
 }:
 
 {
-  den.schema.host.imports = [
+  den.schema.home.imports = [
     (
       {
         lib,
         config,
-        host,
+        home,
         ...
       }:
-      lib.mkIf (config.class == "nixos") {
-        aspect = zen.hosts.${host.hostName};
+      lib.mkIf (config.class == "homeManager") {
+        aspect = zen.homes.${home.name};
 
         instantiate =
           {
             modules,
             ...
           }:
-          inputs.nixpkgs.lib.nixosSystem {
+          inputs.home-manager.lib.homeManagerConfiguration {
             inherit
               modules
               ;
+
+            pkgs = inputs.nixpkgs.legacyPackages.${home.system};
 
             lib = import ./_lib.nix {
               inherit
@@ -34,7 +36,7 @@
                 ;
             };
 
-            specialArgs = {
+            extraSpecialArgs = {
               inherit
                 self
                 inputs
