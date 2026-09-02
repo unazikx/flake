@@ -9,9 +9,6 @@
         config,
         ...
       }:
-      let
-        fonts = config.stylix.fonts;
-      in
       {
         programs.noctalia = {
           settings = {
@@ -52,28 +49,6 @@
             control_center = {
               sidebar = "none";
               sidebar_section = "none";
-            };
-            desktop_widgets = {
-              grid = {
-                cell_size = 16;
-                major_interval = 4;
-                visible = true;
-              };
-              schema_version = 2;
-              widget = {
-                desktop-widget-0000000000000001 = {
-                  box_height = 48;
-                  box_width = 96;
-                  cx = 1856;
-                  cy = 1020;
-                  output = "HDMI-A-1";
-                  placement_height = 1080;
-                  placement_width = 1920;
-                  rotation = 0;
-                  type = "clock";
-                };
-              };
-              widget_order = [ "desktop-widget-0000000000000001" ];
             };
             dock = {
               active_scale = 0.9;
@@ -163,7 +138,6 @@
             };
             shell = {
               button_borders = false;
-              font_family = fonts.monospace.name;
               input_borders = false;
               keyboard_layout = {
                 custom_labels = {
