@@ -1149,6 +1149,7 @@
         "tinted-theming": "tinted-theming",
         "umbriel": "umbriel",
         "vicinae-extensions": "vicinae-extensions",
+        "xdg-desktop-portal-umbriel": "xdg-desktop-portal-umbriel_2",
         "xmcl": "xmcl"
       }
     },
@@ -1637,6 +1638,26 @@
         "owner": "noctalia-dev",
         "repo": "xdg-desktop-portal-umbriel",
         "rev": "4edf049e4f9982bd7c3d6c92e25379308fdaa8df",
+        "type": "github"
+      },
+      "original": {
+        "owner": "noctalia-dev",
+        "repo": "xdg-desktop-portal-umbriel",
+        "type": "github"
+      }
+    },
+    "xdg-desktop-portal-umbriel_2": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1788191975,
+        "narHash": "sha256-1mKBFkIO9RA3ERsLo1QZhyvS6bFSjG1lBpegQnPbIUY=",
+        "owner": "noctalia-dev",
+        "repo": "xdg-desktop-portal-umbriel",
+        "rev": "d996f0c2bd4e8c868c0a143f0c9ce060f3c47ed5",
         "type": "github"
       },
       "original": {

@@ -98,6 +98,7 @@
       zen.programs.cli.ssh
       zen.programs.cli.yazi
       zen.programs.desktop.sway
+      zen.programs.desktop.umbriel
       zen.programs.desktop.vicinae
       zen.programs.editors.helix
       zen.programs.gui.ayugram

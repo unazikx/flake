@@ -360,6 +360,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    xdg-desktop-portal-umbriel = {
+      type = "github";
+      owner = "noctalia-dev";
+      repo = "xdg-desktop-portal-umbriel";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     xmcl = {
       type = "github";
       owner = "x45iq";
