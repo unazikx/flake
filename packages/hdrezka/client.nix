@@ -34,6 +34,9 @@ python312Packages.buildPythonApplication {
     install -Dm755 $src $out/bin/rezka-fzf
   '';
 
+  allowSubstitutes = false;
+  preferLocalBuild = true;
+
   meta = {
     description = "Watch movies/series from HDRezka in terminal via fzf";
     license = lib.licenses.wtfpl;

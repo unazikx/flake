@@ -25,6 +25,7 @@ stdenv.mkDerivation {
       hash = "sha256-RbkrLkOySqICXuB/BkW+EbVckm8tYbUrPztiYU5G9bI=";
     })
   ];
+
   dontBuild = true;
 
   unpackPhase = ''
@@ -37,6 +38,9 @@ stdenv.mkDerivation {
     install -d $out/share/fonts/gost
     install -m655 *.ttf $out/share/fonts/gost
   '';
+
+  allowSubstitutes = false;
+  preferLocalBuild = true;
 
   meta = {
     description = "Russian engineering fonts";

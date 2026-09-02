@@ -41,6 +41,11 @@ writeShellApplication {
 
   checkPhase = toString null;
 
+  derivationArgs = {
+    allowSubstitutes = false;
+    preferLocalBuild = true;
+  };
+
   meta = {
     description = "Fetch Hytale version and hash";
     homepage = "https://github.com/unazikx/hytale-launcher-nix";

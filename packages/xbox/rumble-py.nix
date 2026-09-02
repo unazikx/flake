@@ -29,4 +29,9 @@ writeShellApplication {
     time.sleep((length + delay) * count / 1000 + 0.05)
     dev.erase_effect(eid)
   '';
+
+  derivationArgs = {
+    allowSubstitutes = false;
+    preferLocalBuild = true;
+  };
 }

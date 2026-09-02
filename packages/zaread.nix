@@ -21,6 +21,11 @@ writeShellApplication {
     sha256 = "sha256-naZG3YJSTlqt9t1RzIcDtzga5wnMwkNqnBnmJ7rqxY8=";
   });
 
+  derivationArgs = {
+    allowSubstitutes = false;
+    preferLocalBuild = true;
+  };
+
   meta = {
     description = "Lightweight MS Office file reader via zathura";
     homepage = "https://github.com/paoloap/zaread";

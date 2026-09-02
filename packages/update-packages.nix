@@ -39,6 +39,11 @@ writeShellApplication {
     done
   '';
 
+  derivationArgs = {
+    allowSubstitutes = false;
+    preferLocalBuild = true;
+  };
+
   meta = {
     description = "Simple mass-updater for Nix packages";
     homepage = "https://github.com/Mic92/nix-update";

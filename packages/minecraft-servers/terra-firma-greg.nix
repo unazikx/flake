@@ -28,6 +28,9 @@ stdenv.mkDerivation (_old: {
     cp -r * $out
   '';
 
+  allowSubstitutes = false;
+  preferLocalBuild = true;
+
   meta = {
     description = "Minecraft modpack TerraFirmaGreg (TerraFirmaCraft + GregTech + Create)";
     homepage = "https://github.com/TerraFirmaGreg-Team/Modpack-Modern";

@@ -147,6 +147,9 @@ python312Packages.buildPythonApplication {
     install -Dm755 $src $out/bin/rbw-filler
   '';
 
+  allowSubstitutes = false;
+  preferLocalBuild = true;
+
   meta = {
     description = "Fill logins via rbw from qutebrowser";
     license = lib.licenses.wtfpl;

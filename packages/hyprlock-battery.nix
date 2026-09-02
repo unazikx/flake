@@ -35,6 +35,11 @@ writeShellApplication {
     printf "%s %s%%\n" "$ICON" "$CAPACITY"
   '';
 
+  derivationArgs = {
+    allowSubstitutes = false;
+    preferLocalBuild = true;
+  };
+
   meta = {
     description = "Shows battery level on hyprlock screen";
     license = lib.licenses.wtfpl;

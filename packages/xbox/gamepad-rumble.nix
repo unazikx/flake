@@ -20,4 +20,9 @@ writeShellApplication {
 
     exec python3 ${xbox.rumble-py} "$GAMEPAD_PATH" "''${1:-on}"
   '';
+
+  derivationArgs = {
+    allowSubstitutes = false;
+    preferLocalBuild = true;
+  };
 }

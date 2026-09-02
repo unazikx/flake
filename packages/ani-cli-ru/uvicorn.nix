@@ -27,6 +27,9 @@ python312Packages.buildPythonApplication (_old: {
     python312Packages.typing-extensions
   ];
 
+  allowSubstitutes = false;
+  preferLocalBuild = true;
+
   meta = {
     description = "ASGI web server implementation for Python";
     homepage = "https://github.com/Kludex/uvicorn";

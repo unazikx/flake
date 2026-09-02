@@ -89,6 +89,9 @@ stdenv.mkDerivation {
     runHook postInstall
   '';
 
+  allowSubstitutes = false;
+  preferLocalBuild = true;
+
   meta = {
     description = "Official launcher for Hytale game (unwrapped)";
     homepage = "https://hytale.com";

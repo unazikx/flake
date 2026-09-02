@@ -26,6 +26,9 @@ python312Packages.buildPythonPackage (_old: {
     python312Packages.beautifulsoup4
   ];
 
+  allowSubstitutes = false;
+  preferLocalBuild = true;
+
   meta = {
     description = "Unofficial Python library for parsing content from HDRezka";
     homepage = "https://github.com/SuperZombi/HdRezkaApi";

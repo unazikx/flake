@@ -127,6 +127,11 @@ writeShellApplication {
     rm -f "$CLEAN"
   '';
 
+  derivationArgs = {
+    allowSubstitutes = false;
+    preferLocalBuild = true;
+  };
+
   meta = {
     description = "Fetch Firefox addons from the AMO API and generate a Nix expression";
     homepage = "https://addons.mozilla.org";

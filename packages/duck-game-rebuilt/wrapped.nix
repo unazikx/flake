@@ -41,6 +41,9 @@ buildFHSEnv (_old: {
     icon = "DuckGame";
   };
 
+  allowSubstitutes = false;
+  preferLocalBuild = true;
+
   meta = {
     description = "Duck Game decompiled & rebuilt with some added features";
     homepage = "https://github.com/TheFlyingFoool/DuckGameRebuilt";

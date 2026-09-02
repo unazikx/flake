@@ -45,4 +45,9 @@ writeShellApplication {
       --block abs btn \
       --output name="gamepad-kbd"
   '';
+
+  derivationArgs = {
+    allowSubstitutes = false;
+    preferLocalBuild = true;
+  };
 }

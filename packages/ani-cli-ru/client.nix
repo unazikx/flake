@@ -36,6 +36,9 @@ python312Packages.buildPythonApplication (_old: {
     # keep-sorted end
   ];
 
+  allowSubstitutes = false;
+  preferLocalBuild = true;
+
   meta = {
     description = "Watch anime with ru sources via mpv";
     homepage = "https://github.com/vypivshiy/ani-cli-ru";

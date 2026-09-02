@@ -25,4 +25,9 @@ writeShellApplication {
       --input "$GAMEPAD_PATH" persist=reopen \
       --hook btn:start btn:select exec-shell="${lib.getExe xbox.gamepad-kbd-toggle}"
   '';
+
+  derivationArgs = {
+    allowSubstitutes = false;
+    preferLocalBuild = true;
+  };
 }

@@ -19,6 +19,9 @@ stdenv.mkDerivation {
     install -m644 $src/font/*.ttf $out/share/fonts/truetype/
   '';
 
+  allowSubstitutes = false;
+  preferLocalBuild = true;
+
   meta = {
     description = "Font used in Microsoft products for user interface text";
     homepage = "https://github.com/mrbvrz/segoe-ui-linux";

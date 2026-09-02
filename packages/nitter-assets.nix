@@ -92,4 +92,7 @@ stdenv.mkDerivation (_old: {
       ${stylix-theme} \
       $out/css/themes/stylix.css
   '';
+
+  allowSubstitutes = false;
+  preferLocalBuild = true;
 })

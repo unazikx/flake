@@ -59,4 +59,9 @@ writeShellApplication {
       "$cachedir/$themename" \
       "$tempdir"/*
   '';
+
+  derivationArgs = {
+    allowSubstitutes = false;
+    preferLocalBuild = true;
+  };
 }

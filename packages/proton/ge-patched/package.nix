@@ -18,4 +18,7 @@ _stable.proton-ge-bin.overrideAttrs {
   patches = [
     ./decrease-prefix-size.patch
   ];
+
+  allowSubstitutes = false;
+  preferLocalBuild = true;
 }

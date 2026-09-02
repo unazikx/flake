@@ -36,7 +36,6 @@ stdenv.mkDerivation (_old: {
   dontConfigure = true;
   dontBuild = true;
   dontStrip = true;
-  preferLocalBuild = true;
 
   buildInputs = [
     gtk3
@@ -66,6 +65,9 @@ stdenv.mkDerivation (_old: {
     cp -r * $out/lib/hyprism/
     runHook postInstall
   '';
+
+  allowSubstitutes = false;
+  preferLocalBuild = true;
 
   meta = {
     description = "Hytale launcher with mod management";

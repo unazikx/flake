@@ -39,4 +39,9 @@ writeShellApplication {
       notify-send --app-name=Gamepad "Gamepad" "keyboard mode ON"
     fi
   '';
+
+  derivationArgs = {
+    allowSubstitutes = false;
+    preferLocalBuild = true;
+  };
 }

@@ -19,6 +19,9 @@ stdenv.mkDerivation (_old: {
     cp -r * $out
   '';
 
+  allowSubstitutes = false;
+  preferLocalBuild = true;
+
   meta = {
     description = "Custom story telling Minecraft modpack";
     homepage = "https://vrtx.su";

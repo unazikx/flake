@@ -64,6 +64,9 @@ stdenv.mkDerivation {
       ctgen build.toml
     '';
 
+  allowSubstitutes = false;
+  preferLocalBuild = true;
+
   installPhase = ''
     mkdir -p $out/share/icons
     cp -r themes/${pname} $out/share/icons/

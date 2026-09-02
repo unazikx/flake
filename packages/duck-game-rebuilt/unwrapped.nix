@@ -31,6 +31,9 @@ stdenv.mkDerivation (_old: {
     chmod +x $out/bin/DuckGame.sh
   '';
 
+  allowSubstitutes = false;
+  preferLocalBuild = true;
+
   meta = {
     description = "Duck Game decompiled & rebuilt with some added features (unwrapped)";
     homepage = "https://github.com/TheFlyingFoool/DuckGameRebuilt";

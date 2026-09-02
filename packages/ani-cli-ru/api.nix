@@ -32,6 +32,9 @@ python312Packages.buildPythonApplication (_old: {
     # keep-sorted end
   ];
 
+  allowSubstitutes = false;
+  preferLocalBuild = true;
+
   meta = {
     description = "Parse anime from RU websites";
     homepage = "https://github.com/vypivshiy/anicli-api";

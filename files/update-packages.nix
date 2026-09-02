@@ -30,11 +30,11 @@
                 steps = [
                   {
                     name = "Checkout";
-                    uses = "actions/checkout@v4";
+                    uses = "actions/checkout@v6";
                   }
                   {
                     name = "Install Nix";
-                    uses = "cachix/install-nix-action@v27";
+                    uses = "cachix/install-nix-action@v31";
                     "with" = {
                       nix_path = "nixpkgs=channel:nixos-unstable";
                       extra_nix_config = ''

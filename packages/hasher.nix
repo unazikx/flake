@@ -57,6 +57,9 @@ python312Packages.buildPythonApplication {
     install -Dm755 $src $out/bin/hasher
   '';
 
+  allowSubstitutes = false;
+  preferLocalBuild = true;
+
   meta = {
     description = "Calculate Nix hash for links or local files";
     license = lib.licenses.wtfpl;
