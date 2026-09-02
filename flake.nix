@@ -346,6 +346,13 @@
       flake = false;
     };
 
+    umbriel = {
+      type = "github";
+      owner = "noctalia-dev";
+      repo = "umbriel";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     vicinae-extensions = {
       type = "github";
       owner = "vicinaehq";

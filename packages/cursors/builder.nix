@@ -4,11 +4,11 @@
   inkscape,
   pname ? "test",
   version ? "git",
-  src ? null,
+  src ? "/dev/null",
   background_color ? "#00000",
   outline_color ? "#000000",
   svg_dir ? "svg",
-  extra_commands ? null,
+  extra_commands ? "",
   ...
 }:
 
