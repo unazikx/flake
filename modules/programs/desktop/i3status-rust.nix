@@ -59,6 +59,12 @@
                   };
                 }
                 {
+                  block = "net";
+                  format = " $icon {$nameserver $signal_strength|wired} ";
+                  format_alt = " $icon ^icon_net_down$speed_down.eng(prefix:K) / ^icon_net_up$speed_up.eng(prefix:K) ";
+                  inactive_format = " $icon down ";
+                }
+                {
                   block = "time";
                   format = " $icon $timestamp.datetime(f:'%d.%m.%Y / %H:%M') ";
                 }
