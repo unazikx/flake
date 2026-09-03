@@ -6,11 +6,14 @@
   zen.programs.desktop.noctalia.settings = {
     homeManager =
       {
-        pkgs,
+        self',
         lib,
         config,
         ...
       }:
+      let
+        colors = config.lib.stylix.colors;
+      in
       {
         programs.noctalia.settings = {
           bar = {
@@ -251,9 +254,10 @@
             mode = config.stylix.polarity;
             source = "custom";
 
-            directory = pkgs.linkFarm "stylix-wallpapers" {
-              # default = config.stylix.image;
-            };
+            directory =
+              (self'.legacyPackages.images.override {
+                colors = colors.toList;
+              }).images-farmed;
 
             default.path = config.stylix.image;
           };

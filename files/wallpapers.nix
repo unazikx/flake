@@ -283,20 +283,19 @@
               name: drv:
               let
                 fileName = sanitize name;
+                extension = config.wallpapers.${name}.extension;
+                fullName = "${fileName}.${extension}";
               in
               lib.nameValuePair fileName (
-                pkgs.linkFarm fileName [
-                  {
-                    name = fileName;
-                    path = drv;
-                  }
-                ]
+                pkgs.runCommandLocal fullName { } ''
+                  ln -s ${drv} $out
+                ''
               )
             ) processed)
             // {
               images-farmed = pkgs.linkFarm "images-farmed" (
                 lib.mapAttrsToList (name: drv: {
-                  name = sanitize name;
+                  name = "${sanitize name}.${config.wallpapers.${name}.extension}";
                   path = drv;
                 }) processed
               );
