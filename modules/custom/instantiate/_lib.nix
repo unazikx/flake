@@ -10,17 +10,16 @@ lib.extend (
       mkTarget = import "${inputs.stylix}/stylix/mk-target.nix";
       mkImage =
         pkgs: image: colors:
-        pkgs.runCommand "stylix-image.png" { } (
-          _prev.concatStringsSep " " [
-            (_prev.getExe pkgs.lutgen)
-            "apply"
-            image
-            "-o"
-            "$out"
-            "--"
-            (builtins.concatStringsSep " " colors)
-          ]
-        );
+        pkgs.runCommandLocal "stylix-image.png"
+          {
+            buildInputs = [ pkgs.lutgen ];
+
+            inherit image;
+            colors = _prev.concatStringsSep " " colors;
+          }
+          ''
+            lutgen apply $image -o $out -- $colors
+          '';
     };
 
     mkGames =

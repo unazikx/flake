@@ -9,6 +9,7 @@
     # keep-sorted start
     apps = { };
     files = { };
+    legacyPackages = { };
     make-shell = { };
     packages = { };
     root = { };
@@ -49,6 +50,26 @@
           intoClass = "flake-parts";
           path = [
             "files"
+          ];
+          adaptArgs =
+            {
+              config,
+              ...
+            }:
+            config.allModuleArgs;
+        })
+      ];
+
+    legacyPackages-to-flake-parts =
+      {
+        ...
+      }:
+      [
+        (den.lib.policy.route {
+          fromClass = "legacyPackages";
+          intoClass = "flake-parts";
+          path = [
+            "legacyPackages"
           ];
           adaptArgs =
             {
@@ -143,6 +164,7 @@
     # keep-sorted start
     den.policies.apps-to-flake-parts
     den.policies.files-to-flake-parts
+    den.policies.legacyPackages-to-flake-parts
     den.policies.makeshell-to-flake-parts
     den.policies.packages-to-flake-parts
     den.policies.root-to-flake-parts

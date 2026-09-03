@@ -31,9 +31,8 @@
       }:
       {
         networking.extraHosts = lib.readFile (
-          pkgs.runCommand "modified-hosts.txt"
+          pkgs.runCommandLocal "modified-hosts.txt"
             {
-              preferLocalBuild = true;
               source = "${inputs.dns-malw-link.outPath}/hosts";
 
               meta = {
