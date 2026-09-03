@@ -12,6 +12,7 @@
     make-shell = { };
     packages = { };
     root = { };
+    wallpapers = { };
     wiki = { };
     # keep-sorted end
   };
@@ -96,6 +97,26 @@
         })
       ];
 
+    wallpapers-to-flake-parts =
+      {
+        ...
+      }:
+      [
+        (den.lib.policy.route {
+          fromClass = "wallpapers";
+          intoClass = "flake-parts";
+          path = [
+            "wallpapers"
+          ];
+          adaptArgs =
+            {
+              config,
+              ...
+            }:
+            config.allModuleArgs;
+        })
+      ];
+
     wiki-to-flake-parts =
       {
         ...
@@ -125,6 +146,7 @@
     den.policies.makeshell-to-flake-parts
     den.policies.packages-to-flake-parts
     den.policies.root-to-flake-parts
+    den.policies.wallpapers-to-flake-parts
     den.policies.wiki-to-flake-parts
     zen.flake-parts.default
     # keep-sorted end
