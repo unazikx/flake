@@ -10,23 +10,44 @@
       but now i use sway, ue
     '';
 
-    includes = [
-      zen.programs.desktop.clapboard
-      zen.programs.desktop.dunst
-      zen.programs.desktop.i3status-rust
-      zen.programs.desktop.sunsetr
-      zen.programs.desktop.sway.bar
-      zen.programs.desktop.sway.binds
-      zen.programs.desktop.swayidle
-      zen.programs.desktop.swaylock
-      zen.programs.desktop.sway.rules
-      zen.programs.desktop.sway.settings
-      zen.programs.desktop.tofi
-      zen.programs.desktop.uwsm
-      zen.programs.desktop.wayshot
-      zen.programs.desktop.wob
-      zen.programs.terminal.foot
-    ];
+    includes =
+      let
+        meta = zen.programs.desktop.sway.meta;
+      in
+      if (meta.shell == "noctalia") then
+        [
+          zen.programs.desktop.noctalia
+          zen.programs.desktop.sunsetr
+          zen.programs.desktop.sway.binds
+          zen.programs.desktop.sway.binds-noctalia
+          zen.programs.desktop.sway.rules
+          zen.programs.desktop.sway.settings
+          zen.programs.desktop.uwsm
+          zen.programs.terminal.foot
+        ]
+      else
+        [
+          zen.programs.desktop.clapboard
+          zen.programs.desktop.dunst
+          zen.programs.desktop.i3status-rust
+          zen.programs.desktop.sunsetr
+          zen.programs.desktop.sway.bar
+          zen.programs.desktop.sway.binds
+          zen.programs.desktop.sway.binds-swsh
+          zen.programs.desktop.swayidle
+          zen.programs.desktop.swaylock
+          zen.programs.desktop.sway.rules
+          zen.programs.desktop.sway.settings
+          zen.programs.desktop.tofi
+          zen.programs.desktop.uwsm
+          zen.programs.desktop.wayshot
+          zen.programs.desktop.wob
+          zen.programs.terminal.foot
+        ];
+
+    meta = {
+      shell = "noctalia";
+    };
 
     nixos =
       {
@@ -38,7 +59,6 @@
         ...
       }:
       let
-        cfg = config.programs.sway;
         uwsm = config.programs.uwsm;
       in
       {
@@ -49,29 +69,24 @@
 
         programs.uwsm = {
           waylandCompositors.sway = {
-            prettyName = cfg.package.pname;
-            comment = cfg.package.meta.description;
-            binPath = "/run/current-system/sw/bin/${cfg.package.meta.mainProgram}";
+            prettyName = "SwayFX";
+            binPath = "/run/current-system/sw/bin/sway";
           };
         };
 
         # fucking idiots why blyat?
         # я вас всех в жопу ебал бляди нахуя
         services = {
+          gnome.gnome-keyring.enable = lib.mkForce false;
+
           displayManager = {
             defaultSession = lib.mkIf (user.defaultWm == "sway") "sway";
           };
 
-          gnome.gnome-keyring.enable = lib.mkForce false;
-
           greetd.settings = {
             initial_session = lib.mkIf (user.defaultWm == "sway") {
               user = host.defaultUser;
-              command =
-                if uwsm.enable then
-                  "${lib.getExe uwsm.package} start sway-uwsm.desktop"
-                else
-                  lib.getExe cfg.package;
+              command = "${lib.getExe uwsm.package} start sway-uwsm.desktop";
             };
           };
         };

@@ -45,52 +45,53 @@
           animation = {
             enabled = true;
             duration_ms = 250;
-            curve = "easeout";
+            curve = "snappy";
 
             windows_in = {
               enabled = true;
-              duration_ms = 100;
-              curve = "easeout";
-              style = "fade";
+              duration_ms = 250;
+              curve = "ease";
+              style = "popin";
               scale = 0.90;
             };
 
             windows_out = {
               enabled = true;
-              duration_ms = 100;
+              duration_ms = 250;
               curve = "easeout";
-              style = "fade";
+              style = "popin";
+              scale = 0.90;
             };
 
             windows_move = {
               enabled = true;
               duration_ms = 250;
-              curve = "snappy";
+              curve = "linear";
             };
 
             workspaces = {
               enabled = true;
               duration_ms = 250;
-              curve = "easeout";
+              curve = "easy";
             };
 
             overview = {
               enabled = true;
               duration_ms = 250;
-              curve = "easeout";
+              curve = "ease";
             };
 
             dim_unfocused = {
               enabled = true;
               duration_ms = 250;
-              curve = "easeout";
+              curve = "linear";
               dim = 0.2;
             };
 
             layers = {
               enabled = true;
               duration_ms = 250;
-              curve = "easeout";
+              curve = "ease";
             };
           };
 

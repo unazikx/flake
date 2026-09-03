@@ -1,4 +1,5 @@
 {
+  zen,
   ...
 }:
 
@@ -12,11 +13,14 @@
         ...
       }:
       let
+        meta = zen.programs.desktop.sway.meta;
         colors = config.lib.stylix.colors.withHashtag;
       in
       {
         wayland.windowManager.sway = {
           config = {
+            bars = lib.mkIf (meta.shell == "noctalia") (lib.mkForce [ ]);
+
             seat."*" = {
               # hide_cursor = mkSeconds 1;
               # hide_cursor = "when-typing enable";
@@ -45,16 +49,20 @@
             };
 
             startup = [
-              {
-                command = lib.getExe pkgs.autotiling-rs;
+              (lib.mkIf (meta.shell == "noctalia") {
+                command = "noctalia";
                 always = false;
-              }
+              })
               {
                 command = "AyuGram -startintray";
                 always = false;
               }
               {
                 command = "vesktop --start-minimized";
+                always = false;
+              }
+              {
+                command = lib.getExe pkgs.autotiling-rs;
                 always = false;
               }
             ];
@@ -114,6 +122,10 @@
               shadow_color ${colors.base00}
               shadow_blur_radius 12
             '';
+        };
+
+        stylix.targets = {
+          sway.useWallpaper = if (meta.shell != "noctalia") then true else false;
         };
       };
   };

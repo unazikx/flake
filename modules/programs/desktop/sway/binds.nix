@@ -49,9 +49,6 @@
                 "${cfg.config.modifier}+${key}" = "exec ${program}";
               })
               {
-                "tab" = "tofi-drun | xargs swaymsg exec --";
-                "space" = "vicinae toggle";
-
                 "return" = "footclient";
                 "shift+return" = "footclient -a=foot_float";
 
@@ -68,20 +65,10 @@
               }
             )
 
-            (
-              let
-                screenshot = "exec ${lib.getExe config.programs.wayshot.package} ${config.xdg.userDirs.pictures}";
-              in
-              {
-                "Print" = "${screenshot} -g";
-                "Print+Shift" = "${screenshot}";
-              }
-            )
-
             (lib.concatMapAttrs
               (key: workspace: {
                 "${cfg.config.modifier}+${key}" = "workspace ${workspace}";
-                "${cfg.config.modifier}+Shift+${key}" = "move container to workspace ${workspace}";
+                "${cfg.config.modifier}+shift+${key}" = "move container to workspace ${workspace}";
               })
               (
                 lib.genAttrs (
@@ -96,7 +83,7 @@
             (lib.concatMapAttrs
               (key: directory: {
                 "${cfg.config.modifier}+${key}" = "focus ${directory}";
-                "${cfg.config.modifier}+Shift+${key}" = "move ${directory}";
+                "${cfg.config.modifier}+shift+${key}" = "move ${directory}";
               })
               {
                 h = "left";
