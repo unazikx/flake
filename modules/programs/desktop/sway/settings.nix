@@ -115,7 +115,7 @@
           extraConfig =
             # sway
             ''
-              corner_radius 12
+              corner_radius 0
               default_dim_inactive 0.4
 
               blur enable
