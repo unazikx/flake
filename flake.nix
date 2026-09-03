@@ -176,11 +176,15 @@
 
     niri-flake = {
       type = "github";
-      owner = "cmm";
+      owner = "epireyn";
       repo = "niri-flake";
       inputs = {
+        niri-stable.follows = "";
+        niri-unstable.follows = "";
         nixpkgs.follows = "nixpkgs";
         nixpkgs-stable.follows = "nixpkgs-stable";
+        xwayland-satellite-stable.follows = "";
+        xwayland-satellite-unstable.follows = "";
       };
     };
 

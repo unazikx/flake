@@ -66,10 +66,10 @@ for make nix attrs config from toml
 
 - <img src="https://images.seeklogo.com/logo-png/40/2/steam-deck-logo-png_seeklogo-409559.png" height="24"> jovian-nixos -> https://github.com/Jovian-Experiments/Jovian-NixOS
 
+- <img src="https://wiki.archiveteam.org/images/d/d8/SteamDB_logo.png" height="24"> steam-db -> https://steamdb.info
+
 - <img src="https://www.protondb.com/sites/protondb/images/site-logo.svg" height="24"> proton-db -> https://protondb.com
 
 - <img src="https://avatars.githubusercontent.com/u/49257026" height="24"> steam-config-nix -> https://github.com/different-name/steam-config-nix/blob/master/options.md
-
-- <img src="https://wiki.archiveteam.org/images/d/d8/SteamDB_logo.png" height="24"> steam-db -> https://steamdb.info
 
 ## Total: 7 wikis

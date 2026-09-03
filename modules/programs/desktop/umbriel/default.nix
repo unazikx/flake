@@ -35,8 +35,6 @@
       zen.programs.desktop.umbriel.rules
       zen.programs.desktop.umbriel.settings
       zen.programs.desktop.uwsm
-      zen.programs.desktop.wayshot
-      zen.programs.desktop.wob
       zen.programs.terminal.foot
     ];
 
@@ -67,7 +65,7 @@
         ...
       }:
       let
-        cfg = config.programs.sway;
+        cfg = config.programs.umbriel;
         uwsm = config.programs.uwsm;
       in
       {

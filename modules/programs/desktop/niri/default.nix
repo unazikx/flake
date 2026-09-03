@@ -9,10 +9,15 @@
     # keep-sorted start block=yes newline_separated=yes
     niri-flake = {
       type = "github";
-      owner = "cmm";
+      owner = "epireyn";
       repo = "niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.nixpkgs-stable.follows = "nixpkgs-stable";
+      # to null
+      inputs.niri-stable.follows = "";
+      inputs.niri-unstable.follows = "";
+      inputs.xwayland-satellite-stable.follows = "";
+      inputs.xwayland-satellite-unstable.follows = "";
     };
     # keep-sorted end
   };
@@ -24,12 +29,18 @@
     '';
 
     includes = [
-      zen.programs.desktop.dank-material-shell
       zen.programs.desktop.niri.binds
       zen.programs.desktop.niri.rules
       zen.programs.desktop.niri.settings
+      zen.programs.desktop.noctalia
+      zen.programs.desktop.sunsetr
+      zen.programs.desktop.uwsm
       zen.programs.terminal.foot
     ];
+
+    meta = {
+      defaultPackage = pkgs: pkgs.niri;
+    };
 
     nixos =
       {
@@ -38,8 +49,10 @@
         user,
         ...
       }:
+      let
+        meta = zen.programs.desktop.niri.meta;
+      in
       {
-
         # fucking idiots why blyat?
         # я вас всех в жопу ебал бляди нахуя
         services = {
@@ -47,7 +60,7 @@
             defaultSession = lib.mkIf (user.defaultWm == "niri") "niri";
 
             sessionPackages = [
-              pkgs.niri
+              (meta.defaultPackage pkgs)
             ];
           };
 
@@ -70,11 +83,10 @@
       {
         pkgs,
         lib,
-        config,
         ...
       }:
       let
-        colors = config.lib.stylix.colors.withHashtag;
+        meta = zen.programs.desktop.niri.meta;
       in
       {
         imports = [
@@ -84,31 +96,7 @@
 
         programs.niri = {
           enable = true;
-          package = pkgs.niri;
-
-          extraConfig = lib.mkAfter ''
-            recent-windows {
-              debounce-ms 750
-              open-delay-ms 150
-
-              highlight {
-                active-color "${colors.base04}ff"
-                urgent-color "${colors.base08}ff"
-                padding 30
-                corner-radius 12
-              }
-
-              previews {
-                max-height 480
-                max-scale 0.5
-              }
-
-              binds {
-                Alt+Tab         { next-window; }
-                Alt+Shift+Tab   { previous-window; }
-              }
-            }
-          '';
+          package = meta.defaultPackage pkgs;
         };
 
         # та же хуйня:wq
@@ -123,16 +111,10 @@
             "org.freedesktop.impl.portal.OpenURI" = "gnome";
           };
 
-          # i know
-          # https://github.com/sodiboo/niri-flake/blob/74053f79cad0f6c3a4a0be6b7928795d2e6a9f4b/flake.nix#L559
-          configPackages = [
-            pkgs.xdg-desktop-portal-gnome
+          extraPortals = [
+            pkgs.xdg-desktop-portal-gtk
           ];
         };
-
-        nixpkgs.overlays = [
-          inputs.niri-flake.overlays.niri
-        ];
       };
   };
 }

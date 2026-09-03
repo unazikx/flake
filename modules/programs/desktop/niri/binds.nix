@@ -6,7 +6,6 @@
   zen.programs.desktop.niri.binds = {
     homeManager =
       {
-        pkgs,
         lib,
         config,
         ...
@@ -16,11 +15,6 @@
           settings.binds =
             let
               actions = config.lib.niri.actions;
-
-              m = "Mod";
-              s = "Shift";
-              a = "Alt";
-              c = "Ctrl";
 
               bind = name: action: {
                 inherit
@@ -32,184 +26,90 @@
                     ;
                 };
               };
-
-              spawnMsg = cmd: actions.spawn-sh ("niri msg action " + cmd);
-
-              dms = config.programs.dank-material-shell;
             in
             (lib.listToAttrs (
               # programs
               lib.flatten [
-                (bind "${m}+Tab" (
-                  actions.spawn-sh (
-                    if dms.enable then
-                      "dms ipc spotlight open"
-                    else
-                      "bash -c tofi-drun | xargs niri msg action spawn --"
-                  )
-                ))
+                # utils
+                (bind "Mod+Tab" (actions.spawn-sh "noctalia ipc panel-toggle launcher"))
+                (bind "Mod+Shift+Tab" (actions.spawn-sh "noctalia ipc panel-toggle clipboard"))
 
-                (bind "${m}+${s}+Tab" (
-                  actions.spawn-sh (if dms.enable then "dms ipc clipboard open" else (lib.getExe pkgs.clapboard))
-                ))
+                (bind "Mod+W" (actions.spawn-sh "noctalia ipc window-switcher"))
+                (bind "Mod+Alt+Space" (actions.spawn-sh "noctalia ipc dock-toggle"))
 
-                (bind "${m}+Return" (actions.spawn-sh "footclient"))
-                (bind "${m}+${s}+Return" (actions.spawn-sh "footclient -a=foot_small"))
-                (bind "${m}+${a}+Return" (
-                  actions.spawn-sh (
-                    lib.getExe (
-                      pkgs.writeShellScriptBin "niri-pid-kill" ''
-                        data=$(niri msg pick-window)
-                        pid=$(awk '/PID:/ {print $2}' <<< "$data")
-                        [ -n "$pid" ] && kill "$pid"
-                      ''
-                    )
-                  )
-                ))
+                (bind "Mod+Escape" (actions.spawn-sh "noctalia ipc panel-toggle session"))
+                (bind "Mod+Shift+Escape" (actions.spawn-sh "noctalia ipc session lock"))
 
-                (bind "${m}+V" (actions.spawn-sh "AyuGram"))
-                (bind "${m}+${s}+V" (actions.spawn-sh "equibop"))
-
-                (bind "${m}+B" (actions.spawn-sh "qutebrowser"))
-                (bind "${m}+${s}+B" (actions.spawn-sh "librewolf"))
-
-                (bind "${m}+M" (actions.spawn-sh "spotify"))
-                (bind "${m}+${s}+M" (actions.spawn-sh "obsidian"))
+                (bind "Mod+Return" (actions.spawn-sh "footclient"))
+                (bind "Mod+Shift+Return" (actions.spawn-sh "footclient -a=foot_small"))
 
                 # main actions
-                (bind "${m}+${s}+Slash" actions.show-hotkey-overlay) # help
+                (bind "Mod+Shift+Slash" actions.show-hotkey-overlay) # help
 
-                (bind "${m}+Q" actions.close-window)
+                (bind "Mod+Q" actions.close-window)
 
-                (bind "${m}+C" actions.center-window)
-                (bind "${m}+${s}+C" actions.center-column)
+                (bind "Mod+C" actions.center-window)
+                (bind "Mod+Shift+C" actions.center-column)
 
-                (bind "${m}+Space" actions.toggle-overview)
-                (bind "${m}+${a}+Space" actions.toggle-window-floating)
-                (bind "${m}+${s}+Space" (
-                  actions.spawn-sh (
-                    lib.getExe (
-                      pkgs.writeShellScriptBin "niri-view-window-title" ''
-                        cmd=$(niri msg pick-window)
-                        title=$(awk -F'"' '/Title:/ {print $2}' <<< "$cmd")
-                        app_id=$(awk -F'"' '/App ID:/ {print $2}' <<< "$cmd")
-                        [ -n "$title" ] && ${lib.getExe pkgs.libnotify} \
-                          -t 1000 -a niri-title "$title - $app_id"
-                      ''
-                    )
-                  )
-                ))
+                (bind "Mod+Space" actions.toggle-overview)
+                (bind "Mod+Shift+Space" actions.toggle-window-floating)
 
-                (bind "${m}+F" actions.fullscreen-window)
-                (bind "${m}+${s}+F" actions.maximize-column)
+                (bind "Mod+F" actions.fullscreen-window)
+                (bind "Mod+Shift+F" actions.maximize-column)
 
-                # (bind "Print" (spawn "niri" "msg" "action" "screenshot-screen"))
-                # (bind "${s}+Print" screenshot-window)
-                # https://github.com/sodiboo/niri-flake/issues/1380
-                # fuck it, i w'ont to fuck with this
+                (bind "Mod+S" actions.switch-preset-column-width)
+                (bind "Mod+Shift+S" actions.switch-preset-window-height)
 
-                (bind "${m}+S" actions.switch-preset-column-width)
-                (bind "${m}+${s}+S" actions.switch-preset-window-height)
+                (bind "Mod+Minus" (actions.set-column-width "-10%"))
+                (bind "Mod+Equal" (actions.set-column-width "+10%"))
+                (bind "Mod+Shift+Minus" (actions.set-window-height "-10%"))
+                (bind "Mod+Shift+Equal" (actions.set-window-height "+10%"))
 
-                (bind "${m}+Minus" (actions.set-column-width "-10%"))
-                (bind "${m}+Equal" (actions.set-column-width "+10%"))
-                (bind "${m}+${s}+Minus" (actions.set-window-height "-10%"))
-                (bind "${m}+${s}+Equal" (actions.set-window-height "+10%"))
-
-                (bind "${m}+Comma" actions.consume-window-into-column)
-                (bind "${m}+Period" actions.expel-window-from-column)
+                (bind "Mod+Comma" actions.consume-window-into-column)
+                (bind "Mod+Period" actions.expel-window-from-column)
 
                 # windows manipukating
-                (bind "${m}+H" actions.focus-column-left)
-                (bind "${m}+J" actions.focus-window-or-workspace-down)
-                (bind "${m}+K" actions.focus-window-or-workspace-up)
-                (bind "${m}+L" actions.focus-column-right)
+                (bind "Mod+H" actions.focus-column-left)
+                (bind "Mod+J" actions.focus-window-or-workspace-down)
+                (bind "Mod+K" actions.focus-window-or-workspace-up)
+                (bind "Mod+L" actions.focus-column-right)
 
-                (bind "${m}+Left" actions.focus-column-left)
-                (bind "${m}+Down" actions.focus-window-or-workspace-down)
-                (bind "${m}+Up" actions.focus-window-or-workspace-up)
-                (bind "${m}+Right" actions.focus-column-right)
+                (bind "Mod+Left" actions.focus-column-left)
+                (bind "Mod+Down" actions.focus-window-or-workspace-down)
+                (bind "Mod+Up" actions.focus-window-or-workspace-up)
+                (bind "Mod+Right" actions.focus-column-right)
 
-                (bind "${m}+${s}+H" actions.move-column-left)
-                (bind "${m}+${s}+J" actions.move-column-to-workspace-down)
-                (bind "${m}+${s}+K" actions.move-column-to-workspace-up)
-                (bind "${m}+${s}+L" actions.move-column-right)
+                (bind "Mod+Shift+H" actions.move-column-left)
+                (bind "Mod+Shift+J" actions.move-column-to-workspace-down)
+                (bind "Mod+Shift+K" actions.move-column-to-workspace-up)
+                (bind "Mod+Shift+L" actions.move-column-right)
 
-                (bind "${m}+${s}+Left" actions.move-column-left)
-                (bind "${m}+${s}+Down" actions.move-column-to-workspace-down)
-                (bind "${m}+${s}+Up" actions.move-column-to-workspace-up)
-                (bind "${m}+${s}+Right" actions.move-column-right)
+                (bind "Mod+Shift+Left" actions.move-column-left)
+                (bind "Mod+Shift+Down" actions.move-column-to-workspace-down)
+                (bind "Mod+Shift+Up" actions.move-column-to-workspace-up)
+                (bind "Mod+Shift+Right" actions.move-column-right)
 
-                (bind "${m}+${c}+J" actions.move-window-down-or-to-workspace-down)
-                (bind "${m}+${c}+K" actions.move-window-up-or-to-workspace-up)
+                (bind "Mod+Ctrl+J" actions.move-window-down-or-to-workspace-down)
+                (bind "Mod+Ctrl+K" actions.move-window-up-or-to-workspace-up)
 
-                (bind "${m}+${c}+Down" actions.move-window-down-or-to-workspace-down)
-                (bind "${m}+${c}+Up" actions.move-window-up-or-to-workspace-up)
+                (bind "Mod+Ctrl+Down" actions.move-window-down-or-to-workspace-down)
+                (bind "Mod+Ctrl+Up" actions.move-window-up-or-to-workspace-up)
 
                 # screenshots
-                (bind "Print" (
-                  if dms.enable then
-                    (actions.spawn-sh "dms ipc niri screenshot")
-                  else
-                    (spawnMsg "screenshot -p false")
-                ))
-                (bind "${s}+Print" (
-                  if dms.enable then
-                    (actions.spawn-sh "dms ipc niri screenshotScreen")
-                  else
-                    (spawnMsg "screenshot-screen -p false")
-                ))
-                (bind "${a}+Print" (
-                  if dms.enable then
-                    (actions.spawn-sh "dms ipc niri screenshotWindow")
-                  else
-                    (spawnMsg "screenshot-window -p false")
-                ))
+                (bind "Print" (actions.spawn-sh "noctalia ipc screenshot-region"))
+                (bind "Shift+Print" (actions.spawn-sh "noctalia ipc screenshot-fullscreen"))
 
-                # volume and brightness
-                (
-                  let
-                    inherit (config.home.sessionVariables) WOBSOCK_PATH;
+                # applications
+                [
+                  (bind "Mod+V" (actions.spawn-sh "AyuGram"))
+                  (bind "Mod+Shift+V" (actions.spawn-sh "equibop"))
 
-                    audio = " && wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{if ($3) print 0; else print int($2*100)}' > ${WOBSOCK_PATH}";
-                    volume = " && wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print int($2*100)}' > ${WOBSOCK_PATH}";
-                    brightness = " | awk '/Current brightness:/ { print int($3 / 255 * 100)}' > ${WOBSOCK_PATH}";
-                    lightPkg = lib.getExe pkgs.brightnessctl;
-                  in
-                  [
-                    (bind "XF86AudioMute" (actions.spawn-sh ("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle" + audio)))
-                    (bind "XF86AudioMicMute" (actions.spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"))
+                  (bind "Mod+B" (actions.spawn-sh "qutebrowser"))
+                  (bind "Mod+Shift+B" (actions.spawn-sh "librewolf"))
 
-                    (bind "XF86AudioRaiseVolume" (
-                      actions.spawn-sh ("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+" + volume)
-                    ))
-                    (bind "XF86AudioLowerVolume" (
-                      actions.spawn-sh ("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%-" + volume)
-                    ))
-                    (bind "${s}+XF86AudioRaiseVolume" (
-                      actions.spawn-sh ("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 10%+" + volume)
-                    ))
-                    (bind "${s}+XF86AudioLowerVolume" (
-                      actions.spawn-sh ("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 10%-" + volume)
-                    ))
-                    (bind "${m}+TouchpadScrollUp" (
-                      actions.spawn-sh ("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+" + volume)
-                    ))
-                    (bind "${m}+TouchpadScrollDown" (
-                      actions.spawn-sh ("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%-" + volume)
-                    ))
-
-                    (bind "XF86MonBrightnessUp" (actions.spawn-sh ("sudo ${lightPkg} set 10%+" + brightness)))
-                    (bind "XF86MonBrightnessDown" (actions.spawn-sh ("sudo ${lightPkg} set 10%-" + brightness)))
-                    (bind "${s}+XF86MonBrightnessUp" (actions.spawn-sh ("sudo ${lightPkg} set 70%" + brightness)))
-                    (bind "${s}+XF86MonBrightnessDown" (actions.spawn-sh ("sudo ${lightPkg} set 100%" + brightness)))
-
-                    # (bind "${m}+TouchpadScrollRight" (actions.spawn-sh ("sudo ${lightPkg} -A 10" + brightness)))
-                    # (bind "${m}+TouchpadScrollDown" (actions.spawn-sh ("sudo ${lightPkg} -U 10" + brightness)))
-
-                    (bind "XF86Favorites" (actions.spawn-sh "wleave"))
-                  ]
-                )
+                  (bind "Mod+M" (actions.spawn-sh "spotify"))
+                  (bind "Mod+Shift+M" (actions.spawn-sh "obsidian"))
+                ]
               ]
             ));
         };

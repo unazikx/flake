@@ -13,11 +13,17 @@
       }:
       let
         colors = config.lib.stylix.colors.withHashtag;
+        include = config.lib.niri.include;
+        actions = config.lib.niri.actions;
       in
       {
         programs.niri = {
           settings = {
-            screenshot-path = "~/Pictures/screenshots/scr_%d-%m-%y_%H:%M:%S.png";
+            includes = [
+              (include.optional "~/.config/niri/monitors.kdl")
+            ];
+
+            screenshot-path = "~/Pictures/screenshots/niri_%d-%m-%y_%H:%M:%S.png";
 
             outputs = {
               "eDP-1".scale = 1.0;
@@ -140,6 +146,34 @@
               always-center-single-column = true;
             };
 
+            recent-windows = {
+              enable = true;
+
+              debounce-ms = 750;
+              open-delay-ms = 150;
+
+              highlight = {
+                active-color = "${colors.base04}ff";
+                urgent-color = "${colors.base08}ff";
+                corner-radius = 12;
+                padding = 30;
+              };
+
+              previews = {
+                max-height = 480;
+                max-scale = 0.5;
+              };
+
+              binds =
+                let
+                  rewin = lib.mergeAttrsList actions.recent-windows;
+                in
+                {
+                  "Alt+Tab".action = rewin.next-window;
+                  "Alt+Shift+Tab".action = rewin.previous-window;
+                };
+            };
+
             animations = {
               "horizontal-view-movement" = {
                 kind.easing = {
@@ -226,17 +260,16 @@
 
             spawn-at-startup = [
               {
+                sh = "noctalia";
+              }
+              {
                 sh = "AyuGram -startintray";
               }
               {
                 sh = "vesktop --start-minimized";
               }
               {
-                sh = lib.concatStringsSep " " [
-                  (lib.getExe pkgs.swaybg)
-                  "--image"
-                  config.stylix.image
-                ];
+                sh = "${lib.getExe pkgs.swaybg} -m fill -i ${config.stylix.image}";
               }
             ];
 
@@ -253,30 +286,6 @@
 
             xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
           };
-
-          extraConfig = lib.mkAfter ''
-            recent-windows {
-              debounce-ms 750
-              open-delay-ms 150
-
-              highlight {
-                active-color "${colors.base04}ff"
-                urgent-color "${colors.base08}ff"
-                padding 30
-                corner-radius 12
-              }
-
-              previews {
-                max-height 480
-                max-scale 0.5
-              }
-
-              binds {
-                Alt+Tab         { next-window; }
-                Alt+Shift+Tab   { previous-window; }
-              }
-            }
-          '';
         };
       };
   };
