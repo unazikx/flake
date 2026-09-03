@@ -17,12 +17,23 @@
             default = {
               border = "surface_variant";
               capsule = true;
+              concave_edge_corners = true;
+              contact_shadow = true;
+              margin_ends = 0;
+              position = lib.mkDefault "bottom";
+              radius = 0;
+
+              start = [
+                "launcher"
+                "media"
+                "notifications"
+                "clipboard"
+                "caffeine"
+              ];
               center = [
                 "workspaces"
                 "screenshot"
               ];
-              concave_edge_corners = true;
-              contact_shadow = true;
               end = [
                 "tray"
                 "keyboard_layout"
@@ -35,22 +46,22 @@
                 "battery"
                 "session"
               ];
-              margin_ends = 0;
-              position = lib.mkDefault "bottom";
-              radius = 0;
-              start = [
-                "launcher"
-                "media"
-                "notifications"
-                "clipboard"
-                "caffeine"
-              ];
             };
           };
 
           control_center = {
-            sidebar = "none";
+            sidebar = "full";
             sidebar_section = "none";
+          };
+
+          notification = {
+            offset_x = 20;
+            offset_y = 20;
+            position = "bottom_right";
+          };
+
+          osd = {
+            position = "bottom_center";
           };
 
           dock = {
@@ -66,7 +77,10 @@
           };
 
           hot_corners = {
-            delay_ms = 700;
+            delay_ms = 450;
+            enabled = true;
+
+            bottom_left.action = "window_switcher";
           };
 
           lockscreen = {
@@ -152,6 +166,9 @@
           };
 
           shell = {
+            launch_apps_as_systemd_services = true;
+            polkit_agent = true;
+
             button_borders = false;
             input_borders = false;
             keyboard_layout = {
@@ -220,6 +237,7 @@
             };
 
             workspaces = {
+              anchor = true;
               active_pill_size = 2;
               empty_color = "outline";
               focused_color = "tertiary";

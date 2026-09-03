@@ -115,7 +115,10 @@
           extraConfig =
             # sway
             ''
+              corner_radius 12
               default_dim_inactive 0.4
+
+              blur enable
 
               shadows disable
               shadows_on_csd enable

@@ -11,7 +11,7 @@
       {
         security = {
           polkit.enable = true;
-          soteria.enable = true;
+          # soteria.enable = true;
         };
       };
   };

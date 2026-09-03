@@ -22,8 +22,8 @@
                 "${cfg.config.modifier}+${key}" = "exec ${program}";
               })
               {
-                "tab" = "tofi-drun | xargs swaymsg exec --";
-                "space" = "vicinae toggle";
+                "Tab" = "tofi-drun | xargs swaymsg exec --";
+                "Space" = "vicinae toggle";
               }
             )
 

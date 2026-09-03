@@ -22,21 +22,26 @@
                 "${cfg.config.modifier}+${key}" = "exec ${ipc} ${command}";
               })
               {
-                "tab" = "panel-toggle launcher";
-                "shift+tab" = "panel-toggle clipboard";
+                "Tab" = "panel-toggle launcher";
+                "Shift+Tab" = "panel-toggle clipboard";
 
-                "space" = "dock-toggle";
-                "escape" = "panel-toggle session";
+                "Space" = "dock-toggle";
+                "Escape" = "panel-toggle session";
 
-                "w" = "window-switcher";
-                "z" = "panel-toggle launcher /emo";
+                "W" = "window-switcher";
+                "Z" = "panel-toggle launcher /emo";
               }
             )
 
-            {
-              "print" = "screenshot-region";
-              "print+shift" = "screenshot-fullscreen";
-            }
+            (lib.concatMapAttrs
+              (key: command: {
+                "${key}" = "exec ${ipc} ${command}";
+              })
+              {
+                "Print" = "screenshot-region";
+                "Print+Shift" = "screenshot-fullscreen";
+              }
+            )
           ];
         };
       };

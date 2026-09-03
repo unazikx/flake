@@ -23,24 +23,24 @@
                 "${cfg.config.modifier}+${key}" = command;
               })
               {
-                "q" = "kill";
-                "f" = "fullscreen";
+                "Q" = "kill";
+                "F" = "fullscreen";
 
-                "shift+space" = "floating toggle; " + "resize set 90 ppt 90 ppt";
-                "alt+space" = "move position center";
+                "Shift+Space" = "floating toggle; " + "resize set 90 ppt 90 ppt";
+                "Alt+Space" = "move position center";
 
-                "g" = "layout tabbed";
-                "shift+g" = "layout toggle split";
+                "G" = "layout tabbed";
+                "Shift+G" = "layout toggle split";
 
-                "bracketleft" = "split h";
-                "bracketright" = "split v";
+                "Bracketleft" = "split h";
+                "Bracketright" = "split v";
 
-                "p" = "move scratchpad";
-                "shift+P" = "scratchpad show";
-                "alt+P" = "scratchpad show; " + "floating toggle";
+                "P" = "move scratchpad";
+                "Shift+P" = "scratchpad show";
+                "Alt+P" = "scratchpad show; " + "floating toggle";
 
-                "home" = "exit";
-                "shift+home" = "reload";
+                "Home" = "exit";
+                "Shift+Home" = "reload";
               }
             )
 
@@ -49,26 +49,26 @@
                 "${cfg.config.modifier}+${key}" = "exec ${program}";
               })
               {
-                "return" = "footclient";
-                "shift+return" = "footclient -a=foot_float";
+                "Return" = "footclient";
+                "Shift+Return" = "footclient -a=foot_float";
 
-                "b" =
+                "B" =
                   if (proxy-suite.zapret.enable && proxy-suite.perAppRouting.enable) then
                     "proxy-ctl wrap zapret -- qutebrowser"
                   else
                     "qutebrowser";
-                "shift+b" = "libreoffice";
-                "v" = "AyuGram";
-                "shift+v" = "equibop";
-                "m" = "spotify";
-                "shift+m" = "obsidian";
+                "Shift+B" = "libreoffice";
+                "V" = "AyuGram";
+                "Shift+V" = "equibop";
+                "M" = "spotify";
+                "Shift+M" = "obsidian";
               }
             )
 
             (lib.concatMapAttrs
               (key: workspace: {
                 "${cfg.config.modifier}+${key}" = "workspace ${workspace}";
-                "${cfg.config.modifier}+shift+${key}" = "move container to workspace ${workspace}";
+                "${cfg.config.modifier}+Shift+${key}" = "move container to workspace ${workspace}";
               })
               (
                 lib.genAttrs (
@@ -83,17 +83,17 @@
             (lib.concatMapAttrs
               (key: directory: {
                 "${cfg.config.modifier}+${key}" = "focus ${directory}";
-                "${cfg.config.modifier}+shift+${key}" = "move ${directory}";
+                "${cfg.config.modifier}+Shift+${key}" = "move ${directory}";
               })
               {
-                h = "left";
-                j = "down";
-                k = "up";
-                l = "right";
-                left = "left";
-                down = "down";
-                up = "up";
-                right = "right";
+                H = "left";
+                J = "down";
+                K = "up";
+                L = "right";
+                Left = "left";
+                Down = "down";
+                Up = "up";
+                Right = "right";
               }
             )
 
@@ -102,10 +102,10 @@
                 "${cfg.config.modifier}+ctrl+${key}" = "resize shrink ${axis} 10 px or 10 ppt";
               })
               {
-                h = "width";
-                j = "height";
-                left = "width";
-                down = "height";
+                H = "width";
+                J = "height";
+                Left = "width";
+                Down = "height";
               }
             )
 
@@ -114,10 +114,10 @@
                 "${cfg.config.modifier}+ctrl+${key}" = "resize grow ${axis} 10 px or 10 ppt";
               })
               {
-                k = "height";
-                l = "width";
-                up = "height";
-                right = "width";
+                K = "height";
+                L = "width";
+                Up = "height";
+                Right = "width";
               }
             )
           ];
