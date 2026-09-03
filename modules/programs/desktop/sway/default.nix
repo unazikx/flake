@@ -33,6 +33,7 @@
         pkgs,
         lib,
         config,
+        host,
         user,
         ...
       }:
@@ -65,7 +66,7 @@
 
           greetd.settings = {
             initial_session = lib.mkIf (user.defaultWm == "sway") {
-              user = user.userName;
+              user = host.defaultUser;
               command =
                 if uwsm.enable then
                   "${lib.getExe uwsm.package} start sway-uwsm.desktop"

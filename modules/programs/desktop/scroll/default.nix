@@ -43,6 +43,7 @@
         inputs',
         lib,
         config,
+        host,
         user,
         ...
       }:
@@ -67,7 +68,7 @@
 
           greetd.settings = {
             initial_session = lib.mkIf (user.defaultWm == "scroll") {
-              user = user.userName;
+              user = host.defaultUser;
               command = lib.getExe config.programs.scroll.package;
             };
           };

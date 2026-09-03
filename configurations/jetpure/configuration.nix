@@ -97,6 +97,7 @@
       zen.programs.cli.rezka-fzf
       zen.programs.cli.ssh
       zen.programs.cli.yazi
+      zen.programs.desktop.umbriel
       zen.programs.editors.helix
       zen.programs.gui.ayugram
       zen.programs.gui.blender

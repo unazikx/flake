@@ -61,6 +61,7 @@
         inputs,
         lib,
         config,
+        host,
         user,
         ...
       }:
@@ -82,9 +83,8 @@
 
         programs.uwsm = {
           waylandCompositors.umbriel = {
-            prettyName = cfg.package.pname;
-            comment = cfg.package.meta.description;
-            binPath = "/run/current-system/sw/bin/${cfg.package.meta.mainProgram}";
+            prettyName = "Umbriel";
+            binPath = "/run/current-system/sw/bin/start-umbriel";
           };
         };
 
@@ -97,7 +97,7 @@
 
           greetd.settings = {
             initial_session = lib.mkIf (user.defaultWm == "umbriel") {
-              user = user.userName;
+              user = host.defaultUser;
               command =
                 if uwsm.enable then
                   "${lib.getExe uwsm.package} start umbriel-uwsm.desktop"

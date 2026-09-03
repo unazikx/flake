@@ -46,6 +46,7 @@
       {
         pkgs,
         lib,
+        host,
         user,
         ...
       }:
@@ -68,7 +69,7 @@
 
           greetd.settings = {
             initial_session = lib.mkIf (user.defaultWm == "niri") {
-              user = user.userName;
+              user = host.defaultUser;
               command = lib.getExe' pkgs.niri "niri-session";
             };
           };

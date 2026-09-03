@@ -32,6 +32,7 @@
         pkgs,
         lib,
         config,
+        host,
         user,
         ...
       }:
@@ -51,7 +52,7 @@
 
           greetd.settings = {
             initial_session = lib.mkIf (user.defaultWm == "mangowc") {
-              user = user.userName;
+              user = host.defaultUser;
               command = lib.getExe config.programs.mango.package;
             };
           };

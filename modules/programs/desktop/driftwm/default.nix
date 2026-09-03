@@ -20,6 +20,7 @@
         self',
         lib,
         config,
+        host,
         user,
         ...
       }:
@@ -40,7 +41,7 @@
 
           greetd.settings = {
             initial_session = lib.mkIf (user.defaultWm == "driftwm") {
-              user = lib.userName;
+              user = host.defaultUser;
               command = lib.getExe config.programs.driftwm.package;
             };
           };
