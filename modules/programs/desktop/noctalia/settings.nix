@@ -6,14 +6,10 @@
   zen.programs.desktop.noctalia.settings = {
     homeManager =
       {
-        self',
         lib,
         config,
         ...
       }:
-      let
-        colors = config.lib.stylix.colors;
-      in
       {
         programs.noctalia.settings = {
           bar = {
@@ -211,6 +207,34 @@
 
           theme = {
             mode = config.stylix.polarity;
+          };
+
+          idle = {
+            behavior_order = [
+              "lock"
+              "screen-off"
+              "lock-and-suspend"
+            ];
+
+            behavior = {
+              lock = {
+                action = "lock";
+                enabled = true;
+                timeout = 300;
+              };
+
+              lock-and-suspend = {
+                action = "lock_and_suspend";
+                enabled = true;
+                timeout = 600;
+              };
+
+              screen-off = {
+                action = "screen_off";
+                enabled = true;
+                timeout = 330;
+              };
+            };
           };
 
           widget = {

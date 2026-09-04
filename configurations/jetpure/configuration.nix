@@ -66,6 +66,7 @@
       zen.services.glance
       zen.services.greetd
       zen.services.proxy-suite
+      zen.miscellaneous.users.accounts
       zen.services.qbittorrent.flood
       zen.services.tailscale
       zen.services.vaultwarden

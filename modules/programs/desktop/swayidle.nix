@@ -15,13 +15,6 @@
       {
         services.swayidle = {
           enable = true;
-          systemdTargets = [ "sway-session.target" ];
-
-          events = {
-            lock = "pidof swaylock || swaylock -defF";
-            before-sleep = "loginctl lock-session";
-            after-resume = ''swaymsg "output * dpms on"'';
-          };
 
           timeouts =
             let
@@ -29,17 +22,17 @@
             in
             [
               {
-                timeout = minute * 40;
-                command = ''swaymsg "output * dpms off"'';
-                resumeCommand = ''swaymsg "output * dpms on"'';
-              }
-              {
-                timeout = minute * 50;
+                timeout = minute * 5;
                 command = "swaylock";
               }
               {
-                timeout = minute * 60;
-                command = "systemctl suspend";
+                timeout = (minute * 5) + 30;
+                command = "noctalia msg dpms-off";
+                resumeCommand = "noctalia msg dpms-on";
+              }
+              {
+                timeout = minute * 30;
+                command = "systemctl suspend-then-hibernate";
               }
             ];
         };
