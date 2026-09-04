@@ -17,71 +17,6 @@
       let
         listOfWallpapers = {
           # keep-sorted start block=yes newline_separated=yes
-          # "Fast Food" = {
-          #   page = "https://wallhaven.cc/w/lydqy2";
-          #   extension = "png";
-          # };
-
-          # "GTA VI: Palmsbeach" = {
-          #   page = "https://wallhaven.cc/w/d8o6wg";
-          #   extension = "jpg";
-          # };
-
-          # "Jax TADC" = {
-          #   page = "https://wallhaven.cc/w/mlgomm";
-          #   extension = "png";
-          # };
-
-          # "Lipsgarets" = {
-          #   page = "https://wallhaven.cc/w/po7ove";
-          #   extension = "jpg";
-          # };
-
-          # "Minecraft Amethyst" = {
-          #   page = "https://wallhaven.cc/w/l8qq3l";
-          #   extension = "png";
-          # };
-
-          # "Minecraft Birch" = {
-          #   page = "https://wallhaven.cc/w/e7651w";
-          #   extension = "jpg";
-          # };
-
-          # "Minecraft Moon Derpy" = {
-          #   page = "https://wallhaven.cc/w/l36362";
-          #   extension = "png";
-          # };
-
-          # "Oceanview" = {
-          #   page = "https://wallhaven.cc/w/w5d657";
-          #   extension = "png";
-          # };
-
-          # "Puyo Puyo" = {
-          #   page = "https://wallhaven.cc/w/qrmell";
-          #   extension = "png";
-          # };
-
-          # "Pyramidas" = {
-          #   page = "https://wallhaven.cc/w/jed11w";
-          #   extension = "png";
-          # };
-
-          # "Sayonara Lara" = {
-          #   page = "https://wallhaven.cc/w/jeyy15";
-          #   extension = "png";
-          # };
-
-          # "Silhouette" = {
-          #   page = "https://wallhaven.cc/w/e86xlo";
-          #   extension = "png";
-          # };
-
-          # "Skullus" = {
-          #   page = "https://wallhaven.cc/w/ogj11l";
-          #   extension = "png";
-          # };
-
           "Alike Windows XP" = {
             page = "https://wallhaven.cc/w/9og561";
             hash = "sha256-Q9PsKDslsS8vvCGf1o//Ls/hD85wctPoi//uAVP0WLc=";
@@ -97,6 +32,18 @@
           "Blender SU~SHI" = {
             page = "https://wallhaven.cc/w/yq2m77";
             hash = "sha256-ITLcz6W40IcRoLobCK4RhyEq+026Mk3/y7cwQWexrWY=";
+            extension = "png";
+          };
+
+          "Dredger" = {
+            page = "https://wallhaven.cc/w/6lyv5x";
+            hash = "sha256-Odpiu2RrlXBZkDeKtU4X0UKP9cW9RuPGZbaxhUdkJL4=";
+            extension = "png";
+          };
+
+          "Fast Food" = {
+            page = "https://wallhaven.cc/w/lydqy2";
+            hash = "sha256-ZamFBSQZpnLo6zhlcNH7nmjcrMufrYMkElFWZ1oWnLg=";
             extension = "png";
           };
 
@@ -124,16 +71,59 @@
             extension = "jpg";
           };
 
+          "Lani Cafe" = {
+            page = "https://wallhaven.cc/w/ogjjx9";
+            hash = "sha256-OuQ4ZBHXSe4Ql2tbvlFOBjSXy4kQMKgkyMBj/sTVg/0=";
+            extension = "jpg";
+          };
+
+          "Lipsgarets" = {
+            page = "https://wallhaven.cc/w/po7ove";
+            hash = "sha256-o2jAvGSXVikvAY14t8bjg/8yfFac7kXJXRU3UK5zNEI=";
+            extension = "jpg";
+          };
+
+          "Minecraft Amethyst" = {
+            page = "https://wallhaven.cc/w/l8qq3l";
+            hash = "sha256-M6bRjpDNR3TClnEyd4WlQtuONkB0JHFZ2x7t3MLRhFE=";
+            extension = "png";
+          };
+
+          "Minecraft Moon Derpy" = {
+            page = "https://wallhaven.cc/w/l36362";
+            hash = "sha256-6ODl/fcSlGelTOj8uZgIceALFZzk/7vMS7A5CrYqqC0=";
+            extension = "png";
+          };
+
+          "Pepe XP" = {
+            page = "https://wallhaven.cc/w/ogl5z9";
+            hash = "sha256-VvnBCulYtyVqJOQ5psLJyIvK8YffWPP8Stz9KgznGcY=";
+            extension = "png";
+          };
+
+          "Puyo Puyo" = {
+            page = "https://wallhaven.cc/w/qrmell";
+            hash = "sha256-hz1OTPfSxwskaNWo3t0JpU0MlG9BFyZht79x19OLBeI=";
+            extension = "png";
+          };
+
           "Sakura Train" = {
             page = "https://wallhaven.cc/w/yqg6r7";
             hash = "sha256-RI/KERuKYPLcIpjawRsElocoOtEcZy6UR/D4dqoLqSg=";
             extension = "jpg";
           };
 
-          # "Stanley Parable" = {
-          #   page = "https://wallhaven.cc/w/9o9w3x";
-          #   extension = "jpg";
-          # };
+          "Silhouette" = {
+            page = "https://wallhaven.cc/w/e86xlo";
+            hash = "sha256-CaQLKhOLBoNd3AK4hysHVDSS8hb8o42F12tkeBBEJ7g=";
+            extension = "png";
+          };
+
+          "Stanley Parable" = {
+            page = "https://wallhaven.cc/w/9o9w3x";
+            hash = "sha256-Eubcop/4RvK89YhAemw9qQa47SrUoGR2sLob04sD00Y=";
+            extension = "jpg";
+          };
           # keep-sorted end
         };
 
@@ -181,8 +171,6 @@
           {
             text = ''
               # Wallpapers
-
-              !!! DONT BLAME ME IF PNG OR JPG NOT WORKING
 
               ${lib.concatStringsSep "\n\n" (lib.mapAttrsToList formatEntry config.wallpapers)}
 
@@ -250,30 +238,11 @@
               in
               pkgs.runCommandLocal "lutgen-${fileName}"
                 {
-                  buildInputs = [
-                    pkgs.lutgen
-                    pkgs.jpegoptim
-                    pkgs.pngloss
-                  ];
-
+                  buildInputs = [ pkgs.lutgen ];
                   inherit image colorsStr extension;
                 }
                 ''
-                  tmp=$(mktemp --suffix=".$extension")
-                  cp "$image" "$tmp"
-
-                  case "$extension" in
-                    png)
-                      pngloss -o "$tmp.loss" -- "$tmp"
-                      mv "$tmp.loss" "$tmp"
-                      ;;
-                    jpg)
-                      jpegoptim -s -q --strip-all --max=85 "$tmp"
-                      ;;
-                  esac
-
-                  lutgen apply "$tmp" -o "$out" -- $colorsStr
-                  rm -f "$tmp"
+                  lutgen apply "$image" -o "$out" -- $colorsStr
                 '';
 
             processed = lib.mapAttrs processOne config.wallpapers;
@@ -293,7 +262,7 @@
               )
             ) processed)
             // {
-              images-farmed = pkgs.linkFarm "images-farmed" (
+              _farmed = pkgs.linkFarm "images-farmed" (
                 lib.mapAttrsToList (name: drv: {
                   name = "${sanitize name}.${config.wallpapers.${name}.extension}";
                   path = drv;

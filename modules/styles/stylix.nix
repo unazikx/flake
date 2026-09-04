@@ -1,4 +1,5 @@
 {
+  zen,
   ...
 }:
 
@@ -25,14 +26,29 @@
   };
 
   zen.styles.stylix = {
+    includes = [
+      zen.custom.stylix
+    ];
+
     os =
       {
+        self',
+        config,
         ...
       }:
+      let
+        colors = config.lib.stylix.colors;
+      in
       {
         stylix = {
           enable = true;
           overlays.enable = true;
+
+          images = (
+            self'.legacyPackages.images.override {
+              colors = colors.toList;
+            }
+          );
         };
       };
 
@@ -56,12 +72,23 @@
 
     homeManager =
       {
+        self',
+        config,
         ...
       }:
+      let
+        colors = config.lib.stylix.colors;
+      in
       {
         stylix = {
           enable = true;
           overlays.enable = true;
+
+          images = (
+            self'.legacyPackages.images.override {
+              colors = colors.toList;
+            }
+          );
         };
       };
 

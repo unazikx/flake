@@ -254,10 +254,7 @@
             mode = config.stylix.polarity;
             source = "custom";
 
-            directory =
-              (self'.legacyPackages.images.override {
-                colors = colors.toList;
-              }).images-farmed;
+            directory = config.stylix.images._farmed;
 
             default.path = config.stylix.image;
           };

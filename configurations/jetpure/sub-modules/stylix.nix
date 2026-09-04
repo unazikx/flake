@@ -40,10 +40,7 @@
             base0F = "#bbb6b6";
           };
 
-          image = lib.stylix.mkImage pkgs (pkgs.fetchurl {
-            url = "https://w.wallhaven.cc/full/og/wallhaven-ogl5z9.png";
-            sha256 = "sha256-VvnBCulYtyVqJOQ5psLJyIvK8YffWPP8Stz9KgznGcY=";
-          }) colors.toList;
+          image = config.stylix.images.pepe-xp;
 
           icons = {
             enable = true;
