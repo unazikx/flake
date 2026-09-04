@@ -1,4 +1,5 @@
 {
+  zen,
   ...
 }:
 
@@ -6,10 +7,14 @@
   zen.programs.desktop.noctalia.settings = {
     homeManager =
       {
+        pkgs,
         lib,
         config,
         ...
       }:
+      let
+        meta = zen.miscellaneous.users.accounts.meta;
+      in
       {
         programs.noctalia.settings = {
           bar = {
@@ -165,6 +170,8 @@
           };
 
           shell = {
+            avatar_path = toString (pkgs.fetchurl meta.userIcon);
+
             launch_apps_as_systemd_services = true;
             polkit_agent = true;
 

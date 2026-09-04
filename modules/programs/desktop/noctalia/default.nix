@@ -11,6 +11,7 @@
     '';
 
     includes = [
+      zen.miscellaneous.users.accounts
       zen.programs.desktop.noctalia.settings
     ];
 
