@@ -59,6 +59,7 @@
       zen.miscellaneous.nix
       zen.miscellaneous.nix.ncro
       zen.miscellaneous.sopsnix
+      zen.miscellaneous.users.accounts
       zen.miscellaneous.version
       zen.programs.cli.nixos-cli
       zen.programs.cli.rusted-tools
@@ -66,7 +67,6 @@
       zen.services.glance
       zen.services.greetd
       zen.services.proxy-suite
-      zen.miscellaneous.users.accounts
       zen.services.qbittorrent.flood
       zen.services.tailscale
       zen.services.vaultwarden

@@ -57,7 +57,7 @@
             autoInstallOnAppQuit = false;
             developerMode = false;
             disableTelemetry = true;
-            discordPresence = config.programs.nixcord.enable;
+            discordPresence = lib.mkIf (config.programs ? nixcord) config.programs.nixcord.enable;
             enableDedicatedGPUOptimization = true;
             globalAssignMemory = true;
             globalDisableAuthlibInjector = false;

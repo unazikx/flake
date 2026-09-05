@@ -75,7 +75,9 @@
   zen.users.hackerx = {
     includes = [
       # keep-sorted start
+      zen.games.hytale.launcher
       zen.games.minecraft.prismlauncher
+      zen.games.minecraft.xmcl
       zen.games.steam
       zen.miscellaneous.nix
       zen.miscellaneous.users
@@ -90,9 +92,7 @@
       zen.programs.cli.ssh
       zen.programs.cli.yazi
       zen.programs.desktop.sway
-      zen.programs.desktop.vicinae
       zen.programs.editors.helix
-      zen.programs.editors.opencode
       zen.programs.gui.ayugram
       zen.programs.gui.easy-effects
       zen.programs.gui.librewolf

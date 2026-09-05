@@ -11,6 +11,11 @@
     secrets = [ ];
   };
 
+  blackmamba = {
+    key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIB0+usM2xVKz1g72qPS9sCDq8EHpSDpbLCFna84dANJN";
+    secrets = [ ];
+  };
+
   hikkamori = {
     key = "...";
     secrets = [ ];

@@ -1,7 +1,5 @@
 # Wallpapers
 
-!!! DONT BLAME ME IF PNG OR JPG NOT WORKING
-
 [**Alike Windows XP**](https://wallhaven.cc/w/9og561) -> (_https://w.wallhaven.cc/full/9o/wallhaven-9og561.jpg_)
 
 ![Alike Windows XP](https://th.wallhaven.cc/small/9o/9og561.jpg)
@@ -38,7 +36,7 @@
 
 ![Gavryl sunrise](https://th.wallhaven.cc/small/57/575r67.jpg)
 
-[**Lani Cafe**](https://wallhaven.cc/w/ogjjx9) -> (_https://w.wallhaven.cc/full/og/wallhaven-ogjjx9.png_)
+[**Lani Cafe**](https://wallhaven.cc/w/ogjjx9) -> (_https://w.wallhaven.cc/full/og/wallhaven-ogjjx9.jpg_)
 
 ![Lani Cafe](https://th.wallhaven.cc/small/og/ogjjx9.jpg)
 
@@ -54,7 +52,7 @@
 
 ![Minecraft Moon Derpy](https://th.wallhaven.cc/small/l3/l36362.jpg)
 
-[**Pepe XP**](https://wallhaven.cc/w/ogl5z9) -> (_https://w.wallhaven.cc/full/og/wallhaven-ogl5z9.jpg_)
+[**Pepe XP**](https://wallhaven.cc/w/ogl5z9) -> (_https://w.wallhaven.cc/full/og/wallhaven-ogl5z9.png_)
 
 ![Pepe XP](https://th.wallhaven.cc/small/og/ogl5z9.jpg)
 

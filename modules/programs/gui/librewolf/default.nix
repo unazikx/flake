@@ -45,6 +45,10 @@
         programs.librewolf = {
           enable = true;
 
+          languagePacks = [
+            "ru-RU"
+          ];
+
           nativeMessagingHosts = lib.flatten [
             (lib.optionals config.programs.keepassxc.enable pkgs.keepassxc)
           ];
