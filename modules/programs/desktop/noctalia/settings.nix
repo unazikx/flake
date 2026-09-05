@@ -28,28 +28,164 @@
               radius = 0;
 
               start = [
-                "launcher"
-                "media"
-                "notifications"
-                "clipboard"
-                "caffeine"
+                "group:g6"
+                "group:g7"
+                "group:g5"
               ];
+
               center = [
-                "workspaces"
-                "screenshot"
+                "group:g10"
+                "group:g9"
               ];
+
               end = [
-                "tray"
-                "keyboard_layout"
-                "network"
-                "bluetooth"
-                "input_volume"
-                "volume"
-                "clock"
-                "brightness"
-                "battery"
-                "session"
+                "group:g8"
+                "group:g3"
+                "group:g2"
+                "group:g4"
+                "group:g1"
               ];
+
+              capsule_group = [
+                {
+                  accordion = true;
+                  accordion_direction = "end";
+                  enabled = true;
+                  fill = "surface_variant";
+                  id = "g1";
+                  members = [
+                    "battery"
+                    "session"
+                  ];
+                  opacity = 1.0;
+                  padding = 6.0;
+                }
+                {
+                  accordion = false;
+                  accordion_direction = "end";
+                  enabled = true;
+                  fill = "surface_variant";
+                  id = "g2";
+                  members = [
+                    "volume"
+                    "input_volume"
+                  ];
+                  opacity = 1.0;
+                  padding = 6.0;
+                }
+                {
+                  accordion = true;
+                  accordion_direction = "start";
+                  enabled = true;
+                  fill = "surface_variant";
+                  id = "g3";
+                  members = [
+                    "tray"
+                    "network"
+                    "bluetooth"
+                  ];
+                  opacity = 1.0;
+                  padding = 6.0;
+                }
+                {
+                  accordion = false;
+                  accordion_direction = "end";
+                  enabled = true;
+                  fill = "surface_variant";
+                  id = "g4";
+                  members = [
+                    "clock"
+                    "weather"
+                  ];
+                  opacity = 1.0;
+                  padding = 6.0;
+                }
+                {
+                  accordion = true;
+                  accordion_direction = "end";
+                  enabled = true;
+                  fill = "surface_variant";
+                  id = "g6";
+                  members = [
+                    "launcher"
+                    "notifications"
+                    "clipboard"
+                  ];
+                  opacity = 1.0;
+                  padding = 6.0;
+                  widget_spacing = 12;
+                }
+                {
+                  accordion = false;
+                  accordion_direction = "end";
+                  enabled = true;
+                  fill = "surface_variant";
+                  id = "g7";
+                  members = [
+                    "media"
+                    "audio_visualizer"
+                  ];
+                  opacity = 1.0;
+                  padding = 6.0;
+                }
+                {
+                  accordion = false;
+                  accordion_direction = "end";
+                  enabled = true;
+                  fill = "surface_variant";
+                  id = "g5";
+                  members = [
+                    "caffeine"
+                    "brightness"
+                  ];
+                  opacity = 1.0;
+                  padding = 6.0;
+                }
+                {
+                  accordion = false;
+                  accordion_direction = "end";
+                  enabled = true;
+                  fill = "surface_variant";
+                  id = "g8";
+                  members = [
+                    "keyboard_layout"
+                    "lock_keys"
+                  ];
+                  opacity = 1.0;
+                  padding = 6.0;
+                }
+                {
+                  accordion = false;
+                  accordion_direction = "end";
+                  enabled = true;
+                  fill = "surface_variant";
+                  id = "g9";
+                  members = [
+                    "screenshot"
+                    "wallpaper"
+                  ];
+                  opacity = 1.0;
+                  padding = 6.0;
+                }
+                {
+                  accordion = false;
+                  accordion_direction = "end";
+                  enabled = true;
+                  fill = "surface_variant";
+                  id = "g10";
+                  members = [
+                    "active_window"
+                    "workspaces"
+                  ];
+                  opacity = 1.0;
+                  padding = 6.0;
+                }
+              ];
+
+              dead_zone.actions = {
+                scroll_down = "workspace-switch up";
+                scroll_up = "workspace-switch down";
+              };
             };
           };
 
@@ -65,7 +201,7 @@
           };
 
           osd = {
-            position = "bottom_center";
+            position = "top_center";
           };
 
           dock = {
@@ -175,6 +311,7 @@
             launch_apps_as_systemd_services = true;
             polkit_agent = true;
 
+            session.show_shortcuts = false;
             button_borders = false;
             input_borders = false;
             keyboard_layout = {
@@ -245,6 +382,26 @@
           };
 
           widget = {
+            active_window = {
+              display = "icon_only";
+              max_length = 40;
+              min_length = 0;
+            };
+
+            audio_visualizer = {
+              bands = 12;
+              color_2 = "secondary";
+              mirrored = false;
+            };
+
+            battery = {
+              hide_when_plugged = true;
+            };
+
+            input_volume = {
+              show_label = false;
+            };
+
             launcher = {
               glyph = "noctalia";
             };
@@ -253,6 +410,13 @@
               hide_album_art = true;
               hide_when_no_media = true;
               max_length = 512;
+
+              actions = {
+                back = "none";
+                forward = "none";
+                scroll_down = "media next";
+                scroll_up = "media previous";
+              };
             };
 
             network = {
@@ -262,12 +426,17 @@
 
             taskbar = {
               show_active_indicator = false;
-              show_window_title = true;
+              show_window_title = false;
             };
 
             tray = {
               drawer = true;
               hide_passive = false;
+            };
+
+            weather = {
+              show_condition = false;
+              show_temperature = false;
             };
 
             workspaces = {
