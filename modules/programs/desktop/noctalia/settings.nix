@@ -74,7 +74,7 @@
                   padding = 6.0;
                 }
                 {
-                  accordion = true;
+                  accordion = false;
                   accordion_direction = "start";
                   enabled = true;
                   fill = "surface_variant";
@@ -101,7 +101,7 @@
                   padding = 6.0;
                 }
                 {
-                  accordion = true;
+                  accordion = false;
                   accordion_direction = "end";
                   enabled = true;
                   fill = "surface_variant";
@@ -192,6 +192,11 @@
           control_center = {
             sidebar = "full";
             sidebar_section = "none";
+            width = 900;
+
+            calendar = {
+              show_events_card = false;
+            };
           };
 
           notification = {
@@ -311,7 +316,6 @@
             launch_apps_as_systemd_services = true;
             polkit_agent = true;
 
-            session.show_shortcuts = false;
             button_borders = false;
             input_borders = false;
             keyboard_layout = {
@@ -322,16 +326,23 @@
             };
 
             launcher = {
-              compact = true;
+              categories = false;
+              compact = false;
               show_app_actions = true;
               show_app_origin_indicator = false;
               sort_by_usage = false;
+            };
+
+            session = {
+              show_shortcuts = false;
+              grid_columns = 1;
             };
 
             panel = {
               borders = false;
               clipboard_placement = "attached";
               list_item_background = true;
+              open_near_click_session = true;
               open_near_click_clipboard = true;
               open_near_click_control_center = true;
               open_near_click_launcher = true;
@@ -342,6 +353,9 @@
             password_style = "random";
             popup_borders = false;
             screen_time_enabled = true;
+
+            app_icon_color = "on_surface";
+            app_icon_colorize = true;
 
             shadow = {
               direction = "center";
@@ -414,6 +428,7 @@
               actions = {
                 back = "none";
                 forward = "none";
+                middle = "none";
                 scroll_down = "media next";
                 scroll_up = "media previous";
               };
