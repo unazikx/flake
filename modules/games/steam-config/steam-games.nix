@@ -213,6 +213,10 @@
                   name = "Project Warlock 2";
                 };
 
+                "1657630" = {
+                  name = "Slime Rancher 2";
+                };
+
                 "1663220" = {
                   name = "Coffee Talk 2";
                 };
@@ -314,6 +318,10 @@
                 "219780" = {
                   name = "Divinity: 2 - Developer's Cut";
                   language = "russian";
+                };
+
+                "219990" = {
+                  name = "Grim Dawn";
                 };
 
                 "2212330" = {
@@ -625,6 +633,10 @@
                   language = "russian";
                 };
 
+                "433340" = {
+                  name = "Slime Rancher";
+                };
+
                 "435150" = {
                   name = "Divinity: Original Sin 2";
                   language = "russian";
@@ -883,6 +895,10 @@
                 "920210" = {
                   name = "LEGO: Star Wars The Skywalker Saga";
                   language = "russian";
+                };
+
+                "932850" = {
+                  name = "Simmiland";
                 };
 
                 "962130" = {
