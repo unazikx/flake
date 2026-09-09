@@ -32,7 +32,7 @@
       "Steam".links = [
         {
           name = "steam-config-nix";
-          url = "https://github.com/different-name/steam-config-nix/blob/master/options.md";
+          link = "https://github.com/different-name/steam-config-nix/blob/master/options.md";
           logo = "https://avatars.githubusercontent.com/u/49257026";
         }
       ];

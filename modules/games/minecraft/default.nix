@@ -14,42 +14,42 @@
         links = [
           {
             name = "minecraft-wiki";
-            url = "https://minecraft.wiki";
+            link = "https://minecraft.wiki";
             logo = "https://minecraft.wiki/images/Wiki.png";
           }
           {
             name = "eternal-fire-studio";
-            url = "https://boosty.to/rein1_modpacks";
+            link = "https://boosty.to/rein1_modpacks";
             logo = "https://images.boosty.to/user/25844628/avatar";
           }
           {
             name = "vortex";
-            url = "https://vrtx.su";
+            link = "https://vrtx.su";
             logo = "https://vrtx.su/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.2skjwur5alw0-.png&w=64&q=75";
           }
           {
             name = "terra-firma-greg";
-            url = "https://terrafirmagreg.team";
+            link = "https://terrafirmagreg.team";
             logo = "https://terrafirmagreg.team/storage/img/64x-256p-tfg-logo-v4.gif";
           }
           {
             name = "homestead";
-            url = "https://modrinth.com/modpack/homestead";
+            link = "https://modrinth.com/modpack/homestead";
             logo = "https://cdn.modrinth.com/data/6HvKwSky/d100be12ed4f630466412f805e068da29b6e4898_96.webp";
           }
           {
             name = "cabin";
-            url = "https://www.curseforge.com/minecraft/modpacks/cabin";
+            link = "https://www.curseforge.com/minecraft/modpacks/cabin";
             logo = "https://media.forgecdn.net/avatars/thumbnails/899/846/256/256/638346046780138525.png";
           }
           {
             name = "freshcraft";
-            url = "https://freshcraft.org/modpacks";
+            link = "https://freshcraft.org/modpacks";
             logo = "https://freshcraft.org/images/logo.png";
           }
           {
             name = "craftoria";
-            url = "https://www.curseforge.com/minecraft/modpacks/craftoria";
+            link = "https://www.curseforge.com/minecraft/modpacks/craftoria";
             logo = "https://media.forgecdn.net/avatars/thumbnails/1066/473/256/256/638600434802547442.png";
           }
         ];

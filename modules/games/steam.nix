@@ -33,28 +33,26 @@
 
     wiki = {
       "Steam".links = [
-        # keep-sorted start block=yes
         {
           name = "arch-steam";
-          url = "https://wiki.archlinux.org/title/Steam";
+          link = "https://wiki.archlinux.org/title/Steam";
           logo = "https://www.vhv.rs/dpng/d/76-762941_archlinux-icon-crystal-arch-linux-icon-png-transparent.png";
         }
         {
           name = "jovian-nixos";
-          url = "https://github.com/Jovian-Experiments/Jovian-NixOS";
+          link = "https://github.com/Jovian-Experiments/Jovian-NixOS";
           logo = "https://images.seeklogo.com/logo-png/40/2/steam-deck-logo-png_seeklogo-409559.png";
         }
         {
           name = "proton-db";
-          url = "https://protondb.com";
+          link = "https://protondb.com";
           logo = "https://www.protondb.com/sites/protondb/images/site-logo.svg";
         }
         {
           name = "steam-db";
-          url = "https://steamdb.info";
+          link = "https://steamdb.info";
           logo = "https://wiki.archiveteam.org/images/d/d8/SteamDB_logo.png";
         }
-        # keep-sorted end
       ];
     };
 

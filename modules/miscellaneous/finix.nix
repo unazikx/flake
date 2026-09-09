@@ -13,17 +13,17 @@
         links = [
           {
             name = "main-repository";
-            url = "https://github.com/finix-community/finix";
+            link = "https://github.com/finix-community/finix";
             logo = "https://avatars.githubusercontent.com/u/234074672";
           }
           {
             name = "options-search";
-            url = "https://finix-community.github.io/finix";
+            link = "https://finix-community.github.io/finix";
             logo = "https://avatars.githubusercontent.com/u/234074672";
           }
           {
             name = "community-modules";
-            url = "https://github.com/finix-community/community-modules";
+            link = "https://github.com/finix-community/community-modules";
             logo = "https://avatars.githubusercontent.com/u/234074672";
           }
         ];

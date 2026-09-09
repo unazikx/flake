@@ -24,12 +24,12 @@
         links = [
           {
             name = "addons-list";
-            url = "https://mb.srb2.org/addons";
+            link = "https://mb.srb2.org/addons";
             logo = "https://srb2mb-externaldata.nyc3.cdn.digitaloceanspaces.com/data/assets/logo/srb2mb_sonic.png";
           }
           {
             name = "multiplayer-guide";
-            url = "https://www.srb2.org/about/multiplayer";
+            link = "https://www.srb2.org/about/multiplayer";
             logo = "https://www.srb2.org/wp-content/themes/srb2/images/srb2org-banner.png";
           }
         ];

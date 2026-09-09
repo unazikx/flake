@@ -13,7 +13,7 @@
       "Hytale Launcher".links = [
         {
           name = "nix-package-previous";
-          url = "https://github.com/unazikx/hytale-launcher-nix";
+          link = "https://github.com/unazikx/hytale-launcher-nix";
           logo = "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/hytale.png";
         }
       ];

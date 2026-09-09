@@ -48,7 +48,7 @@
         links = [
           {
             name = "umbriel-wiki";
-            url = "https://docs.noctalia.dev/umbriel";
+            link = "https://docs.noctalia.dev/umbriel";
             logo = "https://docs.noctalia.dev/_astro/noctalia-logo.BwXc-yKG.svg";
           }
         ];

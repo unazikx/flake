@@ -27,7 +27,7 @@
         links = [
           {
             name = "noctalia-wiki";
-            url = "https://docs.noctalia.dev/noctalia";
+            link = "https://docs.noctalia.dev/noctalia";
             logo = "https://docs.noctalia.dev/_astro/noctalia-logo.BwXc-yKG.svg";
           }
         ];

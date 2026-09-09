@@ -30,10 +30,10 @@
             formatLinks =
               links:
               lib.concatStrings (
-                map (link: ''
-                  - <img src="${link.logo}" height="24"> ${link.name} -> ${link.url}
+                map (entry: ''
+                  - <img src="${entry.logo}" height="24"> ${entry.name} -> ${entry.link}
 
-                    ${toString link.extra}
+                    ${toString entry.extra}
 
                 '') links
               );
