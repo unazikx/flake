@@ -54,6 +54,7 @@
       zen.hardware.cpu-gpu
       zen.hardware.mounting
       zen.hardware.power
+      zen.hardware.printing
       zen.miscellaneous.disko
       zen.miscellaneous.home-manager
       zen.miscellaneous.minimal
