@@ -12,10 +12,10 @@ buildFirefoxXpiAddon:
 
   "darkreader" = buildFirefoxXpiAddon {
     pname = "darkreader";
-    version = "4.9.129";
+    version = "4.9.130";
     addonId = "addon@darkreader.org";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4899461/darkreader-4.9.129.xpi";
-    sha256 = "f4f047fe08e420b6d29617738ea00a7b784892b2262b7e6f38dd09b8ee958a44";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4998573/darkreader-4.9.130.xpi";
+    sha256 = "075d5457316af21d62a39a290b31fbf71f514dfc8c3f6a87376fd50f54ef4c9c";
     meta = { };
   };
 
@@ -48,10 +48,10 @@ buildFirefoxXpiAddon:
 
   "mal-sync" = buildFirefoxXpiAddon {
     pname = "mal-sync";
-    version = "0.12.4";
+    version = "0.12.5";
     addonId = "{c84d89d9-a826-4015-957b-affebd9eb603}";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4900958/mal_sync-0.12.4.xpi";
-    sha256 = "c9423329828b90d88465984df855e25b772d1309ec8a9c88727fef6b20e319b6";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4999907/mal_sync-0.12.5.xpi";
+    sha256 = "5ee3c2a032d4605ec884ef7f9dee62716cb33bf467b8f03640d3610ce63190a1";
     meta = { };
   };
 
@@ -102,10 +102,10 @@ buildFirefoxXpiAddon:
 
   "torrserver-adder" = buildFirefoxXpiAddon {
     pname = "torrserver-adder";
-    version = "2.0.6.1";
+    version = "2.0.6.3";
     addonId = "84z74tXJKt8OUrTD@TSA";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4948608/torrserver_adder-2.0.6.1.xpi";
-    sha256 = "71b180ffa586c3c6b6bbde8e9c489f23aadbf718432f6b072f273d4cd3cab81c";
+    url = "https://addons.mozilla.org/firefox/downloads/file/5009268/torrserver_adder-2.0.6.3.xpi";
+    sha256 = "eeed6c3187cb2de2bd5d2f00310f4431b1897b452bdc5e23aa85e8618edd5475";
     meta = { };
   };
 

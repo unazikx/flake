@@ -10,16 +10,16 @@
 
 buildGoModule (_old: {
   pname = "xytz";
-  version = "0.9.2";
+  version = "0.9.3";
 
   src = fetchFromGitHub {
     owner = "xdagiz";
     repo = "xytz";
     tag = "v${_old.version}";
-    hash = "sha256-XKrMg1DdNaLOgj6p1k68150ZJsSniw7kHH1TllLg21A=";
+    hash = "sha256-5+eJkgLcLAdqcTxm6uQpOJSDbSNPUNsI9TQHDVWi9V8=";
   };
 
-  vendorHash = "sha256-vCJJ0aBSBANk2eVn7Vq7hPz0V32s7xmeIfSg0jy/Dzk=";
+  vendorHash = "sha256-4JEbi+5OO5UPRWrGgKavwGWF48/kPUEUQDd2t2f/24w=";
 
   nativeBuildInputs = [
     makeWrapper
