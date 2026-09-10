@@ -25,8 +25,8 @@
 }:
 
 let
-  version = "2026.08.28-3d62362";
-  sha256 = "sha256-DLFvaRSfwilOkkdOz4rcnmsQTFQZvtIITmFBfhV67hg=";
+  version = "2026.09.08-e1d69dd";
+  sha256 = "sha256-IR33bZ3JT+LnGIorDO97C4513FQNbrKD5DOCQBQc8eg=";
 
   pname = "hytale-launcher-unwrapped";
 

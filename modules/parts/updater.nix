@@ -21,14 +21,37 @@
             };
 
             text = ''
-              nix run ./#write-files
-              nix run ./#write-flake
+              nix run .#write-files
+              nix run .#write-flake
               nix fmt
             '';
           };
 
           meta = {
             description = "Runs every writer commands and formatter";
+          };
+        };
+
+        fetch-all = {
+          program = pkgs.writeShellApplication {
+            name = "execute-fetch";
+
+            derivationArgs = {
+              allowSubstitutes = false;
+              preferLocalBuild = true;
+            };
+
+            text = ''
+              nix run .#update-packages
+              nix run .#hytale-fetcher
+              nix run .#firefox-fetcher -- \
+                ./packages/firefox-addons/registry.jsonc \
+                -o ./packages/firefox-addons/output.nix
+            '';
+          };
+
+          meta = {
+            description = "Runs every fetchers";
           };
         };
 

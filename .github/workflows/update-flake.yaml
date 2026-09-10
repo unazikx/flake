@@ -11,14 +11,9 @@ jobs:
           extra_nix_config: |
             experimental-features = nix-command flakes
           nix_path: nixpkgs=channel:nixos-unstable
-      - name: Run flake#firefox-fetcher
-        run: |
-          nix run .#firefox-fetcher -- \
-            ./packages/firefox-addons/registry.jsonc \
-            -o ./packages/firefox-addons/output.nix
       - name: Run flake#update-packages
         run: |
-          nix run .#update-packages
+          nix run .#fetch-all
       - name: Run flake#fmt
         run: |
           nix fmt

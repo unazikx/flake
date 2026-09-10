@@ -43,21 +43,11 @@
                     };
                   }
                   {
-                    name = "Run flake#firefox-fetcher";
-                    run =
-                      # bash
-                      ''
-                        nix run .#firefox-fetcher -- \
-                          ./packages/firefox-addons/registry.jsonc \
-                          -o ./packages/firefox-addons/output.nix
-                      '';
-                  }
-                  {
                     name = "Run flake#update-packages";
                     run =
                       # bash
                       ''
-                        nix run .#update-packages
+                        nix run .#fetch-all
                       '';
                   }
                   {
