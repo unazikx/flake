@@ -36,14 +36,7 @@
             # INFO:
             # proxy-ctl select <tag>
             outbounds = [
-              {
-                tag = "Finland";
-                urlFile = config.sops.secrets."vpn/finland".path;
-              }
-              {
-                tag = "France";
-                urlFile = config.sops.secrets."vpn/france".path;
-              }
+              # host exclusive
             ];
 
             subscriptions = [
@@ -78,12 +71,6 @@
           };
 
           zapret.perApp.enable = true;
-        };
-
-        sops.secrets = {
-          "vpn/ashley-vpn" = { };
-          "vpn/finland" = { };
-          "vpn/france" = { };
         };
       };
   };

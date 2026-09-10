@@ -58,6 +58,14 @@
           ...
         }:
         {
+          nix = {
+            inherit settings;
+
+            extraOptions = ''
+              !include ${config.sops.templates."nix-access-tokens".path}
+            '';
+          };
+
           home.sessionVariables = {
             CACHIX_AUTH_TOKEN = "$(cat ${config.sops.secrets."programs/cachix".path})";
             GITHUB_TOKEN = "$(cat ${config.sops.secrets."programs/github".path})";
@@ -66,6 +74,12 @@
           sops.secrets = {
             "programs/cachix" = { };
             "programs/github" = { };
+          };
+
+          sops.templates = {
+            "nix-access-tokens".content = ''
+              access-tokens = github.com=${config.sops.placeholder."programs/github"}
+            '';
           };
         };
     };

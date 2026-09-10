@@ -23,7 +23,6 @@
 
     nixos =
       {
-        config,
         ...
       }:
       {
@@ -32,16 +31,10 @@
             enable = true;
 
             profiles = {
-              cf-warp = {
-                configFile = config.age.secrets."vpn/cf-warp".path;
-              };
+              # host exclusive
             };
           };
         };
-
-        # sops.secrets = {
-        #   "vpn/awg-warp" = { };
-        # };
       };
   };
 }

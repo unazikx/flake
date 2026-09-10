@@ -34,24 +34,11 @@
     homeManager =
       {
         self,
-        config,
-        host,
+        user,
         ...
       }:
       {
-        nix.extraOptions = ''
-          !include ${config.sops.templates."nix-access-tokens".path}
-        '';
-
-        sops.defaultSopsFile = "${self}/secrets/${host.hostName}/sops.yaml";
-
-        sops.templates = {
-          "nix-access-tokens" = {
-            content = ''
-              access-tokens = github.com=${config.sops.placeholder."programs/github"}
-            '';
-          };
-        };
+        sops.defaultSopsFile = "${self}/secrets/${user.userName}/sops.yaml";
       };
   };
 }

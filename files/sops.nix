@@ -22,35 +22,37 @@
                 key = conf.sopsKey;
               };
 
-            searchKeyFrom =
-              attrs:
+            keysFrom =
+              byArch:
               lib.flatten (
                 lib.mapAttrsToList (
-                  _: value:
-                  lib.flatten [
-                    (lib.mapAttrsToList toEntry (clean value))
-                  ]
-                ) (clean attrs)
+                  _arch: byName:
+                  lib.mapAttrsToList (
+                    name: conf: toEntry name conf ++ lib.mapAttrsToList toEntry (clean (conf.users or { }))
+                  ) (clean byName)
+                ) (clean byArch)
               );
-
-            allKeys = lib.flatten [
-              (searchKeyFrom (config.den.hosts or { }))
-              (searchKeyFrom (config.den.homes or { }))
-            ];
           in
           {
-            yaml = {
-              creation_rules = lib.flatten [
-                (map (configuration: {
+            yaml.creation_rules = (
+              map
+                (configuration: {
                   path_regex = "secrets/${configuration.name}/[^/]+\.(yaml|json|env|ini)$";
                   key_groups = [
                     {
                       age = [ configuration.key ];
                     }
                   ];
-                }) allKeys)
-              ];
-            };
+                })
+                (
+                  lib.unique (
+                    lib.flatten [
+                      (keysFrom (config.den.hosts or { }))
+                      (keysFrom (config.den.homes or { }))
+                    ]
+                  )
+                )
+            );
           };
       };
   };
