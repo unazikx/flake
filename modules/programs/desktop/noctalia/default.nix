@@ -36,17 +36,9 @@
 
     nixos =
       {
-        pkgs,
-        lib,
         ...
       }:
       {
-        services.udev.extraRules =
-          # udev
-          ''
-            ACTION=="remove", ENV{ID_MODEL_ID}=="0407", ENV{ID_VENDOR_ID}=="1050", RUN+="${lib.getExe' pkgs.systemd "loginctl"} lock-sessions"
-          '';
-
         security.pam.services = {
           quickshell.u2fAuth = true;
           swaylock.u2fAuth = true;

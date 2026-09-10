@@ -29,7 +29,6 @@
                   _: value:
                   lib.flatten [
                     (lib.mapAttrsToList toEntry (clean value))
-                    (searchKeyFrom (value.users or { }))
                   ]
                 ) (clean attrs)
               );

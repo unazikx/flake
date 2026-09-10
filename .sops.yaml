@@ -5,5 +5,13 @@ creation_rules:
     path_regex: secrets/blackmamba/[^/]+.(yaml|json|env|ini)$
   - key_groups:
       - age:
-          - age1c3z633k2m0vgfn5vjflu763lzadg2lddfnzwwyhvmyf053quqqtsh0cdqz
+          - age1yubikey1qv7v8nxwrz4f8aagxu8yxq4fe9ltw8dx0eahycynufvqefznvy5u7v57hvy
     path_regex: secrets/jetpure/[^/]+.(yaml|json|env|ini)$
+  - key_groups:
+      - age:
+          - age1yubikey1qv406wyv4dlfrggpvk6hvzz2px7dtlxt04jqc83e5wazelzf75nwgxr4gpm
+    path_regex: secrets/yubikey/[^/]+.(yaml|json|env|ini)$
+  - key_groups:
+      - age:
+          - age1yubikey1qv406wyv4dlfrggpvk6hvzz2px7dtlxt04jqc83e5wazelzf75nwgxr4gpm
+    path_regex: secrets/yubikey/[^/]+.(yaml|json|env|ini)$

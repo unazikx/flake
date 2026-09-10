@@ -17,7 +17,7 @@
       # https://www.kingston.com/en/ssd/a400-solid-state-drive
     };
 
-    sopsKey = "age1c3z633k2m0vgfn5vjflu763lzadg2lddfnzwwyhvmyf053quqqtsh0cdqz";
+    sopsKey = "age1yubikey1qv7v8nxwrz4f8aagxu8yxq4fe9ltw8dx0eahycynufvqefznvy5u7v57hvy";
 
     users = {
       nixzoid = {
