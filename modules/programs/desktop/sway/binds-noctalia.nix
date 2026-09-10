@@ -6,6 +6,7 @@
   zen.programs.desktop.sway.binds-noctalia = {
     homeManagerNixos =
       {
+        pkgs,
         lib,
         config,
         ...
@@ -48,11 +49,24 @@
                 "XF86MonBrightnessUp" = "brightness-up";
                 "XF86MonBrightnessDown" = "brightness-down";
 
-                "XF86AudioMicMute" = "mic-mute";
-
                 "XF86Display" = "caffeine-toggle";
                 "XF86NotificationCenter" = "panel-toggle clipboard";
                 "XF86Favorites" = "wallpaper-random";
+              }
+            )
+
+            (lib.concatMapAttrs
+              (key: command: {
+                "${key}" = "exec ${command}";
+              })
+              {
+                "XF86AudioMicMute" = lib.getExe (
+                  pkgs.writeShellScriptBin "mute-led" ''
+                    ${ipc} mic-mute
+                    IS_MUTED=$(wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | grep -q '\[MUTED\]' && echo "1" || echo "0")
+                    brightnessctl -d platform::micmute set "$IS_MUTED"
+                  ''
+                );
               }
             )
           ];
