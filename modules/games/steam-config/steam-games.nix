@@ -267,6 +267,11 @@
                   name = "Crow Country";
                 };
 
+                "200170" = {
+                  name = "Worms: Revolution";
+                  language = "russian";
+                };
+
                 "200260" = {
                   name = "Batman: Arkham City";
                 };
@@ -449,6 +454,11 @@
 
                 "2737300" = {
                   name = "Parking Garage Rally Circuit";
+                };
+
+                "275850" = {
+                  name = "No Man's Sky";
+                  language = "russian";
                 };
 
                 "2764460" = {
@@ -757,6 +767,11 @@
                   language = "russian";
                 };
 
+                "615530" = {
+                  name = "Love, Money, Rock'n'Roll";
+                  language = "russian";
+                };
+
                 "629820" = {
                   name = "Maneater";
                   language = "russian";
@@ -783,6 +798,11 @@
 
                 "647830" = {
                   name = "LEGO: Marvel Super Heroes 2";
+                  language = "russian";
+                };
+
+                "673880" = {
+                  name = "Warhammer 40.000: Mechanicus";
                   language = "russian";
                 };
 
