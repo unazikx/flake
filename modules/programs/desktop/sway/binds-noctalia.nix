@@ -40,6 +40,19 @@
               {
                 "Print" = "screenshot-region";
                 "Print+Shift" = "screenshot-fullscreen";
+
+                "XF86AudioRaiseVolume" = "volume-up";
+                "XF86AudioLowerVolume" = "volume-down";
+                "XF86AudioMute" = "volume-mute";
+
+                "XF86MonBrightnessUp" = "brightness-up";
+                "XF86MonBrightnessDown" = "brightness-down";
+
+                "XF86AudioMicMute" = "mic-mute";
+
+                "XF86Display" = "caffeine-toggle";
+                "XF86NotificationCenter" = "panel-toggle clipboard";
+                "XF86Favorites" = "wallpaper-random";
               }
             )
           ];
