@@ -52,12 +52,14 @@
       zen.hardware.compression.zram
       zen.hardware.cpu-gpu
       zen.hardware.mounting
+      zen.hardware.security.yubikey
       zen.miscellaneous.agenix
       zen.miscellaneous.disko
       zen.miscellaneous.home-manager
       zen.miscellaneous.minimal
       zen.miscellaneous.nix
       zen.miscellaneous.nix.ncro
+      zen.miscellaneous.nur
       zen.miscellaneous.sopsnix
       zen.miscellaneous.users.accounts
       zen.miscellaneous.version

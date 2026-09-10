@@ -73,6 +73,11 @@
                 ];
               }
               {
+                "https://jetcookies.cachix.org" = [
+                  "jetcookies.cachix.org-1:YM4ERAadhoioRkDA5ZKgnKN98N5x0ubV8t6HeIekcnc="
+                ];
+              }
+              {
                 "https://finix.cachix.org" = [
                   "finix.cachix.org-1:0ejikHDeCp0UErsduUUHcg9IJczY2/h2e5132Z/As/c="
                 ];

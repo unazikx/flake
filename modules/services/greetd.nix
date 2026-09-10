@@ -59,8 +59,9 @@
           };
         };
 
-        security.pam.services.greetd = {
-          fprintAuth = true;
+        security.pam.services = {
+          greetd.fprintAuth = true;
+          greetd.u2fAuth = true;
         };
       };
   };
