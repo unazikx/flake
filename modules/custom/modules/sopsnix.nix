@@ -1,4 +1,9 @@
 {
+  zen,
+  ...
+}:
+
+{
   zen.custom.sopsnix = {
     description = ''
       https://github.com/moeleak/flakes/blob/d779c5710b4f81187c2901597e9cd6e5ab5e0058/system/sops.nix#L83
@@ -12,12 +17,13 @@
         ...
       }:
       let
+        meta = zen.miscellaneous.sopsnix.meta;
         pcscd = config.services.pcscd;
       in
       {
         config = lib.mkIf pcscd.enable {
           system.activationScripts = {
-            setupYubikeyForSopsNix.text =
+            setupPcscd.text =
               # bash
               ''
                 PATH=$PATH:${lib.makeBinPath [ pkgs.age-plugin-yubikey ]}
@@ -26,8 +32,18 @@
                 ${pkgs.pcsclite}/bin/pcscd
               '';
 
-            setupSecrets.deps = [ "setupYubikeyForSopsNix" ];
-            setupSecretsForUsers.deps = [ "setupYubikeyForSopsNix" ];
+            setupYubikeyIdentify = {
+              deps = [ "setupPcscd" ];
+              text =
+                # bash
+                ''
+                  DEST='${meta.dir}/sops-yubikey'
+                  ${lib.getExe pkgs.age-plugin-yubikey} --identity > $DEST
+                '';
+            };
+
+            setupSecrets.deps = [ "setupPcscd" ];
+            setupSecretsForUsers.deps = [ "setupPcscd" ];
           };
         };
       };

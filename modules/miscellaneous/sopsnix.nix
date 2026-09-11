@@ -22,6 +22,7 @@
 
     includes = [
       zen.custom.sopsnix
+      zen.hardware.security.yubikey
     ];
 
     nixos =
@@ -44,6 +45,10 @@
           pkgs.sops
           pkgs.ssh-to-age
         ];
+
+        environment.sessionVariables = {
+          SOPS_AGE_KEY_FILE = "${meta.dir}/sops-yubikey";
+        };
 
         sops.age = {
           keyFile = "${meta.dir}/sops-yubikey";
@@ -81,6 +86,10 @@
           pkgs.age
           pkgs.ssh-to-age
         ];
+
+        home.sessionVariables = {
+          SOPS_AGE_KEY_FILE = "${meta.dir}/sops-yubikey";
+        };
 
         sops.age = {
           keyFile = "${meta.dir}/sops-yubikey";
