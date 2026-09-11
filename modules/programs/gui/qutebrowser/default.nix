@@ -43,7 +43,7 @@
             rec # OOOOOOHHHH NOOOOO FUUUUUUUCCCCKKKK
             # PLEEEEEASEEEESESE SSSSOOOOORRRRRYYYYY
             {
-              DEFAULT = forget;
+              DEFAULT = google;
               # keep-sorted start
               forget = "${marks.forget}/web?s={}";
               github = "${marks.github}/search?q={}";
