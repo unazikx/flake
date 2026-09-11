@@ -24,7 +24,6 @@
 
     includes = [
       # zen.services.proxy-suite.amneziawg
-      zen.services.proxy-suite.proxy
       zen.services.proxy-suite.tg-ws-proxy
       zen.services.proxy-suite.zapret
     ];

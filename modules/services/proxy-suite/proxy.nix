@@ -6,7 +6,6 @@
   zen.services.proxy-suite.proxy = {
     nixos =
       {
-        config,
         ...
       }:
       {

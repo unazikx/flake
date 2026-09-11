@@ -78,6 +78,11 @@
                 ];
               }
               {
+                "https://bandithedoge.cachix.org" = [
+                  "bandithedoge.cachix.org-1:ZtcHw1anyEa4t6H8m3o/ctYFrwYFPAwoENSvofamE6g="
+                ];
+              }
+              {
                 "https://finix.cachix.org" = [
                   "finix.cachix.org-1:0ejikHDeCp0UErsduUUHcg9IJczY2/h2e5132Z/As/c="
                 ];

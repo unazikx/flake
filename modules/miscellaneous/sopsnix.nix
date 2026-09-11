@@ -17,15 +17,17 @@
 
   zen.miscellaneous.sopsnix = {
     meta = {
-      dir = "/var/lib/secrets";
+      dir = "/var/lib";
     };
+
+    includes = [
+      zen.custom.sopsnix
+    ];
 
     nixos =
       {
         inputs,
         pkgs,
-        lib,
-        config,
         ...
       }:
       let
@@ -43,23 +45,9 @@
           pkgs.ssh-to-age
         ];
 
-        environment.sessionVariables = {
-          SOPS_AGE_KEY_FILE = config.sops.age.keyFile;
-        };
-
         sops.age = {
-          keyFile = "${meta.dir}/keys.txt";
+          keyFile = "${meta.dir}/sops-yubikey";
           plugins = [ pkgs.age-plugin-yubikey ];
-        };
-
-        system.activationScripts = {
-          "identity-age-yubikey" =
-            lib.stringAfter [ "users" ]
-              # bash
-              ''
-                DEST=${meta.dir}; mkdir -p $DEST
-                ${lib.getExe pkgs.age-plugin-yubikey} --identity > $DEST/keys.txt
-              '';
         };
       };
 
@@ -78,7 +66,6 @@
       {
         inputs,
         pkgs,
-        config,
         ...
       }:
       let
@@ -95,12 +82,8 @@
           pkgs.ssh-to-age
         ];
 
-        home.sessionVariables = {
-          SOPS_AGE_KEY_FILE = config.sops.age.keyFile;
-        };
-
         sops.age = {
-          keyFile = "${meta.dir}/keys.txt";
+          keyFile = "${meta.dir}/sops-yubikey";
           plugins = [ pkgs.age-plugin-yubikey ];
         };
       };

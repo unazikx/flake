@@ -11,7 +11,6 @@
 
     user =
       {
-        config,
         user,
         ...
       }:
@@ -20,8 +19,6 @@
 
         home = "/home/${user.userName}";
         createHome = true;
-
-        hashedPasswordFile = config.sops.secrets."password/${user.userName}".path;
       };
   };
 }

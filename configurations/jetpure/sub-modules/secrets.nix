@@ -17,16 +17,6 @@
       }:
       {
         sops.defaultSopsFile = "${self}/secrets/${host.hostName}/sops.yaml";
-
-        sops.secrets = {
-          "password/nixzoid" = {
-            neededForUsers = true;
-          };
-
-          "password/root" = {
-            neededForUsers = true;
-          };
-        };
       };
   };
 

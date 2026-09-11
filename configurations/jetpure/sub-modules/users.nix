@@ -10,11 +10,19 @@
         ...
       }:
       {
-        users = {
-          mutableUsers = false;
+        users.mutableUsers = false;
 
-          users.root = {
-            hashedPasswordFile = config.sops.secrets."password/root".path;
+        users.users.root = {
+          hashedPasswordFile = config.sops.secrets."password/root".path;
+        };
+
+        sops.secrets = {
+          "password/nixzoid" = {
+            neededForUsers = true;
+          };
+
+          "password/root" = {
+            neededForUsers = true;
           };
         };
       };
@@ -24,9 +32,12 @@
     user =
       {
         config,
+        user,
         ...
       }:
       {
+        hashedPasswordFile = config.sops.secrets."password/${user.userName}".path;
+
         extraGroups = [
           # keep-sorted start
           "audio"

@@ -52,7 +52,6 @@
       zen.hardware.cpu-gpu
       zen.hardware.mounting
       zen.hardware.security.yubikey
-      zen.miscellaneous.agenix
       zen.miscellaneous.disko
       zen.miscellaneous.home-manager
       zen.miscellaneous.minimal
@@ -105,7 +104,7 @@
       zen.programs.gui.blender
       zen.programs.gui.easy-effects
       zen.programs.gui.keepassxc
-      zen.programs.gui.librewolf
+      # zen.programs.gui.librewolf
       zen.programs.gui.nixcord
       zen.programs.gui.obs-studio
       zen.programs.gui.qutebrowser
