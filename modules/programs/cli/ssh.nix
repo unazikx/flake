@@ -34,6 +34,10 @@
               serverAliveInterval = 0;
               userKnownHostsFile = "~/.ssh/known_hosts";
             };
+
+            "github.com" = {
+              identityFile = [ "~/.ssh/id_ed25519_sk_rk_github" ];
+            };
           };
         };
 

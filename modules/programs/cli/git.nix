@@ -25,6 +25,7 @@
     homeManager =
       {
         pkgs,
+        lib,
         config,
         ...
       }:
@@ -38,8 +39,6 @@
           package = pkgs.gitMinimal;
 
           settings = {
-            user.signingkey = "${config.home.homeDirectory}/.ssh/id_ed25519.pub";
-
             color = {
               ui = true;
 
@@ -55,13 +54,13 @@
 
             init.defaultBranch = "main";
             safe.directory = "*";
-
-            gpg.format = "ssh";
-            commit.gpgsign = true;
-            tag.gpgSign = true;
           };
 
-          signing.format = null;
+          signing = {
+            key = lib.mkDefault "~/.ssh/id_ed25519_sk_rk_signer.pub";
+            signByDefault = true;
+            format = "ssh";
+          };
 
           includes = [
             { path = config.sops.templates."git-user".path; }
