@@ -56,17 +56,6 @@
         };
       };
 
-    darwin =
-      {
-        inputs,
-        ...
-      }:
-      {
-        imports = [
-          inputs.sopsnix.darwinModules.sops
-        ];
-      };
-
     homeManagerNixos =
       {
         inputs,

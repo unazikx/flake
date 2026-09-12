@@ -42,16 +42,6 @@
           };
         };
 
-      darwin =
-        {
-          ...
-        }:
-        {
-          nix = {
-            inherit settings;
-          };
-        };
-
       homeManager =
         {
           config,

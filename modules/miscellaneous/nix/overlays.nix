@@ -14,7 +14,6 @@
     (lib.genAttrs
       [
         "nixos"
-        "darwin"
         "homeManager"
       ]
       (_: {

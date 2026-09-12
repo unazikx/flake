@@ -67,17 +67,6 @@
         ];
       };
 
-    darwin =
-      {
-        inputs,
-        ...
-      }:
-      {
-        imports = [
-          inputs.agenix.darwinModules.age
-        ];
-      };
-
     homeManager =
       {
         self,

@@ -61,15 +61,6 @@
         imports = [ inputs.stylix.nixosModules.stylix ];
       };
 
-    darwin =
-      {
-        inputs,
-        ...
-      }:
-      {
-        imports = [ inputs.stylix.darwin.stylix ];
-      };
-
     homeManager =
       {
         self',
