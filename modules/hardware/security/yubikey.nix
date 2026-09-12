@@ -68,25 +68,20 @@
           yubikey-touch-detector.enable = true;
         };
 
-        services = {
-          yubikey-agent = {
-            enable = true;
-          };
+        services.pcscd = {
+          enable = true;
+          plugins = lib.mkForce [
+            pkgs.ccid
+          ];
+        };
 
-          pcscd = {
-            enable = true;
-            plugins = lib.mkForce [
-              pkgs.ccid
-            ];
-          };
-
-          udev = {
-            enable = true;
-            packages = [
-              pkgs.yubikey-personalization
-              pkgs.libfido2
-            ];
-          };
+        services.udev = {
+          enable = true;
+          packages = [
+            pkgs.libfido2
+            pkgs.yubikey-manager
+            pkgs.yubikey-personalization
+          ];
         };
 
         security.pam = {

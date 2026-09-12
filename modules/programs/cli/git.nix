@@ -57,7 +57,7 @@
           };
 
           signing = {
-            key = lib.mkDefault "~/.ssh/id_ed25519_sk_rk_signer.pub";
+            key = lib.mkDefault "~/.ssh/id_ed25519_sk_rk_github.pub";
             signByDefault = true;
             format = "ssh";
           };

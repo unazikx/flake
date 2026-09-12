@@ -17,9 +17,9 @@
 
             toEntry =
               name: conf:
-              lib.optional (conf ? sopsKey) {
+              lib.optional (conf ? secrets) {
                 inherit name;
-                key = conf.sopsKey;
+                key = conf.secrets.age;
               };
 
             keysFrom =
