@@ -8,12 +8,10 @@
     system = "x86_64-linux";
     class = "nixos";
 
-    defaultUser = "chizea";
+    mainUser = "chizea";
 
-    users = {
-      chizea = {
-        classes = [ "homeManager" ];
-      };
+    users.chizea = {
+      classes = [ "homeManager" ];
     };
   };
 

@@ -3,7 +3,7 @@
 }:
 
 {
-  zen.programs.desktop.sway.binds = {
+  zen.programs.desktop.sway.binds-swsh = {
     homeManagerNixos =
       {
         lib,

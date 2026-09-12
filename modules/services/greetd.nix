@@ -14,6 +14,7 @@
         pkgs,
         lib,
         config,
+        host,
         ...
       }:
       {
@@ -24,6 +25,10 @@
           greeterManagesPlymouth = true;
 
           settings = {
+            initial_session = {
+              user = host.mainUser;
+            };
+
             default_session.command =
               let
                 desktops = config.services.displayManager.sessionData.desktops;

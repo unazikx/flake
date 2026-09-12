@@ -25,7 +25,7 @@
         ...
       }:
       {
-        shell = lib.mkIf (user.defaultShell == "fish") config.programs.fish.package;
+        shell = lib.mkIf (user.shell == "fish") config.programs.fish.package;
       };
 
     nixos =

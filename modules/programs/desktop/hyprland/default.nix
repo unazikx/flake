@@ -41,8 +41,7 @@
           };
 
           greetd.settings = {
-            initial_session = lib.mkIf (user.defaultWm == "hyprland") {
-              user = user.defaultUser;
+            initial_session = lib.mkIf (user.wm == "hyprland") {
               command = "${lib.getExe uwsm.package} start hyprland-uwsm.desktop";
             };
           };

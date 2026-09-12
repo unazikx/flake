@@ -12,16 +12,16 @@
       {
         services = {
           displayManager = {
-            autoLogin.user = host.defaultUser;
+            autoLogin.user = host.mainUser;
           };
 
           getty = {
-            autologinUser = host.defaultUser;
+            autologinUser = host.mainUser;
             autologinOnce = true;
           };
 
           greetd.settings = {
-            default_session.user = host.defaultUser;
+            default_session.user = host.mainUser;
           };
         };
       };

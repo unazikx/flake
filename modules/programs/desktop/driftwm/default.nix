@@ -20,7 +20,6 @@
         self',
         lib,
         config,
-        host,
         user,
         ...
       }:
@@ -34,14 +33,13 @@
         # я вас всех в жопу ебал бляди нахуя
         services = {
           displayManager = {
-            defaultSession = lib.mkIf (user.defaultWm == "driftwm") "driftwm-session";
+            defaultSession = lib.mkIf (user.wm == "driftwm") "driftwm-session";
           };
 
           gnome.gnome-keyring.enable = lib.mkForce false;
 
           greetd.settings = {
-            initial_session = lib.mkIf (user.defaultWm == "driftwm") {
-              user = host.defaultUser;
+            initial_session = lib.mkIf (user.wm == "driftwm") {
               command = lib.getExe config.programs.driftwm.package;
             };
           };

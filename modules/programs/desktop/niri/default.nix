@@ -46,7 +46,6 @@
       {
         pkgs,
         lib,
-        host,
         user,
         ...
       }:
@@ -58,7 +57,7 @@
         # я вас всех в жопу ебал бляди нахуя
         services = {
           displayManager = {
-            defaultSession = lib.mkIf (user.defaultWm == "niri") "niri";
+            defaultSession = lib.mkIf (user.wm == "niri") "niri";
 
             sessionPackages = [
               (meta.defaultPackage pkgs)
@@ -68,8 +67,7 @@
           gnome.gnome-keyring.enable = lib.mkForce false;
 
           greetd.settings = {
-            initial_session = lib.mkIf (user.defaultWm == "niri") {
-              user = host.defaultUser;
+            initial_session = lib.mkIf (user.wm == "niri") {
               command = lib.getExe' pkgs.niri "niri-session";
             };
           };

@@ -13,13 +13,13 @@
         ...
       }:
       let
-        meta = zen.programs.desktop.sway.meta;
         colors = config.lib.stylix.colors.withHashtag;
+        noctalia = config.programs.noctalia;
       in
       {
         wayland.windowManager.sway = {
           config = {
-            bars = lib.mkIf (meta.shell == "noctalia") (lib.mkForce [ ]);
+            bars = lib.mkIf noctalia.enable (lib.mkForce [ ]);
 
             seat."*" = {
               # hide_cursor = mkSeconds 1;
@@ -124,7 +124,7 @@
         };
 
         stylix.targets = {
-          sway.useWallpaper = if (meta.shell != "noctalia") then true else false;
+          sway.useWallpaper = if noctalia.enable then false else true;
         };
       };
   };

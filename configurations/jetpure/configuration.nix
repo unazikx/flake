@@ -10,7 +10,7 @@
 
     isInstaller = false;
     flakeDir = toString /etc/nixos;
-    defaultUser = "nixzoid";
+    mainUser = "nixzoid";
 
     device = toString /dev/disk/by-id/ata-KINGSTON_SA400S37240G_50026B72828C9A2D;
     # https://www.kingston.com/en/ssd/a400-solid-state-drive
@@ -22,8 +22,8 @@
     users.nixzoid = {
       classes = [ "homeManager" ];
 
-      defaultWm = "sway";
-      defaultShell = "fish";
+      wm = "sway";
+      shell = "fish";
 
       secrets = {
         age = "age1yubikey1q2c9snmkv7snv8tmgsvwc2rlgr92tvv0grqfxu7dw9g7jj9khms4yusej9e";
@@ -102,13 +102,13 @@
       zen.programs.cli.rezka-fzf
       zen.programs.cli.ssh
       zen.programs.cli.yazi
-      zen.programs.desktop.sway
+      zen.programs.desktop.sway.noctalia
       zen.programs.editors.helix
       zen.programs.gui.ayugram
       zen.programs.gui.blender
       zen.programs.gui.easy-effects
       zen.programs.gui.keepassxc
-      # zen.programs.gui.librewolf
+      zen.programs.gui.librewolf
       zen.programs.gui.nixcord
       zen.programs.gui.obs-studio
       zen.programs.gui.qutebrowser

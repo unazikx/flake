@@ -40,7 +40,7 @@
 
         age = {
           identityPaths = [
-            "/home/${host.defaultUser}/.ssh/id_ed25519"
+            "/home/${host.mainUser}/.ssh/id_ed25519"
             "/root/.ssh/id_ed25519"
             "/secrets/root/id_ed25519"
           ];

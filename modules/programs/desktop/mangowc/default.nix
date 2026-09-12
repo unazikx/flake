@@ -32,7 +32,6 @@
         pkgs,
         lib,
         config,
-        host,
         user,
         ...
       }:
@@ -51,8 +50,7 @@
           gnome.gnome-keyring.enable = lib.mkForce false;
 
           greetd.settings = {
-            initial_session = lib.mkIf (user.defaultWm == "mangowc") {
-              user = host.defaultUser;
+            initial_session = lib.mkIf (user.wm == "mangowc") {
               command = lib.getExe config.programs.mango.package;
             };
           };

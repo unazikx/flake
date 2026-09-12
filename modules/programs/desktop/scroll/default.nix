@@ -43,7 +43,6 @@
         inputs',
         lib,
         config,
-        host,
         user,
         ...
       }:
@@ -61,14 +60,13 @@
         # я вас всех в жопу ебал бляди нахуя
         services = {
           displayManager = {
-            defaultSession = lib.mkIf (user.defaultWm == "scroll") "scroll";
+            defaultSession = lib.mkIf (user.wm == "scroll") "scroll";
           };
 
           gnome.gnome-keyring.enable = lib.mkForce false;
 
           greetd.settings = {
-            initial_session = lib.mkIf (user.defaultWm == "scroll") {
-              user = host.defaultUser;
+            initial_session = lib.mkIf (user.wm == "scroll") {
               command = lib.getExe config.programs.scroll.package;
             };
           };

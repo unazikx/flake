@@ -61,12 +61,10 @@
         inputs,
         lib,
         config,
-        host,
         user,
         ...
       }:
       let
-        cfg = config.programs.umbriel;
         uwsm = config.programs.uwsm;
       in
       {
@@ -90,19 +88,14 @@
 
         services = {
           displayManager = {
-            defaultSession = lib.mkIf (user.defaultWm == "umbriel") "umbriel-uwsm";
+            defaultSession = lib.mkIf (user.wm == "umbriel") "umbriel-uwsm";
           };
 
           gnome.gnome-keyring.enable = lib.mkForce false;
 
           greetd.settings = {
-            initial_session = lib.mkIf (user.defaultWm == "umbriel") {
-              user = host.defaultUser;
-              command =
-                if uwsm.enable then
-                  "${lib.getExe uwsm.package} start umbriel-uwsm.desktop"
-                else
-                  (lib.getExe cfg.package);
+            initial_session = lib.mkIf (user.wm == "umbriel") {
+              command = "${lib.getExe uwsm.package} start umbriel-uwsm.desktop";
             };
           };
         };

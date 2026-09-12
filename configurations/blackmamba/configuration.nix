@@ -10,7 +10,7 @@
 
     isInstaller = false;
     flakeDir = toString /etc/nixos;
-    defaultUser = "hackerx";
+    mainUser = "hackerx";
 
     device = toString /dev/disk/by-id/nvme-RPFTJ256PDD2MWX_SS0R27339Z1CD95Z1273;
     # https://www.impactcomputers.com/hard-drives-ssd/union-memory-rpftj256pdd2mwx
@@ -22,8 +22,8 @@
     users.hackerx = {
       classes = [ "homeManager" ];
 
-      defaultWm = "sway";
-      defaultShell = "fish";
+      wm = "sway";
+      shell = "fish";
     };
   };
 

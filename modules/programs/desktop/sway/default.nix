@@ -10,51 +10,11 @@
       but now i use sway, ue
     '';
 
-    includes =
-      let
-        meta = zen.programs.desktop.sway.meta;
-      in
-      if (meta.shell == "noctalia") then
-        [
-          zen.programs.desktop.noctalia
-          zen.programs.desktop.sunsetr
-          zen.programs.desktop.sway.binds
-          zen.programs.desktop.sway.binds-noctalia
-          zen.programs.desktop.sway.rules
-          zen.programs.desktop.sway.settings
-          zen.programs.desktop.uwsm
-          zen.programs.terminal.foot
-        ]
-      else
-        [
-          zen.programs.desktop.clapboard
-          zen.programs.desktop.dunst
-          zen.programs.desktop.i3status-rust
-          zen.programs.desktop.sunsetr
-          zen.programs.desktop.sway.bar
-          zen.programs.desktop.sway.binds
-          zen.programs.desktop.sway.binds-swsh
-          zen.programs.desktop.swayidle
-          zen.programs.desktop.swaylock
-          zen.programs.desktop.sway.rules
-          zen.programs.desktop.sway.settings
-          zen.programs.desktop.tofi
-          zen.programs.desktop.uwsm
-          zen.programs.desktop.wayshot
-          zen.programs.desktop.wob
-          zen.programs.terminal.foot
-        ];
-
-    meta = {
-      shell = "noctalia";
-    };
-
     nixos =
       {
         pkgs,
         lib,
         config,
-        host,
         user,
         ...
       }:
@@ -80,12 +40,11 @@
           gnome.gnome-keyring.enable = lib.mkForce false;
 
           displayManager = {
-            defaultSession = lib.mkIf (user.defaultWm == "sway") "sway";
+            defaultSession = lib.mkIf (user.wm == "sway") "sway";
           };
 
           greetd.settings = {
-            initial_session = lib.mkIf (user.defaultWm == "sway") {
-              user = host.defaultUser;
+            initial_session = lib.mkIf (user.wm == "sway") {
               command = "${lib.getExe uwsm.package} start sway-uwsm.desktop";
             };
           };
@@ -141,5 +100,39 @@
           };
         };
       };
+  };
+
+  zen.programs.desktop.sway = {
+    noctalia.includes = [
+      zen.programs.desktop.noctalia
+      zen.programs.desktop.sunsetr
+      zen.programs.desktop.sway
+      zen.programs.desktop.sway.binds
+      zen.programs.desktop.sway.binds-noctalia
+      zen.programs.desktop.sway.rules
+      zen.programs.desktop.sway.settings
+      zen.programs.desktop.uwsm
+      zen.programs.terminal.foot
+    ];
+
+    swsh.includes = [
+      zen.programs.desktop.clapboard
+      zen.programs.desktop.dunst
+      zen.programs.desktop.i3status-rust
+      zen.programs.desktop.sunsetr
+      zen.programs.desktop.sway
+      zen.programs.desktop.sway.bar
+      zen.programs.desktop.sway.binds
+      zen.programs.desktop.sway.binds-swsh
+      zen.programs.desktop.swayidle
+      zen.programs.desktop.swaylock
+      zen.programs.desktop.sway.rules
+      zen.programs.desktop.sway.settings
+      zen.programs.desktop.tofi
+      zen.programs.desktop.uwsm
+      zen.programs.desktop.wayshot
+      zen.programs.desktop.wob
+      zen.programs.terminal.foot
+    ];
   };
 }

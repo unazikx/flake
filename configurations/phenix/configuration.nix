@@ -8,10 +8,8 @@
     system = "x86_64-linux";
     class = "finix";
 
-    users = {
-      jeensgrys = {
-        classes = [ "hjem" ];
-      };
+    users.jeensgrys = {
+      classes = [ "hjem" ];
     };
   };
 

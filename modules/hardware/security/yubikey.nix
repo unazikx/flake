@@ -68,6 +68,10 @@
           yubikey-touch-detector.enable = true;
         };
 
+        services.yubikey-agent = {
+          enable = true;
+        };
+
         services.pcscd = {
           enable = true;
           plugins = lib.mkForce [
