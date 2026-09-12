@@ -304,9 +304,10 @@
           };
 
           plugins = {
+            auto_update = "all";
             enabled = [
               "cleboost/anilist"
-              "radimous/prismlauncher-instances"
+              "aabidk20/yt-music"
             ];
           };
 

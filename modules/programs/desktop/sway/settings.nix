@@ -49,10 +49,6 @@
             };
 
             startup = [
-              (lib.mkIf (meta.shell == "noctalia") {
-                command = "noctalia";
-                always = false;
-              })
               {
                 command = "AyuGram -startintray";
                 always = false;

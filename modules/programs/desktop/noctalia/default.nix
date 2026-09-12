@@ -39,19 +39,30 @@
         ...
       }:
       {
+        programs.noctalia = {
+          enable = true;
+          recommendedServices.enable = true;
+        };
+
         security.pam.services = {
+          noctalia.u2fAuth = true;
           quickshell.u2fAuth = true;
-          swaylock.u2fAuth = true;
         };
       };
 
-    homeManager =
+    homeManagerNixos =
       {
+        osConfig,
         ...
       }:
       {
         programs.noctalia = {
-          enable = true;
+          inherit (osConfig.programs.noctalia)
+            enable
+            package
+            ;
+
+          systemd.enable = true;
         };
 
         stylix.targets = {
