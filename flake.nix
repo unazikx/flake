@@ -364,6 +364,16 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    winapps = {
+      type = "github";
+      owner = "winapps-org";
+      repo = "winapps";
+      inputs = {
+        flake-utils.follows = "flake-utils";
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
+
     xdg-desktop-portal-umbriel = {
       type = "github";
       owner = "noctalia-dev";

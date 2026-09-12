@@ -32,27 +32,34 @@
                   ) (clean byName)
                 ) (clean byArch)
               );
+
+            allConfigurations = lib.unique (
+              lib.flatten [
+                (keysFrom (config.den.hosts or { }))
+                (keysFrom (config.den.homes or { }))
+              ]
+            );
           in
           {
-            yaml.creation_rules = (
-              map
-                (configuration: {
-                  path_regex = "secrets/${configuration.name}/[^/]+\.(yaml|json|env|ini)$";
-                  key_groups = [
-                    {
-                      age = [ configuration.key ];
-                    }
-                  ];
-                })
-                (
-                  lib.unique (
-                    lib.flatten [
-                      (keysFrom (config.den.hosts or { }))
-                      (keysFrom (config.den.homes or { }))
-                    ]
-                  )
-                )
-            );
+            yaml.creation_rules = lib.flatten [
+              (map (configuration: {
+                path_regex = "secrets/${configuration.name}/[^/]+\.(yaml|json|env|ini)$";
+                key_groups = [
+                  {
+                    age = [ configuration.key ];
+                  }
+                ];
+              }) allConfigurations)
+
+              {
+                path_regex = "secrets/shared/[^/]+\.(yaml|json|env|ini)$";
+                key_groups = [
+                  {
+                    age = (map (configuration: configuration.key) allConfigurations);
+                  }
+                ];
+              }
+            ];
           };
       };
   };
