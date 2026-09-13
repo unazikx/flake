@@ -58,7 +58,7 @@
                   else
                     "qutebrowser";
                 "Shift+B" = "libreoffice";
-                "V" = "AyuGram";
+                "V" = "Telegram";
                 "Shift+V" = "equibop";
                 "M" = "spotify";
                 "Shift+M" = "obsidian";

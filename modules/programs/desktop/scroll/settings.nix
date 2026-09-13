@@ -37,16 +37,7 @@
               smartGaps = true;
             };
 
-            startup = [
-              {
-                command = "AyuGram -startintray";
-                always = false;
-              }
-              {
-                command = "vesktop --start-minimized";
-                always = false;
-              }
-            ];
+            startup = [ ];
 
             colors = lib.mkForce {
               background = colors.base00;

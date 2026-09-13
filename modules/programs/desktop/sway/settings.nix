@@ -49,14 +49,6 @@
 
             startup = [
               {
-                command = "AyuGram -startintray";
-                always = false;
-              }
-              {
-                command = "vesktop --start-minimized";
-                always = false;
-              }
-              {
                 command = lib.getExe pkgs.autotiling-rs;
                 always = false;
               }

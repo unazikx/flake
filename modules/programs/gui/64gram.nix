@@ -4,94 +4,65 @@
 }:
 
 {
-  zen.programs.gui.ayugram = {
+  zen.programs.gui._64gram = {
     description = ''
       best messaging
 
-      modded telegram -> ayugram
-      but without spy and save deleted
-
-      i respect deleted messages
-      i use it ONLY for bw (black-white) icon tray
+      good ver
     '';
 
     includes = [
-      zen.custom.ayugram-desktop
+      zen.custom._64gram
       zen.styles.walogram
     ];
 
     homeManager =
       {
-        config,
         ...
       }:
       {
-        programs.ayugram-desktop = {
+        programs._64gram = {
           enable = true;
 
           settings = {
             # keep-sorted start block=yes
-            appIcon = "alt";
-            channelBottomButton = 0;
-            collapseSimilarChannels = true;
-            deletedMark = "deleted";
-            disableAds = true;
-            disableCustomBackgrounds = false;
-            disableNotificationsDelay = false;
-            disableStories = false;
-            editedMark = "edited";
-            gifConfirmation = false;
-            hideAllChatsFolder = true;
-            hideChannelReactions = true;
-            hideFromBlocked = false;
-            hideGroupReactions = true;
-            hideNotificationBadge = false;
-            hideNotificationCounters = false;
-            hideSimilarChannels = false;
-            increaseWebviewHeight = false;
-            increaseWebviewWidth = false;
-            localPremium = false;
-            markReadAfterAction = false;
-            monoFont = config.stylix.fonts.monospace.name;
-            recentStickersCount = 100;
-            replaceBottomInfoWithIcons = true;
-            saveDeletedMessages = false;
-            saveForBots = false;
-            saveMessagesHistory = false;
-            sendOfflinePacketAfterOnline = false;
-            sendOnlinePackets = true;
-            sendReadMessages = true;
-            sendReadStories = true;
-            sendUploadProgress = true;
-            sendWithoutSound = false;
-            showAttachButtonInMessageField = true;
-            showAttachPopup = true;
-            showAutoDeleteButtonInMessageField = true;
-            showCommandsButtonInMessageField = true;
-            showEmojiButtonInMessageField = true;
-            showEmojiPopup = true;
-            showGhostToggleInDrawer = true;
-            showGhostToggleInTray = true;
-            showHideMessageInContextMenu = 2;
-            showLReadToggleInDrawer = true;
-            showMessageDetailsInContextMenu = 2;
-            showMessageSeconds = false;
-            showMessageShot = true;
-            showMicrophoneButtonInMessageField = true;
-            showOnlyAddedEmojisAndStickers = false;
-            showPeerId = 2;
-            showReactionsPanelInContextMenu = 1;
-            showSReadToggleInDrawer = true;
-            showStreamerToggleInDrawer = false;
-            showStreamerToggleInTray = false;
-            showUserMessagesInContextMenu = 2;
-            showViewsPanelInContextMenu = 1;
-            simpleQuotesAndReplies = false;
-            spoofWebviewAsAndroid = false;
-            stickerConfirmation = false;
-            useScheduledMessages = false;
-            voiceConfirmation = false;
-            wideMultiplier = 1.6;
+            always_delete_for = 0;
+            auto_unmute = false;
+            bitrate = 0;
+            blocked_user_spoiler_mode = false;
+            disable_cloud_draft_sync = false;
+            disable_global_search = false;
+            disable_link_warning = true;
+            disable_premium_animation = false;
+            hd_video = false;
+            hide_all_chats = false;
+            hide_classic_fwd = false;
+            hide_counter = false;
+            hide_stories = false;
+            net_speed_boost = 0;
+            repeater_reply_to_orig_msg = false;
+            replace_edit_button = true;
+            screenshot_mode = false;
+            show_emoji_button_as_text = false;
+            show_group_sender_avatar = false;
+            show_json = false;
+            show_messages_id = false;
+            show_phone_number = false;
+            show_repeater_option = false;
+            show_scheduled_button = false;
+            show_seconds = false;
+            skip_to_next = true;
+            stereo_mode = false;
+            translate_to_tc = false;
+            update_url = "";
+            # keep-sorted end
+          };
+
+          experiments = {
+            # keep-sorted start block=yes
+            enable-vulkan-rhi = true;
+            unlimited-message-width = true;
+            view-profile-in-chats-list-context-menu = true;
             # keep-sorted end
           };
 

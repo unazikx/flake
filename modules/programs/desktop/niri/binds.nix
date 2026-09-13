@@ -98,18 +98,6 @@
                 # screenshots
                 (bind "Print" (actions.spawn-sh "noctalia ipc screenshot-region"))
                 (bind "Shift+Print" (actions.spawn-sh "noctalia ipc screenshot-fullscreen"))
-
-                # applications
-                [
-                  (bind "Mod+V" (actions.spawn-sh "AyuGram"))
-                  (bind "Mod+Shift+V" (actions.spawn-sh "equibop"))
-
-                  (bind "Mod+B" (actions.spawn-sh "qutebrowser"))
-                  (bind "Mod+Shift+B" (actions.spawn-sh "librewolf"))
-
-                  (bind "Mod+M" (actions.spawn-sh "spotify"))
-                  (bind "Mod+Shift+M" (actions.spawn-sh "obsidian"))
-                ]
               ]
             ));
         };

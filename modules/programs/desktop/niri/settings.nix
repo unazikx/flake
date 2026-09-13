@@ -260,15 +260,6 @@
 
             spawn-at-startup = [
               {
-                sh = "noctalia";
-              }
-              {
-                sh = "AyuGram -startintray";
-              }
-              {
-                sh = "vesktop --start-minimized";
-              }
-              {
                 sh = "${lib.getExe pkgs.swaybg} -m fill -i ${config.stylix.image}";
               }
             ];

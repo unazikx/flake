@@ -22,17 +22,6 @@
           keybinds = lib.mkMerge [
             (lib.concatMapAttrs
               (key: command: {
-                "Mod+${key}" = "spawn:${command}";
-              })
-              {
-                "Return" = "footclient";
-                "B" = "qutebrowser";
-                "V" = "AyuGram";
-                "M" = "spotify";
-              }
-            )
-            (lib.concatMapAttrs
-              (key: command: {
                 "Mod+${key}" = command;
               })
               (

@@ -46,6 +46,10 @@
             }
             {
               open-on-workspace = toString 4;
+              matches = [ { app-id = "^io.github.tdesktop_x64.TDesktop$"; } ];
+            }
+            {
+              open-on-workspace = toString 4;
               matches = [ { app-id = "equibop"; } ];
             }
             {

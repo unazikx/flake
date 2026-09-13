@@ -52,13 +52,6 @@
 
                 "return" = "footclient";
                 "shift+return" = "footclient -a=foot_float";
-
-                "b" = "qutebrowser";
-                "shift+b" = "libreoffice";
-                "v" = "AyuGram";
-                "shift+v" = "equibop";
-                "m" = "spotify";
-                "shift+m" = "obsidian";
               }
             )
 

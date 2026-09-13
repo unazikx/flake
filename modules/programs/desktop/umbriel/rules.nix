@@ -51,6 +51,10 @@
               default_workspace = 4;
             }
             {
+              match.app_id = "^io.github.tdesktop_x64.TDesktop&";
+              default_workspace = 4;
+            }
+            {
               match.app_id = "^steam&";
               default_workspace = 5;
             }

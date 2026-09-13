@@ -104,7 +104,7 @@
       zen.programs.cli.yazi
       zen.programs.desktop.sway.noctalia
       zen.programs.editors.helix
-      zen.programs.gui.ayugram
+      zen.programs.gui._64gram
       zen.programs.gui.blender
       zen.programs.gui.easy-effects
       zen.programs.gui.keepassxc

@@ -21,9 +21,6 @@
           general = {
             autostart = [
               "${lib.getExe pkgs.swaybg} -m fill -i ${config.stylix.image}"
-              "vesktop --start-minimized"
-              "AyuGram -startintray"
-              "noctalia"
             ];
 
             xwayland = true;
