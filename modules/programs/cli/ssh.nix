@@ -23,20 +23,14 @@
 
           settings = {
             "*" = {
-              addKeysToAgent = "no";
+              addKeysToAgent = "yes";
               compression = true;
-              controlMaster = "no";
-              controlPath = "~/.ssh/master-%r@%n:%p";
-              controlPersist = "no";
-              forwardAgent = false;
               hashKnownHosts = true;
-              serverAliveCountMax = 3;
-              serverAliveInterval = 0;
               userKnownHostsFile = "~/.ssh/known_hosts";
             };
 
             "github.com" = {
-              identityFile = [ "~/.ssh/id_ed25519_sk_rk_github" ];
+              identityFile = [ "~/.ssh/id_ed25519" ];
             };
           };
         };

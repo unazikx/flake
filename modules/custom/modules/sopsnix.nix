@@ -13,15 +13,14 @@
       {
         pkgs,
         lib,
-        config,
+        host,
         ...
       }:
       let
         meta = zen.miscellaneous.sopsnix.meta;
-        pcscd = config.services.pcscd;
       in
       {
-        config = lib.mkIf pcscd.enable {
+        config = lib.mkIf (host.hasAspect zen.hardware.security.yubikey) {
           system.activationScripts = {
             setupPcscd.text =
               # bash
