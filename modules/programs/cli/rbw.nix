@@ -27,7 +27,7 @@
           };
         };
 
-        dbus.packages = [ pkgs.gcr ];
+        dbus.packages = [ pkgs.gcr_4 ];
       };
   };
 }

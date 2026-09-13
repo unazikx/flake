@@ -10,6 +10,8 @@
 
     mainUser = "chizea";
 
+    device = "/dev/null";
+
     users.chizea = {
       classes = [ "homeManager" ];
     };

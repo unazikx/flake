@@ -1,5 +1,4 @@
 {
-  zen,
   ...
 }:
 
@@ -9,10 +8,6 @@
       good office suite
       use with zathura
     '';
-
-    includes = [
-      zen.custom.libreoffice
-    ];
 
     homeManager =
       {

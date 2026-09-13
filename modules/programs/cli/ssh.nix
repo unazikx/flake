@@ -14,6 +14,7 @@
 
     homeManager =
       {
+        lib,
         ...
       }:
       {
@@ -30,7 +31,7 @@
             };
 
             "github.com" = {
-              identityFile = [ "~/.ssh/id_ed25519" ];
+              identityFile = lib.mkDefault [ "~/.ssh/id_ed25519" ];
             };
           };
         };

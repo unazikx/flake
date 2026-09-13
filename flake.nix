@@ -212,16 +212,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixcord = {
-      type = "github";
-      owner = "kaylorben";
-      repo = "nixcord";
-      inputs = {
-        flake-parts.follows = "flake-parts";
-        nixpkgs.follows = "nixpkgs";
-      };
-    };
-
     nixos-cli = {
       type = "github";
       owner = "nix-community";

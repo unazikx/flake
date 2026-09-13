@@ -11,8 +11,8 @@
       }:
       {
         disko.devices.disk = {
-          "${baseNameOf host.drives.system}" = {
-            device = host.drives.system;
+          "${baseNameOf host.device}" = {
+            device = host.device;
 
             type = "disk";
 

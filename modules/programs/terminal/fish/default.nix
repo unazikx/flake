@@ -43,12 +43,6 @@
       {
         programs.fish = {
           enable = true;
-
-          preferAbbrs = true;
-          shellAbbrs = {
-            gai = "git add --intent-to-add";
-            gus = "git update-index --skip-worktree --assume-unchanged";
-          };
         };
       };
   };
