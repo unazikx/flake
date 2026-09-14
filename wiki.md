@@ -62,6 +62,11 @@ for make nix attrs config from toml
 
 ## **Steam**
 
+my steam links:
+profile -> https://steamcommunity.com/id/literaly-custom-url
+steamdb -> https://steamdb.info/calculator/76561199046023228
+protondb -> https://www.protondb.com/users/1633163188
+
 - <img src="https://www.vhv.rs/dpng/d/76-762941_archlinux-icon-crystal-arch-linux-icon-png-transparent.png" height="24"> arch-steam -> https://wiki.archlinux.org/title/Steam
 
 - <img src="https://images.seeklogo.com/logo-png/40/2/steam-deck-logo-png_seeklogo-409559.png" height="24"> jovian-nixos -> https://github.com/Jovian-Experiments/Jovian-NixOS
