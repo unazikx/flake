@@ -19,7 +19,17 @@
               name: conf:
               lib.optional (conf ? secrets) {
                 inherit name;
-                key = conf.secrets.age;
+                keys = [ conf.secrets.age ];
+              };
+
+            toCombinedEntry =
+              hostName: hostConf: userName: userConf:
+              lib.optional (userConf ? secrets) {
+                name = "${userName}-${hostName}";
+                keys = [
+                  (lib.optionalString (hostConf ? secrets) hostConf.secrets.age)
+                  userConf.secrets.age
+                ];
               };
 
             keysFrom =
@@ -28,7 +38,10 @@
                 lib.mapAttrsToList (
                   _arch: byName:
                   lib.mapAttrsToList (
-                    name: conf: toEntry name conf ++ lib.mapAttrsToList toEntry (clean (conf.users or { }))
+                    name: conf:
+                    toEntry name conf
+                    ++ lib.mapAttrsToList toEntry (clean (conf.users or { }))
+                    ++ lib.mapAttrsToList (toCombinedEntry name conf) (clean (conf.users or { }))
                   ) (clean byName)
                 ) (clean byArch)
               );
@@ -39,6 +52,8 @@
                 (keysFrom (config.den.homes or { }))
               ]
             );
+
+            sharedKeys = lib.unique (lib.flatten (map (c: c.keys) allConfigurations));
           in
           {
             yaml.creation_rules = lib.flatten [
@@ -46,7 +61,7 @@
                 path_regex = "secrets/${configuration.name}/[^/]+\.(yaml|json|env|ini)$";
                 key_groups = [
                   {
-                    age = [ configuration.key ];
+                    age = configuration.keys;
                   }
                 ];
               }) allConfigurations)
@@ -55,7 +70,7 @@
                 path_regex = "secrets/shared/[^/]+\.(yaml|json|env|ini)$";
                 key_groups = [
                   {
-                    age = (map (configuration: configuration.key) allConfigurations);
+                    age = sharedKeys;
                   }
                 ];
               }
