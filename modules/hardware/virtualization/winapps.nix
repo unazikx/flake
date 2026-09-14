@@ -34,6 +34,7 @@
         lib,
         config,
         host,
+        user,
         ...
       }:
       {
@@ -110,7 +111,7 @@
               "windows/password"
             ]
             (_: {
-              sopsFile = "${self}/secrets/shared/sops.yaml";
+              sopsFile = "${self}/secrets/${user.userName}-${host.hostName}/sops.yaml";
             });
 
         sops.templates = {
@@ -129,6 +130,8 @@
         lib,
         config,
         osConfig,
+        host,
+        user,
         ...
       }:
       {
@@ -149,7 +152,7 @@
               "windows/password"
             ]
             (_: {
-              sopsFile = "${self}/secrets/shared/sops.yaml";
+              sopsFile = "${self}/secrets/${user.userName}-${host.hostName}/sops.yaml";
             });
 
         sops.templates = {
