@@ -60,7 +60,7 @@
       zen.miscellaneous.home-manager
       zen.miscellaneous.minimal
       zen.miscellaneous.nix
-      zen.miscellaneous.nix.ncro
+      zen.miscellaneous.nix.substituters
       zen.miscellaneous.nur
       zen.miscellaneous.sopsnix
       zen.miscellaneous.users.accounts

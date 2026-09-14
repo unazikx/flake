@@ -203,6 +203,7 @@
             offset_x = 20;
             offset_y = 20;
             position = "bottom_right";
+            layer = "overlay";
           };
 
           osd = {
@@ -356,7 +357,7 @@
             screen_time_enabled = true;
 
             app_icon_color = "on_surface";
-            app_icon_colorize = true;
+            app_icon_colorize = false;
 
             shadow = {
               direction = "center";
