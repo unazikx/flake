@@ -36,7 +36,7 @@
             disable_premium_animation = false;
             hd_video = false;
             hide_all_chats = false;
-            hide_classic_fwd = false;
+            hide_classic_fwd = true;
             hide_counter = false;
             hide_stories = false;
             net_speed_boost = 0;
