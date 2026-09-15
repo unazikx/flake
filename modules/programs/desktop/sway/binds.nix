@@ -51,17 +51,6 @@
               {
                 "Return" = "footclient";
                 "Shift+Return" = "footclient -a=foot_float";
-
-                "B" =
-                  if (proxy-suite.zapret.enable && proxy-suite.perAppRouting.enable) then
-                    "proxy-ctl wrap zapret -- qutebrowser"
-                  else
-                    "qutebrowser";
-                "Shift+B" = "libreoffice";
-                "V" = "Telegram";
-                "Shift+V" = "equibop";
-                "M" = "spotify";
-                "Shift+M" = "obsidian";
               }
             )
 
