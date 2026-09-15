@@ -29,6 +29,7 @@
                 "Space" = "dock-toggle";
                 "Escape" = "panel-toggle session";
 
+                "A" = "annotate";
                 "W" = "window-switcher";
                 "Z" = "panel-toggle launcher /emo";
               }
@@ -41,6 +42,7 @@
               {
                 "Print" = "screenshot-region";
                 "Print+Shift" = "screenshot-fullscreen";
+                "Print+Alt" = "screenshot-annotate";
 
                 "XF86AudioRaiseVolume" = "volume-up";
                 "XF86AudioLowerVolume" = "volume-down";
