@@ -93,7 +93,7 @@
             enable = true;
 
             settings = {
-              authfile = config.sops.secrets."yubikey/authfile".path;
+              authfile = config.sops.secrets."password/authfile".path;
               cue = true;
             };
           };
@@ -107,7 +107,7 @@
         };
 
         sops.secrets = {
-          "yubikey/authfile" = { };
+          "password/authfile" = { };
         };
       };
   };
