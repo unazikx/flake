@@ -592,6 +592,10 @@
                   name = "Hollow Knight";
                 };
 
+                "3690030" = {
+                  name = "The Last Gas Station";
+                };
+
                 "371970" = {
                   name = "Barony";
                   betaBranch = "translation-fix";
