@@ -15,14 +15,10 @@
     # keep-sorted end
   };
 
-  zen.miscellaneous.sopsnix = {
-    meta = {
-      dir = "/var/lib";
-    };
-
+  zen.secrets.sopsnix = {
     includes = [
-      zen.custom.sopsnix
       zen.hardware.security.yubikey
+      zen.secrets
     ];
 
     nixos =
@@ -33,13 +29,10 @@
         ...
       }:
       let
-        meta = zen.miscellaneous.sopsnix.meta;
+        meta = zen.secrets.meta;
 
         keyFilePath =
-          if (host.hasAspect zen.hardware.security.yubikey) then
-            "${meta.dir}/sops-yubikey"
-          else
-            "/secrets/age-key";
+          if (host.hasAspect zen.hardware.security.yubikey) then meta.yubikey else "/secrets/age-key";
       in
       {
         imports = [
@@ -71,13 +64,10 @@
         ...
       }:
       let
-        meta = zen.miscellaneous.sopsnix.meta;
+        meta = zen.secrets.meta;
 
         keyFilePath =
-          if (host.hasAspect zen.hardware.security.yubikey) then
-            "${meta.dir}/sops-yubikey"
-          else
-            "/secrets/age-key";
+          if (host.hasAspect zen.hardware.security.yubikey) then meta.yubikey else "/secrets/age-key";
       in
       {
         imports = [

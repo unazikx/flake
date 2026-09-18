@@ -212,6 +212,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nix-secrets = {
+      type = "github";
+      owner = "unnamed-systems";
+      repo = "nix-secrets";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nixos-cli = {
       type = "github";
       owner = "nix-community";

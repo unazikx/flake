@@ -33,7 +33,7 @@
       zen.miscellaneous.nix
       zen.miscellaneous.nix.ncro
       zen.miscellaneous.nur
-      zen.miscellaneous.sopsnix
+      zen.secrets.sopsnix
       zen.miscellaneous.version
       zen.programs.cli.nixos-cli
       zen.programs.cli.rusted-tools

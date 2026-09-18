@@ -56,7 +56,7 @@
       zen.miscellaneous.home-manager
       zen.miscellaneous.minimal
       zen.miscellaneous.nix
-      zen.miscellaneous.sopsnix
+      zen.secrets.sopsnix
       zen.miscellaneous.version
       zen.programs.cli.nixos-cli
       zen.programs.cli.rusted-tools

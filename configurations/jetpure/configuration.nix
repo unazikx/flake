@@ -62,7 +62,7 @@
       zen.miscellaneous.nix
       zen.miscellaneous.nix.substituters
       zen.miscellaneous.nur
-      zen.miscellaneous.sopsnix
+      zen.secrets.sopsnix
       zen.miscellaneous.users.accounts
       zen.miscellaneous.version
       zen.programs.cli.nixos-cli

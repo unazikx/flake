@@ -16,7 +16,7 @@
     # keep-sorted end
   };
 
-  zen.miscellaneous.agenix = {
+  zen.secrets.agenix = {
     os =
       {
         self,

@@ -841,6 +841,26 @@
         "type": "github"
       }
     },
+    "nix-secrets": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1788356805,
+        "narHash": "sha256-rxClV4z02Ev/bk0/FpdT5h9Oq4/o16RA7e6LRl1/QtU=",
+        "owner": "unnamed-systems",
+        "repo": "nix-secrets",
+        "rev": "151f264a22b595802647db8fac09a2dbd6cb202c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "unnamed-systems",
+        "repo": "nix-secrets",
+        "type": "github"
+      }
+    },
     "nixos-cli": {
       "inputs": {
         "flake-compat": "flake-compat_5",
@@ -1096,6 +1116,7 @@
         "nix-darwin": "nix-darwin",
         "nix-math": "nix-math",
         "nix-minecraft": "nix-minecraft",
+        "nix-secrets": "nix-secrets",
         "nixos-cli": "nixos-cli",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": [
