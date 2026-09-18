@@ -8,12 +8,10 @@
       {
         lib,
         config,
-        osConfig,
         ...
       }:
       let
         cfg = config.wayland.windowManager.sway;
-        proxy-suite = osConfig.services.proxy-suite;
       in
       {
         wayland.windowManager.sway.config = {
