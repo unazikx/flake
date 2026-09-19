@@ -22,7 +22,6 @@
     users.nixzoid = {
       classes = [ "homeManager" ];
 
-      wm = "sway";
       shell = "fish";
 
       secrets = {

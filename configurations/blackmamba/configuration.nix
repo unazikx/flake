@@ -22,7 +22,6 @@
     users.hackerx = {
       classes = [ "homeManager" ];
 
-      wm = "sway";
       shell = "fish";
     };
   };

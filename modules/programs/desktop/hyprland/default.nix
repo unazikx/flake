@@ -11,6 +11,7 @@
     '';
 
     includes = [
+      zen.programs.desktop.keyring
       zen.programs.desktop.noctalia
       zen.programs.desktop.sunsetr
       zen.programs.desktop.uwsm
@@ -19,34 +20,14 @@
 
     nixos =
       {
-        lib,
-        config,
-        user,
         ...
       }:
-      let
-        uwsm = config.programs.uwsm;
-      in
       {
         programs.hyprland = {
           enable = true;
 
           withUWSM = true;
           systemd.setPath.enable = true;
-        };
-
-        services = {
-          displayManager = {
-            defaultSession = "hyprland-uwsm";
-          };
-
-          greetd.settings = {
-            initial_session = lib.mkIf (user.wm == "hyprland") {
-              command = "${lib.getExe uwsm.package} start hyprland-uwsm.desktop";
-            };
-          };
-
-          gnome.gnome-keyring.enable = lib.mkForce false;
         };
       };
 

@@ -13,14 +13,8 @@
     nixos =
       {
         pkgs,
-        lib,
-        config,
-        user,
         ...
       }:
-      let
-        uwsm = config.programs.uwsm;
-      in
       {
         programs.sway = {
           enable = true;
@@ -31,22 +25,6 @@
           waylandCompositors.sway = {
             prettyName = "SwayFX";
             binPath = "/run/current-system/sw/bin/sway";
-          };
-        };
-
-        # fucking idiots why blyat?
-        # я вас всех в жопу ебал бляди нахуя
-        services = {
-          gnome.gnome-keyring.enable = lib.mkForce false;
-
-          displayManager = {
-            defaultSession = lib.mkIf (user.wm == "sway") "sway";
-          };
-
-          greetd.settings = {
-            initial_session = lib.mkIf (user.wm == "sway") {
-              command = "${lib.getExe uwsm.package} start sway-uwsm.desktop";
-            };
           };
         };
       };
@@ -104,6 +82,7 @@
 
   zen.programs.desktop.sway = {
     noctalia.includes = [
+      zen.programs.desktop.keyring
       zen.programs.desktop.noctalia
       zen.programs.desktop.sunsetr
       zen.programs.desktop.sway
@@ -119,6 +98,7 @@
       zen.programs.desktop.clapboard
       zen.programs.desktop.dunst
       zen.programs.desktop.i3status-rust
+      zen.programs.desktop.keyring
       zen.programs.desktop.sunsetr
       zen.programs.desktop.sway
       zen.programs.desktop.sway.bar

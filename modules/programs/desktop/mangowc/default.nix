@@ -1,4 +1,5 @@
 {
+  zen,
   ...
 }:
 
@@ -23,6 +24,7 @@
     '';
 
     includes = [
+      zen.programs.desktop.keyring
       # zen.programs.desktop.mangowc.settings
     ];
 
@@ -30,9 +32,6 @@
       {
         inputs,
         pkgs,
-        lib,
-        config,
-        user,
         ...
       }:
       {
@@ -44,16 +43,6 @@
           enable = true;
 
           package = pkgs.mango;
-        };
-
-        services = {
-          gnome.gnome-keyring.enable = lib.mkForce false;
-
-          greetd.settings = {
-            initial_session = lib.mkIf (user.wm == "mangowc") {
-              command = lib.getExe config.programs.mango.package;
-            };
-          };
         };
       };
 

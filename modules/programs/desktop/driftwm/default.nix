@@ -13,36 +13,18 @@
     includes = [
       zen.custom.driftwm
       zen.programs.desktop.driftwm.shaders
+      zen.programs.desktop.keyring
     ];
 
     nixos =
       {
         self',
-        lib,
-        config,
-        user,
         ...
       }:
       {
         programs.driftwm = {
           enable = true;
           package = self'.packages.driftwm;
-        };
-
-        # fucking idiots why blyat?
-        # я вас всех в жопу ебал бляди нахуя
-        services = {
-          displayManager = {
-            defaultSession = lib.mkIf (user.wm == "driftwm") "driftwm-session";
-          };
-
-          gnome.gnome-keyring.enable = lib.mkForce false;
-
-          greetd.settings = {
-            initial_session = lib.mkIf (user.wm == "driftwm") {
-              command = lib.getExe config.programs.driftwm.package;
-            };
-          };
         };
       };
 

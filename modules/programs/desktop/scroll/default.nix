@@ -26,6 +26,7 @@
       zen.programs.desktop.clapboard
       zen.programs.desktop.dunst
       zen.programs.desktop.i3status-rust
+      zen.programs.desktop.keyring
       zen.programs.desktop.scroll.bar
       zen.programs.desktop.scroll.binds
       zen.programs.desktop.scroll.rules
@@ -41,9 +42,6 @@
       {
         inputs,
         inputs',
-        lib,
-        config,
-        user,
         ...
       }:
       {
@@ -54,22 +52,6 @@
         programs.scroll = {
           enable = true;
           package = inputs'.scroll-flake.packages.scroll-git;
-        };
-
-        # fucking idiots why blyat?
-        # я вас всех в жопу ебал бляди нахуя
-        services = {
-          displayManager = {
-            defaultSession = lib.mkIf (user.wm == "scroll") "scroll";
-          };
-
-          gnome.gnome-keyring.enable = lib.mkForce false;
-
-          greetd.settings = {
-            initial_session = lib.mkIf (user.wm == "scroll") {
-              command = lib.getExe config.programs.scroll.package;
-            };
-          };
         };
       };
 

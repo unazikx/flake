@@ -29,6 +29,7 @@
     '';
 
     includes = [
+      zen.programs.desktop.keyring
       zen.programs.desktop.noctalia
       zen.programs.desktop.sunsetr
       zen.programs.desktop.umbriel.binds
@@ -59,14 +60,8 @@
       {
         self',
         inputs,
-        lib,
-        config,
-        user,
         ...
       }:
-      let
-        uwsm = config.programs.uwsm;
-      in
       {
         imports = [
           inputs.umbriel.nixosModules.default
@@ -83,20 +78,6 @@
           waylandCompositors.umbriel = {
             prettyName = "Umbriel";
             binPath = "/run/current-system/sw/bin/start-umbriel";
-          };
-        };
-
-        services = {
-          displayManager = {
-            defaultSession = lib.mkIf (user.wm == "umbriel") "umbriel-uwsm";
-          };
-
-          gnome.gnome-keyring.enable = lib.mkForce false;
-
-          greetd.settings = {
-            initial_session = lib.mkIf (user.wm == "umbriel") {
-              command = "${lib.getExe uwsm.package} start umbriel-uwsm.desktop";
-            };
           };
         };
       };

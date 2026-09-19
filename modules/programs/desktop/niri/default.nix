@@ -29,6 +29,7 @@
     '';
 
     includes = [
+      zen.programs.desktop.keyring
       zen.programs.desktop.niri.binds
       zen.programs.desktop.niri.rules
       zen.programs.desktop.niri.settings
@@ -46,31 +47,14 @@
       {
         pkgs,
         lib,
-        user,
         ...
       }:
       let
         meta = zen.programs.desktop.niri.meta;
       in
       {
-        # fucking idiots why blyat?
-        # я вас всех в жопу ебал бляди нахуя
-        services = {
-          displayManager = {
-            defaultSession = lib.mkIf (user.wm == "niri") "niri";
-
-            sessionPackages = [
-              (meta.defaultPackage pkgs)
-            ];
-          };
-
-          gnome.gnome-keyring.enable = lib.mkForce false;
-
-          greetd.settings = {
-            initial_session = lib.mkIf (user.wm == "niri") {
-              command = lib.getExe' pkgs.niri "niri-session";
-            };
-          };
+        services.displayManager = {
+          sessionPackages = lib.singleton (meta.defaultPackage pkgs);
         };
 
         nixpkgs.overlays = [
