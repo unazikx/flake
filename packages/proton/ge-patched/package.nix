@@ -1,9 +1,9 @@
 {
-  _stable,
+  proton-ge-bin,
   ...
 }:
 
-_stable.proton-ge-bin.overrideAttrs {
+proton-ge-bin.overrideAttrs {
   pname = "proton-ge-bin-patched";
 
   dontUnpack = false;

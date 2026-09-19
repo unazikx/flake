@@ -39,6 +39,7 @@
                 wrapperOptions = [ ];
 
                 analyticsOptIn = false;
+                checkForUpdatesOnStartup = false;
                 checkUpdatesInterval = 0;
                 enableUpdates = false;
                 hideChangelogsOnStartup = true;
@@ -53,7 +54,6 @@
 
                 addSteamShortcuts = false;
                 preferSystemLibs = true;
-                checkForUpdatesOnStartup = true;
                 autoUpdateGames = false;
 
                 defaultInstallPath = "${config.home.homeDirectory}/.heroic/games";
