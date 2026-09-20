@@ -67,6 +67,8 @@ profile -> https://steamcommunity.com/id/literaly-custom-url
 steamdb -> https://steamdb.info/calculator/76561199046023228
 protondb -> https://www.protondb.com/users/1633163188
 
+- <img src="https://avatars.githubusercontent.com/u/49257026" height="24"> steam-config-nix -> https://github.com/different-name/steam-config-nix/blob/master/options.md
+
 - <img src="https://www.vhv.rs/dpng/d/76-762941_archlinux-icon-crystal-arch-linux-icon-png-transparent.png" height="24"> arch-steam -> https://wiki.archlinux.org/title/Steam
 
 - <img src="https://images.seeklogo.com/logo-png/40/2/steam-deck-logo-png_seeklogo-409559.png" height="24"> jovian-nixos -> https://github.com/Jovian-Experiments/Jovian-NixOS
@@ -75,6 +77,6 @@ protondb -> https://www.protondb.com/users/1633163188
 
 - <img src="https://wiki.archiveteam.org/images/d/d8/SteamDB_logo.png" height="24"> steam-db -> https://steamdb.info
 
-- <img src="https://avatars.githubusercontent.com/u/49257026" height="24"> steam-config-nix -> https://github.com/different-name/steam-config-nix/blob/master/options.md
+- <img src="https://steampeek.hu/s_style/images/sp_logo_g.png" height="24"> steam-peek -> https://steampeek.hu
 
 ## Total: 7 wikis

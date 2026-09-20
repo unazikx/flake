@@ -16,7 +16,7 @@
     # keep-sorted end
   };
 
-  zen.games.steam = {
+  zen.games.steam-config = {
     description = ''
       config options:
       https://github.com/different-name/steam-config-nix/blob/master/options.md

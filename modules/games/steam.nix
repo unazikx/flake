@@ -61,6 +61,11 @@
             link = "https://steamdb.info";
             logo = "https://wiki.archiveteam.org/images/d/d8/SteamDB_logo.png";
           }
+          {
+            name = "steam-peek";
+            link = "https://steampeek.hu";
+            logo = "https://steampeek.hu/s_style/images/sp_logo_g.png";
+          }
         ];
       };
     };
