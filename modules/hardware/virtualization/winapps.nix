@@ -22,6 +22,10 @@
       idk will it works or not
     '';
 
+    meta = {
+      storage = "/var/lib/windows";
+    };
+
     includes = [
       zen.hardware.virtualization.podman
     ];
@@ -37,6 +41,9 @@
         user,
         ...
       }:
+      let
+        meta = zen.hardware.virtualization.winapps.meta;
+      in
       {
         environment.systemPackages = [
           inputs'.winapps.packages.winapps
@@ -81,6 +88,7 @@
             ];
 
             volumes = [
+              "${meta.storage}:/storage"
               "${host.flakeDir}:/flake:ro"
               "/media:/media:rw"
 
@@ -103,6 +111,10 @@
             ];
           };
         };
+
+        systemd.tmpfiles.rules = [
+          "d ${meta.storage} 0755 - - -"
+        ];
 
         sops.secrets =
           lib.genAttrs
@@ -129,7 +141,6 @@
         self,
         lib,
         config,
-        osConfig,
         host,
         user,
         ...
@@ -163,11 +174,12 @@
             '';
 
           "winapps-conf".content =
+            # https://github.com/winapps-org/winapps/discussions/972#discussioncomment-18421216
             # conf
             ''
               RDP_USER="${config.sops.placeholder."windows/username"}"
               RDP_PASS="${config.sops.placeholder."windows/password"}"
-              WAFLAVOR="${osConfig.virtualisation.oci-containers.backend}"
+              WAFLAVOR="manual"
               VM_NAME="RDPWindows"
               REMOVABLE_MEDIA="/run/media"
               APP_SCAN_TIMEOUT="60"

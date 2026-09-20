@@ -55,10 +55,10 @@
       zen.miscellaneous.home-manager
       zen.miscellaneous.minimal
       zen.miscellaneous.nix
-      zen.secrets.sopsnix
       zen.miscellaneous.version
       zen.programs.cli.nixos-cli
       zen.programs.cli.rusted-tools
+      zen.secrets.sopsnix
       zen.services.caddy
       zen.services.greetd
       zen.services.proxy-suite

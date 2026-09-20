@@ -55,17 +55,18 @@
       zen.hardware.cpu-gpu
       zen.hardware.mounting
       zen.hardware.security.yubikey
+      zen.hardware.virtualization.winapps
       zen.miscellaneous.disko
       zen.miscellaneous.home-manager
       zen.miscellaneous.minimal
       zen.miscellaneous.nix
       zen.miscellaneous.nix.substituters
       zen.miscellaneous.nur
-      zen.secrets.sopsnix
       zen.miscellaneous.users.accounts
       zen.miscellaneous.version
       zen.programs.cli.nixos-cli
       zen.programs.cli.rusted-tools
+      zen.secrets.sopsnix
       zen.services.caddy
       zen.services.glance
       zen.services.greetd
