@@ -861,6 +861,29 @@
         "type": "github"
       }
     },
+    "nixcraft": {
+      "inputs": {
+        "flake-parts": [
+          "flake-parts"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1789871458,
+        "narHash": "sha256-6rHjdCwMM8QGowRatGx7c0wPl2oS9p2purIAS9jEcGM=",
+        "owner": "loystonpais",
+        "repo": "nixcraft",
+        "rev": "ca5f33745c07d1bce152e14d147478b5dba7c8c4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "loystonpais",
+        "repo": "nixcraft",
+        "type": "github"
+      }
+    },
     "nixos-cli": {
       "inputs": {
         "flake-compat": "flake-compat_5",
@@ -1117,6 +1140,7 @@
         "nix-math": "nix-math",
         "nix-minecraft": "nix-minecraft",
         "nix-secrets": "nix-secrets",
+        "nixcraft": "nixcraft",
         "nixos-cli": "nixos-cli",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": [

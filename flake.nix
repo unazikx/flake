@@ -219,6 +219,16 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nixcraft = {
+      type = "github";
+      owner = "loystonpais";
+      repo = "nixcraft";
+      inputs = {
+        flake-parts.follows = "flake-parts";
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
+
     nixos-cli = {
       type = "github";
       owner = "nix-community";

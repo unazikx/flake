@@ -4,6 +4,26 @@
 
 {
   zen.games.minecraft = {
+    meta = {
+      # https://mcuuid.net/?q=username
+      uuid = "e6074fe1-b0d5-4394-a860-c84987c52d9a";
+      username = "_azikx";
+
+      defaultJRE = pkgs: pkgs.temurin-jre-bin-25;
+
+      temurinJRE = pkgs: [
+        # its all LTS
+        # https://adoptium.net/temurin/releases
+        #
+        # keep-sorted start
+        pkgs.temurin-jre-bin-17
+        pkgs.temurin-jre-bin-21
+        pkgs.temurin-jre-bin-25
+        pkgs.temurin-jre-bin-8
+        # keep-sorted end
+      ];
+    };
+
     wiki = {
       "Minecraft Modpacks" = {
         extra = ''
@@ -54,22 +74,6 @@
           }
         ];
       };
-    };
-
-    meta = {
-      defaultJRE = pkgs: pkgs.temurin-jre-bin-25;
-
-      temurinJRE = pkgs: [
-        # its all LTS
-        # https://adoptium.net/temurin/releases
-        #
-        # keep-sorted start
-        pkgs.temurin-jre-bin-17
-        pkgs.temurin-jre-bin-21
-        pkgs.temurin-jre-bin-25
-        pkgs.temurin-jre-bin-8
-        # keep-sorted end
-      ];
     };
   };
 }
