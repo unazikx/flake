@@ -86,7 +86,7 @@
       # keep-sorted start
       zen.games.gale
       zen.games.heroic
-      zen.games.hytale.launcher
+      zen.games.hytale
       zen.games.minecraft.prismlauncher
       zen.games.minecraft.xmcl
       zen.games.steam
@@ -113,6 +113,7 @@
       zen.programs.gui.qutebrowser
       zen.programs.gui.spotify
       zen.programs.gui.throne
+      zen.programs.gui.vesktop
       zen.programs.gui.zathura
       zen.programs.terminal.fish
       zen.programs.terminal.translate-shell

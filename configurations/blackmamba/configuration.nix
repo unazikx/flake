@@ -72,7 +72,7 @@
   zen.users.hackerx = {
     includes = [
       # keep-sorted start
-      zen.games.hytale.launcher
+      zen.games.hytale
       zen.games.minecraft.prismlauncher
       zen.games.minecraft.xmcl
       zen.games.steam

@@ -8,7 +8,7 @@
     includes = [
       # keep-sorted start
       zen.custom.wiki
-      zen.games.hytale.launcher
+      zen.games.hytale
       zen.games.minecraft
       zen.games.srb2
       zen.games.steam
