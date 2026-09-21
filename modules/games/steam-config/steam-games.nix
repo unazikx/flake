@@ -151,6 +151,10 @@
                   language = "russian";
                 };
 
+                "1296360" = {
+                  name = "Archvale";
+                };
+
                 "1318690" = {
                   name = "Shapez";
                 };
@@ -296,6 +300,10 @@
 
                 "208650" = {
                   name = "Batman: Arkham Knight";
+                };
+
+                "2100" = {
+                  name = "Dark Messiah of Might & Magic";
                 };
 
                 "211820" = {
@@ -838,6 +846,10 @@
                 "738520" = {
                   name = "Breathedge";
                   language = "russian";
+                };
+
+                "751780" = {
+                  name = "Forager";
                 };
 
                 "758870" = {
