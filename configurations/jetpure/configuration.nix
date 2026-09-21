@@ -71,7 +71,7 @@
       zen.services.glance
       zen.services.greetd
       zen.services.proxy-suite
-      zen.services.qbittorrent.flood
+      zen.services.qbittorrent
       zen.services.tailscale
       zen.services.vaultwarden
       zen.styles.stylix
