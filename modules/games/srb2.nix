@@ -10,6 +10,7 @@
 */
 
 {
+  zen,
   ...
 }:
 
@@ -18,6 +19,10 @@
     description = ''
       sonic game, best on my opinion
     '';
+
+    meta = {
+      package = pkgs: pkgs.srb2;
+    };
 
     wiki = {
       "Sonic Robo Blast 2" = {
@@ -36,15 +41,30 @@
       };
     };
 
-    homeManager =
+    homeManagerNixos =
       {
         pkgs,
+        lib,
+        user,
         ...
       }:
-      {
-        home.packages = [
-          pkgs.srb2
-        ];
-      };
+      let
+        meta = zen.games.srb2.meta;
+      in
+      (lib.mkMerge [
+        {
+          home.packages = [
+            (meta.package pkgs)
+          ];
+        }
+        (lib.optionalAttrs (user.hasAspect zen.games.steam) {
+          programs.steam.config.nonSteamApps = {
+            "Sonic Robo Blast 2" = {
+              target = meta.package pkgs;
+              # i should add artwork, but lazy
+            };
+          };
+        })
+      ]);
   };
 }
