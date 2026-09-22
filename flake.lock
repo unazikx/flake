@@ -759,6 +759,41 @@
         "type": "github"
       }
     },
+    "matugen-nix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1790070858,
+        "narHash": "sha256-WNmRf8Ur9/QgivRiV1fxZV2bPujvEoOPDa9rJyGAbAs=",
+        "owner": "mois3y",
+        "repo": "matugen-nix",
+        "rev": "99eb274a9d4f8b4080b188c5d77541b8b5918813",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mois3y",
+        "repo": "matugen-nix",
+        "type": "github"
+      }
+    },
+    "matugen-nix-templates": {
+      "locked": {
+        "lastModified": 1787446161,
+        "narHash": "sha256-D/vQX0B7Iy1nWvNrTk91jsIcvTCBB7u88YIdrRjQtVk=",
+        "owner": "unazikx",
+        "repo": "matugen-nix-templates",
+        "rev": "8fa50c1834260dfbb949484cf1e52a03442e3783",
+        "type": "github"
+      },
+      "original": {
+        "owner": "unazikx",
+        "repo": "matugen-nix-templates",
+        "type": "github"
+      }
+    },
     "ncro": {
       "inputs": {
         "nixpkgs": [
@@ -1186,6 +1221,8 @@
         "import-tree": "import-tree",
         "make-shell": "make-shell",
         "mangowc": "mangowc",
+        "matugen-nix": "matugen-nix",
+        "matugen-nix-templates": "matugen-nix-templates",
         "ncro": "ncro",
         "nilla-cli": "nilla-cli",
         "nix-darwin": "nix-darwin",
