@@ -61,15 +61,9 @@
           enabledExtensions = [
             # keep-sorted start
             spicetify.extensions.adblock
-            spicetify.extensions.beautifulLyrics
-            spicetify.extensions.betterGenres
-            spicetify.extensions.copyToClipboard
-            spicetify.extensions.focusMode
             spicetify.extensions.keyboardShortcut
-            spicetify.extensions.lastfm
             spicetify.extensions.madeForYouShortcut
             spicetify.extensions.queueTime
-            spicetify.extensions.seekSong
             # keep-sorted end
           ];
 

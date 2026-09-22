@@ -174,20 +174,6 @@
       repo = "cli";
     };
 
-    niri-flake = {
-      type = "github";
-      owner = "epireyn";
-      repo = "niri-flake";
-      inputs = {
-        niri-stable.follows = "";
-        niri-unstable.follows = "";
-        nixpkgs.follows = "nixpkgs";
-        nixpkgs-stable.follows = "nixpkgs-stable";
-        xwayland-satellite-stable.follows = "";
-        xwayland-satellite-unstable.follows = "";
-      };
-    };
-
     nix-darwin = {
       type = "github";
       owner = "nix-darwin";
@@ -248,6 +234,20 @@
 
     nixpkgs.follows = "nixpkgs-unstable";
 
+    nixpkgs-easyeffects = {
+      type = "github";
+      owner = "nixos";
+      repo = "nixpkgs";
+      ref = "nixos-25.05";
+    };
+
+    nixpkgs-fixed = {
+      type = "github";
+      owner = "nixos";
+      repo = "nixpkgs";
+      rev = "567a49d1913ce81ac6e9582e3553dd90a955875f";
+    };
+
     nixpkgs-lib.follows = "nixpkgs";
 
     nixpkgs-master = {
@@ -264,25 +264,11 @@
       ref = "nixos-26.05";
     };
 
-    nixpkgs-stable-prev = {
-      type = "github";
-      owner = "nixos";
-      repo = "nixpkgs";
-      ref = "nixos-25.05";
-    };
-
     nixpkgs-unstable = {
       type = "github";
       owner = "nixos";
       repo = "nixpkgs";
       ref = "nixos-unstable";
-    };
-
-    nixpkgs-unstable-prev = {
-      type = "github";
-      owner = "nixos";
-      repo = "nixpkgs";
-      rev = "567a49d1913ce81ac6e9582e3553dd90a955875f";
     };
 
     nur = {
@@ -379,13 +365,6 @@
         flake-utils.follows = "flake-utils";
         nixpkgs.follows = "nixpkgs";
       };
-    };
-
-    xdg-desktop-portal-umbriel = {
-      type = "github";
-      owner = "noctalia-dev";
-      repo = "xdg-desktop-portal-umbriel";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     xmcl = {

@@ -4,6 +4,17 @@
 }:
 
 {
+  flake-file.inputs = {
+    # keep-sorted start block=yes newline_separated=yes
+    nixpkgs-easyeffects = {
+      type = "github";
+      owner = "nixos";
+      repo = "nixpkgs";
+      ref = "nixos-25.05";
+    };
+    # keep-sorted end
+  };
+
   zen.programs.gui.easy-effects = {
     description = ''
       used for sound perfecting
@@ -22,13 +33,19 @@
 
     homeManager =
       {
+        inputs,
         pkgs,
         ...
       }:
       {
         services.easyeffects = {
           enable = true;
-          package = pkgs._stable-prev.easyeffects;
+          package =
+            (import inputs.nixpkgs-easyeffects {
+              inherit (pkgs)
+                system
+                ;
+            }).easyeffects;
         };
       };
   };

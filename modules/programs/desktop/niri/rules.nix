@@ -13,7 +13,7 @@
         colors = config.lib.stylix.colors.withHashtag;
       in
       {
-        programs.niri = {
+        wayland.windowManager.niri = {
           settings.window-rules = [
             {
               opacity = 0.6;

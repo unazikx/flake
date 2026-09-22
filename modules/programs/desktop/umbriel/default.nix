@@ -12,13 +12,6 @@
       repo = "umbriel";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    xdg-desktop-portal-umbriel = {
-      type = "github";
-      owner = "noctalia-dev";
-      repo = "xdg-desktop-portal-umbriel";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     # keep-sorted end
   };
 
@@ -58,20 +51,11 @@
 
     nixos =
       {
-        self',
-        inputs,
         ...
       }:
       {
-        imports = [
-          inputs.umbriel.nixosModules.default
-        ];
-
         programs.umbriel = {
           enable = true;
-
-          package = self'.packages.umbriel;
-          portalPackage = self'.packages.xdg-desktop-portal-umbriel;
         };
 
         programs.uwsm = {
@@ -125,18 +109,6 @@
             settings.umbriel = [ "foot.desktop" ];
           };
         };
-      };
-  };
-
-  zen.flake-parts.default = {
-    packages =
-      {
-        inputs',
-        ...
-      }:
-      {
-        umbriel = inputs'.umbriel.packages.default;
-        xdg-desktop-portal-umbriel = inputs'.xdg-desktop-portal-umbriel.packages.default;
       };
   };
 }

@@ -33,7 +33,7 @@
         programs.qutebrowser = {
           enable = true;
 
-          package = pkgs._previous.qutebrowser;
+          package = pkgs.qutebrowser;
 
           searchEngines =
             let

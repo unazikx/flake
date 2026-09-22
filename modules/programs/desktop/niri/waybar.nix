@@ -17,7 +17,7 @@
         icon = col: icon: "<span color='${col}'>${icon}</span>";
       in
       {
-        programs.waybar = {
+        wayland.windowManager.niri = {
           # systemd.targets = [ "niri.service" ];
 
           settings.main = {

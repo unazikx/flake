@@ -11,7 +11,7 @@
         ...
       }:
       {
-        programs.niri = {
+        wayland.windowManager.niri = {
           settings.binds =
             let
               actions = config.lib.niri.actions;

@@ -17,7 +17,7 @@
         actions = config.lib.niri.actions;
       in
       {
-        programs.niri = {
+        wayland.windowManager.niri = {
           settings = {
             includes = [
               (include.optional "~/.config/niri/monitors.kdl")

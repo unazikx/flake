@@ -53,7 +53,7 @@
 
             cpupower-gui = {
               enable = true;
-              package = pkgs._stable.cpupower-gui;
+              package = pkgs._fixed.cpupower-gui;
             };
           };
         };
@@ -84,7 +84,7 @@
 
             cpupower-gui = {
               enable = true;
-              package = pkgs._stable.cpupower-gui;
+              package = pkgs._fixed.cpupower-gui;
             };
           };
         };
