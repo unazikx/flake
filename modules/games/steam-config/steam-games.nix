@@ -460,6 +460,10 @@
                   name = "Cuphead";
                 };
 
+                "2710040" = {
+                  name = "Delverium";
+                };
+
                 "2737300" = {
                   name = "Parking Garage Rally Circuit";
                 };
@@ -562,8 +566,17 @@
                   language = "russian";
                 };
 
+                "3405340" = {
+                  name = "Megabonk";
+                  language = "russian";
+                };
+
                 "3417410" = {
                   name = "Storebound";
+                };
+
+                "3453910" = {
+                  name = "Happy Humble Burger Cult";
                 };
 
                 "3495730" = {
@@ -679,6 +692,11 @@
 
                 "4508340" = {
                   name = "NTE: Neverness to Everness";
+                };
+
+                "460920" = {
+                  name = "Steep";
+                  language = "russian";
                 };
 
                 "462780" = {
