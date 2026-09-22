@@ -34,6 +34,7 @@
           programs.steam.config.nonSteamApps = {
             "Duck Game Rebuilt" = {
               target = meta.package self'.packages;
+
               artwork = {
                 cover = pkgs.fetchurl {
                   url = "https://cdn2.steamgriddb.com/thumb/8890f0afdc2d4bc1749eb1774e818436.png";
