@@ -456,6 +456,10 @@
                   name = "Subnautica";
                 };
 
+                "2660970" = {
+                  name = "Hypersomnia";
+                };
+
                 "268910" = {
                   name = "Cuphead";
                 };
