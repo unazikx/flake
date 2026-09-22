@@ -11,6 +11,16 @@
       };
     };
 
+    aurelia = {
+      type = "github";
+      owner = "drackrath";
+      repo = "aurelia";
+      inputs = {
+        flake-utils.follows = "flake-utils";
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
+
     betterfox = {
       type = "github";
       owner = "yokoffing";
