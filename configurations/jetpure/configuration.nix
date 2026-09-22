@@ -103,6 +103,7 @@
       zen.programs.cli.ssh
       zen.programs.cli.yazi
       zen.programs.desktop.sway.noctalia
+      zen.programs.desktop.umbriel
       zen.programs.editors.helix
       zen.programs.gui._64gram
       zen.programs.gui.blender

@@ -88,6 +88,13 @@
       flake = false;
     };
 
+    erosanix = {
+      type = "github";
+      owner = "emmanuelrosa";
+      repo = "erosanix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     files = {
       type = "github";
       owner = "sini";
