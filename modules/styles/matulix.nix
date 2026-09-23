@@ -10,6 +10,10 @@
       zen.styles.stylix
     ];
 
+    excludes = [
+      zen.custom.stylix
+    ];
+
     nixos =
       {
         pkgs,
@@ -43,19 +47,6 @@
             base0D = colors.base0d.default;
             base0E = colors.base0e.default;
             base0F = colors.base0f.default;
-          };
-        };
-
-        matugen = {
-          enable = true;
-
-          mode = "dark";
-          # seedColor = "a988b0";
-
-          prefer = "value";
-          wallpaper = pkgs.fetchurl {
-            url = "https://w.wallhaven.cc/full/og/wallhaven-ogl5z9.png";
-            sha256 = "sha256-VvnBCulYtyVqJOQ5psLJyIvK8YffWPP8Stz9KgznGcY=";
           };
         };
       };
