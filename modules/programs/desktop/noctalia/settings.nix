@@ -14,11 +14,76 @@
       }:
       let
         meta = zen.miscellaneous.users.accounts.meta;
+        fonts = config.stylix.fonts;
       in
       {
         programs.noctalia.settings = {
           bar = {
+            vertical = {
+              enabled = true;
+
+              contact_shadow = true;
+              margin_ends = 0;
+              padding = 8;
+              position = "left";
+              radius = 0;
+              radius_bottom_right = 8;
+              radius_top_right = 8;
+
+              start = [
+                "launcher"
+                "workspaces"
+                "media"
+                "caffeine"
+              ];
+
+              center = [ "group:g1" ];
+
+              end = [
+                "keyboard_layout"
+                "clipboard"
+                "tray"
+                "group:g2"
+                "battery"
+                "notifications"
+              ];
+
+              capsule_group = [
+                {
+                  accordion = false;
+                  accordion_direction = "end";
+                  enabled = true;
+                  fill = "surface_variant";
+                  id = "g1";
+                  members = [
+                    "clock"
+                    "date"
+                  ];
+                  opacity = 1.0;
+                  padding = 12.0;
+                }
+                {
+                  accordion = false;
+                  accordion_direction = "end";
+                  enabled = true;
+                  fill = "surface_variant";
+                  id = "g2";
+                  members = [
+                    "brightness"
+                    "volume"
+                    "input_volume"
+                    "bluetooth"
+                    "network"
+                  ];
+                  opacity = 1.0;
+                  padding = 6.0;
+                }
+              ];
+            };
+
             default = {
+              enabled = false;
+
               border = "surface_variant";
               capsule = true;
               concave_edge_corners = true;
@@ -224,7 +289,7 @@
 
           hot_corners = {
             delay_ms = 450;
-            enabled = true;
+            enabled = false;
 
             bottom_left.action = "window_switcher";
           };
@@ -313,6 +378,9 @@
           };
 
           shell = {
+            font_family = lib.mkForce fonts.monospace.name;
+            panel_anchor_bar = "vertical";
+
             avatar_path = toString (pkgs.fetchurl meta.userIcon);
 
             launch_apps_as_systemd_services = true;
@@ -322,8 +390,8 @@
             input_borders = false;
             keyboard_layout = {
               custom_labels = {
-                "English (US)" = "en";
-                Russian = "ru";
+                "English (US)" = "EN";
+                Russian = "RU";
               };
             };
 
@@ -337,6 +405,7 @@
 
             session = {
               show_shortcuts = false;
+              grid = true;
               grid_columns = 1;
             };
 
@@ -351,7 +420,6 @@
               polkit_placement = "attached";
             };
 
-            panel_anchor_bar = "default";
             password_style = "random";
             popup_borders = false;
             screen_time_enabled = true;
@@ -418,8 +486,14 @@
               show_label = false;
             };
 
+            volume = {
+              show_label = false;
+            };
+
             launcher = {
-              glyph = "noctalia";
+              custom_image = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+              custom_image_colorize = true;
+              scale = 1.2;
             };
 
             media = {
@@ -451,6 +525,14 @@
               hide_passive = false;
             };
 
+            keyboard_layout = {
+              show_glyph = false;
+            };
+
+            date = {
+              format = "{:%d %m}";
+            };
+
             weather = {
               show_condition = false;
               show_temperature = false;
@@ -463,7 +545,9 @@
               focused_color = "tertiary";
               occupied_color = "outline";
               scale = 1.25;
-              style = "minimal";
+              capsule = true;
+              show_labels = false;
+              style = "regular";
             };
           };
 

@@ -41,14 +41,13 @@
                   "F" = "window-toggle-fullscreen";
                   "Shift+F" = "window-toggle-maximize-to-edges";
 
-                  "Prior" = "workspace-previous";
-                  "Next" = "workspace-next";
-
                   "Shift+Next" = "window-move-to-workspace-next";
                   "Shift+Prior" = "window-move-to-workspace-previous";
                   "Shift+Down" = "window-move-to-workspace-next";
                   "Shift+Up" = "window-move-to-workspace-previous";
 
+                  "J" = "workspace-next";
+                  "K" = "workspace-previous";
                   "Down" = "workspace-next";
                   "Up" = "workspace-previous";
 
