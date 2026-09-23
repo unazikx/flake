@@ -13,13 +13,14 @@
         ...
       }:
       let
-        meta = zen.miscellaneous.users.accounts.meta;
+        meta = zen.programs.desktop.noctalia.meta;
+        accounts = zen.miscellaneous.users.accounts.meta;
         fonts = config.stylix.fonts;
       in
       {
         programs.noctalia.settings = {
           bar = {
-            vertical = {
+            vertical = lib.mkIf (meta.bar == "vertical") {
               enabled = true;
 
               contact_shadow = true;
@@ -81,8 +82,8 @@
               ];
             };
 
-            default = {
-              enabled = false;
+            horizontal = lib.mkIf (meta.bar == "horizontal") {
+              enabled = true;
 
               border = "surface_variant";
               capsule = true;
@@ -379,9 +380,9 @@
 
           shell = {
             font_family = lib.mkForce fonts.monospace.name;
-            panel_anchor_bar = "vertical";
+            panel_anchor_bar = meta.bar;
 
-            avatar_path = toString (pkgs.fetchurl meta.userIcon);
+            avatar_path = toString (pkgs.fetchurl accounts.userIcon);
 
             launch_apps_as_systemd_services = true;
             polkit_agent = true;

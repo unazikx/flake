@@ -63,10 +63,7 @@
                 app_id = "steam";
                 title = "Friends List";
               };
-              default_floating_size = {
-                width = 0.333;
-                height = 1;
-              };
+              default_scrolling_extent = 0.3;
               default_workspace = 5;
             }
           ];

@@ -15,6 +15,10 @@
       zen.programs.desktop.noctalia.settings
     ];
 
+    meta = {
+      bar = "horizontal";
+    };
+
     wiki = {
       "Noctalia" = {
         extra = ''
