@@ -85,6 +85,7 @@
   zen.users.nixzoid = {
     includes = [
       # keep-sorted start
+      zen.games.aurelia
       zen.games.gale
       zen.games.heroic
       zen.games.hytale
