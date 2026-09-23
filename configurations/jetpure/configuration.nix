@@ -70,7 +70,8 @@
       zen.services.caddy
       zen.services.glance
       zen.services.greetd
-      zen.services.proxy-suite
+      zen.services.proxy-suite.tg-ws-proxy
+      zen.services.proxy-suite.zapret
       zen.services.qbittorrent
       zen.services.tailscale
       zen.services.vaultwarden
