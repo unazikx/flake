@@ -4,14 +4,14 @@
   lib,
 }:
 
-buildGoModule (_old: {
+buildGoModule (_final: {
   pname = "gitmal";
   version = "1.0.2";
 
   src = fetchFromGitHub {
     owner = "antonmedv";
     repo = "gitmal";
-    rev = "v${_old.version}";
+    rev = "v${_final.version}";
     hash = "sha256-RDXtB/fgyqL3b5e2BVK5si5pIcw/un3KJy1/cU0GMXo=";
   };
 

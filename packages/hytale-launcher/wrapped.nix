@@ -15,7 +15,7 @@ let
   name = "hytale-launcher";
 in
 
-buildFHSEnv (_old: {
+buildFHSEnv (_final: {
   inherit
     name
     version
@@ -99,11 +99,11 @@ buildFHSEnv (_old: {
     # bash
     ''
       mkdir -p $out/share/applications
-      cp ${_old.desktopItem}/share/applications/hytale-launcher.desktop \
+      cp ${_final.desktopItem}/share/applications/hytale-launcher.desktop \
         $out/share/applications
 
       mkdir -p $out/share/icons/hicolor/256x256/apps
-      cp ${_old.desktopIcon} \
+      cp ${_final.desktopIcon} \
         $out/share/icons/hicolor/256x256/apps/hytale-launcher.png
     '';
 

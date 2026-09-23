@@ -5,7 +5,7 @@
   lib,
 }:
 
-buildGoModule (_old: {
+buildGoModule (_final: {
   pname = "capes";
   version = "1.0.0";
 

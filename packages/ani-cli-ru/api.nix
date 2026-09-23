@@ -4,13 +4,13 @@
   lib,
 }:
 
-python312Packages.buildPythonApplication (_old: {
+python312Packages.buildPythonApplication (_final: {
   pname = "anicli_api";
   version = "0.12.0";
   pyproject = true;
 
   src = fetchPypi {
-    inherit (_old)
+    inherit (_final)
       pname
       version
       ;

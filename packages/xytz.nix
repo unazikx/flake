@@ -8,14 +8,14 @@
   lib,
 }:
 
-buildGoModule (_old: {
+buildGoModule (_final: {
   pname = "xytz";
   version = "0.9.3";
 
   src = fetchFromGitHub {
     owner = "xdagiz";
     repo = "xytz";
-    tag = "v${_old.version}";
+    tag = "v${_final.version}";
     hash = "sha256-5+eJkgLcLAdqcTxm6uQpOJSDbSNPUNsI9TQHDVWi9V8=";
   };
 

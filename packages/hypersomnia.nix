@@ -4,12 +4,12 @@
   ...
 }:
 
-appimageTools.wrapAppImage (_old: {
+appimageTools.wrapAppImage (_final: {
   pname = "Hypersomnia"; # for .desktop compat
   version = "3.0.0";
 
   src = appimageTools.extract {
-    inherit (_old)
+    inherit (_final)
       pname
       version
       ;
@@ -23,7 +23,7 @@ appimageTools.wrapAppImage (_old: {
   extraInstallCommands =
     # bash
     ''
-      install -Dm444 ${_old.src}/Hypersomnia.desktop -t $out/share/applications
-      cp -r ${_old.src}/usr/share/icons $out/share
+      install -Dm444 ${_final.src}/Hypersomnia.desktop -t $out/share/applications
+      cp -r ${_final.src}/usr/share/icons $out/share
     '';
 })

@@ -22,14 +22,14 @@
   lib,
 }:
 
-rustPlatform.buildRustPackage (_old: {
+rustPlatform.buildRustPackage (_final: {
   pname = "driftwm";
   version = "0.18.0";
 
   src = fetchFromGitHub {
     owner = "malbiruk";
     repo = "driftwm";
-    tag = "v${_old.version}";
+    tag = "v${_final.version}";
     hash = "sha256-Aa/kYfzIV+AjPhKP7u5l8BD6m526Jciihg78TK+1K38=";
   };
 
@@ -70,7 +70,7 @@ rustPlatform.buildRustPackage (_old: {
   doCheck = false;
 
   postFixup = ''
-    patchelf --add-rpath "${lib.makeLibraryPath _old.buildInputs}" $out/bin/driftwm
+    patchelf --add-rpath "${lib.makeLibraryPath _final.buildInputs}" $out/bin/driftwm
   '';
 
   postInstall = ''

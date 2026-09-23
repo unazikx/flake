@@ -5,13 +5,13 @@
   lib,
 }:
 
-python312Packages.buildPythonApplication (_old: {
+python312Packages.buildPythonApplication (_final: {
   pname = "anicli_ru";
   version = "6.1.3";
   pyproject = true;
 
   src = fetchPypi {
-    inherit (_old)
+    inherit (_final)
       pname
       version
       ;

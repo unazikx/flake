@@ -75,7 +75,7 @@ let
   '';
 in
 
-stdenv.mkDerivation (_old: {
+stdenv.mkDerivation (_final: {
   pname = "nitter-assets";
   version = nitter.version;
 

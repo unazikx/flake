@@ -7,7 +7,7 @@
   lib,
 }:
 
-buildFHSEnv (_old: {
+buildFHSEnv (_final: {
   name = "duck-game-rebuilt";
 
   inherit (duck-game-rebuilt.unwrapped)
@@ -29,7 +29,7 @@ buildFHSEnv (_old: {
       ln -s ${duck-game-rebuilt.unwrapped}/DuckGame/DuckGame.ico \
         $out/share/icons/
         
-      ln -s ${_old.desktopItem}/share/applications/* \
+      ln -s ${_final.desktopItem}/share/applications/* \
         $out/share/applications/
     '';
 

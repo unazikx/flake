@@ -10,14 +10,14 @@
   lib,
 }:
 
-rustPlatform.buildRustPackage (_old: {
+rustPlatform.buildRustPackage (_final: {
   pname = "aurelia";
   version = "0.1.37";
 
   src = fetchFromGitHub {
     owner = "Drackrath";
     repo = "Aurelia";
-    tag = "v${_old.version}";
+    tag = "v${_final.version}";
     hash = "sha256-PiMaLSgEZxMNI7AXtVULaE4FhnNk/Brje1xvGu5gFKU=";
   };
 

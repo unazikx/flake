@@ -4,14 +4,14 @@
   lib,
 }:
 
-buildGoModule (_old: {
+buildGoModule (_final: {
   pname = "tele";
   version = "1.11.4";
 
   src = fetchFromGitHub {
     owner = "sorokin-vladimir";
     repo = "tele";
-    tag = "v${_old.version}";
+    tag = "v${_final.version}";
     hash = "sha256-+kuKFFvYa6EFVRzXVZzLktT74pNNjM6KhnAyXZuQzyU=";
   };
 

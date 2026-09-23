@@ -14,11 +14,11 @@
           let
             drv = pkgs.davinci-resolve-studio.override (_prev: {
               buildFHSEnv =
-                _old:
+                _final:
                 (_prev.buildFHSEnv (
-                  _old
+                  _final
                   // {
-                    extraBwrapArgs = lib.filter (n: !(lib.strings.hasInfix "license" n)) _old.extraBwrapArgs;
+                    extraBwrapArgs = lib.filter (n: !(lib.strings.hasInfix "license" n)) _final.extraBwrapArgs;
                   }
                 ));
             });

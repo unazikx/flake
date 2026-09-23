@@ -3,17 +3,18 @@
   fetchurl,
   autoPatchelfHook,
   bzip2,
+  dbus,
   xz,
   zstd,
   lib,
 }:
 
-stdenv.mkDerivation (_old: {
+stdenv.mkDerivation (_final: {
   pname = "aurelia";
   version = "0.1.37";
 
   src = fetchurl {
-    url = "https://github.com/Drackrath/Aurelia/releases/download/v${_old.version}/aurelia_linux_x86_64";
+    url = "https://github.com/Drackrath/Aurelia/releases/download/v${_final.version}/aurelia_linux_x86_64";
     sha256 = "sha256-r7eZehM2VbycQnAZtGhWgS2Z/pb/2wNh/ke7zw//xjY=";
   };
 
@@ -25,6 +26,7 @@ stdenv.mkDerivation (_old: {
 
   buildInputs = [
     bzip2
+    dbus
     stdenv.cc.cc.lib
     xz
     zstd

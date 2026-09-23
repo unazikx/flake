@@ -20,12 +20,12 @@
   lib,
 }:
 
-stdenv.mkDerivation (_old: {
+stdenv.mkDerivation (_final: {
   pname = "hyprism-unwrapped";
   version = "3.0.3";
 
   src = fetchurl {
-    url = "https://github.com/hyprismteam/HyPrism/releases/download/v${_old.version}/HyPrism-linux-x64-${_old.version}.tar.xz";
+    url = "https://github.com/hyprismteam/HyPrism/releases/download/v${_final.version}/HyPrism-linux-x64-${_final.version}.tar.xz";
     hash = "sha256-MGLEG3/68S9o1HNrqld8Ntbhmt6W0LlLp173QHSt9tA=";
   };
 

@@ -65,7 +65,7 @@ let
   ]);
 in
 
-stdenv.mkDerivation (_old: {
+stdenv.mkDerivation (_final: {
   pname = "portprotonqt";
   version = "1.4.1";
 
@@ -73,7 +73,7 @@ stdenv.mkDerivation (_old: {
     domain = "git.linux-gaming.ru";
     owner = "Linux-Gaming";
     repo = "PortProtonQt";
-    rev = "v${_old.version}";
+    rev = "v${_final.version}";
     sha256 = "sha256-I07eFM9lHqnu2RPpgE5v7fI69mgXVwd/X33A2vCzyVQ=";
   };
 
@@ -98,7 +98,7 @@ stdenv.mkDerivation (_old: {
     vulkan-headers
     vulkan-loader
   ]
-  ++ _old.runtimeBins;
+  ++ _final.runtimeBins;
 
   runtimeBins = [
     cabextract
@@ -152,11 +152,11 @@ stdenv.mkDerivation (_old: {
       mv "$out/share/portproton/scripts/start.sh" \
         "$out/share/portproton/scripts/start.sh.real"
 
-      cp ${lib.getExe _old.startSh} "$out/share/portproton/scripts/start.sh"
+      cp ${lib.getExe _final.startSh} "$out/share/portproton/scripts/start.sh"
 
       wrapProgram "$out/bin/portprotonqt" \
         --set PYTHONPATH "$out/${python.sitePackages}:${pythondir}" \
-        --prefix PATH : ${lib.makeBinPath _old.runtimeBins}:${steam-run}/bin \
+        --prefix PATH : ${lib.makeBinPath _final.runtimeBins}:${steam-run}/bin \
         --prefix QT_PLUGIN_PATH : ${qt6.qtbase}/${qt6.qtbase.qtPluginPrefix} \
         --set SHARUN_DIR "$out" \
         --prefix XDG_DATA_DIRS : "$out/share"

@@ -6,7 +6,7 @@
   lib,
 }:
 
-stdenv.mkDerivation (_old: {
+stdenv.mkDerivation (_final: {
   pname = "fetchit";
   version = "git";
 

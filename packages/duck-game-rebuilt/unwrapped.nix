@@ -5,12 +5,12 @@
   lib,
 }:
 
-stdenv.mkDerivation (_old: {
+stdenv.mkDerivation (_final: {
   pname = "duck-game-rebuilt-unwrapped";
   version = "1.4.7";
 
   src = fetchurl {
-    url = "https://github.com/TheFlyingFoool/DuckGameRebuilt/releases/download/v${_old.version}/DuckGameRebuilt.zip";
+    url = "https://github.com/TheFlyingFoool/DuckGameRebuilt/releases/download/v${_final.version}/DuckGameRebuilt.zip";
     sha256 = "1idnca210wdvlq6224i1961hqk72cxhljg9myfacccq7bkl997fw";
   };
 

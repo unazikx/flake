@@ -6,14 +6,14 @@
   lib,
 }:
 
-rustPlatform.buildRustPackage (_old: {
+rustPlatform.buildRustPackage (_final: {
   pname = "aurelia-tui";
   version = "0.1.3";
 
   src = fetchFromGitHub {
     owner = "Drackrath";
     repo = "Aurelia-TUI";
-    rev = "v${_old.version}";
+    rev = "v${_final.version}";
     hash = "sha256-+kk+sczxwCk7N33wVM32n4tl3G+Jt5AWMF3tcK/vT8Y=";
   };
 

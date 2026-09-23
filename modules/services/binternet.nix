@@ -30,7 +30,7 @@
               colors = config.lib.stylix.colors.withHashtag;
               fonts = config.stylix.fonts;
             in
-            self'.packages.binternet.overrideAttrs (_old: {
+            self'.packages.binternet.overrideAttrs (_final: {
               fixupPhase = ''
                 substituteInPlace $out/misc/style-dark.css \
                   --replace-fail \

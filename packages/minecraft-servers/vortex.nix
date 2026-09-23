@@ -4,12 +4,12 @@
   lib,
 }:
 
-stdenv.mkDerivation (_old: {
+stdenv.mkDerivation (_final: {
   pname = "vortex";
   version = "1.1.1b";
 
   src = fetchzip {
-    url = "https://vortex.storage.clo.ru/download/v${_old.version}/vortex-${_old.version}-server.zip";
+    url = "https://vortex.storage.clo.ru/download/v${_final.version}/vortex-${_final.version}-server.zip";
     sha256 = "sha256-Sx52iBk2pnDqWBWh3EP+EnByhf/GtoU3ZmBqhgciDFs=";
     stripRoot = false;
   };
