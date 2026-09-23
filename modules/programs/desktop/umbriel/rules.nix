@@ -6,6 +6,7 @@
   zen.programs.desktop.umbriel.rules = {
     homeManager =
       {
+        lib,
         ...
       }:
       {
@@ -39,23 +40,22 @@
             }
 
             {
-              match.app_id = "^org.qutebrowser.qutebrowser&";
+              match.app_id = "org.qutebrowser.qutebrowser";
               default_workspace = 2;
             }
             {
-              match.app_id = "^spotify&";
+              match.app_id = "spotify";
               default_workspace = 3;
             }
             {
-              match.app_id = "^com.ayugram.desktop&";
+              match.app_id = lib.concatStringsSep "|" [
+                "com.ayugram.desktop"
+                "io.github.tdesktop_x64.TDesktop"
+              ];
               default_workspace = 4;
             }
             {
-              match.app_id = "^io.github.tdesktop_x64.TDesktop&";
-              default_workspace = 4;
-            }
-            {
-              match.app_id = "^steam&";
+              match.app_id = "steam";
               default_workspace = 5;
             }
           ];

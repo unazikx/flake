@@ -37,7 +37,9 @@
 
                   "T" = "window-toggle-floating";
                   "P" = "window-toggle-pinned";
-                  "F" = "window-toggle-maximize-to-edges";
+
+                  "F" = "window-toggle-fullscreen";
+                  "Shift+F" = "window-toggle-maximize-to-edges";
 
                   "Prior" = "workspace-previous";
                   "Next" = "workspace-next";
@@ -79,6 +81,16 @@
                 ))
               )
             )
+
+            (lib.concatMapAttrs
+              (key: command: {
+                "Mod+${key}" = "spawn:${command}";
+              })
+              {
+                "Return" = "footclient";
+              }
+            )
+
             # noctalia integration
             # ^^^ https://docs.noctalia.dev/umbriel/keybinds/?section=example-noctalia-shell-integration#example-noctalia-shell-integration
             (lib.mkIf noctalia.enable (

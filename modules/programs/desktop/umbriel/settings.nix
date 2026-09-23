@@ -5,9 +5,8 @@
 
 {
   zen.programs.desktop.umbriel.settings = {
-    homeManager =
+    homeManagerNixos =
       {
-        pkgs,
         lib,
         config,
         ...
@@ -19,10 +18,6 @@
       {
         programs.umbriel.settings = {
           general = {
-            autostart = [
-              "${lib.getExe pkgs.swaybg} -m fill -i ${config.stylix.image}"
-            ];
-
             xwayland = true;
             show_cheatsheet = false;
             focus_on_activate = false;
@@ -37,6 +32,24 @@
             accent_secondary = colors.base0B;
             warning = colors.base0A;
             error = colors.base08;
+
+            insert_hint = colors.base02;
+            backdrop = colors.base00;
+            shadow = colors.base00;
+
+            border = {
+              focused = colors.base00;
+              unfocused = colors.base00;
+              scratchpad_focused = colors.base0C;
+              scratchpad_unfocused = colors.base00;
+              outer = colors.base01;
+            };
+
+            overview = {
+              background_tint = "${colors.base01}CC";
+              workspace_background = "${colors.base00}CC";
+              badge = colors.base0E;
+            };
           };
 
           animation = {
@@ -49,15 +62,12 @@
               duration_ms = 250;
               curve = "ease";
               style = "popin";
-              scale = 0.90;
             };
 
             windows_out = {
               enabled = true;
               duration_ms = 250;
               curve = "easeout";
-              style = "popin";
-              scale = 0.90;
             };
 
             windows_move = {
@@ -69,7 +79,7 @@
             workspaces = {
               enabled = true;
               duration_ms = 250;
-              curve = "easy";
+              curve = "ease";
             };
 
             overview = {
@@ -82,7 +92,7 @@
               enabled = true;
               duration_ms = 250;
               curve = "linear";
-              dim = 0.2;
+              dim = 0.1;
             };
 
             layers = {
@@ -97,14 +107,6 @@
             border_width = 3;
             corner_radius = 12;
             drag_opacity = 0.75;
-
-            border_focused = colors.base00;
-            border_unfocused = colors.base00;
-            scratchpad_border_focused = colors.base0C;
-            scratchpad_border_unfocused = colors.base00;
-            outer_border_color = colors.base01;
-            insert_hint_color = colors.base02;
-            backdrop_color = colors.base00;
 
             blur = {
               enabled = true;
@@ -122,18 +124,14 @@
               softness = 10;
               offset_x = 2;
               offset_y = 2;
-              color = "${colors.base00}7F";
             };
           };
 
           overview = {
             zoom = 0.75;
             background_blur = true;
-            background_tint = "${colors.base01}30";
-            workspace_background = "${colors.base00}BB";
             shortcuts = true;
             shortcut_keys = "asdfghjkl";
-            badge_color = colors.base0E;
           };
 
           layout = {
@@ -154,11 +152,9 @@
             };
 
             scrolling = {
-              direction = "horizontal";
               default_width_fraction = 0.9;
               center_underfull_strip = true;
-              center_focused = true;
-              expand_single_column = true;
+              center_focused = "on_overflow";
             };
           };
 
@@ -189,15 +185,18 @@
             };
 
             focus = {
-              follows_mouse = false;
+              follows_mouse = true;
             };
           };
 
-          output = {
-            "HDMI-A-1" = {
-              workspaces = meta.workspaceCount;
-            };
-          };
+          output =
+            lib.genAttrs
+              [
+                "HDMI-A-1"
+              ]
+              (_: {
+                workspaces = meta.workspaceCount;
+              });
         };
       };
   };
