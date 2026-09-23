@@ -58,6 +58,17 @@
               match.app_id = "steam";
               default_workspace = 5;
             }
+            {
+              match = {
+                app_id = "steam";
+                title = "Friends List";
+              };
+              default_floating_size = {
+                width = 0.333;
+                height = 1;
+              };
+              default_workspace = 5;
+            }
           ];
 
           layer_rule = [
