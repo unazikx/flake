@@ -16,7 +16,7 @@
     ];
 
     meta = {
-      bar = "vertical-floating";
+      bar = "vertical";
     };
 
     wiki = {

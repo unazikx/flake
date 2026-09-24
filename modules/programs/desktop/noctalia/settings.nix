@@ -19,289 +19,249 @@
       in
       {
         programs.noctalia.settings = {
-          bar = {
-            vertical = lib.mkIf (meta.bar == "vertical") {
-              enabled = true;
+          bar =
+            let
+              isVertical = lib.hasInfix "vertical" meta.bar;
+              isFloating = lib.hasInfix "floating" meta.bar;
 
-              contact_shadow = true;
-              margin_ends = 0;
-              padding = 8;
-              position = "left";
-              radius = 0;
-              radius_bottom_right = 8;
-              radius_top_right = 8;
+              subFloating = if isFloating then "-floating" else "";
+            in
+            {
+              "vertical${subFloating}" = lib.mkIf isVertical {
+                enabled = true;
 
-              start = [
-                "launcher"
-                "workspaces"
-                "media"
-                "caffeine"
-              ];
+                start = [
+                  "launcher"
+                  "notifications"
+                  "clipboard"
+                  "workspaces"
+                ];
 
-              center = [ "clock" ];
+                center = [
+                  "clock"
+                  "screenshot"
+                ];
 
-              end = [
-                "keyboard_layout"
-                "clipboard"
-                "tray"
-                "group:g2"
-                "battery"
-                "notifications"
-              ];
+                end = [
+                  "tray"
+                  "keyboard_layout"
+                  "caffeine"
+                  "group:g2"
+                  "group:g3"
+                ];
 
-              capsule_group = [
-                {
-                  accordion = false;
-                  accordion_direction = "end";
-                  enabled = true;
-                  fill = "surface_variant";
-                  id = "g2";
-                  members = [
-                    "brightness"
-                    "volume"
-                    "input_volume"
-                    "bluetooth"
-                    "network"
-                  ];
-                  opacity = 1.0;
-                  padding = 6.0;
-                }
-              ];
-            };
+                contact_shadow = true;
+                margin_edge = if isFloating then 6 else 0;
+                margin_ends = if isFloating then 150 else 0;
+                radius = if isFloating then 12 else 0;
+                position = "left";
+                widget_spacing = 10;
 
-            vertical-floating = lib.mkIf (meta.bar == "vertical-floating") {
-              enabled = true;
+                capsule_group = [
+                  {
+                    accordion = false;
+                    accordion_direction = "end";
+                    enabled = true;
+                    fill = "surface_variant";
+                    id = "g2";
+                    members = [
+                      "bluetooth"
+                      "volume"
+                      "network"
+                    ];
+                    opacity = 1.0;
+                    padding = 6.0;
+                  }
 
-              start = [
-                "launcher"
-                "notifications"
-                "clipboard"
-                "workspaces"
-              ];
+                  {
+                    accordion = true;
+                    accordion_direction = "start";
+                    enabled = true;
+                    fill = "surface_variant";
+                    id = "g3";
+                    members = [
+                      "brightness"
+                      "battery"
+                      "session"
+                    ];
+                    opacity = 1.0;
+                    padding = 6.0;
+                  }
+                ];
+              };
 
-              center = [
-                "clock"
-                "screenshot"
-              ];
+              horizontal = lib.mkIf (meta.bar == "horizontal") {
+                enabled = true;
 
-              end = [
-                "tray"
-                "keyboard_layout"
-                "caffeine"
-                "group:g2"
-                "group:g3"
-              ];
+                border = "surface_variant";
+                capsule = true;
+                concave_edge_corners = true;
+                contact_shadow = true;
+                margin_ends = 0;
+                position = lib.mkDefault "bottom";
+                radius = 0;
 
-              contact_shadow = true;
-              margin_edge = 6;
-              position = "left";
-              widget_spacing = 10;
+                start = [
+                  "group:g6"
+                  "group:g7"
+                  "group:g5"
+                ];
 
-              capsule_group = [
-                {
-                  accordion = false;
-                  accordion_direction = "end";
-                  enabled = true;
-                  fill = "surface_variant";
-                  id = "g2";
-                  members = [
-                    "bluetooth"
-                    "volume"
-                    "network"
-                  ];
-                  opacity = 1.0;
-                  padding = 6.0;
-                }
+                center = [
+                  "group:g10"
+                  "group:g9"
+                ];
 
-                {
-                  accordion = true;
-                  accordion_direction = "start";
-                  enabled = true;
-                  fill = "surface_variant";
-                  id = "g3";
-                  members = [
-                    "brightness"
-                    "battery"
-                    "session"
-                  ];
-                  opacity = 1.0;
-                  padding = 6.0;
-                }
-              ];
-            };
+                end = [
+                  "group:g8"
+                  "group:g3"
+                  "group:g2"
+                  "group:g4"
+                  "group:g1"
+                ];
 
-            horizontal = lib.mkIf (meta.bar == "horizontal") {
-              enabled = true;
+                capsule_group = [
+                  {
+                    accordion = true;
+                    accordion_direction = "end";
+                    enabled = true;
+                    fill = "surface_variant";
+                    id = "g1";
+                    members = [
+                      "battery"
+                      "session"
+                    ];
+                    opacity = 1.0;
+                    padding = 6.0;
+                  }
+                  {
+                    accordion = false;
+                    accordion_direction = "end";
+                    enabled = true;
+                    fill = "surface_variant";
+                    id = "g2";
+                    members = [
+                      "volume"
+                      "input_volume"
+                    ];
+                    opacity = 1.0;
+                    padding = 6.0;
+                  }
+                  {
+                    accordion = false;
+                    accordion_direction = "start";
+                    enabled = true;
+                    fill = "surface_variant";
+                    id = "g3";
+                    members = [
+                      "tray"
+                      "network"
+                      "bluetooth"
+                    ];
+                    opacity = 1.0;
+                    padding = 6.0;
+                  }
+                  {
+                    accordion = false;
+                    accordion_direction = "end";
+                    enabled = true;
+                    fill = "surface_variant";
+                    id = "g4";
+                    members = [
+                      "clock"
+                      "weather"
+                    ];
+                    opacity = 1.0;
+                    padding = 6.0;
+                  }
+                  {
+                    accordion = false;
+                    accordion_direction = "end";
+                    enabled = true;
+                    fill = "surface_variant";
+                    id = "g6";
+                    members = [
+                      "launcher"
+                      "notifications"
+                      "clipboard"
+                    ];
+                    opacity = 1.0;
+                    padding = 6.0;
+                    widget_spacing = 12;
+                  }
+                  {
+                    accordion = false;
+                    accordion_direction = "end";
+                    enabled = true;
+                    fill = "surface_variant";
+                    id = "g7";
+                    members = [
+                      "media"
+                      "audio_visualizer"
+                    ];
+                    opacity = 1.0;
+                    padding = 6.0;
+                  }
+                  {
+                    accordion = false;
+                    accordion_direction = "end";
+                    enabled = true;
+                    fill = "surface_variant";
+                    id = "g5";
+                    members = [
+                      "caffeine"
+                      "brightness"
+                    ];
+                    opacity = 1.0;
+                    padding = 6.0;
+                  }
+                  {
+                    accordion = false;
+                    accordion_direction = "end";
+                    enabled = true;
+                    fill = "surface_variant";
+                    id = "g8";
+                    members = [
+                      "keyboard_layout"
+                      "lock_keys"
+                    ];
+                    opacity = 1.0;
+                    padding = 6.0;
+                  }
+                  {
+                    accordion = false;
+                    accordion_direction = "end";
+                    enabled = true;
+                    fill = "surface_variant";
+                    id = "g9";
+                    members = [
+                      "screenshot"
+                      "wallpaper"
+                    ];
+                    opacity = 1.0;
+                    padding = 6.0;
+                  }
+                  {
+                    accordion = false;
+                    accordion_direction = "end";
+                    enabled = true;
+                    fill = "surface_variant";
+                    id = "g10";
+                    members = [
+                      "active_window"
+                      "workspaces"
+                    ];
+                    opacity = 1.0;
+                    padding = 6.0;
+                  }
+                ];
 
-              border = "surface_variant";
-              capsule = true;
-              concave_edge_corners = true;
-              contact_shadow = true;
-              margin_ends = 0;
-              position = lib.mkDefault "bottom";
-              radius = 0;
-
-              start = [
-                "group:g6"
-                "group:g7"
-                "group:g5"
-              ];
-
-              center = [
-                "group:g10"
-                "group:g9"
-              ];
-
-              end = [
-                "group:g8"
-                "group:g3"
-                "group:g2"
-                "group:g4"
-                "group:g1"
-              ];
-
-              capsule_group = [
-                {
-                  accordion = true;
-                  accordion_direction = "end";
-                  enabled = true;
-                  fill = "surface_variant";
-                  id = "g1";
-                  members = [
-                    "battery"
-                    "session"
-                  ];
-                  opacity = 1.0;
-                  padding = 6.0;
-                }
-                {
-                  accordion = false;
-                  accordion_direction = "end";
-                  enabled = true;
-                  fill = "surface_variant";
-                  id = "g2";
-                  members = [
-                    "volume"
-                    "input_volume"
-                  ];
-                  opacity = 1.0;
-                  padding = 6.0;
-                }
-                {
-                  accordion = false;
-                  accordion_direction = "start";
-                  enabled = true;
-                  fill = "surface_variant";
-                  id = "g3";
-                  members = [
-                    "tray"
-                    "network"
-                    "bluetooth"
-                  ];
-                  opacity = 1.0;
-                  padding = 6.0;
-                }
-                {
-                  accordion = false;
-                  accordion_direction = "end";
-                  enabled = true;
-                  fill = "surface_variant";
-                  id = "g4";
-                  members = [
-                    "clock"
-                    "weather"
-                  ];
-                  opacity = 1.0;
-                  padding = 6.0;
-                }
-                {
-                  accordion = false;
-                  accordion_direction = "end";
-                  enabled = true;
-                  fill = "surface_variant";
-                  id = "g6";
-                  members = [
-                    "launcher"
-                    "notifications"
-                    "clipboard"
-                  ];
-                  opacity = 1.0;
-                  padding = 6.0;
-                  widget_spacing = 12;
-                }
-                {
-                  accordion = false;
-                  accordion_direction = "end";
-                  enabled = true;
-                  fill = "surface_variant";
-                  id = "g7";
-                  members = [
-                    "media"
-                    "audio_visualizer"
-                  ];
-                  opacity = 1.0;
-                  padding = 6.0;
-                }
-                {
-                  accordion = false;
-                  accordion_direction = "end";
-                  enabled = true;
-                  fill = "surface_variant";
-                  id = "g5";
-                  members = [
-                    "caffeine"
-                    "brightness"
-                  ];
-                  opacity = 1.0;
-                  padding = 6.0;
-                }
-                {
-                  accordion = false;
-                  accordion_direction = "end";
-                  enabled = true;
-                  fill = "surface_variant";
-                  id = "g8";
-                  members = [
-                    "keyboard_layout"
-                    "lock_keys"
-                  ];
-                  opacity = 1.0;
-                  padding = 6.0;
-                }
-                {
-                  accordion = false;
-                  accordion_direction = "end";
-                  enabled = true;
-                  fill = "surface_variant";
-                  id = "g9";
-                  members = [
-                    "screenshot"
-                    "wallpaper"
-                  ];
-                  opacity = 1.0;
-                  padding = 6.0;
-                }
-                {
-                  accordion = false;
-                  accordion_direction = "end";
-                  enabled = true;
-                  fill = "surface_variant";
-                  id = "g10";
-                  members = [
-                    "active_window"
-                    "workspaces"
-                  ];
-                  opacity = 1.0;
-                  padding = 6.0;
-                }
-              ];
-
-              dead_zone.actions = {
-                scroll_down = "workspace-switch up";
-                scroll_up = "workspace-switch down";
+                dead_zone.actions = {
+                  scroll_down = "workspace-switch up";
+                  scroll_up = "workspace-switch down";
+                };
               };
             };
-          };
 
           control_center = {
             sidebar = "full";
