@@ -38,7 +38,7 @@
                 "caffeine"
               ];
 
-              center = [ "group:g1" ];
+              center = [ "clock" ];
 
               end = [
                 "keyboard_layout"
@@ -55,19 +55,6 @@
                   accordion_direction = "end";
                   enabled = true;
                   fill = "surface_variant";
-                  id = "g1";
-                  members = [
-                    "clock"
-                    "date"
-                  ];
-                  opacity = 1.0;
-                  padding = 12.0;
-                }
-                {
-                  accordion = false;
-                  accordion_direction = "end";
-                  enabled = true;
-                  fill = "surface_variant";
                   id = "g2";
                   members = [
                     "brightness"
@@ -75,6 +62,67 @@
                     "input_volume"
                     "bluetooth"
                     "network"
+                  ];
+                  opacity = 1.0;
+                  padding = 6.0;
+                }
+              ];
+            };
+
+            vertical-floating = lib.mkIf (meta.bar == "vertical-floating") {
+              enabled = true;
+
+              start = [
+                "launcher"
+                "notifications"
+                "clipboard"
+                "workspaces"
+              ];
+
+              center = [
+                "clock"
+                "screenshot"
+              ];
+
+              end = [
+                "tray"
+                "keyboard_layout"
+                "caffeine"
+                "group:g2"
+                "group:g3"
+              ];
+
+              contact_shadow = true;
+              margin_edge = 6;
+              position = "left";
+              widget_spacing = 10;
+
+              capsule_group = [
+                {
+                  accordion = false;
+                  accordion_direction = "end";
+                  enabled = true;
+                  fill = "surface_variant";
+                  id = "g2";
+                  members = [
+                    "bluetooth"
+                    "volume"
+                    "network"
+                  ];
+                  opacity = 1.0;
+                  padding = 6.0;
+                }
+
+                {
+                  accordion = true;
+                  accordion_direction = "start";
+                  enabled = true;
+                  fill = "surface_variant";
+                  id = "g3";
+                  members = [
+                    "brightness"
+                    "battery"
+                    "session"
                   ];
                   opacity = 1.0;
                   padding = 6.0;
@@ -477,6 +525,17 @@
               bands = 12;
               color_2 = "secondary";
               mirrored = false;
+            };
+
+            clock = {
+              anchor = true;
+              format =
+                if (meta.bar == "vertical") then
+                  "{:%H:%M} — {:%d:%m}"
+                else if (meta.bar == "vertical-floating") then
+                  "{:%H:%M} — {:%d:%m}"
+                else
+                  "{:%H:%M}";
             };
 
             battery = {
