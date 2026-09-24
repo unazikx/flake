@@ -25,7 +25,7 @@
           };
 
           colors = {
-            background = colors.base00;
+            background = colors.base01;
             text_primary = colors.base05;
             text_muted = colors.base04;
             accent_primary = colors.base0E;
@@ -46,7 +46,7 @@
             };
 
             overview = {
-              background_tint = "${colors.base01}CC";
+              background_tint = "${colors.base01}DD";
               workspace_background = "${colors.base00}CC";
               badge = colors.base0E;
             };

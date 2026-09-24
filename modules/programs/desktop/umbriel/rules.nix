@@ -63,7 +63,7 @@
                 app_id = "steam";
                 title = "Friends List";
               };
-              default_scrolling_extent = 0.3;
+              # default_scrolling_extent = 0.3;
               default_workspace = 5;
             }
           ];
@@ -71,11 +71,12 @@
           layer_rule = [
             {
               match = {
-                namespace = "^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd)$";
+                namespace = "^noctalia-";
               };
-              blur = false;
+              blur = true;
+              blur_popups = true;
+              blur_optimized = true;
               blur_ignore_alpha = 0.5;
-              blur_optimized = false;
             }
           ];
         };

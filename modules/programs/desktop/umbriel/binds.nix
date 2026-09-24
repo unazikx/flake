@@ -39,7 +39,7 @@
                   "P" = "window-toggle-pinned";
 
                   "F" = "window-toggle-fullscreen";
-                  "Shift+F" = "window-toggle-maximize-to-edges";
+                  "Shift+F" = "window-toggle-maximize";
 
                   "Shift+Next" = "window-move-to-workspace-next";
                   "Shift+Prior" = "window-move-to-workspace-previous";
