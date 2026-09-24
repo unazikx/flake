@@ -142,6 +142,7 @@
               0.333
               0.5
               0.7
+              0.9
             ];
 
             struts = {
@@ -182,6 +183,8 @@
               size = 24;
               hardware_cursor = true;
               follows_focus = false;
+              hide_when_typing = true;
+              hide_timeout_ms = 1200;
             };
 
             focus = {

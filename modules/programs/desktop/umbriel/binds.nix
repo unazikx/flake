@@ -14,6 +14,11 @@
       let
         meta = zen.programs.desktop.umbriel.meta;
         noctalia = config.programs.noctalia;
+
+        norepeat = action: {
+          inherit action;
+          repeat = false;
+        };
       in
       {
         programs.umbriel.settings = {
@@ -28,18 +33,17 @@
                 {
                   "Q" = "window-close";
                   "Grave" = "session-quit";
-                  "Shift+O" = "dpms-off";
 
                   "MouseMiddle" = "layout-scroll-drag";
 
-                  "Space" = "overview-toggle";
-                  "Shift+Space" = "column-center";
+                  "Space" = norepeat "overview-toggle";
+                  "Shift+Space" = norepeat "column-center";
 
                   "T" = "window-toggle-floating";
                   "P" = "window-toggle-pinned";
 
-                  "F" = "window-toggle-fullscreen";
-                  "Shift+F" = "window-toggle-maximize";
+                  "F" = norepeat "window-toggle-fullscreen";
+                  "Shift+F" = norepeat "window-toggle-maximize";
 
                   "Shift+Next" = "window-move-to-workspace-next";
                   "Shift+Prior" = "window-move-to-workspace-previous";
@@ -66,8 +70,8 @@
                   "Shift+Minus" = "window-modify-height:-0.1";
                   "Shift+Equal" = "window-modify-height:+0.1";
 
-                  "R" = "window-cycle-width";
-                  "Alt+R" = "window-cycle-height";
+                  "R" = norepeat "window-cycle-width";
+                  "Alt+R" = norepeat "window-cycle-height";
                 }
                 // (lib.genAttrs (map (n: toString n) (lib.range 1 meta.workspaceCount)) (
                   n: "workspace-switch:${n}"
@@ -95,7 +99,7 @@
             (lib.mkIf noctalia.enable (
               lib.concatMapAttrs
                 (key: command: {
-                  "${key}" = "spawn:noctalia msg ${command}";
+                  "${key}" = norepeat "spawn:noctalia msg ${command}";
                 })
                 {
                   "Mod+Tab" = "panel-toggle launcher";
