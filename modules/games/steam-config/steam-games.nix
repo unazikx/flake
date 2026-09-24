@@ -671,6 +671,11 @@
                   language = "russian";
                 };
 
+                "431240" = {
+                  name = "Golf with Your Friends";
+                  language = "russian";
+                };
+
                 "433340" = {
                   name = "Slime Rancher";
                 };

@@ -60,6 +60,10 @@
 
 ![Puyo Puyo](https://th.wallhaven.cc/small/qr/qrmell.jpg)
 
+[**Retro Woman**](https://wallhaven.cc/w/p82xoe) -> (_https://w.wallhaven.cc/full/p8/wallhaven-p82xoe.png_)
+
+![Retro Woman](https://th.wallhaven.cc/small/p8/p82xoe.jpg)
+
 [**Sakura Train**](https://wallhaven.cc/w/yqg6r7) -> (_https://w.wallhaven.cc/full/yq/wallhaven-yqg6r7.jpg_)
 
 ![Sakura Train](https://th.wallhaven.cc/small/yq/yqg6r7.jpg)
@@ -72,10 +76,16 @@
 
 ![Stanley Parable](https://th.wallhaven.cc/small/9o/9o9w3x.jpg)
 
+[**Waterfall with Green**](https://wallhaven.cc/w/4lvlyl) -> (_https://w.wallhaven.cc/full/4l/wallhaven-4lvlyl.jpg_)
+
+![Waterfall with Green](https://th.wallhaven.cc/small/4l/4lvlyl.jpg)
+
 ## Tags
 
 **GTA: VI** -> (https://wallhaven.cc/tag/149658)
 
+**Ilya Kuvshinov** -> (https://wallhaven.cc/tag/35412)
+
 **Stray** -> (https://wallhaven.cc/tag/134796)
 
-## Total: 18 wallpapers from https://wallhaven.cc
+## Total: 20 wallpapers from https://wallhaven.cc

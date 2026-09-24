@@ -23,18 +23,6 @@
             extension = "jpg";
           };
 
-          "Waterfall with Green" = {
-            page = "https://wallhaven.cc/w/4lvlyl";
-            hash = "sha256-fywgHd8Yw7vojTqZtVZHrmzYvPRy53jpQS1TM12Szts=";
-            extension = "jpg";
-          };
-
-          "Retro Woman" = {
-            page = "https://wallhaven.cc/w/p82xoe";
-            hash = "sha256-LpPhnaPLdPMkfW8dxCsp/L3YAF1nOBCycX76UFW/mMQ=";
-            extension = "png";
-          };
-
           "Assasins Creed: Black Flag Sea" = {
             page = "https://wallhaven.cc/w/6lyop6";
             hash = "sha256-20iKJrblZuFBIf8mXDK6Q6c516uqOrVFIjJ21gi9DH4=";
@@ -119,6 +107,12 @@
             extension = "png";
           };
 
+          "Retro Woman" = {
+            page = "https://wallhaven.cc/w/p82xoe";
+            hash = "sha256-LpPhnaPLdPMkfW8dxCsp/L3YAF1nOBCycX76UFW/mMQ=";
+            extension = "png";
+          };
+
           "Sakura Train" = {
             page = "https://wallhaven.cc/w/yqg6r7";
             hash = "sha256-RI/KERuKYPLcIpjawRsElocoOtEcZy6UR/D4dqoLqSg=";
@@ -134,6 +128,12 @@
           "Stanley Parable" = {
             page = "https://wallhaven.cc/w/9o9w3x";
             hash = "sha256-Eubcop/4RvK89YhAemw9qQa47SrUoGR2sLob04sD00Y=";
+            extension = "jpg";
+          };
+
+          "Waterfall with Green" = {
+            page = "https://wallhaven.cc/w/4lvlyl";
+            hash = "sha256-fywgHd8Yw7vojTqZtVZHrmzYvPRy53jpQS1TM12Szts=";
             extension = "jpg";
           };
           # keep-sorted end
