@@ -136,7 +136,6 @@
 
                 "1238080" = {
                   name = "Burnout Paradise: Remastered";
-                  compatTool = "GE-Proton";
                   language = "russian";
                   args = [ "-skipvideos" ];
                 };

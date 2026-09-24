@@ -83,6 +83,7 @@
 
             extraCompatPackages = [
               self'.packages.proton-ge-patched
+              self'.packages.proton-cachyos-patched
             ];
 
             remotePlay.openFirewall = true;

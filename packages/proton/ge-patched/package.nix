@@ -16,7 +16,7 @@ proton-ge-bin.overrideAttrs {
   '';
 
   patches = [
-    ./decrease-prefix-size.patch
+    ../decrease-prefix-size.patch
   ];
 
   allowSubstitutes = false;
