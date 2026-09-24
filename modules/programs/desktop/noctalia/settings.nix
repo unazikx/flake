@@ -46,8 +46,10 @@
                   "tray"
                   "keyboard_layout"
                   "caffeine"
+                  "brightness"
                   "group:g2"
-                  "group:g3"
+                  "battery"
+                  "session"
                 ];
 
                 contact_shadow = true;
@@ -73,20 +75,6 @@
                     padding = 6.0;
                   }
 
-                  {
-                    accordion = true;
-                    accordion_direction = "start";
-                    enabled = true;
-                    fill = "surface_variant";
-                    id = "g3";
-                    members = [
-                      "brightness"
-                      "battery"
-                      "session"
-                    ];
-                    opacity = 1.0;
-                    padding = 6.0;
-                  }
                 ];
               };
 

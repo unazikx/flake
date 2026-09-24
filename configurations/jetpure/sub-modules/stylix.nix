@@ -19,6 +19,8 @@
         stylix = {
           polarity = "dark";
 
+          # base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
+
           base16Scheme = lib.mkForce {
             name = "Paradise";
             author = "https://github.com/manas140";
