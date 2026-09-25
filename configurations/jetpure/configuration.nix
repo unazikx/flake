@@ -88,13 +88,13 @@
       zen.games.aurelia
       zen.games.gale
       zen.games.heroic
-      zen.games.srb2
-      zen.games.srr
-      zen.games.supertuxkart
       zen.games.hytale
       zen.games.minecraft.prismlauncher
       zen.games.minecraft.xmcl
+      zen.games.srb2
+      zen.games.srr
       zen.games.steam
+      zen.games.supertuxkart
       zen.games.umu-launcher
       zen.miscellaneous.nix
       zen.miscellaneous.users

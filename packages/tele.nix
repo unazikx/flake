@@ -6,16 +6,16 @@
 
 buildGoModule (_final: {
   pname = "tele";
-  version = "1.11.4";
+  version = "1.11.8";
 
   src = fetchFromGitHub {
     owner = "sorokin-vladimir";
     repo = "tele";
     tag = "v${_final.version}";
-    hash = "sha256-+kuKFFvYa6EFVRzXVZzLktT74pNNjM6KhnAyXZuQzyU=";
+    hash = "sha256-lk2D5U0sjoeD9CA76RuIbzE9Wj3sP3o6/oXwhoxyPso=";
   };
 
-  vendorHash = "sha256-47iIuh5BaVkBCbSv3g8+iaHW+ZEwdoHvaU+wkCCxdns=";
+  vendorHash = "sha256-LcJyKDgvKj1hrDAO0ukpjb4CX3O3qyHQ4RssTcdmNO0=";
 
   subPackages = [ "cmd/tele" ];
 

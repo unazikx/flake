@@ -24,16 +24,16 @@
 
 rustPlatform.buildRustPackage (_final: {
   pname = "driftwm";
-  version = "0.18.0";
+  version = "0.19.0";
 
   src = fetchFromGitHub {
     owner = "malbiruk";
     repo = "driftwm";
     tag = "v${_final.version}";
-    hash = "sha256-Aa/kYfzIV+AjPhKP7u5l8BD6m526Jciihg78TK+1K38=";
+    hash = "sha256-c/FGLGvP/7M+n41j85IA5OzqKBzzQ532eT7r61HCJJs=";
   };
 
-  cargoHash = "sha256-oUQxxHX+El7poz0XT3yDQDdBpvB+h2ZDhgmBwMxpf1o=";
+  cargoHash = "sha256-rtSccFKbikMyeP1lT3Z1921/aKkws27apps2nZ7r6tE=";
 
   nativeBuildInputs = [
     pkg-config
