@@ -23,6 +23,7 @@
             let
               isVertical = lib.hasInfix "vertical" meta.bar;
               isFloating = lib.hasInfix "floating" meta.bar;
+              isIsland = lib.hasInfix "island" meta.bar;
 
               subFloating = if isFloating then "-floating" else "";
             in
@@ -78,46 +79,51 @@
                 ];
               };
 
-              horizontal = lib.mkIf (meta.bar == "horizontal") {
+              island = lib.mkIf isIsland {
                 enabled = true;
 
-                border = "surface_variant";
-                capsule = true;
-                concave_edge_corners = true;
-                contact_shadow = true;
-                margin_ends = 0;
-                position = lib.mkDefault "bottom";
-                radius = 0;
-
                 start = [
-                  "group:g6"
-                  "group:g7"
-                  "group:g5"
+                  "group:g1"
+                  "caffeine"
                 ];
 
                 center = [
-                  "group:g10"
-                  "group:g9"
+                  "clock"
+                  "weather"
                 ];
 
                 end = [
-                  "group:g8"
+                  "tray"
+                  "keyboard_layout"
                   "group:g3"
                   "group:g2"
-                  "group:g4"
-                  "group:g1"
                 ];
+
+                border_width = 2.0;
+                contact_shadow = true;
+                layer = "overlay";
+                margin_edge = 8;
+                margin_ends = 700;
+                panel_overlap = 0;
+                reserve_space = false;
+                show_on_workspace_switch = false;
+                smart_auto_hide = true;
+
+                dead_zone.actions = {
+                  scroll_down = "workspace-switch next";
+                  scroll_up = "workspace-switch prev";
+                };
 
                 capsule_group = [
                   {
-                    accordion = true;
+                    accordion = false;
                     accordion_direction = "end";
                     enabled = true;
                     fill = "surface_variant";
                     id = "g1";
                     members = [
-                      "battery"
-                      "session"
+                      "notifications"
+                      "clipboard"
                     ];
                     opacity = 1.0;
                     padding = 6.0;
@@ -129,125 +135,26 @@
                     fill = "surface_variant";
                     id = "g2";
                     members = [
-                      "volume"
-                      "input_volume"
+                      "brightness"
+                      "battery"
                     ];
                     opacity = 1.0;
                     padding = 6.0;
                   }
                   {
                     accordion = false;
-                    accordion_direction = "start";
+                    accordion_direction = "end";
                     enabled = true;
                     fill = "surface_variant";
                     id = "g3";
                     members = [
-                      "tray"
+                      "volume"
                       "network"
-                      "bluetooth"
-                    ];
-                    opacity = 1.0;
-                    padding = 6.0;
-                  }
-                  {
-                    accordion = false;
-                    accordion_direction = "end";
-                    enabled = true;
-                    fill = "surface_variant";
-                    id = "g4";
-                    members = [
-                      "clock"
-                      "weather"
-                    ];
-                    opacity = 1.0;
-                    padding = 6.0;
-                  }
-                  {
-                    accordion = false;
-                    accordion_direction = "end";
-                    enabled = true;
-                    fill = "surface_variant";
-                    id = "g6";
-                    members = [
-                      "launcher"
-                      "notifications"
-                      "clipboard"
-                    ];
-                    opacity = 1.0;
-                    padding = 6.0;
-                    widget_spacing = 12;
-                  }
-                  {
-                    accordion = false;
-                    accordion_direction = "end";
-                    enabled = true;
-                    fill = "surface_variant";
-                    id = "g7";
-                    members = [
-                      "media"
-                      "audio_visualizer"
-                    ];
-                    opacity = 1.0;
-                    padding = 6.0;
-                  }
-                  {
-                    accordion = false;
-                    accordion_direction = "end";
-                    enabled = true;
-                    fill = "surface_variant";
-                    id = "g5";
-                    members = [
-                      "caffeine"
-                      "brightness"
-                    ];
-                    opacity = 1.0;
-                    padding = 6.0;
-                  }
-                  {
-                    accordion = false;
-                    accordion_direction = "end";
-                    enabled = true;
-                    fill = "surface_variant";
-                    id = "g8";
-                    members = [
-                      "keyboard_layout"
-                      "lock_keys"
-                    ];
-                    opacity = 1.0;
-                    padding = 6.0;
-                  }
-                  {
-                    accordion = false;
-                    accordion_direction = "end";
-                    enabled = true;
-                    fill = "surface_variant";
-                    id = "g9";
-                    members = [
-                      "screenshot"
-                      "wallpaper"
-                    ];
-                    opacity = 1.0;
-                    padding = 6.0;
-                  }
-                  {
-                    accordion = false;
-                    accordion_direction = "end";
-                    enabled = true;
-                    fill = "surface_variant";
-                    id = "g10";
-                    members = [
-                      "active_window"
-                      "workspaces"
                     ];
                     opacity = 1.0;
                     padding = 6.0;
                   }
                 ];
-
-                dead_zone.actions = {
-                  scroll_down = "workspace-switch up";
-                  scroll_up = "workspace-switch down";
-                };
               };
             };
 
@@ -362,6 +269,10 @@
             ];
           };
 
+          desktop_widgets = {
+            enabled = false;
+          };
+
           osd = {
             border = false;
           };
@@ -408,13 +319,16 @@
 
             panel = {
               borders = false;
-              clipboard_placement = "attached";
+              session_placement = "floating";
+              clipboard_placement = "floating";
+              control_center_placement = "floating";
+              polkit_placement = "floating";
+              wallpaper_placement = "floating";
               list_item_background = true;
               open_near_click_session = true;
               open_near_click_clipboard = true;
               open_near_click_control_center = true;
               open_near_click_launcher = true;
-              polkit_placement = "attached";
             };
 
             password_style = "random";

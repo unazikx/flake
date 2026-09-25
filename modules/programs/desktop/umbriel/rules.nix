@@ -88,18 +88,6 @@
               ];
             }
           );
-
-          layer_rule = [
-            {
-              match = {
-                namespace = "^noctalia-";
-              };
-              blur = true;
-              blur_popups = true;
-              blur_optimized = true;
-              blur_ignore_alpha = 0.5;
-            }
-          ];
         };
       };
   };
