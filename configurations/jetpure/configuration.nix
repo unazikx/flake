@@ -113,7 +113,6 @@
       zen.programs.gui._64gram
       zen.programs.gui.blender
       zen.programs.gui.easy-effects
-      zen.programs.gui.keepassxc
       zen.programs.gui.librewolf
       zen.programs.gui.obs-studio
       zen.programs.gui.qutebrowser
