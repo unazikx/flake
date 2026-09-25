@@ -28,6 +28,8 @@
 
           proton = self'.packages.proton-cachyos-patched;
 
+          sharedPrefix = "${config.home.homeDirectory}/.heroic/prefixes/shared";
+
           settings = {
             userHome = config.home.homeDirectory;
 
@@ -58,19 +60,7 @@
               minimizeOnLaunch = false;
               nvidiaPrime = false;
               showFps = false;
-              useGameMode = false;
-
-              customWinePaths = [
-                # "/path/to/dir/wine"
-              ];
-
-              wineCrossoverBottle = "Heroic";
-              winePrefix = "${config.xdg.userDirs.publicShare}/wine-prefix";
-              wineVersion = {
-                bin = "${self'.packages.proton-ge-patched.steamcompattool}/proton";
-                name = "GE-Proton";
-                type = "proton";
-              };
+              useGameMode = true;
 
               battlEyeRuntime = true;
               disableUMU = false;

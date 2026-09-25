@@ -117,6 +117,12 @@
 
             proton = lib.mkPackageOption pkgs "proton-ge-bin" { };
 
+            sharedPrefix = lib.mkOption {
+              type = lib.types.nullOr lib.types.str;
+              default = null;
+              description = "Shared prefix path.";
+            };
+
             settings = lib.mkOption {
               type = json.type;
               default = { };
@@ -155,7 +161,15 @@
           xdg.configFile = lib.mkMerge [
             {
               "heroic/config.json".source = lib.mkIf (cfg.settings != { }) (
-                json.generate "heroic-settings.json" cfg.settings
+                json.generate "heroic-settings.json" (
+                  {
+                    defaultSettings = {
+                      winePrefix = cfg.sharedPrefix;
+                      defaultWinePrefix = cfg.sharedPrefix;
+                    };
+                  }
+                  // cfg.settings
+                )
               );
 
               "heroic/themes/stylix.css".text = lib.mkIf (cfg.theme.css != null) cfg.theme.css;
@@ -169,7 +183,9 @@
                 lib.nameValuePair "heroic/GamesConfig/${appId}.json" {
                   source = json.generate "heroic-${appId}.json" {
                     "${appId}" = {
-                      winePrefix = "${config.home.homeDirectory}/.heroic/prefixes/${appId}";
+                      # winePrefix = "${config.home.homeDirectory}/.heroic/prefixes/${appId}";
+                      winePrefix = cfg.sharedPrefix;
+
                       wineVersion = {
                         bin = "${cfg.proton.steamcompattool}/proton";
                         name = cfg.proton.steamDisplayName;
