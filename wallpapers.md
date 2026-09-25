@@ -36,6 +36,14 @@
 
 ![Gavryl sunrise](https://th.wallhaven.cc/small/57/575r67.jpg)
 
+[**Hitori in Aquapark**](https://wallhaven.cc/w/2y2o1m) -> (_https://w.wallhaven.cc/full/2y/wallhaven-2y2o1m.jpg_)
+
+![Hitori in Aquapark](https://th.wallhaven.cc/small/2y/2y2o1m.jpg)
+
+[**Kita in Park**](https://wallhaven.cc/w/d8p73g) -> (_https://w.wallhaven.cc/full/d8/wallhaven-d8p73g.png_)
+
+![Kita in Park](https://th.wallhaven.cc/small/d8/d8p73g.jpg)
+
 [**Lani Cafe**](https://wallhaven.cc/w/ogjjx9) -> (_https://w.wallhaven.cc/full/og/wallhaven-ogjjx9.jpg_)
 
 ![Lani Cafe](https://th.wallhaven.cc/small/og/ogjjx9.jpg)
@@ -44,6 +52,10 @@
 
 ![Lipsgarets](https://th.wallhaven.cc/small/po/po7ove.jpg)
 
+[**Mazda vocaloids**](https://wallhaven.cc/w/poyqx9) -> (_https://w.wallhaven.cc/full/po/wallhaven-poyqx9.png_)
+
+![Mazda vocaloids](https://th.wallhaven.cc/small/po/poyqx9.jpg)
+
 [**Minecraft Amethyst**](https://wallhaven.cc/w/l8qq3l) -> (_https://w.wallhaven.cc/full/l8/wallhaven-l8qq3l.png_)
 
 ![Minecraft Amethyst](https://th.wallhaven.cc/small/l8/l8qq3l.jpg)
@@ -51,6 +63,14 @@
 [**Minecraft Moon Derpy**](https://wallhaven.cc/w/l36362) -> (_https://w.wallhaven.cc/full/l3/wallhaven-l36362.png_)
 
 ![Minecraft Moon Derpy](https://th.wallhaven.cc/small/l3/l36362.jpg)
+
+[**Night palmas**](https://wallhaven.cc/w/7p7llv) -> (_https://w.wallhaven.cc/full/7p/wallhaven-7p7llv.jpg_)
+
+![Night palmas](https://th.wallhaven.cc/small/7p/7p7llv.jpg)
+
+[**Nijika in Classroom**](https://wallhaven.cc/w/85wzyy) -> (_https://w.wallhaven.cc/full/85/wallhaven-85wzyy.jpg_)
+
+![Nijika in Classroom](https://th.wallhaven.cc/small/85/85wzyy.jpg)
 
 [**Pepe XP**](https://wallhaven.cc/w/ogl5z9) -> (_https://w.wallhaven.cc/full/og/wallhaven-ogl5z9.png_)
 
@@ -76,9 +96,17 @@
 
 ![Stanley Parable](https://th.wallhaven.cc/small/9o/9o9w3x.jpg)
 
+[**Trainstation vocaloids**](https://wallhaven.cc/w/qrl18l) -> (_https://w.wallhaven.cc/full/qr/wallhaven-qrl18l.png_)
+
+![Trainstation vocaloids](https://th.wallhaven.cc/small/qr/qrl18l.jpg)
+
 [**Waterfall with Green**](https://wallhaven.cc/w/4lvlyl) -> (_https://w.wallhaven.cc/full/4l/wallhaven-4lvlyl.jpg_)
 
 ![Waterfall with Green](https://th.wallhaven.cc/small/4l/4lvlyl.jpg)
+
+[**Woman in Vocaloids**](https://wallhaven.cc/w/k82p6d) -> (_https://w.wallhaven.cc/full/k8/wallhaven-k82p6d.png_)
+
+![Woman in Vocaloids](https://th.wallhaven.cc/small/k8/k82p6d.jpg)
 
 ## Tags
 
@@ -88,4 +116,4 @@
 
 **Stray** -> (https://wallhaven.cc/tag/134796)
 
-## Total: 20 wallpapers from https://wallhaven.cc
+## Total: 27 wallpapers from https://wallhaven.cc
