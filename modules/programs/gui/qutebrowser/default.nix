@@ -45,6 +45,7 @@
             {
               DEFAULT = google;
               # keep-sorted start
+              anilist = "${marks.anilist}/search?search={}";
               forget = "${marks.forget}/web?s={}";
               github = "${marks.github}/search?q={}";
               google = "${marks.google}/search?q={}";
