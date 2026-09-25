@@ -29,10 +29,12 @@
                   {
                     programs.heroic = {
                       settings = {
-                        customThemesPath = "${config.xdg.configHome}/heroic/themes";
-                        theme = "stylix.css";
-                        contentFontFamily = fonts.sansSerif.name;
-                        actionsFontFamily = fonts.sansSerif.name;
+                        defaultSettings = {
+                          customThemesPath = "${config.xdg.configHome}/heroic/themes";
+                          theme = "stylix.css";
+                          contentFontFamily = fonts.sansSerif.name;
+                          actionsFontFamily = fonts.sansSerif.name;
+                        };
                       };
 
                       theme = {
