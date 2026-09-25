@@ -102,18 +102,20 @@
                   "${key}" = norepeat "spawn:noctalia msg ${command}";
                 })
                 {
+                  "Print" = "screenshot-region";
+                  "Shift+Print" = "screenshot-fullscreen";
+                  "Alt+Print" = "screenshot-annotate";
+
                   "Mod+Tab" = "panel-toggle launcher";
                   "Mod+Alt+Space" = "dock-toggle";
 
+                  "Mod+A" = "annotate";
                   "Mod+W" = "window-switcher";
                   "Mod+Z" = "panel-toggle launcher /emo";
                   "Mod+X" = "panel-toggle clipboard";
 
                   "Mod+Backspace" = "session lock";
                   "Mod+Escape" = "panel-toggle session";
-
-                  "Print" = "screenshot-region";
-                  "Shift+Print" = "screenshot-fullscreen";
                 }
             ))
           ];
