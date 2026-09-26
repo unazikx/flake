@@ -34,13 +34,13 @@
       }:
       let
         meta = zen.games.hytale.meta;
+        game = meta.package self'.packages;
+
         json = pkgs.formats.json { };
       in
       (lib.mkMerge [
         {
-          home.packages = [
-            (meta.package self'.packages)
-          ];
+          home.packages = [ game ];
 
           xdg.dataFile = {
             "Hytale/settings.json".source = json.generate "hytale-settings.json" {
@@ -52,7 +52,7 @@
         (lib.optionalAttrs (user.hasAspect zen.games.steam) {
           programs.steam.config.nonSteamApps = {
             "Hytale" = {
-              target = meta.package self'.packages;
+              target = game;
             };
           };
         })

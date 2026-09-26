@@ -35,17 +35,16 @@
       }:
       let
         meta = zen.games.supertuxkart.meta;
+        game = meta.package pkgs;
       in
       (lib.mkMerge [
         {
-          home.packages = [
-            (meta.package pkgs)
-          ];
+          home.packages = [ game ];
         }
         (lib.optionalAttrs (user.hasAspect zen.games.steam) {
           programs.steam.config.nonSteamApps = {
             "SuperTuxKart" = {
-              target = meta.package pkgs;
+              target = game;
 
               artwork = {
                 cover = pkgs.fetchurl {

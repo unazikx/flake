@@ -61,6 +61,7 @@
       zen.miscellaneous.minimal
       zen.miscellaneous.nix
       zen.miscellaneous.nix.substituters
+      zen.miscellaneous.npins
       zen.miscellaneous.nur
       zen.miscellaneous.users.accounts
       zen.miscellaneous.version
@@ -89,6 +90,7 @@
       zen.games.gale
       zen.games.heroic
       zen.games.hytale
+      zen.games.shattered-pixel-dungeon
       zen.games.minecraft.prismlauncher
       zen.games.minecraft.xmcl
       zen.games.srb2

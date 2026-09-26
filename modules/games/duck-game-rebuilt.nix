@@ -23,17 +23,16 @@
       }:
       let
         meta = zen.games.duck-game-rebuilt.meta;
+        game = meta.package self'.packages;
       in
       (lib.mkMerge [
         {
-          home.packages = [
-            (meta.package self'.packages)
-          ];
+          home.packages = [ game ];
         }
         (lib.optionalAttrs (user.hasAspect zen.games.steam) {
           programs.steam.config.nonSteamApps = {
             "Duck Game Rebuilt" = {
-              target = meta.package self'.packages;
+              target = game;
 
               artwork = {
                 cover = pkgs.fetchurl {

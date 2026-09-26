@@ -35,11 +35,10 @@
       }:
       let
         meta = zen.games.hypersomnia.meta;
+        game = meta.package self'.packages;
       in
       {
-        home.packages = [
-          (meta.package self'.packages)
-        ];
+        home.packages = [ game ];
       };
   };
 }

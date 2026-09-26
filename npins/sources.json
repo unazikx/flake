@@ -1,4 +1,35 @@
 {
-	"pins": {},
+	"pins": {
+		"shattered-pixel-dungeon-cover": {
+			"type": "Url",
+			"url": "https://cdn2.steamgriddb.com/thumb/af54f3a851b88733bb8cfd07ac7daa23.jpg",
+			"unpack": false,
+			"hash": "sha256-beww8OeASXH+N725pvObQ7uje85FxAg6wwoRgLdn8AE="
+		},
+		"shattered-pixel-dungeon-header": {
+			"type": "Url",
+			"url": "https://cdn2.steamgriddb.com/thumb/d2087d2dbcd6a18c29e2025f0abcb76c.jpg",
+			"unpack": false,
+			"hash": "sha256-bdMKMEBqSbfLMnb6MlR0smhGoib7bvG44hVmNhDv3UM="
+		},
+		"shattered-pixel-dungeon-hero": {
+			"type": "Url",
+			"url": "https://cdn2.steamgriddb.com/hero_thumb/cd179de58c6340faf5c9e4e921638f79.jpg",
+			"unpack": false,
+			"hash": "sha256-bwHT/KsRx39TzukqIvtUpZH/FMOx3qVwsxr5JNFCsJo="
+		},
+		"shattered-pixel-dungeon-icon": {
+			"type": "Url",
+			"url": "https://cdn2.steamgriddb.com/icon/bd50f363001990ee1fe5d798702b1d5b/32/128x128.png",
+			"unpack": false,
+			"hash": "sha256-5gV4Z6WczKVdJz1CZBePsbPQgP5xxWc+vb/m4vV0IqQ="
+		},
+		"shattered-pixel-dungeon-logo": {
+			"type": "Url",
+			"url": "https://cdn2.steamgriddb.com/logo_thumb/17fd9cf204a358e5245f2c041dc77f15.png",
+			"unpack": false,
+			"hash": "sha256-g//mwTkZ9p57HX/WFsm4Ga9257m2EWsH6H/y2x6DtBM="
+		}
+	},
 	"version": 8
 }

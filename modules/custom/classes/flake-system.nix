@@ -1,4 +1,5 @@
 {
+  self,
   inputs,
   den,
   zen,
@@ -97,6 +98,13 @@
             "flake"
             "overlays"
           ];
+          adaptArgs =
+            {
+              ...
+            }:
+            {
+              inherit self;
+            };
         })
       ];
 

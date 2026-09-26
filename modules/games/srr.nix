@@ -22,17 +22,16 @@
       }:
       let
         meta = zen.games.srr.meta;
+        game = meta.package pkgs;
       in
       (lib.mkMerge [
         {
-          home.packages = [
-            (meta.package pkgs)
-          ];
+          home.packages = [ game ];
         }
         (lib.optionalAttrs (user.hasAspect zen.games.steam) {
           programs.steam.config.nonSteamApps = {
             "Sonic Ring Racers" = {
-              target = meta.package pkgs;
+              target = game;
             };
           };
         })
