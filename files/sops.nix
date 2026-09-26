@@ -17,18 +17,18 @@
 
             toEntry =
               name: conf:
-              lib.optional (conf ? secrets) {
+              lib.optional (conf ? age) {
                 inherit name;
-                keys = [ conf.secrets.age ];
+                keys = [ conf.age ];
               };
 
             toCombinedEntry =
               hostName: hostConf: userName: userConf:
-              lib.optional (userConf ? secrets) {
+              lib.optional (userConf ? age) {
                 name = "${userName}-${hostName}";
                 keys = [
-                  (lib.optionalString (hostConf ? secrets) hostConf.secrets.age)
-                  userConf.secrets.age
+                  (lib.optionalString (hostConf ? age) hostConf.age)
+                  userConf.age
                 ];
               };
 

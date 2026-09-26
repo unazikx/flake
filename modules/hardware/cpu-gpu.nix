@@ -88,6 +88,33 @@
             };
           };
         };
+
+      declaoke.nixos =
+        {
+          pkgs,
+          lib,
+          config,
+          ...
+        }:
+        {
+          hardware = {
+            cpu.intel = {
+              updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+            };
+
+            graphics = {
+              enable = true;
+              enable32Bit = true;
+            };
+          };
+
+          services = {
+            cpupower-gui = {
+              enable = true;
+              package = pkgs._fixed.cpupower-gui;
+            };
+          };
+        };
     };
   };
 }

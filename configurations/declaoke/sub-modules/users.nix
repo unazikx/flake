@@ -3,7 +3,7 @@
 }:
 
 {
-  zen.users.chizea = {
+  zen.users.mathematix = {
     user =
       {
         ...

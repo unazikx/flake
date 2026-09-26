@@ -15,18 +15,14 @@
     device = toString /dev/disk/by-id/ata-KINGSTON_SA400S37240G_50026B72828C9A2D;
     # https://www.kingston.com/en/ssd/a400-solid-state-drive
 
-    secrets = {
-      age = "age1yubikey1qv7v8nxwrz4f8aagxu8yxq4fe9ltw8dx0eahycynufvqefznvy5u7v57hvy";
-    };
+    age = "age1yubikey1qv7v8nxwrz4f8aagxu8yxq4fe9ltw8dx0eahycynufvqefznvy5u7v57hvy";
 
     users.nixzoid = {
       classes = [ "homeManager" ];
 
       shell = "fish";
 
-      secrets = {
-        age = "age1yubikey1q2c9snmkv7snv8tmgsvwc2rlgr92tvv0grqfxu7dw9g7jj9khms4yusej9e";
-      };
+      age = "age1yubikey1q2c9snmkv7snv8tmgsvwc2rlgr92tvv0grqfxu7dw9g7jj9khms4yusej9e";
     };
   };
 
@@ -90,9 +86,9 @@
       zen.games.gale
       zen.games.heroic
       zen.games.hytale
-      zen.games.shattered-pixel-dungeon
       zen.games.minecraft.prismlauncher
       zen.games.minecraft.xmcl
+      zen.games.shattered-pixel-dungeon
       zen.games.srb2
       zen.games.srr
       zen.games.steam

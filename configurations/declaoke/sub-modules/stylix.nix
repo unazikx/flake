@@ -3,7 +3,7 @@
 }:
 
 {
-  zen.hosts.desyowo = {
+  zen.hosts.declaoke = {
     nixos =
       {
         self',

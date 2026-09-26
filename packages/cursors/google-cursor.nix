@@ -27,14 +27,16 @@ cursors.builder.override {
   allowSubstitutes = false;
   preferLocalBuild = true;
 
-  extra_commands = ''
-    sed -i "s/#8c382a/${background_color}/g" svg/animated/wait.svg
-    sed -i "s/#c5523f/${accent_color}/g" svg/animated/wait.svg
+  extra_commands =
+    # bash
+    ''
+      sed -i "s/#8c382a/${background_color}/g" svg/animated/wait.svg
+      sed -i "s/#c5523f/${accent_color}/g" svg/animated/wait.svg
 
-    sed -i "s/#8c382a/${background_color}/g" svg/animated/left_ptr_watch.svg
-    sed -i "s/#c5523f/${accent_color}/g" svg/animated/left_ptr_watch.svg
+      sed -i "s/#8c382a/${background_color}/g" svg/animated/left_ptr_watch.svg
+      sed -i "s/#c5523f/${accent_color}/g" svg/animated/left_ptr_watch.svg
 
-    sed -i "s/#FC3C36/${accent_color}/g" svg/static/zoom-out.svg
-    sed -i "s/#00D161/${accent_color}/g" svg/static/zoom-in.svg
-  '';
+      sed -i "s/#FC3C36/${accent_color}/g" svg/static/zoom-out.svg
+      sed -i "s/#00D161/${accent_color}/g" svg/static/zoom-in.svg
+    '';
 }

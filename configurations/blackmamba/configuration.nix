@@ -15,9 +15,7 @@
     device = toString /dev/disk/by-id/nvme-RPFTJ256PDD2MWX_SS0R27339Z1CD95Z1273;
     # https://www.impactcomputers.com/hard-drives-ssd/union-memory-rpftj256pdd2mwx
 
-    secrets = {
-      age = "age1334jkz6qgtwqctj20zct5ha8psd5ds5yz5n6frxrrwj74l8jcg3qeywx0a";
-    };
+    age = "age1334jkz6qgtwqctj20zct5ha8psd5ds5yz5n6frxrrwj74l8jcg3qeywx0a";
 
     users.hackerx = {
       classes = [ "homeManager" ];

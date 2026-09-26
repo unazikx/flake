@@ -58,7 +58,6 @@
             NetworkPrediction = false;
             OfferToSaveLogins = false;
             OfferToSaveLoginsDefault = false;
-            PDFjs.Enabled = false;
             PasswordManagerEnabled = false;
             PictureInPicture.Enabled = true;
             PrimaryPassword = false;

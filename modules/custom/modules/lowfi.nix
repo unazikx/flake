@@ -58,12 +58,14 @@
         config = lib.mkIf cfg.enable {
           home.packages = lib.mkIf (cfg.package != null) [ cfg.package ];
 
-          xdg.dataFile = lib.mkIf (cfg.trackLists != { }) lib.mapAttrs' (name: tl: {
-            name = "lowfi/${name}.txt";
-            value = {
-              text = lib.concatStringsSep "\n" (map (path: "${tl.url}${path}") tl.tracks);
-            };
-          }) cfg.trackLists;
+          xdg.dataFile = lib.mkIf (cfg.trackLists != { }) (
+            lib.mapAttrs' (name: tl: {
+              name = "lowfi/${name}.txt";
+              value = {
+                text = lib.concatStringsSep "\n" (map (path: "${tl.url}${path}") tl.tracks);
+              };
+            }) cfg.trackLists
+          );
         };
       };
   };
