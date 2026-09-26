@@ -38,7 +38,7 @@
             shadow = colors.base00;
 
             border = {
-              focused = colors.base00;
+              focused = colors.base0E; # when will be added dimming change to base00
               unfocused = colors.base00;
               scratchpad_focused = colors.base0C;
               scratchpad_unfocused = colors.base00;
