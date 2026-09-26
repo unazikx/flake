@@ -74,6 +74,7 @@
       {
         self',
         pkgs,
+        lib,
         ...
       }:
       {
@@ -81,10 +82,11 @@
           steam = {
             enable = true;
 
-            extraCompatPackages = [
-              self'.packages.proton-ge-patched
-              self'.packages.proton-cachyos-patched
-            ];
+            extraCompatPackages = lib.attrValues {
+              "Steam-Play-None" = pkgs.steam-play-none;
+              "Proton CachyOS SLR_v3" = self'.packages.proton-cachyos-patched;
+              "GE-Proton" = self'.packages.proton-ge-patched;
+            };
 
             remotePlay.openFirewall = true;
 
