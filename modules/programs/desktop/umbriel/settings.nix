@@ -92,7 +92,6 @@
               enabled = true;
               duration_ms = 250;
               curve = "linear";
-              dim = 0.1;
             };
 
             layers = {

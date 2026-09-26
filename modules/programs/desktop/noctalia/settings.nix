@@ -324,6 +324,7 @@
               control_center_placement = "floating";
               polkit_placement = "floating";
               wallpaper_placement = "floating";
+              clipboard_position = "auto";
               list_item_background = true;
               open_near_click_session = true;
               open_near_click_clipboard = true;
