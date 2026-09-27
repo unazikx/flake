@@ -168,6 +168,13 @@
       };
     };
 
+    massgrave = {
+      type = "github";
+      owner = "massgravel";
+      repo = "microsoft-activation-scripts";
+      flake = false;
+    };
+
     matugen-nix = {
       type = "github";
       owner = "mois3y";

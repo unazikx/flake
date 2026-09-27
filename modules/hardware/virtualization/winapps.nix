@@ -6,6 +6,13 @@
 {
   flake-file.inputs = {
     # keep-sorted start block=yes newline_separated=yes
+    massgrave = {
+      type = "github";
+      owner = "massgravel";
+      repo = "microsoft-activation-scripts";
+      flake = false;
+    };
+
     winapps = {
       type = "github";
       owner = "winapps-org";
@@ -20,15 +27,19 @@
     description = ''
       windows11 in qemu that in podman
       idk will it works or not
+
+      after installation every tool and apps run:
+      > winapps-setup --user --setupAllOfficiallySupportedApps
     '';
+
+    includes = [
+      zen.hardware.virtualization.podman
+      zen.miscellaneous.npins
+    ];
 
     meta = {
       storage = "/var/lib/windows";
     };
-
-    includes = [
-      zen.hardware.virtualization.podman
-    ];
 
     nixos =
       {
@@ -59,14 +70,19 @@
             image = "ghcr.io/dockur/windows:latest";
 
             environment = {
-              "VERSION" = "core11";
-              "CPU_CORES" = "4";
+              # https://github.com/dockur/windows/blob/master/docs/environment.md
+              VERSION = "core11";
+              CPU_CORES = "4";
+              GPU = "Y";
 
-              "RAM_SIZE" = "4G";
-              "DISK_SIZE" = "32G";
+              RAM_SIZE = "4G";
+              DISK_SIZE = "32G";
 
-              "REGION" = "en-US";
-              "KEYBOARD" = "en-US";
+              REGION = "en-US";
+              KEYBOARD = "en-US";
+
+              CONNECTIONS = "8";
+              REMOVE = "N";
             };
 
             ports = [
@@ -89,21 +105,28 @@
 
             volumes = [
               "${meta.storage}:/storage"
-              "${host.flakeDir}:/flake:ro"
-              "/media:/media:rw"
+              "/media:/shared/media"
 
-              # WARN:
-              # idk it cant let install os
-              #
-              # "${
-              #   pkgs.symlinkJoin {
-              #     name = "oem-for-winapps";
-              #     paths = [
-              #       "${inputs.winapps}/oem"
-              #       (if (lib.pathExists ./oem) then ./oem else (toString null))
-              #     ];
-              #   }
-              # }:/oem:ro"
+              # cause install.bat (original) have an errors
+              "${
+                pkgs.fetchFromGitHub {
+                  owner = "unazikx";
+                  repo = "winapps";
+                  rev = "42c7e8318280c6fc3426c7afebfc7f43b895f4c8";
+                  hash = "sha256-eSUFY+u9Xq9/i/0/OH5JhVzTvG+eiOEvUErAmfBzaBE=";
+                }
+              }/oem:/oem"
+
+              # ye, why not?
+              "${
+                pkgs.runCommand "mas-activator" {
+                  meta = {
+                    description = "Activator for Windows and Office";
+                    homepage = "https://github.com/massgravel/Microsoft-Activation-Scripts";
+                    license = lib.licenses.gpl3;
+                  };
+                } "cp ${pkgs.npins-sources.windows-activator} $out"
+              }:/shared/mas-activator.cmd"
             ];
 
             environmentFiles = [
@@ -203,7 +226,7 @@
           virtualisation.oci-containers = {
             containers."WinApps" = {
               volumes = [
-                "/home/${user.userName}:/shared:rw"
+                "/home/${user.userName}:/shared/home:rw"
               ];
             };
           };

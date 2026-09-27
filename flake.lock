@@ -736,6 +736,22 @@
         "type": "github"
       }
     },
+    "massgrave": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1783184064,
+        "narHash": "sha256-SYQVjVv6goDxkK6tvJPe5LReyhoWfAlM0g8pBZV1w/0=",
+        "owner": "massgravel",
+        "repo": "microsoft-activation-scripts",
+        "rev": "6401d2f36975dc07bcb6d22ea823a8498a75ec01",
+        "type": "github"
+      },
+      "original": {
+        "owner": "massgravel",
+        "repo": "microsoft-activation-scripts",
+        "type": "github"
+      }
+    },
     "matugen-nix": {
       "inputs": {
         "nixpkgs": [
@@ -1218,6 +1234,7 @@
         "import-tree": "import-tree",
         "make-shell": "make-shell",
         "mangowc": "mangowc",
+        "massgrave": "massgrave",
         "matugen-nix": "matugen-nix",
         "matugen-nix-templates": "matugen-nix-templates",
         "microvm-nix": "microvm-nix",
