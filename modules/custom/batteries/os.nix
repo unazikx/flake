@@ -18,9 +18,10 @@
       (
         host ? class
         && builtins.elem host.class [
-          "nixos"
-          "finix"
           "darwin"
+          "finix"
+          "microvm"
+          "nixos"
         ]
       )
       (

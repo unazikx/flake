@@ -5,5 +5,6 @@
 {
   den.classes = {
     finix = { };
+    microvm = { };
   };
 }

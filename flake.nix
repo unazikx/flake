@@ -181,6 +181,13 @@
       repo = "matugen-nix-templates";
     };
 
+    microvm-nix = {
+      type = "github";
+      owner = "microvm-nix";
+      repo = "microvm.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     ncro = {
       type = "github";
       owner = "manic-systems";

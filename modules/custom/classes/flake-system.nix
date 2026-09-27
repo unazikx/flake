@@ -77,12 +77,6 @@
             "diskoConfigurations"
             host.hostName
           ];
-          adaptArgs =
-            {
-              config,
-              ...
-            }:
-            config.allModuleArgs;
         })
       ];
 
