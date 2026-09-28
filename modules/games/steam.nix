@@ -123,8 +123,6 @@
   };
 
   zen.flake-parts.default = {
-    includes = [
-      zen.games.steam
-    ];
+    includes = [ zen.games.steam ];
   };
 }
