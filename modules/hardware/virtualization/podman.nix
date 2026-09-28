@@ -45,5 +45,15 @@
           spiceUSBRedirection.enable = true;
         };
       };
+
+    homeManagerNixos =
+      {
+        ...
+      }:
+      {
+        services.podman = {
+          enable = true;
+        };
+      };
   };
 }

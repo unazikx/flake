@@ -30,6 +30,8 @@
 
       after installation every tool and apps run:
       > winapps-setup --user --setupAllOfficiallySupportedApps
+
+      > wlfreerdp /u:"user" /p:"password" /v:address:port /cert:tofu /size:1920x1080
     '';
 
     includes = [
@@ -37,32 +39,21 @@
       zen.miscellaneous.npins
     ];
 
-    meta = {
-      storage = "/var/lib/windows";
-    };
-
-    nixos =
+    homeManagerNixos =
       {
-        self,
         inputs',
         pkgs,
-        lib,
         config,
-        host,
-        user,
         ...
       }:
-      let
-        meta = zen.hardware.virtualization.winapps.meta;
-      in
       {
-        environment.systemPackages = [
+        home.packages = [
           inputs'.winapps.packages.winapps
           inputs'.winapps.packages.winapps-launcher
           pkgs.freerdp
         ];
 
-        virtualisation.oci-containers = {
+        services.podman = {
           containers."WinApps" = {
             # https://github.com/winapps-org/winapps/blob/1b38cab1b8c1a513e4a313931759ac4942473678/setup.sh#L1007
             autoStart = false;
@@ -97,15 +88,18 @@
               "/dev/net/tun"
             ];
 
-            extraOptions = [
+            # in NixOS it named -> extraOptions
+            extraPodmanArgs = [
               "--cap-add=NET_ADMIN"
               "--cap-add=CAP_NET_RAW"
               "--device=/dev/kvm:rw"
             ];
 
             volumes = [
-              "${meta.storage}:/storage"
-              "/media:/shared/media"
+              "windows-drive:/storage"
+
+              "${config.home.homeDirectory}:/shared/home:rw"
+              "/media:/shared/media:rw"
 
               # cause install.bat (original) have an errors
               "${
@@ -118,57 +112,22 @@
               }/oem:/oem"
 
               # ye, why not?
-              "${
-                pkgs.runCommand "mas-activator" {
-                  meta = {
-                    description = "Activator for Windows and Office";
-                    homepage = "https://github.com/massgravel/Microsoft-Activation-Scripts";
-                    license = lib.licenses.gpl3;
-                  };
-                } "cp ${pkgs.npins-sources.windows-activator} $out"
-              }:/shared/mas-activator.cmd"
+              "${pkgs.npins-sources.windows-activator}:/shared/mas-activator.cmd:ro"
+              "${pkgs.npins-sources.windows-edge-uninstaller}:/shared/edge-uninstaller.cmd:ro"
             ];
 
-            environmentFiles = [
+            # why not environmentFiles
+            environmentFile = [
               config.sops.templates."winapps-env".path
             ];
           };
+
+          volumes = {
+            # auto create directory for windows
+            "windows-drive" = { };
+          };
         };
 
-        systemd.tmpfiles.rules = [
-          "d ${meta.storage} 0755 - - -"
-        ];
-
-        sops.secrets =
-          lib.genAttrs
-            [
-              "windows/username"
-              "windows/password"
-            ]
-            (_: {
-              sopsFile = "${self}/secrets/${user.userName}-${host.hostName}/sops.yaml";
-            });
-
-        sops.templates = {
-          "winapps-env".content =
-            # env
-            ''
-              USERNAME=${config.sops.placeholder."windows/username"}
-              PASSWORD=${config.sops.placeholder."windows/password"}
-            '';
-        };
-      };
-
-    homeManagerNixos =
-      {
-        self,
-        lib,
-        config,
-        host,
-        user,
-        ...
-      }:
-      {
         xdg.configFile = {
           "winapps/winapps.env".source =
             config.lib.file.mkOutOfStoreSymlink
@@ -179,20 +138,16 @@
               config.sops.templates."winapps-conf".path;
         };
 
-        sops.secrets =
-          lib.genAttrs
-            [
-              "windows/username"
-              "windows/password"
-            ]
-            (_: {
-              sopsFile = "${self}/secrets/${user.userName}-${host.hostName}/sops.yaml";
-            });
+        sops.secrets = {
+          "windows/username" = { };
+          "windows/password" = { };
+        };
 
         sops.templates = {
           "winapps-env".content =
             # env
             ''
+              USERNAME=${config.sops.placeholder."windows/username"}
               PASSWORD=${config.sops.placeholder."windows/password"}
             '';
 
@@ -215,50 +170,5 @@
             '';
         };
       };
-
-    provides.to-users = {
-      nixos =
-        {
-          user,
-          ...
-        }:
-        {
-          virtualisation.oci-containers = {
-            containers."WinApps" = {
-              volumes = [
-                "/home/${user.userName}:/shared/home:rw"
-              ];
-            };
-          };
-        };
-    };
-
-    # provides.jetpure = {
-    #   nixos =
-    #     {
-    #       config,
-    #       ...
-    #     }:
-    #     let
-    #       storage = "${config.fileSystems."/media/fatKartman".mountPoint}/winapps";
-    #     in
-    #     {
-    #       virtualisation.oci-containers = {
-    #         containers.winapps.volumes = [
-    #           "${storage}:/storage"
-    #         ];
-    #       };
-
-    #       systemd.tmpfiles.rules = [
-    #         "d ${storage} 0755 - - -"
-    #       ];
-
-    #       system.activationScripts.winapps-oem =
-    #         # bash
-    #         ''
-    #           chattr +C ${storage}/windows/data 2>/dev/null || true
-    #         '';
-    #     };
-    # };
   };
 }

@@ -41,8 +41,6 @@
   };
 
   zen.flake-parts.default = {
-    includes = [
-      zen.games.windows-apps
-    ];
+    includes = [ zen.games.windows-apps ];
   };
 }
