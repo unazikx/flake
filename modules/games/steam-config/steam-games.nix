@@ -507,6 +507,10 @@
                   language = "russian";
                 };
 
+                "3108510" = {
+                  name = "FlyKnight";
+                };
+
                 "311690" = {
                   name = "Enter The Gungeon";
                   language = "russian";
@@ -622,6 +626,7 @@
 
                 "371970" = {
                   name = "Barony";
+                  compatTool = null;
                   betaBranch = "translation-fix";
                 };
 
@@ -842,6 +847,10 @@
                 "673880" = {
                   name = "Warhammer 40.000: Mechanicus";
                   language = "russian";
+                };
+
+                "678960" = {
+                  name = "Code Vein";
                 };
 
                 "6860" = {
