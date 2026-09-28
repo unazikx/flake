@@ -31,6 +31,10 @@
       zen.games.steam-config
     ];
 
+    meta = {
+      fps = 60;
+    };
+
     wiki = {
       "Steam" = {
         extra = ''

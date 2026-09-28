@@ -1,4 +1,5 @@
 {
+  zen,
   ...
 }:
 
@@ -19,8 +20,9 @@
         ...
       }:
       let
-        steamapps = "${config.xdg.dataHome}/Steam/steamapps";
+        meta = zen.games.steam.meta;
         cfg = config.programs.steam.config;
+        steamapps = "${config.xdg.dataHome}/Steam/steamapps";
       in
       {
         programs.steam.config = {
@@ -34,18 +36,18 @@
 
                 systemd.enable = true;
 
-                wrappers = [
-                  (
-                    let
-                      mangohud = config.programs.mangohud;
-                    in
-                    lib.mkIf mangohud.enable (lib.getExe mangohud.package)
-                  )
+                wrappers = lib.flatten [
                   (
                     let
                       gamemode = osConfig.programs.gamemode;
                     in
-                    lib.mkIf gamemode.enable (lib.getExe gamemode.package)
+                    (lib.mkIf gamemode.enable (lib.getExe gamemode.package))
+                  )
+                  (
+                    let
+                      mangohud = config.programs.mangohud;
+                    in
+                    (lib.mkIf mangohud.enable (lib.getExe mangohud.package))
                   )
                 ];
 
