@@ -1,5 +1,4 @@
 {
-  zen,
   ...
 }:
 
@@ -20,7 +19,6 @@
         ...
       }:
       let
-        meta = zen.games.steam.meta;
         cfg = config.programs.steam.config;
         steamapps = "${config.xdg.dataHome}/Steam/steamapps";
       in
@@ -52,8 +50,6 @@
                 ];
 
                 env = {
-                  DXVK_ASYNC = 1;
-                  PROTON_ENABLE_WAYLAND = 1;
                   PROTON_USE_NTSYNC = 1;
                 };
               }
@@ -120,6 +116,15 @@
 
                 "1150760" = {
                   name = "Gloomwood";
+                };
+
+                "1154810" = {
+                  name = "Going Under";
+                  language = "russian";
+                };
+
+                "1167630" = {
+                  name = "Teardown";
                 };
 
                 "1169040" = {
@@ -548,6 +553,10 @@
                   name = "Dont Starve Together";
                 };
 
+                "322500" = {
+                  name = "SUPERHOT";
+                };
+
                 "325210" = {
                   name = "Arctico";
                 };
@@ -783,6 +792,11 @@
                   name = "Ion Fury";
                 };
 
+                "571740" = {
+                  name = "Golf It!";
+                  language = "russian";
+                };
+
                 "578330" = {
                   name = "LEGO: City Undercover";
                   language = "russian";
@@ -857,6 +871,10 @@
 
                 "6860" = {
                   name = "Hitman: Blood Money";
+                };
+
+                "690040" = {
+                  name = "SUPERHOT: MIND CONTROL DELETE";
                 };
 
                 "6910" = {

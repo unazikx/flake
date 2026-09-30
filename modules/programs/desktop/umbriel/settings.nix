@@ -40,8 +40,8 @@
             border = {
               focused = colors.base0E; # when will be added dimming change to base00
               unfocused = colors.base00;
-              scratchpad_focused = colors.base0C;
-              scratchpad_unfocused = colors.base00;
+              # scratchpad_focused = colors.base0C;
+              # scratchpad_unfocused = colors.base00;
               outer = colors.base01;
             };
 
@@ -137,11 +137,12 @@
             mode = "scrolling";
             gap = 8;
 
-            width_presets = [
+            extent_presets = [
               0.333
               0.5
               0.7
               0.9
+              1
             ];
 
             struts = {
@@ -152,7 +153,7 @@
             };
 
             scrolling = {
-              default_width_fraction = 0.9;
+              default_extent_fraction = 0.9;
               center_underfull_strip = true;
               center_focused = "on_overflow";
             };

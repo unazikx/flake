@@ -65,13 +65,13 @@
                   "Shift+Right" = "window-swap-next";
                   "Shift+Left" = "window-swap-previous";
 
-                  "Minus" = "window-modify-width:-0.1";
-                  "Equal" = "window-modify-width:+0.1";
-                  "Shift+Minus" = "window-modify-height:-0.1";
-                  "Shift+Equal" = "window-modify-height:+0.1";
+                  "Minus" = "window-modify-primary-extent:-0.1";
+                  "Equal" = "window-modify-primary-extent:+0.1";
+                  "Shift+Minus" = "window-modify-secondary-extent:-0.1";
+                  "Shift+Equal" = "window-modify-secondary-extent:+0.1";
 
-                  "R" = norepeat "window-cycle-width";
-                  "Alt+R" = norepeat "window-cycle-height";
+                  "R" = norepeat "window-cycle-primary-extent";
+                  "Shift+R" = norepeat "window-cycle-secondary-extent";
                 }
                 // (lib.genAttrs (map (n: toString n) (lib.range 1 meta.workspaceCount)) (
                   n: "workspace-switch:${n}"

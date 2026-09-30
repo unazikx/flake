@@ -22,18 +22,18 @@
                 {
                   match.app_id = "^dev.noctalia.Noctalia$";
                   default_floating = true;
-                  default_size = [
-                    1020
-                    900
-                  ];
+                  # default_size = [
+                  #   1020
+                  #   900
+                  # ];
                 }
                 {
                   match.app_id = "^dev.noctalia.UmbrielSharePicker$";
                   default_floating = true;
-                  default_size = [
-                    800
-                    600
-                  ];
+                  # default_size = [
+                  #   800
+                  #   600
+                  # ];
                 }
                 {
                   match.title = "^(Picture-in-Picture|Picture in picture)$";
@@ -82,7 +82,7 @@
                     app_id = "steam";
                     title = "Friends List";
                   };
-                  default_width = 0.3;
+                  default_extent = 0.3;
                   default_workspace = 5;
                 }
               ];
