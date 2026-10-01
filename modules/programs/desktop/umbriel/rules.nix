@@ -82,7 +82,7 @@
                     app_id = "steam";
                     title = "Friends List";
                   };
-                  default_extent = 0.3;
+                  default_scrolling_extent = 0.3;
                   default_workspace = 5;
                 }
               ];

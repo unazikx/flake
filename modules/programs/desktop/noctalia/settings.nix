@@ -158,6 +158,10 @@
               };
             };
 
+          audio = {
+            enable_sounds = false;
+          };
+
           control_center = {
             sidebar = "full";
             sidebar_section = "none";
