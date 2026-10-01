@@ -1200,6 +1200,46 @@
         "type": "github"
       }
     },
+    "portproton-qt": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "portprotonqt-src": "portprotonqt-src"
+      },
+      "locked": {
+        "lastModified": 1790776659,
+        "narHash": "sha256-EGxou7BOq3E/XMbLgE+cdqcRGC1N9C38OskzO+IemM4=",
+        "owner": "dark_siders",
+        "repo": "portprotonqt-nix",
+        "rev": "008b567d07ab29ec448ecebfdf20ceed43de6509",
+        "type": "gitlab"
+      },
+      "original": {
+        "owner": "dark_siders",
+        "repo": "portprotonqt-nix",
+        "type": "gitlab"
+      }
+    },
+    "portprotonqt-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1790775647,
+        "narHash": "sha256-ojAqVPPnEPWUMyUXkD7JmYajEbxFDSRV9W/hgLSAH4s=",
+        "ref": "refs/heads/main",
+        "rev": "e25b52f3d5ad5c8fdc7ae4a20038b1301441e9e7",
+        "revCount": 2273,
+        "type": "git",
+        "url": "https://git.linux-gaming.ru/Linux-Gaming/PortProtonQt"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://git.linux-gaming.ru/Linux-Gaming/PortProtonQt"
+      }
+    },
     "proxy-suite-flake": {
       "inputs": {
         "disko": "disko_2",
@@ -1275,6 +1315,7 @@
         "nixpkgs-unstable": "nixpkgs-unstable",
         "nur": "nur",
         "pkgs-by-name": "pkgs-by-name",
+        "portproton-qt": "portproton-qt",
         "proxy-suite-flake": "proxy-suite-flake",
         "scroll-flake": "scroll-flake",
         "sopsnix": "sopsnix",

@@ -317,6 +317,16 @@
       repo = "pkgs-by-name-for-flake-parts";
     };
 
+    portproton-qt = {
+      type = "gitlab";
+      owner = "dark_siders";
+      repo = "portprotonqt-nix";
+      inputs = {
+        flake-utils.follows = "flake-utils";
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
+
     proxy-suite-flake = {
       type = "github";
       owner = "fufsob";
