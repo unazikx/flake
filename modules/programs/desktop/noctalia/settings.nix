@@ -176,6 +176,7 @@
           };
 
           osd = {
+            border = true;
             position = "top_center";
           };
 
@@ -273,10 +274,6 @@
             enabled = false;
           };
 
-          osd = {
-            border = false;
-          };
-
           plugins = {
             auto_update = "all";
             enabled = [
@@ -318,7 +315,7 @@
             };
 
             panel = {
-              borders = false;
+              borders = true;
               session_placement = "floating";
               clipboard_placement = "floating";
               control_center_placement = "floating";
