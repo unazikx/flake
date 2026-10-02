@@ -87,9 +87,7 @@
             enable = true;
 
             extraCompatPackages = lib.attrValues {
-              "GE-ProtonProton GDK" = self'.packages.proton-gdk-patched; # i cant change name
-              "GE-Proton" = self'.packages.proton-ge-patched;
-              "Proton CachyOS SLR_v3" = self'.packages.proton-cachyos-patched;
+              "Proton CachyOS SLR_v3" = self'.packages.proton-cachyos;
               "Steam-Play-None" = pkgs.steam-play-none;
             };
 

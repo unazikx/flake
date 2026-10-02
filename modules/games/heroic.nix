@@ -26,7 +26,7 @@
         programs.heroic = {
           enable = true;
 
-          proton = self'.packages.proton-cachyos-patched;
+          proton = self'.packages.proton-cachyos;
 
           sharedPrefix = "${config.home.homeDirectory}/.heroic/prefixes/shared";
 
