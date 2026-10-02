@@ -265,6 +265,10 @@
                   name = "Minecraft Legends";
                 };
 
+                "1963510" = {
+                  name = "Herald of Havoc";
+                };
+
                 "1969810" = {
                   name = "Enter The Chronosphere";
                 };
@@ -601,6 +605,10 @@
                   name = "Lucid Blocks";
                 };
 
+                "3497800" = {
+                  name = "Bonehold";
+                };
+
                 "3509230" = {
                   name = "Gambonanza";
                 };
@@ -668,6 +676,10 @@
                 "4000" = {
                   name = "Garrys Mod";
                   betaBranch = "x86-64";
+                };
+
+                "4075620" = {
+                  name = "Combolands";
                 };
 
                 "41500" = {
@@ -834,6 +846,10 @@
                 "629820" = {
                   name = "Maneater";
                   language = "russian";
+                };
+
+                "630720" = {
+                  name = "Mana Spark";
                 };
 
                 "632360" = {
