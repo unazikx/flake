@@ -12,13 +12,13 @@
 
 rustPlatform.buildRustPackage (_final: {
   pname = "aurelia";
-  version = "0.1.37";
+  version = "0.1.38";
 
   src = fetchFromGitHub {
     owner = "Drackrath";
     repo = "Aurelia";
     tag = "v${_final.version}";
-    hash = "sha256-PiMaLSgEZxMNI7AXtVULaE4FhnNk/Brje1xvGu5gFKU=";
+    hash = "sha256-J+YhWK1MX9VsWchk0j1xkmlxiBdehaOoSxtrzSAt1X4=";
   };
 
   cargoHash = "sha256-YT7muzNjxFAMwxqEPfTSK1+LHNAjbineXmsOGE9fgMU=";

@@ -11,11 +11,11 @@
 
 stdenv.mkDerivation (_final: {
   pname = "aurelia";
-  version = "0.1.37";
+  version = "0.1.38";
 
   src = fetchurl {
     url = "https://github.com/Drackrath/Aurelia/releases/download/v${_final.version}/aurelia_linux_x86_64";
-    sha256 = "sha256-r7eZehM2VbycQnAZtGhWgS2Z/pb/2wNh/ke7zw//xjY=";
+    sha256 = "sha256-O2fPJYEA1GanUJXGCzUA3+GAPPHYA+H0FPHPU9jICo4=";
   };
 
   dontUnpack = true;
