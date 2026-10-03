@@ -801,6 +801,29 @@
         "type": "github"
       }
     },
+    "max-ru": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1790832697,
+        "narHash": "sha256-NwNUzLVW5yczsKETk+zr4hI4ITQHvO8nR4yCTkxGVoc=",
+        "owner": "spiage",
+        "repo": "max-messenger",
+        "rev": "763c65d060d517b4a4ad1cb0058a88c06c149c72",
+        "type": "github"
+      },
+      "original": {
+        "owner": "spiage",
+        "repo": "max-messenger",
+        "type": "github"
+      }
+    },
     "microvm-nix": {
       "inputs": {
         "nixpkgs": [
@@ -1292,6 +1315,7 @@
         "massgrave": "massgrave",
         "matugen-nix": "matugen-nix",
         "matugen-nix-templates": "matugen-nix-templates",
+        "max-ru": "max-ru",
         "microvm-nix": "microvm-nix",
         "ncro": "ncro",
         "nilla-cli": "nilla-cli",

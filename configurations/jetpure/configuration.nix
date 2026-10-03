@@ -112,6 +112,7 @@
       zen.programs.gui.blender
       zen.programs.gui.easy-effects
       zen.programs.gui.librewolf
+      zen.programs.gui.max-ru
       zen.programs.gui.obs-studio
       zen.programs.gui.qutebrowser
       zen.programs.gui.spotify

@@ -184,6 +184,16 @@
       repo = "matugen-nix-templates";
     };
 
+    max-ru = {
+      type = "github";
+      owner = "spiage";
+      repo = "max-messenger";
+      inputs = {
+        flake-utils.follows = "flake-utils";
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
+
     microvm-nix = {
       type = "github";
       owner = "microvm-nix";
