@@ -701,6 +701,7 @@
 
                 "431240" = {
                   name = "Golf with Your Friends";
+                  compatTool = null;
                   language = "russian";
                 };
 
@@ -988,6 +989,10 @@
 
                 "892970" = {
                   name = "Valheim";
+                };
+
+                "894020" = {
+                  name = "Death's Door";
                 };
 
                 "897450" = {

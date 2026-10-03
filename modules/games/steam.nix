@@ -101,7 +101,7 @@
               enable = true;
 
               env = {
-                WINE_FULLSCREEN_FSR = "1";
+                # WINE_FULLSCREEN_FSR = "1";
               };
 
               args = [

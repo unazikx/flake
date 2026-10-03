@@ -47,9 +47,11 @@
             config.allowUnfree = true;
             overlays = [
               inputs.nur.overlays.default
+
               self.overlays.nixpkgs-branches
               self.overlays.npins-sources
               self.overlays.system-backport
+
               (_new: _prev: {
                 self = self;
                 system = system;
