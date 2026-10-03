@@ -13,7 +13,7 @@ proton-ge-bin.overrideAttrs (
     version = "release-11-7";
 
     src = fetchzip {
-      url = "https://github.com/LukasPAH/GDK-Proton-Custom/releases/download/release-${_final.version}/GDK-Proton${_final.version}-x86_64.tar.gz";
+      url = "https://github.com/LukasPAH/GDK-Proton-Custom/releases/download/${_final.version}/GDK-Proton${_final.version}-x86_64.tar.gz";
       sha256 = "sha256-+K3u9LsgEfwhfvIQjHa09mvtUe1LHMQ/yG3vICXpvpU=";
     };
 
