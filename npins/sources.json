@@ -1,5 +1,11 @@
 {
   "pins": {
+    "firefoxpwa-max-messenger": {
+      "type": "Url",
+      "url": "https://max.ru/s/img/big-logo.png",
+      "unpack": false,
+      "hash": "sha256-TyCDX1bxVULjx3E5883Y8Yj0G0BT8GotiNi+GwVK6mE="
+    },
     "shattered-pixel-dungeon-cover": {
       "type": "Url",
       "url": "https://cdn2.steamgriddb.com/thumb/af54f3a851b88733bb8cfd07ac7daa23.jpg",
