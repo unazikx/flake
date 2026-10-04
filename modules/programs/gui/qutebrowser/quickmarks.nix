@@ -11,6 +11,11 @@
       }:
       {
         programs.qutebrowser.quickmarks = lib.mapAttrs (_: value: "https://${value}") {
+          # search
+          forget = "4get.ca";
+          google = "www.google.com";
+          ddg = "duckduckgo.com";
+
           # nix
           nixpkgs = "search.nixos.org/packages?channel=unstable";
           nixSearch = "nixsearch.thekoppe.com";
@@ -53,9 +58,9 @@
           gogDB = "www.gogdb.org";
           egsDB = "egdata.app";
 
-          # study
-          forget = "4get.ca";
-          google = "www.google.com";
+          # ai
+          ddgAi = "duck.ai";
+          googleAi = "www.google.com/aimode";
           chatGpt = "chatgpt.com";
           deekpeek = "chat.deepseek.com";
           claude = "claude.ai";
