@@ -6,24 +6,9 @@
   zen.miscellaneous.locales = {
     nixos =
       {
-        lib,
-        options,
         ...
       }:
       {
-        services = {
-          chrony.enable = true;
-          tzupdate.enable = true;
-        };
-
-        networking.timeServers = lib.flatten [
-          options.networking.timeServers.default
-          "0.ru.pool.ntp.org"
-          "1.ru.pool.ntp.org"
-          "2.ru.pool.ntp.org"
-          "3.ru.pool.ntp.org"
-        ];
-
         i18n = {
           defaultLocale = "en_US.UTF-8";
           extraLocaleSettings = {
