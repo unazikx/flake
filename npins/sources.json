@@ -6,6 +6,12 @@
       "unpack": false,
       "hash": "sha256-TyCDX1bxVULjx3E5883Y8Yj0G0BT8GotiNi+GwVK6mE="
     },
+    "gtk-materialyou-css": {
+      "type": "Url",
+      "url": "https://raw.githubusercontent.com/SakibShahariar/material-gnome-theme/refs/heads/master/gtk-4.0/gtk-dark.css",
+      "unpack": false,
+      "hash": "sha256-Y2suTNa0hN3GYEFgBayAEz2rT19eDDoIBM8+tPsocdI="
+    },
     "shattered-pixel-dungeon-cover": {
       "type": "Url",
       "url": "https://cdn2.steamgriddb.com/thumb/af54f3a851b88733bb8cfd07ac7daa23.jpg",

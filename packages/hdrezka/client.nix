@@ -1,5 +1,5 @@
 {
-  python312Packages,
+  python3Packages,
   fetchurl,
   fzf,
   hdrezka,
@@ -7,7 +7,7 @@
   lib,
 }:
 
-python312Packages.buildPythonApplication {
+python3Packages.buildPythonApplication {
   pname = "rezka-fzf";
   version = "git";
 
@@ -23,8 +23,8 @@ python312Packages.buildPythonApplication {
   ];
 
   dependencies = [
-    python312Packages.aiohttp
-    python312Packages.pyyaml
+    python3Packages.aiohttp
+    python3Packages.pyyaml
   ];
 
   dontUnpack = true;

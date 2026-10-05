@@ -1,10 +1,10 @@
 {
-  python312Packages,
+  python3Packages,
   fetchPypi,
   lib,
 }:
 
-python312Packages.buildPythonPackage (_final: {
+python3Packages.buildPythonPackage (_final: {
   pname = "hdrezkaapi";
   version = "11.2.3";
   pyproject = true;
@@ -18,12 +18,12 @@ python312Packages.buildPythonPackage (_final: {
   };
 
   build-system = [
-    python312Packages.setuptools
+    python3Packages.setuptools
   ];
 
   dependencies = [
-    python312Packages.requests
-    python312Packages.beautifulsoup4
+    python3Packages.requests
+    python3Packages.beautifulsoup4
   ];
 
   allowSubstitutes = false;

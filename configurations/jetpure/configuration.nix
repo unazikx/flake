@@ -59,6 +59,7 @@
       zen.miscellaneous.nix.substituters
       zen.miscellaneous.npins
       zen.miscellaneous.nur
+      zen.miscellaneous.time
       zen.miscellaneous.users.accounts
       zen.miscellaneous.version
       zen.programs.cli.nixos-cli

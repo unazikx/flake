@@ -59,7 +59,7 @@
                           };
 
                           settings = {
-                            fontSize = lib.mkDefault fonts.sizes.applications;
+                            fontSize = lib.mkDefault (fonts.sizes.applications + 2);
                             dark = if (polarity == "dark") then true else false;
                           };
                         };

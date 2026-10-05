@@ -30,12 +30,9 @@
         pkgs,
         lib,
         config,
+        osConfig,
         ...
       }:
-      let
-        colors = config.lib.stylix.colors;
-        fonts = config.stylix.fonts;
-      in
       {
         imports = [
           inputs.xmcl.homeModules.xmcl
@@ -93,7 +90,6 @@
                 backgroundMusicPlayOrder = "sequential";
                 backgroundVolume = 1;
                 blur = 3;
-                fontSize = fonts.sizes.applications + 2;
                 blurAppBar = 3;
                 blurCard = 20;
                 blurSidebar = 3;
@@ -112,10 +108,7 @@
                 }
               '';
 
-            background = lib.stylix.mkImage pkgs (pkgs.fetchurl {
-              url = "https://w.wallhaven.cc/full/l8/wallhaven-l8qq3l.png";
-              sha256 = "sha256-M6bRjpDNR3TClnEyd4WlQtuONkB0JHFZ2x7t3MLRhFE=";
-            }) colors.toList;
+            background = osConfig.stylix.images.minecraft-amethyst;
           };
         };
       };
