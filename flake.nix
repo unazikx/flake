@@ -7,6 +7,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    amane = {
+      type = "github";
+      owner = "mystiafin";
+      repo = "amane";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     betterfox = {
       type = "github";
       owner = "yokoffing";

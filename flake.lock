@@ -20,6 +20,26 @@
         "type": "github"
       }
     },
+    "amane": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1791196477,
+        "narHash": "sha256-RUgmOxz7iuRfCD2F32METseszPI1ZKLfTgGEpUuPlpE=",
+        "owner": "mystiafin",
+        "repo": "amane",
+        "rev": "6ace43e5c69cd4b39bb06b28c20fc4b883422519",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mystiafin",
+        "repo": "amane",
+        "type": "github"
+      }
+    },
     "base16": {
       "inputs": {
         "fromYaml": "fromYaml"
@@ -1290,6 +1310,7 @@
     "root": {
       "inputs": {
         "agenix": "agenix",
+        "amane": "amane",
         "betterfox": "betterfox",
         "cachyos-kernel-nix": "cachyos-kernel-nix",
         "chaotic-nyx": "chaotic-nyx",
