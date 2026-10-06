@@ -84,15 +84,12 @@
   zen.users.nixzoid = {
     includes = [
       # keep-sorted start
-      zen.games.aurelia
       zen.games.gale
       zen.games.heroic
       zen.games.hytale
       zen.games.minecraft.prismlauncher
       zen.games.minecraft.xmcl
-      zen.games.shattered-pixel-dungeon
       zen.games.srb2
-      zen.games.srr
       zen.games.steam
       zen.games.steamix
       zen.games.supertuxkart
@@ -108,7 +105,6 @@
       zen.programs.cli.rezka-fzf
       zen.programs.cli.ssh
       zen.programs.cli.yazi
-      zen.programs.desktop.sway.noctalia
       zen.programs.desktop.umbriel
       zen.programs.editors.helix
       zen.programs.gui._64gram

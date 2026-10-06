@@ -14,14 +14,14 @@
             map
               (
                 params:
-                params
-                // {
+                {
                   auto-format = true;
                   indent = {
                     tab-width = 2;
                     unit = "  ";
                   };
                 }
+                // params
               )
               [
                 # keep-sorted start block=yes
@@ -63,6 +63,21 @@
 
                   formatter = {
                     command = "gofmt";
+                  };
+                }
+                {
+                  name = "rust";
+
+                  language-servers = [
+                    "rust-analyzer"
+                  ];
+
+                  formatter = {
+                    command = "rustfmt";
+                    args = [
+                      "--edition"
+                      "2024"
+                    ];
                   };
                 }
                 {

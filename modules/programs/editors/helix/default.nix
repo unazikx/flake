@@ -42,6 +42,8 @@
             pkgs.pyright
             pkgs.typescript-language-server
             pkgs.vscode-langservers-extracted
+            pkgs.rust-analyzer
+            pkgs.rustfmt
             pkgs.yaml-language-server
             # keep-sorted end
           ];
