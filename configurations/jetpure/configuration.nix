@@ -45,6 +45,7 @@
         "gew1-dealer.spotify.com"
         "www-growth.scdn.co"
       ])
+      zen.programs.desktop.amane
       zen.games.xbox.driver
       zen.hardware.boot.systemd-boot
       zen.hardware.compression.zram

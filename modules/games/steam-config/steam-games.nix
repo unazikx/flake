@@ -929,6 +929,7 @@
 
                 "775500" = {
                   name = "Scarlet Nexus";
+                  compatTool = "proton_8";
                   language = "russian";
                 };
 
