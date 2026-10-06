@@ -88,6 +88,7 @@
 
             extraCompatPackages = lib.attrValues {
               "Proton CachyOS SLR_v3" = self'.packages.proton-cachyos;
+              "GE-Proton" = self'.packages.proton-ge;
               "Steam-Play-None" = pkgs.steam-play-none;
             };
 

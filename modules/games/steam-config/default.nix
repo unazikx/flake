@@ -56,7 +56,7 @@
           onSteamRunning = "close";
           # ^^^ close Steam and apply the changes, waiting for any running games to exit first
 
-          defaultCompatTool = self'.packages.proton-cachyos;
+          defaultCompatTool = self'.packages.proton-ge;
           displayRatesAsBits = false;
         };
 
