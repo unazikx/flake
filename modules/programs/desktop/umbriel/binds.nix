@@ -16,8 +16,17 @@
         noctalia = config.programs.noctalia;
 
         norepeat = action: {
-          inherit action;
+          inherit
+            action
+            ;
           repeat = false;
+        };
+
+        cooldown = action: cooldown_ms: {
+          inherit
+            action
+            cooldown_ms
+            ;
         };
       in
       {
@@ -35,6 +44,8 @@
                   "Grave" = "session-quit";
 
                   "MouseMiddle" = "layout-scroll-drag";
+                  "WheelUp" = cooldown "workspace-previous" 150;
+                  "WheelDown" = cooldown "workspace-next" 150;
 
                   "Space" = norepeat "overview-toggle";
                   "Shift+Space" = norepeat "column-center";

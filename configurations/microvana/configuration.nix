@@ -41,14 +41,6 @@
         microvm = {
           vcpu = 2;
           hypervisor = "qemu";
-
-          shares = [
-            {
-              tag = "ro-store";
-              source = "/nix/store";
-              mountPoint = "/nix/.ro-store";
-            }
-          ];
         };
       };
 

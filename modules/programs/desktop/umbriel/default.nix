@@ -94,8 +94,8 @@
               default = [ "umbriel" ];
               "org.freedesktop.impl.portal.FileChooser" = "gtk";
               "org.freedesktop.impl.portal.OpenURI" = "gtk";
-              "org.freedesktop.impl.portal.ScreenCast" = "wlr";
-              "org.freedesktop.impl.portal.Screenshot" = "wlr";
+              "org.freedesktop.impl.portal.ScreenCast" = "umbriel";
+              "org.freedesktop.impl.portal.Screenshot" = "umbriel";
             };
 
             extraPortals = [
