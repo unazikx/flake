@@ -728,6 +728,27 @@
         "type": "github"
       }
     },
+    "jovian": {
+      "inputs": {
+        "nix-github-actions": [],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1791213596,
+        "narHash": "sha256-fH2r4JtciTq01FMGBLqU33Od5ipPYNyIWop+Nhtdj4c=",
+        "owner": "jovian-experiments",
+        "repo": "jovian-nixos",
+        "rev": "707a5942289087ae95262e327ea62f5bc49d331e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jovian-experiments",
+        "repo": "jovian-nixos",
+        "type": "github"
+      }
+    },
     "make-shell": {
       "inputs": {
         "flake-compat": "flake-compat_4"
@@ -1388,6 +1409,7 @@
         "hjem-rum": "hjem-rum",
         "home-manager": "home-manager",
         "import-tree": "import-tree",
+        "jovian": "jovian",
         "make-shell": "make-shell",
         "mangowc": "mangowc",
         "massgrave": "massgrave",
@@ -1424,6 +1446,7 @@
         "sopsnix": "sopsnix",
         "spicetify-nix": "spicetify-nix",
         "steam-config-nix": "steam-config-nix",
+        "steamix": "steamix",
         "stylix": "stylix",
         "tinted-theming": "tinted-theming",
         "umbriel": "umbriel",
@@ -1589,6 +1612,26 @@
       "original": {
         "owner": "different-name",
         "repo": "steam-config-nix",
+        "type": "github"
+      }
+    },
+    "steamix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1791211735,
+        "narHash": "sha256-M3XYR12BXKbhx5KbTYvY4UsDMBCe9KodGbpEPO4Xe7o=",
+        "owner": "arunoruto",
+        "repo": "steamix",
+        "rev": "93b6bfb459be1190cdd80f18eea427d81c2fe4bf",
+        "type": "github"
+      },
+      "original": {
+        "owner": "arunoruto",
+        "repo": "steamix",
         "type": "github"
       }
     },

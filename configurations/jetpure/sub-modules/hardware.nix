@@ -12,6 +12,10 @@
       }:
       {
         imports = [
+          "${inputs.nixos-hardware}/common/gpu/amd"
+          "${inputs.nixos-hardware}/common/cpu/amd"
+          "${inputs.nixos-hardware}/common/cpu/amd/pstate.nix"
+          "${inputs.nixos-hardware}/common/cpu/amd/zenpower.nix"
           inputs.nixpkgs.nixosModules.notDetected
         ];
 

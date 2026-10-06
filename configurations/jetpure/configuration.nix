@@ -93,6 +93,7 @@
       zen.games.srb2
       zen.games.srr
       zen.games.steam
+      zen.games.steamix
       zen.games.supertuxkart
       zen.games.umu-launcher
       zen.miscellaneous.nix

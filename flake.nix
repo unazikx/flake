@@ -155,6 +155,16 @@
       repo = "import-tree";
     };
 
+    jovian = {
+      type = "github";
+      owner = "jovian-experiments";
+      repo = "jovian-nixos";
+      inputs = {
+        nix-github-actions.follows = "";
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
+
     make-shell = {
       type = "github";
       owner = "nicknovitski";
@@ -388,6 +398,13 @@
         flake-parts.follows = "flake-parts";
         nixpkgs.follows = "nixpkgs";
       };
+    };
+
+    steamix = {
+      type = "github";
+      owner = "arunoruto";
+      repo = "steamix";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     stylix = {
