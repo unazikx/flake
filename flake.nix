@@ -208,6 +208,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    millennium = {
+      type = "github";
+      owner = "steamclienthomebrew";
+      repo = "millennium";
+      dir = "packages/nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     ncro = {
       type = "github";
       owner = "manic-systems";
