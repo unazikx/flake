@@ -42,6 +42,7 @@
       {
         inputs,
         inputs',
+        config,
         ...
       }:
       {
@@ -63,6 +64,20 @@
 
             plugins = [ ];
           };
+
+          library.boilr = {
+            enable = false;
+
+            steamGridDbKeyFile = config.sops.secrets."services/boilr".path;
+
+            settings = {
+              steam.create_collections = true;
+            };
+          };
+        };
+
+        sops.secrets = {
+          "services/boilr" = { };
         };
       };
 
