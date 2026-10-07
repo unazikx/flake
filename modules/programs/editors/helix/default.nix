@@ -40,10 +40,10 @@
             pkgs.nixfmt
             pkgs.prettier
             pkgs.pyright
-            pkgs.typescript-language-server
-            pkgs.vscode-langservers-extracted
             pkgs.rust-analyzer
             pkgs.rustfmt
+            pkgs.typescript-language-server
+            pkgs.vscode-langservers-extracted
             pkgs.yaml-language-server
             # keep-sorted end
           ];

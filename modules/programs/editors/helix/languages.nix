@@ -66,21 +66,6 @@
                   };
                 }
                 {
-                  name = "rust";
-
-                  language-servers = [
-                    "rust-analyzer"
-                  ];
-
-                  formatter = {
-                    command = "rustfmt";
-                    args = [
-                      "--edition"
-                      "2024"
-                    ];
-                  };
-                }
-                {
                   name = "json";
 
                   language-servers = [ "vscode-json-language-server" ];
@@ -138,6 +123,21 @@
 
                   formatter = {
                     command = "black";
+                  };
+                }
+                {
+                  name = "rust";
+
+                  language-servers = [
+                    "rust-analyzer"
+                  ];
+
+                  formatter = {
+                    command = "rustfmt";
+                    args = [
+                      "--edition"
+                      "2024"
+                    ];
                   };
                 }
                 {
