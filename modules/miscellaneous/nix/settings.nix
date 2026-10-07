@@ -10,8 +10,8 @@
         auto-optimise-store = true;
         builders-use-substitutes = true;
 
-        max-jobs = 2;
-        cores = 2;
+        max-jobs = 16;
+        cores = 0;
 
         experimental-features = [
           "nix-command"
