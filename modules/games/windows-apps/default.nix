@@ -37,6 +37,7 @@
         overlayPkgs = [
           (_new: _prev: {
             mkWindowsApp = inputs.erosanix.lib.${system}.mkWindowsApp;
+            erosanixLib = inputs.erosanix.lib.${system};
           })
         ];
       };
