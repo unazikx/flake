@@ -425,6 +425,18 @@
       flake = false;
     };
 
+    tixpkgs = {
+      type = "github";
+      owner = "74k1";
+      repo = "tixpkgs";
+      inputs = {
+        flake-parts.follows = "flake-parts";
+        home-manager.follows = "home-manager";
+        nixpkgs.follows = "nixpkgs";
+        nixpkgs-waterfox.follows = "";
+      };
+    };
+
     umbriel = {
       type = "github";
       owner = "noctalia-dev";

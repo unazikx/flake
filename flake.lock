@@ -1449,6 +1449,7 @@
         "steamix": "steamix",
         "stylix": "stylix",
         "tinted-theming": "tinted-theming",
+        "tixpkgs": "tixpkgs",
         "umbriel": "umbriel",
         "vicinae-extensions": "vicinae-extensions",
         "winapps": "winapps",
@@ -1855,6 +1856,33 @@
       "original": {
         "owner": "tinted-theming",
         "repo": "base16-zed",
+        "type": "github"
+      }
+    },
+    "tixpkgs": {
+      "inputs": {
+        "flake-parts": [
+          "flake-parts"
+        ],
+        "home-manager": [
+          "home-manager"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "nixpkgs-waterfox": []
+      },
+      "locked": {
+        "lastModified": 1791312160,
+        "narHash": "sha256-48Pq9ymUROg1szrlm8KtHQMNne1Tr3YEbNa7HRW+cwM=",
+        "owner": "74k1",
+        "repo": "tixpkgs",
+        "rev": "32eac0de3120dce8096dde3bbc069d26a08c1959",
+        "type": "github"
+      },
+      "original": {
+        "owner": "74k1",
+        "repo": "tixpkgs",
         "type": "github"
       }
     },

@@ -45,7 +45,6 @@
         "gew1-dealer.spotify.com"
         "www-growth.scdn.co"
       ])
-      zen.programs.desktop.amane
       zen.games.xbox.driver
       zen.hardware.boot.systemd-boot
       zen.hardware.compression.zram
@@ -65,6 +64,7 @@
       zen.miscellaneous.version
       zen.programs.cli.nixos-cli
       zen.programs.cli.rusted-tools
+      zen.programs.desktop.amane
       zen.secrets.sopsnix
       zen.services.caddy
       zen.services.glance
@@ -108,6 +108,7 @@
       zen.programs.desktop.umbriel
       zen.programs.editors.helix
       zen.programs.gui._64gram
+      zen.programs.gui.artcraft
       zen.programs.gui.blender
       zen.programs.gui.easy-effects
       zen.programs.gui.librewolf
