@@ -1,6 +1,7 @@
 {
   self,
   inputs,
+  zen,
   ...
 }:
 
@@ -28,6 +29,10 @@
   ];
 
   zen.flake-parts.default = {
+    includes = [
+      zen.custom.overlays
+    ];
+
     root =
       {
         config,
@@ -57,7 +62,8 @@
                 system = system;
                 local = config.packages;
               })
-            ];
+            ]
+            ++ config.overlayPkgs;
           };
         };
       };

@@ -34,9 +34,11 @@
         ...
       }:
       {
-        _module.args = {
-          mkApp = inputs.erosanix.lib.${system}.mkWindowsApp;
-        };
+        overlayPkgs = [
+          (_new: _prev: {
+            mkWindowsApp = inputs.erosanix.lib.${system}.mkWindowsApp;
+          })
+        ];
       };
   };
 
