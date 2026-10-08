@@ -95,7 +95,7 @@
       zen.programs.gui.qutebrowser
       zen.programs.gui.spotify
       zen.programs.gui.throne
-      zen.programs.gui.zathura
+      zen.programs.office.zathura
       zen.programs.terminal.fish
       zen.programs.terminal.translate-shell
       zen.programs.terminal.trash

@@ -10,23 +10,31 @@
 
     nixos =
       {
-        lib,
+        pkgs,
         ...
       }:
       {
+        environment.systemPackages = [
+          pkgs.seahorse
+        ];
+
         services.gnome = {
-          gnome-keyring.enable = lib.mkForce false;
+          gnome-keyring.enable = true;
         };
       };
 
     homeManager =
       {
-        lib,
+        pkgs,
         ...
       }:
       {
+        home.packages = [
+          pkgs.seahorse
+        ];
+
         services = {
-          gnome-keyring.enable = lib.mkForce false;
+          gnome-keyring.enable = true;
         };
       };
   };

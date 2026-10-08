@@ -64,7 +64,6 @@
       zen.miscellaneous.version
       zen.programs.cli.nixos-cli
       zen.programs.cli.rusted-tools
-      zen.programs.desktop.amane
       zen.secrets.sopsnix
       zen.services.caddy
       zen.services.glance
@@ -108,8 +107,6 @@
       zen.programs.desktop.umbriel
       zen.programs.editors.helix
       zen.programs.gui._64gram
-      zen.programs.gui.artcraft
-      zen.programs.gui.blender
       zen.programs.gui.easy-effects
       zen.programs.gui.librewolf
       zen.programs.gui.obs-studio
@@ -117,7 +114,10 @@
       zen.programs.gui.spotify
       zen.programs.gui.throne
       zen.programs.gui.vesktop
-      zen.programs.gui.zathura
+      zen.programs.office.artcraft
+      zen.programs.office.blender
+      zen.programs.office.libreoffice
+      zen.programs.office.zathura
       zen.programs.terminal.fish
       zen.programs.terminal.translate-shell
       zen.programs.terminal.trash
