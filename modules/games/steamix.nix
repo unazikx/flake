@@ -56,7 +56,11 @@
 
           binaryCache.enable = false;
           mangoapp.enable = false;
-          manager.enable = true;
+
+          manager = {
+            enable = false;
+            package = inputs'.jovian.legacyPackages.steamos-manager;
+          };
 
           decky-loader = {
             enable = false;
