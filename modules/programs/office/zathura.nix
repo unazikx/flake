@@ -4,14 +4,14 @@
 }:
 
 {
-  zen.programs.gui.zathura = {
+  zen.programs.office.zathura = {
     description = ''
       pdf viewer
       with zaread -> converts office into pdf
     '';
 
     includes = [
-      zen.programs.gui.libreoffice
+      zen.programs.office.libreoffice
     ];
 
     homeManager =

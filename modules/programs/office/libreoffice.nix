@@ -3,7 +3,7 @@
 }:
 
 {
-  zen.programs.gui.libreoffice = {
+  zen.programs.office.libreoffice = {
     description = ''
       good office suite
       use with zathura

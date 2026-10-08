@@ -3,7 +3,7 @@
 }:
 
 {
-  zen.programs.gui.blender = {
+  zen.programs.office.blender = {
     description = ''
       very powerful models crafter
       and goon video montage

@@ -17,7 +17,7 @@
     # keep-sorted end
   };
 
-  zen.programs.gui.artcraft = {
+  zen.programs.office.artcraft = {
     description = ''
       open-source alternatives for Abobe
     '';

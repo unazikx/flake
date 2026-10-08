@@ -26,5 +26,16 @@
           inputs.nur.overlays.default
         ];
       };
+
+    homeManager =
+      {
+        inputs,
+        ...
+      }:
+      {
+        nixpkgs.overlays = [
+          inputs.nur.overlays.default
+        ];
+      };
   };
 }

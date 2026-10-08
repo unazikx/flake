@@ -3,7 +3,7 @@
 }:
 
 {
-  zen.programs.gui.inkscape = {
+  zen.programs.office.inkscape = {
     description = ''
       alternative for Abobe Illustrator
       vector graphic

@@ -3,7 +3,7 @@
 }:
 
 {
-  zen.miscellaneous.syncers.vdirsyncer = {
+  zen.programs.office.vdirsyncer = {
     homeManager =
       {
         ...
