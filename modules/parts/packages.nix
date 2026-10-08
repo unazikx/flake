@@ -8,14 +8,6 @@
 {
   flake-file.inputs = {
     # keep-sorted start block=yes newline_separated=yes
-    nur = {
-      type = "github";
-      owner = "nix-community";
-      repo = "nur";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-parts.follows = "flake-parts";
-    };
-
     pkgs-by-name = {
       type = "github";
       owner = "drupol";

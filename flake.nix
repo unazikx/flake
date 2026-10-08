@@ -322,6 +322,12 @@
       ref = "master";
     };
 
+    nixpkgs-multiverse = {
+      type = "github";
+      owner = "fzakaria";
+      repo = "nixpkgs-multiverse";
+    };
+
     nixpkgs-stable = {
       type = "github";
       owner = "nixos";
