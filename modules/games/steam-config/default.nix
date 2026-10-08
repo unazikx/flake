@@ -60,6 +60,11 @@
           displayRatesAsBits = false;
         };
 
+        xdg.dataFile = {
+          # for beta steam client
+          "Steam/package/beta".text = "publicbeta";
+        };
+
         systemd.user.services = {
           steam-autostart = {
             Unit = {
