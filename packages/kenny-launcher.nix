@@ -1,43 +1,64 @@
 {
-  _master,
   fetchzip,
   autoPatchelfHook,
+  alsa-lib,
   brotli,
+  bzip2,
   dbus,
+  expat,
   fontconfig,
   freetype,
-  graphite2,
-  icu,
+  glib,
+  jdk8,
+  jdk21,
+  jdk25,
+  jdk17,
   krb5,
-  libb2,
+  libffi,
   libGL,
-  libglvnd,
   libpng,
   libproxy,
-  libX11,
+  libpulseaudio,
+  libx11,
   libxcb,
-  libXcomposite,
-  libXext,
-  libXfixes,
+  libxcursor,
+  libxext,
+  libxfixes,
+  libxi,
+  libxinerama,
   libxkbcommon,
-  libXrandr,
-  libXrender,
-  libXtst,
+  libxrandr,
+  libxrender,
+  libxxf86vm,
+  makeDesktopItem,
   makeWrapper,
+  openal,
   openssl,
   pcre2,
+  stdenv,
+  systemd,
+  udev,
+  wayland,
+  xcb-util-cursor,
+  xdg-utils,
   zlib,
   zstd,
+  java ? [
+    jdk17
+    jdk21
+    jdk25
+    jdk8
+  ],
   lib,
 }:
 
-_master.stdenv.mkDerivation (_final: {
+stdenv.mkDerivation (_final: {
   pname = "kenny-launcher";
-  version = "9.4.4-dev";
+  version = "9.6.1-dev";
 
   src = fetchzip {
-    url = "https://github.com/ArtemBatsak/dev_kenny-/releases/download/v${_final.version}/KennyLauncher_${_final.version}_linux.zip";
-    sha256 = "sha256-Ts0v95F+3UU8ADqlwRl6Swhzs6wvz1aKmmo2E1G42ck=";
+    url = "https://github.com/Tuxeodoman/kenny-launcher-ubuntu/releases/download/v${_final.version}-ubuntu-r1/kenny-launcher-${_final.version}-ubuntu-x86_64.tar.xz";
+    hash = "sha256-xBMYPXiqXUwNXN4MRZa3iB7tp+g3QzfdjSr8gI26qAY=";
     stripRoot = false;
   };
 
@@ -51,108 +72,45 @@ _master.stdenv.mkDerivation (_final: {
   ];
 
   buildInputs = [
-    zlib
-    zstd
+    alsa-lib
     brotli
-    libproxy
-    krb5
-    _master.glib
+    bzip2
     dbus
+    expat
     fontconfig
     freetype
-    libpng
+    glib
+    krb5
+    libffi
     libGL
-    libglvnd
-    libX11
-    libXext
-    libXfixes
-    libXcomposite
-    libXrandr
-    libXtst
+    libpng
+    libproxy
+    libpulseaudio
+    libx11
     libxcb
-    libXrender
+    libxcursor
+    libxext
+    libxfixes
+    libxi
+    libxinerama
     libxkbcommon
-    graphite2
-    libb2
-    pcre2
+    libxrandr
+    libxrender
+    libxxf86vm
+    openal
     openssl
-    icu
-    _master.stdenv.cc.cc.lib
+    pcre2
+    stdenv.cc.cc.lib
+    systemd
+    udev
+    wayland
+    xcb-util-cursor
+    zlib
+    zstd
   ];
 
-  libcurlGnutlsStub = _master.stdenv.mkDerivation {
-    pname = "libcurl-gnutls-stub";
-    version = "1.0";
-
-    dontUnpack = true;
-    dontConfigure = true;
-    dontBuild = true;
-
-    buildCommand =
-      # sh
-      ''
-        mkdir -p $out/lib
-
-        cat > stub.c <<'EOF'
-        #define STUB(x) \
-          void x() {} \
-          __asm__(".symver " #x "," #x "@CURL_GNUTLS_3")
-
-        STUB(curl_easy_init);
-        STUB(curl_easy_setopt);
-        STUB(curl_easy_perform);
-        STUB(curl_easy_cleanup);
-        STUB(curl_easy_strerror);
-        STUB(curl_easy_getinfo);
-        STUB(curl_multi_init);
-        STUB(curl_multi_add_handle);
-        STUB(curl_multi_remove_handle);
-        STUB(curl_multi_perform);
-        STUB(curl_multi_cleanup);
-        STUB(curl_slist_append);
-        STUB(curl_slist_free_all);
-        STUB(curl_free);
-        STUB(curl_version);
-        STUB(curl_version_info);
-        EOF
-
-        cat > vers.map <<'EOF'
-        CURL_GNUTLS_3 {
-          global:
-            curl_easy_init;
-            curl_easy_setopt;
-            curl_easy_perform;
-            curl_easy_cleanup;
-            curl_easy_strerror;
-            curl_easy_getinfo;
-            curl_multi_init;
-            curl_multi_add_handle;
-            curl_multi_remove_handle;
-            curl_multi_perform;
-            curl_multi_cleanup;
-            curl_slist_append;
-            curl_slist_free_all;
-            curl_free;
-            curl_version;
-            curl_version_info;
-          local: *;
-        };
-        EOF
-
-        ${_master.stdenv.cc}/bin/cc -fPIC -shared \
-          -Wl,--version-script=vers.map \
-          -Wl,-soname,libcurl-gnutls.so.4 \
-          -o $out/lib/libcurl-gnutls.so.4 \
-          stub.c
-      '';
-  };
-
   preFixup = ''
-    for f in $out/lib/libpxbackend-*.so; do
-      if [ -e "$f" ]; then
-        patchelf --add-rpath "${_final.libcurlGnutlsStub}/lib" "$f" || true
-      fi
-    done
+    cp "$out/libexec/kenny-launcher/libnloader.so" "$TMPDIR/kenny-pinned-nloader.so"
   '';
 
   autoPatchelfIgnoreMissingDeps = true;
@@ -160,16 +118,57 @@ _master.stdenv.mkDerivation (_final: {
   installPhase = ''
     runHook preInstall
 
-    mkdir -p $out
-    cp -r ./* $out/
+    APPDIR="$out/libexec/kenny-launcher"
 
-    chmod +x $out/KennyLauncher
+    mkdir -p "$APPDIR" "$out/{bin,share}"
 
-    makeWrapper $out/KennyLauncher $out/bin/kenny-launcher \
-      --prefix LD_LIBRARY_PATH : "${_final.libcurlGnutlsStub}/lib:$out/lib:${lib.makeLibraryPath _final.buildInputs}"
+    for item in *; do
+      case "$item" in
+        java|KennyLauncher|kenny.install) continue ;;
+      esac
+      cp -a "$item" "$APPDIR/"
+    done
+
+    cp .KennyLauncher.bin "$APPDIR/KennyLauncher"
+    chmod +x "$APPDIR/KennyLauncher"
+
+    install -Dm444 ${_final.desktopItem}/share/applications/* $out/share/applications
+
+    makeWrapper "$APPDIR/KennyLauncher" "$out/bin/kenny-launcher" \
+      --set KENNY_EXTERNAL_UPDATES 1 \
+      --set KENNY_JAVA_PATHS "${lib.makeSearchPath "bin/java" java}" \
+      --set QT_PLUGIN_PATH "$app/plugins" \
+      --set QML_IMPORT_PATH "$app/qml" \
+      --set QML2_IMPORT_PATH "$app/qml" \
+      --prefix LD_LIBRARY_PATH : \
+        "/run/opengl-driver/lib:$APPDIR/lib:${lib.makeLibraryPath _final.buildInputs}" \
+      --prefix PATH : "${
+        lib.makeBinPath [
+          xdg-utils
+          jdk21
+        ]
+      }"
 
     runHook postInstall
   '';
+
+  postPhases = [ "restorePinnedAgent" ];
+
+  restorePinnedAgent =
+    # bash
+    ''
+      cp "$TMPDIR/kenny-pinned-nloader.so" "$out/libexec/kenny-launcher/libnloader.so"
+      cmp "$TMPDIR/kenny-pinned-nloader.so" "$out/libexec/kenny-launcher/libnloader.so"
+    '';
+
+  desktopItem = makeDesktopItem {
+    name = "kenny-launcher";
+    desktopName = "Kenny Launcher Dev";
+    exec = "kenny-launcher %u";
+    categories = [ "Game" ];
+    mimeTypes = [ "x-scheme-handler/kenny" ];
+    startupWMClass = "KennyLauncher";
+  };
 
   meta = {
     description = "Russian fucking shit launcher";
