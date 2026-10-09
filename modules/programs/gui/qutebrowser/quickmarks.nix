@@ -54,6 +54,7 @@
           modrinth = "modrinth.com";
           mineWiki = "ru.minecraft.wiki";
           steamDB = "steamdb.info";
+          steamPeek = "steampeek.hu";
           protonDB = "protondb.com";
           gogDB = "www.gogdb.org";
           egsDB = "egdata.app";
