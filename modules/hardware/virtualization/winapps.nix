@@ -56,7 +56,7 @@
         services.podman = {
           containers."WinApps" = {
             # https://github.com/winapps-org/winapps/blob/1b38cab1b8c1a513e4a313931759ac4942473678/setup.sh#L1007
-            autoStart = false;
+            autoStart = true;
 
             image = "ghcr.io/dockur/windows:latest";
 
