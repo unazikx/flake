@@ -594,6 +594,7 @@
 
                 "3417410" = {
                   name = "Storebound";
+                  winetricks = [ "vcrun2022" ];
                 };
 
                 "3453910" = {
