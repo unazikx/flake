@@ -17,6 +17,7 @@
       zen.games.gamemode
       zen.games.mangohud
       zen.games.steam-config
+      zen.games.wine
     ];
 
     meta = {
