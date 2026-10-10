@@ -14,8 +14,9 @@
         cores = 0;
 
         experimental-features = [
-          "nix-command"
           "flakes"
+          "nix-command"
+          "pipe-operators"
         ];
 
         trusted-users = [ "@wheel" ];
