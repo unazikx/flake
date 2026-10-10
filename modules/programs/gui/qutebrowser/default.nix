@@ -24,6 +24,7 @@
 
     homeManager =
       {
+        self',
         pkgs,
         lib,
         config,
@@ -33,7 +34,7 @@
         programs.qutebrowser = {
           enable = true;
 
-          package = pkgs.qutebrowser;
+          package = self'.packages.qutebrowser-fido2;
 
           searchEngines =
             let
