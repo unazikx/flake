@@ -1,6 +1,5 @@
 {
   appimageTools,
-  fetchurl,
   lib,
   ...
 }:
@@ -18,7 +17,7 @@ appimageTools.wrapAppImage (_final: {
     src = /home/nixzoid/shield.AppImage;
   };
 
-  extraPkgs = pkgs: [ ];
+  extraPkgs = _pkgs: [ ];
 
   extraInstallCommands =
     # bash

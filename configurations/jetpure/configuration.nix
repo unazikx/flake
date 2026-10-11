@@ -67,7 +67,6 @@
       zen.programs.cli.rusted-tools
       zen.secrets.sopsnix
       zen.services.caddy
-      zen.services.glance
       zen.services.greetd
       zen.services.proxy-suite.tg-ws-proxy
       zen.services.proxy-suite.zapret
