@@ -23,5 +23,15 @@
           useRoutingFeatures = "both";
         };
       };
+
+    homeManager =
+      {
+        ...
+      }:
+      {
+        services.tailscale-systray = {
+          enable = true;
+        };
+      };
   };
 }
