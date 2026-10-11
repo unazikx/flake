@@ -473,6 +473,16 @@
       repo = "xmcl-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    yae = {
+      type = "github";
+      owner = "fuwn";
+      repo = "yae";
+      inputs = {
+        flake-utils.follows = "flake-utils";
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
   };
 
   outputs =

@@ -62,6 +62,7 @@
       zen.miscellaneous.time
       zen.miscellaneous.users.accounts
       zen.miscellaneous.version
+      zen.miscellaneous.yae
       zen.programs.cli.nixos-cli
       zen.programs.cli.rusted-tools
       zen.secrets.sopsnix

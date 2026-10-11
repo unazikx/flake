@@ -1470,7 +1470,8 @@
         "umbriel": "umbriel",
         "vicinae-extensions": "vicinae-extensions",
         "winapps": "winapps",
-        "xmcl": "xmcl"
+        "xmcl": "xmcl",
+        "yae": "yae"
       }
     },
     "scenefx": {
@@ -1796,6 +1797,20 @@
         "type": "github"
       }
     },
+    "systems_8": {
+      "locked": {
+        "lastModified": 1681028828,
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
     "tinted-kitty": {
       "flake": false,
       "locked": {
@@ -2035,6 +2050,30 @@
       "original": {
         "owner": "x45iq",
         "repo": "xmcl-nix",
+        "type": "github"
+      }
+    },
+    "yae": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "systems": "systems_8"
+      },
+      "locked": {
+        "lastModified": 1790066017,
+        "narHash": "sha256-YWqRaPlRThZwwVrZNo6ievQgD1V4tsBJ289PT4FWHqc=",
+        "owner": "fuwn",
+        "repo": "yae",
+        "rev": "7511646acfecd43bc95e102bf5dfe9f09548c1c9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "fuwn",
+        "repo": "yae",
         "type": "github"
       }
     },
