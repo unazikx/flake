@@ -25,8 +25,8 @@
       in
       {
         stylix = {
-          image = config.matugen.wallpaper;
-          polarity = config.matugen.mode;
+          image = lib.mkDefault config.matugen.wallpaper;
+          polarity = lib.mkDefault config.matugen.mode;
 
           base16Scheme = lib.mkDefault {
             name = "Matugen";

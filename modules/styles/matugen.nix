@@ -7,7 +7,7 @@
     # keep-sorted start block=yes newline_separated=yes
     matugen-nix = {
       type = "github";
-      owner = "mois3y";
+      owner = "unazikx";
       repo = "matugen-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
