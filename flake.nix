@@ -467,6 +467,12 @@
       };
     };
 
+    with-inputs = {
+      type = "github";
+      owner = "denful";
+      repo = "with-inputs";
+    };
+
     xmcl = {
       type = "github";
       owner = "x45iq";

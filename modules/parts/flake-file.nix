@@ -1,4 +1,5 @@
 {
+  inputs,
   ...
 }:
 
@@ -12,6 +13,11 @@
     };
     # keep-sorted end
   };
+
+  imports = [
+    inputs.flake-file.flakeModules.default
+    inputs.flake-file.flakeModules.npins
+  ];
 
   flake-file = {
     do-not-edit = "";

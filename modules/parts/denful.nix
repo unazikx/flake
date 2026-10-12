@@ -17,28 +17,23 @@
       repo = "den";
     };
 
-    flake-parts = {
-      type = "github";
-      owner = "hercules-ci";
-      repo = "flake-parts";
-      inputs.nixpkgs-lib.follows = "nixpkgs";
-    };
-
     import-tree = {
       type = "github";
       owner = "denful";
       repo = "import-tree";
+    };
+
+    with-inputs = {
+      type = "github";
+      owner = "denful";
+      repo = "with-inputs";
     };
     # keep-sorted end
   };
 
   imports = [
     (inputs.den.namespace "zen" true)
-    (inputs.den.namespace "mod" true)
     inputs.den.flakeModules.default
-    inputs.flake-file.flakeModules.default
-    inputs.flake-parts.flakeModules.bundlers
-    inputs.flake-parts.flakeModules.modules
   ];
 
   den.default = {

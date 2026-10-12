@@ -1470,6 +1470,7 @@
         "umbriel": "umbriel",
         "vicinae-extensions": "vicinae-extensions",
         "winapps": "winapps",
+        "with-inputs": "with-inputs",
         "xmcl": "xmcl",
         "yae": "yae"
       }
@@ -2009,6 +2010,21 @@
       "original": {
         "owner": "winapps-org",
         "repo": "winapps",
+        "type": "github"
+      }
+    },
+    "with-inputs": {
+      "locked": {
+        "lastModified": 1790966513,
+        "narHash": "sha256-Oh8lTybWx3euXnv4GSJQgM6cCftOYunHaZn7o9TQLeU=",
+        "owner": "denful",
+        "repo": "with-inputs",
+        "rev": "dca3f33a9a60571a33500dbec1401b5cf7279123",
+        "type": "github"
+      },
+      "original": {
+        "owner": "denful",
+        "repo": "with-inputs",
         "type": "github"
       }
     },
