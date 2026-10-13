@@ -9,6 +9,7 @@
   #     type = "github";
   #     owner = "74k1";
   #     repo = "tixpkgs";
+  #     ref = "main";
   #     inputs.nixpkgs.follows = "nixpkgs";
   #     inputs.flake-parts.follows = "flake-parts";
   #     inputs.home-manager.follows = "home-manager";

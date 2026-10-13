@@ -18,6 +18,7 @@
   #     type = "github";
   #     owner = "avengemedia";
   #     repo = "dms-plugin-registry";
+  #     ref = "master";
   #     inputs.nixpkgs.follows = "nixpkgs";
   #   };
   #   # keep-sorted end

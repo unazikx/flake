@@ -9,12 +9,14 @@
       type = "github";
       owner = "finix-community";
       repo = "finix";
+      ref = "main";
     };
 
     finix-community = {
       type = "github";
       owner = "finix-community";
       repo = "community-modules";
+      ref = "main";
     };
     # keep-sorted end
   };

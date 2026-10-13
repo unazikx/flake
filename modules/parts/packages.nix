@@ -12,6 +12,7 @@
       type = "github";
       owner = "drupol";
       repo = "pkgs-by-name-for-flake-parts";
+      ref = "main";
     };
     # keep-sorted end
   };

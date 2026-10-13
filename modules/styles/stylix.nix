@@ -10,16 +10,18 @@
       type = "github";
       owner = "nix-community";
       repo = "stylix";
+      ref = "master";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-parts.follows = "flake-parts";
       inputs.nur.follows = "nur";
     };
 
     # https://tinted-theming.github.io/tinted-gallery
-    tinted-theming = {
+    tinted-schemes = {
       type = "github";
       owner = "tinted-theming";
       repo = "schemes";
+      ref = "spec-0.11";
       flake = false;
     };
     # keep-sorted end

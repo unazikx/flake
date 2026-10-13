@@ -10,6 +10,7 @@
   #     type = "github";
   #     owner = "steamclienthomebrew";
   #     repo = "millennium";
+  #     ref = "main";
   #     dir = "packages/nix";
   #     inputs.nixpkgs.follows = "nixpkgs";
   #   };

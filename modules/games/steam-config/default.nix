@@ -10,6 +10,7 @@
       type = "github";
       owner = "different-name";
       repo = "steam-config-nix";
+      ref = "main";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-parts.follows = "flake-parts";
     };

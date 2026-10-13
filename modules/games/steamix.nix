@@ -10,6 +10,7 @@
   #     type = "github";
   #     owner = "jovian-experiments";
   #     repo = "jovian-nixos";
+  #     ref = "development";
   #     inputs.nixpkgs.follows = "nixpkgs";
   #     inputs.nix-github-actions.follows = "";
   #   };
@@ -18,6 +19,7 @@
   #     type = "github";
   #     owner = "arunoruto";
   #     repo = "steamix";
+  #     ref = "main";
   #     inputs.nixpkgs.follows = "nixpkgs";
   #   };
   #   # keep-sorted end

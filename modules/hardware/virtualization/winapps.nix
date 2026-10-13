@@ -10,6 +10,7 @@
       type = "github";
       owner = "massgravel";
       repo = "microsoft-activation-scripts";
+      ref = "master";
       flake = false;
     };
 
@@ -17,6 +18,7 @@
       type = "github";
       owner = "winapps-org";
       repo = "winapps";
+      ref = "main";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
     };

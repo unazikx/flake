@@ -10,6 +10,7 @@
   #     type = "github";
   #     owner = "daaboulex";
   #     repo = "occt-nix";
+  #     ref = "main";
   #     inputs.nixpkgs.follows = "nixpkgs";
   #     inputs.flake-parts.follows = "flake-parts";
   #   };

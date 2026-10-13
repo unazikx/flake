@@ -9,6 +9,7 @@
   #     type = "github";
   #     owner = "gmodena";
   #     repo = "nix-flatpak";
+  #     ref = "main";
   #   };
   #   # keep-sorted end
   # };

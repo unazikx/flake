@@ -15,18 +15,21 @@
       type = "github";
       owner = "denful";
       repo = "den";
+      ref = "main";
     };
 
     import-tree = {
       type = "github";
       owner = "denful";
       repo = "import-tree";
+      ref = "main";
     };
 
     with-inputs = {
       type = "github";
       owner = "denful";
       repo = "with-inputs";
+      ref = "main";
     };
     # keep-sorted end
   };

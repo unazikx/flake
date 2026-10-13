@@ -10,6 +10,7 @@
   #     type = "github";
   #     owner = "crmne";
   #     repo = "fastpotify";
+  #     ref = "main";
   #     inputs.nixpkgs.follows = "nixpkgs";
   #   };
   #   # keep-sorted end

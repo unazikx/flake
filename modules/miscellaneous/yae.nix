@@ -9,6 +9,7 @@
   #     type = "github";
   #     owner = "fuwn";
   #     repo = "yae";
+  #     ref = "main";
   #     inputs.nixpkgs.follows = "nixpkgs";
   #     inputs.flake-utils.follows = "flake-utils";
   #   };

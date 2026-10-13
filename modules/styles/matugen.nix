@@ -9,12 +9,14 @@
   #     type = "github";
   #     owner = "unazikx";
   #     repo = "matugen-nix";
+  #     ref = "main";
   #     inputs.nixpkgs.follows = "nixpkgs";
   #   };
 
   #   matugen-nix-templates = {
   #     type = "github";
   #     owner = "unazikx";
+  #     ref = "main";
   #     repo = "matugen-nix-templates";
   #   };
   #   # keep-sorted end

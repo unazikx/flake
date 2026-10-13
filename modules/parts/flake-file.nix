@@ -10,6 +10,7 @@
       type = "github";
       owner = "denful";
       repo = "flake-file";
+      ref = "main";
     };
     # keep-sorted end
   };
@@ -17,6 +18,8 @@
   imports = [
     inputs.flake-file.flakeModules.default
     inputs.flake-file.flakeModules.npins
+    inputs.flake-file.flakeModules.unflake
+    inputs.flake-file.flakeModules.lon
   ];
 
   flake-file = {

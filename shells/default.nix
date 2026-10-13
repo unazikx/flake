@@ -10,6 +10,7 @@
       type = "github";
       owner = "nicknovitski";
       repo = "make-shell";
+      ref = "main";
     };
     # keep-sorted end
   };

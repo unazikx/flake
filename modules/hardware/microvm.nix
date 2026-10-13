@@ -9,6 +9,7 @@
       type = "github";
       owner = "microvm-nix";
       repo = "microvm.nix";
+      ref = "main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # keep-sorted end

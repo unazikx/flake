@@ -9,6 +9,7 @@
       type = "github";
       owner = "feel-co";
       repo = "hjem";
+      ref = "main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -16,6 +17,7 @@
       type = "github";
       owner = "snugnug";
       repo = "hjem-rum";
+      ref = "main";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.hjem.follows = "hjem";
     };

@@ -9,6 +9,7 @@
       type = "github";
       owner = "nix-community";
       repo = "nixos-cli";
+      ref = "main";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-parts.follows = "flake-parts";
     };

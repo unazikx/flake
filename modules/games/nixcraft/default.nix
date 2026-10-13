@@ -10,6 +10,7 @@
   #     type = "github";
   #     owner = "loystonpais";
   #     repo = "nixcraft";
+  #     ref = "dev";
   #     inputs.nixpkgs.follows = "nixpkgs";
   #     inputs.flake-parts.follows = "flake-parts";
   #   };

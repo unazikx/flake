@@ -9,6 +9,7 @@
   #     type = "github";
   #     owner = "fzakaria";
   #     repo = "nixpkgs-multiverse";
+  #     ref = "main";
   #   };
   #   # keep-sorted end
   # };
