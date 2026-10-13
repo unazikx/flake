@@ -3,17 +3,17 @@
 }:
 
 {
-  flake-file.inputs = {
-    # keep-sorted start block=yes newline_separated=yes
-    vicinae-extensions = {
-      type = "github";
-      owner = "vicinaehq";
-      repo = "extensions";
-      ref = "main";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    # keep-sorted end
-  };
+  # flake-file.inputs = {
+  #   # keep-sorted start block=yes newline_separated=yes
+  #   vicinae-extensions = {
+  #     type = "github";
+  #     owner = "vicinaehq";
+  #     repo = "extensions";
+  #     ref = "main";
+  #     inputs.nixpkgs.follows = "nixpkgs";
+  #   };
+  #   # keep-sorted end
+  # };
 
   zen.programs.desktop.vicinae = {
     description = ''

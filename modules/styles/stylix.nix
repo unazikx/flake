@@ -16,6 +16,14 @@
       inputs.nur.follows = "nur";
     };
 
+    gnome-shell = {
+      type = "github";
+      owner = "gnome";
+      repo = "gnome-shell";
+      ref = "main";
+      flake = false;
+    };
+
     # https://tinted-theming.github.io/tinted-gallery
     tinted-schemes = {
       type = "github";
