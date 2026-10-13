@@ -104,6 +104,19 @@
       "url": "https://github.com/nix-community/disko/archive/725ea35e410ad83be4931d1bff7e090eacaf3563.tar.gz",
       "hash": "sha256-uZkBR7yHdIKUFB5SZdfgh1qkGfI3XmYmI/lTiquxbck="
     },
+    "dns-malw-link": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "immalware",
+        "repo": "dns.malw.link"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "bf340ea7d19c2adc0b684383d356ed95816f0513",
+      "url": "https://github.com/immalware/dns.malw.link/archive/bf340ea7d19c2adc0b684383d356ed95816f0513.tar.gz",
+      "hash": "sha256-eZIC3TL5p+tAYIi5Z6MqCgd5O3qgjsHCKPCm9yCUM98="
+    },
     "erosanix": {
       "type": "Git",
       "repository": {
@@ -331,33 +344,7 @@
       "url": "https://github.com/massgravel/microsoft-activation-scripts/archive/6401d2f36975dc07bcb6d22ea823a8498a75ec01.tar.gz",
       "hash": "sha256-SYQVjVv6goDxkK6tvJPe5LReyhoWfAlM0g8pBZV1w/0="
     },
-    "microsoft-activation-scripts": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "massgravel",
-        "repo": "microsoft-activation-scripts"
-      },
-      "branch": "master",
-      "submodules": false,
-      "revision": "6401d2f36975dc07bcb6d22ea823a8498a75ec01",
-      "url": "https://github.com/massgravel/microsoft-activation-scripts/archive/6401d2f36975dc07bcb6d22ea823a8498a75ec01.tar.gz",
-      "hash": "sha256-SYQVjVv6goDxkK6tvJPe5LReyhoWfAlM0g8pBZV1w/0="
-    },
     "microvm-nix": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "microvm-nix",
-        "repo": "microvm.nix"
-      },
-      "branch": "main",
-      "submodules": false,
-      "revision": "f13928fe9900e91709d7ce581eefa47eaafa79e1",
-      "url": "https://github.com/microvm-nix/microvm.nix/archive/f13928fe9900e91709d7ce581eefa47eaafa79e1.tar.gz",
-      "hash": "sha256-jTx3O3MKqPjv+cDfBFQ5zlKECBEwzF91scC+mSumZyE="
-    },
-    "microvm.nix": {
       "type": "Git",
       "repository": {
         "type": "GitHub",
@@ -516,19 +503,6 @@
       "url": "https://github.com/nix-community/nixpkgs.lib/archive/73d1c6823d4563707fc913314c8bd780903ff17d.tar.gz",
       "hash": "sha256-1ghAsUduGsb0L6CX1YYHkVL5P/2BXcDOw6FQwqVt4Yk="
     },
-    "nixpkgs-libxml2": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "NixOS",
-        "repo": "nixpkgs"
-      },
-      "branch": "nixos-24.11",
-      "submodules": false,
-      "revision": "50ab793786d9de88ee30ec4e4c24fb4236fc2674",
-      "url": "https://github.com/NixOS/nixpkgs/archive/50ab793786d9de88ee30ec4e4c24fb4236fc2674.tar.gz",
-      "hash": "sha256-/bVBlRpECLVzjV19t5KMdMFWSwKLtb5RyXdjz3LJT+g="
-    },
     "nixpkgs-master": {
       "type": "Git",
       "repository": {
@@ -577,9 +551,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "2b1dbb3eca0666efa44c75550888f034890538fb",
-      "url": "https://github.com/nix-community/nur/archive/2b1dbb3eca0666efa44c75550888f034890538fb.tar.gz",
-      "hash": "sha256-OmjWWE9OOi+jKz8zXbMuk74AkuxGWJSsgEVMCXcCKgs="
+      "revision": "9f53f0f57e2b732dc9c98a8f9645f6eb8b96d4ea",
+      "url": "https://github.com/nix-community/nur/archive/9f53f0f57e2b732dc9c98a8f9645f6eb8b96d4ea.tar.gz",
+      "hash": "sha256-FsiEg6Z88VzHY9QuLmXei4ceyiIMuzhkgIbXr+X7bfc="
     },
     "optnix": {
       "type": "Git",
@@ -620,36 +594,6 @@
       "url": "https://github.com/fufsob/proxy-suite-flake/archive/2f8414455d2813b96ae1d4442a90ee8f58525300.tar.gz",
       "hash": "sha256-/JdG/uqisviWD0b1y6kZmVwXUXwBggzh4hU6AhmvdZA="
     },
-    "shattered-pixel-dungeon-cover": {
-      "type": "Url",
-      "url": "https://cdn2.steamgriddb.com/thumb/af54f3a851b88733bb8cfd07ac7daa23.jpg",
-      "unpack": false,
-      "hash": "sha256-beww8OeASXH+N725pvObQ7uje85FxAg6wwoRgLdn8AE="
-    },
-    "shattered-pixel-dungeon-header": {
-      "type": "Url",
-      "url": "https://cdn2.steamgriddb.com/thumb/d2087d2dbcd6a18c29e2025f0abcb76c.jpg",
-      "unpack": false,
-      "hash": "sha256-bdMKMEBqSbfLMnb6MlR0smhGoib7bvG44hVmNhDv3UM="
-    },
-    "shattered-pixel-dungeon-hero": {
-      "type": "Url",
-      "url": "https://cdn2.steamgriddb.com/hero_thumb/cd179de58c6340faf5c9e4e921638f79.jpg",
-      "unpack": false,
-      "hash": "sha256-bwHT/KsRx39TzukqIvtUpZH/FMOx3qVwsxr5JNFCsJo="
-    },
-    "shattered-pixel-dungeon-icon": {
-      "type": "Url",
-      "url": "https://cdn2.steamgriddb.com/icon/bd50f363001990ee1fe5d798702b1d5b/32/128x128.png",
-      "unpack": false,
-      "hash": "sha256-5gV4Z6WczKVdJz1CZBePsbPQgP5xxWc+vb/m4vV0IqQ="
-    },
-    "shattered-pixel-dungeon-logo": {
-      "type": "Url",
-      "url": "https://cdn2.steamgriddb.com/logo_thumb/17fd9cf204a358e5245f2c041dc77f15.png",
-      "unpack": false,
-      "hash": "sha256-g//mwTkZ9p57HX/WFsm4Ga9257m2EWsH6H/y2x6DtBM="
-    },
     "sopsnix": {
       "type": "Git",
       "repository": {
@@ -663,18 +607,17 @@
       "url": "https://github.com/mic92/sops-nix/archive/ee48786c6f9160d2c1a084aac841f68195b8420c.tar.gz",
       "hash": "sha256-mVD4XIc5JkqMW2K04IkFUzHgHmyJZlzw5ktfgMDCbKU="
     },
-    "soulver-cpp": {
+    "spectrum": {
       "type": "Git",
       "repository": {
-        "type": "GitHub",
-        "owner": "vicinaehq",
-        "repo": "soulver-cpp"
+        "type": "Git",
+        "url": "https://spectrum-os.org/git/spectrum"
       },
       "branch": "main",
       "submodules": false,
-      "revision": "00e926e2bd03118638c88981f6a67bfa107210c2",
-      "url": "https://github.com/vicinaehq/soulver-cpp/archive/00e926e2bd03118638c88981f6a67bfa107210c2.tar.gz",
-      "hash": "sha256-YBFO+aurlz2y2hTRN1Kl0RjX6JzHn0mYBmt4zb436Yg="
+      "revision": "77d2389874bb092b8dbf05ecc5b1030372e80e98",
+      "url": null,
+      "hash": "sha256-+Ba/kIn5BjvV7PN8bWOo7RoqgTY/Yv2M7qeMf3wS2Ag="
     },
     "spicetify-nix": {
       "type": "Git",
@@ -754,19 +697,6 @@
       "url": "https://github.com/tinted-theming/schemes/archive/3ac91137e879502c442ab89ba0f1a98077d0da9d.tar.gz",
       "hash": "sha256-ONFLryA9ab+m00ROqtG2u7z1P0OvGvL4z6ZXdDcWhCk="
     },
-    "tinted-theming": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "tinted-theming",
-        "repo": "schemes"
-      },
-      "branch": "spec-0.11",
-      "submodules": false,
-      "revision": "3ac91137e879502c442ab89ba0f1a98077d0da9d",
-      "url": "https://github.com/tinted-theming/schemes/archive/3ac91137e879502c442ab89ba0f1a98077d0da9d.tar.gz",
-      "hash": "sha256-ONFLryA9ab+m00ROqtG2u7z1P0OvGvL4z6ZXdDcWhCk="
-    },
     "tinted-tmux": {
       "type": "Git",
       "repository": {
@@ -806,43 +736,18 @@
       "url": "https://github.com/noctalia-dev/umbriel/archive/b8fc2cf74fe1dec6de8a99108cafd49d3d0c4bed.tar.gz",
       "hash": "sha256-aoHhOF7Yl4JVFu8NYEqG3s2t5E0ShjJD6AJE82rFeGc="
     },
-    "vicinae": {
+    "winapps": {
       "type": "Git",
       "repository": {
         "type": "GitHub",
-        "owner": "vicinaehq",
-        "repo": "vicinae"
+        "owner": "winapps-org",
+        "repo": "winapps"
       },
       "branch": "main",
       "submodules": false,
-      "revision": "6f1af4e9dae90d09290da91eacf68b8285ffe05a",
-      "url": "https://github.com/vicinaehq/vicinae/archive/6f1af4e9dae90d09290da91eacf68b8285ffe05a.tar.gz",
-      "hash": "sha256-DfGQvtZSgWjXvw8TtZU6tmy5iUsrM4IvVNe6EMNmrwU="
-    },
-    "vicinae-extensions": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "vicinaehq",
-        "repo": "extensions"
-      },
-      "branch": "main",
-      "submodules": false,
-      "revision": "0e3953058fb787d2a96e5ac0cec462440c07cd07",
-      "url": "https://github.com/vicinaehq/extensions/archive/0e3953058fb787d2a96e5ac0cec462440c07cd07.tar.gz",
-      "hash": "sha256-kc51qTJKEnSiiN4mAkoXHkjq8In28rPHbW4+Hm9CLWY="
-    },
-    "windows-activator": {
-      "type": "Url",
-      "url": "https://raw.githubusercontent.com/massgravel/Microsoft-Activation-Scripts/refs/heads/master/MAS/Separate-Files-Version/Activators/HWID_Activation.cmd",
-      "unpack": false,
-      "hash": "sha256-aCjcsmUP/94nKzr0o8POHKhRMP0hAjLLH1bIKZaT6i0="
-    },
-    "windows-edge-uninstaller": {
-      "type": "Url",
-      "url": "https://raw.githubusercontent.com/ShadowWhisperer/Remove-MS-Edge/refs/heads/main/Batch/Both.bat",
-      "unpack": false,
-      "hash": "sha256-liF8XbUpyWnboXDsiVk1JdqxM7fV2lOQGthGRilx2zY="
+      "revision": "42c7e8318280c6fc3426c7afebfc7f43b895f4c8",
+      "url": "https://github.com/winapps-org/winapps/archive/42c7e8318280c6fc3426c7afebfc7f43b895f4c8.tar.gz",
+      "hash": "sha256-eSUFY+u9Xq9/i/0/OH5JhVzTvG+eiOEvUErAmfBzaBE="
     },
     "with-inputs": {
       "type": "Git",
@@ -908,22 +813,6 @@
       "revision": "b82f45c363506588afbb45fefe41fe4670ae1480",
       "url": "https://github.com/kartavkun/zapret-discord-youtube/archive/b82f45c363506588afbb45fefe41fe4670ae1480.tar.gz",
       "hash": "sha256-va22R1zFF7JmibmFwezLYfRup8PfVO3pV7toQH+cbL0="
-    },
-    "zapret-discord-youtube": {
-      "type": "GitRelease",
-      "repository": {
-        "type": "GitHub",
-        "owner": "Flowseal",
-        "repo": "zapret-discord-youtube"
-      },
-      "pre_releases": false,
-      "version_upper_bound": null,
-      "release_prefix": null,
-      "submodules": false,
-      "version": "1.10.3",
-      "revision": "865da4f4c3659523bf79bc6edf0446e7d7969614",
-      "url": "https://api.github.com/repos/Flowseal/zapret-discord-youtube/tarball/refs/tags/1.10.3",
-      "hash": "sha256-7CI4CO85Ggg0w94t3+dreWNYdIJRMTZ72PRRMmHCudk="
     },
     "zapret-flowseal": {
       "type": "GitRelease",
