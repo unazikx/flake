@@ -4,16 +4,16 @@
 }:
 
 {
-  flake-file.inputs = {
-    # keep-sorted start block=yes newline_separated=yes
-    nix-secrets = {
-      type = "github";
-      owner = "unnamed-systems";
-      repo = "nix-secrets";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    # keep-sorted end
-  };
+  # flake-file.inputs = {
+  #   # keep-sorted start block=yes newline_separated=yes
+  #   nix-secrets = {
+  #     type = "github";
+  #     owner = "unnamed-systems";
+  #     repo = "nix-secrets";
+  #     inputs.nixpkgs.follows = "nixpkgs";
+  #   };
+  #   # keep-sorted end
+  # };
 
   zen.nix-secrets = {
     includes = [

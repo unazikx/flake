@@ -9,7 +9,7 @@
         ...
       }:
       {
-        file.".github/workflows/update-flake-lock.yaml" = {
+        file.".github/workflows/update-flake.yaml" = {
           yaml = {
             name = "Update Nix flake lock file";
 
@@ -49,6 +49,7 @@
                       ''
                         nix flake update
                         nix flake lock
+                        nix fmt
                       '';
                   }
                   {

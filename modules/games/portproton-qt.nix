@@ -4,17 +4,17 @@
 }:
 
 {
-  flake-file.inputs = {
-    # keep-sorted start block=yes newline_separated=yes
-    portproton-qt = {
-      type = "gitlab";
-      owner = "dark_siders";
-      repo = "portprotonqt-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-utils.follows = "flake-utils";
-    };
-    # keep-sorted end
-  };
+  # flake-file.inputs = {
+  #   # keep-sorted start block=yes newline_separated=yes
+  #   portproton-qt = {
+  #     type = "gitlab";
+  #     owner = "dark_siders";
+  #     repo = "portprotonqt-nix";
+  #     inputs.nixpkgs.follows = "nixpkgs";
+  #     inputs.flake-utils.follows = "flake-utils";
+  #   };
+  #   # keep-sorted end
+  # };
 
   zen.games.portproton-qt = {
     description = ''

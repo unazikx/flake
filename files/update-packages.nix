@@ -9,7 +9,7 @@
         ...
       }:
       {
-        file.".github/workflows/update-flake.yaml" = {
+        file.".github/workflows/update-packages.yaml" = {
           yaml = {
             name = "Update Nix flake";
 

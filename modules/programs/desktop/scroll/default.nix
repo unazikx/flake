@@ -4,16 +4,16 @@
 }:
 
 {
-  flake-file.inputs = {
-    # keep-sorted start block=yes newline_separated=yes
-    scroll-flake = {
-      type = "github";
-      owner = "diax170";
-      repo = "scroll-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    # keep-sorted end
-  };
+  # flake-file.inputs = {
+  #   # keep-sorted start block=yes newline_separated=yes
+  #   scroll-flake = {
+  #     type = "github";
+  #     owner = "diax170";
+  #     repo = "scroll-flake";
+  #     inputs.nixpkgs.follows = "nixpkgs";
+  #   };
+  #   # keep-sorted end
+  # };
 
   zen.programs.desktop.scroll = {
     description = ''

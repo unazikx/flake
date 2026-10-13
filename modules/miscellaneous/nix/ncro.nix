@@ -3,16 +3,16 @@
 }:
 
 {
-  flake-file.inputs = {
-    # keep-sorted start block=yes newline_separated=yes
-    ncro = {
-      type = "github";
-      owner = "manic-systems";
-      repo = "ncro";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    # keep-sorted end
-  };
+  # flake-file.inputs = {
+  #   # keep-sorted start block=yes newline_separated=yes
+  #   ncro = {
+  #     type = "github";
+  #     owner = "manic-systems";
+  #     repo = "ncro";
+  #     inputs.nixpkgs.follows = "nixpkgs";
+  #   };
+  #   # keep-sorted end
+  # };
 
   zen.miscellaneous.nix.ncro = {
     nixos =

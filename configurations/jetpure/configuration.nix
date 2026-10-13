@@ -62,7 +62,6 @@
       zen.miscellaneous.time
       zen.miscellaneous.users.accounts
       zen.miscellaneous.version
-      zen.miscellaneous.yae
       zen.programs.cli.nixos-cli
       zen.programs.cli.rusted-tools
       zen.secrets.sopsnix
@@ -90,7 +89,6 @@
       zen.games.minecraft.xmcl
       zen.games.srb2
       zen.games.steam
-      zen.games.steamix
       zen.games.supertuxkart
       zen.games.umu-launcher
       zen.miscellaneous.nix
@@ -111,10 +109,9 @@
       zen.programs.gui.librewolf
       zen.programs.gui.obs-studio
       zen.programs.gui.qutebrowser
-      zen.programs.gui.spotify
+      # zen.programs.gui.spotify
       zen.programs.gui.throne
       zen.programs.gui.vesktop
-      zen.programs.office.artcraft
       zen.programs.office.blender
       zen.programs.office.libreoffice
       zen.programs.office.zathura

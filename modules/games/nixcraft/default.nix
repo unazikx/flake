@@ -4,17 +4,17 @@
 }:
 
 {
-  flake-file.inputs = {
-    # keep-sorted start block=yes newline_separated=yes
-    nixcraft = {
-      type = "github";
-      owner = "loystonpais";
-      repo = "nixcraft";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-parts.follows = "flake-parts";
-    };
-    # keep-sorted end
-  };
+  # flake-file.inputs = {
+  #   # keep-sorted start block=yes newline_separated=yes
+  #   nixcraft = {
+  #     type = "github";
+  #     owner = "loystonpais";
+  #     repo = "nixcraft";
+  #     inputs.nixpkgs.follows = "nixpkgs";
+  #     inputs.flake-parts.follows = "flake-parts";
+  #   };
+  #   # keep-sorted end
+  # };
 
   zen.games.nixcraft = {
     description = ''

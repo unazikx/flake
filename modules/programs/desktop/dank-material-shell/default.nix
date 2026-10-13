@@ -4,24 +4,24 @@
 }:
 
 {
-  flake-file.inputs = {
-    # keep-sorted start block=yes newline_separated=yes
-    dms = {
-      type = "github";
-      owner = "avengemedia";
-      repo = "dankmaterialshell";
-      ref = "stable";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+  # flake-file.inputs = {
+  #   # keep-sorted start block=yes newline_separated=yes
+  #   dms = {
+  #     type = "github";
+  #     owner = "avengemedia";
+  #     repo = "dankmaterialshell";
+  #     ref = "stable";
+  #     inputs.nixpkgs.follows = "nixpkgs";
+  #   };
 
-    dms-plugins = {
-      type = "github";
-      owner = "avengemedia";
-      repo = "dms-plugin-registry";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    # keep-sorted end
-  };
+  #   dms-plugins = {
+  #     type = "github";
+  #     owner = "avengemedia";
+  #     repo = "dms-plugin-registry";
+  #     inputs.nixpkgs.follows = "nixpkgs";
+  #   };
+  #   # keep-sorted end
+  # };
 
   zen.programs.desktop.dank-material-shell = {
     description = ''

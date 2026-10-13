@@ -3,19 +3,19 @@
 }:
 
 {
-  flake-file.inputs = {
-    # keep-sorted start block=yes newline_separated=yes
-    tixpkgs = {
-      type = "github";
-      owner = "74k1";
-      repo = "tixpkgs";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-parts.follows = "flake-parts";
-      inputs.home-manager.follows = "home-manager";
-      inputs.nixpkgs-waterfox.follows = "";
-    };
-    # keep-sorted end
-  };
+  # flake-file.inputs = {
+  #   # keep-sorted start block=yes newline_separated=yes
+  #   tixpkgs = {
+  #     type = "github";
+  #     owner = "74k1";
+  #     repo = "tixpkgs";
+  #     inputs.nixpkgs.follows = "nixpkgs";
+  #     inputs.flake-parts.follows = "flake-parts";
+  #     inputs.home-manager.follows = "home-manager";
+  #     inputs.nixpkgs-waterfox.follows = "";
+  #   };
+  #   # keep-sorted end
+  # };
 
   zen.programs.office.artcraft = {
     description = ''

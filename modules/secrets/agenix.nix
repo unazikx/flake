@@ -3,16 +3,16 @@
 }:
 
 {
-  flake-file.inputs = {
-    # keep-sorted start block=yes newline_separated=yes
-    agenix = {
-      type = "github";
-      owner = "ryantm";
-      repo = "agenix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    # keep-sorted end
-  };
+  # flake-file.inputs = {
+  #   # keep-sorted start block=yes newline_separated=yes
+  #   agenix = {
+  #     type = "github";
+  #     owner = "ryantm";
+  #     repo = "agenix";
+  #     inputs.nixpkgs.follows = "nixpkgs";
+  #   };
+  #   # keep-sorted end
+  # };
 
   zen.secrets.agenix = {
     os =

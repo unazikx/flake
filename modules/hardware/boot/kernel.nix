@@ -3,17 +3,17 @@
 }:
 
 {
-  flake-file.inputs = {
-    # keep-sorted start block=yes newline_separated=yes
-    cachyos-kernel-nix = {
-      type = "github";
-      owner = "xddxdd";
-      repo = "nix-cachyos-kernel";
-      ref = "release";
-      inputs.flake-parts.follows = "flake-parts";
-    };
-    # keep-sorted end
-  };
+  # flake-file.inputs = {
+  #   # keep-sorted start block=yes newline_separated=yes
+  #   cachyos-kernel-nix = {
+  #     type = "github";
+  #     owner = "xddxdd";
+  #     repo = "nix-cachyos-kernel";
+  #     ref = "release";
+  #     inputs.flake-parts.follows = "flake-parts";
+  #   };
+  #   # keep-sorted end
+  # };
 
   zen.hardware.boot.kernel = {
     description = ''
@@ -23,7 +23,6 @@
 
     nixos =
       {
-        inputs,
         pkgs,
         lib,
         ...
@@ -47,10 +46,6 @@
             compressorArgs = [ "-16" ];
           };
         };
-
-        nixpkgs.overlays = [
-          inputs.cachyos-kernel-nix.overlays.pinned
-        ];
       };
   };
 }

@@ -8,7 +8,7 @@
 {
   flake-file.inputs = {
     # keep-sorted start block=yes newline_separated=yes
-    pkgs-by-name = {
+    pkgs-by-name-for-flake-parts = {
       type = "github";
       owner = "drupol";
       repo = "pkgs-by-name-for-flake-parts";
@@ -17,7 +17,7 @@
   };
 
   imports = [
-    inputs.pkgs-by-name.flakeModule
+    inputs.pkgs-by-name-for-flake-parts.flakeModule
   ];
 
   zen.flake-parts.default = {

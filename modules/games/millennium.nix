@@ -4,17 +4,17 @@
 }:
 
 {
-  flake-file.inputs = {
-    # keep-sorted start block=yes newline_separated=yes
-    millennium = {
-      type = "github";
-      owner = "steamclienthomebrew";
-      repo = "millennium";
-      dir = "packages/nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    # keep-sorted end
-  };
+  # flake-file.inputs = {
+  #   # keep-sorted start block=yes newline_separated=yes
+  #   millennium = {
+  #     type = "github";
+  #     owner = "steamclienthomebrew";
+  #     repo = "millennium";
+  #     dir = "packages/nix";
+  #     inputs.nixpkgs.follows = "nixpkgs";
+  #   };
+  #   # keep-sorted end
+  # };
 
   zen.games.millennium = {
     description = ''

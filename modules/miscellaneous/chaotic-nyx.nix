@@ -3,18 +3,18 @@
 }:
 
 {
-  flake-file.inputs = {
-    # keep-sorted start block=yes newline_separated=yes
-    chaotic-nyx = {
-      type = "github";
-      owner = "chaotic-cx";
-      repo = "nyx";
-      ref = "nyxpkgs-unstable";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.home-manager.follows = "home-manager";
-    };
-    # keep-sorted end
-  };
+  # flake-file.inputs = {
+  #   # keep-sorted start block=yes newline_separated=yes
+  #   chaotic-nyx = {
+  #     type = "github";
+  #     owner = "chaotic-cx";
+  #     repo = "nyx";
+  #     ref = "nyxpkgs-unstable";
+  #     inputs.nixpkgs.follows = "nixpkgs";
+  #     inputs.home-manager.follows = "home-manager";
+  #   };
+  #   # keep-sorted end
+  # };
 
   zen.miscellaneous.chaotic-nyx = {
     description = ''

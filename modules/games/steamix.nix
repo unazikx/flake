@@ -4,24 +4,24 @@
 }:
 
 {
-  flake-file.inputs = {
-    # keep-sorted start block=yes newline_separated=yes
-    jovian = {
-      type = "github";
-      owner = "jovian-experiments";
-      repo = "jovian-nixos";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.nix-github-actions.follows = "";
-    };
+  # flake-file.inputs = {
+  #   # keep-sorted start block=yes newline_separated=yes
+  #   jovian = {
+  #     type = "github";
+  #     owner = "jovian-experiments";
+  #     repo = "jovian-nixos";
+  #     inputs.nixpkgs.follows = "nixpkgs";
+  #     inputs.nix-github-actions.follows = "";
+  #   };
 
-    steamix = {
-      type = "github";
-      owner = "arunoruto";
-      repo = "steamix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    # keep-sorted end
-  };
+  #   steamix = {
+  #     type = "github";
+  #     owner = "arunoruto";
+  #     repo = "steamix";
+  #     inputs.nixpkgs.follows = "nixpkgs";
+  #   };
+  #   # keep-sorted end
+  # };
 
   zen.games.steamix = {
     description = ''

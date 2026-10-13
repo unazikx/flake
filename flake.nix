@@ -1,43 +1,10 @@
 {
   inputs = {
-    agenix = {
-      type = "github";
-      owner = "ryantm";
-      repo = "agenix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    amane = {
-      type = "github";
-      owner = "mystiafin";
-      repo = "amane";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     betterfox = {
       type = "github";
       owner = "yokoffing";
       repo = "betterfox";
       flake = false;
-    };
-
-    cachyos-kernel-nix = {
-      type = "github";
-      owner = "xddxdd";
-      repo = "nix-cachyos-kernel";
-      ref = "release";
-      inputs.flake-parts.follows = "flake-parts";
-    };
-
-    chaotic-nyx = {
-      type = "github";
-      owner = "chaotic-cx";
-      repo = "nyx";
-      ref = "nyxpkgs-unstable";
-      inputs = {
-        home-manager.follows = "home-manager";
-        nixpkgs.follows = "nixpkgs";
-      };
     };
 
     dag = {
@@ -56,21 +23,6 @@
       type = "github";
       owner = "nix-community";
       repo = "disko";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    dms = {
-      type = "github";
-      owner = "avengemedia";
-      repo = "dankmaterialshell";
-      ref = "stable";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    dms-plugins = {
-      type = "github";
-      owner = "avengemedia";
-      repo = "dms-plugin-registry";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -155,30 +107,10 @@
       repo = "import-tree";
     };
 
-    jovian = {
-      type = "github";
-      owner = "jovian-experiments";
-      repo = "jovian-nixos";
-      inputs = {
-        nix-github-actions.follows = "";
-        nixpkgs.follows = "nixpkgs";
-      };
-    };
-
     make-shell = {
       type = "github";
       owner = "nicknovitski";
       repo = "make-shell";
-    };
-
-    mangowc = {
-      type = "github";
-      owner = "mangowm";
-      repo = "mango";
-      inputs = {
-        flake-parts.follows = "flake-parts";
-        nixpkgs.follows = "nixpkgs";
-      };
     };
 
     massgrave = {
@@ -188,55 +120,11 @@
       flake = false;
     };
 
-    matugen-nix = {
-      type = "github";
-      owner = "unazikx";
-      repo = "matugen-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    matugen-nix-templates = {
-      type = "github";
-      owner = "unazikx";
-      repo = "matugen-nix-templates";
-    };
-
-    max-ru = {
-      type = "github";
-      owner = "spiage";
-      repo = "max-messenger";
-      inputs = {
-        flake-utils.follows = "flake-utils";
-        nixpkgs.follows = "nixpkgs";
-      };
-    };
-
     microvm-nix = {
       type = "github";
       owner = "microvm-nix";
       repo = "microvm.nix";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    millennium = {
-      type = "github";
-      owner = "steamclienthomebrew";
-      repo = "millennium";
-      dir = "packages/nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    ncro = {
-      type = "github";
-      owner = "manic-systems";
-      repo = "ncro";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    nilla-cli = {
-      type = "github";
-      owner = "nilla-nix";
-      repo = "cli";
     };
 
     nix-darwin = {
@@ -261,23 +149,6 @@
       owner = "hustlerone";
       repo = "nix-minecraft";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    nix-secrets = {
-      type = "github";
-      owner = "unnamed-systems";
-      repo = "nix-secrets";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    nixcraft = {
-      type = "github";
-      owner = "loystonpais";
-      repo = "nixcraft";
-      inputs = {
-        flake-parts.follows = "flake-parts";
-        nixpkgs.follows = "nixpkgs";
-      };
     };
 
     nixos-cli = {
@@ -322,12 +193,6 @@
       ref = "master";
     };
 
-    nixpkgs-multiverse = {
-      type = "github";
-      owner = "fzakaria";
-      repo = "nixpkgs-multiverse";
-    };
-
     nixpkgs-stable = {
       type = "github";
       owner = "nixos";
@@ -352,33 +217,16 @@
       };
     };
 
-    pkgs-by-name = {
+    pkgs-by-name-for-flake-parts = {
       type = "github";
       owner = "drupol";
       repo = "pkgs-by-name-for-flake-parts";
-    };
-
-    portproton-qt = {
-      type = "gitlab";
-      owner = "dark_siders";
-      repo = "portprotonqt-nix";
-      inputs = {
-        flake-utils.follows = "flake-utils";
-        nixpkgs.follows = "nixpkgs";
-      };
     };
 
     proxy-suite-flake = {
       type = "github";
       owner = "fufsob";
       repo = "proxy-suite-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    scroll-flake = {
-      type = "github";
-      owner = "diax170";
-      repo = "scroll-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -406,13 +254,6 @@
       };
     };
 
-    steamix = {
-      type = "github";
-      owner = "arunoruto";
-      repo = "steamix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     stylix = {
       type = "github";
       owner = "nix-community";
@@ -429,18 +270,6 @@
       owner = "tinted-theming";
       repo = "schemes";
       flake = false;
-    };
-
-    tixpkgs = {
-      type = "github";
-      owner = "74k1";
-      repo = "tixpkgs";
-      inputs = {
-        flake-parts.follows = "flake-parts";
-        home-manager.follows = "home-manager";
-        nixpkgs.follows = "nixpkgs";
-        nixpkgs-waterfox.follows = "";
-      };
     };
 
     umbriel = {
@@ -478,16 +307,6 @@
       owner = "x45iq";
       repo = "xmcl-nix";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    yae = {
-      type = "github";
-      owner = "fuwn";
-      repo = "yae";
-      inputs = {
-        flake-utils.follows = "flake-utils";
-        nixpkgs.follows = "nixpkgs";
-      };
     };
   };
 
