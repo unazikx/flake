@@ -10,14 +10,12 @@
   #     type = "github";
   #     owner = "avengemedia";
   #     repo = "dankmaterialshell";
-  #     ref = "stable";
   #   };
 
   #   dms-plugins = {
   #     type = "github";
   #     owner = "avengemedia";
   #     repo = "dms-plugin-registry";
-  #     ref = "master";
   #   };
   #   # keep-sorted end
   # };

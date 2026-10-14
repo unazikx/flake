@@ -10,7 +10,6 @@
   #     type = "github";
   #     owner = "daaboulex";
   #     repo = "occt-nix";
-  #     ref = "main";
   #   };
   #   # keep-sorted end
   # };

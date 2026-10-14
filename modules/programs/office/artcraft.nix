@@ -9,7 +9,6 @@
   #     type = "github";
   #     owner = "74k1";
   #     repo = "tixpkgs";
-  #     ref = "main";
   #   };
   #   # keep-sorted end
   # };

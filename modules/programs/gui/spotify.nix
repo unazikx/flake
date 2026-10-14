@@ -9,7 +9,6 @@
       type = "github";
       owner = "gerg-l";
       repo = "spicetify-nix";
-      ref = "master";
     };
     # keep-sorted end
   };

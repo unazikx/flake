@@ -11,7 +11,6 @@
       type = "github";
       owner = "emmanuelrosa";
       repo = "erosanix";
-      ref = "master";
     };
     # keep-sorted end
   };

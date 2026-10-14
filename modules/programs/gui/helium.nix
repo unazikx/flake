@@ -9,7 +9,6 @@
   #     type = "gitlab";
   #     owner = "ntgn";
   #     repo = "helium-flake";
-  #     ref = "main";
   #   };
   #   # keep-sorted end
   # };

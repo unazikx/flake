@@ -10,7 +10,6 @@
   #     type = "github";
   #     owner = "crmne";
   #     repo = "fastpotify";
-  #     ref = "main";
   #   };
   #   # keep-sorted end
   # };

@@ -10,7 +10,6 @@
       type = "github";
       owner = "massgravel";
       repo = "microsoft-activation-scripts";
-      ref = "master";
       flake = false;
     };
 
@@ -18,7 +17,6 @@
       type = "github";
       owner = "shadowwhisperer";
       repo = "remove-ms-edge";
-      ref = "main";
       flake = false;
     };
 
@@ -26,7 +24,6 @@
       type = "github";
       owner = "winapps-org";
       repo = "winapps";
-      ref = "main";
     };
     # keep-sorted end
   };

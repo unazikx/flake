@@ -10,7 +10,6 @@
       type = "github";
       owner = "noctalia-dev";
       repo = "umbriel";
-      ref = "main";
     };
     # keep-sorted end
   };

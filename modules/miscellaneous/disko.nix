@@ -10,7 +10,6 @@
       type = "github";
       owner = "nix-community";
       repo = "disko";
-      ref = "master";
     };
     # keep-sorted end
   };

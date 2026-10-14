@@ -9,7 +9,6 @@
   #     type = "github";
   #     owner = "vicinaehq";
   #     repo = "extensions";
-  #     ref = "main";
   #   };
   #   # keep-sorted end
   # };

@@ -9,7 +9,6 @@
   #     type = "github";
   #     owner = "mpiorowski";
   #     repo = "late-sh";
-  #     ref = "main";
   #   };
   #   # keep-sorted end
   # };

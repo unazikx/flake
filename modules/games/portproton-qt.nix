@@ -10,7 +10,6 @@
   #     type = "gitlab";
   #     owner = "dark_siders";
   #     repo = "portprotonqt-nix";
-  #     ref = "main";
   #   };
   #   # keep-sorted end
   # };

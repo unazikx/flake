@@ -10,7 +10,6 @@
       type = "github";
       owner = "different-name";
       repo = "steam-config-nix";
-      ref = "main";
     };
     # keep-sorted end
   };

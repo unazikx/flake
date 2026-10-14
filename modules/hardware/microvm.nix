@@ -9,14 +9,12 @@
       type = "github";
       owner = "microvm-nix";
       repo = "microvm.nix";
-      ref = "main";
     };
 
     spectrum = {
       type = "github";
       owner = "unazikx";
       repo = "spectrum";
-      ref = "main";
       flake = false;
     };
     # keep-sorted end

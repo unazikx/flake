@@ -9,7 +9,6 @@
   #     type = "github";
   #     owner = "spiage";
   #     repo = "max-messenger";
-  #     ref = "main";
   #   };
   #   # keep-sorted end
   # };

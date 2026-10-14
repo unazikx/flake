@@ -10,7 +10,6 @@
   #     type = "github";
   #     owner = "kraftwerk-gaming";
   #     repo = "strom";
-  #     ref = "master";
   #   };
   #   # keep-sorted end
   # };

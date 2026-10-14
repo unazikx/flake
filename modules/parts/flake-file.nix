@@ -11,7 +11,6 @@
       type = "github";
       owner = "unazikx";
       repo = "flake-file";
-      ref = "main";
     };
     # keep-sorted end
   };

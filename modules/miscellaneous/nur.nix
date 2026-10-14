@@ -9,7 +9,6 @@
       type = "github";
       owner = "nix-community";
       repo = "nur";
-      ref = "main";
     };
     # keep-sorted end
   };

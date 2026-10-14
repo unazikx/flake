@@ -9,7 +9,6 @@
       type = "github";
       owner = "immalware";
       repo = "dns.malw.link";
-      ref = "master";
       flake = false;
     };
     # keep-sorted end

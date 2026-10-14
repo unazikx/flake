@@ -10,7 +10,6 @@
   #     type = "github";
   #     owner = "loystonpais";
   #     repo = "nixcraft";
-  #     ref = "dev";
   #   };
   #   # keep-sorted end
   # };

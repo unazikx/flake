@@ -9,7 +9,6 @@
   #     type = "github";
   #     owner = "nilla-nix";
   #     repo = "cli";
-  #     ref = "main";
   #   };
   #   # keep-sorted end
   # };

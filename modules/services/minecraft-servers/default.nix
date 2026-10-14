@@ -10,7 +10,6 @@
       type = "github";
       owner = "hustlerone";
       repo = "nix-minecraft";
-      ref = "master";
     };
     # keep-sorted end
   };

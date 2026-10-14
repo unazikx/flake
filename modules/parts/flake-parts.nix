@@ -12,7 +12,6 @@
       type = "github";
       owner = "hercules-ci";
       repo = "flake-parts";
-      ref = "main";
     };
     # keep-sorted end
   };

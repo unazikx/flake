@@ -9,7 +9,6 @@
   #     type = "github";
   #     owner = "fuwn";
   #     repo = "yae";
-  #     ref = "main";
   #   };
   #   # keep-sorted end
   # };

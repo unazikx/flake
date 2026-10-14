@@ -9,7 +9,6 @@
   #   scroll-flake = {
   #     type = "github";
   #     owner = "diax170";
-  #     ref = "master";
   #     repo = "scroll-flake";
   #   };
   #   # keep-sorted end

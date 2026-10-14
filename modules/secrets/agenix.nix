@@ -9,7 +9,6 @@
   #     type = "github";
   #     owner = "ryantm";
   #     repo = "agenix";
-  #     ref = "main";
   #   };
   #   # keep-sorted end
   # };

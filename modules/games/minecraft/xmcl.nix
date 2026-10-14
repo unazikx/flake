@@ -10,7 +10,6 @@
       type = "github";
       owner = "x45iq";
       repo = "xmcl-nix";
-      ref = "master";
     };
     # keep-sorted end
   };

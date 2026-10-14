@@ -9,7 +9,6 @@
       type = "github";
       owner = "nix-community";
       repo = "nixos-cli";
-      ref = "main";
     };
     # keep-sorted end
   };

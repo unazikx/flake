@@ -10,7 +10,6 @@
       type = "github";
       owner = "mic92";
       repo = "sops-nix";
-      ref = "master";
     };
     # keep-sorted end
   };

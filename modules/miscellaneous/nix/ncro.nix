@@ -9,7 +9,6 @@
   #     type = "github";
   #     owner = "manic-systems";
   #     repo = "ncro";
-  #     ref = "main";
   #   };
   #   # keep-sorted end
   # };

@@ -10,7 +10,6 @@
       type = "github";
       owner = "gnome";
       repo = "gnome-shell";
-      ref = "main";
       flake = false;
     };
 
@@ -18,7 +17,6 @@
       type = "github";
       owner = "nix-community";
       repo = "stylix";
-      ref = "master";
     };
 
     # https://tinted-theming.github.io/tinted-gallery
@@ -26,7 +24,6 @@
       type = "github";
       owner = "tinted-theming";
       repo = "schemes";
-      ref = "spec-0.11";
       flake = false;
     };
     # keep-sorted end

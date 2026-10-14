@@ -10,7 +10,6 @@
   #     type = "github";
   #     owner = "jovian-experiments";
   #     repo = "jovian-nixos";
-  #     ref = "development";
   #   };
 
   #   steamix = {

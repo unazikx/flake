@@ -10,7 +10,6 @@
   #     type = "github";
   #     owner = "mystiafin";
   #     repo = "amane";
-  #     ref = "main";
   #   };
   #   # keep-sorted end
   # };

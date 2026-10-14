@@ -10,7 +10,6 @@
   #     type = "github";
   #     owner = "mangowm";
   #     repo = "mango";
-  #     ref = "main";
   #   };
   #   # keep-sorted end
   # };

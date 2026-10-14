@@ -10,7 +10,6 @@
       type = "github";
       owner = "fufsob";
       repo = "proxy-suite-flake";
-      ref = "main";
     };
     # keep-sorted end
   };

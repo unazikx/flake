@@ -10,7 +10,6 @@
       type = "github";
       owner = "yokoffing";
       repo = "betterfox";
-      ref = "main";
       flake = false;
     };
     # keep-sorted end

@@ -10,7 +10,6 @@
   #     type = "github";
   #     owner = "unnamed-systems";
   #     repo = "nix-secrets";
-  #     ref = "master";
   #   };
   #   # keep-sorted end
   # };

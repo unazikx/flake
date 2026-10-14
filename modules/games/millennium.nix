@@ -10,7 +10,6 @@
   #     type = "github";
   #     owner = "steamclienthomebrew";
   #     repo = "millennium";
-  #     ref = "main";
   #     dir = "packages/nix";
   #   };
   #   # keep-sorted end

@@ -9,7 +9,6 @@
       type = "github";
       owner = "nix-darwin";
       repo = "nix-darwin";
-      ref = "master";
     };
     # keep-sorted end
   };
