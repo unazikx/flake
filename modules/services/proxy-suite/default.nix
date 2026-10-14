@@ -11,7 +11,6 @@
       owner = "fufsob";
       repo = "proxy-suite-flake";
       ref = "main";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
     # keep-sorted end
   };

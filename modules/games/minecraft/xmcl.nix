@@ -11,7 +11,6 @@
       owner = "x45iq";
       repo = "xmcl-nix";
       ref = "master";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
     # keep-sorted end
   };

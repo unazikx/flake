@@ -11,7 +11,6 @@
       owner = "hustlerone";
       repo = "nix-minecraft";
       ref = "master";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
     # keep-sorted end
   };

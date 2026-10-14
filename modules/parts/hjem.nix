@@ -10,7 +10,6 @@
       owner = "feel-co";
       repo = "hjem";
       ref = "main";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     hjem-rum = {
@@ -18,8 +17,6 @@
       owner = "snugnug";
       repo = "hjem-rum";
       ref = "main";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.hjem.follows = "hjem";
     };
     # keep-sorted end
   };

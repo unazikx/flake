@@ -70,6 +70,7 @@
                       # bash
                       ''
                         nix build .#__cachix-farmed --no-link --print-out-paths
+                        nix fmt
                       '';
                   }
                 ];

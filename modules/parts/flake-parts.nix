@@ -11,7 +11,6 @@
       owner = "hercules-ci";
       repo = "flake-parts";
       ref = "main";
-      inputs.nixpkgs-lib.follows = "nixpkgs";
     };
     # keep-sorted end
   };

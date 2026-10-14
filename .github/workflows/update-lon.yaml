@@ -1,6 +1,6 @@
 jobs:
   update-flake:
-    name: Run update-lock
+    name: Run update-lon
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -11,10 +11,9 @@ jobs:
           extra_nix_config: |
             experimental-features = nix-command flakes
           nix_path: nixpkgs=channel:nixos-unstable
-      - name: Run update-lock
+      - name: Run update-lon
         run: |
-          nix flake update
-          nix flake lock
+          nix run .#write-lon
           nix fmt
       - name: Commit changes
         run: |
@@ -23,12 +22,12 @@ jobs:
           git add -A
 
           if ! git diff --cached --quiet; then
-            git commit -m "flake: updated nix-lock [automated]"
+            git commit -m "flake: updated lon [automated]"
             git push
           else
             echo "No changes from updater"
           fi
-name: Update Nix flake lock file
+name: Update Nix lon file
 "on":
   workflow_dispatch: {}
 permissions:

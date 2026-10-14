@@ -11,7 +11,6 @@
   #     owner = "avengemedia";
   #     repo = "dankmaterialshell";
   #     ref = "stable";
-  #     inputs.nixpkgs.follows = "nixpkgs";
   #   };
 
   #   dms-plugins = {
@@ -19,7 +18,6 @@
   #     owner = "avengemedia";
   #     repo = "dms-plugin-registry";
   #     ref = "master";
-  #     inputs.nixpkgs.follows = "nixpkgs";
   #   };
   #   # keep-sorted end
   # };

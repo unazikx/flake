@@ -11,8 +11,6 @@
   #     owner = "jovian-experiments";
   #     repo = "jovian-nixos";
   #     ref = "development";
-  #     inputs.nixpkgs.follows = "nixpkgs";
-  #     inputs.nix-github-actions.follows = "";
   #   };
 
   #   steamix = {

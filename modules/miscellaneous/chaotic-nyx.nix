@@ -10,8 +10,6 @@
   #     owner = "chaotic-cx";
   #     repo = "nyx";
   #     ref = "nyxpkgs-unstable";
-  #     inputs.nixpkgs.follows = "nixpkgs";
-  #     inputs.home-manager.follows = "home-manager";
   #   };
   #   # keep-sorted end
   # };

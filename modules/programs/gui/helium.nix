@@ -10,8 +10,6 @@
   #     owner = "ntgn";
   #     repo = "helium-flake";
   #     ref = "main";
-  #     inputs.nixpkgs.follows = "nixpkgs";
-  #     inputs.flake-parts.follows = "flake-parts";
   #   };
   #   # keep-sorted end
   # };

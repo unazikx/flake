@@ -10,9 +10,6 @@
       owner = "nix-community";
       repo = "nixos-cli";
       ref = "main";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-parts.follows = "flake-parts";
-      inputs.optnix.follows = "optnix";
     };
     # keep-sorted end
   };

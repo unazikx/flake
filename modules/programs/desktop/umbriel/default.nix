@@ -11,7 +11,6 @@
       owner = "noctalia-dev";
       repo = "umbriel";
       ref = "main";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
     # keep-sorted end
   };

@@ -19,9 +19,6 @@
       owner = "nix-community";
       repo = "stylix";
       ref = "master";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-parts.follows = "flake-parts";
-      inputs.nur.follows = "nur";
     };
 
     # https://tinted-theming.github.io/tinted-gallery

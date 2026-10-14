@@ -11,7 +11,6 @@
   #     owner = "diax170";
   #     ref = "master";
   #     repo = "scroll-flake";
-  #     inputs.nixpkgs.follows = "nixpkgs";
   #   };
   #   # keep-sorted end
   # };

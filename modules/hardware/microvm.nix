@@ -10,8 +10,6 @@
       owner = "microvm-nix";
       repo = "microvm.nix";
       ref = "main";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.spectrum.follows = "spectrum";
     };
 
     spectrum = {

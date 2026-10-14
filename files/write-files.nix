@@ -48,7 +48,7 @@
                       # bash
                       ''
                         nix run .#write-files
-                        nix run .#write-tack
+                        nix run .#write-lon
                         nix fmt
                       '';
                   }

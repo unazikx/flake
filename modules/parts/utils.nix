@@ -17,8 +17,6 @@
       owner = "xddxdd";
       repo = "nix-math";
       ref = "master";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-parts.follows = "flake-parts";
     };
 
     nixos-hardware = {
@@ -26,7 +24,6 @@
       owner = "NixOS";
       repo = "nixos-hardware";
       ref = "master";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
     # keep-sorted end
   };

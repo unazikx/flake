@@ -10,8 +10,6 @@
   #     owner = "spiage";
   #     repo = "max-messenger";
   #     ref = "main";
-  #     inputs.nixpkgs.follows = "nixpkgs";
-  #     inputs.flake-utils.follows = "flake-utils";
   #   };
   #   # keep-sorted end
   # };

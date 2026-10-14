@@ -17,7 +17,6 @@
   };
 
   imports = [
-    inputs.flake-file.flakeModules.tack
     inputs.flake-file.flakeModules.lon
   ];
 
@@ -43,7 +42,6 @@
       '';
 
     lon.lockDir = ".lon";
-    tack.lockDir = ".tack";
 
     prune-lock.enable = true;
 

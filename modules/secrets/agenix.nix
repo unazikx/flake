@@ -10,7 +10,6 @@
   #     owner = "ryantm";
   #     repo = "agenix";
   #     ref = "main";
-  #     inputs.nixpkgs.follows = "nixpkgs";
   #   };
   #   # keep-sorted end
   # };

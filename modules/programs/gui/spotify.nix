@@ -10,7 +10,6 @@
       owner = "gerg-l";
       repo = "spicetify-nix";
       ref = "master";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
     # keep-sorted end
   };

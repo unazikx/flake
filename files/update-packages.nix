@@ -48,22 +48,6 @@
                       # bash
                       ''
                         nix run .#fetch-all
-                      '';
-                  }
-                  {
-                    name = "Run flake#update-packages";
-                    run =
-                      # bash
-                      ''
-                        nix run nixpkgs#npins -- upgrade
-                        nix run nixpkgs#npins -- update
-                      '';
-                  }
-                  {
-                    name = "Run flake#fmt";
-                    run =
-                      # bash
-                      ''
                         nix fmt
                       '';
                   }

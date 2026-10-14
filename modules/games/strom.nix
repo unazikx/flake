@@ -11,7 +11,6 @@
   #     owner = "kraftwerk-gaming";
   #     repo = "strom";
   #     ref = "master";
-  #     inputs.nixpkgs.follows = "nixpkgs";
   #   };
   #   # keep-sorted end
   # };

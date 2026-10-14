@@ -11,7 +11,6 @@
       owner = "nix-community";
       repo = "disko";
       ref = "master";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
     # keep-sorted end
   };

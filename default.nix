@@ -7,6 +7,7 @@ in
 
 (with-inputs.from.lon' self ".lon")
   (_: {
+    nixpkgs.follows = "nixpkgs-unstable";
     nixpkgs-lib.follows = "nixpkgs";
   })
   (

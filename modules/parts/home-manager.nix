@@ -10,7 +10,6 @@
       owner = "nix-community";
       repo = "home-manager";
       ref = "master";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
     # keep-sorted end
   };

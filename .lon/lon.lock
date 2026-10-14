@@ -341,16 +341,6 @@
       "url": "https://github.com/NixOS/nixos-hardware/archive/60a624466c08787ee8303393b7d4752d1826f14f.tar.gz",
       "hash": "sha256-BYhx89XJltnRyQeuDKHVL5eSqbbfAcOKuDts7QRsrxQ="
     },
-    "nixpkgs": {
-      "type": "GitHub",
-      "fetchType": "tarball",
-      "owner": "nixos",
-      "repo": "nixpkgs",
-      "branch": "nixos-unstable",
-      "revision": "7fd4004d0511991fff3a0524856a9be09e28c5f0",
-      "url": "https://github.com/nixos/nixpkgs/archive/7fd4004d0511991fff3a0524856a9be09e28c5f0.tar.gz",
-      "hash": "sha256-i5qk1kLiit98rRbh1AXmWBNT9QXC/y4l5Wk/u5EdpDQ="
-    },
     "nixpkgs-easyeffects": {
       "type": "GitHub",
       "fetchType": "tarball",
@@ -371,6 +361,16 @@
       "url": "https://github.com/nixos/nixpkgs/archive/567a49d1913ce81ac6e9582e3553dd90a955875f.tar.gz",
       "hash": "sha256-lrp67w8AulE9Ks53n27I45ADSzbOCn4H+CNW1Ck8B+8="
     },
+    "nixpkgs-lib": {
+      "type": "GitHub",
+      "fetchType": "tarball",
+      "owner": "nix-community",
+      "repo": "nixpkgs.lib",
+      "branch": "master",
+      "revision": "73d1c6823d4563707fc913314c8bd780903ff17d",
+      "url": "https://github.com/nix-community/nixpkgs.lib/archive/73d1c6823d4563707fc913314c8bd780903ff17d.tar.gz",
+      "hash": "sha256-1ghAsUduGsb0L6CX1YYHkVL5P/2BXcDOw6FQwqVt4Yk="
+    },
     "nixpkgs-stable": {
       "type": "GitHub",
       "fetchType": "tarball",
@@ -380,6 +380,16 @@
       "revision": "7993f34ee47e28a3d607a525aadc6c94b73be728",
       "url": "https://github.com/nixos/nixpkgs/archive/7993f34ee47e28a3d607a525aadc6c94b73be728.tar.gz",
       "hash": "sha256-ZGq3ptZzA+oO0N/Wi/F+GbuTijLkYExD01LvpNFAvr0="
+    },
+    "nixpkgs-unstable": {
+      "type": "GitHub",
+      "fetchType": "tarball",
+      "owner": "nixos",
+      "repo": "nixpkgs",
+      "branch": "nixos-unstable",
+      "revision": "7fd4004d0511991fff3a0524856a9be09e28c5f0",
+      "url": "https://github.com/nixos/nixpkgs/archive/7fd4004d0511991fff3a0524856a9be09e28c5f0.tar.gz",
+      "hash": "sha256-i5qk1kLiit98rRbh1AXmWBNT9QXC/y4l5Wk/u5EdpDQ="
     },
     "nur": {
       "type": "GitHub",

@@ -11,7 +11,6 @@
   #     owner = "unnamed-systems";
   #     repo = "nix-secrets";
   #     ref = "master";
-  #     inputs.nixpkgs.follows = "nixpkgs";
   #   };
   #   # keep-sorted end
   # };

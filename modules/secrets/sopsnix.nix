@@ -11,7 +11,6 @@
       owner = "mic92";
       repo = "sops-nix";
       ref = "master";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
     # keep-sorted end
   };

@@ -10,7 +10,6 @@
   #     owner = "manic-systems";
   #     repo = "ncro";
   #     ref = "main";
-  #     inputs.nixpkgs.follows = "nixpkgs";
   #   };
   #   # keep-sorted end
   # };

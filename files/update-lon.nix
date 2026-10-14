@@ -9,9 +9,9 @@
         ...
       }:
       {
-        file.".github/workflows/update-flake.yaml" = {
+        file.".github/workflows/update-lon.yaml" = {
           yaml = {
-            name = "Update Nix flake lock file";
+            name = "Update Nix lon file";
 
             on = {
               # just useful
@@ -24,7 +24,7 @@
 
             jobs = {
               update-flake = {
-                name = "Run update-lock";
+                name = "Run update-lon";
                 runs-on = "ubuntu-latest";
 
                 steps = [
@@ -43,12 +43,11 @@
                     };
                   }
                   {
-                    name = "Run update-lock";
+                    name = "Run update-lon";
                     run =
                       # bash
                       ''
-                        nix flake update
-                        nix flake lock
+                        nix run .#write-lon
                         nix fmt
                       '';
                   }
@@ -62,7 +61,7 @@
                         git add -A
 
                         if ! git diff --cached --quiet; then
-                          git commit -m "flake: updated nix-lock [automated]"
+                          git commit -m "flake: updated lon [automated]"
                           git push
                         else
                           echo "No changes from updater"

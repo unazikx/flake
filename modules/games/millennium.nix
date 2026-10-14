@@ -12,7 +12,6 @@
   #     repo = "millennium";
   #     ref = "main";
   #     dir = "packages/nix";
-  #     inputs.nixpkgs.follows = "nixpkgs";
   #   };
   #   # keep-sorted end
   # };

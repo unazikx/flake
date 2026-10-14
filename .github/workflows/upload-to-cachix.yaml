@@ -19,6 +19,7 @@ jobs:
       - name: Build cachix-farmer
         run: |
           nix build .#__cachix-farmed --no-link --print-out-paths
+          nix fmt
 name: Upload prebuilt Nix binaries to Cachix
 "on":
   workflow_dispatch: {}

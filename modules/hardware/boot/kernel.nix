@@ -10,7 +10,6 @@
   #     owner = "xddxdd";
   #     repo = "nix-cachyos-kernel";
   #     ref = "release";
-  #     inputs.flake-parts.follows = "flake-parts";
   #   };
   #   # keep-sorted end
   # };
