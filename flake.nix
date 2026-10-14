@@ -6,10 +6,9 @@
 
       srcs = import "${self}/.lon/lon.nix";
       overrides = import "${self}/.lon/lon-follows.nix";
-
-      with-inputs = import srcs.with-inputs;
+      with-inputs = (import srcs.with-inputs).from.lon';
     in
-    (with-inputs.from.lon' self ".lon") overrides (
+    (with-inputs self ".lon") overrides (
       inputs:
       (inputs.flake-parts.lib.mkFlake
         {

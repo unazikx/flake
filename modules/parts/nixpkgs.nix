@@ -8,12 +8,12 @@
     nixpkgs.follows = "nixpkgs-unstable";
 
     # keep-sorted start block=yes newline_separated=yes
-    # nixpkgs-master = {
-    #   type = "github";
-    #   owner = "nixos";
-    #   repo = "nixpkgs";
-    #   ref = "master";
-    # };
+    nixpkgs-master = {
+      type = "github";
+      owner = "nixos";
+      repo = "nixpkgs";
+      ref = "master";
+    };
 
     nixpkgs-fixed = {
       type = "github";
