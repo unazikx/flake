@@ -4,9 +4,19 @@
 }:
 
 {
+  flake-file.tack = {
+    allFollow = {
+      nixpkgs = [ "nixpkgs-lib" ];
+    };
+  };
+
   flake-file.inputs = {
-    nixpkgs.follows = "nixpkgs-unstable";
-    nixpkgs-lib.follows = "nixpkgs";
+    nixpkgs = {
+      type = "github";
+      owner = "nixos";
+      repo = "nixpkgs";
+      ref = "nixos-unstable";
+    };
 
     # keep-sorted start block=yes newline_separated=yes
     nixpkgs-fixed = {
@@ -28,13 +38,6 @@
       owner = "nixos";
       repo = "nixpkgs";
       ref = "nixos-26.05";
-    };
-
-    nixpkgs-unstable = {
-      type = "github";
-      owner = "nixos";
-      repo = "nixpkgs";
-      ref = "nixos-unstable";
     };
     # keep-sorted end
   };

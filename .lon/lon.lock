@@ -154,12 +154,12 @@
     "flake-file": {
       "type": "GitHub",
       "fetchType": "tarball",
-      "owner": "denful",
+      "owner": "unazikx",
       "repo": "flake-file",
       "branch": "main",
-      "revision": "d3600508b0b031221459f7358ab88c438a81ac83",
-      "url": "https://github.com/denful/flake-file/archive/d3600508b0b031221459f7358ab88c438a81ac83.tar.gz",
-      "hash": "sha256-u10FOsDRA1GMRcn1+hYf2eD1K+LP/F9/+AeErkKraPg="
+      "revision": "539af30d199201092250509cba4c93a7fbd07f0f",
+      "url": "https://github.com/unazikx/flake-file/archive/539af30d199201092250509cba4c93a7fbd07f0f.tar.gz",
+      "hash": "sha256-yquDmN2vKAtSfwJLXcEwpq9z+4txQLtlPd+Hmxss+nM="
     },
     "flake-parts": {
       "type": "GitHub",
@@ -341,6 +341,16 @@
       "url": "https://github.com/NixOS/nixos-hardware/archive/60a624466c08787ee8303393b7d4752d1826f14f.tar.gz",
       "hash": "sha256-BYhx89XJltnRyQeuDKHVL5eSqbbfAcOKuDts7QRsrxQ="
     },
+    "nixpkgs": {
+      "type": "GitHub",
+      "fetchType": "tarball",
+      "owner": "nixos",
+      "repo": "nixpkgs",
+      "branch": "nixos-unstable",
+      "revision": "7fd4004d0511991fff3a0524856a9be09e28c5f0",
+      "url": "https://github.com/nixos/nixpkgs/archive/7fd4004d0511991fff3a0524856a9be09e28c5f0.tar.gz",
+      "hash": "sha256-i5qk1kLiit98rRbh1AXmWBNT9QXC/y4l5Wk/u5EdpDQ="
+    },
     "nixpkgs-easyeffects": {
       "type": "GitHub",
       "fetchType": "tarball",
@@ -380,16 +390,6 @@
       "revision": "7993f34ee47e28a3d607a525aadc6c94b73be728",
       "url": "https://github.com/nixos/nixpkgs/archive/7993f34ee47e28a3d607a525aadc6c94b73be728.tar.gz",
       "hash": "sha256-ZGq3ptZzA+oO0N/Wi/F+GbuTijLkYExD01LvpNFAvr0="
-    },
-    "nixpkgs-unstable": {
-      "type": "GitHub",
-      "fetchType": "tarball",
-      "owner": "nixos",
-      "repo": "nixpkgs",
-      "branch": "nixos-unstable",
-      "revision": "7fd4004d0511991fff3a0524856a9be09e28c5f0",
-      "url": "https://github.com/nixos/nixpkgs/archive/7fd4004d0511991fff3a0524856a9be09e28c5f0.tar.gz",
-      "hash": "sha256-i5qk1kLiit98rRbh1AXmWBNT9QXC/y4l5Wk/u5EdpDQ="
     },
     "nur": {
       "type": "GitHub",
@@ -442,14 +442,14 @@
       "hash": "sha256-mVD4XIc5JkqMW2K04IkFUzHgHmyJZlzw5ktfgMDCbKU="
     },
     "spectrum": {
-      "type": "Git",
-      "fetchType": "git",
+      "type": "GitHub",
+      "fetchType": "tarball",
+      "owner": "unazikx",
+      "repo": "spectrum",
       "branch": "main",
       "revision": "77d2389874bb092b8dbf05ecc5b1030372e80e98",
-      "url": "https://spectrum-os.org/git/spectrum",
-      "hash": "sha256-+Ba/kIn5BjvV7PN8bWOo7RoqgTY/Yv2M7qeMf3wS2Ag=",
-      "lastModified": 1786032750,
-      "submodules": false
+      "url": "https://github.com/unazikx/spectrum/archive/77d2389874bb092b8dbf05ecc5b1030372e80e98.tar.gz",
+      "hash": "sha256-+Ba/kIn5BjvV7PN8bWOo7RoqgTY/Yv2M7qeMf3wS2Ag="
     },
     "spicetify-nix": {
       "type": "GitHub",
@@ -554,12 +554,12 @@
     "with-inputs": {
       "type": "GitHub",
       "fetchType": "tarball",
-      "owner": "denful",
+      "owner": "unazikx",
       "repo": "with-inputs",
       "branch": "main",
-      "revision": "d6d85ae8083fcd0ed60310f497258dd462283112",
-      "url": "https://github.com/denful/with-inputs/archive/d6d85ae8083fcd0ed60310f497258dd462283112.tar.gz",
-      "hash": "sha256-BdLr/TB/Fpta0TUX7WSML3KuHnUSNxDcfazJ7Sbdxc4="
+      "revision": "e7fab3ee4cf0f4104c0cfd30bb97639a246ce599",
+      "url": "https://github.com/unazikx/with-inputs/archive/e7fab3ee4cf0f4104c0cfd30bb97639a246ce599.tar.gz",
+      "hash": "sha256-UbwRNp0MWqD6ghuH7pZTXJgZpowa7XRmVRPcnts7nD4="
     },
     "xdg-desktop-portal-umbriel": {
       "type": "GitHub",

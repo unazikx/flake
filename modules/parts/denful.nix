@@ -27,7 +27,7 @@
 
     with-inputs = {
       type = "github";
-      owner = "denful";
+      owner = "unazikx";
       repo = "with-inputs";
       ref = "main";
     };

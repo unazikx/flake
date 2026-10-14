@@ -1,13 +1,12 @@
 let
   self = ./.;
 
-  sources = import "${self}/npins";
+  sources = import "${self}/.lon/lon.nix";
   with-inputs = import sources.with-inputs;
 in
 
-(with-inputs.from.npins self)
+(with-inputs.from.lon' self ".lon")
   (_: {
-    nixpkgs.follows = "nixpkgs-unstable";
     nixpkgs-lib.follows = "nixpkgs";
   })
   (

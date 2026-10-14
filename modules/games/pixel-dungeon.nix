@@ -46,13 +46,13 @@
             "Shattered Pixel Dungeon" = {
               target = game;
 
-              artwork = {
-                cover = pkgs.npins-sources.shattered-pixel-dungeon-cover;
-                header = pkgs.npins-sources.shattered-pixel-dungeon-header;
-                hero = pkgs.npins-sources.shattered-pixel-dungeon-hero;
-                icon = pkgs.npins-sources.shattered-pixel-dungeon-icon;
-                logo = pkgs.npins-sources.shattered-pixel-dungeon-logo;
-              };
+              # artwork = {
+              #   cover = pkgs.npins-sources.shattered-pixel-dungeon-cover;
+              #   header = pkgs.npins-sources.shattered-pixel-dungeon-header;
+              #   hero = pkgs.npins-sources.shattered-pixel-dungeon-hero;
+              #   icon = pkgs.npins-sources.shattered-pixel-dungeon-icon;
+              #   logo = pkgs.npins-sources.shattered-pixel-dungeon-logo;
+              # };
             };
           };
         })

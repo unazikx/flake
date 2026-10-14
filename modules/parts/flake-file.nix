@@ -8,7 +8,7 @@
     # keep-sorted start block=yes newline_separated=yes
     flake-file = {
       type = "github";
-      owner = "denful";
+      owner = "unazikx";
       repo = "flake-file";
       ref = "main";
     };
@@ -17,9 +17,10 @@
 
   imports = [
     inputs.flake-file.flakeModules.default
-    inputs.flake-file.flakeModules.npins
-    inputs.flake-file.flakeModules.unflake
     inputs.flake-file.flakeModules.lon
+    inputs.flake-file.flakeModules.npins
+    inputs.flake-file.flakeModules.tack
+    inputs.flake-file.flakeModules.unflake
   ];
 
   flake-file = {
@@ -44,6 +45,9 @@
       '';
 
     prune-lock.enable = true;
+
+    lon.lockDir = ".lon";
+    tack.lockDir = ".tack";
 
     style = {
       sep.inputs = "
