@@ -48,8 +48,7 @@
                       # bash
                       ''
                         nix run .#write-files
-                        nix run .#write-npins
-                        nix run .#write-lon
+                        nix run .#write-tack
                         nix fmt
                       '';
                   }

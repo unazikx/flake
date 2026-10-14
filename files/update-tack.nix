@@ -9,9 +9,9 @@
         ...
       }:
       {
-        file.".github/workflows/update-npins.yaml" = {
+        file.".github/workflows/update-tack.yaml" = {
           yaml = {
-            name = "Update Nix npins file";
+            name = "Update Nix tack file";
 
             on = {
               # just useful
@@ -24,7 +24,7 @@
 
             jobs = {
               update-flake = {
-                name = "Run update-npins";
+                name = "Run update-tack";
                 runs-on = "ubuntu-latest";
 
                 steps = [
@@ -43,12 +43,11 @@
                     };
                   }
                   {
-                    name = "Run update-npins";
+                    name = "Run update-tack";
                     run =
                       # bash
                       ''
-                        nix run nixpkgs#npins -- upgrade
-                        nix run nixpkgs#npins -- update
+                        nix run .#write-tack
                         nix fmt
                       '';
                   }
@@ -62,7 +61,7 @@
                         git add -A
 
                         if ! git diff --cached --quiet; then
-                          git commit -m "flake: updated npins [automated]"
+                          git commit -m "flake: updated tack [automated]"
                           git push
                         else
                           echo "No changes from updater"

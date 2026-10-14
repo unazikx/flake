@@ -54,11 +54,13 @@
       zen.hardware.virtualization.winapps
       zen.miscellaneous.disko
       zen.miscellaneous.home-manager
+      zen.miscellaneous.lon
       zen.miscellaneous.minimal
       zen.miscellaneous.nix
       zen.miscellaneous.nix.substituters
       zen.miscellaneous.npins
       zen.miscellaneous.nur
+      zen.miscellaneous.tack
       zen.miscellaneous.time
       zen.miscellaneous.users.accounts
       zen.miscellaneous.version
@@ -109,7 +111,7 @@
       zen.programs.gui.librewolf
       zen.programs.gui.obs-studio
       zen.programs.gui.qutebrowser
-      # zen.programs.gui.spotify
+      zen.programs.gui.spotify
       zen.programs.gui.throne
       zen.programs.gui.vesktop
       zen.programs.office.blender

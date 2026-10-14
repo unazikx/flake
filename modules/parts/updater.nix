@@ -11,27 +11,6 @@
         ...
       }:
       {
-        default = {
-          program = pkgs.writeShellApplication {
-            name = "execute-flake";
-
-            derivationArgs = {
-              allowSubstitutes = false;
-              preferLocalBuild = true;
-            };
-
-            text = ''
-              nix run .#write-files
-              nix run .#write-flake
-              nix fmt
-            '';
-          };
-
-          meta = {
-            description = "Runs every writer commands and formatter";
-          };
-        };
-
         fetch-all = {
           program = pkgs.writeShellApplication {
             name = "execute-fetch";

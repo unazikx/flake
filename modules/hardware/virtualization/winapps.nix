@@ -6,11 +6,19 @@
 {
   flake-file.inputs = {
     # keep-sorted start block=yes newline_separated=yes
-    massgrave = {
+    massgravel = {
       type = "github";
       owner = "massgravel";
       repo = "microsoft-activation-scripts";
       ref = "master";
+      flake = false;
+    };
+
+    remove-edge = {
+      type = "github";
+      owner = "shadowwhisperer";
+      repo = "remove-ms-edge";
+      ref = "main";
       flake = false;
     };
 
@@ -43,6 +51,7 @@
 
     homeManagerNixos =
       {
+        inputs,
         inputs',
         pkgs,
         config,
@@ -114,8 +123,8 @@
               }/oem:/oem"
 
               # ye, why not?
-              "${pkgs.npins-sources.windows-activator}:/shared/mas-activator.cmd:ro"
-              "${pkgs.npins-sources.windows-edge-uninstaller}:/shared/edge-uninstaller.cmd:ro"
+              "${inputs.massgravel}/MAS/Separate-Files-Version/Activators/HWID_Activation.cmd:/shared/mas-activator.cmd:ro"
+              "${inputs.remove-edge}/Batch/Both.bat:/shared/edge-uninstaller.cmd:ro"
             ];
 
             # why not environmentFiles

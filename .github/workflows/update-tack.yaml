@@ -1,6 +1,6 @@
 jobs:
   update-flake:
-    name: Run update-npins
+    name: Run update-tack
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -11,10 +11,9 @@ jobs:
           extra_nix_config: |
             experimental-features = nix-command flakes
           nix_path: nixpkgs=channel:nixos-unstable
-      - name: Run update-npins
+      - name: Run update-tack
         run: |
-          nix run nixpkgs#npins -- upgrade
-          nix run nixpkgs#npins -- update
+          nix run .#write-tack
           nix fmt
       - name: Commit changes
         run: |
@@ -23,12 +22,12 @@ jobs:
           git add -A
 
           if ! git diff --cached --quiet; then
-            git commit -m "flake: updated npins [automated]"
+            git commit -m "flake: updated tack [automated]"
             git push
           else
             echo "No changes from updater"
           fi
-name: Update Nix npins file
+name: Update Nix tack file
 "on":
   workflow_dispatch: {}
 permissions:

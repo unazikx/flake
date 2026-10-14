@@ -12,6 +12,15 @@
       ref = "main";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-parts.follows = "flake-parts";
+      inputs.optnix.follows = "optnix";
+    };
+
+    optnix = {
+      type = "github";
+      owner = "water-sucks";
+      repo = "optnix";
+      ref = "main";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     # keep-sorted end
   };

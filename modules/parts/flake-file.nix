@@ -1,5 +1,6 @@
 {
   inputs,
+  config,
   ...
 }:
 
@@ -16,11 +17,7 @@
   };
 
   imports = [
-    inputs.flake-file.flakeModules.default
-    inputs.flake-file.flakeModules.lon
-    inputs.flake-file.flakeModules.npins
     inputs.flake-file.flakeModules.tack
-    inputs.flake-file.flakeModules.unflake
   ];
 
   flake-file = {
@@ -46,9 +43,6 @@
 
     prune-lock.enable = true;
 
-    lon.lockDir = ".lon";
-    tack.lockDir = ".tack";
-
     style = {
       sep.inputs = "
           \n
@@ -63,5 +57,17 @@
         ];
       };
     };
+  };
+
+  zen.flake-parts.default = {
+    packages =
+      {
+        pkgs,
+        ...
+      }:
+      {
+        write-tack = config.flake-file.apps.write-tack pkgs;
+        write-lock = config.flake-file.apps.write-lock pkgs;
+      };
   };
 }

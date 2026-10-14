@@ -99,9 +99,9 @@
     "type": "github",
     "owner": "gnome",
     "repo": "gnome-shell",
-    "rev": "5596ed81719abb2baf9599daedf273843d0f7fdd",
-    "narHash": "sha256-IqF10aByiRMuPtOEbfO/8aW6MFbLMzTQTv2/z/ZAU6E=",
-    "lastModified": 1791931707
+    "rev": "33da06854e229c256afd5872fedd83c28cbfa176",
+    "narHash": "sha256-OFVNJ5mE8Ffua/mTSawfvwLD18O9KdrVvR6p1APVgaw=",
+    "lastModified": 1791976258
   },
   "hjem": {
     "type": "github",
@@ -143,7 +143,7 @@
     "narHash": "sha256-9JjM7eT66W4NJAXpGUsdyAFXhBxFWR2Z9LZwUa7Hli0=",
     "lastModified": 1733933815
   },
-  "massgrave": {
+  "massgravel": {
     "type": "github",
     "owner": "massgravel",
     "repo": "microsoft-activation-scripts",
@@ -223,14 +223,6 @@
     "narHash": "sha256-lrp67w8AulE9Ks53n27I45ADSzbOCn4H+CNW1Ck8B+8=",
     "lastModified": 1781577229
   },
-  "nixpkgs-master": {
-    "type": "github",
-    "owner": "nixos",
-    "repo": "nixpkgs",
-    "rev": "9a3300c4fc1b9e8d80bf1671db1d5eb37677d129",
-    "narHash": "sha256-OuCuNgFBsTE2xhcKbBpqXZgjr9veTFLPKspvqsiPFbM=",
-    "lastModified": 1791957709
-  },
   "nixpkgs-stable": {
     "type": "github",
     "owner": "nixos",
@@ -243,9 +235,17 @@
     "type": "github",
     "owner": "nix-community",
     "repo": "nur",
-    "rev": "fcd7a1fd9c01032022a0b581194c3788aa0edbfe",
-    "narHash": "sha256-6Hsr/tlqA52OG0RnU7MCrrgSgv1U1403E5WojCbqd/M=",
-    "lastModified": 1791958744
+    "rev": "c6e17f833cacc1390e8f49cf99ffa59773c83cf6",
+    "narHash": "sha256-0Q7TwFldSIg2kR/+yvM96Q5kceBaJ67OrGwbXBnqgas=",
+    "lastModified": 1791979239
+  },
+  "optnix": {
+    "type": "github",
+    "owner": "water-sucks",
+    "repo": "optnix",
+    "rev": "d70527982f00bd40d3f49dedfa55cd2bfcceb38c",
+    "narHash": "sha256-ZCQBUTKhEYbJ11lVk3u/ZCQs4xWbZQcODaMJ2W1XVkw=",
+    "lastModified": 1785660058
   },
   "pkgs-by-name-for-flake-parts": {
     "type": "github",
@@ -262,6 +262,14 @@
     "rev": "2f8414455d2813b96ae1d4442a90ee8f58525300",
     "narHash": "sha256-/JdG/uqisviWD0b1y6kZmVwXUXwBggzh4hU6AhmvdZA=",
     "lastModified": 1791816503
+  },
+  "remove-edge": {
+    "type": "github",
+    "owner": "shadowwhisperer",
+    "repo": "remove-ms-edge",
+    "rev": "ad8d59b28d742e117be7585b534745ee40efb599",
+    "narHash": "sha256-T/W0VLFcbJEz/EMOKtxFE4W4fWX9DywOlLRUPhHfPPU=",
+    "lastModified": 1790343150
   },
   "sopsnix": {
     "type": "github",
@@ -331,9 +339,9 @@
     "type": "github",
     "owner": "unazikx",
     "repo": "with-inputs",
-    "rev": "e7fab3ee4cf0f4104c0cfd30bb97639a246ce599",
-    "narHash": "sha256-UbwRNp0MWqD6ghuH7pZTXJgZpowa7XRmVRPcnts7nD4=",
-    "lastModified": 1791953648
+    "rev": "3c146456b8475e6ac995966beba14da36e32a265",
+    "narHash": "sha256-12HNuRbLCptaDLybbRO6j3iCMS3og6NdOlhbW2iP7Hk=",
+    "lastModified": 1791979157
   },
   "xmcl": {
     "type": "github",

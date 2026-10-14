@@ -14,8 +14,7 @@ jobs:
       - name: Run write-files
         run: |
           nix run .#write-files
-          nix run .#write-npins
-          nix run .#write-lon
+          nix run .#write-tack
           nix fmt
       - name: Commit changes
         run: |
