@@ -67,9 +67,9 @@
       "owner": "denful",
       "repo": "den",
       "branch": "main",
-      "revision": "dd59a4c7aa7e2d6d2743814da6bf68ead985e793",
-      "url": "https://github.com/denful/den/archive/dd59a4c7aa7e2d6d2743814da6bf68ead985e793.tar.gz",
-      "hash": "sha256-a7E9QoEt5WcYoUGQyRWHm8QVUrKxTcSyNND3LLCs/KI="
+      "revision": "f1d16b177de42088ede5ad911a39c7f068877a7f",
+      "url": "https://github.com/denful/den/archive/f1d16b177de42088ede5ad911a39c7f068877a7f.tar.gz",
+      "hash": "sha256-ScbsWxyVLpB5oYjVsDNmoxnLWMZdVPSFjYZS6A7SiEY="
     },
     "devshells": {
       "type": "GitHub",
@@ -127,9 +127,9 @@
       "owner": "finix-community",
       "repo": "finix",
       "branch": "main",
-      "revision": "4456a0205062b2a5194d0db8f7e77620318c19f0",
-      "url": "https://github.com/finix-community/finix/archive/4456a0205062b2a5194d0db8f7e77620318c19f0.tar.gz",
-      "hash": "sha256-NhhxGrKzyOIoo+ylK2EPtEkXrr59z+BSkPDWIY+1DnU="
+      "revision": "3d414f8a77978fe164c9140ad7a07b3272b40ff3",
+      "url": "https://github.com/finix-community/finix/archive/3d414f8a77978fe164c9140ad7a07b3272b40ff3.tar.gz",
+      "hash": "sha256-uNfoDcel62OnGUUxuwN9LDIZH22XuaGbrIcFPoDXz+Q="
     },
     "finix-community": {
       "type": "GitHub",
@@ -187,9 +187,9 @@
       "owner": "numtide",
       "repo": "flake-utils",
       "branch": "main",
-      "revision": "11707dc2f618dd54ca8739b309ec4fc024de578b",
-      "url": "https://github.com/numtide/flake-utils/archive/11707dc2f618dd54ca8739b309ec4fc024de578b.tar.gz",
-      "hash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI="
+      "revision": "b7a79d3fea1e214f6d668d521cecec0c01e26544",
+      "url": "https://github.com/numtide/flake-utils/archive/b7a79d3fea1e214f6d668d521cecec0c01e26544.tar.gz",
+      "hash": "sha256-Zf/xfQEAasnwnmEfHqW/4hjDE/s44yn2hD4RuVIZRjA="
     },
     "fromYaml": {
       "type": "GitHub",
@@ -207,9 +207,9 @@
       "owner": "gnome",
       "repo": "gnome-shell",
       "branch": "main",
-      "revision": "2117867ed754253cc6185fca4825f7c21d8206ed",
-      "url": "https://github.com/gnome/gnome-shell/archive/2117867ed754253cc6185fca4825f7c21d8206ed.tar.gz",
-      "hash": "sha256-X3RGLNHHrhpzKzXp9RO8t/ptBYeHQjWqv4w74rVb/cI="
+      "revision": "33da06854e229c256afd5872fedd83c28cbfa176",
+      "url": "https://github.com/gnome/gnome-shell/archive/33da06854e229c256afd5872fedd83c28cbfa176.tar.gz",
+      "hash": "sha256-OFVNJ5mE8Ffua/mTSawfvwLD18O9KdrVvR6p1APVgaw="
     },
     "hjem": {
       "type": "GitHub",
@@ -237,9 +237,9 @@
       "owner": "nix-community",
       "repo": "home-manager",
       "branch": "master",
-      "revision": "c58f54c733a7894d84fa2fdff26cc12088c4b78c",
-      "url": "https://github.com/nix-community/home-manager/archive/c58f54c733a7894d84fa2fdff26cc12088c4b78c.tar.gz",
-      "hash": "sha256-0bK0A59rVUn1SRZzo4cNi4VSqAe7vR1gL2/MZl53Frw="
+      "revision": "92a0ed1be12f1e20093faf8af63bae2c74ad521e",
+      "url": "https://github.com/nix-community/home-manager/archive/92a0ed1be12f1e20093faf8af63bae2c74ad521e.tar.gz",
+      "hash": "sha256-hRCCi4fp5IjLz4cA8+RkUsaYAHzbd7M5FSAjKOq4E+k="
     },
     "import-tree": {
       "type": "GitHub",
@@ -397,9 +397,9 @@
       "owner": "nix-community",
       "repo": "nur",
       "branch": "main",
-      "revision": "80463faa3adb1627412bc78f8f9d55c1efc67894",
-      "url": "https://github.com/nix-community/nur/archive/80463faa3adb1627412bc78f8f9d55c1efc67894.tar.gz",
-      "hash": "sha256-to0PcVuka5ywa94hojlTX79cN3MQkne8SOcIYBs6ln4="
+      "revision": "c5f820a79ebcd6e400e6e22f947eb320c749a2ce",
+      "url": "https://github.com/nix-community/nur/archive/c5f820a79ebcd6e400e6e22f947eb320c749a2ce.tar.gz",
+      "hash": "sha256-4nWUkivN1Tt+bINwgurXmdeE4a51drkUxuTiSmjk2ag="
     },
     "optnix": {
       "type": "GitHub",
@@ -547,9 +547,9 @@
       "owner": "noctalia-dev",
       "repo": "umbriel",
       "branch": "main",
-      "revision": "b8fc2cf74fe1dec6de8a99108cafd49d3d0c4bed",
-      "url": "https://github.com/noctalia-dev/umbriel/archive/b8fc2cf74fe1dec6de8a99108cafd49d3d0c4bed.tar.gz",
-      "hash": "sha256-aoHhOF7Yl4JVFu8NYEqG3s2t5E0ShjJD6AJE82rFeGc="
+      "revision": "693b68996a832b21dbfd33a180d2a23cdf5575b6",
+      "url": "https://github.com/noctalia-dev/umbriel/archive/693b68996a832b21dbfd33a180d2a23cdf5575b6.tar.gz",
+      "hash": "sha256-hqx2h14F7Q/ec75xrt1Lmklnmoui3tQgouGfWlROBTk="
     },
     "winapps": {
       "type": "GitHub",
@@ -567,9 +567,9 @@
       "owner": "unazikx",
       "repo": "with-inputs",
       "branch": "main",
-      "revision": "e7fab3ee4cf0f4104c0cfd30bb97639a246ce599",
-      "url": "https://github.com/unazikx/with-inputs/archive/e7fab3ee4cf0f4104c0cfd30bb97639a246ce599.tar.gz",
-      "hash": "sha256-UbwRNp0MWqD6ghuH7pZTXJgZpowa7XRmVRPcnts7nD4="
+      "revision": "3c146456b8475e6ac995966beba14da36e32a265",
+      "url": "https://github.com/unazikx/with-inputs/archive/3c146456b8475e6ac995966beba14da36e32a265.tar.gz",
+      "hash": "sha256-12HNuRbLCptaDLybbRO6j3iCMS3og6NdOlhbW2iP7Hk="
     },
     "xdg-desktop-portal-umbriel": {
       "type": "GitHub",
