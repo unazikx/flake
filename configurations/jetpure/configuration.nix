@@ -58,9 +58,7 @@
       zen.miscellaneous.minimal
       zen.miscellaneous.nix
       zen.miscellaneous.nix.substituters
-      zen.miscellaneous.lon
       zen.miscellaneous.nur
-      zen.miscellaneous.tack
       zen.miscellaneous.time
       zen.miscellaneous.users.accounts
       zen.miscellaneous.version

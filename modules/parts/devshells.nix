@@ -6,16 +6,16 @@
 {
   flake-file.inputs = {
     # keep-sorted start block=yes newline_separated=yes
-    make-shell = {
+    devshells = {
       type = "github";
-      owner = "nicknovitski";
-      repo = "make-shell";
+      owner = "numtide";
+      repo = "devshell";
       ref = "main";
     };
     # keep-sorted end
   };
 
   imports = [
-    inputs.make-shell.flakeModules.default
+    inputs.devshells.flakeModule
   ];
 }

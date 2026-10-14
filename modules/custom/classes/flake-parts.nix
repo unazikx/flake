@@ -8,9 +8,9 @@
   den.classes = {
     # keep-sorted start
     apps = { };
+    devshells = { };
     files = { };
     legacyPackages = { };
-    make-shell = { };
     packages = { };
     root = { };
     wallpapers = { };
@@ -30,6 +30,26 @@
           intoClass = "flake-parts";
           path = [
             "apps"
+          ];
+          adaptArgs =
+            {
+              config,
+              ...
+            }:
+            config.allModuleArgs;
+        })
+      ];
+
+    devshells-to-flake-parts =
+      {
+        ...
+      }:
+      [
+        (den.lib.policy.route {
+          fromClass = "devshells";
+          intoClass = "flake-parts";
+          path = [
+            "devshells"
           ];
           adaptArgs =
             {
@@ -70,26 +90,6 @@
           intoClass = "flake-parts";
           path = [
             "legacyPackages"
-          ];
-          adaptArgs =
-            {
-              config,
-              ...
-            }:
-            config.allModuleArgs;
-        })
-      ];
-
-    makeshell-to-flake-parts =
-      {
-        ...
-      }:
-      [
-        (den.lib.policy.route {
-          fromClass = "make-shell";
-          intoClass = "flake-parts";
-          path = [
-            "make-shell"
           ];
           adaptArgs =
             {
@@ -163,9 +163,9 @@
   den.schema.flake-parts.includes = [
     # keep-sorted start
     den.policies.apps-to-flake-parts
+    den.policies.devshells-to-flake-parts
     den.policies.files-to-flake-parts
     den.policies.legacyPackages-to-flake-parts
-    den.policies.makeshell-to-flake-parts
     den.policies.packages-to-flake-parts
     den.policies.root-to-flake-parts
     den.policies.wallpapers-to-flake-parts

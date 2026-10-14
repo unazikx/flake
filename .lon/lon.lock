@@ -71,6 +71,16 @@
       "url": "https://github.com/denful/den/archive/dd59a4c7aa7e2d6d2743814da6bf68ead985e793.tar.gz",
       "hash": "sha256-a7E9QoEt5WcYoUGQyRWHm8QVUrKxTcSyNND3LLCs/KI="
     },
+    "devshells": {
+      "type": "GitHub",
+      "fetchType": "tarball",
+      "owner": "numtide",
+      "repo": "devshell",
+      "branch": "main",
+      "revision": "9e29c63dde99a2d80c94b3d024c9768c01544558",
+      "url": "https://github.com/numtide/devshell/archive/9e29c63dde99a2d80c94b3d024c9768c01544558.tar.gz",
+      "hash": "sha256-oN9JrhRfHa7MUTdUq+11dHn7u0Z4WfEA4mhzBq0/zoQ="
+    },
     "disko": {
       "type": "GitHub",
       "fetchType": "tarball",
@@ -240,16 +250,6 @@
       "revision": "eb1b52eaecc57f7c136d07ae8a93e724dfecac46",
       "url": "https://github.com/denful/import-tree/archive/eb1b52eaecc57f7c136d07ae8a93e724dfecac46.tar.gz",
       "hash": "sha256-ljEMTXP/rH0tOvDzc9gzwww6KcHRPRnEHzd9lK48V7s="
-    },
-    "make-shell": {
-      "type": "GitHub",
-      "fetchType": "tarball",
-      "owner": "nicknovitski",
-      "repo": "make-shell",
-      "branch": "main",
-      "revision": "ffeceae9956df03571ea8e96ef77c2924f13a63c",
-      "url": "https://github.com/nicknovitski/make-shell/archive/ffeceae9956df03571ea8e96ef77c2924f13a63c.tar.gz",
-      "hash": "sha256-9JjM7eT66W4NJAXpGUsdyAFXhBxFWR2Z9LZwUa7Hli0="
     },
     "massgravel": {
       "type": "GitHub",

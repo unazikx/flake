@@ -5,6 +5,7 @@ base16-vim	github:tinted-theming/base16-vim/577fe8125d74ff456cf942c733a85d769afe
 betterfox	github:yokoffing/betterfox/main
 dag	github:denful/dag
 den	github:denful/den/main
+devshells	github:numtide/devshell/main
 disko	github:nix-community/disko/master
 dns-malw-link	github:immalware/dns.malw.link/master
 erosanix	github:emmanuelrosa/erosanix/master
@@ -22,7 +23,6 @@ hjem	github:feel-co/hjem/main
 hjem-rum	github:snugnug/hjem-rum/main
 home-manager	github:nix-community/home-manager/master
 import-tree	github:denful/import-tree/main
-make-shell	github:nicknovitski/make-shell/main
 massgravel	github:massgravel/microsoft-activation-scripts/master
 microvm-nix	github:microvm-nix/microvm.nix/main
 nfqws2-keenetic	github:nfqws/nfqws2-keenetic
@@ -34,7 +34,6 @@ nixos-cli	github:nix-community/nixos-cli/main
 nixos-hardware	github:NixOS/nixos-hardware/master
 nixpkgs-easyeffects	github:nixos/nixpkgs/nixos-25.05
 nixpkgs-fixed	github:nixos/nixpkgs?rev=567a49d1913ce81ac6e9582e3553dd90a955875f
-nixpkgs-lib	github:nix-community/nixpkgs.lib
 nixpkgs-stable	github:nixos/nixpkgs/nixos-26.05
 nixpkgs-unstable	github:nixos/nixpkgs/nixos-unstable
 nur	github:nix-community/nur/main
