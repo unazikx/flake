@@ -34,6 +34,7 @@ nixos-cli	github:nix-community/nixos-cli
 nixos-hardware	github:NixOS/nixos-hardware
 nixpkgs-easyeffects	github:nixos/nixpkgs/nixos-25.05
 nixpkgs-fixed	github:nixos/nixpkgs?rev=567a49d1913ce81ac6e9582e3553dd90a955875f
+nixpkgs-master	github:nixos/nixpkgs/master
 nixpkgs-stable	github:nixos/nixpkgs/nixos-26.05
 nixpkgs-unstable	github:nixos/nixpkgs/nixos-unstable
 nur	github:nix-community/nur

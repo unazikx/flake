@@ -371,6 +371,16 @@
       "url": "https://github.com/nix-community/nixpkgs.lib/archive/73d1c6823d4563707fc913314c8bd780903ff17d.tar.gz",
       "hash": "sha256-1ghAsUduGsb0L6CX1YYHkVL5P/2BXcDOw6FQwqVt4Yk="
     },
+    "nixpkgs-master": {
+      "type": "GitHub",
+      "fetchType": "tarball",
+      "owner": "nixos",
+      "repo": "nixpkgs",
+      "branch": "master",
+      "revision": "0bc80d64a267291f0225ac21f07f63fb5d66f468",
+      "url": "https://github.com/nixos/nixpkgs/archive/0bc80d64a267291f0225ac21f07f63fb5d66f468.tar.gz",
+      "hash": "sha256-tqeUNof+dzhtpUTeN3KcnipjBXlOBLXkFEYCx230Ncc="
+    },
     "nixpkgs-stable": {
       "type": "GitHub",
       "fetchType": "tarball",
