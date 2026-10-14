@@ -1,23 +1,27 @@
 let
   self = ./.;
 
-  sources = import "${self}/.tack";
-  with-inputs = import sources.with-inputs;
+  srcs = import "${self}/.lon/lon.nix";
+  with-inputs = import srcs.with-inputs;
 in
 
-(with-inputs.from.tack self) (_: { }) (
-  inputs:
-  (inputs.flake-parts.lib.mkFlake
-    {
-      inherit inputs;
-    }
-    (
-      inputs.import-tree [
-        ./configurations
-        ./files
-        ./shells
-        ./modules
-      ]
+(with-inputs.from.lon' self ".lon")
+  (_: {
+    nixpkgs-lib.follows = "nixpkgs";
+  })
+  (
+    inputs:
+    (inputs.flake-parts.lib.mkFlake
+      {
+        inherit inputs;
+      }
+      (
+        inputs.import-tree [
+          ./configurations
+          ./files
+          ./shells
+          ./modules
+        ]
+      )
     )
   )
-)

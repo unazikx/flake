@@ -18,6 +18,7 @@
 
   imports = [
     inputs.flake-file.flakeModules.tack
+    inputs.flake-file.flakeModules.lon
   ];
 
   flake-file = {
@@ -40,6 +41,9 @@
             ]
           )
       '';
+
+    lon.lockDir = ".lon";
+    tack.lockDir = ".tack";
 
     prune-lock.enable = true;
 
@@ -66,6 +70,7 @@
         ...
       }:
       {
+        write-lon = config.flake-file.apps.write-lon pkgs;
         write-tack = config.flake-file.apps.write-tack pkgs;
         write-lock = config.flake-file.apps.write-lock pkgs;
       };
