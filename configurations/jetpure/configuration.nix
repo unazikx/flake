@@ -38,7 +38,6 @@
       zen.hardware.cpu-gpu
       zen.hardware.mounting
       zen.hardware.security.yubikey
-      zen.hardware.virtualization.winapps
       zen.miscellaneous.disko
       zen.miscellaneous.home-manager
       zen.miscellaneous.lon

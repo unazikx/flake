@@ -15,6 +15,10 @@
             lib.attrValues {
               exact = [
                 {
+                  match.is_focused = false;
+                  opacity = 0.85;
+                }
+                {
                   blur = true;
                   blur_optimized = false;
                   default_focused = false;
