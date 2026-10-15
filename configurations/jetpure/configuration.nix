@@ -31,19 +31,6 @@
       # keep-sorted start block=yes
       (zen.hardware.networking.hosts [
         "api.github.com"
-        "api.spotify.com"
-        "login5.spotify.com"
-        "encore.scdn.co"
-        "gew1-spclient.spotify.com"
-        "spclient.wg.spotify.com"
-        "api-partner.spotify.com"
-        "aet.spotify.com"
-        "www.spotify.com"
-        "accounts.spotify.com"
-        "open.spotify.com"
-        "accounts.scdn.co"
-        "gew1-dealer.spotify.com"
-        "www-growth.scdn.co"
       ])
       zen.games.xbox.driver
       zen.hardware.boot.systemd-boot
@@ -110,7 +97,6 @@
       zen.programs.gui.obs-studio
       zen.programs.gui.qutebrowser
       zen.programs.gui.spotifast
-      zen.programs.gui.spotify
       zen.programs.gui.throne
       zen.programs.gui.vesktop
       zen.programs.office.blender

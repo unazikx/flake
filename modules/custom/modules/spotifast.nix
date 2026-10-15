@@ -41,8 +41,8 @@
                           text = colors.withHashtag.base05;
                           secondary = colors.withHashtag.base04;
                           dim = colors.withHashtag.base03;
-                          accent = colors.withHashtag.base0D;
-                          accent_hover = colors.withHashtag.base0D;
+                          accent = colors.withHashtag.base0B;
+                          accent_hover = colors.withHashtag.base0B;
                           on_accent = colors.withHashtag.base00;
                           danger = colors.withHashtag.base08;
                           warning = colors.withHashtag.base0A;
