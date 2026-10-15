@@ -9,7 +9,7 @@
 
       follows = import "${self}/.lon/lon-follows.nix";
 
-      outputs = (
+      outputs =
         inputs:
         (inputs.flake-parts.lib.mkFlake
           {
@@ -21,8 +21,7 @@
               ./modules
             ]
           )
-        )
-      );
+        );
     in
     (with-inputs.lon' self ".lon") follows outputs;
 }
