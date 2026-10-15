@@ -1,6 +1,16 @@
 {
   "version": "1",
   "sources": {
+    "artcraft-nix": {
+      "type": "GitHub",
+      "fetchType": "tarball",
+      "owner": "Devitek",
+      "repo": "artcraft-nixos",
+      "branch": "main",
+      "revision": "094a2cccb2c766714d6d782cac347b09de12020a",
+      "url": "https://github.com/Devitek/artcraft-nixos/archive/094a2cccb2c766714d6d782cac347b09de12020a.tar.gz",
+      "hash": "sha256-Ld9ZsA/b4s2a4KntIdOx/visQx8//HIHmRe+SYC4yjo="
+    },
     "base16": {
       "type": "GitHub",
       "fetchType": "tarball",

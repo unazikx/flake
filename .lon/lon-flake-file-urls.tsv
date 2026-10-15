@@ -1,3 +1,4 @@
+artcraft-nix	github:Devitek/artcraft-nixos
 base16	github:SenchoPens/base16.nix
 base16-fish	github:tomyun/base16-fish/86cbea4dca62e08fb7fd83a70e96472f92574782
 base16-helix	github:tinted-theming/base16-helix
