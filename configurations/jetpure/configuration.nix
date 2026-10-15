@@ -109,6 +109,7 @@
       zen.programs.gui.librewolf
       zen.programs.gui.obs-studio
       zen.programs.gui.qutebrowser
+      zen.programs.gui.spotifast
       zen.programs.gui.spotify
       zen.programs.gui.throne
       zen.programs.gui.vesktop
