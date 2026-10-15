@@ -22,11 +22,11 @@
           openFirewall = true;
 
           server = {
-            staticDir = toString (
-              self'.packages.nitter-assets.override {
+            staticDir =
+              (self'.packages.nitter-assets.override {
                 colors = config.lib.stylix.colors.withHashtag;
-              }
-            );
+              })
+              |> toString;
           };
 
           preferences = {

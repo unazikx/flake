@@ -197,8 +197,8 @@ in
             extension,
           }:
           let
-            id = lib.head (lib.match ".*/w/(.*)" page);
-            sub = lib.substring 0 2 id;
+            id = page |> lib.match ".*/w/(.*)" |> lib.head;
+            sub = id |> lib.substring 0 2;
           in
           {
             inherit page hash extension;
@@ -206,7 +206,7 @@ in
             small = "https://th.wallhaven.cc/small/${sub}/${id}.jpg";
           };
       in
-      builtins.mapAttrs (_name: value: process value) listOfWallpapers;
+      listOfWallpapers |> builtins.mapAttrs (_name: value: process value);
 
     files =
       {
@@ -230,13 +230,18 @@ in
             text = ''
               # Wallpapers
 
-              ${lib.concatStringsSep "\n\n" (lib.mapAttrsToList formatEntry config.wallpapers)}
+              ${config.wallpapers |> lib.mapAttrsToList formatEntry |> lib.concatStringsSep "\n\n"}
 
               ## Tags
 
-              ${lib.concatStringsSep "\n\n" (lib.mapAttrsToList formatTag listOfTags)}
+              ${listOfTags |> lib.mapAttrsToList formatTag |> lib.concatStringsSep "\n\n"}
 
-              ## Total: ${toString (lib.length (lib.attrNames config.wallpapers))} wallpapers from https://wallhaven.cc
+              ## Total: ${
+                config.wallpapers
+                |> lib.attrNames
+                |> lib.length
+                |> toString
+              } wallpapers from https://wallhaven.cc
             '';
           };
       };
@@ -249,22 +254,7 @@ in
         ...
       }:
       let
-        sanitize =
-          name:
-          lib.toLower (
-            builtins.replaceStrings
-              [
-                " "
-                ":"
-                "~"
-              ]
-              [
-                "-"
-                ""
-                "-"
-              ]
-              name
-          );
+        sanitize = name: name |> builtins.replaceStrings [ " " ":" "~" ] [ "-" "" "-" ] |> lib.toLower;
 
         mkWallpapers =
           {
@@ -276,7 +266,7 @@ in
             ],
           }:
           let
-            colorsStr = builtins.concatStringsSep " " colors;
+            colorsStr = colors |> builtins.concatStringsSep " ";
 
             processOne =
               name:
@@ -303,28 +293,34 @@ in
                   lutgen apply "$image" -o "$out" -- $colorsStr
                 '';
 
-            processed = lib.mapAttrs processOne config.wallpapers;
+            processed = config.wallpapers |> lib.mapAttrs processOne;
           in
           (
-            (lib.mapAttrs' (
-              name: drv:
-              let
-                fileName = sanitize name;
-                extension = config.wallpapers.${name}.extension;
-                fullName = "${fileName}.${extension}";
-              in
-              lib.nameValuePair fileName (
-                pkgs.runCommandLocal fullName { } ''
-                  ln -s ${drv} $out
-                ''
+            (
+              processed
+              |> lib.mapAttrs' (
+                name: drv:
+                let
+                  fileName = sanitize name;
+                  extension = config.wallpapers.${name}.extension;
+                  fullName = "${fileName}.${extension}";
+                in
+                lib.nameValuePair fileName (
+                  pkgs.runCommandLocal fullName { } ''
+                    ln -s ${drv} $out
+                  ''
+                )
               )
-            ) processed)
+            )
             // {
               _farmed = pkgs.linkFarm "images-farmed" (
-                lib.mapAttrsToList (name: drv: {
-                  name = "${sanitize name}.${config.wallpapers.${name}.extension}";
-                  path = drv;
-                }) processed
+                processed
+                |> lib.mapAttrsToList (
+                  name: drv: {
+                    name = "${sanitize name}.${config.wallpapers.${name}.extension}";
+                    path = drv;
+                  }
+                )
               );
             }
           );

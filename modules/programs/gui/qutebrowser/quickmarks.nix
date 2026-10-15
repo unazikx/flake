@@ -10,62 +10,64 @@
         ...
       }:
       {
-        programs.qutebrowser.quickmarks = lib.mapAttrs (_: value: "https://${value}") {
-          # search
-          forget = "4get.ca";
-          google = "www.google.com";
-          ddg = "duckduckgo.com";
+        programs.qutebrowser.quickmarks =
+          {
+            # search
+            forget = "4get.ca";
+            google = "www.google.com";
+            ddg = "duckduckgo.com";
 
-          # nix
-          nixpkgs = "search.nixos.org/packages?channel=unstable";
-          nixSearch = "nixsearch.thekoppe.com";
-          nixosWiki = "wiki.nixos.org";
-          prTracker = "nixpk.gs/pr-tracker.html";
-          noogle = "noogle.dev";
+            # nix
+            nixpkgs = "search.nixos.org/packages?channel=unstable";
+            nixSearch = "nixsearch.thekoppe.com";
+            nixosWiki = "wiki.nixos.org";
+            prTracker = "nixpk.gs/pr-tracker.html";
+            noogle = "noogle.dev";
 
-          # git
-          github = "github.com";
+            # git
+            github = "github.com";
 
-          # social
-          youtube = "www.youtube.com";
-          gmail = "mail.google.com";
-          dvach = "2ch.su";
+            # social
+            youtube = "www.youtube.com";
+            gmail = "mail.google.com";
+            dvach = "2ch.su";
 
-          # anime etc
-          anilist = "anilist.co";
-          anichart = "anichart.net";
-          anilibria = "anilibria.top";
-          animeGo = "animego.club/index";
-          yummyAnime = "yummy-anime.org";
-          dreamCast = "dreamerscast.com";
-          miruro = "miruro.tv";
-          anikai = "anikai.ro/home";
+            # anime etc
+            anilist = "anilist.co";
+            anichart = "anichart.net";
+            anilibria = "anilibria.top";
+            animeGo = "animego.club/index";
+            yummyAnime = "yummy-anime.org";
+            dreamCast = "dreamerscast.com";
+            miruro = "miruro.tv";
+            anikai = "anikai.ro/home";
 
-          # torrents
-          rutracker = "rutracker.org";
-          pirateBay = "thepiratebay.org";
-          pirateBayProxy = "piratebayproxy.net";
-          broTorrent = "brotorrent.net";
-          smallGames = "small-games.info";
-          tuttop = "tuttop.com";
-          freeTP = "freetp.org";
+            # torrents
+            rutracker = "rutracker.org";
+            pirateBay = "thepiratebay.org";
+            pirateBayProxy = "piratebayproxy.net";
+            broTorrent = "brotorrent.net";
+            smallGames = "small-games.info";
+            tuttop = "tuttop.com";
+            freeTP = "freetp.org";
 
-          # games
-          modrinth = "modrinth.com";
-          mineWiki = "ru.minecraft.wiki";
-          steamDB = "steamdb.info";
-          steamPeek = "steampeek.hu";
-          protonDB = "protondb.com";
-          gogDB = "www.gogdb.org";
-          egsDB = "egdata.app";
+            # games
+            modrinth = "modrinth.com";
+            mineWiki = "ru.minecraft.wiki";
+            steamDB = "steamdb.info";
+            steamPeek = "steampeek.hu";
+            protonDB = "protondb.com";
+            gogDB = "www.gogdb.org";
+            egsDB = "egdata.app";
 
-          # ai
-          ddgAi = "duck.ai";
-          googleAi = "www.google.com/aimode";
-          chatGpt = "chatgpt.com";
-          deekpeek = "chat.deepseek.com";
-          claude = "claude.ai";
-        };
+            # ai
+            ddgAi = "duck.ai";
+            googleAi = "www.google.com/aimode";
+            chatGpt = "chatgpt.com";
+            deekpeek = "chat.deepseek.com";
+            claude = "claude.ai";
+          }
+          |> lib.mapAttrs (_: value: "https://${value}");
       };
 
     homeManagerNixos =
@@ -76,9 +78,9 @@
       }:
       {
         programs.qutebrowser = {
-          quickmarks = lib.mkIf osConfig.services.caddy.enable (
-            lib.mapAttrs (_: value: "https://${value}") (
-              lib.listToAttrs (
+          quickmarks =
+            (
+              (lib.listToAttrs (
                 map (
                   domain:
                   let
@@ -90,9 +92,10 @@
                     value = domain;
                   }
                 ) (lib.attrNames osConfig.services.caddy.virtualHosts)
-              )
+              ))
+              |> lib.mapAttrs (_: value: "https://${value}")
             )
-          );
+            |> lib.mkIf osConfig.services.caddy.enable;
         };
       };
   };

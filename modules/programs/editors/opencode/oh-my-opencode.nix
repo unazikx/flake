@@ -32,80 +32,82 @@
 
         xdg.configFile."opencode/oh-my-opencode-slim.json" = {
           force = true;
-          source = json.generate "oh-my-opencode-slim.json" {
-            "$schema" = "https://unpkg.com/oh-my-opencode-slim@latest/oh-my-opencode-slim.schema.json";
+          source =
+            {
+              "$schema" = "https://unpkg.com/oh-my-opencode-slim@latest/oh-my-opencode-slim.schema.json";
 
-            autoUpdate = false;
-            showStartupToast = false;
+              autoUpdate = false;
+              showStartupToast = false;
 
-            preset = "opencode-zen-free";
+              preset = "opencode-zen-free";
 
-            presets = {
-              opencode-zen-free = {
-                orchestrator = {
-                  model = "opencode/hy3-free";
-                  temperature = 0.4;
-                  skills = [ "*" ];
-                  mcps = [
-                    "*"
-                    "!context7"
-                  ];
-                };
+              presets = {
+                opencode-zen-free = {
+                  orchestrator = {
+                    model = "opencode/hy3-free";
+                    temperature = 0.4;
+                    skills = [ "*" ];
+                    mcps = [
+                      "*"
+                      "!context7"
+                    ];
+                  };
 
-                oracle = {
-                  model = "opencode/big-pickle";
-                  temperature = 0.4;
-                  variant = "max";
-                  skills = [ "simplify" ];
-                  mcps = [ ];
-                };
+                  oracle = {
+                    model = "opencode/big-pickle";
+                    temperature = 0.4;
+                    variant = "max";
+                    skills = [ "simplify" ];
+                    mcps = [ ];
+                  };
 
-                explorer = {
-                  model = "opencode/north-mini-code-free";
-                  temperature = 0.2;
-                  skills = [ ];
-                  mcps = [ ];
-                };
+                  explorer = {
+                    model = "opencode/north-mini-code-free";
+                    temperature = 0.2;
+                    skills = [ ];
+                    mcps = [ ];
+                  };
 
-                librarian = {
-                  model = "opencode/deepseek-v4-flash-free";
-                  temperature = 0.2;
-                  skills = [ ];
-                  mcps = [
-                    "websearch"
-                    "context7"
-                    "gh_grep"
-                  ];
-                };
+                  librarian = {
+                    model = "opencode/deepseek-v4-flash-free";
+                    temperature = 0.2;
+                    skills = [ ];
+                    mcps = [
+                      "websearch"
+                      "context7"
+                      "gh_grep"
+                    ];
+                  };
 
-                designer = {
-                  model = "opencode/mimo-v2.5-free";
-                  temperature = 0.3;
-                  variant = "medium";
-                  skills = [ ];
-                  mcps = [ ];
-                };
+                  designer = {
+                    model = "opencode/mimo-v2.5-free";
+                    temperature = 0.3;
+                    variant = "medium";
+                    skills = [ ];
+                    mcps = [ ];
+                  };
 
-                fixer = {
-                  model = "opencode/deepseek-v4-flash-free";
-                  temperature = 0.2;
-                  variant = "high";
-                  skills = [ ];
-                  mcps = [ ];
-                };
+                  fixer = {
+                    model = "opencode/deepseek-v4-flash-free";
+                    temperature = 0.2;
+                    variant = "high";
+                    skills = [ ];
+                    mcps = [ ];
+                  };
 
-                observer = {
-                  model = "opencode/mimo-v2.5-free";
-                  temperature = 0.2;
-                  variant = "low";
-                  skills = [ ];
-                  mcps = [ ];
+                  observer = {
+                    model = "opencode/mimo-v2.5-free";
+                    temperature = 0.2;
+                    variant = "low";
+                    skills = [ ];
+                    mcps = [ ];
+                  };
                 };
               };
-            };
 
-            disabled_mcps = [ "context7" ];
-          };
+              disabled_mcps = [ "context7" ];
+            }
+            |> json.generate "oh-my-opencode-slim.json";
         };
       };
   };

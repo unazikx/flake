@@ -18,10 +18,7 @@
       {
         wayland.windowManager.sway.config = {
           keybindings = lib.mkMerge [
-            (lib.concatMapAttrs
-              (key: command: {
-                "${cfg.config.modifier}+${key}" = "exec ${ipc} ${command}";
-              })
+            (
               {
                 "Tab" = "panel-toggle launcher";
                 "Shift+Tab" = "panel-toggle clipboard";
@@ -33,12 +30,14 @@
                 "W" = "window-switcher";
                 "Z" = "panel-toggle launcher /emo";
               }
+              |> lib.concatMapAttrs (
+                key: command: {
+                  "${cfg.config.modifier}+${key}" = "exec ${ipc} ${command}";
+                }
+              )
             )
 
-            (lib.concatMapAttrs
-              (key: command: {
-                "${key}" = "exec ${ipc} ${command}";
-              })
+            (
               {
                 "Print" = "screenshot-region";
                 "Print+Shift" = "screenshot-fullscreen";
@@ -55,12 +54,14 @@
                 "XF86NotificationCenter" = "panel-toggle clipboard";
                 "XF86Favorites" = "wallpaper-random";
               }
+              |> lib.concatMapAttrs (
+                key: command: {
+                  "${key}" = "exec ${ipc} ${command}";
+                }
+              )
             )
 
-            (lib.concatMapAttrs
-              (key: command: {
-                "${key}" = "exec ${command}";
-              })
+            (
               {
                 "XF86AudioMicMute" = lib.getExe (
                   pkgs.writeShellScriptBin "mute-led" ''
@@ -70,6 +71,11 @@
                   ''
                 );
               }
+              |> lib.concatMapAttrs (
+                key: command: {
+                  "${key}" = "exec ${command}";
+                }
+              )
             )
           ];
         };

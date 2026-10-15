@@ -17,14 +17,16 @@
       {
         wayland.windowManager.sway.config = {
           keybindings = lib.mkMerge [
-            (lib.concatMapAttrs
-              (key: program: {
-                "${cfg.config.modifier}+${key}" = "exec ${program}";
-              })
+            (
               {
                 "Tab" = "tofi-drun | xargs swaymsg exec --";
                 "Space" = "vicinae toggle";
               }
+              |> lib.concatMapAttrs (
+                key: program: {
+                  "${cfg.config.modifier}+${key}" = "exec ${program}";
+                }
+              )
             )
 
             (

@@ -69,7 +69,7 @@
           storage = "${self}/secrets/${user.userName}/nixed";
           storagePath = "${host.flakeDir}/secrets/${user.userName}/nixed";
 
-          identityPaths = lib.singleton keyFilePath;
+          identityPaths = keyFilePath |> lib.singleton;
 
           recipientAliases = {
             "${host.hostName}" = host.secrets.age;

@@ -11,8 +11,8 @@
       }:
       {
         programs.umbriel.settings = {
-          window_rule = lib.flatten (
-            lib.attrValues {
+          window_rule =
+            {
               exact = [
                 {
                   match.is_focused = false;
@@ -71,10 +71,12 @@
                   default_workspace = 3;
                 }
                 {
-                  match.app_id = lib.concatStringsSep "|" [
-                    "com.ayugram.desktop"
-                    "io.github.tdesktop_x64.TDesktop"
-                  ];
+                  match.app_id =
+                    [
+                      "com.ayugram.desktop"
+                      "io.github.tdesktop_x64.TDesktop"
+                    ]
+                    |> lib.concatStringsSep "|";
                   default_workspace = 4;
                 }
                 {
@@ -91,7 +93,8 @@
                 }
               ];
             }
-          );
+            |> lib.attrValues
+            |> lib.flatten;
         };
       };
   };

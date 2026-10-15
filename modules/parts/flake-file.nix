@@ -68,7 +68,6 @@
       }:
       {
         write-lon = config.flake-file.apps.write-lon pkgs;
-        write-tack = config.flake-file.apps.write-tack pkgs;
         write-lock = config.flake-file.apps.write-lock pkgs;
       };
   };

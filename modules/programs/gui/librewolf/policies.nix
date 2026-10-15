@@ -12,7 +12,6 @@
         programs.librewolf = {
           policies = {
             # keep-sorted start block=yes
-
             AppAutoUpdate = false;
             AutofillAddressEnabled = false;
             AutofillCreditCardEnabled = false;

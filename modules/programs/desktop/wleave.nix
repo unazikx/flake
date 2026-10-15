@@ -34,13 +34,15 @@
                   inherit action keybind;
                   label = name;
                   text = name;
-                  icon = lib.concatStringsSep "/" [
-                    (toString config.programs.wleave.package)
-                    "share"
-                    "wleave"
-                    "icons"
-                    "${name}.svg"
-                  ];
+                  icon =
+                    [
+                      (toString config.programs.wleave.package)
+                      "share"
+                      "wleave"
+                      "icons"
+                      "${name}.svg"
+                    ]
+                    |> lib.concatStringsSep "/";
                 };
               in
               [
@@ -80,33 +82,34 @@
               }
             ''
             + (lib.concatStringsSep "\n" (
-              map
-                (item: ''
-                  button#${item.name} {
-                    --view-fg-color: ${item.color};
-                  }
-                '')
-                [
-                  {
-                    name = "shutdown";
-                    color = colors.base08;
-                  }
+              [
+                {
+                  name = "shutdown";
+                  color = colors.base08;
+                }
 
-                  {
-                    name = "reboot";
-                    color = colors.base0A;
-                  }
+                {
+                  name = "reboot";
+                  color = colors.base0A;
+                }
 
-                  {
-                    name = "suspend";
-                    color = colors.base0C;
-                  }
+                {
+                  name = "suspend";
+                  color = colors.base0C;
+                }
 
-                  {
-                    name = "logout";
-                    color = colors.base0E;
-                  }
-                ]
+                {
+                  name = "logout";
+                  color = colors.base0E;
+                }
+              ]
+              |> map (item:
+              # css
+              ''
+                button#${item.name} {
+                  --view-fg-color: ${item.color};
+                }
+              '')
             ));
         };
       };

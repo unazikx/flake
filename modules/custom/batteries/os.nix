@@ -16,13 +16,13 @@
     }:
     lib.optional
       (
-        host ? class
-        && builtins.elem host.class [
+        (host ? class)
+        && (builtins.elem host.class [
           "darwin"
           "finix"
           "microvm"
           "nixos"
-        ]
+        ])
       )
       (
         den.lib.policy.route {

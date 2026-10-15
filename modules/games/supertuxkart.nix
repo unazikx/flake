@@ -37,12 +37,12 @@
         meta = zen.games.supertuxkart.meta;
         game = meta.package pkgs;
       in
-      (lib.mkMerge [
+      [
         {
           home.packages = [ game ];
         }
-        (lib.optionalAttrs (user.hasAspect zen.games.steam) {
-          programs.steam.config.nonSteamApps = {
+        (
+          {
             "SuperTuxKart" = {
               target = game;
 
@@ -73,8 +73,13 @@
                 };
               };
             };
-          };
-        })
-      ]);
+          }
+          |> lib.optionalAttrs (user.hasAspect zen.games.steam)
+          |> (nonSteamApps: {
+            programs.steam.config.nonSteamApps = nonSteamApps;
+          })
+        )
+      ]
+      |> lib.mkMerge;
   };
 }

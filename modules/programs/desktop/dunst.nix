@@ -31,10 +31,12 @@
               notification_limit = 4;
 
               origin = "top-right";
-              offset = lib.concatStringsSep "x" [
-                "10"
-                "10"
-              ];
+              offset =
+                [
+                  "10"
+                  "10"
+                ]
+                |> lib.concatStringsSep "x";
             };
 
             urgency_low = {

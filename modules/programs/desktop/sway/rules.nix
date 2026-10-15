@@ -16,13 +16,7 @@
       {
         wayland.windowManager.sway.config = {
           assigns = lib.mkMerge [
-            (lib.mapAttrs
-              (
-                _:
-                map (app_id: {
-                  inherit app_id;
-                })
-              )
+            (
               {
                 # keep-sorted start block=yes newline_separated=yes
                 "2" = [
@@ -44,15 +38,15 @@
                 ];
                 # keep-sorted end
               }
-            )
-
-            (lib.mapAttrs
-              (
+              |> lib.mapAttrs (
                 _:
-                map (class: {
-                  inherit class;
+                map (app_id: {
+                  inherit app_id;
                 })
               )
+            )
+
+            (
               {
                 # keep-sorted start block=yes newline_separated=yes
                 "5" = [
@@ -60,15 +54,15 @@
                 ];
                 # keep-sorted end
               }
-            )
-
-            (lib.mapAttrs
-              (
+              |> lib.mapAttrs (
                 _:
-                map (title: {
-                  inherit title;
+                map (class: {
+                  inherit class;
                 })
               )
+            )
+
+            (
               {
                 # keep-sorted start block=yes newline_separated=yes
                 "5" = [
@@ -76,6 +70,12 @@
                 ];
                 # keep-sorted end
               }
+              |> lib.mapAttrs (
+                _:
+                map (title: {
+                  inherit title;
+                })
+              )
             )
           ];
 
@@ -100,7 +100,6 @@
               lib.flatten [
                 (mkRules "app_id" {
                   # keep-sorted start block=yes
-
                   "Choose Files" = [
                     "move position center"
                     "resize set 70 ppt 40 ppt"
@@ -133,7 +132,6 @@
                 })
                 (mkRules "title" {
                   # keep-sorted start block=yes
-
                   "Choose Files" = [
                     "floating enable"
                   ];
@@ -156,22 +154,32 @@
             titlebar = false;
             border = 3;
             criteria = lib.flatten [
-              (map (class: { inherit class; }) [
-                # keep-sorted start
-                "ani"
-                "foot_float"
-                "io.bassi.Amberol"
-                "kitty_float"
-                "org.qbittorrent.qBittorrent"
-                "xdg-desktop-portal-gtk"
-                # keep-sorted end
-              ])
-              (map (title: { inherit title; }) [
-                # keep-sorted start
-                "Choose Files"
-                "Media viewer"
-                # keep-sorted end
-              ])
+              (
+                [
+                  # keep-sorted start
+                  "ani"
+                  "foot_float"
+                  "io.bassi.Amberol"
+                  "kitty_float"
+                  "org.qbittorrent.qBittorrent"
+                  "xdg-desktop-portal-gtk"
+                  # keep-sorted end
+                ]
+                |> map (class: {
+                  inherit class;
+                })
+              )
+              (
+                [
+                  # keep-sorted start
+                  "Choose Files"
+                  "Media viewer"
+                  # keep-sorted end
+                ]
+                |> map (title: {
+                  inherit title;
+                })
+              )
             ];
           };
         };

@@ -79,11 +79,9 @@
           enable = true;
           overlays.enable = true;
 
-          images = (
-            self'.legacyPackages.images.override {
-              colors = colors.toList;
-            }
-          );
+          images = self'.legacyPackages.images.override {
+            colors = colors.toList;
+          };
         };
       };
 

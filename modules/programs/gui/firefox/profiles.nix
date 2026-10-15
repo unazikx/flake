@@ -48,10 +48,11 @@
               ''
                 /* background setting */
                 @-moz-document ${
-                  lib.concatStringsSep ", " [
+                  [
                     ''url("about:home")''
                     ''url("about:newtab")''
                   ]
+                  |> lib.concatStringsSep ", "
                 } {
                   body {
                     background-position: center !important;
@@ -72,17 +73,20 @@
                 .personalizeButtonWrapper { display: none !important; }
               '';
 
-            extraConfig = lib.concatStringsSep "\n" (
-              map (file: lib.readFile file) [
-                # keep-sorted start
-                "${inputs.betterfox}/Fastfox.js"
-                "${inputs.betterfox}/Peskyfox.js"
-                "${inputs.betterfox}/Securefox.js"
-                "${inputs.betterfox}/Smoothfox.js"
-                "${inputs.betterfox}/user.js"
-                # keep-sorted end
-              ]
-            );
+            extraConfig =
+              (
+                [
+                  # keep-sorted start
+                  "${inputs.betterfox}/Fastfox.js"
+                  "${inputs.betterfox}/Peskyfox.js"
+                  "${inputs.betterfox}/Securefox.js"
+                  "${inputs.betterfox}/Smoothfox.js"
+                  "${inputs.betterfox}/user.js"
+                  # keep-sorted end
+                ]
+                |> map (file: lib.readFile file)
+              )
+              |> lib.concatStringsSep "\n";
           };
         };
       };

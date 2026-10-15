@@ -30,8 +30,8 @@
         ...
       }:
       {
-        networking.extraHosts = lib.readFile (
-          pkgs.runCommandLocal "modified-hosts.txt"
+        networking.hostFiles =
+          (pkgs.runCommandLocal "modified-hosts.txt"
             {
               source = "${inputs.dns-malw-link.outPath}/hosts";
 
@@ -45,7 +45,8 @@
               sed ${lib.concatStringsSep " " (map (domain: " -e'/.*${lib.escapeRegex domain}.*/d'") blackList)} \
                 $source > $out
             ''
-        );
+          )
+          |> lib.singleton;
       };
   };
 }

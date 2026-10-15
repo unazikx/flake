@@ -28,12 +28,14 @@
           security.wrappers.btop = {
             owner = "root";
             group = "root";
-            capabilities = lib.concatStringsSep "," [
-              "cap_perfmon"
-              "cap_sys_admin"
-              "cap_net_raw+ep"
-            ];
-            source = lib.getExe (config.meta.btop pkgs);
+            capabilities =
+              [
+                "cap_perfmon"
+                "cap_sys_admin"
+                "cap_net_raw+ep"
+              ]
+              |> lib.concatStringsSep ",";
+            source = lib.getExe (pkgs |> config.meta.btop);
           };
         };
 
@@ -50,7 +52,7 @@
           programs.btop = {
             enable = true;
 
-            package = config.meta.btop pkgs;
+            package = pkgs |> config.meta.btop;
 
             settings = {
               update_ms = 100;

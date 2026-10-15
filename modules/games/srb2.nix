@@ -52,18 +52,23 @@
         meta = zen.games.srb2.meta;
         game = meta.package pkgs;
       in
-      (lib.mkMerge [
+      [
         {
           home.packages = [ game ];
         }
-        (lib.optionalAttrs (user.hasAspect zen.games.steam) {
-          programs.steam.config.nonSteamApps = {
+        (
+          {
             "Sonic Robo Blast 2" = {
               target = game;
               # i should add artwork, but lazy
             };
-          };
-        })
-      ]);
+          }
+          |> lib.optionalAttrs (user.hasAspect zen.games.steam)
+          |> (nonSteamApps: {
+            programs.steam.config.nonSteamApps = nonSteamApps;
+          })
+        )
+      ]
+      |> lib.mkMerge;
   };
 }

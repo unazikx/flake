@@ -17,13 +17,15 @@
           chrony.enable = true;
         };
 
-        networking.timeServers = lib.flatten [
-          options.networking.timeServers.default
-          "0.ru.pool.ntp.org"
-          "1.ru.pool.ntp.org"
-          "2.ru.pool.ntp.org"
-          "3.ru.pool.ntp.org"
-        ];
+        networking.timeServers =
+          [
+            options.networking.timeServers.default
+            "0.ru.pool.ntp.org"
+            "1.ru.pool.ntp.org"
+            "2.ru.pool.ntp.org"
+            "3.ru.pool.ntp.org"
+          ]
+          |> lib.flatten;
 
         systemd.services = {
           set-timezone = {

@@ -37,12 +37,12 @@
 
         game = (meta.package pkgs);
       in
-      (lib.mkMerge [
+      [
         {
           home.packages = [ game ];
         }
-        (lib.optionalAttrs (user.hasAspect zen.games.steam) {
-          programs.steam.config.nonSteamApps = {
+        (
+          {
             "Shattered Pixel Dungeon" = {
               target = game;
 
@@ -54,8 +54,13 @@
               #   logo = pkgs.npins-sources.shattered-pixel-dungeon-logo;
               # };
             };
-          };
-        })
-      ]);
+          }
+          |> lib.optionalAttrs (user.hasAspect zen.games.steam)
+          |> (nonSteamApps: {
+            programs.steam.config.nonSteamApps = nonSteamApps;
+          })
+        )
+      ]
+      |> lib.mkMerge;
   };
 }

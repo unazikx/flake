@@ -22,21 +22,24 @@
           bars = {
             default = {
               blocks = [
-                (lib.mkIf config.services.playerctld.enable {
-                  block = "music";
-                  format = " {$title.str(max_w:50)|} / <i>!$artist</i> $prev $play $next ($volume) ";
-                  format_alt = " [$player] $prev $play $next ";
-                  click = [
-                    {
-                      button = "up";
-                      action = "volume_up";
-                    }
-                    {
-                      button = "down";
-                      action = "volume_down";
-                    }
-                  ];
-                })
+                (
+                  {
+                    block = "music";
+                    format = " {$title.str(max_w:50)|} / <i>!$artist</i> $prev $play $next ($volume) ";
+                    format_alt = " [$player] $prev $play $next ";
+                    click = [
+                      {
+                        button = "up";
+                        action = "volume_up";
+                      }
+                      {
+                        button = "down";
+                        action = "volume_down";
+                      }
+                    ];
+                  }
+                  |> lib.mkIf config.services.playerctld.enable
+                )
                 {
                   block = "sound";
                   format = " $icon {$volume.eng(w:2) |}";
@@ -68,11 +71,14 @@
                   block = "time";
                   format = " $icon $timestamp.datetime(f:'%d.%m.%Y / %H:%M') ";
                 }
-                (lib.mkIf (osConfig.services.upower.enable) {
-                  block = "battery";
-                  driver = "upower";
-                  format = " $icon $percentage ";
-                })
+                (
+                  {
+                    block = "battery";
+                    driver = "upower";
+                    format = " $icon $percentage ";
+                  }
+                  |> lib.mkIf (osConfig.services.upower.enable)
+                )
                 {
                   block = "menu";
                   text = " ⏻ ";
@@ -103,30 +109,32 @@
 
               settings = {
                 theme = {
-                  overrides = lib.mkMerge [
-                    (
-                      let
-                        colors = config.lib.stylix.colors.withHashtag;
-                      in
+                  overrides =
+                    [
+                      (
+                        let
+                          colors = config.lib.stylix.colors.withHashtag;
+                        in
+                        {
+                          idle_bg = colors.base00;
+                          idle_fg = colors.base05;
+                          info_bg = colors.base00;
+                          info_fg = colors.base05;
+                          good_bg = colors.base0B;
+                          good_fg = colors.base00;
+                          warning_bg = colors.base0A;
+                          warning_fg = colors.base00;
+                          critical_bg = colors.base08;
+                          critical_fg = colors.base00;
+                          separator_bg = colors.base00;
+                          separator_fg = colors.base01;
+                        }
+                      )
                       {
-                        idle_bg = colors.base00;
-                        idle_fg = colors.base05;
-                        info_bg = colors.base00;
-                        info_fg = colors.base05;
-                        good_bg = colors.base0B;
-                        good_fg = colors.base00;
-                        warning_bg = colors.base0A;
-                        warning_fg = colors.base00;
-                        critical_bg = colors.base08;
-                        critical_fg = colors.base00;
-                        separator_bg = colors.base00;
-                        separator_fg = colors.base01;
+                        separator = "<span font='12'>|</span>";
                       }
-                    )
-                    {
-                      separator = "<span font='12'>|</span>";
-                    }
-                  ];
+                    ]
+                    |> lib.mkMerge;
                 };
 
                 icons.icons = "material-nf";

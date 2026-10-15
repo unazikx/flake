@@ -29,14 +29,14 @@
           let
             formatLinks =
               links:
-              lib.concatStrings (
-                map (entry: ''
-                  - <img src="${entry.logo}" height="24"> ${entry.name} -> ${entry.link}
+              links
+              |> map (entry: ''
+                - <img src="${entry.logo}" height="24"> ${entry.name} -> ${entry.link}
 
-                    ${toString entry.extra}
+                  ${toString entry.extra}
 
-                '') links
-              );
+              '')
+              |> lib.concatStrings;
 
             formatWiki = name: data: ''
               ## __${name}__
@@ -53,11 +53,19 @@
             > https://dashboardicons.com
             > https://simpleicons.org
 
-            ${lib.concatStrings (
-              map (name: formatWiki name config.wiki.${name}) (builtins.attrNames config.wiki)
-            )}
+            ${
+              config.wiki
+              |> builtins.attrNames
+              |> map (name: formatWiki name config.wiki.${name})
+              |> lib.concatStrings
+            }
 
-            ## Total: ${toString (lib.length (lib.attrNames config.wiki))} wikis
+            ## Total: ${
+              config.wiki
+              |> builtins.attrNames
+              |> lib.length
+              |> toString
+            } wikis
           '';
       };
   };

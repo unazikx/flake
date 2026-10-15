@@ -244,7 +244,7 @@
               }
             ];
 
-            workspaces = lib.genAttrs (map toString (lib.range 1 5)) (_: { });
+            workspaces = (_: { }) |> lib.genAttrs ((lib.range 1 5) |> map toString);
 
             overview = {
               zoom = 0.95;

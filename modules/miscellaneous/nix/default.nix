@@ -48,13 +48,9 @@
           registry =
             let
               isFlake = lib.filterAttrs (_: entry: lib.isType "flake" entry);
+              mapping = lib.mapAttrs (_: flake: { inherit flake; });
             in
-            (lib.mapAttrs (
-              _: flake: {
-                inherit flake;
-              }
-            ))
-              (isFlake inputs);
+            inputs |> isFlake |> mapping;
 
           channel.enable = false;
 

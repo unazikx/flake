@@ -26,14 +26,16 @@
 
             right_format = "$battery";
 
-            format = lib.concatStrings [
-              "$username"
-              "$directory"
-              "$git_branch"
-              "$cmd_duration"
-              "$line_break"
-              "$character"
-            ];
+            format =
+              [
+                "$username"
+                "$directory"
+                "$git_branch"
+                "$cmd_duration"
+                "$line_break"
+                "$character"
+              ]
+              |> lib.concatStrings;
 
             username = {
               format = "[$user]($style) in ";

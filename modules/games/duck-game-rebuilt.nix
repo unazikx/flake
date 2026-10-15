@@ -25,12 +25,12 @@
         meta = zen.games.duck-game-rebuilt.meta;
         game = meta.package self'.packages;
       in
-      (lib.mkMerge [
+      [
         {
           home.packages = [ game ];
         }
-        (lib.optionalAttrs (user.hasAspect zen.games.steam) {
-          programs.steam.config.nonSteamApps = {
+        (
+          {
             "Duck Game Rebuilt" = {
               target = game;
 
@@ -61,8 +61,13 @@
                 };
               };
             };
-          };
-        })
-      ]);
+          }
+          |> lib.optionalAttrs (user.hasAspect zen.games.steam)
+          |> (nonSteamApps: {
+            programs.steam.config.nonSteamApps = nonSteamApps;
+          })
+        )
+      ]
+      |> lib.mkMerge;
   };
 }

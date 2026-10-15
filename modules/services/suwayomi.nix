@@ -45,26 +45,26 @@
             );
 
             downloadAsCbz = true;
-            downloadConversions = lib.listToAttrs (
-              map
-                (list: {
-                  name = list.from;
-                  value = {
-                    target = list.to;
-                    compressionLevel = 0.8;
-                  };
-                })
-                [
-                  {
-                    from = "image/webp";
-                    to = "image/jpeg";
-                  }
-                  {
-                    from = "image/png";
-                    to = "image/jpeg";
-                  }
-                ]
-            );
+            downloadConversions =
+
+              [
+                {
+                  from = "image/webp";
+                  to = "image/jpeg";
+                }
+                {
+                  from = "image/png";
+                  to = "image/jpeg";
+                }
+              ]
+              |> map (list: {
+                name = list.from;
+                value = {
+                  target = list.to;
+                  compressionLevel = 0.8;
+                };
+              })
+              |> lib.listToAttrs;
 
             downloadsPath = "${cfg.dataDir}/downloads";
 

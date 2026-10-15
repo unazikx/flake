@@ -16,13 +16,7 @@
       {
         wayland.windowManager.scroll.config = {
           assigns = lib.mkMerge [
-            (lib.mapAttrs
-              (
-                _:
-                map (app_id: {
-                  inherit app_id;
-                })
-              )
+            (
               {
                 # keep-sorted start block=yes newline_separated=yes
                 "2" = [
@@ -44,15 +38,15 @@
                 ];
                 # keep-sorted end
               }
-            )
-
-            (lib.mapAttrs
-              (
+              |> lib.mapAttrs (
                 _:
-                map (class: {
-                  inherit class;
+                map (app_id: {
+                  inherit app_id;
                 })
               )
+            )
+
+            (
               {
                 # keep-sorted start block=yes newline_separated=yes
                 "5" = [
@@ -60,6 +54,12 @@
                 ];
                 # keep-sorted end
               }
+              |> lib.mapAttrs (
+                _:
+                map (class: {
+                  inherit class;
+                })
+              )
             )
           ];
 
@@ -81,7 +81,7 @@
                     ) attrs
                   );
               in
-              lib.flatten [
+              [
                 (mkRules "app_id" {
                   # keep-sorted start block=yes
                   "Choose Files" = [
@@ -130,31 +130,34 @@
                   ];
                   # keep-sorted end
                 })
-              ];
+              ]
+              |> lib.flatten;
           };
 
           floating = {
             inherit (cfg.config) modifier;
             titlebar = false;
             border = 3;
-            criteria = lib.flatten [
-              (map (class: { inherit class; }) [
-                # keep-sorted start
-                "ani"
-                "foot_float"
-                "io.bassi.Amberol"
-                "kitty_float"
-                "org.qbittorrent.qBittorrent"
-                "xdg-desktop-portal-gtk"
-                # keep-sorted end
-              ])
-              (map (title: { inherit title; }) [
-                # keep-sorted start
-                "Choose Files"
-                "Media viewer"
-                # keep-sorted end
-              ])
-            ];
+            criteria =
+              [
+                (map (class: { inherit class; }) [
+                  # keep-sorted start
+                  "ani"
+                  "foot_float"
+                  "io.bassi.Amberol"
+                  "kitty_float"
+                  "org.qbittorrent.qBittorrent"
+                  "xdg-desktop-portal-gtk"
+                  # keep-sorted end
+                ])
+                (map (title: { inherit title; }) [
+                  # keep-sorted start
+                  "Choose Files"
+                  "Media viewer"
+                  # keep-sorted end
+                ])
+              ]
+              |> lib.flatten;
           };
         };
       };

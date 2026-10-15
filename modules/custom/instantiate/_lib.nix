@@ -15,7 +15,7 @@ lib.extend (
             buildInputs = [ pkgs.lutgen ];
 
             inherit image;
-            colors = _prev.concatStringsSep " " colors;
+            colors = colors |> _prev.concatStringsSep " ";
           }
           ''
             lutgen apply $image -o $out -- $colors
@@ -26,52 +26,59 @@ lib.extend (
       options:
       _prev.mapAttrs (
         _: attrs:
-        _prev.mkMerge [
+        [
           options
           attrs
         ]
+        |> _prev.mkMerge
       );
 
     escapeDomains =
       listOfDomains:
-      _prev.concatStringsSep " " (map (domain: " -e'/.*${_prev.escapeRegex domain}.*/d'") listOfDomains);
+      listOfDomains
+      |> map (domain: " -e'/.*${_prev.escapeRegex domain}.*/d'")
+      |> _prev.concatStringsSep " ";
 
     yazi = {
       mkPluginMime =
         run: list:
-        map (mime: {
+        list
+        |> map (mime: {
           inherit
             mime
             run
             ;
-        }) list;
+        });
 
       mkPluginUrl =
         run: list:
-        map (url: {
+        list
+        |> map (url: {
           inherit
             url
             run
             ;
-        }) list;
+        });
 
       mkRuleMime =
         mimes: use:
-        map (mime: {
+        mimes
+        |> map (mime: {
           inherit
             mime
             use
             ;
-        }) mimes;
+        });
 
       mkRuleUrl =
         urls: use:
-        map (url: {
+        urls
+        |> map (url: {
           inherit
             url
             use
             ;
-        }) urls;
+        });
     };
 
     gendeepINI = _prev.generators.toINI {
@@ -81,16 +88,15 @@ lib.extend (
         in
         key: value:
         if _prev.isAttrs value then
-          _prev.concatStringsSep "\n" (
-            _prev.collect _prev.isString (
-              _prev.mapAttrsRecursive (
-                path: entry:
-                "${_prev.escape [ separator ] (_prev.concatStringsSep "\\" ([ key ] ++ path))}${separator}${
-                  _prev.replaceString "\n" "\\n" (_prev.generators.mkValueStringDefault { } entry)
-                }"
-              ) value
-            )
+          value
+          |> _prev.mapAttrsRecursive (
+            path: entry:
+            "${_prev.escape [ separator ] (_prev.concatStringsSep "\\" ([ key ] ++ path))}${separator}${
+              _prev.replaceString "\n" "\\n" (_prev.generators.mkValueStringDefault { } entry)
+            }"
           )
+          |> _prev.collect _prev.isString
+          |> _prev.concatStringsSep "\n"
         else
           _prev.generators.mkKeyValueDefault { } separator key value;
     };
@@ -125,10 +131,11 @@ lib.extend (
 
         roundToString = value: toString (builtins.floor (value + 0.5));
       in
-      _prev.concatMapStringsSep " " roundToString [
+      [
         h
         s
         l
-      ];
+      ]
+      |> _prev.concatMapStringsSep " " roundToString;
   }
 )

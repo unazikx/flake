@@ -12,7 +12,7 @@
       }:
       {
         environment = {
-          defaultPackages = lib.mkForce [ ];
+          defaultPackages = [ ] |> lib.mkForce;
 
           systemPackages = [
             pkgs.helix

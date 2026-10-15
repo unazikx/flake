@@ -36,14 +36,14 @@
             invitationsAllowed = false;
             webVaultEnabled = true;
 
-            dataFolder = lib.mkDefault "/var/lib/vaultwarden";
+            dataFolder = "/var/lib/vaultwarden" |> lib.mkDefault;
           };
 
           environmentFile = config.sops.secrets."services/vaultwarden".path;
         };
 
         systemd.services.vaultwarden.serviceConfig = {
-          StateDirectory = lib.mkForce (baseNameOf cfg.config.dataFolder);
+          StateDirectory = cfg.config.dataFolder |> baseNameOf |> lib.mkForce;
         };
 
         networking.firewall.allowedTCPPorts = [ cfg.config.rocketPort ];

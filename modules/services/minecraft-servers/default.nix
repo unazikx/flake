@@ -61,7 +61,7 @@
         };
 
         sops.secrets."services/minecraft/environment" = {
-          owner = lib.mkForce cfg.user;
+          owner = cfg.user |> lib.mkForce;
 
           # when u change password
           # servers will be restarted

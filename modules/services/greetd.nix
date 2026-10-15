@@ -28,8 +28,8 @@
               let
                 desktops = config.services.displayManager.sessionData.desktops;
                 sessions = "${desktops}/share/xsessions:${desktops}/share/wayland-sessions";
-                colorScheme = (
-                  lib.concatStringsSep ";" [
+                colorScheme =
+                  [
                     "border=magenta"
                     "text=cyan"
                     "prompt=green"
@@ -39,23 +39,26 @@
                     "container=black"
                     "input=red"
                   ]
-                );
+                  |> lib.concatStringsSep ";";
               in
-              lib.concatStringsSep " " [
-                (lib.getExe pkgs.tuigreet)
+              (
+                [
+                  (lib.getExe pkgs.tuigreet)
 
-                "--sessions"
-                sessions
+                  "--sessions"
+                  sessions
 
-                "--asterisks"
-                "--time"
+                  "--asterisks"
+                  "--time"
 
-                "--remember"
-                "--remember-session"
+                  "--remember"
+                  "--remember-session"
 
-                "--theme"
-                colorScheme
-              ];
+                  "--theme"
+                  colorScheme
+                ]
+                |> lib.concatStringsSep " "
+              );
           };
         };
 

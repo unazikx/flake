@@ -21,17 +21,19 @@
         version = package.version;
 
         # https://github.com/nix-community/stylix/blob/master/modules/blender/hm.nix
-        indent = string: "  " + lib.concatStringsSep "\n  " (lib.splitString "\n" string);
+        indent = string: "  " + ((lib.splitString "\n" string) |> lib.concatStringsSep "\n  ");
       in
       {
         home.packages = lib.singleton package;
 
         xdg.configFile = {
-          "blender/${version}/scripts/presets/interface_theme/Stylix.xml".text = lib.concatLines [
-            "<bpy>"
-            (indent config.stylix.targets.blender.themeBody)
-            "<bpy>"
-          ];
+          "blender/${version}/scripts/presets/interface_theme/Stylix.xml".text =
+            [
+              "<bpy>"
+              (indent config.stylix.targets.blender.themeBody)
+              "<bpy>"
+            ]
+            |> lib.concatLines;
         };
       };
   };

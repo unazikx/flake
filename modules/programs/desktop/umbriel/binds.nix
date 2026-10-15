@@ -34,10 +34,7 @@
           general.mod_key = "Super";
 
           keybinds = lib.mkMerge [
-            (lib.concatMapAttrs
-              (key: command: {
-                "Mod+${key}" = command;
-              })
+            (
               (
                 {
                   "Q" = "window-close";
@@ -94,40 +91,48 @@
                   }) (lib.range 1 meta.workspaceCount)
                 ))
               )
+              |> lib.concatMapAttrs (
+                key: command: {
+                  "Mod+${key}" = command;
+                }
+              )
             )
 
-            (lib.concatMapAttrs
-              (key: command: {
-                "Mod+${key}" = "spawn:${command}";
-              })
+            (
               {
                 "Return" = "footclient";
               }
+              |> lib.concatMapAttrs (
+                key: command: {
+                  "Mod+${key}" = "spawn:${command}";
+                }
+              )
             )
 
             # noctalia integration
             # ^^^ https://docs.noctalia.dev/umbriel/keybinds/?section=example-noctalia-shell-integration#example-noctalia-shell-integration
             (lib.mkIf noctalia.enable (
-              lib.concatMapAttrs
-                (key: command: {
+              {
+                "Print" = "screenshot-region";
+                "Shift+Print" = "screenshot-fullscreen";
+                "Alt+Print" = "screenshot-annotate";
+
+                "Mod+Tab" = "panel-toggle launcher";
+                "Mod+Alt+Space" = "dock-toggle";
+
+                "Mod+A" = "annotate";
+                "Mod+W" = "window-switcher";
+                "Mod+Z" = "panel-toggle launcher /emo";
+                "Mod+X" = "panel-toggle clipboard";
+
+                "Mod+Backspace" = "session lock";
+                "Mod+Escape" = "panel-toggle session";
+              }
+              |> lib.concatMapAttrs (
+                key: command: {
                   "${key}" = norepeat "spawn:noctalia msg ${command}";
-                })
-                {
-                  "Print" = "screenshot-region";
-                  "Shift+Print" = "screenshot-fullscreen";
-                  "Alt+Print" = "screenshot-annotate";
-
-                  "Mod+Tab" = "panel-toggle launcher";
-                  "Mod+Alt+Space" = "dock-toggle";
-
-                  "Mod+A" = "annotate";
-                  "Mod+W" = "window-switcher";
-                  "Mod+Z" = "panel-toggle launcher /emo";
-                  "Mod+X" = "panel-toggle clipboard";
-
-                  "Mod+Backspace" = "session lock";
-                  "Mod+Escape" = "panel-toggle session";
                 }
+              )
             ))
           ];
 

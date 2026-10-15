@@ -25,7 +25,7 @@
         };
 
         networking.hosts = {
-          "127.0.0.1" = lib.attrNames config.services.caddy.virtualHosts;
+          "127.0.0.1" = config.services.caddy.virtualHosts |> lib.attrNames;
         };
       };
   };

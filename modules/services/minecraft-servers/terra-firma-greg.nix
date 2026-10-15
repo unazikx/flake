@@ -32,10 +32,12 @@
               jre = pkgs.temurin-bin-17;
             };
 
-            jvmOpts = lib.concatStringsSep " " [
-              "-Xmx6024M"
-              "-Xms1024M"
-            ];
+            jvmOpts =
+              [
+                "-Xmx6024M"
+                "-Xms1024M"
+              ]
+              |> lib.concatStringsSep " ";
 
             serverProperties = {
               # https://minecraft.wiki/w/Formatting_codes?section=8#Use_in_server.properties_and_pack.mcmeta

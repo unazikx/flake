@@ -25,23 +25,25 @@
         ...
       }:
       {
-        home.packages = lib.attrValues {
-          # Adobe Suite
-          "Photoshop" = inputs'.artcraft-nix.packages.photocraft;
-          "Lightroom" = inputs'.artcraft-nix.packages.lightcraft;
-          "AfterEffects" = inputs'.artcraft-nix.packages.effectcraft;
-          "PremierePro" = inputs'.artcraft-nix.packages.filmcraft;
-          "Illustrator" = inputs'.artcraft-nix.packages.vectorcraft;
+        home.packages =
+          {
+            # Adobe Suite
+            "Photoshop" = inputs'.artcraft-nix.packages.photocraft;
+            "Lightroom" = inputs'.artcraft-nix.packages.lightcraft;
+            "AfterEffects" = inputs'.artcraft-nix.packages.effectcraft;
+            "PremierePro" = inputs'.artcraft-nix.packages.filmcraft;
+            "Illustrator" = inputs'.artcraft-nix.packages.vectorcraft;
 
-          # Microsoft Office
-          "Word" = inputs'.artcraft-nix.packages.wordcraft;
-          "PowerPoint" = inputs'.artcraft-nix.packages.deckcraft;
-          "Excel" = inputs'.artcraft-nix.packages.gridcraft;
+            # Microsoft Office
+            "Word" = inputs'.artcraft-nix.packages.wordcraft;
+            "PowerPoint" = inputs'.artcraft-nix.packages.deckcraft;
+            "Excel" = inputs'.artcraft-nix.packages.gridcraft;
 
-          # other
-          "CAD" = inputs'.artcraft-nix.packages.cadcraft;
-          "Audacity" = inputs'.artcraft-nix.packages.soundcraft;
-        };
+            # other
+            "CAD" = inputs'.artcraft-nix.packages.cadcraft;
+            "Audacity" = inputs'.artcraft-nix.packages.soundcraft;
+          }
+          |> lib.attrValues;
       };
   };
 }

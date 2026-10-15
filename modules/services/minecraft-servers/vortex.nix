@@ -32,10 +32,12 @@
               jre = pkgs.temurin-bin-17;
             };
 
-            jvmOpts = lib.concatStringsSep " " [
-              "-Xmx8192M"
-              "-Xms1024M"
-            ];
+            jvmOpts =
+              [
+                "-Xmx8192M"
+                "-Xms1024M"
+              ]
+              |> lib.concatStringsSep " ";
 
             serverProperties = lib.mkMerge [
               {

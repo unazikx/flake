@@ -19,6 +19,9 @@
         lib,
         ...
       }:
+      let
+        separate = lib.concatStringsSep ",";
+      in
       {
         services.displayManager = {
           enable = true;
@@ -33,27 +36,35 @@
               bigclock = "en";
               bigclock_12hr = false;
 
-              corner_bottom_left = lib.concatStringsSep "," [
-                "version"
-              ];
+              corner_bottom_left =
+                [
+                  "version"
+                ]
+                |> separate;
 
-              corner_bottom_right = lib.concatStringsSep "," [
-                "labels"
-              ];
+              corner_bottom_right =
+                [
+                  "labels"
+                ]
+                |> separate;
 
-              corner_top_left = lib.concatStringsSep "," [
-                "shutdown"
-                "restart"
-                "britup"
-                "britdown"
-                "password"
-                "battery"
-              ];
+              corner_top_left =
+                [
+                  "shutdown"
+                  "restart"
+                  "britup"
+                  "britdown"
+                  "password"
+                  "battery"
+                ]
+                |> separate;
 
-              corner_top_right = lib.concatStringsSep "," [
-                "clock"
-                "capslock"
-              ];
+              corner_top_right =
+                [
+                  "clock"
+                  "capslock"
+                ]
+                |> separate;
             };
           };
         };

@@ -32,11 +32,12 @@
 
                 command = lib.getExe' cfg.package "scrollbar";
                 statusCommand = "${lib.getExe statusCfg.package} ${
-                  lib.concatStringsSep "/" [
+                  [
                     config.xdg.configHome
                     "i3status-rust"
                     "config-default.toml"
                   ]
+                  |> lib.concatStringsSep "/"
                 }";
 
                 trayOutput = "none";

@@ -34,29 +34,33 @@
           update.onActivation = true;
           uninstallUnmanaged = true;
 
-          remotes = lib.mkOptionDefault [
+          remotes =
+            [
+              {
+                name = "flathub-beta";
+                location = "https://flathub.org/beta-repo/flathub-beta.flatpakrepo";
+              }
+            ]
+            |> lib.mkOptionDefault;
+
+          packages =
             {
-              name = "flathub-beta";
-              location = "https://flathub.org/beta-repo/flathub-beta.flatpakrepo";
+              sober = {
+                flatpakref = "https://sober.vinegarhq.org/sober.flatpakref";
+                sha256 = "1pj8y1xhiwgbnhrr3yr3ybpfis9slrl73i0b1lc9q89vhip6ym2l";
+              };
+
+              hytale = {
+                appId = "com.hytale.Launcher";
+                sha256 = "0pw1f4p5902hd9am1hnvmxy7271vf2xgyvszdj17zndwp56ij5l8";
+
+                bundle = "${pkgs.fetchurl {
+                  url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-latest.flatpak";
+                  sha256 = "0ijyg7kab1ixa6bds44agxfjds6m0ig5z6xl3rnc5lx9gj4nz88w";
+                }}";
+              };
             }
-          ];
-
-          packages = lib.attrValues {
-            sober = {
-              flatpakref = "https://sober.vinegarhq.org/sober.flatpakref";
-              sha256 = "1pj8y1xhiwgbnhrr3yr3ybpfis9slrl73i0b1lc9q89vhip6ym2l";
-            };
-
-            hytale = {
-              appId = "com.hytale.Launcher";
-              sha256 = "0pw1f4p5902hd9am1hnvmxy7271vf2xgyvszdj17zndwp56ij5l8";
-
-              bundle = "${pkgs.fetchurl {
-                url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-latest.flatpak";
-                sha256 = "0ijyg7kab1ixa6bds44agxfjds6m0ig5z6xl3rnc5lx9gj4nz88w";
-              }}";
-            };
-          };
+            |> lib.attrValues;
 
           overrides.global = {
             Context = {

@@ -28,134 +28,138 @@
               subFloating = if isFloating then "-floating" else "";
             in
             {
-              "vertical${subFloating}" = lib.mkIf isVertical {
-                enabled = true;
+              "vertical${subFloating}" =
+                {
+                  enabled = true;
 
-                start = [
-                  "launcher"
-                  "notifications"
-                  "clipboard"
-                  "workspaces"
-                ];
+                  start = [
+                    "launcher"
+                    "notifications"
+                    "clipboard"
+                    "workspaces"
+                  ];
 
-                center = [
-                  "clock"
-                  "screenshot"
-                ];
+                  center = [
+                    "clock"
+                    "screenshot"
+                  ];
 
-                end = [
-                  "tray"
-                  "keyboard_layout"
-                  "caffeine"
-                  "brightness"
-                  "group:g2"
-                  "battery"
-                  "session"
-                ];
+                  end = [
+                    "tray"
+                    "keyboard_layout"
+                    "caffeine"
+                    "brightness"
+                    "group:g2"
+                    "battery"
+                    "session"
+                  ];
 
-                contact_shadow = true;
-                margin_edge = if isFloating then 6 else 0;
-                margin_ends = if isFloating then 150 else 0;
-                radius = if isFloating then 12 else 0;
-                position = "left";
-                widget_spacing = 10;
+                  contact_shadow = true;
+                  margin_edge = if isFloating then 6 else 0;
+                  margin_ends = if isFloating then 150 else 0;
+                  radius = if isFloating then 12 else 0;
+                  position = "left";
+                  widget_spacing = 10;
 
-                capsule_group = [
-                  {
-                    accordion = false;
-                    accordion_direction = "end";
-                    enabled = true;
-                    fill = "surface_variant";
-                    id = "g2";
-                    members = [
-                      "bluetooth"
-                      "volume"
-                      "network"
-                    ];
-                    opacity = 1.0;
-                    padding = 6.0;
-                  }
+                  capsule_group = [
+                    {
+                      accordion = false;
+                      accordion_direction = "end";
+                      enabled = true;
+                      fill = "surface_variant";
+                      id = "g2";
+                      members = [
+                        "bluetooth"
+                        "volume"
+                        "network"
+                      ];
+                      opacity = 1.0;
+                      padding = 6.0;
+                    }
 
-                ];
-              };
+                  ];
+                }
+                |> lib.mkIf isVertical;
 
-              island = lib.mkIf isIsland {
-                enabled = true;
+              island =
+                {
+                  enabled = true;
 
-                start = [
-                  "group:g1"
-                  "caffeine"
-                ];
+                  start = [
+                    "group:g1"
+                    "caffeine"
+                  ];
 
-                center = [
-                  "clock"
-                  "weather"
-                ];
+                  center = [
+                    "clock"
+                    "weather"
+                  ];
 
-                end = [
-                  "tray"
-                  "keyboard_layout"
-                  "group:g3"
-                  "group:g2"
-                ];
+                  end = [
+                    "tray"
+                    "keyboard_layout"
+                    "group:g3"
+                    "group:g2"
+                  ];
 
-                border_width = 2.0;
-                contact_shadow = true;
-                layer = "overlay";
-                margin_edge = 8;
-                margin_ends = 700;
-                panel_overlap = 0;
-                reserve_space = false;
-                show_on_workspace_switch = false;
-                smart_auto_hide = true;
+                  border_width = 2.0;
+                  contact_shadow = true;
+                  layer = "overlay";
+                  margin_edge = 8;
+                  margin_ends = 700;
+                  panel_overlap = 0;
+                  reserve_space = false;
+                  show_on_workspace_switch = false;
+                  smart_auto_hide = true;
 
-                dead_zone.actions = {
-                  scroll_down = "workspace-switch next";
-                  scroll_up = "workspace-switch prev";
-                };
+                  dead_zone.actions = {
+                    scroll_down = "workspace-switch next";
+                    scroll_up = "workspace-switch prev";
+                  };
 
-                capsule_group = [
-                  {
-                    accordion = false;
-                    accordion_direction = "end";
-                    enabled = true;
-                    fill = "surface_variant";
-                    id = "g1";
-                    members = [
-                      "notifications"
-                      "clipboard"
-                    ];
-                    opacity = 1.0;
-                    padding = 6.0;
-                  }
-                  {
-                    accordion = false;
-                    accordion_direction = "end";
-                    enabled = true;
-                    fill = "surface_variant";
-                    id = "g2";
-                    members = [
-                      "brightness"
-                      "battery"
-                    ];
-                    opacity = 1.0;
-                    padding = 6.0;
-                  }
-                  {
-                    accordion = false;
-                    accordion_direction = "end";
-                    enabled = true;
-                    fill = "surface_variant";
-                    id = "g3";
-                    members = [
-                      "volume"
-                      "network"
-                    ];
-                    opacity = 1.0;
-                    padding = 6.0;
-                  }
-                ];
-              };
+                  capsule_group = [
+                    {
+                      accordion = false;
+                      accordion_direction = "end";
+                      enabled = true;
+                      fill = "surface_variant";
+                      id = "g1";
+                      members = [
+                        "notifications"
+                        "clipboard"
+                      ];
+                      opacity = 1.0;
+                      padding = 6.0;
+                    }
+                    {
+                      accordion = false;
+                      accordion_direction = "end";
+                      enabled = true;
+                      fill = "surface_variant";
+                      id = "g2";
+                      members = [
+                        "brightness"
+                        "battery"
+                      ];
+                      opacity = 1.0;
+                      padding = 6.0;
+                    }
+                    {
+                      accordion = false;
+                      accordion_direction = "end";
+                      enabled = true;
+                      fill = "surface_variant";
+                      id = "g3";
+                      members = [
+                        "volume"
+                        "network"
+                      ];
+                      opacity = 1.0;
+                      padding = 6.0;
+                    }
+                  ];
+                }
+                |> lib.mkIf isIsland;
             };
 
           audio = {
@@ -290,7 +294,7 @@
             font_family = lib.mkForce fonts.monospace.name;
             panel_anchor_bar = meta.bar;
 
-            avatar_path = toString (pkgs.fetchurl accounts.userIcon);
+            avatar_path = pkgs.fetchurl accounts.userIcon |> toString;
 
             launch_apps_as_systemd_services = true;
             polkit_agent = true;

@@ -38,7 +38,7 @@
 
             BitTorrent.Session = {
               TempPathEnabled = true;
-              DefaultSavePath = lib.mkDefault "/media/torrents";
+              DefaultSavePath = "/media/torrents" |> lib.mkDefault;
               QueueingSystemEnabled = true;
               IgnoreSlowTorrentsForQueueing = true;
               SlowTorrentsDownloadRate = 40; # kbps
@@ -86,16 +86,18 @@
         };
 
         systemd.services.qbittorrent = {
-          serviceConfig.ExecStartPre = lib.mkAfter [
-            # password
-            "${lib.getExe pkgs.replace-secret} '@PASSWORD@' ${
-              config.sops.secrets."services/qbittorrent/password".path
-            } ${cfg.profileDir}/qBittorrent/config/qBittorrent.conf"
-            # username
-            "${lib.getExe pkgs.replace-secret} '@USERNAME@' ${
-              config.sops.secrets."services/qbittorrent/username".path
-            } ${cfg.profileDir}/qBittorrent/config/qBittorrent.conf"
-          ];
+          serviceConfig.ExecStartPre =
+            [
+              # password
+              "${lib.getExe pkgs.replace-secret} '@PASSWORD@' ${
+                config.sops.secrets."services/qbittorrent/password".path
+              } ${cfg.profileDir}/qBittorrent/config/qBittorrent.conf"
+              # username
+              "${lib.getExe pkgs.replace-secret} '@USERNAME@' ${
+                config.sops.secrets."services/qbittorrent/username".path
+              } ${cfg.profileDir}/qBittorrent/config/qBittorrent.conf"
+            ]
+            |> lib.mkAfter;
         };
 
         sops.secrets = {

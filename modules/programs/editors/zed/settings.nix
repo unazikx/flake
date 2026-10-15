@@ -32,8 +32,9 @@
                 let
                   nvim = config.programs.neovim;
                   vim = config.programs.vim;
+                  hx = config.programs.helix;
                 in
-                nvim.enable or vim.enable && !config.programs.helix.enable;
+                nvim.enable or (vim.enable && !hx.enable);
 
               inlay_hints = {
                 show_type_hints = true;

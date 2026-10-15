@@ -16,10 +16,7 @@
       {
         wayland.windowManager.scroll.config = {
           keybindings = lib.mkMerge [
-            (lib.concatMapAttrs
-              (key: command: {
-                "${cfg.config.modifier}+${key}" = command;
-              })
+            (
               {
                 "q" = "kill";
                 "f" = "fullscreen";
@@ -40,12 +37,14 @@
                 "home" = "exit";
                 "shift+home" = "reload";
               }
+              |> lib.concatMapAttrs (
+                key: command: {
+                  "${cfg.config.modifier}+${key}" = command;
+                }
+              )
             )
 
-            (lib.concatMapAttrs
-              (key: program: {
-                "${cfg.config.modifier}+${key}" = "exec ${program}";
-              })
+            (
               {
                 "tab" = "tofi-drun | xargs swaymsg exec --";
                 "space" = "vicinae toggle";
@@ -53,6 +52,11 @@
                 "return" = "footclient";
                 "shift+return" = "footclient -a=foot_float";
               }
+              |> lib.concatMapAttrs (
+                key: program: {
+                  "${cfg.config.modifier}+${key}" = "exec ${program}";
+                }
+              )
             )
 
             (
@@ -65,26 +69,22 @@
               }
             )
 
-            (lib.concatMapAttrs
-              (key: workspace: {
-                "${cfg.config.modifier}+${key}" = "workspace ${workspace}";
-                "${cfg.config.modifier}+Shift+${key}" = "move container to workspace ${workspace}";
-              })
-              (
-                lib.genAttrs (
-                  (map toString (lib.lists.range 1 8))
-                  ++ [
-                    "i"
-                  ]
-                ) toString
+            (
+              (lib.genAttrs (
+                (map toString (lib.lists.range 1 8))
+                ++ [
+                  "i"
+                ]
+              ) toString)
+              |> lib.concatMapAttrs (
+                key: workspace: {
+                  "${cfg.config.modifier}+${key}" = "workspace ${workspace}";
+                  "${cfg.config.modifier}+Shift+${key}" = "move container to workspace ${workspace}";
+                }
               )
             )
 
-            (lib.concatMapAttrs
-              (key: directory: {
-                "${cfg.config.modifier}+${key}" = "focus ${directory}";
-                "${cfg.config.modifier}+Shift+${key}" = "move ${directory}";
-              })
+            (
               {
                 h = "left";
                 j = "down";
@@ -95,6 +95,12 @@
                 up = "up";
                 right = "right";
               }
+              |> lib.concatMapAttrs (
+                key: directory: {
+                  "${cfg.config.modifier}+${key}" = "focus ${directory}";
+                  "${cfg.config.modifier}+Shift+${key}" = "move ${directory}";
+                }
+              )
             )
           ];
         };

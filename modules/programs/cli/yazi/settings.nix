@@ -50,26 +50,28 @@
             ] (_: "center");
 
             plugin = {
-              prepend_previewers = lib.mkMerge [
-                (lib.yazi.mkPluginMime "office" [
-                  "application/ms-*"
-                  "application/msword"
-                  "application/oasis.*"
-                  "application/openxmlformats-officedocument.*"
-                ])
-                (lib.yazi.mkPluginMime "ouch --archive-icon=''" [
-                  "application/{*zip,tar,bzip2,7z*,rar,xz,zstd,java-archive}"
-                ])
-                (lib.yazi.mkPluginUrl ''faster-piper -- CLICOLOR_FORCE=1 glow -w=$w -s=dracula -- "$1"'' [
-                  "*.md"
-                ])
-                (lib.yazi.mkPluginUrl "comicthumb" [
-                  "*.cb[7rz]"
-                ])
-                (lib.yazi.mkPluginMime "djvu-view" [
-                  "image/djvu"
-                ])
-              ];
+              prepend_previewers =
+                [
+                  (lib.yazi.mkPluginMime "office" [
+                    "application/ms-*"
+                    "application/msword"
+                    "application/oasis.*"
+                    "application/openxmlformats-officedocument.*"
+                  ])
+                  (lib.yazi.mkPluginMime "ouch --archive-icon=''" [
+                    "application/{*zip,tar,bzip2,7z*,rar,xz,zstd,java-archive}"
+                  ])
+                  (lib.yazi.mkPluginUrl ''faster-piper -- CLICOLOR_FORCE=1 glow -w=$w -s=dracula -- "$1"'' [
+                    "*.md"
+                  ])
+                  (lib.yazi.mkPluginUrl "comicthumb" [
+                    "*.cb[7rz]"
+                  ])
+                  (lib.yazi.mkPluginMime "djvu-view" [
+                    "image/djvu"
+                  ])
+                ]
+                |> lib.mkMerge;
 
               prepend_fetchers = [
                 {
@@ -169,134 +171,138 @@
             };
 
             open = {
-              prepend_rules = lib.mkMerge [
-                (lib.yazi.mkRuleUrl
-                  [
-                    "*.kdbx"
-                  ]
-                  [
-                    "keepassdb"
-                  ]
-                )
-                (lib.yazi.mkRuleUrl
-                  [
-                    "*.exe"
-                    "*.msi"
-                  ]
-                  [
-                    "uwu-run"
-                    "umu-run"
-                  ]
-                )
-                (lib.yazi.mkRuleUrl
-                  [
-                    "*.csv"
-                    "*.tsv"
-                    "*.tab"
-                    "*.psv"
-                    "*.odt"
-                    "*.doc"
-                    "*.docx"
-                    "*.rtf"
-                    "*.xls"
-                    "*.xlsx"
-                    "*.xlsm"
-                    "*.xlsb"
-                    "*.ods"
-                    "*.odp"
-                    "*.pptx"
-                    "*.odf"
-                    "*.odb"
-                  ]
-                  [
-                    "msoffice-pdf"
-                    "msoffice"
-                  ]
-                )
-                (lib.yazi.mkRuleMime
-                  [
-                    "application/zip"
-                  ]
-                  [
-                    "extract-archive"
-                  ]
-                )
-                (lib.yazi.mkRuleMime
-                  [
-                    "application/bittorrent"
-                  ]
-                  [
-                    "edit"
-                    "qbttorrent-add"
-                  ]
-                )
-              ];
+              prepend_rules =
+                [
+                  (lib.yazi.mkRuleUrl
+                    [
+                      "*.kdbx"
+                    ]
+                    [
+                      "keepassdb"
+                    ]
+                  )
+                  (lib.yazi.mkRuleUrl
+                    [
+                      "*.exe"
+                      "*.msi"
+                    ]
+                    [
+                      "uwu-run"
+                      "umu-run"
+                    ]
+                  )
+                  (lib.yazi.mkRuleUrl
+                    [
+                      "*.csv"
+                      "*.tsv"
+                      "*.tab"
+                      "*.psv"
+                      "*.odt"
+                      "*.doc"
+                      "*.docx"
+                      "*.rtf"
+                      "*.xls"
+                      "*.xlsx"
+                      "*.xlsm"
+                      "*.xlsb"
+                      "*.ods"
+                      "*.odp"
+                      "*.pptx"
+                      "*.odf"
+                      "*.odb"
+                    ]
+                    [
+                      "msoffice-pdf"
+                      "msoffice"
+                    ]
+                  )
+                  (lib.yazi.mkRuleMime
+                    [
+                      "application/zip"
+                    ]
+                    [
+                      "extract-archive"
+                    ]
+                  )
+                  (lib.yazi.mkRuleMime
+                    [
+                      "application/bittorrent"
+                    ]
+                    [
+                      "edit"
+                      "qbttorrent-add"
+                    ]
+                  )
+                ]
+                |> lib.mkMerge;
 
-              rules = lib.mkMerge [
-                (lib.yazi.mkRuleMime
-                  [
-                    "image/*"
-                  ]
-                  [
-                    "image"
-                    "xdg-open"
-                  ]
-                )
-                (lib.yazi.mkRuleMime
-                  [
-                    "{audio,video}/*"
-                  ]
-                  [
-                    "play"
-                    "xdg-open"
-                  ]
-                )
-                (lib.yazi.mkRuleMime
-                  [
-                    "application/pdf"
-                    "application/zip"
-                    "application/cbt"
-                    "application/cbr"
-                    "application/cbz"
-                    "application/x-cbt"
-                    "application/x-cbr"
-                    "application/x-cbz"
-                    "application/epub+zip"
-                    "application/vnd.comicbook-rar"
-                    "application/vnd.comicbook+zip"
-                  ]
-                  [
-                    "pdf"
-                  ]
-                )
-                (lib.yazi.mkRuleMime
-                  [
-                    "application/{*zip,tar,bzip2,7z*,rar,xz,zstd,java-archive}"
-                  ]
-                  [
-                    "extract-archive"
-                  ]
-                )
-                (lib.yazi.mkRuleMime
-                  [
-                    "inode/empty"
-                    "application/*"
-                    "text/*"
-                  ]
-                  [
-                    "edit"
-                    "native-run"
-                  ]
-                )
-                (lib.yazi.mkRuleMime
-                  [
-                    "*/"
-                  ]
-                  [
-                    "xdg-open"
-                  ]
-                )
-              ];
+              rules =
+                [
+                  (lib.yazi.mkRuleMime
+                    [
+                      "image/*"
+                    ]
+                    [
+                      "image"
+                      "xdg-open"
+                    ]
+                  )
+                  (lib.yazi.mkRuleMime
+                    [
+                      "{audio,video}/*"
+                    ]
+                    [
+                      "play"
+                      "xdg-open"
+                    ]
+                  )
+                  (lib.yazi.mkRuleMime
+                    [
+                      "application/pdf"
+                      "application/zip"
+                      "application/cbt"
+                      "application/cbr"
+                      "application/cbz"
+                      "application/x-cbt"
+                      "application/x-cbr"
+                      "application/x-cbz"
+                      "application/epub+zip"
+                      "application/vnd.comicbook-rar"
+                      "application/vnd.comicbook+zip"
+                    ]
+                    [
+                      "pdf"
+                    ]
+                  )
+                  (lib.yazi.mkRuleMime
+                    [
+                      "application/{*zip,tar,bzip2,7z*,rar,xz,zstd,java-archive}"
+                    ]
+                    [
+                      "extract-archive"
+                    ]
+                  )
+                  (lib.yazi.mkRuleMime
+                    [
+                      "inode/empty"
+                      "application/*"
+                      "text/*"
+                    ]
+                    [
+                      "edit"
+                      "native-run"
+                    ]
+                  )
+                  (lib.yazi.mkRuleMime
+                    [
+                      "*/"
+                    ]
+                    [
+                      "xdg-open"
+                    ]
+                  )
+                ]
+                |> lib.mkMerge;
             };
 
             tasks.image_bound = [
@@ -311,7 +317,7 @@
                 "${name}" = "${pkgs.writeTextDir "${name}.yazi/main.lua" content}/${name}.yazi";
               };
             in
-            lib.mkMerge [
+            [
               {
                 inherit (pkgs.yaziPlugins)
                   chmod
@@ -364,7 +370,8 @@
                   }
                 ''
               )
-            ];
+            ]
+            |> lib.mkMerge;
 
           initLua =
             let

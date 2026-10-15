@@ -42,10 +42,13 @@
           extraPolicies = {
             HomepageLocation =
               if glanceCfg.enable then
-                (lib.concatStringsSep ":" [
-                  glanceCfg.settings.server.host
-                  (toString glanceCfg.settings.server.port)
-                ])
+                (
+                  [
+                    glanceCfg.settings.server.host
+                    (toString glanceCfg.settings.server.port)
+                  ]
+                  |> lib.concatStringsSep ":"
+                )
               else
                 "https://start.duckduckgo.com";
 

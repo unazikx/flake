@@ -61,10 +61,13 @@
 
           settings = {
             hosts = [
-              (lib.concatStringsSep ":" [
-                cfg.network.listenAddress
-                (toString cfg.network.port)
-              ])
+              (
+                [
+                  cfg.network.listenAddress
+                  (toString cfg.network.port)
+                ]
+                |> lib.concatStringsSep ":"
+              )
             ];
 
             format = {

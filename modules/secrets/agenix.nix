@@ -91,14 +91,15 @@
             "/secrets/${user.userName}/.ssh/id_ed25519"
           ];
 
-          secrets = builtins.listToAttrs (
-            map (name: {
+          secrets =
+            ((import "${self}/.age.nix")._bare.${user.userName})
+            |> map (name: {
               inherit name;
               value = {
                 file = "${self}/secrets/${user.userName}/${name}.age";
               };
-            }) (import "${self}/.age.nix")._bare.${user.userName}
-          );
+            })
+            |> builtins.listToAttrs;
         };
       };
 

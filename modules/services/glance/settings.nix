@@ -31,34 +31,36 @@
             custom-footer = "<b><p>ᓚᘏᗢ</p></b>";
           };
 
-          theme = lib.mkForce {
-            contrast-multiplier = 1.0;
-            background-color = lib.mkHsl colors "base00";
-            primary-color = lib.mkHsl colors "base05";
-            positive-color = lib.mkHsl colors "base0A";
-            negative-color = lib.mkHsl colors "base08";
-            light = false;
+          theme =
+            {
+              contrast-multiplier = 1.0;
+              background-color = lib.mkHsl colors "base00";
+              primary-color = lib.mkHsl colors "base05";
+              positive-color = lib.mkHsl colors "base0A";
+              negative-color = lib.mkHsl colors "base08";
+              light = false;
 
-            presets = {
-              stylix-dark = {
-                contrast-multiplier = 1.0;
-                background-color = lib.mkHsl colors "base00";
-                primary-color = lib.mkHsl colors "base05";
-                positive-color = lib.mkHsl colors "base0A";
-                negative-color = lib.mkHsl colors "base08";
-                light = false;
-              };
+              presets = {
+                stylix-dark = {
+                  contrast-multiplier = 1.0;
+                  background-color = lib.mkHsl colors "base00";
+                  primary-color = lib.mkHsl colors "base05";
+                  positive-color = lib.mkHsl colors "base0A";
+                  negative-color = lib.mkHsl colors "base08";
+                  light = false;
+                };
 
-              stylix-light = {
-                contrast-multiplier = 1.0;
-                background-color = lib.mkHsl colors "base05";
-                primary-color = lib.mkHsl colors "base00";
-                positive-color = lib.mkHsl colors "base0B";
-                negative-color = lib.mkHsl colors "base08";
-                light = true;
+                stylix-light = {
+                  contrast-multiplier = 1.0;
+                  background-color = lib.mkHsl colors "base05";
+                  primary-color = lib.mkHsl colors "base00";
+                  positive-color = lib.mkHsl colors "base0B";
+                  negative-color = lib.mkHsl colors "base08";
+                  light = true;
+                };
               };
-            };
-          };
+            }
+            |> lib.mkForce;
 
           pages = [
             {

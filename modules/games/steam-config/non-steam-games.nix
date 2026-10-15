@@ -21,8 +21,8 @@
       in
       {
         programs.steam.config = {
-          nonSteamApps = (
-            lib.mkMerge [
+          nonSteamApps =
+            [
               (lib.mkGames
                 {
                   enable = lib.mkDefault false; # by default disabled
@@ -52,7 +52,7 @@
                 }
               )
             ]
-          );
+            |> lib.mkMerge;
         };
       };
   };

@@ -17,7 +17,7 @@
         services.rqbit = {
           enable = true;
 
-          downloadDir = lib.mkDefault "/media/torrents";
+          downloadDir = "/media/torrents" |> lib.mkDefault;
         };
       };
   };

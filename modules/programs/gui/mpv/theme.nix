@@ -26,17 +26,20 @@
             sub-font = fonts.sansSerif.name;
           };
 
-          scriptOpts.uosc.color = lib.concatStringsSep "," (
-            lib.mapAttrsToList (key: value: "${key}=${value}") {
-              background = colors.base00;
-              background_text = colors.base05;
-              curtain = colors.base0D;
-              error = colors.base0F;
-              foreground = colors.base05;
-              foreground_text = colors.base00;
-              success = colors.base0A;
-            }
-          );
+          scriptOpts.uosc.color =
+            (
+              {
+                background = colors.base00;
+                background_text = colors.base05;
+                curtain = colors.base0D;
+                error = colors.base0F;
+                foreground = colors.base05;
+                foreground_text = colors.base00;
+                success = colors.base0A;
+              }
+              |> lib.mapAttrsToList (key: value: "${key}=${value}")
+            )
+            |> lib.concatStringsSep ",";
         };
       };
   };

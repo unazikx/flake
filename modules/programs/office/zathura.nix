@@ -53,10 +53,12 @@
             page-right-to-left = true;
             first-page-column = "1:1";
 
-            font = lib.concatStringsSep " " [
-              config.stylix.fonts.sansSerif.name
-              (toString config.stylix.fonts.sizes.applications)
-            ];
+            font =
+              [
+                config.stylix.fonts.sansSerif.name
+                (toString config.stylix.fonts.sizes.applications)
+              ]
+              |> lib.concatStringsSep " ";
           };
 
           mappings = {

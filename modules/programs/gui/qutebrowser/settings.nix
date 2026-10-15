@@ -131,10 +131,13 @@
         glanceCfg = osConfig.services.glance;
         page =
           if glanceCfg.enable then
-            (lib.concatStringsSep ":" [
-              glanceCfg.settings.server.host
-              (toString glanceCfg.settings.server.port)
-            ])
+            (
+              [
+                glanceCfg.settings.server.host
+                (toString glanceCfg.settings.server.port)
+              ]
+              |> lib.concatStringsSep ":"
+            )
           else
             "qute://start";
       in

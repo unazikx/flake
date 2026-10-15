@@ -19,7 +19,12 @@
               prefixes =
                 let
                   file = "${self}/github-actions-inputs";
-                  additionalPrefixes = (lib.splitString " " (lib.trim (lib.readFile file)));
+                  additionalPrefixes =
+                    file
+                    |> lib.readFile
+                    |> lib.trim
+                    |> lib.splitString " ";
+
                   defaultPrefixes = [
                     # keep-sorted start
                     "aurelia"
@@ -35,23 +40,25 @@
                     # keep-sorted end
                   ];
                 in
-                if (lib.pathExists file) then
-                  (lib.unique (additionalPrefixes ++ defaultPrefixes))
+                if lib.pathExists file then
+                  (additionalPrefixes ++ defaultPrefixes) |> lib.unique
                 else
                   defaultPrefixes;
             in
-            lib.filterAttrs (
+            config.packages
+            |> lib.filterAttrs (
               name: value:
               let
-                prefix = lib.any (prefix: lib.hasPrefix prefix name) prefixes;
+                prefix = prefixes |> lib.any (prefix: lib.hasPrefix prefix name);
                 localBuild = (value ? preferLocalBuild) && (value.preferLocalBuild == true);
               in
               !(prefix || localBuild)
-            ) config.packages;
+            );
 
-          __cachix-farmed = pkgs.linkFarm "cachix-packages" (
-            builtins.mapAttrs (_name: drv: drv) config.legacyPackages.__cachix
-          );
+          __cachix-farmed =
+            config.legacyPackages.__cachix
+            |> builtins.mapAttrs (_name: drv: drv)
+            |> pkgs.linkFarm "cachix-packages";
         };
       };
   };
