@@ -202,6 +202,10 @@
                   name = "One Million Fatal Guns";
                 };
 
+                "1574240" = {
+                  name = "Dread Delusion";
+                };
+
                 "1578650" = {
                   name = "Citizen Sleeper";
                 };
@@ -741,6 +745,10 @@
                   language = "russian";
                 };
 
+                "4890770" = {
+                  name = "Intravenous: Borderline";
+                };
+
                 "489830" = {
                   name = "The Elder Scrolls V: Skyrim";
                   language = "russian";
@@ -753,6 +761,11 @@
                 "493490" = {
                   name = "City Car Driving";
                   compatTool = "proton_8";
+                };
+
+                "4963920" = {
+                  name = "Porthole";
+                  language = "russian";
                 };
 
                 "4986460" = {
@@ -799,6 +812,11 @@
 
                 "526870" = {
                   name = "Satisfactory";
+                };
+
+                "5331850" = {
+                  name = "FLYBRAIN LAB";
+                  language = "russian";
                 };
 
                 "562860" = {

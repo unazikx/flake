@@ -113,6 +113,42 @@
           '')
         ];
       };
+
+    homeManagerNixos =
+      {
+        lib,
+        osConfig,
+        ...
+      }:
+      {
+        xdg.dataFile = {
+          # for beta steam client
+          "Steam/package/beta".text = "publicbeta";
+        };
+
+        systemd.user.services = {
+          steam-autostart = {
+            Unit = {
+              PartOf = [ "graphical-session.target" ];
+              After = [ "graphical-session.target" ];
+            };
+
+            Install = {
+              WantedBy = [ "graphical-session.target" ];
+            };
+
+            Service = {
+              ExecStart = lib.concatStringsSep " " [
+                (lib.getExe osConfig.programs.steam.package)
+                "-nochatui"
+                "-nofriendsui"
+              ];
+
+              Restart = "always";
+            };
+          };
+        };
+      };
   };
 
   zen.flake-parts.default = {
