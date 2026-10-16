@@ -4,24 +4,10 @@
 }:
 
 {
-  zen.services.proxy-suite.zapret = {
-    includes = [
-      zen.services.proxy-suite
-    ];
-
-    nixos =
-      {
-        ...
-      }:
-      {
-        services.proxy-suite = {
-          zapret.enable = true;
-        };
-      };
-
+  zen.services.proxy-suite = {
     zapret-discord-youtube = {
       includes = [
-        zen.services.proxy-suite.zapret
+        zen.services.proxy-suite
       ];
 
       nixos =
@@ -31,13 +17,14 @@
         }:
         {
           services.proxy-suite.zapret = {
+            enable = true;
             engine = "zapret-discord-youtube";
 
             zapret-discord-youtube = {
               configName = "general (ALT12)";
               gameFilter = if config.programs.steam.enable then "all" else "null";
 
-              listExclude = [
+              excludeDomains = [
                 "statsigapi.net"
                 "desktop-config.juno.ea.com"
                 "e16166.e12.akamaiedge.net"
@@ -99,7 +86,47 @@
                 "steamdeck.com"
                 "playartifact.com"
                 "underlords.com"
+
+                # spotify excludes for hosts
+                "api.spotify.com"
+                "login5.spotify.com"
+                "encore.scdn.co"
+                "gew1-spclient.spotify.com"
+                "spclient.wg.spotify.com"
+                "api-partner.spotify.com"
+                "aet.spotify.com"
+                "www.spotify.com"
+                "accounts.spotify.com"
+                "open.spotify.com"
+                "accounts.scdn.co"
+                "gew1-dealer.spotify.com"
+                "www-growth.scdn.co"
               ];
+            };
+          };
+        };
+    };
+
+    zapret2 = {
+      includes = [
+        zen.services.proxy-suite
+      ];
+
+      nixos =
+        {
+          ...
+        }:
+        {
+          services.proxy-suite.zapret = {
+            enable = true;
+            engine = "zapret2";
+
+            zapret2 = {
+              # for blocked
+              domains = [ ];
+
+              # dont touch
+              excludeDomains = [ ];
             };
           };
         };

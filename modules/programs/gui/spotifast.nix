@@ -24,9 +24,12 @@
       zen.custom.spotifast
     ];
 
-    homeManager =
+    homeManagerNixos =
       {
         pkgs,
+        lib,
+        host,
+        user,
         ...
       }:
       {
@@ -48,7 +51,12 @@
             bitrate = 320;
             check_for_updates = true;
             custom_titlebar = false;
-            device_name = "Spotifast";
+            device_name =
+              [
+                host.hostName
+                user.userName
+              ]
+              |> lib.concatStringsSep "@";
             download_updates_automatically = false;
             eq_shaded = false;
             gapless = true;
@@ -92,7 +100,7 @@
             sidebar_visible = true;
             sidebar_width = 210.0;
             skin = null;
-            skin_scale = null;
+            skin_scale = 3;
             theme = "system";
             tracklist_compact = false;
             vis = "bars";

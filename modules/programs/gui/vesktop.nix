@@ -11,7 +11,7 @@
 
     includes = [
       zen.services.proxy-suite
-      zen.services.proxy-suite.zapret
+      # pls use zapret
     ];
 
     homeManagerNixos =

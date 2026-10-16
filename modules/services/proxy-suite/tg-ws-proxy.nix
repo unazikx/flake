@@ -1,9 +1,14 @@
 {
+  zen,
   ...
 }:
 
 {
   zen.services.proxy-suite.tg-ws-proxy = {
+    includes = [
+      zen.services.proxy-suite.tg-ws-proxy
+    ];
+
     nixos =
       {
         config,

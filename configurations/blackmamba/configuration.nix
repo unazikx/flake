@@ -59,7 +59,8 @@
       zen.secrets.sopsnix
       zen.services.caddy
       zen.services.greetd
-      zen.services.proxy-suite
+      zen.services.proxy-suite.tg-ws-proxy
+      zen.services.proxy-suite.zapret-discord-youtube
       zen.styles.stylix
       zen.suites.hardware
       zen.suites.media

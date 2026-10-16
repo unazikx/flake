@@ -29,6 +29,9 @@
         lib,
         ...
       }:
+      let
+        excludes = blackList |> map (domain: " -e'/.*${lib.escapeRegex domain}.*/d'");
+      in
       {
         networking.hostFiles =
           (pkgs.runCommandLocal "modified-hosts.txt"
@@ -42,7 +45,7 @@
               };
             }
             ''
-              sed ${lib.concatStringsSep " " (map (domain: " -e'/.*${lib.escapeRegex domain}.*/d'") blackList)} \
+              sed ${excludes |> lib.concatStringsSep " "} \
                 $source > $out
             ''
           )

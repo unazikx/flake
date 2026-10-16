@@ -1,4 +1,5 @@
 {
+  zen,
   ...
 }:
 
@@ -20,6 +21,10 @@
         ];
       };
     };
+
+    includes = [
+      zen.services.proxy-suite.tg-ws-proxy
+    ];
 
     nixos =
       {
