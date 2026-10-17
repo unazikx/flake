@@ -21,11 +21,11 @@
             {
               config = [
                 ({ polarity, colors, ... }: {
-                  programs.spotifast = {
-                    settings = {
-                      custom_theme = "stylix.json";
-                    };
-                  };
+                  # programs.spotifast = {
+                  #   settings = {
+                  #     custom_theme = "stylix.json";
+                  #   };
+                  # };
 
                   xdg.configFile = {
                     "spotifast/themes/stylix.json" = {
@@ -65,6 +65,8 @@
               nullable = true;
             };
 
+            generate = lib.mkEnableOption "genereate config or for sops";
+
             settings = lib.mkOption {
               type = json.type;
               default = null;
@@ -76,7 +78,7 @@
         config = lib.mkIf cfg.enable {
           home.packages = lib.mkIf (cfg.package != null) [ cfg.package ];
 
-          xdg.configFile = lib.mkIf (cfg.settings != null) {
+          xdg.configFile = lib.mkIf (cfg.generate && cfg.settings != null) {
             "spotifast/settings.json" = {
               source = (json.generate "spotifast-config.json" cfg.settings);
               force = true;

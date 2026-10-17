@@ -67,7 +67,12 @@
                   default_workspace = 2;
                 }
                 {
-                  match.app_id = "spotify";
+                  match.app_id =
+                    [
+                      "spotify"
+                      "spotifast"
+                    ]
+                    |> lib.concatStringsSep "|";
                   default_workspace = 3;
                 }
                 {

@@ -18,6 +18,12 @@
     description = ''
       egui spotify client
       not electron, faster
+
+      cause i use custom client id
+      it stored in sops
+      then goes to templates and then links
+
+      but WHY SPOTIFAST OVERRIDES SETTINGS
     '';
 
     includes = [
@@ -28,14 +34,20 @@
       {
         pkgs,
         lib,
+        config,
         host,
         user,
         ...
       }:
+      let
+        cfg = config.programs.spotifast;
+      in
       {
         programs.spotifast = {
           enable = true;
           package = pkgs._master.spotifast;
+
+          generate = false;
 
           settings = {
             # keep-sorted start block=yes
@@ -49,7 +61,7 @@
             autoplay = true;
             balance = 0.0;
             bitrate = 320;
-            check_for_updates = true;
+            check_for_updates = false;
             custom_titlebar = false;
             device_name =
               [
@@ -91,6 +103,7 @@
             playlist_height = 174;
             playlist_open = false;
             playlist_shaded = false;
+            proxy_mode = "off";
             queue_width = 280.0;
             search_history = [ ];
             show_shortcut_hints = true;
@@ -105,7 +118,7 @@
             tracklist_compact = false;
             vis = "bars";
             volume = 26214;
-            web_client_id = null;
+            web_client_id = config.sops.placeholder."programs/spotifast";
             winamp_on_top = false;
             winamp_shaded = false;
             winamp_show_taskbar = true;
@@ -113,6 +126,20 @@
             zoom = 1.2;
             # keep-sorted end
           };
+        };
+
+        xdg.configFile = {
+          "spotifast/settings.json".source =
+            config.lib.file.mkOutOfStoreSymlink
+              config.sops.templates."spotifast-config".path;
+        };
+
+        sops.secrets = {
+          "programs/spotifast" = { };
+        };
+
+        sops.templates = {
+          "spotifast-config".content = lib.toJSON cfg.settings;
         };
       };
   };
