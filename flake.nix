@@ -24,4 +24,17 @@
         );
     in
     (with-inputs.lon' self ".lon") follows outputs;
+
+  nixConfig = {
+    accept-flake-config = true;
+    warn-dirty = false;
+    auto-optimise-store = true;
+    builders-use-substitutes = true;
+
+    extra-experimental-features = [
+      "flakes"
+      "nix-command"
+      "pipe-operators"
+    ];
+  };
 }

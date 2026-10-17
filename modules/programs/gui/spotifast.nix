@@ -141,6 +141,12 @@
         sops.templates = {
           "spotifast-config".content = lib.toJSON cfg.settings;
         };
+
+        home.activation = {
+          spotifast = lib.hm.dag.entryAfter [
+            "writeBoundary"
+          ] "rm ${config.xdg.configHome}/spotifast/settings.json";
+        };
       };
   };
 }

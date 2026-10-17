@@ -9,6 +9,7 @@ jobs:
         uses: cachix/install-nix-action@v31
         with:
           extra_nix_config: |
+            accept-flake-config = true
             experimental-features = nix-command flakes
           nix_path: nixpkgs=channel:nixos-unstable
       - name: Run flake#update-packages

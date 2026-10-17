@@ -32,16 +32,7 @@
                     name = "Checkout";
                     uses = "actions/checkout@v7";
                   }
-                  {
-                    name = "Install Nix";
-                    uses = "cachix/install-nix-action@v31";
-                    "with" = {
-                      nix_path = "nixpkgs=channel:nixos-unstable";
-                      extra_nix_config = ''
-                        experimental-features = nix-command flakes
-                      '';
-                    };
-                  }
+                  (import ./_tools.nix).install-nix
                   {
                     name = "Install Cachix";
                     uses = "cachix/cachix-action@v17";

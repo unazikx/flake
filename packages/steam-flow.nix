@@ -1,7 +1,6 @@
 {
   rustPlatform,
   fetchFromGitHub,
-  pkg-config,
   lib,
 }:
 
@@ -17,10 +16,6 @@ rustPlatform.buildRustPackage (_final: {
   };
 
   cargoLock.lockFile = "${_final.src}/Cargo.lock";
-
-  # nativeBuildInputs = [
-  #   pkg-config
-  # ];
 
   meta = {
     description = "TUI Steam launcher";

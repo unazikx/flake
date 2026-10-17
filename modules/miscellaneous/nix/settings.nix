@@ -1,23 +1,14 @@
 {
+  self,
   ...
 }:
 
 {
   zen.miscellaneous.nix.settings =
     let
-      settings = {
-        warn-dirty = false;
-        auto-optimise-store = true;
-        builders-use-substitutes = true;
-
+      settings = (import "${self}/flake.nix").nixConfig // {
         max-jobs = 16;
         cores = 0;
-
-        experimental-features = [
-          "flakes"
-          "nix-command"
-          "pipe-operators"
-        ];
 
         trusted-users = [ "@wheel" ];
       };
