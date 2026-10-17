@@ -14,9 +14,7 @@
   zen.hosts.spaceship = {
     includes = [
       # keep-sorted start block=yes
-      (zen.hardware.networking.hosts [
-        "api.github.com"
-      ])
+      zen.hardware.networking.geohide-dns
       zen.miscellaneous.nix.settings
       zen.programs.cli.nixos-cli
       zen.styles.stylix

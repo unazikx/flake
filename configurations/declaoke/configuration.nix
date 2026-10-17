@@ -24,10 +24,7 @@
   zen.hosts.declaoke = {
     includes = [
       # keep-sorted start block=yes
-      (zen.hardware.networking.hosts [
-        "api.github.com"
-        "api.spotify.com"
-      ])
+      zen.hardware.networking.geohide-dns
       zen.hardware.bluetooth
       zen.hardware.boot.systemd-boot
       zen.hardware.compression.zram

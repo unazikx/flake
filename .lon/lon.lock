@@ -211,6 +211,16 @@
       "url": "https://github.com/SenchoPens/fromYaml/archive/106af9e2f715e2d828df706c386a685698f3223b.tar.gz",
       "hash": "sha256-lq95WydhbUTWig/JpqiB7oViTcHFP8Lv41IGtayokA8="
     },
+    "geohide-dns": {
+      "type": "GitHub",
+      "fetchType": "tarball",
+      "owner": "internet-helper",
+      "repo": "geohidedns",
+      "branch": "main",
+      "revision": "d33f70ad80f689900bf704f8bc73ed1be8aa2dcc",
+      "url": "https://github.com/internet-helper/geohidedns/archive/d33f70ad80f689900bf704f8bc73ed1be8aa2dcc.tar.gz",
+      "hash": "sha256-Ndad78Vfyc+Zv5dij1zk0kMfTPyJXbj2AqIoHJ/RXBw="
+    },
     "gnome-shell": {
       "type": "GitHub",
       "fetchType": "tarball",

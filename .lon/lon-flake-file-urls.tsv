@@ -19,6 +19,7 @@ flake-file	github:unazikx/flake-file
 flake-parts	github:hercules-ci/flake-parts
 flake-utils	github:numtide/flake-utils
 fromYaml	github:SenchoPens/fromYaml
+geohide-dns	github:internet-helper/geohidedns
 gnome-shell	github:gnome/gnome-shell
 hjem	github:feel-co/hjem
 hjem-rum	github:snugnug/hjem-rum
