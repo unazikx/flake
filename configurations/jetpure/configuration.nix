@@ -29,12 +29,12 @@
   zen.hosts.jetpure = {
     includes = [
       # keep-sorted start block=yes
-      zen.hardware.networking.geohide-dns
       zen.games.xbox.driver
       zen.hardware.boot.systemd-boot
       zen.hardware.compression.zram
       zen.hardware.cpu-gpu
       zen.hardware.mounting
+      zen.hardware.networking.geohide-dns
       zen.hardware.security.yubikey
       zen.miscellaneous.disko
       zen.miscellaneous.home-manager

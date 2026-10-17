@@ -24,12 +24,12 @@
   zen.hosts.declaoke = {
     includes = [
       # keep-sorted start block=yes
-      zen.hardware.networking.geohide-dns
       zen.hardware.bluetooth
       zen.hardware.boot.systemd-boot
       zen.hardware.compression.zram
       zen.hardware.compression.zswap
       zen.hardware.mounting
+      zen.hardware.networking.geohide-dns
       zen.hardware.power
       zen.hardware.printing
       zen.miscellaneous.disko

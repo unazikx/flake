@@ -27,11 +27,11 @@
   zen.hosts.blackmamba = {
     includes = [
       # keep-sorted start block=yes
-      zen.hardware.networking.geohide-dns
       zen.hardware.boot.systemd-boot
       zen.hardware.compression.zswap
       zen.hardware.cpu-gpu
       zen.hardware.mounting
+      zen.hardware.networking.geohide-dns
       zen.hardware.power
       zen.hardware.printing
       zen.miscellaneous.disko
